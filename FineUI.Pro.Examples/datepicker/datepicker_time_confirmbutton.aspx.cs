@@ -1,0 +1,26 @@
+using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace FineUI.Pro.Examples.datepicker
+{
+    public partial class datepicker_time_confirmbutton : PageBase
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                DatePicker1.SelectedDate = DateTime.Now.AddDays(2);
+            }
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            labResult.Text = String.Format("开始日期：{0}  结束日期：{1}",
+                DatePicker1.Text,
+                DatePicker2.SelectedDate.HasValue ? DatePicker2.SelectedDate.Value.ToString(DatePicker2.DateFormatString) : "Empty");
+        }
+    }
+}

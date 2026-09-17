@@ -1,0 +1,197 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="grid_editor_serverdata.aspx.cs"
+    Inherits="FineUI.Pro.Examples.autocomplete.grid_editor_serverdata" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title></title>
+    <meta name="sourcefiles" content="~/third-party/autocomplete/gridsearch.ashx" />
+    <link rel="stylesheet" href="../../res/third-party/jqueryuiautocomplete/jquery-ui.css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <f:PageManager ID="PageManager1" runat="server" />
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（进入编辑状态后，从自动完成提示框中选择）" EnableCollapse="false"
+            Height="350px" runat="server" AllowCellEditing="true" ClicksToEdit="1">
+            <Toolbars>
+                <f:Toolbar ID="Toolbar1" runat="server">
+                    <Items>
+                        <f:Button ID="btnNew" Text="新增数据" Icon="Add" runat="server" ClickHandler="onNewClick">
+                        </f:Button>
+                        <f:Button ID="btnDelete" Text="删除选中行" Icon="Delete" runat="server" ClickHandler="onDeleteClick">
+                        </f:Button>
+                        <f:ToolbarFill runat="server">
+                        </f:ToolbarFill>
+                        <f:Button ID="btnReset" Text="重置表格数据" runat="server" ClickHandler="onResetClick">
+                        </f:Button>
+                    </Items>
+                </f:Toolbar>
+            </Toolbars>
+            <Columns>
+                <f:TemplateField ColumnID="Number" Width="60px">
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
+                    </ItemTemplate>
+                </f:TemplateField>
+                <f:RenderField Width="150px" ColumnID="Name" DataField="Name" HeaderText="姓名">
+                    <Editor>
+                        <f:TextBox ID="tbxEditorName" EmptyText="请输入汉字“张”试试" runat="server">
+                        </f:TextBox>
+                    </Editor>
+                </f:RenderField>
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
+                    <Editor>
+                        <f:DropDownList Required="true" runat="server">
+                            <f:ListItem Text="男" Value="1" />
+                            <f:ListItem Text="女" Value="0" />
+                        </f:DropDownList>
+                    </Editor>
+                </f:RenderField>
+                <f:RenderField Hidden="true" ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份">
+                    <Editor>
+                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025" runat="server">
+                        </f:NumberBox>
+                    </Editor>
+                </f:RenderField>
+                <f:RenderField Width="150px" Hidden="true" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date"
+                    RendererArgument="yyyy/MM/dd" HeaderText="入学日期">
+                    <Editor>
+                        <f:DatePicker ID="DatePicker1" Required="true" runat="server">
+                        </f:DatePicker>
+                    </Editor>
+                </f:RenderField>
+                <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业">
+                    <Editor>
+                        <f:TextBox ID="tbxEditorMajor" Required="true" runat="server">
+                        </f:TextBox>
+                    </Editor>
+                </f:RenderField>
+                <f:RenderField ColumnID="Delete" Width="50px" TextAlign="Center" EnableHeaderMenu="false">
+                    <Commands>
+                        <f:Command CommandName="Delete" Icon="Delete" ConfirmText="删除选中行？" ConfirmTarget="Top" />
+                    </Commands>
+                </f:RenderField>
+            </Columns>
+            <Listeners>
+                <f:Listener Event="rowcommand" Handler="onGrid1RowCommand" />
+            </Listeners>
+        </f:Grid>
+        <br />
+        注：新增一行数据，在[姓名]列输入字符 - 张，会有自动完成提示列表出现。
+        <br />
+        <br />
+        <f:Button ID="Button2" runat="server" Text="保存数据" OnClick="Button2_Click">
+        </f:Button>
+        <br />
+        <br />
+        <f:Label ID="labResult" EncodeText="false" runat="server">
+        </f:Label>
+
+    </form>
+
+    <script src="../../res/third-party/jqueryuiautocomplete/jquery-ui.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var Grid1ClientID = '<%= Grid1.ClientID %>';
+
+        // 删除工具栏中选中的行（先确认）。
+        function deleteSelectedRows() {
+            F.confirm({
+                message: '删除选中行？',
+                messageIcon: 'question',
+                ok: function() {
+                    F(Grid1ClientID).deleteSelectedRows(false);
+                }
+            });
+        }
+
+        function onNewClick(event) {
+            F(Grid1ClientID).addNewRecord({
+                    "Name": "",
+                    "Gender": "1",
+                    "EntranceYear": "2000",
+                    "EntranceDate": "2000-09-01",
+                    "AtSchool": false,
+                    "Major": "未知"
+                },
+                true);
+        }
+
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            if (commandName === 'Delete') {
+                F(Grid1ClientID).deleteRow(rowId);
+            }
+        }
+
+        function onDeleteClick(event) {
+            if (!F(Grid1ClientID).hasSelection()) {
+                F.alert({
+                    message: '请至少选择一项！',
+                    messageIcon: 'information'
+                });
+                return false;
+            }
+            deleteSelectedRows();
+        }
+
+        function onResetClick(event) {
+            F.confirm({
+                message: '确定要重置表格数据？',
+                ok: function() {
+                    F(Grid1ClientID).rejectChanges();
+                },
+                messageIcon: 'question'
+            });
+        }
+
+        var tbxEditorNameClientID = '<%= tbxEditorName.ClientID %>';
+        var gridClientID = '<%= Grid1.ClientID %>';
+
+        function renderGender(value) {
+            return value == 1 ? '男' : '女';
+        }
+
+        F.ready(function() {
+
+            var cache = {};
+
+
+            F(tbxEditorNameClientID).el.find('input').autocomplete({
+                source: function(request, response) {
+                    var term = request.term;
+                    if (term in cache) {
+                        response(cache[term]);
+                        return;
+                    }
+
+                    $.getJSON("gridsearch.ashx", request, function(data, status, xhr) {
+                        cache[term] = data;
+                        response(data);
+                    });
+                },
+                select: function(event, ui) {
+                    var grid = F(gridClientID);
+
+                    // 当前选中的单元格（也就是正在编辑的单元格）
+                    var selectedCell = grid.getSelectedCell();
+                    var rowId = selectedCell[0];
+
+                    grid.updateCellValue(rowId, {
+                        'Name': ui.item.value,
+                        'Gender': ui.item.gender,
+                        'EntranceYear': ui.item.entranceYear,
+                        'EntranceDate': ui.item.entranceDate,
+                        'AtSchool': ui.item.atSchool,
+                        'Major': ui.item.major
+                    });
+
+                    return false;
+                }
+            });
+
+
+        });
+
+    </script>
+</body>
+</html>

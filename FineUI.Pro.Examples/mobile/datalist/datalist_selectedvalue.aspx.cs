@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Text;
+
+namespace FineUI.Pro.Examples.mobile.datalist
+{
+    public partial class datalist_selectedvalue : MobilePageBase
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                LoadData();
+            }
+        }
+
+
+        private void LoadData()
+        {
+            DataList1.DataSource = DataSourceUtil.GetCountryTable();
+            DataList1.DataBind();
+
+            // 选中法国
+            DataList1.SelectedValue = "fr";
+        }
+
+        
+        protected void DataList1_ItemDataBound(object sender, DataListItemEventArgs e)
+        {
+            DataRowView row = e.DataItem as DataRowView;
+
+            e.Item.TextRawHtml = new RawHtml(DATALIST_SIMPLE_ITEM_TEMPLATE, 
+                PageContext.ResolveUrl("~/res/icon/flag_" + row["Image"] + ".png"), 
+                row["Name"]);
+        }
+
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            Alert.Show("选中项：" + DataList1.SelectedValue);
+        }
+ 
+    }
+}

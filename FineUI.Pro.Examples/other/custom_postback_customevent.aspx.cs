@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Text;
+
+namespace FineUI.Pro.Examples.other
+{
+    public partial class custom_postback_customevent : PageBase
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+
+            }
+        }
+
+        protected void Page_CustomEvent(object sender, CustomEventArgs e)
+        {
+            if (e.EventName == "TextBox1_ENTER")
+            {
+                TextBox2.Text = TextBox1.Text;
+                TextBox2.Focus(true);
+            }
+        }
+
+
+    }
+}

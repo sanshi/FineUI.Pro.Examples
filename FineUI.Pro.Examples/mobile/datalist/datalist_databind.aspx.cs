@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data;
+using System.Text;
+
+namespace FineUI.Pro.Examples.mobile.datalist
+{
+    public partial class datalist_databind : MobilePageBase
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                LoadData();
+            }
+        }
+
+
+        private void LoadData()
+        {
+            ViewState["DataSoure"] = "Country1";
+
+            DataList1.DataSource = DataSourceUtil.GetCountryTable();
+            DataList1.DataBind();
+        }
+
+        private void LoadData2()
+        {
+            ViewState["DataSoure"] = "Country2";
+
+            DataList1.DataSource = DataSourceUtil.GetCountryTable2();
+            DataList1.DataBind();
+        }
+
+
+        protected void DataList1_ItemDataBound(object sender, DataListItemEventArgs e)
+        {
+            DataRowView row = e.DataItem as DataRowView;
+
+            e.Item.TextRawHtml = new RawHtml(DATALIST_ITEM_TEMPLATE, 
+                PageContext.ResolveUrl("~/res/icon/flag_" + row["Image"] + ".png"), 
+                HttpUtility.HtmlEncode(row["Name"]), 
+                HttpUtility.HtmlEncode(row["Desc"]));
+        }
+
+
+        protected void btnReDataBind_Click(object sender, EventArgs e)
+        {
+            if (ViewState["DataSoure"].ToString() == "Country1")
+            {
+                LoadData2();
+            }
+            else
+            {
+                LoadData();
+            }
+        }
+ 
+    }
+}
