@@ -1,7 +1,6 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "auditStatus": "complete",
-  "productVersion": "16.0.0-beta.2",
   "targetPath": "FineUI.Pro.Examples/res",
   "resourceTreeSha256": "28177cfac20ff935082882b3edcdddbc5ec43b463b65926c1ca587339efc7735",
   "thirdPartyAssets": [
