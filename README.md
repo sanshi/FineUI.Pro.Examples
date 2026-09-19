@@ -15,6 +15,17 @@ msbuild FineUI.Pro.Examples.sln /t:Restore /p:RestorePackagesConfig=true
 msbuild FineUI.Pro.Examples.sln /t:Build /p:Configuration=Release
 ```
 
+## 运行
+
+这是 .NET Framework 4.8 的 ASP.NET WebForms 应用，**没有 `dotnet run` 入口**，只能用 IIS Express 承载：
+
+1. 用 Visual Studio 2022 打开 `FineUI.Pro.Examples.sln`（安装时需勾选「ASP.NET 和 Web 开发」工作负载）；
+2. 直接按 F5 / Ctrl+F5 启动。项目已配置为 IIS Express + 经典管道（见 `FineUI.Pro.Examples/FineUI.Pro.Examples.csproj.user`），端口由 VS 分配、启动后在浏览器地址栏可见，形如 **http://localhost:端口/**。
+
+站点入口是 `default.htm`（会自动跳转到 `index.aspx`），`Web.config` 的 `defaultDocument` 也指向 `index.aspx`，所以直接访问根地址即可。
+
+**不需要授权文件**：本仓库引用的是公共 NuGet 包 `FineUI.Pro`（社区版），社区版不做授权校验，克隆下来就能直接跑。
+
 ## 许可边界
 
 本仓库中由合肥三生石上软件有限公司拥有著作权的示例或应用项目源代码采用 [MIT 许可证](LICENSE)。FineUI 各端框架源码、二进制软件包、内嵌的 FineUI.js 运行时以及 FineUI 名称、标识和商标不属于 MIT 授权范围，仍适用各自的商业或社区版许可。具体边界见 [NOTICE.md](NOTICE.md)。
