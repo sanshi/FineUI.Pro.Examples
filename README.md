@@ -8,7 +8,7 @@ FineUI.Pro.Examples 是 FineUI 官方完整示例项目。本仓库是该项目�
 
 ## 构建
 
-安装 Visual Studio 2022 的 .NET Framework 4.8 开发工具后，在 Developer PowerShell 中运行：
+安装 Visual Studio 的 .NET Framework 4.8 开发工具后，在 Developer PowerShell 中运行：
 
 ```powershell
 msbuild FineUI.Pro.Examples.sln /t:Restore /p:RestorePackagesConfig=true
@@ -19,10 +19,8 @@ msbuild FineUI.Pro.Examples.sln /t:Build /p:Configuration=Release
 
 这是 .NET Framework 4.8 的 ASP.NET WebForms 应用，**没有 `dotnet run` 入口**，只能用 IIS Express 承载：
 
-1. 用 Visual Studio 2022 打开 `FineUI.Pro.Examples.sln`（安装时需勾选「ASP.NET 和 Web 开发」工作负载）；
-2. 直接按 F5 / Ctrl+F5 启动。项目已配置为 IIS Express + 经典管道（见 `FineUI.Pro.Examples/FineUI.Pro.Examples.csproj.user`），端口由 VS 分配、启动后在浏览器地址栏可见，形如 **http://localhost:端口/**。
-
-站点入口是 `default.htm`（会自动跳转到 `index.aspx`），`Web.config` 的 `defaultDocument` 也指向 `index.aspx`，所以直接访问根地址即可。
+1. 用 Visual Studio 打开 `FineUI.Pro.Examples.sln`（安装时需勾选「ASP.NET 和 Web 开发」工作负载）；
+2. 直接按 F5 / Ctrl+F5 启动。项目已配置为 IIS Express + 经典管道，端口由 VS 分配、启动后在浏览器地址栏可见，形如 **http://localhost:端口/**。
 
 **不需要授权文件**：本仓库引用的是公共 NuGet 包 `FineUI.Pro`（社区版），社区版不做授权校验，克隆下来就能直接跑。
 
