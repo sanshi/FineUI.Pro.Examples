@@ -65,7 +65,6 @@ namespace FineUI.Pro.Examples
                         tab.TitleToolTip = fileName;
                         TabStrip1.Tabs.Add(tab);
 
-                        // End with .aspx.
                         // 只有后置代码文件真的存在时才加这个选项卡。内联式 .ashx（C# 直接写在
                         // .ashx 里、没有 .cs 的那种）如果也硬加一个，点开就是「未能找到文件」的黄页。
                         if ((fileName.ToLower().EndsWith(".aspx")

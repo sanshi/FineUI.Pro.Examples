@@ -58,25 +58,25 @@
             var csvFile;
             var downloadLink;
 
-            // CSV file
+            // CSV 文件
             csvFile = new Blob([csv], { type: "text/csv" });
 
-            // Download link
+            // 下载链接
             downloadLink = document.createElement("a");
 
-            // File name
+            // 文件名
             downloadLink.download = filename;
 
-            // Create a link to the file
+            // 创建指向该文件的链接
             downloadLink.href = window.URL.createObjectURL(csvFile);
 
-            // Hide download link
+            // 隐藏下载链接
             downloadLink.style.display = "none";
 
-            // Add the link to DOM
+            // 把链接挂到 DOM 上
             document.body.appendChild(downloadLink);
 
-            // Click download link
+            // 点击下载链接
             downloadLink.click();
         }
         */
