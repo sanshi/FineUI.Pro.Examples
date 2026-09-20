@@ -254,7 +254,7 @@ namespace FineUI.Pro.Examples
                 cbxShowOnlyCommunity.Checked = _showOnlyCommunity;
 
                 menuTextCopyright.TextRawHtml = new RawHtml("<div class=\"copyright\">" +
-                    "<div class=\"version\"><a target=\"_blank\" href=\"http://fineui.com/pro/\"><img src=\"./res/images/newlogo/fineui.png\" alt=\"logo\"/></a>" +
+                    "<div class=\"version\"><a target=\"_blank\" href=\"http://fineui.com/pro/\"><img src=\"./res/images/logo/fineui.png\" alt=\"logo\"/></a>" +
                     "<br/><span>FineUI.Pro v" + GlobalConfig.ProductVersion + "</span></div>" +
                     "<div class=\"actions\"><a target=\"_blank\" href=\"http://fineui.com/fans/\">免费社区</a>" +
                     "&nbsp;&nbsp;&nbsp;&nbsp;<a target=\"_blank\" href=\"http://fineui.com/versions/\">更新记录</a></div>" +

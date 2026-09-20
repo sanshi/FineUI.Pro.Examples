@@ -18,10 +18,10 @@
         <f:Image ID="Image2" runat="server" ImageUrl="../res/icon/world.png">
         </f:Image>
         <br />
-        ImageUrl="~/res/images/newlogo/favicon.ico" ImageCssStyle="border:solid 1px #ccc;padding:5px;"：
+        ImageUrl="~/res/images/logo/favicon.ico" ImageCssStyle="border:solid 1px #ccc;padding:5px;"：
         <br />
         <f:Image ID="Image3" runat="server" ImageWidth="32" ImageHeight="32" ImageCssStyle="border:solid 1px #ccc;padding:5px;"
-            ImageUrl="~/res/images/newlogo/favicon.ico">
+            ImageUrl="~/res/images/logo/favicon.ico">
         </f:Image>
         <br />
         <f:Button runat="server" Text="改变图片的大小" ID="Button1" OnClick="Button1_Click">

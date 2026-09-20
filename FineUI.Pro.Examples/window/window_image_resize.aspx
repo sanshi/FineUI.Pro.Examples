@@ -17,7 +17,7 @@
             EnableMaximize="true" EnableCollapse="false" runat="server" EnableResize="true"
             IsModal="false" AutoScroll="true" BodyPadding="10px">
             <Content>
-                <img id="mylogo" src="../res/images/newlogo/fineui_500.png" alt="Logo" />
+                <img id="mylogo" src="../res/images/logo/fineui_500.png" alt="Logo" />
             </Content>
             <Listeners>
                 <f:Listener Event="resize" Handler="onWindowResize" />
