@@ -574,6 +574,7 @@
     <Content Include="gridtree\gridtree_icons_rowdatabound.aspx" />
     <Content Include="gridtree\gridtree_selectall_clientscript.aspx" />
     <Content Include="grid\grid_groupfield_complex.aspx" />
+    <Content Include="grid\grid_groupfield_manycolumns.aspx" />
     <Content Include="grid\grid_header_changetextwidth_script.aspx" />
     <Content Include="grid\grid_mergecolumns_lockcolumn_rowheight.aspx" />
     <Content Include="grid\grid_multiactions_column_menubutton.aspx" />
@@ -4647,6 +4648,13 @@
     </Compile>
     <Compile Include="grid\grid_groupfield_complex.aspx.designer.cs">
       <DependentUpon>grid_groupfield_complex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="grid\grid_groupfield_manycolumns.aspx.cs">
+      <DependentUpon>grid_groupfield_manycolumns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grid\grid_groupfield_manycolumns.aspx.designer.cs">
+      <DependentUpon>grid_groupfield_manycolumns.aspx</DependentUpon>
     </Compile>
     <Compile Include="grid\grid_header_changetextwidth_script.aspx.cs">
       <DependentUpon>grid_header_changetextwidth_script.aspx</DependentUpon>
