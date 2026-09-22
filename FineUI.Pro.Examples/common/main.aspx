@@ -4,7 +4,7 @@
 <html>
 <head runat="server">
     <title></title>
-    <meta name="sourcefiles" content="~/index.aspx;~/res/css/index.css;~/res/js/index.js;~/code/PageBase.cs" />
+    <meta name="sourcefiles" content="~/index.aspx;~/res/css/index.css;~/res/js/index.js;~/res/js/index-examples.js;~/code/PageBase.cs" />
     <style>
         .important {
             border-style: solid;

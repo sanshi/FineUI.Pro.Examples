@@ -266,6 +266,7 @@
     </script>
 
     <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/index.js?v" + GlobalConfig.ProductVersion) %>"></script>
+    <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/index-examples.js?v" + GlobalConfig.ProductVersion) %>"></script>
     <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/mobileview.js?v" + GlobalConfig.ProductVersion) %>"></script>
 
 </body>

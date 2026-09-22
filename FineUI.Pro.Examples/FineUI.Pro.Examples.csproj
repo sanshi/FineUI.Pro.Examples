@@ -902,6 +902,7 @@
     <Content Include="res\js\grid.js" />
     <Content Include="res\js\gridcard.js" />
     <Content Include="res\js\index.js" />
+    <Content Include="res\js\index-examples.js" />
     <Content Include="res\js\mobileview.js" />
     <Content Include="res\js\notify_group.js" />
     <Content Include="res\languages\zh_UEY.js" />
