@@ -9,13 +9,12 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" Title="表格（跨页选中行）" EnableCollapse="false" PageSize="5" ShowBorder="true" ShowHeader="true"
-            AllowPaging="true" IsDatabasePaging="false" runat="server" EnableCheckBoxSelect="true"
-            DataTextField="Name" KeepCurrentSelection="true"
-            DataIDField="Id" ClearSelectionBeforePaging="false" KeepPagedSelection="true">
+        <f:Grid ID="Grid1" IsFluid="true" Title="表格（跨页选中行）" EnableCollapse="false" PageSize="5" ShowBorder="true" ShowHeader="true" AllowPaging="true"
+            IsDatabasePaging="false" runat="server" EnableCheckBoxSelect="true" DataTextField="Name" KeepCurrentSelection="true" DataIDField="Id"
+            ClearSelectionBeforePaging="false" KeepPagedSelection="true">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
+                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" ColumnID="Name" />
                 <f:TemplateField ColumnID="Gender" HeaderText="性别">
                     <ItemTemplate>
                         <asp:Label ID="Label2" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
@@ -23,9 +22,9 @@
                 </f:TemplateField>
                 <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
                 <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
+                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major" DataTextFormatString="{0}"
+                    DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}" UrlEncode="true" Target="_blank"
+                    ExpandUnusedSpace="true" MinWidth="150px" />
                 <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
             </Columns>
         </f:Grid>
@@ -33,6 +32,10 @@
         <f:Button ID="Button1" runat="server" Text="选中行的ID列表" OnClick="Button1_Click">
         </f:Button>
         <br />
+        <f:Button ID="btnSelectCell" runat="server" Text="选择第二页姓名单元格" OnClick="btnSelectCell_Click" />
+        <f:Button ID="btnClearSelections" runat="server" Text="服务端清空全部选择" OnClick="btnClearSelections_Click" />
+        <f:Button ID="btnReadSelection" runat="server" Text="服务端读取选择" OnClick="btnReadSelection_Click" />
+        <f:Label ID="labServerSelection" runat="server" />
         <f:Label ID="labResult" EncodeText="false" runat="server">
         </f:Label>
         <br />

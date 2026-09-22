@@ -65,5 +65,9 @@ namespace FineUI.Pro.Examples.gridpaging {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::FineUI.Pro.Label labResult;
+        protected global::FineUI.Pro.Button btnSelectCell;
+        protected global::FineUI.Pro.Button btnClearSelections;
+        protected global::FineUI.Pro.Button btnReadSelection;
+        protected global::FineUI.Pro.Label labServerSelection;
     }
 }
