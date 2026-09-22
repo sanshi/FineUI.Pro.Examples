@@ -56,6 +56,10 @@ namespace FineUI.Pro.Examples.mobile.datalist {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::FineUI.Pro.Button btnSubmit;
+        protected global::FineUI.Pro.Toolbar ToolbarActions;
+        protected global::FineUI.Pro.Button btnSetSelection;
+        protected global::FineUI.Pro.Button btnClearSelection;
+        protected global::FineUI.Pro.Button btnRebindSelection;
         
         /// <summary>
         /// DataList1 control.

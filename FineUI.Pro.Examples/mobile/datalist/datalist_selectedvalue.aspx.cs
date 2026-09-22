@@ -21,7 +21,22 @@ namespace FineUI.Pro.Examples.mobile.datalist
 
         private void LoadData()
         {
-            DataList1.DataSource = DataSourceUtil.GetCountryTable();
+            LoadData(false);
+        }
+
+        private void LoadData(bool reverse)
+        {
+            DataTable source = DataSourceUtil.GetCountryTable();
+            if (reverse)
+            {
+                DataTable reversed = source.Clone();
+                for (int i = source.Rows.Count - 1; i >= 0; i--)
+                {
+                    reversed.ImportRow(source.Rows[i]);
+                }
+                source = reversed;
+            }
+            DataList1.DataSource = source;
             DataList1.DataBind();
 
             // 选中法国
@@ -38,6 +53,25 @@ namespace FineUI.Pro.Examples.mobile.datalist
                 row["Name"]);
         }
 
+
+        // 服务端设置选择，替换当前可取消的选中项。
+        protected void btnSetSelection_Click(object sender, EventArgs e)
+        {
+            DataList1.SelectedValue = "cn";
+        }
+
+        // 服务端清空选择。
+        protected void btnClearSelection_Click(object sender, EventArgs e)
+        {
+            DataList1.SelectedValue = null;
+        }
+
+        // 倒序重绑同一批列表项，并选中美国。
+        protected void btnRebindSelection_Click(object sender, EventArgs e)
+        {
+            LoadData(true);
+            DataList1.SelectedValue = "us";
+        }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {

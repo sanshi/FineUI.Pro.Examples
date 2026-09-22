@@ -22,6 +22,13 @@
                         <f:Button runat="server" Text="获取选中项" ID="btnSubmit" OnClick="btnSubmit_Click"></f:Button>
                     </Items>
                 </f:Toolbar>
+                <f:Toolbar ID="ToolbarActions" runat="server">
+                    <Items>
+                        <f:Button ID="btnSetSelection" Text="设置选择" OnClick="btnSetSelection_Click" runat="server"></f:Button>
+                        <f:Button ID="btnClearSelection" Text="清空选择" OnClick="btnClearSelection_Click" runat="server"></f:Button>
+                        <f:Button ID="btnRebindSelection" Text="重绑并选中" OnClick="btnRebindSelection_Click" runat="server"></f:Button>
+                    </Items>
+                </f:Toolbar>
             </Toolbars>
             <Items>
                 <f:DataList runat="server" ID="DataList1" OnItemDataBound="DataList1_ItemDataBound"
