@@ -11,6 +11,8 @@ namespace FineUI.Pro.Examples.grid
 {
     public partial class grid_groupfield_manycolumns : PageBase
     {
+        // 分组内部使用混合列宽，覆盖跨列分配时的累积舍入。
+        private static readonly int[] LEAF_WIDTHS = { 70, 100, 110, 150 };
         #region Page_Init
 
         // 注意：动态创建列的代码需要放置于 Page_Init（不是 Page_Load），这样每次构造页面时都会执行
@@ -63,7 +65,7 @@ namespace FineUI.Pro.Examples.grid
                 fhGroup.TextAlign = TextAlign.Center;
                 for (int i = 0; i < 18; i++)
                 {
-                    AddLeafColumn(fhGroup.Columns, LEAF_HEADER_TEXTS[i], String.Format("m{0}_fh_{1}", mo, i), 90, false);
+                    AddLeafColumn(fhGroup.Columns, LEAF_HEADER_TEXTS[i], String.Format("m{0}_fh_{1}", mo, i), LEAF_WIDTHS[i % LEAF_WIDTHS.Length], false);
                 }
 
                 FineUI.Pro.GroupField kpGroup = new FineUI.Pro.GroupField();
@@ -71,7 +73,7 @@ namespace FineUI.Pro.Examples.grid
                 kpGroup.TextAlign = TextAlign.Center;
                 for (int i = 0; i < 17; i++)
                 {
-                    AddLeafColumn(kpGroup.Columns, LEAF_HEADER_TEXTS[i], String.Format("m{0}_kp_{1}", mo, i), 90, false);
+                    AddLeafColumn(kpGroup.Columns, LEAF_HEADER_TEXTS[i], String.Format("m{0}_kp_{1}", mo, i), LEAF_WIDTHS[i % LEAF_WIDTHS.Length], false);
                 }
 
                 monthGroup.Columns.Add(fhGroup);
