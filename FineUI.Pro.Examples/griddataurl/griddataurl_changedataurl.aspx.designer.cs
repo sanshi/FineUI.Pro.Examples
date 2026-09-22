@@ -49,5 +49,6 @@ namespace FineUI.Pro.Examples.griddataurl
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::FineUI.Pro.Button btnRebind;
+        protected global::FineUI.Pro.Button btnReload;
     }
 }
