@@ -33,7 +33,7 @@
                                     </svg>
                                 </a>
                                 <a class="logo f-widget-header" href="./" title="FineUI.Pro" id="logoTitle" runat="server">FineUI.Pro</a>
-                                <div class="logo-subtitle">WebForms</div>
+                                <div class="logo-subtitle">Examples · WebForms</div>
                             </div>
                         </f:ContentPanel>
                         <f:Panel ID="leftPanel" CssClass="leftregion" BoxFlex="1" ShowBorder="false" ShowHeader="false" Layout="Fit" runat="server">

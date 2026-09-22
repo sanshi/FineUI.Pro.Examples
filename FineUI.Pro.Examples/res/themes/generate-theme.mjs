@@ -7,6 +7,10 @@
  *
  * 输入：本目录下各 {主题名}/theme.config
  * 输出：本目录下各 {主题名}/theme.css
+ *
+ * 本文件由私有仓的 tools/tasks/generate-theme.mjs 生成，请勿手工修改
+ * （改了下次同步会被覆盖）。要加主题就在本目录新建 {主题名}/theme.config，
+ * 然后运行 node generate-theme.mjs {主题名}，详见 README.txt。
  */
 
 import fs from 'node:fs';
@@ -376,6 +380,21 @@ function generateThemeVarsCss(themeData) {
 /**
  * 处理一个主题目录：读取 theme.config，生成 theme.css
  */
+// 只在内容真的变了才写文件。两个用途：
+//   ① 主题生成：theme.css 内容没变就不碰它，用户的文件 mtime 保持稳定；
+//   ② 同步链路：目标文件靠 (size, mtime) 判断是否跳过（见 lib.mjs 的 skipUnchanged），
+//      这里白写一次，下一轮同步就白拷一次。
+// 返回是否真的写了。
+function writeIfChanged(filePath, content) {
+    if (fs.existsSync(filePath)) {
+        try {
+            if (fs.readFileSync(filePath, 'utf-8') === content) return false;
+        } catch (_) { /* 读不了就当需要重写 */ }
+    }
+    fs.writeFileSync(filePath, content, 'utf-8');
+    return true;
+}
+
 function processThemeDir(themesDir, themeName) {
     const configPath = path.join(themesDir, themeName, 'theme.config');
     const config = parseConfigFile(fs.readFileSync(configPath, 'utf-8'));
@@ -389,8 +408,7 @@ function processThemeDir(themesDir, themeName) {
 
     const css = generateThemeVarsCss(themeData);
 
-    const outputFile = path.join(themesDir, themeName, 'theme.css');
-    fs.writeFileSync(outputFile, css, 'utf-8');
+    writeIfChanged(path.join(themesDir, themeName, 'theme.css'), css);
 
     const varCount = (css.match(/--f-/g) || []).length;
     return varCount;
