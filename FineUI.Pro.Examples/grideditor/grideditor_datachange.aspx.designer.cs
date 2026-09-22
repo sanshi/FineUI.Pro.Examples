@@ -131,6 +131,7 @@ namespace FineUI.Pro.Examples.grideditor {
 
         protected global::FineUI.Pro.Button btnRejectChanges;
         protected global::FineUI.Pro.Button btnReadChanges;
+        protected global::FineUI.Pro.Button btnCommitChanges;
         
         /// <summary>
         /// labResult 控件。

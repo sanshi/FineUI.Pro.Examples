@@ -47,6 +47,12 @@ namespace FineUI.Pro.Examples.grideditor
             labResult.Text = "未保存的修改记录数：" + Grid1.GetModifiedData().Count;
         }
 
+        protected void btnCommitChanges_Click(object sender, EventArgs e)
+        {
+            // 只接受当前客户端编辑结果；故意不写入会话，以便刷新核对数据源仍未变化。
+            PageContext.RegisterStartupScript(Grid1.GetCommitChangesReference());
+        }
+
         private DataRow CreateNewData(DataTable table, JObject modifiedRow)
         {
             DataRow rowData = table.NewRow();
