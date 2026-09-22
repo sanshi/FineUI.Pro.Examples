@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
         <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格（内存分页）" EnableCollapse="false" PageSize="5" ShowBorder="true" ShowHeader="true"
-            AllowPaging="true" IsDatabasePaging="false" runat="server" EnableCheckBoxSelect="true" Height="350px">
+            AllowPaging="true" AllowSorting="true" IsDatabasePaging="false" runat="server" EnableCheckBoxSelect="true" Height="350px">
             <Columns>
                 <f:RowNumberField EnablePagingNumber="true" />
                 <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
@@ -19,7 +19,7 @@
                         <asp:Label ID="Label2" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
                     </ItemTemplate>
                 </f:TemplateField>
-                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
+                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" ColumnID="Year" SortField="EntranceYear" />
                 <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
                 <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major" DataTextFormatString="{0}"
                     DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}" UrlEncode="true" Target="_blank"
@@ -45,6 +45,8 @@
         <br />
         <br />
         <strong>出于性能考虑，请在实际项目中使用数据库分页（不要使用内存分页）！</strong>
+        <f:Button ID="btnServerPage" Text="服务端切到第二页" runat="server" OnClick="btnServerPage_Click"></f:Button>
+        <f:Button ID="btnServerSort" Text="服务端按入学年份降序并回首页" runat="server" OnClick="btnServerSort_Click"></f:Button>
     </form>
 
     <script src="../res/js/grid.js"></script>

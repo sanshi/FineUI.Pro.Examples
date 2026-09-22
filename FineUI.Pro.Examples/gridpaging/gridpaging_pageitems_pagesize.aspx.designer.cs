@@ -76,5 +76,7 @@ namespace FineUI.Pro.Examples.gridpaging
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::FineUI.Pro.Button Button1;
+        protected FineUI.Pro.Button btnServerPage;
+        protected FineUI.Pro.Button btnServerSort;
     }
 }
