@@ -132,6 +132,12 @@ namespace FineUI.Pro.Examples.grideditor {
         protected global::FineUI.Pro.Button btnRejectChanges;
         protected global::FineUI.Pro.Button btnReadChanges;
         protected global::FineUI.Pro.Button btnCommitChanges;
+        protected global::FineUI.Pro.Button btnUpdateCells;
+        protected global::FineUI.Pro.Button btnAddRecord;
+        protected global::FineUI.Pro.Button btnAppendRecord;
+        protected global::FineUI.Pro.Button btnDeleteRow;
+        protected global::FineUI.Pro.Button btnForceDeleteRow;
+        protected global::FineUI.Pro.Button btnDeleteSelected;
         
         /// <summary>
         /// labResult 控件。
