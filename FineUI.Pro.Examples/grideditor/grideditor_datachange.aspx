@@ -75,6 +75,8 @@
         <br />
         <f:Button ID="Button2" runat="server" Text="保存数据" Enabled="false" OnClick="Button2_Click">
         </f:Button>
+        <f:Button ID="btnRejectChanges" runat="server" Text="服务端撤销编辑" ConfirmText="确定要撤销未保存的编辑？" OnClick="btnRejectChanges_Click" />
+        <f:Button ID="btnReadChanges" runat="server" Text="读取修改记录" OnClick="btnReadChanges_Click" />
         <br />
         <br />
         <f:Label ID="labResult" EncodeText="false" runat="server">
@@ -84,6 +86,7 @@
         <ul>
             <li>[保存数据]按钮默认禁用，当有数据变化时（删除行，新增行，修改单元格）启用</li>
             <li>数据重新绑定后，重新检查[保存数据]按钮的启用状态</li>
+            <li>[服务端撤销编辑]通过回发撤销未保存的修改，不重绑数据或回滚已保存的数据；撤销后可[读取修改记录]核对结果</li>
         </ul>
 
     </form>
