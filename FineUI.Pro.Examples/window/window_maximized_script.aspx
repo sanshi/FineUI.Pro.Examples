@@ -30,18 +30,18 @@
         <br />
 
         <br />
-        <f:Window ID="Window1" Width="650px" Height="300px" Icon="TagBlue" Title="窗体"
-            EnableCollapse="false" runat="server" EnableResize="true"
-            IsModal="false" AutoScroll="true" BodyPadding="10px" EnableMaximize="true">
+        <f:Window ID="Window1" Width="650px" Height="300px" Icon="TagBlue" Title="窗体" EnableCollapse="false" runat="server" EnableResize="true" IsModal="false"
+            AutoScroll="true" BodyPadding="10px" EnableMaximize="true">
             <Content>
                 <p>
                     <a href="http://tech.163.com/special/jobsdead/" target="_blank"><b>乔布斯</b></a>
                 </p>
                 <p>
-                    乔布斯于1955年2月24日出生，苹果创始人之一。今年8月苹果超越埃克森美孚成为全球最大市值企业，截止上季度持有现金达到762亿美金，甚至超过了美国政府国库存款。 
+                    乔布斯于1955年2月24日出生，苹果创始人之一。今年8月苹果超越埃克森美孚成为全球最大市值企业，截止上季度持有现金达到762亿美金，甚至超过了美国政府国库存款。
                 </p>
                 <p>
-                    遗憾的是，苹果的取得巨大成功还是无法给乔布斯一个健康的身体，乔布斯2003年被发现患有胰脏癌，随后又查出肝癌，危在旦夕的乔布斯在经历了8年的抗癌斗争、3次病休、若干次手术后，于2011年8月25日正式宣布从CEO位置辞职。2011年10月6日，乔布斯在苹果发布iPhone 4S后的第二天与世长辞。
+                    遗憾的是，苹果的取得巨大成功还是无法给乔布斯一个健康的身体，乔布斯2003年被发现患有胰脏癌，随后又查出肝癌，危在旦夕的乔布斯在经历了8年的抗癌斗争、3次病休、若干次手术后，于2011年8月25日正式宣布从CEO位置辞职。2011年10月6日，乔布斯在苹果发布iPhone
+                    4S后的第二天与世长辞。
                 </p>
                 <br />
                 <br />
@@ -53,9 +53,38 @@
                     </li>
                 </ul>
             </Content>
+            <Toolbars>
+                <f:Toolbar runat="server">
+                    <Items>
+                        <f:Button ID="btnServerMaximize" Text="服务端最大化" OnClick="btnServerMaximize_Click" runat="server" />
+                        <f:Button ID="btnServerRestore" Text="服务端还原" OnClick="btnServerRestore_Click" runat="server" />
+                        <f:Button ID="btnServerClose" Text="服务端关闭" OnClick="btnServerClose_Click" runat="server" />
+                        <f:CheckBox ID="cbBlockClose" Text="阻止关闭" runat="server" />
+                    </Items>
+                </f:Toolbar>
+            </Toolbars>
+            <Listeners>
+                <f:Listener Event="beforeclose" Handler="onBeforeServerWindowClose" />
+                <f:Listener Event="close" Handler="onServerWindowClose" />
+            </Listeners>
         </f:Window>
+        <f:Label ID="labWindowEvent" runat="server" />
     </form>
     <script>
+        var cbBlockCloseClientID = '<%= cbBlockClose.ClientID %>';
+        var labWindowEventClientID = '<%= labWindowEvent.ClientID %>';
+        // 关闭命令遵守 beforeclose 取消；close 回调在窗体隐藏完成后才执行。
+        function onBeforeServerWindowClose(event) {
+            if (F(cbBlockCloseClientID).getValue()) {
+                F(labWindowEventClientID).setText('关闭已取消');
+                return false;
+            }
+        }
+
+        function onServerWindowClose(event) {
+            F(labWindowEventClientID).setText('窗体已关闭');
+        }
+
 
         var Window1ClientID = '<%= Window1.ClientID %>';
 

@@ -10,6 +10,11 @@ namespace FineUI.Pro.Examples.iframe
 {
     public partial class parent_postback : PageBase
     {
+        protected void btnServerRefresh_Click(object sender, EventArgs e)
+        {
+            PageContext.RegisterStartupScript(Panel1.GetRefreshIFrameReference());
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             labResult.Text = "页面加载时间：" + DateTime.Now.ToLongTimeString();

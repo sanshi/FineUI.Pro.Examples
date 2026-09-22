@@ -83,5 +83,10 @@ namespace FineUI.Pro.Examples.window {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::FineUI.Pro.Window Window1;
+        protected global::FineUI.Pro.Button btnServerMaximize;
+        protected global::FineUI.Pro.Button btnServerRestore;
+        protected global::FineUI.Pro.Button btnServerClose;
+        protected global::FineUI.Pro.CheckBox cbBlockClose;
+        protected global::FineUI.Pro.Label labWindowEvent;
     }
 }
