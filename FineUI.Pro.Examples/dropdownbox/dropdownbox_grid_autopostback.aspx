@@ -44,11 +44,12 @@
         </f:Label>
         <br />
         <br />
-        注：
+        注：示例站在 Web.config 中全局设置 EnableImplicitChangeEvents="false"。
+        下拉框的 TextChanged 只在用户选中表格行时主动回发；其他按钮发起的回发不会顺带触发它。
         <ul>
-            <li>选中一项，会触发下拉框的 TextChanged 事件</li>
-            <li>点击[重置表单]按钮</li>
-            <li>点击[获取下拉框的选中值]，会同时触发下拉框的 TextChanged 和按钮的 Click 事件</li>
+            <li>在下拉表格中选中一行：立即回发，触发下拉框的 TextChanged 事件。</li>
+            <li>点击[重置表单]：仅在浏览器中清空选中值，不发起回发。</li>
+            <li>点击[获取下拉框的选中值]：回发并读取当前值，只触发按钮的 Click 事件。即使刚刚重置了选中值，也不会顺带触发 TextChanged。</li>
         </ul>
     </form>
     <script>
