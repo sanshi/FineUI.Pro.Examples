@@ -161,6 +161,9 @@
             // 注册表格行内删除事件
             var grid1 = F(grid1ClientID);
             grid1.el.on('click', '.action-btn.delete', function (event) {
+                // 删除链接是按钮型占位地址，先取消默认导航，避免执行脚本地址并触发 CSP。
+                event.preventDefault();
+
                 var targetEl = $(this);
                 var rowEl = targetEl.parents('.f-grid-row');
                 var rowData = grid1.getRowData(rowEl);

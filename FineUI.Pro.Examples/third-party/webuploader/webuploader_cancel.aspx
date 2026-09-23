@@ -207,6 +207,9 @@
 
             // 表格中的 取消上传 按钮
             grid1.el.on('click', 'a.thecanceluploadbutton', function (event) {
+                // 取消上传也是按钮型链接，先阻止占位地址的默认导航。
+                event.preventDefault();
+
                 var targetEl = $(this);
                 var rowEl = targetEl.parents('.f-grid-row');
                 var rowData = grid1.getRowData(rowEl);
