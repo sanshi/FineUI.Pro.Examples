@@ -788,7 +788,7 @@
 			<TreeNode Text="模拟树列（全选反选，客户端脚本）" NavigateUrl="~/grid/grid_simulate_tree_checkboxfield_clientscript.aspx">
 			</TreeNode>
 		</TreeNode>
-		<TreeNode Text="行命令（RenderField.Command）">
+		<TreeNode Text="行命令">
 			<TreeNode Text="行内按钮事件" NavigateUrl="~/grid/grid_rowcommand.aspx">
 			</TreeNode>
 			<TreeNode Text="行内按钮事件（客户端与服务端命令）" NavigateUrl="~/grid/grid_rowcommand_customcommand.aspx">
