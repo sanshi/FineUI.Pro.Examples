@@ -38,10 +38,10 @@
     <script>
 
         function renderActions(value, params) {
-            return '<a class="action editit" href="javascript:;">' +
+            return '<a class="action editit" href="#">' +
                         '<img class="f-grid-imagefield" src="../res/icon/pencil.png">' +
                    '</a>&nbsp;&nbsp;&nbsp;&nbsp;' +
-                   '<a class="action deleteit" href="javascript:;">' +
+                   '<a class="action deleteit" href="#">' +
                         '<img class="f-grid-imagefield" src="../res/icon/delete.png">' +
                    '</a>';
         }
@@ -54,6 +54,7 @@
             var grid1 = F(grid1ClientID);
 
             grid1.el.on('click', '.f-grid-cell-Actions .action.editit', function (event) {
+                event.preventDefault();
                 var targetEl = $(this);
                 var rowEl = targetEl.parents('.f-grid-row');
                 var rowData = grid1.getRowData(rowEl);
@@ -68,6 +69,7 @@
 
 
             grid1.el.on('click', '.f-grid-cell-Actions .action.deleteit', function (event) {
+                event.preventDefault();
                 var targetEl = $(this);
                 var rowEl = targetEl.parents('.f-grid-row');
                 var rowData = grid1.getRowData(rowEl);

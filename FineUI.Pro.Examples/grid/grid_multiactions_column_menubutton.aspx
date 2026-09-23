@@ -34,11 +34,11 @@
                 <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
                 <f:TemplateField Width="150px" ColumnID="Actions">
                     <ItemTemplate>
-                        <a class="action editit" href="javascript:;">
+                        <a class="action editit" href="#">
                             <img class="f-grid-imagefield" src="../res/icon/pencil.png">
                         </a>
                         &nbsp;&nbsp;
-                        <a class="action deleteit" href="javascript:;">
+                        <a class="action deleteit" href="#">
                             <img class="f-grid-imagefield" src="../res/icon/delete.png">
                         </a>
                         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -135,6 +135,7 @@
             var wnd = F(windowClientID);
 
             grid.el.on('click', '.f-grid-cell-Actions .action.editit', function (event) {
+                event.preventDefault();
                 var targetEl = $(this);
                 var rowEl = targetEl.parents('.f-grid-row');
                 var rowData = grid.getRowData(rowEl);
@@ -149,6 +150,7 @@
 
 
             grid.el.on('click', '.f-grid-cell-Actions .action.deleteit', function (event) {
+                event.preventDefault();
                 var targetEl = $(this);
                 var rowEl = targetEl.parents('.f-grid-row');
                 var rowData = grid.getRowData(rowEl);

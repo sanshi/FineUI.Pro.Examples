@@ -94,7 +94,7 @@
             F(grid1ClientID).addNewRecord({
                 "Name": "技术服务",
                 "TaxPercent": 0.03,
-                'Delete': '<a href="javascript:;"><img src="../res/icon/delete.png"/></a>'
+                'Delete': '<a href="#"><img src="../res/icon/delete.png"/></a>'
             }, true);
         }
 
@@ -191,6 +191,7 @@
             var grid = F(grid1ClientID);
             // 注册点击行中删除图片的事件处理函数
             grid.el.on('click', '.f-grid-cell-Delete a', function (event) {
+                event.preventDefault();
                 // 删除选中行之前先弹出确认对话框
                 F.confirm({
                     message: '删除选中行？',

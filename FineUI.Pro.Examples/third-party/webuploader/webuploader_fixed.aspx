@@ -67,7 +67,7 @@
             }
 
 
-            var html = '<a href="javascript:;" class="theuploadbutton">上传</a>';
+            var html = '<a href="#" class="theuploadbutton">上传</a>';
 
             // 状态、保存到服务器的文件名、
             var status = params.rowValue['FileStatus'];
@@ -78,7 +78,7 @@
                 var downloadUrl = BASE_URL + 'common/Download.ashx?file=' + encodeURIComponent(savedName);
                 html += '&nbsp;&nbsp;<a href="' + downloadUrl + '" target="_blank" class="thedownloadbutton">下载</a>';
 
-                html += '&nbsp;&nbsp;<a href="javascript:;" class="thedeletebutton">删除</a>';
+                html += '&nbsp;&nbsp;<a href="#" class="thedeletebutton">删除</a>';
             }
 
             return html;

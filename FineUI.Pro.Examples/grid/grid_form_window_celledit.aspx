@@ -190,8 +190,8 @@
                     'EntranceDate': F(dpFormEntranceDateClientID).getValue(),
                     'AtSchool': F(cbFormAtSchoolClientID).getValue(),
                     'Major': F(ddlFormMajorClientID).getValue(),
-                    'Edit': '<a href="javascript:;"><img class="f-grid-imagefield" src="../res/icon/pencil.png"></a>',
-                    'Delete': '<a href="javascript:;"><img class="f-grid-imagefield" src="../res/icon/delete.png"></a>'
+                    'Edit': '<a href="#"><img class="f-grid-imagefield" src="../res/icon/pencil.png"></a>',
+                    'Delete': '<a href="#"><img class="f-grid-imagefield" src="../res/icon/delete.png"></a>'
                 }, true);
             }
 
@@ -204,6 +204,7 @@
             var grid1 = F(gridClientID);
 
             grid1.el.on('click', '.f-grid-cell-Edit a,.f-grid-cell-Delete a', function (event) {
+                event.preventDefault();
                 var targetEl = $(this);
                 var rowEl = targetEl.parents('.f-grid-row');
                 var rowData = grid1.getRowData(rowEl);

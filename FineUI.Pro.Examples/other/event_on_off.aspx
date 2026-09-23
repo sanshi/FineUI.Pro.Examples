@@ -23,7 +23,7 @@
         <f:Button ID="btnDeleteAll" runat="server" Text="删除全部点击事件" ClickHandler="onDeleteAllClick"></f:Button>
         <br />
         <br />
-        触发的事件列表（<a id="clearResult" href="javascript:;">clear</a>）：
+        触发的事件列表（<a id="clearResult" href="#">clear</a>）：
         <ul id="result">
         </ul>
         <br />
@@ -51,7 +51,8 @@
 
         function onCustomEventClick(event) {
             (function(number) {
-                F(btnTestClientID).on('click', function() {
+                F(btnTestClientID).on('click', function(event) {
+                    event.preventDefault();
                     $('#result').append('<li>点击事件（' + number + '）</li>');
                 });
             })(customEventNumber);

@@ -16,7 +16,7 @@
         Target="_blank" NavigateUrl="http://www.google.com/" runat="server">
     </f:HyperLink>
     <br />
-    <f:HyperLink ID="HyperLink2" Enabled="false" Text="点击弹出对话框" NavigateUrl="javascript:;"
+    <f:HyperLink ID="HyperLink2" Enabled="false" Text="点击弹出对话框" NavigateUrl="#"
         ClickHandler="onHyperLink2Click" runat="server">
     </f:HyperLink>
     <br />

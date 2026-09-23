@@ -42,12 +42,12 @@
 
 
         function renderActions(value, params) {
-            //return '<a class="action editit" href="javascript:;">' +
+            //return '<a class="action editit" href="#">' +
             //            '<img class="f-grid-imagefield" src="../res/icon/pencil.png">' +
             //       '</a>';
             return $('<a>', {
                 'class': 'action editit',
-                'href': 'javascript:;'
+                'href': '#'
             }).append($('<img>').addClass('f-grid-imagefield').attr('src', '../res/icon/pencil.png'));
         }
 
@@ -62,6 +62,7 @@
             var window1 = F(window1ClientID);
 
             grid1.el.on('click', '.f-grid-cell-Actions .action.editit', function (event) {
+                event.preventDefault();
                 var targetEl = $(this);
                 var rowEl = targetEl.parents('.f-grid-row');
                 var rowData = grid1.getRowData(rowEl);

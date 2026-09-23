@@ -96,7 +96,7 @@
         var grid1ClientID = '<%= Grid1.ClientID %>';
 
         function renderDelete() {
-            return '<a href="javascript:;" class="action-btn delete"><img class="f-grid-imagefield" src="../res/icon/delete.png"></a>';
+            return '<a href="#" class="action-btn delete"><img class="f-grid-imagefield" src="../res/icon/delete.png"></a>';
         }
 
         function renderGender(value) {
@@ -163,7 +163,7 @@
             // 注册表格行内删除事件
             var grid1 = F(grid1ClientID);
             grid1.el.on('click', '.action-btn.delete', function (event) {
-                // 删除链接是按钮型占位地址，先取消默认导航，避免执行脚本地址并触发 CSP。
+                // 删除链接是按钮型占位地址，先取消默认导航，避免改写页面 hash。
                 event.preventDefault();
 
                 var targetEl = $(this);

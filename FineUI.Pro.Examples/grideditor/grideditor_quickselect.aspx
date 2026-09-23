@@ -135,8 +135,8 @@
                 'EntranceDate': '2015-09-01',
                 'AtSchool': false,
                 'Major': '化学系',
-                'Delete': '<a href="javascript:;"><img src="../res/icon/delete.png"/></a>',
-                'QuickSelect': '<a href="javascript:;"><img src="../res/icon/zoom.png"/></a>'
+                'Delete': '<a href="#"><img src="../res/icon/delete.png"/></a>',
+                'QuickSelect': '<a href="#"><img src="../res/icon/zoom.png"/></a>'
             }, true, false);
 
             // 选中新增的行
@@ -209,6 +209,7 @@
 
             // 点击行中删除图片
             grid1.el.on('click', '.f-grid-cell-Delete a', function (event) {
+                event.preventDefault();
                 // 删除选中行之前先弹出确认对话框
                 F.confirm({
                     message: '删除选中行？',
@@ -221,6 +222,7 @@
 
             // 点击行中的快速选择图片
             grid1.el.on('click', '.f-grid-cell-QuickSelect a', function (event) {
+                event.preventDefault();
                 var cnode = $(this);
 
                 // 设置快速选择对应的表格行ID

@@ -64,10 +64,11 @@
             var grid1 = F(Grid1ClientID);
 
             var tableEl = grid1.el.find('.f-grid-bodyct .f-grid-table');
-            tableEl.after('<div class="morebutton"><a href="javascript:;">加载更多...</a></div>');
+            tableEl.after('<div class="morebutton"><a href="#">加载更多...</a></div>');
 
 
-            grid1.el.on('click', morebuttonSelector, function () {
+            grid1.el.on('click', morebuttonSelector, function (event) {
+                event.preventDefault();
                 var morebuttonEl = $(this);
                 if (morebuttonEl.attr('disabled')) {
                     return;

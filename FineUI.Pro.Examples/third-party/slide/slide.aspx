@@ -42,13 +42,13 @@
                             <div id="menu">
                                 <ul>
                                     <li class="fbar">&nbsp;</li>
-                                    <li class="menuItem"><a href="javascript:;">
+                                    <li class="menuItem"><a href="#">
                                         <img src="./img/sample_slides/thumb_macbook.png" alt="thumbnail" /></a></li>
-                                    <li class="menuItem"><a href="javascript:;">
+                                    <li class="menuItem"><a href="#">
                                         <img src="./img/sample_slides/thumb_iphone.png" alt="thumbnail" /></a></li>
-                                    <li class="menuItem"><a href="javascript:;">
+                                    <li class="menuItem"><a href="#">
                                         <img src="./img/sample_slides/thumb_imac.png" alt="thumbnail" /></a></li>
-                                    <li class="menuItem"><a href="javascript:;">
+                                    <li class="menuItem"><a href="#">
                                         <img src="./img/sample_slides/thumb_about.png" alt="thumbnail" /></a></li>
                                 </ul>
                             </div>

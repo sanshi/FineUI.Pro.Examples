@@ -88,7 +88,7 @@ namespace FineUI.Pro.Examples.mobile
             string text = topMenu.Value<string>("text");
 
             e.Item.Text = String.Format("<div class=\"item-text\">{0}</div>", text);
-            e.Item.NavigateUrl = "javascript:;";
+            e.Item.NavigateUrl = "#";
             e.Item.ShowArrow = true;
             
         }

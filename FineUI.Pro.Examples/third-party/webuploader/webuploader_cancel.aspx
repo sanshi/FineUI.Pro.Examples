@@ -118,7 +118,7 @@
             //        'FileType': file.ext,
             //        'FileSize': file.size,
             //        'FileStatus': '等待上传',
-            //        'FileDelete': '<a href="javascript:;" class="thecanceluploadbutton">取消上传</a>'
+            //        'FileDelete': '<a href="#" class="thecanceluploadbutton">取消上传</a>'
             //    }, true);
             //});
 
@@ -133,7 +133,7 @@
                             'FileType': file.ext,
                             'FileSize': file.size,
                             'FileStatus': '等待上传',
-                            'FileDelete': '<a href="javascript:;" class="thecanceluploadbutton">取消上传</a>'
+                            'FileDelete': '<a href="#" class="thecanceluploadbutton">取消上传</a>'
                         }
                     });
                 });

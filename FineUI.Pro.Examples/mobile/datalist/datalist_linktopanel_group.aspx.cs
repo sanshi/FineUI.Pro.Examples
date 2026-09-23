@@ -40,7 +40,7 @@ namespace FineUI.Pro.Examples.mobile.datalist
                 HttpUtility.HtmlEncode(row["Name"]), 
                 HttpUtility.HtmlEncode(row["Desc"]));
 
-            e.Item.NavigateUrl = "javascript:;";
+            e.Item.NavigateUrl = "#";
             e.Item.ShowArrow = true;
 
         }
