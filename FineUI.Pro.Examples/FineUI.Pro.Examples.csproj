@@ -10178,7 +10178,7 @@
     <Folder Include="test\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="res\themes\generate-theme.bat" />
+    <Content Include="res\themes\生成并监听主题.bat" />
     <Content Include="res\themes\image_blue_sky\theme.config" />
     <Content Include="res\themes\image_green_rain\theme.config" />
     <Content Include="res\themes\image_purple_fog\theme.config" />
