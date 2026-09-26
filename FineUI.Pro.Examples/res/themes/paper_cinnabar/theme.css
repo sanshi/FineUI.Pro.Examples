@@ -1,0 +1,71 @@
+/* FineUI 主题变量 - paper_cinnabar */
+/* 由 generate-theme.js 自动生成，请勿手动修改 */
+
+:root {
+    /* 核心颜色 */
+    --f-content-border-color: #c8b99c;
+    --f-content-background-color: #f4eddd;
+    --f-content-text-color: #302c25;
+    --f-header-border-color: #c8b99c;
+    --f-header-background-color: #e6dac2;
+    --f-header-text-color: #302c25;
+    --f-default-border-color: #b5a484;
+    --f-default-background-color: #faf5e9;
+    --f-default-text-color: #302c25;
+    --f-hover-border-color: #a33b30;
+    --f-hover-background-color: #eadeca;
+    --f-hover-text-color: #842d25;
+    --f-active-border-color: #923229;
+    --f-active-background-color: #a33b30;
+    --f-active-text-color: #fff8eb;
+    --f-error-border-color: #ad392f;
+    --f-error-background-color: #fae4db;
+    --f-error-text-color: #8e2e25;
+    --f-border-radius: 2px;
+
+    /* 派生变量 */
+    --f-primary-background-color: #a33b30;
+    --f-primary-text-color: #fff8eb;
+    --f-tabstrip-inkbar-color: #a33b30;
+    --f-focus-shadow-alpha: .2;
+    --f-focus-shadow-percent: 20%;
+    --f-header-hover-border-color: #a33b30;
+    --f-header-hover-background-color: #eadeca;
+    --f-header-hover-text-color: #842d25;
+    --f-header-active-border-color: #923229;
+    --f-header-active-background-color: #a33b30;
+    --f-header-active-text-color: #fff8eb;
+    --f-index-header-border-color: #c8b99c;
+    --f-index-header-background-color: #e6dac2;
+    --f-index-header-text-color: #302c25;
+    --f-index-hover-border-color: #a33b30;
+    --f-index-hover-background-color: #eadeca;
+    --f-index-hover-text-color: #842d25;
+    --f-index-active-border-color: #923229;
+    --f-index-active-background-color: #a33b30;
+    --f-index-active-text-color: #fff8eb;
+
+    /* 预计算颜色 */
+    --f-content-bg-darken-1: #f3ebd9;
+    --f-content-bg-darken-4: #efe6cf;
+    --f-content-bg-darken-5: #eee4cb;
+    --f-content-bg-darken-5-d20: #eee4cb;
+    --f-content-bg-darken-10: #e9daba;
+    --f-content-bg-darken-30: #d2b574;
+    --f-content-bg-darken-35: #ccac62;
+    --f-content-bg-darken-40: #c7a350;
+    --f-content-border-lighten-5: #cbbca1;
+    --f-content-border-lighten-15: #d0c3ab;
+    --f-hover-bg-darken-5: #e4d4ba;
+    --f-active-bg-darken-5: #9b382e;
+    --f-default-bg-darken-15: #eddaae;
+    --f-primary-bg-dark: #822f26;
+    --f-primary-bg-hover: #8b3229;
+    --f-checkbox-switch-color: #808080;
+}
+
+/* 主题特有样式 */
+/* 让浏览器原生滚动条等附属界面保持浅色外观。 */
+:root {
+    color-scheme: light;
+}

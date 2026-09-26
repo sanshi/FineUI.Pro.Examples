@@ -1,0 +1,79 @@
+/* FineUI 主题变量 - plum_mint */
+/* 由 generate-theme.js 自动生成，请勿手动修改 */
+
+:root {
+    /* 核心颜色 */
+    --f-content-border-color: #594765;
+    --f-content-background-color: #241c2e;
+    --f-content-text-color: #f0e8f5;
+    --f-header-border-color: #594765;
+    --f-header-background-color: #34273f;
+    --f-header-text-color: #f0e8f5;
+    --f-default-border-color: #756383;
+    --f-default-background-color: #30253b;
+    --f-default-text-color: #f0e8f5;
+    --f-hover-border-color: #b5efcf;
+    --f-hover-background-color: #45344f;
+    --f-hover-text-color: #d0f7e0;
+    --f-active-border-color: #b5efcf;
+    --f-active-background-color: #b5efcf;
+    --f-active-text-color: #241c2e;
+    --f-error-border-color: #f29baf;
+    --f-error-background-color: #472b3c;
+    --f-error-text-color: #ffc1d0;
+    --f-border-radius: 10px;
+
+    /* 派生变量 */
+    --f-primary-background-color: #b5efcf;
+    --f-primary-text-color: #241c2e;
+    --f-tabstrip-inkbar-color: #b5efcf;
+    --f-focus-shadow-alpha: .4;
+    --f-focus-shadow-percent: 40%;
+    --f-header-hover-border-color: #b5efcf;
+    --f-header-hover-background-color: #45344f;
+    --f-header-hover-text-color: #d0f7e0;
+    --f-header-active-border-color: #b5efcf;
+    --f-header-active-background-color: #b5efcf;
+    --f-header-active-text-color: #241c2e;
+    --f-index-header-border-color: #594765;
+    --f-index-header-background-color: #1b1424;
+    --f-index-header-text-color: #f0e8f5;
+    --f-index-hover-border-color: #b5efcf;
+    --f-index-hover-background-color: #45344f;
+    --f-index-hover-text-color: #d0f7e0;
+    --f-index-active-border-color: #b5efcf;
+    --f-index-active-background-color: #b5efcf;
+    --f-index-active-text-color: #241c2e;
+
+    /* 预计算颜色 */
+    --f-content-bg-darken-1: #261e31;
+    --f-content-bg-darken-4: #3d304f;
+    --f-content-bg-darken-5: #403151;
+    --f-content-bg-darken-5-d20: #4e3d64;
+    --f-content-bg-darken-10: #392c49;
+    --f-content-bg-darken-30: #644d7f;
+    --f-content-bg-darken-35: #6e568d;
+    --f-content-bg-darken-40: #795e9a;
+    --f-content-border-lighten-5: #624e6f;
+    --f-content-border-lighten-15: #735c83;
+    --f-hover-bg-darken-5: #4f3c5a;
+    --f-active-bg-darken-5: #b9f0d1;
+    --f-default-bg-darken-15: #59456e;
+    --f-primary-bg-dark: #70e0a2;
+    --f-primary-bg-hover: #81e4ad;
+    --f-checkbox-switch-color: #8f8f8f;
+
+    /* 条件分支覆盖 */
+    --f-locked-left-shadow: inset 10px 0 8px -8px #735c83;
+    --f-locked-right-shadow: inset -10px 0 8px -8px #735c83;
+    --f-center-tabstrip-shadow: 0 1px 1px 0 #624e6f;
+    --f-sidebar-shadow: 1px 0 1px 0 #624e6f;
+    --f-sidebar-left-shadow: 1px 0 1px 0 #624e6f;
+    --f-radiobutton-dot-color: #f0e8f5;
+}
+
+/* 主题特有样式 */
+/* 让浏览器原生滚动条与表单附属界面采用深色外观。 */
+:root {
+    color-scheme: dark;
+}

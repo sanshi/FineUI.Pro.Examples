@@ -908,6 +908,12 @@
     <Content Include="res\languages\zh_UEY.js" />
     <Content Include="res\themes\custom_default\theme.config" />
     <Content Include="res\themes\custom_default\theme.css" />
+    <Content Include="res\themes\plum_mint\theme.config" />
+    <Content Include="res\themes\plum_mint\theme-extra.css" />
+    <Content Include="res\themes\plum_mint\theme.css" />
+    <Content Include="res\themes\paper_cinnabar\theme.config" />
+    <Content Include="res\themes\paper_cinnabar\theme-extra.css" />
+    <Content Include="res\themes\paper_cinnabar\theme.css" />
     <Content Include="res\themes\generate-theme.mjs" />
     <Content Include="res\themes\image_blue_sky\sky.jpg" />
     <Content Include="res\themes\image_blue_sky\theme-extra.css" />
