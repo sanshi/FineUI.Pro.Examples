@@ -22,7 +22,7 @@
                     <Items>
                         <f:TextBox ID="tbxUserName" Label="用户名" Required="true" ShowRedStar="true" runat="server" NextFocusControl="tbxPassword">
                         </f:TextBox>
-                        <f:TextBox ID="tbxPassword" Label="密码" TextMode="Password" Required="true" ShowRedStar="true" runat="server" NextFocusControl="btnLogin">
+                        <f:TextBox ID="tbxPassword" Label="密码" TextMode="Password" Required="true" ShowRedStar="true" runat="server" NextClickControl="btnLogin">
                         </f:TextBox>
                     </Items>
                 </f:SimpleForm>

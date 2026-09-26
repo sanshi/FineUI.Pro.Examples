@@ -15,7 +15,7 @@
                 <f:TextBox ID="tbxUserName" runat="server" Label="用户名" Required="true" NextFocusControl="tbxPassword" EnableBlurEvent="true" OnBlur="tbxUserName_Blur"
                     ShowRedStar="true" Text="admin">
                 </f:TextBox>
-                <f:TextBox ID="tbxPassword" runat="server" Label="密码" Required="true" ShowRedStar="true" NextFocusControl="btnRegister"
+                <f:TextBox ID="tbxPassword" runat="server" Label="密码" Required="true" ShowRedStar="true" NextClickControl="btnRegister"
                     TextMode="Password">
                 </f:TextBox>
                 <f:Button ID="btnRegister" runat="server" Text="注册" OnClick="btnRegister_Click"
