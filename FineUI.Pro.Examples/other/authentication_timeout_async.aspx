@@ -33,22 +33,20 @@
         </ol>
     </form>
     <script>
-
-
         function onRegisterHookClick(event) {
-            F.beforeAjaxSuccess(function (data) {
+            F.beforeAjaxSuccess(function(data, textStatus, xhr) {
 
-                // 通过返回的字符串，判断当前是否登陆超时，执行跳转
+                // Pro 的成功钩子沿用只接收业务脚本的行为。
                 if (data.indexOf('window.location.href=') === 0) {
 
                     // F.confirm是异步函数，直接返回
                     F.confirm({
                         message: '登陆超时，是否跳转到首页？',
-                        ok: function () {
+                        ok: function() {
                             // 重新执行返回的脚本
                             new Function(data)();
                         },
-                        cancel: function () {
+                        cancel: function() {
                             // 继续留在当前页面，啥也不做
                         }
                     });

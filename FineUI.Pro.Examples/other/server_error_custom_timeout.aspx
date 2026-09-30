@@ -15,9 +15,8 @@
         <br />
     </form>
     <script>
+        F.beforeAjaxError(function(data, textStatus, xhr) {
 
-        F.beforeAjaxError(function (data, textStatus) {
-            
             if (textStatus === 'timeout') {
                 showCenterNotify('AJAX请求超时！', 'error');
             }
