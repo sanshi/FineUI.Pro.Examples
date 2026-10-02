@@ -37,6 +37,11 @@
         </f:Button>
         <br />
         <br />
+        <f:Button Text="回发时保持按钮可用" DisableControlBeforePostBack="false" runat="server" ID="Button7"
+            OnClick="Button1_Click">
+        </f:Button>
+        <br />
+        <br />
         注：
         <ul>
             <li>为了观察Ajax提示信息，所有按钮动作在后台都会睡眠1秒钟。</li>
