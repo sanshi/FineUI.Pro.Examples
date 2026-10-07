@@ -23,7 +23,7 @@
                     </ItemTemplate>
                 </f:TemplateField>
                 <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                <f:BoundField DataField="EntranceDate" DataFormatString="{0:yyyy/MM/dd}" HeaderText="入学日期" />
+                <f:BoundField DataField="EntranceDate" DataFormatString="{0:yyyy-MM-dd}" HeaderText="入学日期" />
                 <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
                 <f:BoundField DataToolTipField="Major" DataField="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" />
             </Columns>

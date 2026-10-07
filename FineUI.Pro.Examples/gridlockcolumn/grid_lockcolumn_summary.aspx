@@ -43,7 +43,7 @@
                 <f:BoundField EnableLock="true" Locked="true" DataField="Fee" ColumnID="Fee" HeaderText="学费" />
                 <f:BoundField EnableLock="true" Locked="true" DataField="ExtraFee" ColumnID="ExtraFee" HeaderText="学杂费" />
                 <f:ImageField ColumnID="Group" EnableLock="true" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField EnableLock="true" DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="注册日期" />
+                <f:BoundField EnableLock="true" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
             </Columns>
         </f:Grid>
         <br />

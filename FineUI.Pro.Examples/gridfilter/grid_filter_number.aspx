@@ -42,7 +42,7 @@
                     UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px">
                 </f:HyperLinkField>
                 <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField ColumnID="LogTime" DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="注册日期" EnableFilter="true">
+                <f:BoundField ColumnID="LogTime" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" EnableFilter="true">
                     <Filter EnableMultiConditions="true">
                         <Operator>
                             <f:DropDownList ID="DropDownList3" runat="server">

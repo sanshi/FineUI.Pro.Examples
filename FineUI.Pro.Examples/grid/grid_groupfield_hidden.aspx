@@ -15,7 +15,7 @@
             <Columns>
                 <f:RowNumberField />
                 <f:BoundField DataField="Year" HeaderText="统计年份" />
-                <f:BoundField BoxFlex="1" DataField="LogTime" TextAlign="Center" DataFormatString="{0:yyyy/MM/dd}" HeaderText="记录时间" />
+                <f:BoundField BoxFlex="1" DataField="LogTime" TextAlign="Center" DataFormatString="{0:yyyy-MM-dd}" HeaderText="记录时间" />
                 <f:GroupField ColumnID="anhui" HeaderText="安徽省" TextAlign="Center">
                     <Columns>
                         <f:GroupField HeaderText="合肥市" TextAlign="Center">

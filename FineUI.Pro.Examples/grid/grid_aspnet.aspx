@@ -29,7 +29,7 @@
                     Target="_blank" />
                 <%--<asp:ImageField DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组">
                 </asp:ImageField>--%>
-                <asp:BoundField DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="注册日期" />
+                <asp:BoundField DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
             </Columns>
         </asp:GridView>
     </form>

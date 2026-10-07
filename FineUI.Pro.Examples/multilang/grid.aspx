@@ -25,7 +25,7 @@
                 <f:HyperLinkField ColumnID="Major" HeaderText="<%$ Resources:Field_Major %>" DataToolTipField="Major" DataTextField="Major"
                     DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
                     UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
-                <f:BoundField Width="150px" DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="<%$ Resources:Field_LogTime %>" />
+                <f:BoundField Width="150px" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="<%$ Resources:Field_LogTime %>" />
             </Columns>
         </f:Grid>
         <br />

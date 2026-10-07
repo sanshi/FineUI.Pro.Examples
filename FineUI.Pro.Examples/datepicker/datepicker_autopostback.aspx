@@ -14,7 +14,7 @@
                 <f:DatePicker runat="server" Required="true" OnTextChanged="DatePicker1_TextChanged" Label="开始日期" EmptyText="请选择开始日期" ID="DatePicker1"
                     ShowRedStar="true">
                 </f:DatePicker>
-                <f:DatePicker ID="DatePicker2" Required="true" Readonly="false" CompareControl="DatePicker1" DateFormatString="yyyy/MM/dd"
+                <f:DatePicker ID="DatePicker2" Required="true" Readonly="false" CompareControl="DatePicker1" DateFormatString="yyyy-MM-dd"
                     CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" Label="结束日期" runat="server" ShowRedStar="true">
                 </f:DatePicker>
                 <f:Button ID="Button1" runat="server" ValidateForms="SimpleForm1" Text="提交表单" OnClick="Button1_Click">
@@ -30,7 +30,7 @@
                 <f:DatePicker runat="server" Required="true" EnableDateSelectEvent="true" OnDateSelect="DatePicker3_DateSelect" Label="开始日期" EmptyText="请选择开始日期"
                     ID="DatePicker3" ShowRedStar="true">
                 </f:DatePicker>
-                <f:DatePicker ID="DatePicker4" Required="true" Readonly="false" CompareControl="DatePicker3" DateFormatString="yyyy/MM/dd"
+                <f:DatePicker ID="DatePicker4" Required="true" Readonly="false" CompareControl="DatePicker3" DateFormatString="yyyy-MM-dd"
                     CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" Label="结束日期" runat="server" ShowRedStar="true">
                 </f:DatePicker>
                 <f:Button ID="Button2" runat="server" ValidateForms="SimpleForm2" Text="提交表单" OnClick="Button2_Click">

@@ -23,7 +23,7 @@
                 <f:RenderField ColumnID="Size" DataField="Size" HeaderText="大小">
                 </f:RenderField>
                 <f:RenderField Width="150px" ColumnID="ModifyDate" DataField="ModifyDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy/MM/dd" HeaderText="修改日期">
+                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="修改日期">
                 </f:RenderField>
             </Columns>
         </f:Grid>

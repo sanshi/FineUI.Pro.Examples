@@ -20,7 +20,7 @@ namespace FineUI.Pro.Examples.datepicker
         {
             labResult.Text = String.Format("开始日期：{0}  结束日期：{1}",
                 DatePicker1.Text,
-                DatePicker2.SelectedDate.HasValue ? DatePicker2.SelectedDate.Value.ToString("yyyy/MM/dd") : "Empty");
+                DatePicker2.SelectedDate.HasValue ? DatePicker2.SelectedDate.Value.ToString("yyyy-MM-dd") : "Empty");
         }
 
         protected void DatePicker1_TextChanged(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace FineUI.Pro.Examples.datepicker
         {
             labResult2.Text = String.Format("开始日期：{0}  结束日期：{1}",
                 DatePicker3.Text,
-                DatePicker4.SelectedDate.HasValue ? DatePicker4.SelectedDate.Value.ToString("yyyy/MM/dd") : "Empty");
+                DatePicker4.SelectedDate.HasValue ? DatePicker4.SelectedDate.Value.ToString("yyyy-MM-dd") : "Empty");
         }
 
         
@@ -54,7 +54,7 @@ namespace FineUI.Pro.Examples.datepicker
         //{
         //    labResult3.Text = String.Format("开始日期：{0}  结束日期：{1}",
         //        DatePicker5.Text,
-        //        DatePicker6.SelectedDate.HasValue ? DatePicker6.SelectedDate.Value.ToString("yyyy/MM/dd") : "Empty");
+        //        DatePicker6.SelectedDate.HasValue ? DatePicker6.SelectedDate.Value.ToString("yyyy-MM-dd") : "Empty");
         //}
 
         //protected void DatePicker5_Blur(object sender, EventArgs e)

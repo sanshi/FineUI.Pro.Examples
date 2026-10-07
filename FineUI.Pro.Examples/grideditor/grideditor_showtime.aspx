@@ -37,9 +37,9 @@
                     </Editor>
                 </f:RenderField>
                 <f:RenderField Width="180px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy/MM/dd HH:mm:ss" HeaderText="入学日期">
+                    Renderer="Date" RendererArgument="yyyy-MM-dd HH:mm:ss" HeaderText="入学日期">
                     <Editor>
-                        <f:DatePicker ID="DatePicker1" Required="true" runat="server" DateFormatString="yyyy/MM/dd HH:mm:ss" ShowTime="true">
+                        <f:DatePicker ID="DatePicker1" Required="true" runat="server" DateFormatString="yyyy-MM-dd HH:mm:ss" ShowTime="true">
                         </f:DatePicker>
                     </Editor>
                 </f:RenderField>
@@ -51,7 +51,7 @@
                     </Editor>
                 </f:RenderField>
                 <f:RenderField Width="180px" ColumnID="LogTime" DataField="LogTime" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy/MM/dd HH:mm:ss" HeaderText="注册日期">
+                    Renderer="Date" RendererArgument="yyyy-MM-dd HH:mm:ss" HeaderText="注册日期">
                 </f:RenderField>
             </Columns>
         </f:Grid>
@@ -66,8 +66,8 @@
         <br />
         为了正确的显示和编辑时间，请注意如下属性：
         <ul>
-            <li>入学日期列（RenderField）：FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd HH:mm:ss"</li>
-            <li>入学日期的编辑表单字段（DatePicker）：DateFormatString="yyyy/MM/dd HH:mm:ss" ShowTime="true"</li>
+            <li>入学日期列（RenderField）：FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd HH:mm:ss"</li>
+            <li>入学日期的编辑表单字段（DatePicker）：DateFormatString="yyyy-MM-dd HH:mm:ss" ShowTime="true"</li>
         </ul>
     </form>
     <script>

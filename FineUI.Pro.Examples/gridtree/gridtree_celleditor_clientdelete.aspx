@@ -53,7 +53,7 @@
                     </Editor>
                 </f:RenderField>
                 <f:RenderField Width="150px" ColumnID="ModifyDate" DataField="ModifyDate" HeaderText="修改日期" FieldType="Date" Renderer="Date"
-                    RendererArgument="yyyy/MM/dd">
+                    RendererArgument="yyyy-MM-dd">
                     <Editor>
                         <f:DatePicker ID="DatePicker1" Required="true" runat="server">
                         </f:DatePicker>

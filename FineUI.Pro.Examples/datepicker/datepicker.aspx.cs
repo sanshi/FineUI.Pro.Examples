@@ -20,7 +20,7 @@ namespace FineUI.Pro.Examples.datepicker
         {
             labResult.Text = String.Format("开始日期：{0}  结束日期：{1}",
                 DatePicker1.Text,
-                DatePicker2.SelectedDate.HasValue ? DatePicker2.SelectedDate.Value.ToString("yyyy/MM/dd") : "Empty");
+                DatePicker2.SelectedDate.HasValue ? DatePicker2.SelectedDate.Value.ToString("yyyy-MM-dd") : "Empty");
         }
     }
 }

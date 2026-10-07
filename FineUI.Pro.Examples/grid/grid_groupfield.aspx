@@ -39,7 +39,7 @@
                         </f:GroupField>
                     </Columns>
                 </f:GroupField>
-                <f:BoundField BoxFlex="1" TextAlign="Center" DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="记录时间" />
+                <f:BoundField BoxFlex="1" TextAlign="Center" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="记录时间" />
             </Columns>
         </f:Grid>
         <br />

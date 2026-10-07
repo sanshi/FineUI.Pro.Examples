@@ -24,7 +24,7 @@
                 <f:CheckBoxField ColumnID="AtSchool" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
                 <f:BoundField Width="300px" ColumnID="Major" DataField="Major" HeaderText="所学专业" />
                 <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField ColumnID="LogTime" DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="注册日期" />
+                <f:BoundField ColumnID="LogTime" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
             </Columns>
             <Listeners>
                 <f:Listener Event="dataload" Handler="onGridDataLoad" />

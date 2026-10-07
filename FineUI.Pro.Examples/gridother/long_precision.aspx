@@ -17,7 +17,7 @@
                 <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
                 <f:RenderCheckField DataField="AtSchool" HeaderText="是否在校" />
                 <f:RenderField DataField="Major" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业"></f:RenderField>
-                <f:RenderField Width="150px" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" HeaderText="入学日期"></f:RenderField>
+                <f:RenderField Width="150px" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期"></f:RenderField>
             </Columns>
         </f:Grid>
         <br />

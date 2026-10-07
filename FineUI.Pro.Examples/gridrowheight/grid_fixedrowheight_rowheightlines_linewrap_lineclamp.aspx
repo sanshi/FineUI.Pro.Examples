@@ -38,7 +38,7 @@
                     UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
                 <f:BoundField ColumnID="Desc" Width="400px" DataField="Desc" HeaderText="个人简介" />
                 <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="注册日期" />
+                <f:BoundField DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
             </Columns>
         </f:Grid>
         <br />

@@ -16,7 +16,7 @@
                 <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
                 <f:RenderCheckField DataField="AtSchool" HeaderText="是否在校" />
                 <f:RenderField DataField="Major" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业"></f:RenderField>
-                <f:RenderField Width="150px" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy/MM/dd" HeaderText="入学日期"></f:RenderField>
+                <f:RenderField Width="150px" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期"></f:RenderField>
                 <f:RenderField Width="150px" DataField="Salary" HeaderText="工资（千分位）" FieldType="Double" Renderer="Number" RendererArgument="N2" />
                 <f:RenderField Width="150px" DataField="GPA" HeaderText="绩点（定点数）" FieldType="Double" Renderer="Number" RendererArgument="F2" />
                 <f:RenderField Width="150px" DataField="AttendanceRate" HeaderText="出勤率（百分比）" FieldType="Double" Renderer="Number" RendererArgument="P1" />

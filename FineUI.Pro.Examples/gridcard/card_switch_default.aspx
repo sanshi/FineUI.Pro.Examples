@@ -28,7 +28,7 @@
                 <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别"></f:RenderField>
                 <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份"></f:RenderField>
                 <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy/MM/dd" HeaderText="入学日期">
+                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期">
                 </f:RenderField>
                 <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" HeaderText="是否在校"></f:RenderCheckField>
                 <f:RenderField ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业"></f:RenderField>

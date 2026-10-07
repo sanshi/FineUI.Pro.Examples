@@ -32,7 +32,7 @@
                 <f:BoundField EnableLock="true" DataField="ShiLiZuo" ColumnID="ShiLiZuo" HeaderText="视力（左）" />
                 <f:BoundField EnableLock="true" DataField="ShiLiYou" ColumnID="ShiLiYou" HeaderText="视力（右）" />
                 <f:ImageField ColumnID="Group" EnableLock="true" Locked="true" LockedPosition="Right" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField EnableLock="true" DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="注册日期" />
+                <f:BoundField EnableLock="true" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
             </Columns>
         </f:Grid>
         <br />

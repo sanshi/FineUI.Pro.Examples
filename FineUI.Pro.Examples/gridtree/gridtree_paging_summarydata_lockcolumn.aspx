@@ -26,7 +26,7 @@
                 <f:BoundField EnableLock="true" ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
                 <f:BoundField EnableLock="true" Width="150px" DataField="Type" HeaderText="类型" />
                 <f:BoundField EnableLock="true" ColumnID="Size" Width="150px" DataField="Size" HeaderText="大小" />
-                <f:BoundField EnableLock="true" Width="150px" DataField="ModifyDate" DataFormatString="{0:yyyy/MM/dd}" HeaderText="修改日期" />
+                <f:BoundField EnableLock="true" Width="150px" DataField="ModifyDate" DataFormatString="{0:yyyy-MM-dd}" HeaderText="修改日期" />
             </Columns>
             <PageItems>
                 <f:ToolbarSeparator runat="server"></f:ToolbarSeparator>

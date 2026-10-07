@@ -22,7 +22,7 @@
                 <f:BoundField Width="150px" DataField="Type" HeaderText="类型" />
                 <f:BoundField Width="150px" DataField="Size" HeaderText="大小" />
                 <f:CheckBoxField ColumnID="FollowFolder" RenderAsStaticField="false" HeaderText="关注目录" />
-                <f:BoundField Width="150px" DataField="ModifyDate" DataFormatString="{0:yyyy/MM/dd}" HeaderText="修改日期" />
+                <f:BoundField Width="150px" DataField="ModifyDate" DataFormatString="{0:yyyy-MM-dd}" HeaderText="修改日期" />
             </Columns>
         </f:Grid>
         <br />

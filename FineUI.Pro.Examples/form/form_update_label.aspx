@@ -40,7 +40,7 @@
                             <f:ListItem Text="老大乙" Value="1"></f:ListItem>
                             <f:ListItem Text="老大丙" Value="2"></f:ListItem>
                         </f:DropDownList>
-                        <f:DatePicker runat="server" Required="true" Label="审批时间" EmptyText="请输入审批时间" ID="dpApplyTime" ShowRedStar="true" DateFormatString="yyyy/MM/dd">
+                        <f:DatePicker runat="server" Required="true" Label="审批时间" EmptyText="请输入审批时间" ID="dpApplyTime" ShowRedStar="true" DateFormatString="yyyy-MM-dd">
                         </f:DatePicker>
                     </Items>
                 </f:FormRow>

@@ -27,7 +27,7 @@
                     DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
                     UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
                 <f:ImageField ColumnID="Group" TextAlign="Right" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}"
+                <f:BoundField DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}"
                     HeaderText="注册日期" />
                 <f:TemplateField ColumnID="expander" RenderAsRowExpander="true">
                     <ItemTemplate>

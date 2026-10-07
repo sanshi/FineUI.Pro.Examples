@@ -88,7 +88,7 @@
                         </Field>
                     </Filter>
                 </f:ImageField>
-                <f:BoundField ColumnID="LogTime" Width="200px" DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="注册日期" EnableFilter="true">
+                <f:BoundField ColumnID="LogTime" Width="200px" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" EnableFilter="true">
                     <Filter EnableMultiConditions="true">
                         <Operator>
                             <f:DropDownList ID="DropDownList3" runat="server">

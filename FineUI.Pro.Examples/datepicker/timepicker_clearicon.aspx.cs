@@ -14,7 +14,7 @@ namespace FineUI.Pro.Examples.datepicker
             {
 
                 // 设置日期选择器的默认值
-                DatePicker1.Text = DateTime.Now.ToString("yyyy/MM/dd");
+                DatePicker1.Text = DateTime.Now.ToString("yyyy-MM-dd");
 
                 // 限制范围的方法一
                 //TimePicker1.MinTime = new DateTime(2000, 1, 1, 8, 30, 0);

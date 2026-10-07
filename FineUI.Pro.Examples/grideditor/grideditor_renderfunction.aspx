@@ -36,7 +36,7 @@
                     </Editor>
                 </f:RenderField>
                 <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy/MM/dd" HeaderText="入学日期">
+                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期">
                     <Editor>
                         <f:DatePicker ID="DatePicker1" Required="true" runat="server">
                         </f:DatePicker>

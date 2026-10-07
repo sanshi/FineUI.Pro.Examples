@@ -16,7 +16,7 @@
                 <f:BoundField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
                 <f:BoundField Width="150px" DataField="Type" HeaderText="类型" />
                 <f:BoundField Width="150px" DataField="Size" HeaderText="大小" />
-                <f:BoundField Width="150px" DataField="ModifyDate" DataFormatString="{0:yyyy/MM/dd}" HeaderText="修改日期" />
+                <f:BoundField Width="150px" DataField="ModifyDate" DataFormatString="{0:yyyy-MM-dd}" HeaderText="修改日期" />
                 <f:TemplateField Width="180px" HeaderText="模板列（名称）">
                     <ItemTemplate>
                         <asp:Label ID="Label3" runat="server" Text='<%# Eval("Name") %>'></asp:Label>

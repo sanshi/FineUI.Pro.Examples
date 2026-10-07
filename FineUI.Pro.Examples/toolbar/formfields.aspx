@@ -13,12 +13,12 @@
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server" ToolbarAlign="Right">
                     <Items>
-                        <f:DatePicker runat="server" Required="true" DateFormatString="yyyy/MM/dd"
+                        <f:DatePicker runat="server" Required="true" DateFormatString="yyyy-MM-dd"
                             LabelWidth="120px" LabelAlign="Right" Label="销毁统计时间段" EmptyText="请选择开始日期"
                             ID="dpStartDate" EnableEdit="false">
                         </f:DatePicker>
                         <f:DatePicker ID="dpEndDate" Width="180px" Required="true" Readonly="false" 
-                            CompareControl="dpStartDate" DateFormatString="yyyy/MM/dd"
+                            CompareControl="dpStartDate" DateFormatString="yyyy-MM-dd"
                             CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" EmptyText="请选择结束日期" 
                             ShowLabel="false" Label="销毁统计时间段"
                             runat="server" EnableEdit="false">
@@ -45,7 +45,7 @@
                     DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
                     UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
                 <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="注册日期" />
+                <f:BoundField DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
             </Columns>
         </f:Grid>
         <br />

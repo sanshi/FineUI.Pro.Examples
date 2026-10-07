@@ -20,12 +20,12 @@
                     Layout="HBox" BoxConfigChildMargin="0 5 0 0" BoxConfigLastChildMargin="0" RemoveFieldsMargin="true">
                     <Items>
                         <f:Label runat="server" Text="销毁统计时间段："></f:Label>
-                        <f:DatePicker runat="server" Width="150px" Required="true" DateFormatString="yyyy/MM/dd" EmptyText="请选择开始日期"
+                        <f:DatePicker runat="server" Width="150px" Required="true" DateFormatString="yyyy-MM-dd" EmptyText="请选择开始日期"
                             ShowLabel="false" Label="销毁统计开始时间"
                             ID="dpStartDate" EnableEdit="false">
                         </f:DatePicker>
                         <f:DatePicker ID="dpEndDate" Width="150px" Required="true" Readonly="false"
-                            CompareControl="dpStartDate" DateFormatString="yyyy/MM/dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" EmptyText="请选择结束日期"
+                            CompareControl="dpStartDate" DateFormatString="yyyy-MM-dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" EmptyText="请选择结束日期"
                             ShowLabel="false" Label="销毁统计结束时间"
                             runat="server" EnableEdit="false">
                         </f:DatePicker>
@@ -52,12 +52,12 @@
                     Layout="Column" RemoveFieldsMargin="true">
                     <Items>
                         <f:Label ID="Label1" runat="server" Text="销毁统计时间段："></f:Label>
-                        <f:DatePicker runat="server" Width="150px" CssClass="marginr" Required="true" DateFormatString="yyyy/MM/dd" EmptyText="请选择开始日期"
+                        <f:DatePicker runat="server" Width="150px" CssClass="marginr" Required="true" DateFormatString="yyyy-MM-dd" EmptyText="请选择开始日期"
                             ShowLabel="false" Label="销毁统计开始时间"
                             ID="DatePicker1" EnableEdit="false">
                         </f:DatePicker>
                         <f:DatePicker ID="DatePicker2" Width="150px" CssClass="marginr" Required="true" Readonly="false"
-                            CompareControl="DatePicker1" DateFormatString="yyyy/MM/dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" EmptyText="请选择结束日期"
+                            CompareControl="DatePicker1" DateFormatString="yyyy-MM-dd" CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" EmptyText="请选择结束日期"
                             ShowLabel="false" Label="销毁统计结束时间"
                             runat="server" EnableEdit="false">
                         </f:DatePicker>

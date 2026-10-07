@@ -26,7 +26,7 @@
                 <f:BoundField ExpandUnusedSpace="true" MinWidth="150px" ColumnID="Major" DataField="Major" HeaderText="所学专业" />
                 <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组A" />
                 <f:ImageField ColumnID="GroupB" DataImageUrlField="GroupB" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组B" />
-                <f:BoundField ColumnID="LogTime" DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="注册日期" />
+                <f:BoundField ColumnID="LogTime" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
             </Columns>
             <Listeners>
                 <f:Listener Event="dataload" Handler="onGridDataLoad" />

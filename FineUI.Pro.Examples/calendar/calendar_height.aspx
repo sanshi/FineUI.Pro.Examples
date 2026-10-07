@@ -27,7 +27,7 @@
                 </f:Toolbar>
             </Toolbars>
             <Items>
-                <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy/MM/dd"
+                <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy-MM-dd"
                     OnDateSelect="Calendar1_DateSelect" ID="Calendar1" ShowTodayButton="false">
                 </f:Calendar>
             </Items>

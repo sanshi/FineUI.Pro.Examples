@@ -11,10 +11,10 @@
         <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
             Title="简单表单" runat="server">
             <Items>
-                <f:DatePicker runat="server" Required="true" DateFormatString="yyyy/MM/dd HH:mm:ss" Label="开始日期" EmptyText="请选择开始日期"
+                <f:DatePicker runat="server" Required="true" DateFormatString="yyyy-MM-dd HH:mm:ss" Label="开始日期" EmptyText="请选择开始日期"
                     ID="DatePicker1" ShowRedStar="true" ShowTime="true">
                 </f:DatePicker>
-                <f:DatePicker ID="DatePicker2" Required="true" Readonly="false" CompareControl="DatePicker1" DateFormatString="yyyy/MM/dd HH:mm:ss"
+                <f:DatePicker ID="DatePicker2" Required="true" Readonly="false" CompareControl="DatePicker1" DateFormatString="yyyy-MM-dd HH:mm:ss"
                     CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期" Label="结束日期"
                     runat="server" ShowRedStar="true" ShowTime="true">
                 </f:DatePicker>

@@ -39,7 +39,7 @@
                         </f:GroupField>
                     </Columns>
                 </f:GroupField>
-                <f:BoundField ColumnID="LogTime" BoxFlex="1" TextAlign="Center" DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="记录时间" />
+                <f:BoundField ColumnID="LogTime" BoxFlex="1" TextAlign="Center" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="记录时间" />
             </Columns>
             <Listeners>
                 <f:Listener Event="columnmove" Handler="onGridColumnMove" />

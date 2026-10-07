@@ -16,7 +16,7 @@
                 <f:TriggerBox ID="tbxMyBox1" ShowLabel="true" ShowRedStar="true" Required="true" Label="触发器输入框（很长很长很长的标签）" Readonly="false" TriggerIcon="Search" runat="server">
                 </f:TriggerBox>
                 <f:NumberBox Label="数字输入框（很长很长很长的标签）" ID="NumberBox5" runat="server" ShowRedStar="true" Required="true" />
-                <f:DatePicker runat="server" DateFormatString="yyyy/MM/dd" Label="日期选择器（很长很长很长的标签）"
+                <f:DatePicker runat="server" DateFormatString="yyyy-MM-dd" Label="日期选择器（很长很长很长的标签）"
                     ID="DatePicker1" ShowRedStar="true" Required="true">
                 </f:DatePicker>
                 <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click">

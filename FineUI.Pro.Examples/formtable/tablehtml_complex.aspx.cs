@@ -12,7 +12,7 @@ namespace FineUI.Pro.Examples.form
         {
             if (!IsPostBack)
             {
-                labCurrentTime.Text = DateTime.Now.ToString("yyyy/MM/dd");
+                labCurrentTime.Text = DateTime.Now.ToString("yyyy-MM-dd");
             }
         }
 

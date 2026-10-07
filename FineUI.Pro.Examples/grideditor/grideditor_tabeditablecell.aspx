@@ -31,7 +31,7 @@
                     </Editor>
                 </f:RenderField>
                 <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy/MM/dd" HeaderText="入学日期（不可编辑）">
+                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期（不可编辑）">
                 </f:RenderField>
                 <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" HeaderText="是否在校" />
                 <f:RenderField ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业（不可编辑）">

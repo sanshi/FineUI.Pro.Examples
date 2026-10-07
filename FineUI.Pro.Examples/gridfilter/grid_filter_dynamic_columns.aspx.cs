@@ -77,7 +77,7 @@ namespace FineUI.Pro.Examples.grid
             bf = new FineUI.Pro.BoundField();
             bf.ColumnID = "LogTime";
             bf.DataField = "LogTime";
-            bf.DataFormatString = "{0:yyyy/MM/dd}";
+            bf.DataFormatString = "{0:yyyy-MM-dd}";
             bf.HeaderText = "注册日期";
             Grid1.Columns.Add(bf);
 

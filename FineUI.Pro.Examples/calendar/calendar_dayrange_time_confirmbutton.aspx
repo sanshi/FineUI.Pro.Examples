@@ -8,7 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy/MM/dd HH:mm:ss"
+        <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy-MM-dd HH:mm:ss"
             OnDateSelect="Calendar1_DateSelect" ID="Calendar1" DisplayType="DayRange" ShowTime="true" ShowConfirmButton="true" ConfirmToSelect="true">
         </f:Calendar>
         <br />

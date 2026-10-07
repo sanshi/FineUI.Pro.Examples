@@ -11,7 +11,7 @@
         <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
             Title="简单表单" runat="server">
             <Items>
-                <f:DatePicker runat="server" Required="true" DateFormatString="yyyy/MM/dd" Label="日期范围" EmptyText="请选择日期范围"
+                <f:DatePicker runat="server" Required="true" DateFormatString="yyyy-MM-dd" Label="日期范围" EmptyText="请选择日期范围"
                     ID="DatePicker1" ShowRedStar="true" DisplayType="DayRange" IndependentRangePanels="true">
                 </f:DatePicker>
                 <f:DatePicker runat="server" Required="true" DateFormatString="yyyy/MM" Label="月份范围" EmptyText="请选择月份范围"

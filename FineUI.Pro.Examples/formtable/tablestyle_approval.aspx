@@ -54,9 +54,9 @@
                         </f:FormRow>
                         <f:FormRow runat="server">
                             <Items>
-                                <f:DatePicker ID="dpkStart" LabelAlign="Right" EnableEdit="false" DateFormatString="yyyy/MM/dd HH:mm:ss" ShowRedStar="true"
+                                <f:DatePicker ID="dpkStart" LabelAlign="Right" EnableEdit="false" DateFormatString="yyyy-MM-dd HH:mm:ss" ShowRedStar="true"
                                     Required="true" Label="出车时间" EmptyText="请选择出车时间" runat="server" ShowTime="true" />
-                                <f:DatePicker ID="dpkEnd" LabelAlign="Right" Required="true" DateFormatString="yyyy/MM/dd HH:mm:ss" Label="归队时间"
+                                <f:DatePicker ID="dpkEnd" LabelAlign="Right" Required="true" DateFormatString="yyyy-MM-dd HH:mm:ss" Label="归队时间"
                                     EmptyText="请选择归队时间" CompareOperator="GreaterThan" CompareControl="dpkStart" ShowRedStar="true" CompareMessage="归队时间应该大于出车时间"
                                     runat="server" EnableEdit="false" ShowTime="true" />
                             </Items>
@@ -92,7 +92,7 @@
                                 <f:BoundField runat="server" ID="OPTIONREMARK" ColumnID="OPTIONREMARK" DataField="OPTIONREMARK" HeaderText="办理意见"
                                     HeaderTextAlign="Center" TextAlign="Left" ExpandUnusedSpace="true" MinWidth="150px" />
                                 <f:BoundField runat="server" ID="CREATETIME" ColumnID="CREATETIME" DataField="CREATETIME" HeaderText="操作时间"
-                                    HeaderTextAlign="Center" TextAlign="Left" DataFormatString="{0:yyyy/MM/dd HH:mm:ss}" Width="150" />
+                                    HeaderTextAlign="Center" TextAlign="Left" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" Width="150" />
                             </Columns>
                         </f:Grid>
                     </Items>

@@ -91,7 +91,7 @@ namespace FineUI.Pro.Examples.gridtree
             row[2] = "basic（延迟加载）";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/11/3 11:20");
+            row[5] = DateTime.Parse("2014-11-03 11:20");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -100,7 +100,7 @@ namespace FineUI.Pro.Examples.gridtree
             row[2] = "default.aspx";
             row[3] = "ASPX文件";
             row[4] = 31;
-            row[5] = DateTime.Parse("2014/11/15 18:44");
+            row[5] = DateTime.Parse("2014-11-15 18:44");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -109,7 +109,7 @@ namespace FineUI.Pro.Examples.gridtree
             row[2] = "default.aspx.cs";
             row[3] = "CS文件";
             row[4] = 13;
-            row[5] = DateTime.Parse("2014/10/27 18:44");
+            row[5] = DateTime.Parse("2014-10-27 18:44");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -118,7 +118,7 @@ namespace FineUI.Pro.Examples.gridtree
             row[2] = "default.aspx.designer.cs";
             row[3] = "CS文件";
             row[4] = 12;
-            row[5] = DateTime.Parse("2014/10/12 20:57");
+            row[5] = DateTime.Parse("2014-10-12 20:57");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -127,7 +127,7 @@ namespace FineUI.Pro.Examples.gridtree
             row[2] = "Web.config";
             row[3] = "CONFIG文件";
             row[4] = 3;
-            row[5] = DateTime.Parse("2014/11/6 20:59");
+            row[5] = DateTime.Parse("2014-11-06 20:59");
             table.Rows.Add(row);
 
             return table;
@@ -156,7 +156,7 @@ namespace FineUI.Pro.Examples.gridtree
             row[2] = "Captcha（延迟加载）";
             row[3] = "文件夹";
             row[4] = DBNull.Value;
-            row[5] = DateTime.Parse("2014/8/17 20:22");
+            row[5] = DateTime.Parse("2014-08-17 20:22");
             table.Rows.Add(row);
 
             // basic -> hello.aspx
@@ -166,7 +166,7 @@ namespace FineUI.Pro.Examples.gridtree
             row[2] = "hello.aspx";
             row[3] = "ASPX文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -175,7 +175,7 @@ namespace FineUI.Pro.Examples.gridtree
             row[2] = "hello.aspx.cs";
             row[3] = "CS文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/8/24 11:08");
+            row[5] = DateTime.Parse("2014-08-24 11:08");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -184,7 +184,7 @@ namespace FineUI.Pro.Examples.gridtree
             row[2] = "hello.aspx.designer.cs";
             row[3] = "CS文件";
             row[4] = 2;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
             return table;
@@ -212,7 +212,7 @@ namespace FineUI.Pro.Examples.gridtree
             row[2] = "captcha.ashx";
             row[3] = "ASHX文件";
             row[4] = 1;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
             row = table.NewRow();
@@ -221,7 +221,7 @@ namespace FineUI.Pro.Examples.gridtree
             row[2] = "captcha.ashx.cs";
             row[3] = "CS文件";
             row[4] = 2;
-            row[5] = DateTime.Parse("2014/7/5 16:31");
+            row[5] = DateTime.Parse("2014-07-05 16:31");
             table.Rows.Add(row);
 
             return table;

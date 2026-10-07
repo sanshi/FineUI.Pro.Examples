@@ -10,7 +10,7 @@
         <f:PageManager ID="PageManager1" runat="server" />
         <b>日期范围</b>
         <br />
-        <f:Calendar runat="server" DateFormatString="yyyy/MM/dd" ID="Calendar1"
+        <f:Calendar runat="server" DateFormatString="yyyy-MM-dd" ID="Calendar1"
             DisplayType="DayRange" IndependentRangePanels="true">
         </f:Calendar>
         <br />

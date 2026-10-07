@@ -48,7 +48,7 @@
                     </Columns>
                 </f:GroupField>
                 <f:ImageField ColumnID="Group" EnableLock="true" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField EnableLock="true" DataField="LogTime" DataFormatString="{0:yyyy/MM/dd}" HeaderText="注册日期" />
+                <f:BoundField EnableLock="true" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
                 <f:TemplateField ColumnID="expander" RenderAsRowExpander="true">
                     <ItemTemplate>
                         <div class="expander">
