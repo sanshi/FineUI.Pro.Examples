@@ -26,7 +26,7 @@
                         <f:TreeNode Text="基本用法">
                             <f:TreeNode Text="你好 FineUI" NavigateUrl="~/basic/hello.aspx">
                             </f:TreeNode>
-                            <f:TreeNode Text="登陆页面" NavigateUrl="~/basic/login.aspx">
+                            <f:TreeNode Text="登录页面" NavigateUrl="~/basic/login.aspx">
                             </f:TreeNode>
                         </f:TreeNode>
                         <f:TreeNode Text="表单控件">

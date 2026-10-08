@@ -26,7 +26,7 @@
         注：
         <ul>
             <li>
-                通过CSS设置登陆表单居中显示（CSS属性不能直接设置到 SimpleForm1，因为其 Width 已经包含了 margin ）。
+                通过CSS设置登录表单居中显示（CSS属性不能直接设置到 SimpleForm1，因为其 Width 已经包含了 margin ）。
             </li>
             <li>
                 设置表单属性 CssClass="f-shadow"，增加其边框阴影。
@@ -34,7 +34,7 @@
         </ul>
         
         <f:SimpleForm ID="SimpleForm1" runat="server" ShowBorder="true" BodyPadding="10px" IsFluid="true"
-            ShowHeader="true" Title="登陆表单" Width="350px">
+            ShowHeader="true" Title="登录表单" Width="350px">
             <Items>
                 <f:TextBox ID="tbxUserName" Label="用户名" Required="true" ShowRedStar="true" runat="server">
                 </f:TextBox>

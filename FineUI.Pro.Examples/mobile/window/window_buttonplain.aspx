@@ -10,10 +10,10 @@
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
         <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigChildMargin="0 0 5px 0" BodyPadding="10px" runat="server">
             <Items>
-                <f:Button runat="server" ID="btnOpenWindow" Text="打开登陆窗体" ClickHandler="onOpenWindowClick"></f:Button>
+                <f:Button runat="server" ID="btnOpenWindow" Text="打开登录窗体" ClickHandler="onOpenWindowClick"></f:Button>
             </Items>
         </f:Panel>
-        <f:Window runat="server" ID="Window1" Title="登陆窗体" TitleAlign="Center" Hidden="true" IsModal="true" EnableClose="false" 
+        <f:Window runat="server" ID="Window1" Title="登录窗体" TitleAlign="Center" Hidden="true" IsModal="true" EnableClose="false"
             Layout="Fit" BodyPadding="15px" Width="300px">
             <Items>
                 <f:SimpleForm ID="SimpleForm1" runat="server" ShowBorder="false" ShowHeader="false" Layout="VBox" MessageTarget="None">

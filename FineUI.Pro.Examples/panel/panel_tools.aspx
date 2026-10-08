@@ -26,7 +26,7 @@
                 <f:Tool ID="Tool5" runat="server" IconFont="_Minus" ToolTip="删除" ClickHandler="onToolIconClick"></f:Tool>
                 <f:Tool ID="Tool14" runat="server" IconFont="_Trash" ToolTip="删除" ClickHandler="onToolIconClick"></f:Tool>
                 <f:Tool ID="Tool15" runat="server" IconFont="_Close" ToolTip="删除" ClickHandler="onToolIconClick"></f:Tool>
-                <f:Tool ID="Tool6" runat="server" IconFont="_SignIn" ToolTip="登陆" ClickHandler="onToolIconClick"></f:Tool>
+                <f:Tool ID="Tool6" runat="server" IconFont="_SignIn" ToolTip="登录" ClickHandler="onToolIconClick"></f:Tool>
                 <f:Tool ID="Tool11" runat="server" IconFont="_PowerOff" ToolTip="退出" ClickHandler="onToolIconClick"></f:Tool>
                 <f:Tool ID="Tool9" runat="server" IconFont="_Question" ToolTip="帮助" ClickHandler="onToolIconClick"></f:Tool>
                 <f:Tool ID="Tool20" runat="server" IconFont="_Info" ToolTip="详细" ClickHandler="onToolIconClick"></f:Tool>

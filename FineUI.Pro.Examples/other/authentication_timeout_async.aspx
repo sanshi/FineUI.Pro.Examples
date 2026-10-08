@@ -41,7 +41,7 @@
 
                     // F.confirm是异步函数，直接返回
                     F.confirm({
-                        message: '登陆超时，是否跳转到首页？',
+                        message: '登录超时，是否跳转到首页？',
                         ok: function() {
                             // 重新执行返回的脚本
                             new Function(data)();

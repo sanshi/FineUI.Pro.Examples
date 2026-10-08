@@ -56,7 +56,7 @@
             <tr>
                 <td>
                     <f:Button ID="Button1" runat="server" ClickHandler="onNavLoginClick" IconAlign="Top" Icon="User"
-                        Text="登陆页面">
+                        Text="登录页面">
                     </f:Button>
                 </td>
                 <td>

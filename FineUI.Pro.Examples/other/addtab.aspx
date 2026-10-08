@@ -45,7 +45,7 @@
             parent.addExampleTab({
                 id: 'hello_fineui_tab',
                 iframeUrl: basePath + 'basic/login.aspx',
-                title: '登陆页面',
+                title: '登录页面',
                 iconFont: 'sign-in',
                 refreshWhenExist: true
             });

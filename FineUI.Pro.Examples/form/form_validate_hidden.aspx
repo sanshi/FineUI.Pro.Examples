@@ -20,7 +20,7 @@
         密码：admin
         <br />
         <br />
-        注：默认不显示验证码，当用户输入错误超过 3 次，就显示验证码（在Session中记录用户登陆失败的次数）。
+        注：默认不显示验证码，当用户输入错误超过 3 次，就显示验证码（在Session中记录用户登录失败的次数）。
         <f:Window ID="Window1" runat="server" Title="登录表单" IsModal="false" EnableClose="false" IconFont="_SignIn"
             WindowPosition="GoldenSection" Width="350px" Layout="Fit">
             <Items>

@@ -38,7 +38,7 @@
 
                 // Pro 的成功钩子沿用只接收业务脚本的行为。
                 if (data.indexOf('window.location.href=') === 0) {
-                    if (!window.confirm('登陆超时，是否跳转到首页？')) {
+                    if (!window.confirm('登录超时，是否跳转到首页？')) {
                         // 继续留在当前页面
                         // 需要显式的返回 false，来阻止执行返回的脚本
                         return false;
