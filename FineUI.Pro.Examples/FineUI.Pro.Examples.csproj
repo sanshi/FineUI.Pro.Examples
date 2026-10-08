@@ -1211,6 +1211,7 @@
     <Content Include="toolbar\toolbar_images.aspx" />
     <Content Include="toolbar\toolbar_images_fixedwidth.aspx" />
     <Content Include="toolbar\form.aspx" />
+    <Content Include="toolbar\toolbar_bodypadding.aspx" />
     <Content Include="toolbar\toolbar_itemspace.aspx" />
     <Content Include="toolbar\toolbar_fill.aspx" />
     <Content Include="toolbar\toolbar_custombg.aspx" />
@@ -8964,6 +8965,13 @@
     </Compile>
     <Compile Include="toolbar\form.aspx.designer.cs">
       <DependentUpon>form.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="toolbar\toolbar_bodypadding.aspx.cs">
+      <DependentUpon>toolbar_bodypadding.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="toolbar\toolbar_bodypadding.aspx.designer.cs">
+      <DependentUpon>toolbar_bodypadding.aspx</DependentUpon>
     </Compile>
     <Compile Include="toolbar\toolbar_itemspace.aspx.cs">
       <DependentUpon>toolbar_itemspace.aspx</DependentUpon>
