@@ -2220,6 +2220,8 @@
 		<TreeNode Text="Box">
 			<TreeNode Text="HBox" NavigateUrl="~/layout/hbox.aspx">
 			</TreeNode>
+			<TreeNode Text="HBox（子项间隔）" Version="16.0" NavigateUrl="~/layout/hbox_space.aspx">
+			</TreeNode>
 			<TreeNode Text="HBox（横向滚动条）" NavigateUrl="~/layout/hbox_scrollbar.aspx">
 			</TreeNode>
 			<TreeNode Text="HBox（横向滚动条，自动高度）" NavigateUrl="~/layout/hbox_scrollbar_autoheight.aspx">
@@ -2235,6 +2237,8 @@
 			<TreeNode Text="HBox（标签）" NavigateUrl="~/layout/hbox_label.aspx">
 			</TreeNode>
 			<TreeNode Text="VBox" NavigateUrl="~/layout/vbox.aspx">
+			</TreeNode>
+			<TreeNode Text="VBox（子项间隔）" Version="16.0" NavigateUrl="~/layout/vbox_space.aspx">
 			</TreeNode>
 			<TreeNode Text="VBox（纵向滚动条）" NavigateUrl="~/layout/vbox_scrollbar.aspx">
 			</TreeNode>

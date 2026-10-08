@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
-        <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" Layout="VBox"
-            BoxConfigChildMargin="0 0 10px 0" BodyPadding="10px" runat="server">
+        <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigSpace="10" BodyPadding="10px" runat="server">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" Title="提示对话框" runat="server" HeaderStyle="true">
                 </f:Toolbar>

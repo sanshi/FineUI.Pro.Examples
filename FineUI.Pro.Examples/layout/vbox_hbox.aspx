@@ -9,11 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" AutoSizePanelID="Panel2" />
-        <f:Panel ID="Panel2" Margin="24px" runat="server" ShowBorder="true"
-            Layout="VBox" ShowHeader="true" Title="面板（改变页面大小来观察面板的变化）" BodyPadding="5">
+        <f:Panel ID="Panel2" Margin="24px" runat="server" ShowBorder="true" Layout="VBox" ShowHeader="true" Title="面板（改变页面大小来观察面板的变化）" BodyPadding="5">
             <Items>
-                <f:Panel ID="Panel1" BoxFlex="1" runat="server"
-                    ShowBorder="false" ShowHeader="false" Layout="HBox" BoxConfigChildMargin="0 5 0 0" MarginBottom="5">
+                <f:Panel ID="Panel1" BoxFlex="1" runat="server" ShowBorder="false" ShowHeader="false" Layout="HBox" BoxConfigSpace="5" MarginBottom="5">
                     <Items>
                         <f:Panel ID="Panel3" BoxFlex="1" runat="server" ShowBorder="true" ShowHeader="false">
                             <Items>
@@ -27,7 +25,7 @@
                                 </f:Label>
                             </Items>
                         </f:Panel>
-                        <f:Panel ID="Panel6" BoxFlex="1" runat="server" ShowBorder="true" ShowHeader="false" Margin="0">
+                        <f:Panel ID="Panel6" BoxFlex="1" runat="server" ShowBorder="true" ShowHeader="false">
                             <Items>
                                 <f:Label ID="Label3" runat="server" Text="Label3">
                                 </f:Label>
@@ -35,8 +33,7 @@
                         </f:Panel>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="Panel5" BoxFlex="1" runat="server"
-                    ShowBorder="false" ShowHeader="false" Layout="HBox" BoxConfigChildMargin="0 5 0 0">
+                <f:Panel ID="Panel5" BoxFlex="1" runat="server" ShowBorder="false" ShowHeader="false" Layout="HBox" BoxConfigSpace="5">
                     <Items>
                         <f:Panel ID="Panel7" BoxFlex="1" runat="server" ShowBorder="true" ShowHeader="false">
                             <Items>
@@ -50,7 +47,7 @@
                                 </f:Label>
                             </Items>
                         </f:Panel>
-                        <f:Panel ID="Panel9" BoxFlex="1" runat="server" ShowBorder="true" ShowHeader="false" Margin="0">
+                        <f:Panel ID="Panel9" BoxFlex="1" runat="server" ShowBorder="true" ShowHeader="false">
                             <Items>
                                 <f:Label ID="Label6" runat="server" Text="Label6">
                                 </f:Label>

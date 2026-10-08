@@ -11,8 +11,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
-        <f:Panel ID="Panel1" CssClass="toppanel" runat="server" ShowBorder="true" ShowHeader="true" Title="母版页" Margin="24px"
-            Layout="HBox" BoxConfigAlign="Stretch" BoxConfigPosition="Start" BoxConfigChildMargin="0 5 0 0" BodyPadding="5">
+        <f:Panel ID="Panel1" CssClass="toppanel" runat="server" ShowBorder="true" ShowHeader="true" Title="母版页" Margin="24px" Layout="HBox"
+            BoxConfigAlign="Stretch" BoxConfigPosition="Start" BoxConfigSpace="5" BodyPadding="5">
             <Items>
                 <f:Tree ID="Tree1" Width="200px" ShowHeader="true" Title="位于母版页中" OnNodeCommand="Tree1_NodeCommand" runat="server">
                     <Nodes>

@@ -8,13 +8,12 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
-        <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigChildMargin="0 0 5px 0" BodyPadding="10px" runat="server">
+        <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigSpace="5" BodyPadding="10px" runat="server">
             <Items>
                 <f:Button runat="server" ID="btnOpenWindow" Text="从下方滑入窗体" ClickHandler="onOpenWindow1Click"></f:Button>
             </Items>
         </f:Panel>
-        <f:Window runat="server" ID="Window1" ShowHeader="false" Hidden="true"
-            IsModal="true" HideOnMaskClick="true" BodyPadding="10px" Layout="Fit"
+        <f:Window runat="server" ID="Window1" ShowHeader="false" Hidden="true" IsModal="true" HideOnMaskClick="true" BodyPadding="10px" Layout="Fit"
             PercentWidth="100%" PercentHeight="100%" EnableDefaultCorner="false" PositionY="Bottom">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" Title="弹出窗体标题" runat="server" HeaderStyle="true" ToolbarAlign="Right">
@@ -37,7 +36,6 @@
 
     </form>
     <script>
-
         var window1ClientID = '<%= Window1.ClientID %>';
 
         function onOpenWindow1Click(event) {
@@ -47,7 +45,6 @@
         function onCloseWindow1Click(event) {
             F(window1ClientID).hide();
         }
-
 
     </script>
 </body>

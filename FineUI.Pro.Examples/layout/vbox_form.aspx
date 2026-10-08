@@ -8,10 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Form ID="Panel1" IsFluid="true" Title="表单（Layout=VBox）" runat="server" Height="400px"
-            LabelAlign="Right"
-            BodyPadding="10px" ShowBorder="true" ShowHeader="true" 
-            Layout="VBox" BoxConfigChildMargin="0 0 5 0" BoxConfigLastChildMargin="0" RemoveFieldsMargin="true">
+        <f:Form ID="Panel1" IsFluid="true" Title="表单（Layout=VBox）" runat="server" Height="400px" LabelAlign="Right" BodyPadding="10px" ShowBorder="true"
+            ShowHeader="true" Layout="VBox" BoxConfigSpace="5" RemoveFieldsMargin="true">
             <Items>
                 <f:TextBox ID="TextBox1" runat="server" Label="姓名" ShowRedStar="true" Required="true"></f:TextBox>
                 <f:DropDownList ID="DropDownList1" Label="性别" ShowRedStar="true" Required="true" runat="server">

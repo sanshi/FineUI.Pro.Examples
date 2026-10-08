@@ -26,14 +26,13 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
-        <f:Panel ID="Panel1" CssClass="mybgpanel" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigChildMargin="0 0 5px 0" BodyPadding="10px"
-            runat="server">
+        <f:Panel ID="Panel1" CssClass="mybgpanel" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigSpace="5" BodyPadding="10px" runat="server">
             <Items>
                 <f:Button runat="server" ID="btnOpenWindow" Text="选择省市县" ClickHandler="onOpenWindow1Click"></f:Button>
             </Items>
         </f:Panel>
         <f:Window runat="server" ID="Window1" CssClass="mywindow" ShowHeader="false" ShowBorder="false" Hidden="true" HideOnMaskClick="true" IsModal="true"
-            BodyPadding="10px" Layout="VBox" BoxConfigChildMargin="0 0 5px 0" PercentWidth="100%" EnableDefaultCorner="false" PositionY="Bottom">
+            BodyPadding="10px" Layout="VBox" BoxConfigSpace="5" PercentWidth="100%" EnableDefaultCorner="false" PositionY="Bottom">
             <Items>
                 <f:SimpleForm runat="server" ID="SimpleForm1" ShowBorder="true" ShowHeader="false" BodyPadding="10px" CssClass="f-corner-all" Layout="VBox"
                     MessageTarget="None" LabelAlign="Right">

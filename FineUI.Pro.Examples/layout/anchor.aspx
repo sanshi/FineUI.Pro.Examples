@@ -8,18 +8,16 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="Panel3" IsFluid="true" Title="面板一（Height=300px)" runat="server" Height="300px" EnableCollapse="false"
-            BodyPadding="10px" ShowBorder="true" ShowHeader="true">
+        <f:Panel ID="Panel3" IsFluid="true" Title="面板一（Height=300px)" runat="server" Height="300px" EnableCollapse="false" BodyPadding="10px" ShowBorder="true"
+            ShowHeader="true">
             <Items>
-                <f:Panel ID="Panel1" runat="server" ShowBorder="true" Margin="0 0 5 0"
-                    BodyPadding="10px" ShowHeader="false" Title="面板">
+                <f:Panel ID="Panel1" runat="server" ShowBorder="true" Margin="0 0 5 0" BodyPadding="10px" ShowHeader="false" Title="面板">
                     <Items>
                         <f:Label ID="Label5" Text="Margin=0 0 5 0" runat="server">
                         </f:Label>
                     </Items>
                 </f:Panel>
-                <f:Form ID="Form3" runat="server" ShowBorder="true"
-                    BodyPadding="10px" ShowHeader="false" Title="表单">
+                <f:Form ID="Form3" runat="server" ShowBorder="true" BodyPadding="10px" ShowHeader="false" Title="表单">
                     <Rows>
                         <f:FormRow>
                             <Items>
@@ -40,18 +38,16 @@
             </Items>
         </f:Panel>
         <br />
-        <f:Panel ID="Panel2" IsFluid="true" runat="server" Height="300px" ShowBorder="true" EnableCollapse="false"
-            BodyPadding="10px" Layout="Anchor" ShowHeader="true" Title="面板二（Height=300px Width=750px Layout=Anchor）">
+        <f:Panel ID="Panel2" IsFluid="true" runat="server" Height="300px" ShowBorder="true" EnableCollapse="false" BodyPadding="10px" Layout="Anchor"
+            ShowHeader="true" Title="面板二（Height=300px Width=750px Layout=Anchor）">
             <Items>
-                <f:Panel ID="Panel4" AnchorValue="60% 30%" runat="server" Margin="0 0 5 0"
-                    BodyPadding="10px" ShowBorder="true" ShowHeader="false">
+                <f:Panel ID="Panel4" AnchorValue="60% 30%" runat="server" Margin="0 0 5 0" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
                     <Items>
                         <f:Label ID="Label3" Text="AnchorValue=60% 30% Margin=0 0 5 0" runat="server">
                         </f:Label>
                     </Items>
                 </f:Panel>
-                <f:Form ID="Form2" AnchorValue="100% 70%" runat="server"
-                    BodyPadding="10px" ShowBorder="true" ShowHeader="false">
+                <f:Form ID="Form2" AnchorValue="100% 70%" runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
                     <Rows>
                         <f:FormRow>
                             <Items>
@@ -72,8 +68,8 @@
             </Items>
         </f:Panel>
         <br />
-        <f:Panel ID="Panel5" IsFluid="true" Title="面板三（Width=750px）" runat="server" EnableCollapse="false"
-            BodyPadding="10px" ShowBorder="true" ShowHeader="true">
+        <f:Panel ID="Panel5" IsFluid="true" Title="面板三（Width=750px）" runat="server" EnableCollapse="false" BodyPadding="10px" ShowBorder="true"
+            ShowHeader="true">
             <Items>
                 <f:Form ID="Form4" ShowBorder="false" ShowHeader="false" runat="server">
                     <Rows>
@@ -99,8 +95,8 @@
                         </f:Toolbar>
                     </Toolbars>
                     <Items>
-                        <f:Grid DataIDField="Id" ID="Grid1" Title="表格" PageSize="3" ShowBorder="false" ShowHeader="false"
-                            runat="server" EnableCheckBoxSelect="true">
+                        <f:Grid DataIDField="Id" ID="Grid1" Title="表格" PageSize="3" ShowBorder="false" ShowHeader="false" runat="server"
+                            EnableCheckBoxSelect="true">
                             <Columns>
                                 <f:RowNumberField />
                                 <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
@@ -112,9 +108,9 @@
                                 </f:TemplateField>
                                 <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
                                 <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
+                                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major" DataTextFormatString="{0}"
+                                    DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}" UrlEncode="true"
+                                    Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
                                 <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
                             </Columns>
                         </f:Grid>
@@ -123,12 +119,10 @@
             </Items>
         </f:Panel>
         <br />
-        <f:Panel ID="Panel7" IsFluid="true" runat="server" BodyPadding="10px" EnableCollapse="false"
-            ShowBorder="true" ShowHeader="true" Height="350px" Title="面板四（Width=750px Height=350px Layout=Anchor）"
-            Layout="Anchor">
+        <f:Panel ID="Panel7" IsFluid="true" runat="server" BodyPadding="10px" EnableCollapse="false" ShowBorder="true" ShowHeader="true" Height="350px"
+            Title="面板四（Width=750px Height=350px Layout=Anchor）" Layout="Anchor">
             <Items>
-                <f:Form ID="Form5" ShowBorder="false" AnchorValue="100%"
-                    ShowHeader="false" runat="server">
+                <f:Form ID="Form5" ShowBorder="false" AnchorValue="100%" ShowHeader="false" runat="server">
                     <Rows>
                         <f:FormRow>
                             <Items>
@@ -148,8 +142,7 @@
                         </f:FormRow>
                     </Rows>
                 </f:Form>
-                <f:Panel ID="Panel8" ShowBorder="true" ShowHeader="false" AnchorValue="100% -72"
-                    Layout="Fit" runat="server">
+                <f:Panel ID="Panel8" ShowBorder="true" ShowHeader="false" AnchorValue="100% -72" Layout="Fit" runat="server">
                     <Toolbars>
                         <f:Toolbar ID="Toolbar2" runat="server">
                             <Items>
@@ -161,8 +154,8 @@
                         </f:Toolbar>
                     </Toolbars>
                     <Items>
-                        <f:Grid DataIDField="Id" ID="Grid2" Title="Grid2" PageSize="3" ShowBorder="false" ShowHeader="false"
-                            runat="server" EnableCheckBoxSelect="true">
+                        <f:Grid DataIDField="Id" ID="Grid2" Title="Grid2" PageSize="3" ShowBorder="false" ShowHeader="false" runat="server"
+                            EnableCheckBoxSelect="true">
                             <Columns>
                                 <f:RowNumberField />
                                 <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
@@ -174,9 +167,9 @@
                                 </f:TemplateField>
                                 <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
                                 <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
+                                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major" DataTextFormatString="{0}"
+                                    DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}" UrlEncode="true"
+                                    Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
                                 <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
                             </Columns>
                         </f:Grid>
@@ -191,10 +184,8 @@
         <br />
         <hr />
         <br />
-        <f:Panel ID="Panel9" IsFluid="true" runat="server" Layout="VBox" EnableCollapse="false"
-            BodyPadding="10px" BoxConfigChildMargin="0"
-            ShowBorder="true" ShowHeader="true" Height="350px"
-            Title="面板五（Layout=VBox BoxConfigChildMargin=0）">
+        <f:Panel ID="Panel9" IsFluid="true" runat="server" Layout="VBox" EnableCollapse="false" BodyPadding="10px" BoxConfigSpace="0" ShowBorder="true"
+            ShowHeader="true" Height="350px" Title="面板五（Layout=VBox BoxConfigSpace=0）">
             <Items>
                 <f:Form ID="Form6" ShowBorder="false" ShowHeader="false" runat="server">
                     <Rows>
@@ -228,8 +219,8 @@
                         </f:Toolbar>
                     </Toolbars>
                     <Items>
-                        <f:Grid DataIDField="Id" ID="Grid3" Title="Grid3" PageSize="3" ShowBorder="false" ShowHeader="false"
-                            runat="server" EnableCheckBoxSelect="true">
+                        <f:Grid DataIDField="Id" ID="Grid3" Title="Grid3" PageSize="3" ShowBorder="false" ShowHeader="false" runat="server"
+                            EnableCheckBoxSelect="true">
                             <Columns>
                                 <f:RowNumberField />
                                 <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
@@ -241,9 +232,9 @@
                                 </f:TemplateField>
                                 <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
                                 <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
+                                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major" DataTextFormatString="{0}"
+                                    DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}" UrlEncode="true"
+                                    Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
                                 <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
                             </Columns>
                         </f:Grid>

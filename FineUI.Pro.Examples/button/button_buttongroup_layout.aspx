@@ -8,8 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
-        <f:Panel ID="Panel1" Margin="24px" ShowBorder="false" ShowHeader="false" CssClass="f-widget-content" AutoScroll="true"
-            Layout="VBox" BoxConfigAlign="Start" BoxConfigChildMargin="0 0 10px 0" BodyPadding="10px" runat="server">
+        <f:Panel ID="Panel1" Margin="24px" ShowBorder="false" ShowHeader="false" CssClass="f-widget-content" AutoScroll="true" Layout="VBox"
+            BoxConfigAlign="Start" BoxConfigSpace="10" BodyPadding="10px" runat="server">
             <Items>
                 <f:ButtonGroup runat="server" Layout="HBox" Width="600px">
                     <f:Button ID="btnIcon1" Text="图标在左侧" BoxFlex="1" Icon="Email" runat="server" />

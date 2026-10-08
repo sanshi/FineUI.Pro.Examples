@@ -10295,4 +10295,24 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <ItemGroup>
+    <Content Include="layout\hbox_space.aspx" />
+    <Compile Include="layout\hbox_space.aspx.cs">
+      <DependentUpon>hbox_space.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="layout\hbox_space.aspx.designer.cs">
+      <DependentUpon>hbox_space.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="layout\vbox_space.aspx" />
+    <Compile Include="layout\vbox_space.aspx.cs">
+      <DependentUpon>vbox_space.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="layout\vbox_space.aspx.designer.cs">
+      <DependentUpon>vbox_space.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

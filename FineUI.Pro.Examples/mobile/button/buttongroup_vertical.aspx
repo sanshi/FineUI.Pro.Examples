@@ -8,7 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
-        <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigChildMargin="0 0 10px 0" BodyPadding="10px" AutoScroll="true" runat="server">
+        <f:Panel ID="Panel1" ShowBorder="false" ShowHeader="false" Layout="VBox" BoxConfigSpace="10" BodyPadding="10px" AutoScroll="true" runat="server">
             <Items>
                 <f:ButtonGroup ID="ButtonGroup2" Layout="VBox" BoxConfigAlign="StretchMax" EnablePressGroup="true" Vertical="true" runat="server">
                     <Items>
