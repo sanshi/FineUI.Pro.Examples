@@ -4,6 +4,7 @@
 <html>
 <head runat="server">
     <title>提示信息（仅截断时显示 ShowTooltipWhenTruncated）</title>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -11,12 +12,8 @@
         <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" runat="server" EnableCollapse="false">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                    <ItemTemplate>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
+                <f:RenderField DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
                 <f:RenderField HeaderText="所学专业（仅截断时显示）" DataField="Major" Width="140" ShowToolTip="true" ShowTooltipWhenTruncated="true" />
                 <f:RenderField HeaderText="所学专业（永远显示）" DataField="Major" Width="140" ShowToolTip="true" />
             </Columns>
@@ -29,5 +26,6 @@
             </ul>
         </div>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

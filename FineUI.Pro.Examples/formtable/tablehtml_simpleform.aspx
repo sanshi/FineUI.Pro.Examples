@@ -6,12 +6,15 @@
 <head runat="server">
     <title></title>
     <meta name="sourcefiles" content="~/res/css/tablehtml.css" />
-    <style>
-        .tablehtml1 {
-            width: 100%;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+
+        <style>
+            .tablehtml1 {
+                width: 100%;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
 
             .tablehtml1 td {
                 border-width: 1px;
@@ -19,23 +22,22 @@
                 padding: 5px;
             }
 
-                .tablehtml1 td > div {
-                    display: block;
-                    vertical-align: top;
-                }
+            .tablehtml1 td>div {
+                display: block;
+                vertical-align: top;
+            }
 
             .tablehtml1 .f-field {
                 width: 100%;
                 margin-bottom: 0 !important;
             }
 
-
-        /* tablehtml2 */
-        .tablehtml2 {
-            width: 100%;
-            border-collapse: collapse;
-            border-spacing: 0;
-        }
+            /* tablehtml2 */
+            .tablehtml2 {
+                width: 100%;
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
 
             .tablehtml2 td {
                 border-width: 1px;
@@ -43,26 +45,28 @@
                 padding: 5px;
             }
 
-                .tablehtml2 td.label {
-                    width: 100px;
-                    text-align: right;
-                }
+            .tablehtml2 td.label {
+                width: 100px;
+                text-align: right;
+            }
 
-                    .tablehtml2 td.label .redstar {
-                        color: red;
-                    }
+            .tablehtml2 td.label .redstar {
+                color: red;
+            }
 
-                .tablehtml2 td > div {
-                    display: block;
-                    vertical-align: top;
-                }
+            .tablehtml2 td>div {
+                display: block;
+                vertical-align: top;
+            }
 
             .tablehtml2 .f-field {
                 width: 100%;
                 margin-bottom: 0 !important;
             }
-    </style>
-    <link href="../res/css/tablehtml.css" rel="stylesheet" />
+
+        </style>
+        <link href="<%= PageContext.ResolveUrl("~/res/css/tablehtml.css") %>" rel="stylesheet" />
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -83,8 +87,7 @@
                 </tr>
             </table>
         </f:ContentPanel>
-        <f:Button ID="btnRegister" runat="server" Text="注册" OnClick="btnRegister_Click"
-            ValidateForms="ContentPanel1" ValidateTarget="Top" MarginTop="5px">
+        <f:Button ID="btnRegister" runat="server" Text="注册" OnClick="btnRegister_Click" ValidateForms="ContentPanel1" ValidateTarget="Top" MarginTop="5px">
         </f:Button>
         <br />
         <br />
@@ -109,8 +112,7 @@
                 </tr>
             </table>
         </f:ContentPanel>
-        <f:Button ID="Button1" runat="server" Text="注册" OnClick="btnRegister_Click"
-            ValidateForms="ContentPanel2" ValidateTarget="Top" MarginTop="5px">
+        <f:Button ID="Button1" runat="server" Text="注册" OnClick="btnRegister_Click" ValidateForms="ContentPanel2" ValidateTarget="Top" MarginTop="5px">
         </f:Button>
         <br />
         <br />
@@ -135,8 +137,7 @@
                 </tr>
             </table>
         </f:ContentPanel>
-        <f:Button ID="Button2" runat="server" Text="注册" OnClick="btnRegister_Click"
-            ValidateForms="ContentPanel3" ValidateTarget="Top" MarginTop="5px">
+        <f:Button ID="Button2" runat="server" Text="注册" OnClick="btnRegister_Click" ValidateForms="ContentPanel3" ValidateTarget="Top" MarginTop="5px">
         </f:Button>
         <br />
         <br />

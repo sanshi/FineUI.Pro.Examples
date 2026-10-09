@@ -10,20 +10,18 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" EnableCheckBoxSelect="true"
-            runat="server" DataIDField="Id" DataUrl="~/griddataurl/griddataurl.ashx">
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" EnableCheckBoxSelect="true" runat="server"
+            DataIDField="Id" DataUrl="~/griddataurl/griddataurl.ashx">
             <Columns>
                 <f:RowNumberField></f:RowNumberField>
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名">
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                 </f:RenderField>
                 <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份">
                 </f:RenderField>
                 <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" HeaderText="是否在校" />
-                <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor"
-                    ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业">
+                <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业">
                 </f:RenderField>
                 <f:RenderField ColumnID="Group" DataField="Group" RendererFunction="renderGroup" HeaderText="分组">
                 </f:RenderField>
@@ -41,9 +39,8 @@
         注：表格默认选中了[康颖颖]，[徐鹏]所在的行。
         <br />
     </form>
-	<script src="../res/js/grid.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
-
         var grid1ClientID = '<%= Grid1.ClientID %>';
         var labResultClientID = '<%= labResult.ClientID %>';
 
@@ -51,7 +48,7 @@
 
             var result = '<table class="result"><tr><th>ID</th><th>姓名</th><th>性别</th><th>所学专业</th></tr>';
             $.each(F(grid1ClientID).getSelectedRows(true), function(index, item) {
-                
+
                 var values = item.values;
 
                 result += F.formatString("<tr><td>{0}</td><td>{1}</td><td>{2}</td><td>{3}</td></tr>",
@@ -61,7 +58,7 @@
                     values.Major);
 
             });
-                
+
             result += '</table>';
 
             F(labResultClientID).setValue('选中的行：<br/>' + result);
@@ -70,7 +67,6 @@
         function onButton2Click(event) {
             F(grid1ClientID).selectRows(['102', '106', '108']);
         }
-
 
     </script>
 </body>

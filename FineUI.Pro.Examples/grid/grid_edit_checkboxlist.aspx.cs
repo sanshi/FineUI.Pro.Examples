@@ -39,22 +39,7 @@ namespace FineUI.Pro.Examples.grid
 
         protected void Grid1_RowDataBound(object sender, GridRowEventArgs e)
         {
-            AspNet.CheckBoxList cblHobby = (AspNet.CheckBoxList)Grid1.Rows[e.RowIndex].FindControl("cblHobby");
-
-            DataRowView row = e.DataItem as DataRowView;
-
-            string hobby = row["Hobby"].ToString() + ",";
-            foreach (AspNet.ListItem item in cblHobby.Items)
-            {
-                if (hobby.Contains(item.Value + ","))
-                {
-                    item.Selected = true;
-                }
-                else
-                {
-                    item.Selected = false;
-                }
-            }
+            // 选择项初值由客户端渲染函数读取 Gender 或 Hobby 字段，无需查找模板控件。
         }
 
 
@@ -70,7 +55,7 @@ namespace FineUI.Pro.Examples.grid
                 sb.AppendFormat("<td>{0}</td>", rowDataKeys[1]);
 
                 GridRow row = Grid1.Rows[i];
-                AspNet.CheckBoxList cblHobby = (AspNet.CheckBoxList)row.FindControl("cblHobby");
+                string cblHobby = GridInputUtil.GetValue(Grid1, row.RowID, "cblHobby");
                 sb.AppendFormat("<td>{0}</td>", GetHobbies(cblHobby));
 
                 sb.Append("</tr>");
@@ -82,34 +67,10 @@ namespace FineUI.Pro.Examples.grid
 
         }
 
-        private string GetHobbies(AspNet.CheckBoxList cblHobby)
+        private string GetHobbies(string cblHobby)
         {
-            StringBuilder sb = new StringBuilder();
-            foreach (AspNet.ListItem item in cblHobby.Items)
-            {
-                if (item.Selected)
-                {
-                    switch (item.Value)
-                    {
-                        case "reading":
-                            sb.Append("读书,");
-                            break;
-                        case "basketball":
-                            sb.Append("篮球,");
-                            break;
-                        case "travel":
-                            sb.Append("旅游,");
-                            break;
-                        case "movie":
-                            sb.Append("电影,");
-                            break;
-                        case "music":
-                            sb.Append("音乐,");
-                            break;
-                    }
-                }
-            }
-            return sb.ToString().TrimEnd(',');
+            return cblHobby.Replace("reading", "读书").Replace("basketball", "篮球")
+                .Replace("travel", "旅游").Replace("movie", "电影").Replace("music", "音乐");
         }
 
         #endregion

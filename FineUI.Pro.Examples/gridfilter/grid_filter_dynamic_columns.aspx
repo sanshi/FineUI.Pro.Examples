@@ -16,5 +16,7 @@
         <br />
         <f:Label runat="server" ID="labResult" EncodeText="false"></f:Label>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
 </body>
 </html>

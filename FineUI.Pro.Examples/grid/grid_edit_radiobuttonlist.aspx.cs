@@ -39,20 +39,7 @@ namespace FineUI.Pro.Examples.grid
 
         protected void Grid1_RowDataBound(object sender, GridRowEventArgs e)
         {
-            AspNet.RadioButtonList rblGender = (AspNet.RadioButtonList)Grid1.Rows[e.RowIndex].FindControl("rblGender");
-
-            DataRowView row = e.DataItem as DataRowView;
-
-            int gender = Convert.ToInt32(row["Gender"]);
-            if (gender == 1)
-            {
-                rblGender.SelectedValue = "男";
-            }
-            else
-            {
-                rblGender.SelectedValue = "女";
-            }
-
+            // 选择项初值由客户端渲染函数读取 Gender 或 Hobby 字段，无需查找模板控件。
         }
 
 
@@ -68,8 +55,8 @@ namespace FineUI.Pro.Examples.grid
                 sb.AppendFormat("<td>{0}</td>", rowDataKeys[1]);
 
                 GridRow row = Grid1.Rows[i];
-                AspNet.RadioButtonList rblGender = (AspNet.RadioButtonList)row.FindControl("rblGender");
-                sb.AppendFormat("<td>{0}</td>", rblGender.SelectedValue);
+                string rblGender = GridInputUtil.GetValue(Grid1, row.RowID, "rblGender");
+                sb.AppendFormat("<td>{0}</td>", rblGender);
 
                 sb.Append("</tr>");
             }

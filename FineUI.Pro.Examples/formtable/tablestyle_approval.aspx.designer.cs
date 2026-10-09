@@ -217,7 +217,7 @@ namespace FineUI.Pro.Examples.form {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FineUI.Pro.BoundField ACTIVITYNAME;
+        protected global::FineUI.Pro.RenderField ACTIVITYNAME;
         
         /// <summary>
         /// OPTORNAME control.
@@ -226,7 +226,7 @@ namespace FineUI.Pro.Examples.form {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FineUI.Pro.BoundField OPTORNAME;
+        protected global::FineUI.Pro.RenderField OPTORNAME;
         
         /// <summary>
         /// OPTIONSTATE control.
@@ -235,7 +235,7 @@ namespace FineUI.Pro.Examples.form {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FineUI.Pro.TemplateField OPTIONSTATE;
+        protected global::FineUI.Pro.RenderField OPTIONSTATE;
         
         /// <summary>
         /// OPTIONREMARK control.
@@ -244,7 +244,7 @@ namespace FineUI.Pro.Examples.form {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FineUI.Pro.BoundField OPTIONREMARK;
+        protected global::FineUI.Pro.RenderField OPTIONREMARK;
         
         /// <summary>
         /// CREATETIME control.
@@ -253,7 +253,7 @@ namespace FineUI.Pro.Examples.form {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::FineUI.Pro.BoundField CREATETIME;
+        protected global::FineUI.Pro.RenderField CREATETIME;
         
         /// <summary>
         /// Panel_CurrentApproval control.

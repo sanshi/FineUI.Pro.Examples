@@ -25,12 +25,12 @@ namespace FineUI.Pro.Examples.grid
             var rnf = new FineUI.Pro.RowNumberField();
             Grid1.Columns.Add(rnf);
 
-            FineUI.Pro.BoundField bf;
+            FineUI.Pro.RenderField bf;
 
-            bf = new FineUI.Pro.BoundField();
+            bf = new FineUI.Pro.RenderField();
             bf.ColumnID = "Name";
             bf.DataField = "Name";
-            bf.DataFormatString = "{0}";
+
             bf.HeaderText = "姓名";
             bf.EnableFilter = true;
             // 自定义过滤器
@@ -44,40 +44,43 @@ namespace FineUI.Pro.Examples.grid
             Grid1.Columns.Add(bf);
 
 
-            bf = new FineUI.Pro.BoundField();
+            bf = new FineUI.Pro.RenderField();
             bf.ColumnID = "EntranceYear";
             bf.DataField = "EntranceYear";
-            bf.DataFormatString = "{0}";
+
             bf.HeaderText = "入学年份";
             Grid1.Columns.Add(bf);
 
-            FineUI.Pro.CheckBoxField cbf = new FineUI.Pro.CheckBoxField();
+            FineUI.Pro.RenderCheckField cbf = new FineUI.Pro.RenderCheckField();
             cbf.ColumnID = "AtSchool";
             cbf.RenderAsStaticField = true;
             cbf.DataField = "AtSchool";
             cbf.HeaderText = "是否在校";
             Grid1.Columns.Add(cbf);
 
-            bf = new FineUI.Pro.BoundField();
+            bf = new FineUI.Pro.RenderField();
             bf.ColumnID = "Major";
-            bf.DataToolTipField = "Major";
+
             bf.DataField = "Major";
-            bf.DataFormatString = "{0}";
+            bf.RendererFunction = "renderMajorText";
+
             bf.HeaderText = "所学专业";
             bf.ExpandUnusedSpace = true;
             Grid1.Columns.Add(bf);
 
-            FineUI.Pro.ImageField imageField = new FineUI.Pro.ImageField();
+            FineUI.Pro.RenderField imageField = new FineUI.Pro.RenderField();
             imageField.ColumnID = "Group";
-            imageField.DataImageUrlField = "Group";
-            imageField.DataImageUrlFormatString = "~/res/images/16/{0}.png";
+            imageField.DataField = "Group";
+            imageField.RendererFunction = "renderGroup";
             imageField.HeaderText = "分组";
             Grid1.Columns.Add(imageField);
 
-            bf = new FineUI.Pro.BoundField();
+            bf = new FineUI.Pro.RenderField();
             bf.ColumnID = "LogTime";
             bf.DataField = "LogTime";
-            bf.DataFormatString = "{0:yyyy-MM-dd}";
+            bf.FieldType = FieldType.Date;
+            bf.Renderer = Renderer.Date;
+            bf.RendererArgument = "yyyy-MM-dd";
             bf.HeaderText = "注册日期";
             Grid1.Columns.Add(bf);
 

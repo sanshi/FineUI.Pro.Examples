@@ -4,27 +4,23 @@
 <html>
 <head runat="server">
     <title></title>
+
+
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" runat="server" EnableCollapse="false"
-            EnableColumnLines="true">
+        <f:Grid AllowCellEditing="true" DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" runat="server"
+            EnableCollapse="false" EnableColumnLines="true">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField ColumnID="Name" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                    <ItemTemplate>
-                        <%-- Container.DataItem 的类型是 System.Data.DataRowView 或者用户自定义类型 --%>
-                        <%--<asp:Label ID="Label2" runat="server" Text='<%# GetGender(DataBinder.Eval(Container.DataItem, "Gender")) %>'></asp:Label>--%>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField ColumnID="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField ColumnID="AtSchool" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:BoundField ExpandUnusedSpace="true" MinWidth="150px" ColumnID="Major" DataField="Major" HeaderText="所学专业" />
-                <f:ImageField ColumnID="GroupB" DataImageUrlField="GroupB" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:CheckBoxField ColumnID="CheckBoxField1" RenderAsStaticField="false" HeaderText="是否激活" />
+                <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField ColumnID="AtSchool" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ExpandUnusedSpace="true" MinWidth="150px" ColumnID="Major" DataField="Major" HeaderText="所学专业" />
+                <f:RenderField ColumnID="GroupB" HeaderText="分组" DataField="GroupB" RendererFunction="renderGroup" />
+                <f:RenderCheckField ColumnID="CheckBoxField1" RenderAsStaticField="false" HeaderText="是否激活" />
             </Columns>
             <Listeners>
                 <f:Listener Event="dataload" Handler="onGridDataLoad" />
@@ -40,6 +36,8 @@
         <br />
         注：同一分组的复选框只能选中一个。
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
     <script>
         function onGridDataLoad(event) {
             this.mergeColumns(['GroupB']);
@@ -47,59 +45,33 @@
 
         var gridClientID = '<%= Grid1.ClientID %>';
 
-        F.ready(function () {
-
+        F.ready(function() {
             var grid = F(gridClientID);
-            var checkboxSelector = '.f-grid-cell-CheckBoxField1 .f-grid-checkbox';
-
-            // 注册复选框的点击事件
-            grid.el.on('click', checkboxSelector, function (event) {
-                var targetEl = $(this), checked = targetEl.hasClass('f-checked');
-
-                // 如果取消复选框选中，则不做处理
-                if (checked) {
-                    var rowEl = targetEl.parents('.f-grid-row');
-                    var rowData = grid.getRowData(rowEl);
-
-                    // 参考行的 GroupB 的值
-                    var rowGroupB = rowData.values['GroupB'];
-
-                    // 下一个要检查的行元素
-                    var nextRowEl;
-
-                    // 取消选中行中的复选框，返回 false 表明本行和参考行不属于同一个分组
-                    function uncheckRow() {
-                        var nextRowData = grid.getRowData(nextRowEl);
-                        var nextRowGroupB = nextRowData.values['GroupB'];
-
-                        if (nextRowGroupB == rowGroupB) {
-                            nextRowEl.find(checkboxSelector).removeClass('f-checked');
-                            return true;
-                        } else {
-                            // 不属于同一个分组
-                            return false;
-                        }
-                    }
-                    
-
-                    // 向上查找相同 GroupB 的行，并取消选中复选框
-                    nextRowEl = rowEl;
-                    while ((nextRowEl = nextRowEl.prev()).length) {
-                        if (!uncheckRow()) {
-                            break;
-                        }
-                    }
-
-                    // 向下查找相同 GroupB 的行，并取消选中复选框
-                    nextRowEl = rowEl;
-                    while ((nextRowEl = nextRowEl.next()).length) {
-                        if (!uncheckRow()) {
-                            break;
-                        }
-                    }
-                    
+            grid.on('afteredit', function(event, value, params) {
+                if (params.columnId !== 'CheckBoxField1' || value !== true) {
+                    return;
                 }
-                
+                var row = grid.getRowEl(params.rowId);
+                var group = params.rowData.values.GroupB;
+
+                // 只取消相邻同组的行，保留其它分组的选择；更新原始值后回发才能读到互斥结果。
+                function uncheckRow(nextRow) {
+                    var data = grid.getRowData(nextRow);
+                    if (data.values.GroupB !== group) {
+                        return false;
+                    }
+                    grid.updateCellValue(data.id, params.columnId, false);
+                    return true;
+                }
+
+                var nextRow = row.prev();
+                while (nextRow.length && uncheckRow(nextRow)) {
+                    nextRow = nextRow.prev();
+                }
+                nextRow = row.next();
+                while (nextRow.length && uncheckRow(nextRow)) {
+                    nextRow = nextRow.next();
+                }
             });
         });
 

@@ -6,14 +6,13 @@
 <head runat="server">
     <title></title>
     <style>
-        
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" EnableCollapse="false"
-            runat="server" AllowCellEditing="true" ClicksToEdit="2"
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" EnableCollapse="false" runat="server" AllowCellEditing="true" ClicksToEdit="2"
             DataIDField="Id" Title="表格与表单">
             <Toolbars>
                 <f:Toolbar ID="Toolbar2" Position="Top" runat="server">
@@ -23,39 +22,39 @@
                 </f:Toolbar>
             </Toolbars>
             <Columns>
-                <f:TemplateField Width="60px">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
+                <f:RowNumberField Width="60px" ColumnID="Number" />
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名">
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别" Hidden="true">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别" Hidden="true">
                 </f:RenderField>
                 <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份">
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期" Hidden="true">
+                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                    HeaderText="入学日期" Hidden="true">
                 </f:RenderField>
                 <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" HeaderText="是否在校" EnableColumnEdit="false" />
                 <f:RenderField ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业">
                 </f:RenderField>
-                <f:RenderField ColumnID="Sheng" DataField="Sheng"
-                    RendererFunction="renderSheng" HeaderText="省">
+                <f:RenderField ColumnID="Sheng" DataField="Sheng" RendererFunction="renderSheng" HeaderText="省">
                 </f:RenderField>
-                <f:RenderField ColumnID="Shi" DataField="Shi"
-                    RendererFunction="renderShi" HeaderText="市">
+                <f:RenderField ColumnID="Shi" DataField="Shi" RendererFunction="renderShi" HeaderText="市">
                 </f:RenderField>
-                <f:LinkButtonField ColumnID="Edit" Width="50px" Icon="Pencil" />
-                <f:LinkButtonField ColumnID="Delete" Width="50px" Icon="Delete" />
+                <f:RenderField ColumnID="Edit" Width="50px">
+                    <Commands>
+                        <f:Command RendererFunction="renderClientAction" Icon="Pencil" />
+                    </Commands>
+                </f:RenderField>
+                <f:RenderField ColumnID="Delete" Width="50px">
+                    <Commands>
+                        <f:Command RendererFunction="renderClientAction" Icon="Delete" />
+                    </Commands>
+                </f:RenderField>
             </Columns>
         </f:Grid>
         <br />
         <f:Button ID="btnSaveAll" Text="全部保存" Icon="DatabaseSave" OnClick="btnSaveAll_Click" runat="server">
         </f:Button>
-        <f:Window ID="Window1" Title="弹出窗体" Hidden="true" EnableIFrame="false"
-            EnableMaximize="true" Target="Self" EnableResize="true" runat="server"
+        <f:Window ID="Window1" Title="弹出窗体" Hidden="true" EnableIFrame="false" EnableMaximize="true" Target="Self" EnableResize="true" runat="server"
             IsModal="true" Width="600px">
             <Items>
                 <f:SimpleForm ID="SimpleForm1" runat="server" ShowBorder="false" ShowHeader="false" BodyPadding="10px">
@@ -93,7 +92,8 @@
                     <Toolbars>
                         <f:Toolbar ID="Toolbar1" Position="Bottom" ToolbarAlign="Right" runat="server">
                             <Items>
-                                <f:Button ID="btnSave" Icon="TableSave" runat="server" Text="保存到表格" ValidateForms="SimpleForm1" ClickHandler="onSaveToTableClick">
+                                <f:Button ID="btnSave" Icon="TableSave" runat="server" Text="保存到表格" ValidateForms="SimpleForm1"
+                                    ClickHandler="onSaveToTableClick">
                                 </f:Button>
                             </Items>
                         </f:Toolbar>
@@ -110,10 +110,10 @@
         注：初始[性别]和[入学日期]列处于隐藏状态。
     </form>
     <script>
-
         // 根据省代码获取省名称
         function getShengName(shengValue) {
-            var shengName = '', sheng;
+            var shengName = '',
+                sheng;
             if (shengValue) {
                 for (var i = 0, count = window._SHENG.length; i < count; i++) {
                     sheng = window._SHENG[i];
@@ -128,7 +128,8 @@
 
         // 根据省代码和市代码获取市名称
         function getShiName(shengValue, shiValue) {
-            var shiData = window._SHI[shengValue], shi, shiName = '';
+            var shiData = window._SHI[shengValue],
+                shi, shiName = '';
             if (shiData) {
                 for (var i = 0, count = shiData.length; i < count; i++) {
                     shi = shiData[i];
@@ -209,7 +210,7 @@
                 rowId = selectedRowIds[0];
             }
 
-            
+
             window1.setTitle('编辑数据');
 
             // 当前行数据
@@ -264,8 +265,8 @@
                     'Major': F(ddlFormMajorClientID).getValue(),
                     'Sheng': F(ddlFormShengClientID).getValue(),
                     'Shi': F(ddlFormShiClientID).getValue(),
-                    'Edit': '<a href="#"><img class="f-grid-imagefield" src="../res/icon/pencil.png"></a>',
-                    'Delete': '<a href="#"><img class="f-grid-imagefield" src="../res/icon/delete.png"></a>'
+                    'Edit': '',
+                    'Delete': ''
                 }, true);
             }
 
@@ -273,11 +274,11 @@
         }
 
 
-        F.ready(function () {
+        F.ready(function() {
 
             var grid1 = F(gridClientID);
 
-            grid1.el.on('click', '.f-grid-cell-Edit a,.f-grid-cell-Delete a', function (event) {
+            grid1.el.on('click', '.f-grid-cell-Edit a,.f-grid-cell-Delete a', function(event) {
                 event.preventDefault();
                 var targetEl = $(this);
                 var rowEl = targetEl.parents('.f-grid-row');
@@ -292,7 +293,7 @@
                     F.confirm({
                         message: '删除选中行？',
                         messageIcon: 'question',
-                        ok: function () {
+                        ok: function() {
                             grid1.deleteRow(rowId);
                         }
                     });
@@ -310,5 +311,7 @@
         }
 
     </script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
 </body>
 </html>

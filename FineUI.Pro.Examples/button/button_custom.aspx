@@ -4,16 +4,19 @@
 <html>
 <head runat="server">
     <title></title>
-    <style type="text/css">
-        .bgbtn {
-            background-image: url(../res/images/login.png) !important;
-            width: 320px;
-            height: 50px;
-            border-width: 0 !important;
-            background-color: transparent !important;
-        }
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+        <style type="text/css">
+            .bgbtn {
+                background-image: url('<%= PageContext.ResolveUrl("~/res/images/login.png") %>') !important;
+                width: 320px;
+                height: 50px;
+                border-width: 0 !important;
+                background-color: transparent !important;
+            }
 
-    </style>
+        </style>
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">

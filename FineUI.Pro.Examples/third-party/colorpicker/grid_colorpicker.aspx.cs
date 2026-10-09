@@ -49,8 +49,8 @@ namespace FineUI.Pro.Examples.third_party.colorpicker
                 sb.AppendFormat("<td>{0}</td>", rowDataKeys[1]);
 
                 GridRow row = Grid1.Rows[i];
-                System.Web.UI.WebControls.TextBox tbxColor = (System.Web.UI.WebControls.TextBox)row.FindControl("tbxColor");
-                sb.AppendFormat("<td>{0}</td>", tbxColor.Text);
+                string tbxColor = GridInputUtil.GetValue(Grid1, row.RowID, "tbxColor");
+                sb.AppendFormat("<td>{0}</td>", tbxColor);
 
                 sb.Append("</tr>");
             }

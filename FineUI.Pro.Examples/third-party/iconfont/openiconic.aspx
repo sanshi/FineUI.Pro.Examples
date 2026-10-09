@@ -4,7 +4,10 @@
 <html>
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="../../res/third-party/openiconic/fonts.css" />
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+        <link rel="stylesheet" href="<%= PageContext.ResolveUrl("~/res/third-party/openiconic/fonts.css") %>" />
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,8 +16,7 @@
         <f:Button ID="btnIcon2" Text="图标在右侧" IconAlign="Right" IconFontClass="oi oi-star" runat="server" />
         <br />
         <br />
-        <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" IconFontClass="oi oi-cart" runat="server"
-            CssClass="marginr" />
+        <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" IconFontClass="oi oi-cart" runat="server" CssClass="marginr" />
         <f:Button ID="btnIcon4" Text="图标在下面" IconAlign="Bottom" IconFontClass="oi oi-cloud" runat="server" />
         <br />
         <br />
@@ -27,8 +29,7 @@
         <f:Button ID="Button8" IconFontClass="oi oi-trash" CssClass="marginr" runat="server" />
         <br />
         <br />
-        <f:Panel ID="Panel1" Width="500px" runat="server" Title="面板" Height="250px"
-            BodyPadding="10px" EnableCollapse="true" IconFontClass="oi oi-list">
+        <f:Panel ID="Panel1" Width="500px" runat="server" Title="面板" Height="250px" BodyPadding="10px" EnableCollapse="true" IconFontClass="oi oi-list">
             <Items>
                 <f:Label runat="server" Text="面板内容"></f:Label>
             </Items>
@@ -52,8 +53,7 @@
             </Toolbars>
         </f:Panel>
         <br />
-        <f:Tree ID="Tree1" Width="500px" ShowHeader="true" Title="树控件" EnableCollapse="false"
-            runat="server">
+        <f:Tree ID="Tree1" Width="500px" ShowHeader="true" Title="树控件" EnableCollapse="false" runat="server">
             <Nodes>
                 <f:TreeNode Text="中国" Expanded="true">
                     <f:TreeNode Text="河南省" Expanded="true">
@@ -76,7 +76,6 @@
         <a href="https://useiconic.com/open/" target="_blank">https://useiconic.com/open/</a>
     </form>
     <script>
-
         function onToolIconClick(event) {
             // 当前点击的图标字体
             var iconFontCls = this.iconFontCls;

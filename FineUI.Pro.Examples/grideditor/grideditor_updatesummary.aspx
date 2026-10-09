@@ -10,14 +10,14 @@
             font-weight: bold;
             color: red;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false"
-            runat="server" AllowCellEditing="true"
-            ClicksToEdit="1" EnableSummary="true" SummaryPosition="Flow">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false" runat="server"
+            AllowCellEditing="true" ClicksToEdit="1" EnableSummary="true" SummaryPosition="Flow">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server">
                     <Items>
@@ -37,8 +37,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                     <Editor>
                         <f:DropDownList Required="true" runat="server">
                             <f:ListItem Text="男" Value="1" />
@@ -52,15 +51,13 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="ChineseScore" DataField="ChineseScore" FieldType="Int"
-                    HeaderText="语文成绩">
+                <f:RenderField ColumnID="ChineseScore" DataField="ChineseScore" FieldType="Int" HeaderText="语文成绩">
                     <Editor>
                         <f:NumberBox ID="TextBox1" NoDecimal="true" NoNegative="true" Required="true" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="MathScore" DataField="MathScore" FieldType="Int"
-                    HeaderText="数学成绩">
+                <f:RenderField ColumnID="MathScore" DataField="MathScore" FieldType="Int" HeaderText="数学成绩">
                     <Editor>
                         <f:NumberBox ID="NumberBox1" NoDecimal="true" NoNegative="true" Required="true" runat="server">
                         </f:NumberBox>
@@ -83,11 +80,10 @@
         注：编辑[语文成绩]或者[数学成绩]时会更新合计行数据。
     </form>
     <script>
-
         var grid1ClientID = '<%= Grid1.ClientID %>';
 
         function renderDelete() {
-            return '<a href="#" class="action-btn delete"><img class="f-grid-imagefield" src="../res/icon/delete.png"></a>';
+            return '<a href="#" class="action-btn delete"><img class="f-grid-imagefield" src="<%= PageContext.ResolveUrl("~/res/icon/delete.png") %>"></a>';
         }
 
         function renderGender(value) {
@@ -96,8 +92,11 @@
 
 
         function updateSummary() {
-            var me = F(grid1ClientID), chineseTotal = 0, mathTotal = 0, allTotal = 0;
-            me.getRowEls().each(function (index, tr) {
+            var me = F(grid1ClientID),
+                chineseTotal = 0,
+                mathTotal = 0,
+                allTotal = 0;
+            me.getRowEls().each(function(index, tr) {
                 chineseTotal += me.getCellValue(tr, 'ChineseScore');
                 mathTotal += me.getCellValue(tr, 'MathScore');
             });
@@ -126,7 +125,7 @@
         function onResetClick(event) {
             F.confirm({
                 message: '确定要重置表格数据？',
-                ok: function () {
+                ok: function() {
                     F(grid1ClientID).rejectChanges();
 
                     // 重置表格后，要记得更新合计行
@@ -145,7 +144,7 @@
 
             F.confirm({
                 message: '删除选中行？',
-                ok: function () {
+                ok: function() {
                     grid1.deleteSelectedRows();
 
                     // 删除行后，要记得更新合计行
@@ -154,13 +153,13 @@
             });
 
         }
-        
+
         // 页面渲染完毕
-        F.ready(function () {
+        F.ready(function() {
 
             // 注册表格行内删除事件
             var grid1 = F(grid1ClientID);
-            grid1.el.on('click', '.action-btn.delete', function (event) {
+            grid1.el.on('click', '.action-btn.delete', function(event) {
                 // 删除链接是按钮型占位地址，先取消默认导航，避免改写页面 hash。
                 event.preventDefault();
 
@@ -170,7 +169,7 @@
 
                 F.confirm({
                     message: '删除选中行？',
-                    ok: function () {
+                    ok: function() {
                         grid1.deleteRow(rowData.id);
 
                         // 删除行后，要记得更新合计行

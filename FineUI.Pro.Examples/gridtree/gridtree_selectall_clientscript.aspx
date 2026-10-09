@@ -8,16 +8,15 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false"
-            EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId"
-            OnRowDataBound="Grid1_RowDataBound"
-            EnableCheckBoxSelect="true" KeepCurrentSelection="true">
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false" EnableTree="true"
+            TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId" OnRowDataBound="Grid1_RowDataBound" EnableCheckBoxSelect="true"
+            KeepCurrentSelection="true">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
-                <f:BoundField Width="150px" DataField="Type" HeaderText="类型" />
-                <f:BoundField Width="150px" DataField="Size" HeaderText="大小" />
-                <f:BoundField Width="150px" DataField="ModifyDate" DataFormatString="{0:yyyy-MM-dd}" HeaderText="修改日期" />
+                <f:RenderField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
+                <f:RenderField Width="150px" DataField="Type" HeaderText="类型" />
+                <f:RenderField Width="150px" DataField="Size" HeaderText="大小" />
+                <f:RenderField Width="150px" DataField="ModifyDate" HeaderText="修改日期" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
             </Columns>
             <Listeners>
                 <f:Listener Event="rowselect" Handler="onGridRowSelect" />
@@ -37,9 +36,8 @@
         </ul>
     </form>
 
-    <script src="../res/js/grid.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
-
         // 递归遍历节点 rowData 的所有子节点
         function resolveRowChildren(rowData, callback) {
             var children = rowData.children;
@@ -53,30 +51,34 @@
         }
 
         function onGridRowSelect(event, rowId) {
-            var grid = this, rowData = grid.getRowData(rowId);
+            var grid = this,
+                rowData = grid.getRowData(rowId);
 
             var rowIds = [];
-            resolveRowChildren(rowData, function () {
+            resolveRowChildren(rowData, function() {
                 rowIds.push(this.id);
             });
 
             // 本过程中不触发事件
-            F.noEvent(function () {
+            F.noEvent(function() {
                 // 第二个参数true：保持现有选中项
-                grid.selectRows(rowIds, { keep: true });
+                grid.selectRows(rowIds, {
+                    keep: true
+                });
             });
         }
 
         function onGridRowDeselect(event, rowId) {
-            var grid = this, rowData = grid.getRowData(rowId);
+            var grid = this,
+                rowData = grid.getRowData(rowId);
 
             var rowIds = [];
-            resolveRowChildren(rowData, function () {
+            resolveRowChildren(rowData, function() {
                 rowIds.push(this.id);
             });
 
             // 本过程中不触发事件
-            F.noEvent(function () {
+            F.noEvent(function() {
                 // 第二个参数true：保持现有选中项
                 grid.deselectRows(rowIds);
             });

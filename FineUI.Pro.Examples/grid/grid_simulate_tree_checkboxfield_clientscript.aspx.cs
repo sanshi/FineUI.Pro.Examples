@@ -99,8 +99,8 @@ namespace FineUI.Pro.Examples.grid
         protected void Grid1_RowCommand(object sender, GridCommandEventArgs e)
         {
             // 当前行[复选框]列的选中状态
-            CheckBoxField checkField = (CheckBoxField)Grid1.FindColumn("CheckBoxField1"); 
-            bool crowCheckState = checkField.GetCheckedState(e.RowIndex);
+            RenderCheckField checkField = (RenderCheckField)Grid1.FindColumn("CheckBoxField1");
+            bool crowCheckState = GridColumnUtil.GetCheckedState(Grid1, checkField.ColumnID, e.RowIndex);
 
             if (e.CommandName == "Action1" || e.CommandName == "Action2")
             {
@@ -122,7 +122,7 @@ namespace FineUI.Pro.Examples.grid
                     // 当前行的子级（TreeLevel大于当前行的TreeLevel）
                     if (treeLevel > crowTreeLevel)
                     {
-                        checkField.SetCheckedState(i, crowCheckState);
+                        GridColumnUtil.SetCheckedState(Grid1, checkField.ColumnID, i, crowCheckState);
                     }
                     else
                     {
@@ -141,11 +141,11 @@ namespace FineUI.Pro.Examples.grid
             DataRowView row = e.DataItem as DataRowView;
             int rowDataId = Convert.ToInt32(row["Id"]);
 
-            // 默认展开的节点
+            // 绑定期间直接设置行的初始选中值，避免在全部行完成之前读取不完整的合并数据。
             if (rowDataId == 105 || rowDataId == 106 || rowDataId == 107)
             {
-                CheckBoxField checkField = (CheckBoxField)Grid1.FindColumn("CheckBoxField1");
-                checkField.SetCheckedState(e.RowIndex, true);
+                RenderCheckField checkField = (RenderCheckField)Grid1.FindColumn("CheckBoxField1");
+                e.Row.SetCellValue(checkField.ColumnID, true);
             }
         }
 

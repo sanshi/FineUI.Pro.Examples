@@ -9,9 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" EnableCollapse="false"
-            runat="server" AllowCellEditing="true" ClicksToEdit="2"
-            DataIDField="Id" EnableCheckBoxSelect="true">
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" EnableCollapse="false" runat="server" AllowCellEditing="true"
+            ClicksToEdit="2" DataIDField="Id" EnableCheckBoxSelect="true">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server">
                     <Items>
@@ -31,8 +30,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                     <Editor>
                         <f:DropDownList Required="true" runat="server">
                             <f:ListItem Text="男" Value="1" />
@@ -42,13 +40,12 @@
                 </f:RenderField>
                 <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份">
                     <Editor>
-                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000"
-                            MaxValue="2025" runat="server">
+                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期">
+                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                    HeaderText="入学日期">
                     <Editor>
                         <f:DatePicker ID="DatePicker1" Required="true" runat="server">
                         </f:DatePicker>
@@ -61,7 +58,11 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:LinkButtonField ColumnID="Delete" Icon="Delete" />
+                <f:RenderField ColumnID="Delete">
+                    <Commands>
+                        <f:Command RendererFunction="renderClientAction" Icon="Delete" />
+                    </Commands>
+                </f:RenderField>
             </Columns>
         </f:Grid>
         <br />
@@ -74,10 +75,9 @@
         <f:Label ID="labResult" EncodeText="false" runat="server">
         </f:Label>
         <br />
-        
+
     </form>
     <script>
-
         function renderGender(value) {
             return value == 1 ? '男' : '女';
         }
@@ -92,7 +92,7 @@
                 'EntranceDate': '2015-09-01',
                 'AtSchool': false,
                 'Major': '化学系',
-                'Delete': '<a href="#"><img src="../res/icon/delete.png"/></a>'
+                'Delete': ''
             }, false);
         }
 
@@ -108,7 +108,7 @@
             // 删除选中行之前先弹出确认对话框
             F.confirm({
                 message: '删除选中行？',
-                ok: function () {
+                ok: function() {
                     // 删除选中行
                     grid.deleteSelectedRows();
                 }
@@ -119,23 +119,23 @@
         function onResetClick(event) {
             F.confirm({
                 message: '确定要重置表格数据？',
-                ok: function () {
+                ok: function() {
                     F(grid1ClientID).rejectChanges();
                 }
             });
         }
 
 
-        F.ready(function () {
+        F.ready(function() {
 
             var grid = F(grid1ClientID);
             // 注册点击行中删除图片的事件处理函数
-            grid.el.on('click', '.f-grid-cell-Delete a', function (event) {
+            grid.el.on('click', '.f-grid-cell-Delete a', function(event) {
                 event.preventDefault();
                 // 删除选中行之前先弹出确认对话框
                 F.confirm({
                     message: '删除选中行？',
-                    ok: function () {
+                    ok: function() {
                         // 删除选中行
                         grid.deleteSelectedRows();
                     }
@@ -145,5 +145,7 @@
         });
 
     </script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
 </body>
 </html>

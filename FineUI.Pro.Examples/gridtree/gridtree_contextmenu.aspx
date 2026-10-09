@@ -8,15 +8,14 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false"
-            EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId"
-            OnRowDataBound="Grid1_RowDataBound">
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false" EnableTree="true"
+            TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId" OnRowDataBound="Grid1_RowDataBound">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
-                <f:BoundField Width="150px" DataField="Type" HeaderText="类型" />
-                <f:BoundField Width="150px" DataField="Size" HeaderText="大小" />
-                <f:BoundField Width="150px" DataField="ModifyDate" DataFormatString="{0:yyyy-MM-dd}" HeaderText="修改日期" />
+                <f:RenderField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
+                <f:RenderField Width="150px" DataField="Type" HeaderText="类型" />
+                <f:RenderField Width="150px" DataField="Size" HeaderText="大小" />
+                <f:RenderField Width="150px" DataField="ModifyDate" HeaderText="修改日期" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
             </Columns>
             <Listeners>
                 <f:Listener Event="beforerowcontextmenu" Handler="onRowContextMenu" />
@@ -39,9 +38,8 @@
         注：在叶子节点上点击右键，则弹出菜单的菜单项都是禁用状态。
     </form>
 
-    <script src="../res/js/grid.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
-
         var gridID = '<%= Grid1.ClientID %>';
         var menuID = '<%= Menu1.ClientID %>';
         // 保存当前菜单对应的树节点ID
@@ -57,7 +55,7 @@
         // 设置所有菜单项的禁用状态
         function setMenuItemsDisabled(disabled) {
             var menu = F(menuID);
-            $.each(menu.items, function (index, item) {
+            $.each(menu.items, function(index, item) {
                 item.setDisabled(disabled);
             });
         }

@@ -5,6 +5,7 @@
 <html>
 <head runat="server">
     <title></title>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,24 +13,14 @@
         <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" Height="350px"
             ShowEmptyIconText="true" runat="server">
             <Columns>
-                <f:TemplateField Width="60px">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                    <ItemTemplate>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" Width="200px" />
-                <f:ImageField ColumnID="Group" Width="150px" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
+                <f:RowNumberField Width="60px" ColumnID="Number" />
+                <f:RenderField DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" HeaderText="所学专业" Width="200px" DataField="Major" RendererFunction="renderMajor" />
+                <f:RenderField ColumnID="Group" Width="150px" HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+                <f:RenderField DataField="LogTime" HeaderText="注册日期" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
             </Columns>
         </f:Grid>
         <br />
@@ -37,7 +28,9 @@
         </f:Button>
         <br />
         <br />
-        注：默认（不设置 EmptyText、ShowEmptyIconText 为 false）表格为空时显示空白；本例通过 ShowEmptyIconText="true" 开启内置的「图标 + 文案」空状态。也可在 PageManager 上设置 GridShowEmptyIconText="true" 全局开启。
+        注：默认（不设置 EmptyText、ShowEmptyIconText 为 false）表格为空时显示空白；本例通过 ShowEmptyIconText="true" 开启内置的「图标 + 文案」空状态。也可在 PageManager 上设置 GridShowEmptyIconText="true"
+        全局开启。
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

@@ -4,15 +4,18 @@
 <html>
 <head runat="server">
     <title></title>
-    <style>
-        .mybgpanel>.f-panel-bodyct>.f-panel-body {
-            background-color: #FEF3D5;
-            background-image: url(../../res/images/bg/small/3.jpg);
-            background-position: right bottom;
-            background-repeat: no-repeat;
-        }
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+        <style>
+            .mybgpanel>.f-panel-bodyct>.f-panel-body {
+                background-color: #FEF3D5;
+                background-image: url('<%= PageContext.ResolveUrl("~/res/images/bg/small/3.jpg") %>');
+                background-position: right bottom;
+                background-repeat: no-repeat;
+            }
 
-    </style>
+        </style>
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">

@@ -34,12 +34,22 @@ namespace FineUI.Pro.Examples.grid
         #region Events
 
 
+        // 复选框修改完成后，继续执行原来的行内动作；此时后台可以读取修改后的布尔值。
+        protected void Grid1_AfterEdit(object sender, GridAfterEditEventArgs e)
+        {
+            if (e.ColumnID == "CheckBoxField2")
+            {
+                Grid1_RowCommand(sender, new GridCommandEventArgs(
+                    e.RowIndex, e.RowID, e.ColumnIndex, e.ColumnID, "CheckBox1", String.Empty));
+            }
+        }
+
         protected void Grid1_RowCommand(object sender, GridCommandEventArgs e)
         {
             if (e.CommandName == "CheckBox1")
             {
-                CheckBoxField checkField = (CheckBoxField)Grid1.FindColumn(e.ColumnIndex);
-                bool checkState = checkField.GetCheckedState(e.RowIndex);
+                RenderCheckField checkField = (RenderCheckField)Grid1.FindColumn(e.ColumnIndex);
+                bool checkState = GridColumnUtil.GetCheckedState(Grid1, checkField.ColumnID, e.RowIndex);
                 ShowNotify(String.Format("你点击了第 {0} 行，第 {1} 列，选中状态：{2}", e.RowIndex + 1, e.ColumnIndex + 1, checkState));
             }
             else if (e.CommandName == "Action1" || e.CommandName == "Action2")
@@ -51,7 +61,7 @@ namespace FineUI.Pro.Examples.grid
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            CheckBoxField field2 = (CheckBoxField)Grid1.FindColumn("CheckBoxField2");
+            RenderCheckField field2 = (RenderCheckField)Grid1.FindColumn("CheckBoxField2");
 
             StringBuilder sb = new StringBuilder();
             List<GridRow> selectedRows = GridSelectionUtil.GetSelectedRows(Grid1);
@@ -71,7 +81,7 @@ namespace FineUI.Pro.Examples.grid
                     sb.Append("<tr>");
 
                     sb.AppendFormat("<td>{0}</td>", rowIndex + 1);
-                    sb.AppendFormat("<td>{0}</td>", field2.GetCheckedState(rowIndex));
+                    sb.AppendFormat("<td>{0}</td>", GridColumnUtil.GetCheckedState(Grid1, field2.ColumnID, rowIndex));
 
                     sb.Append("</tr>");
                 }

@@ -4,54 +4,55 @@
 <html>
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="../../res/third-party/spectrum/spectrum.css" />
-    <style>
-        .mycolor .f-field-body {
-            display: inline-block !important;
-            width: 150px;
-            margin-right: 5px;
-        }
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+        <link rel="stylesheet" href="<%= PageContext.ResolveUrl("~/res/third-party/spectrum/spectrum.css") %>" />
+        <style>
+            .mycolor .f-field-body {
+                display: inline-block !important;
+                width: 150px;
+                margin-right: 5px;
+            }
 
-        .mycolor .sp-replacer {
-            border-width: 0;
-            background-color: transparent;
-        }
+            .mycolor .sp-replacer {
+                border-width: 0;
+                background-color: transparent;
+            }
 
-        .mycolor .sp-dd {
-            display: none;
-        }
+            .mycolor .sp-dd {
+                display: none;
+            }
 
-        .mycolor .sp-preview {
-            margin-right: 0;
-            height: 100%;
-        }
-    </style>
+            .mycolor .sp-preview {
+                margin-right: 0;
+                height: 100%;
+            }
+
+        </style>
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="表单" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="表单" ShowHeader="true">
             <Items>
-                <f:DatePicker runat="server" Required="true" Label="日期一" EmptyText="请选择日期一"
-                    ID="DatePicker1" ShowRedStar="true">
+                <f:DatePicker runat="server" Required="true" Label="日期一" EmptyText="请选择日期一" ID="DatePicker1" ShowRedStar="true">
                 </f:DatePicker>
                 <f:TextBox ID="tbxMyBox" CssClass="mycolor" Text="#f90" Required="true" ShowRedStar="true" Label="选择颜色" runat="server">
                 </f:TextBox>
-                <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单"
-                    OnClick="btnSubmit_Click">
+                <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click">
                 </f:Button>
             </Items>
         </f:SimpleForm>
         <f:Label ID="labResult" ShowLabel="false" EncodeText="false" runat="server">
         </f:Label>
     </form>
-    <script src="../../res/third-party/spectrum/spectrum.js" type="text/javascript"></script>
-    <script src="../../res/third-party/spectrum/i18n/jquery.spectrum-zh-cn.js" type="text/javascript"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/spectrum/spectrum.js") %>" type="text/javascript"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/spectrum/i18n/jquery.spectrum-zh-cn.js") %>" type="text/javascript"></script>
     <script type="text/javascript">
         var tbxMyBoxClientID = '<%= tbxMyBox.ClientID %>';
 
-        F.ready(function () {
+        F.ready(function() {
 
             var tbxMyBox = F(tbxMyBoxClientID);
 
@@ -73,6 +74,7 @@
 
 
         });
+
     </script>
 </body>
 </html>

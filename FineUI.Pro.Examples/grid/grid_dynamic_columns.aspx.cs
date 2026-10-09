@@ -21,43 +21,47 @@ namespace FineUI.Pro.Examples.data
 
         private void InitGrid()
         {
-            FineUI.Pro.BoundField bf;
+            FineUI.Pro.RenderField bf;
 
-            bf = new FineUI.Pro.BoundField();
+            bf = new FineUI.Pro.RenderField();
             bf.DataField = "Id";
-            bf.DataFormatString = "{0}";
+
             bf.HeaderText = "编号";
             Grid1.Columns.Add(bf);
 
-            bf = new FineUI.Pro.BoundField();
+            bf = new FineUI.Pro.RenderField();
             bf.DataField = "Name";
-            bf.DataFormatString = "{0}";
+
             bf.HeaderText = "姓名";
             Grid1.Columns.Add(bf);
 
-            bf = new FineUI.Pro.BoundField();
+            bf = new FineUI.Pro.RenderField();
             bf.DataField = "EntranceYear";
-            bf.DataFormatString = "{0}";
+
             bf.HeaderText = "入学年份";
             Grid1.Columns.Add(bf);
 
-            CheckBoxField cf = new CheckBoxField();
+            RenderCheckField cf = new RenderCheckField();
+            cf.RenderAsStaticField = true;
             cf.DataField = "AtSchool";
             cf.HeaderText = "是否在校";
             Grid1.Columns.Add(cf);
 
-            cf = new CheckBoxField();
+            cf = new RenderCheckField();
             cf.DataField = "AtSchool";
             cf.HeaderText = "是否在校";
-            cf.Enabled = false;
+            cf.ColumnID = "AtSchoolDisabled";
+            cf.EnableColumnEdit = false;
+            cf.RendererFunction = "renderDisabledCheck";
             cf.RenderAsStaticField = false;
             Grid1.Columns.Add(cf);
 
 
-            bf = new FineUI.Pro.BoundField();
-            bf.DataToolTipField = "Major";
+            bf = new FineUI.Pro.RenderField();
+
             bf.DataField = "Major";
-            bf.DataFormatString = "{0}";
+            bf.RendererFunction = "renderMajorText";
+
             bf.HeaderText = "所学专业";
             bf.ExpandUnusedSpace = true;
             Grid1.Columns.Add(bf);
@@ -68,7 +72,7 @@ namespace FineUI.Pro.Examples.data
         #endregion
 
         #region Page_Load
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)

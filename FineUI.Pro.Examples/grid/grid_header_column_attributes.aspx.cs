@@ -15,10 +15,10 @@ namespace FineUI.Pro.Examples.grid
         {
             if (!IsPostBack)
             {
-                var columnName = Grid1.FindColumn("Name") as FineUI.Pro.BoundField;
+                var columnName = Grid1.FindColumn("Name") as FineUI.Pro.RenderField;
                 columnName.Attributes["data-header-color"] = "color1";
 
-                var columnGender = Grid1.FindColumn("Gender") as FineUI.Pro.TemplateField;
+                var columnGender = Grid1.FindColumn("Gender") as FineUI.Pro.RenderField;
                 columnGender.Attributes["data-header-color"] = "color1";
 
 

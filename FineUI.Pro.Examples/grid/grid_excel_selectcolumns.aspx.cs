@@ -46,96 +46,39 @@ namespace FineUI.Pro.Examples.data
         private string GetGridTableHtml(Grid grid, string[] columns)
         {
             StringBuilder sb = new StringBuilder();
-
             sb.Append("<meta http-equiv=\"Content-Type\" content=\"application/vnd.ms-excel;charset=utf-8\"/>");
-
-            List<string> columnHeaderTexts = new List<string>(columns);
-            List<int> columnIndexs = new List<int>();
-
             sb.Append("<table cellspacing=\"0\" rules=\"all\" border=\"1\" style=\"border-collapse:collapse;\">");
 
-            sb.Append("<tr>");
+            List<GridColumn> exportColumns = new List<GridColumn>();
+            List<string> selectedHeaders = new List<string>(columns);
             foreach (GridColumn column in grid.Columns)
             {
-                if(columnHeaderTexts.Contains(column.HeaderText)) {
-                    sb.AppendFormat("<td>{0}</td>", column.HeaderText);
-                    columnIndexs.Add(column.ColumnIndex);
+                if (!selectedHeaders.Contains(column.HeaderText))
+                {
+                    continue;
                 }
+                exportColumns.Add(column);
+            }
+
+            sb.Append("<tr>");
+            foreach (GridColumn column in exportColumns)
+            {
+                sb.AppendFormat("<td>{0}</td>", HttpUtility.HtmlEncode(column.HeaderText));
             }
             sb.Append("</tr>");
 
             foreach (GridRow row in grid.Rows)
             {
                 sb.Append("<tr>");
-                int columnIndex = 0;
-                foreach (object value in row.Values)
+                foreach (GridColumn column in exportColumns)
                 {
-                    if (columnIndexs.Contains(columnIndex))
-                    {
-                        string html = value.ToString();
-                        if (html.StartsWith(Grid.TEMPLATE_PLACEHOLDER_PREFIX))
-                        {
-                            // 模板列
-                            string templateID = html.Substring(Grid.TEMPLATE_PLACEHOLDER_PREFIX.Length);
-                            Control templateCtrl = row.FindControl(templateID);
-                            html = GetRenderedHtmlSource(templateCtrl);
-                        }
-                        else
-                        {
-                            // 处理CheckBox
-                            if (html.Contains("f-grid-static-checkbox"))
-                            {
-                                if (!html.Contains("f-checked"))
-                                {
-                                    html = "×";
-                                }
-                                else
-                                {
-                                    html = "√";
-                                }
-                            }
-
-                            // 处理图片
-                            if (html.Contains("<img"))
-                            {
-                                string prefix = Request.Url.AbsoluteUri.Replace(Request.Url.AbsolutePath, "");
-                                html = html.Replace("src=\"", "src=\"" + prefix);
-                            }
-                        }
-
-                        sb.AppendFormat("<td>{0}</td>", html);
-                    }
-
-                    columnIndex++;
+                    // 导出使用列的显示格式，不能把性别 0/1、布尔值和原始日期直接写进文件。
+                    sb.AppendFormat("<td>{0}</td>", GridExportUtil.GetCellHtml(row, column, this));
                 }
                 sb.Append("</tr>");
             }
-
             sb.Append("</table>");
-
             return sb.ToString();
-        }
-
-        /// <summary>
-        /// 获取控件渲染后的HTML源代码
-        /// </summary>
-        /// <param name="ctrl"></param>
-        /// <returns></returns>
-        private string GetRenderedHtmlSource(Control ctrl)
-        {
-            if (ctrl != null)
-            {
-                using (StringWriter sw = new StringWriter())
-                {
-                    using (HtmlTextWriter htw = new HtmlTextWriter(sw))
-                    {
-                        ctrl.RenderControl(htw);
-
-                        return sw.ToString();
-                    }
-                }
-            }
-            return String.Empty;
         }
 
         #endregion

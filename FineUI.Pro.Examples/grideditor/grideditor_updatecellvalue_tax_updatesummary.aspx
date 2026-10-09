@@ -10,6 +10,7 @@
             font-weight: bold;
             color: red;
         }
+
     </style>
 </head>
 <body>
@@ -38,29 +39,29 @@
                 </f:RenderField>
                 <f:RenderField ColumnID="TaxPercent" DataField="TaxPercent" FieldType="Float" HeaderText="征收率">
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="Price" DataField="Price" FieldType="Float"
-                    HeaderText="金额（不含税）">
+                <f:RenderField Width="150px" ColumnID="Price" DataField="Price" FieldType="Float" HeaderText="金额（不含税）">
                     <Editor>
                         <f:NumberBox ID="TextBox1" NoDecimal="false" NoNegative="true" Required="true" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="PriceWithTax" DataField="PriceWithTax" FieldType="Float"
-                    HeaderText="金额（含税）">
+                <f:RenderField Width="150px" ColumnID="PriceWithTax" DataField="PriceWithTax" FieldType="Float" HeaderText="金额（含税）">
                     <Editor>
                         <f:NumberBox ID="NumberBox1" NoDecimal="false" NoNegative="true" Required="true" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="Tax" DataField="Tax" FieldType="Float"
-                    HeaderText="税额">
+                <f:RenderField Width="150px" ColumnID="Tax" DataField="Tax" FieldType="Float" HeaderText="税额">
                     <Editor>
                         <f:NumberBox ID="NumberBox2" NoDecimal="false" NoNegative="true" Required="true" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:LinkButtonField ColumnID="Delete"
-                    Icon="Delete" />
+                <f:RenderField ColumnID="Delete">
+                    <Commands>
+                        <f:Command RendererFunction="renderClientAction" Icon="Delete" />
+                    </Commands>
+                </f:RenderField>
             </Columns>
             <Listeners>
                 <f:Listener Event="afteredit" Handler="onGridAfterEdit" />
@@ -83,18 +84,17 @@
             <li>[重置表格数据]按钮的操作</li>
             <li>表格行中删除图标的操作</li>
             <li>表格行中姓名列的编辑器TriggerBox，其点击触发按钮的操作</li>
-            <li>更新合计行操作（如下两种情况下触发：1.更新单元格值时  2.表格的 dataload 客户端事件）</li>
+            <li>更新合计行操作（如下两种情况下触发：1.更新单元格值时 2.表格的 dataload 客户端事件）</li>
         </ul>
     </form>
     <script>
-
         var grid1ClientID = '<%= Grid1.ClientID %>';
 
         function onNewClick(event) {
             F(grid1ClientID).addNewRecord({
                 "Name": "技术服务",
                 "TaxPercent": 0.03,
-                'Delete': '<a href="#"><img src="../res/icon/delete.png"/></a>'
+                'Delete': ''
             }, true);
         }
 
@@ -110,7 +110,7 @@
             // 删除选中行之前先弹出确认对话框
             F.confirm({
                 message: '删除选中行？',
-                ok: function () {
+                ok: function() {
                     // 删除选中行
                     grid.deleteSelectedRows();
                 }
@@ -121,17 +121,19 @@
         function onResetClick(event) {
             F.confirm({
                 message: '确定要重置表格数据？',
-                ok: function () {
+                ok: function() {
                     F(grid1ClientID).rejectChanges();
                 }
             });
         }
 
         function onGridAfterEdit(event, value, params) {
-            var me = this, columnId = params.columnId, rowId = params.rowId;
+            var me = this,
+                columnId = params.columnId,
+                rowId = params.rowId;
 
             // 本次操作过程中禁止触发事件（防止循环事件）
-            F.noEvent(function () {
+            F.noEvent(function() {
                 if (columnId === 'Price') {
                     var priceWithTax = (value * 1.03).toFixed(2);
                     var tax = (parseFloat(priceWithTax) - value).toFixed(2);
@@ -159,8 +161,11 @@
 
 
         function updateSummary() {
-            var me = F(grid1ClientID), priceTotal = 0, priceWithTaxTotal = 0, taxTotal = 0;
-            me.getRowEls().each(function (index, tr) {
+            var me = F(grid1ClientID),
+                priceTotal = 0,
+                priceWithTaxTotal = 0,
+                taxTotal = 0;
+            me.getRowEls().each(function(index, tr) {
                 var price = me.getCellValue(tr, 'Price');
                 var priceWithTax = me.getCellValue(tr, 'PriceWithTax');
                 var tax = me.getCellValue(tr, 'Tax');
@@ -186,16 +191,16 @@
             updateSummary();
         }
 
-        F.ready(function () {
+        F.ready(function() {
 
             var grid = F(grid1ClientID);
             // 注册点击行中删除图片的事件处理函数
-            grid.el.on('click', '.f-grid-cell-Delete a', function (event) {
+            grid.el.on('click', '.f-grid-cell-Delete a', function(event) {
                 event.preventDefault();
                 // 删除选中行之前先弹出确认对话框
                 F.confirm({
                     message: '删除选中行？',
-                    ok: function () {
+                    ok: function() {
                         // 删除选中行
                         grid.deleteSelectedRows();
                     }
@@ -207,7 +212,8 @@
 
         });
 
-        
     </script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
 </body>
 </html>

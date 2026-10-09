@@ -9,33 +9,25 @@
         .totalpanel {
             border-width: 1px 0;
         }
+
     </style>
+
+
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel2" runat="server" />
         <f:Panel ID="Panel2" Margin="24px" runat="server" ShowBorder="true" Layout="VBox" ShowHeader="false">
             <Items>
-                <f:Grid DataIDField="Id" ID="Grid1" ShowBorder="false" BoxFlex="1" ShowHeader="true" Title="购物车"
-                    EnableCollapse="false" runat="server" EnableCheckBoxSelect="true"
-                    DataKeyNames="Id,Code,Name" EnableTextSelection="true" KeepCurrentSelection="true">
+                <f:Grid DataIDField="Id" ID="Grid1" ShowBorder="false" BoxFlex="1" ShowHeader="true" Title="购物车" EnableCollapse="false" runat="server"
+                    EnableCheckBoxSelect="true" DataKeyNames="Id,Code,Name" EnableTextSelection="true" KeepCurrentSelection="true" DataAttributeFields="Price">
                     <Columns>
                         <f:RowNumberField />
-                        <f:BoundField Width="150px" DataField="Code" DataFormatString="{0}" HeaderText="商品代码" />
-                        <f:BoundField DataField="Name" ExpandUnusedSpace="true" MinWidth="150px" DataFormatString="{0}" HeaderText="商品名称" />
-                        <f:BoundField Width="150px" DataField="Price" HeaderText="商品单价" EnableColumnHide="false" DataFormatString="¥{0:F}" />
-                        <f:TemplateField HeaderText="数量" EnableColumnHide="false" Width="150px">
-                            <ItemTemplate>
-                                <input type="hidden" class="price" runat="server" value='<%# Eval("Price") %>' />
-                                <asp:TextBox runat="server" Width="60px" ID="tbxNumber" CssClass="number"
-                                    TabIndex='<%# Container.DataItemIndex + 10 %>' Text='<%# Eval("Number") %>'></asp:TextBox>
-                            </ItemTemplate>
-                        </f:TemplateField>
-                        <f:TemplateField HeaderText="小计" EnableColumnHide="false" Width="150px">
-                            <ItemTemplate>
-                                <asp:Label runat="server" CssClass="xiaoji" Text='<%# "¥" + GetXiaoji(Eval("Price"), Eval("Number")) %>'></asp:Label>
-                            </ItemTemplate>
-                        </f:TemplateField>
+                        <f:RenderField Width="150px" DataField="Code" HeaderText="商品代码" />
+                        <f:RenderField DataField="Name" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="商品名称" />
+                        <f:RenderField Width="150px" DataField="Price" HeaderText="商品单价" EnableColumnHide="false" RendererFunction="renderPrice3" />
+                        <f:RenderField HeaderText="数量" EnableColumnHide="false" Width="150px" DataField="Number" RendererFunction="renderInput1" />
+                        <f:RenderField HeaderText="小计" EnableColumnHide="false" Width="150px" DataField="Number" RendererFunction="renderSubtotal2" />
                     </Columns>
                     <Listeners>
                         <f:Listener Event="selectionchange" Handler="onGridSelectionchange" />
@@ -60,11 +52,35 @@
             </Items>
         </f:Panel>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script>
+        function renderInput1(value, params) {
+            params.grid = this;
+            var price = $('<input>').attr({
+                type: 'hidden',
+                value: params.rowData.attrs.Price
+            }).addClass('price');
+            return $('<span>').append(price, createGridTextInput(value, params, {
+                id: 'tbxNumber',
+                cssClass: 'number',
+                width: '60px'
+            }));
+        }
+
+        function renderSubtotal2(value, params) {
+            return $('<span>').addClass('xiaoji').text('¥' + (Number(params.rowData.attrs.Price) * Number(value)).toFixed(2));
+        }
+
+        function renderPrice3(value, params) {
+            return '¥' + Number(value).toFixed(2);
+        }
+
+    </script>
     <script type="text/javascript">
         var gridClientID = '<%= Grid1.ClientID %>';
         var btnGotoPayClientID = '<%= btnGotoPay.ClientID %>';
-        var numberSelector = '.f-grid-tpl input.number';
-        var priceSelector = '.f-grid-tpl input.price';
+        var numberSelector = '.f-grid-cell input.number';
+        var priceSelector = '.f-grid-cell input.price';
 
         function getRowNumber(row) {
             var num = parseInt(row.find(numberSelector).val(), 10);
@@ -73,6 +89,7 @@
             }
             return num;
         }
+
         function getRowPrice(rowEl) {
             return parseFloat(rowEl.find(priceSelector).val()) || 0;
         }
@@ -82,7 +99,7 @@
             var selectedRows = grid.getSelectedRows();
 
             var total = 0;
-            $.each(selectedRows, function (index, rowId) {
+            $.each(selectedRows, function(index, rowId) {
                 var rowEl = grid.getRowEl(rowId);
                 total += getRowNumber(rowEl) * getRowPrice(rowEl);
             });
@@ -125,7 +142,7 @@
 
             // 数量改变事件
             // http://stackoverflow.com/questions/17384218/jquery-input-event
-            grid.el.find(numberSelector).on('input propertychange', function (event) {
+            grid.el.find(numberSelector).on('input propertychange', function(event) {
                 var cnode = $(this);
 
                 filterNumberInput(cnode);
@@ -133,13 +150,13 @@
                 var rowEl = cnode.parents('.f-grid-row');
                 var number = getRowNumber(rowEl);
                 var price = getRowPrice(rowEl);
-                var resultNode = rowEl.find('.f-grid-tpl span.xiaoji');
+                var resultNode = rowEl.find('.f-grid-cell span.xiaoji');
 
                 resultNode.text("¥" + (number * price).toFixed(2));
 
                 updateTotal();
 
-            }).on('click', function (event) {
+            }).on('click', function(event) {
                 $(this).select();
                 // 点击行内文本框时不会改变行的选中状态
                 event.stopPropagation();
@@ -148,7 +165,7 @@
 
 
         // 页面第一次加载完成后调用的函数
-        F.ready(function () {
+        F.ready(function() {
             registerNumberChangeEvents();
             updateTotal();
         });

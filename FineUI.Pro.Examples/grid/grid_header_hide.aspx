@@ -11,7 +11,7 @@
         <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="false" Title="表格" Height="200px" runat="server" EnableCollapse="false"
             ShowGridHeader="false" EnableRowLines="false" EnableAlternateRowColor="false">
             <Columns>
-                <f:BoundField ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
+                <f:RenderField ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="姓名" />
             </Columns>
         </f:Grid>
         <br />
@@ -22,6 +22,6 @@
         </f:Button>
     </form>
 
-    <script src="../res/js/grid.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

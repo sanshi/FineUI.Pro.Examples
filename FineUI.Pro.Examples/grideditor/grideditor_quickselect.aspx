@@ -9,9 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（进入编辑状态后，从下拉表格中选择用户）"
-            EnableCollapse="false" Height="350px"
-            runat="server" AllowCellEditing="true" ClicksToEdit="1">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（进入编辑状态后，从下拉表格中选择用户）" EnableCollapse="false"
+            Height="350px" runat="server" AllowCellEditing="true" ClicksToEdit="1">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server">
                     <Items>
@@ -24,7 +23,11 @@
                 </f:Toolbar>
             </Toolbars>
             <Columns>
-                <f:LinkButtonField ColumnID="QuickSelect" Width="50px" Icon="Zoom" />
+                <f:RenderField ColumnID="QuickSelect" Width="50px">
+                    <Commands>
+                        <f:Command RendererFunction="renderClientAction" Icon="Zoom" />
+                    </Commands>
+                </f:RenderField>
                 <f:RenderField ColumnID="Code" DataField="Code" HeaderText="编码">
                 </f:RenderField>
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名">
@@ -33,8 +36,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                     <Editor>
                         <f:DropDownList Required="true" runat="server">
                             <f:ListItem Text="男" Value="1" />
@@ -44,13 +46,12 @@
                 </f:RenderField>
                 <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份">
                     <Editor>
-                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000"
-                            MaxValue="2025" runat="server">
+                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期">
+                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                    HeaderText="入学日期">
                     <Editor>
                         <f:DatePicker ID="DatePicker1" Required="true" runat="server">
                         </f:DatePicker>
@@ -63,21 +64,23 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:LinkButtonField ColumnID="Delete"
-                    Icon="Delete" />
+                <f:RenderField ColumnID="Delete">
+                    <Commands>
+                        <f:Command RendererFunction="renderClientAction" Icon="Delete" />
+                    </Commands>
+                </f:RenderField>
             </Columns>
         </f:Grid>
-        <f:Grid ID="Grid2" ShowBorder="true" ShowHeader="false" runat="server" DataIDField="Id" DataTextField="Name"
-            Hidden="true" Width="650px" Height="300px" EnableMultiSelect="false" CssClass="f-shadow">
+        <f:Grid ID="Grid2" ShowBorder="true" ShowHeader="false" runat="server" DataIDField="Id" DataTextField="Name" Hidden="true" Width="650px" Height="300px"
+            EnableMultiSelect="false" CssClass="f-shadow">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名" />
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                 </f:RenderField>
                 <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" />
-                <f:RenderField ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" 
-                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期" />
+                <f:RenderField ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                    HeaderText="入学日期" />
                 <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" HeaderText="是否在校" />
                 <f:RenderField ColumnID="Major" DataField="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" />
             </Columns>
@@ -96,7 +99,6 @@
         <br />
     </form>
     <script>
-
         var grid1ClientID = '<%= Grid1.ClientID %>';
         var grid2ClientID = '<%= Grid2.ClientID %>';
 
@@ -135,8 +137,8 @@
                 'EntranceDate': '2015-09-01',
                 'AtSchool': false,
                 'Major': '化学系',
-                'Delete': '<a href="#"><img src="../res/icon/delete.png"/></a>',
-                'QuickSelect': '<a href="#"><img src="../res/icon/zoom.png"/></a>'
+                'Delete': '',
+                'QuickSelect': '<a href="#"><img src="<%= PageContext.ResolveUrl("~/res/icon/zoom.png") %>"/></a>'
             }, true, false);
 
             // 选中新增的行
@@ -158,7 +160,7 @@
             // 删除选中行之前先弹出确认对话框
             F.confirm({
                 message: '删除选中行？',
-                ok: function () {
+                ok: function() {
                     // 删除选中行
                     grid.deleteSelectedRows();
                 }
@@ -169,7 +171,7 @@
         function onResetClick(event) {
             F.confirm({
                 message: '确定要重置表格数据？',
-                ok: function () {
+                ok: function() {
                     F(grid1ClientID).rejectChanges();
                 }
             });
@@ -203,17 +205,17 @@
         }
 
 
-        F.ready(function () {
+        F.ready(function() {
 
             var grid1 = F(grid1ClientID);
 
             // 点击行中删除图片
-            grid1.el.on('click', '.f-grid-cell-Delete a', function (event) {
+            grid1.el.on('click', '.f-grid-cell-Delete a', function(event) {
                 event.preventDefault();
                 // 删除选中行之前先弹出确认对话框
                 F.confirm({
                     message: '删除选中行？',
-                    ok: function () {
+                    ok: function() {
                         // 删除选中行
                         grid1.deleteSelectedRows();
                     }
@@ -221,7 +223,7 @@
             });
 
             // 点击行中的快速选择图片
-            grid1.el.on('click', '.f-grid-cell-QuickSelect a', function (event) {
+            grid1.el.on('click', '.f-grid-cell-QuickSelect a', function(event) {
                 event.preventDefault();
                 var cnode = $(this);
 
@@ -234,7 +236,7 @@
 
 
             // 关闭弹出表格
-            $(document).mousedown(function (event) {
+            $(document).mousedown(function(event) {
                 var target = $(event.target);
 
                 var closestTable = target.closest('.f-grid');
@@ -248,9 +250,8 @@
 
         });
 
-
-
-
     </script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
 </body>
 </html>

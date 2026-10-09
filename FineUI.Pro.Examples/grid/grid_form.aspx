@@ -9,6 +9,7 @@
         .maingrid {
             border-width: 0 1px 0 0;
         }
+
     </style>
 </head>
 <body>
@@ -16,29 +17,21 @@
         <f:PageManager ID="PageManager1" runat="server" />
         <f:Panel ID="Panel1" IsFluid="true" runat="server" Title="表格与表单" Layout="HBox" Height="500px">
             <Items>
-                <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" EnableCollapse="false" BoxFlex="1" CssClass="maingrid"
-                    runat="server" AllowCellEditing="true" ClicksToEdit="2"
-                    DataIDField="Id">
+                <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" EnableCollapse="false" BoxFlex="1" CssClass="maingrid" runat="server"
+                    AllowCellEditing="true" ClicksToEdit="2" DataIDField="Id">
                     <Columns>
-                        <f:TemplateField Width="60px">
-                            <ItemTemplate>
-                                <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                            </ItemTemplate>
-                        </f:TemplateField>
+                        <f:RowNumberField Width="60px" ColumnID="Number" />
                         <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名">
                         </f:RenderField>
-                        <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                            RendererFunction="renderGender" HeaderText="性别" Hidden="true">
+                        <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别" Hidden="true">
                         </f:RenderField>
-                        <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int"
-                            HeaderText="入学年份">
+                        <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份">
                         </f:RenderField>
-                        <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                            Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期" Hidden="true">
+                        <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date"
+                            RendererArgument="yyyy-MM-dd" HeaderText="入学日期" Hidden="true">
                         </f:RenderField>
                         <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" HeaderText="是否在校" EnableColumnEdit="false" />
-                        <f:RenderField ColumnID="Major" DataField="Major"
-                            ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业">
+                        <f:RenderField ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业">
                         </f:RenderField>
                     </Columns>
                     <Listeners>
@@ -77,8 +70,7 @@
                                 <f:Button ID="btnDelete" Text="" Enabled="false" Icon="Delete" ConfirmText="确定删除当前数据？" OnClick="btnDelete_Click" runat="server">
                                 </f:Button>
                                 <f:ToolbarFill ID="ToolbarFill1" runat="server"></f:ToolbarFill>
-                                <f:Button ID="btnSave"
-                                    Icon="SystemSave" runat="server" Text="保存数据（新增）" ValidateForms="SimpleForm1" OnClick="btnSave_Click">
+                                <f:Button ID="btnSave" Icon="SystemSave" runat="server" Text="保存数据（新增）" ValidateForms="SimpleForm1" OnClick="btnSave_Click">
                                 </f:Button>
                             </Items>
                         </f:Toolbar>
@@ -91,7 +83,6 @@
         <br />
     </form>
     <script>
-
         function renderGender(value) {
             return value == 1 ? '男' : '女';
         }

@@ -5,19 +5,20 @@
 <html>
 <head runat="server">
     <title></title>
+
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格"  EnableCollapse="false" ShowBorder="true" ShowHeader="true"
-            runat="server" EnableCheckBoxSelect="true">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true" runat="server"
+            EnableCheckBoxSelect="true">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField DataField="Name" DataSimulateTreeLevelField="TreeLevel" DataFormatString="{0}"
-                    HeaderText="地区" ExpandUnusedSpace="true" MinWidth="150px" />
-                <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
+                <f:RenderField DataField="Name" DataSimulateTreeLevelField="TreeLevel" HeaderText="地区" ExpandUnusedSpace="true" MinWidth="150px" />
+                <f:RenderField ColumnID="Group" HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
             </Columns>
         </f:Grid>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

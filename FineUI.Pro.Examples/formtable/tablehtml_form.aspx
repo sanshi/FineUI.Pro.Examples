@@ -5,7 +5,11 @@
 <head runat="server">
     <title></title>
     <meta name="sourcefiles" content="~/res/css/tablehtml.css" />
-    <link href="../res/css/tablehtml.css" rel="stylesheet" />
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+
+        <link href="<%= PageContext.ResolveUrl("~/res/css/tablehtml.css") %>" rel="stylesheet" />
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="_form1" runat="server">
@@ -30,7 +34,8 @@
                     <td class="f-widget-header label"><span class="redstar">*</span>下拉列表：
                     </td>
                     <td class="f-widget-content content">
-                        <f:DropDownList ID="DropDownList1" runat="server" Required="true" AutoSelectFirstItem="false" Label="下拉列表" ShowLabel="false" MessageTarget="Qtip">
+                        <f:DropDownList ID="DropDownList1" runat="server" Required="true" AutoSelectFirstItem="false" Label="下拉列表" ShowLabel="false"
+                            MessageTarget="Qtip">
                             <f:ListItem Text="可选项 1" Value="0"></f:ListItem>
                             <f:ListItem Text="可选项 2" Value="1"></f:ListItem>
                         </f:DropDownList>
@@ -44,8 +49,8 @@
                 </tr>
             </table>
         </f:ContentPanel>
-        <f:Button runat="server" Text="验证此表单并提交" CssClass="marginr" ValidateForms="ContentPanel1"
-            ID="btnSubmitForm1" OnClick="btnSubmitForm1_Click" MarginTop="5px">
+        <f:Button runat="server" Text="验证此表单并提交" CssClass="marginr" ValidateForms="ContentPanel1" ID="btnSubmitForm1" OnClick="btnSubmitForm1_Click"
+            MarginTop="5px">
         </f:Button>
         <br />
         <br />
@@ -73,8 +78,8 @@
                     <td class="f-widget-header label"><span class="redstar">*</span>电子邮箱：
                     </td>
                     <td class="f-widget-content content">
-                        <f:TextBox ID="TextBox2" Required="true" Label="电子邮箱" ShowLabel="false" RegexPattern="EMAIL"
-                            RegexMessage="请输入有效的邮箱地址" runat="server" MessageTarget="Qtip">
+                        <f:TextBox ID="TextBox2" Required="true" Label="电子邮箱" ShowLabel="false" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址" runat="server"
+                            MessageTarget="Qtip">
                         </f:TextBox>
                     </td>
                 </tr>
@@ -94,8 +99,8 @@
                     <td class="f-widget-header label"><span class="redstar">*</span>申请数量：
                     </td>
                     <td class="f-widget-content" colspan="3">
-                        <f:NumberBox ID="NumberBox1" Label="申请数量" ShowLabel="false" NoDecimal="true" NoNegative="true"
-                            MaxValue="1000" Required="true" runat="server" MessageTarget="Qtip" />
+                        <f:NumberBox ID="NumberBox1" Label="申请数量" ShowLabel="false" NoDecimal="true" NoNegative="true" MaxValue="1000" Required="true"
+                            runat="server" MessageTarget="Qtip" />
                     </td>
                 </tr>
                 <tr>
@@ -108,12 +113,12 @@
                 </tr>
             </table>
         </f:ContentPanel>
-        <f:Button ID="btnSubmitForm2" Text="验证此表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitForm2_Click"
-            ValidateForms="ContentPanel2" MarginTop="5px">
+        <f:Button ID="btnSubmitForm2" Text="验证此表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitForm2_Click" ValidateForms="ContentPanel2"
+            MarginTop="5px">
         </f:Button>
         <br />
-        <f:Button ID="btnSubmitAll" Text="验证两个表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitAll_Click"
-            ValidateForms="ContentPanel1,ContentPanel2" MarginTop="5px">
+        <f:Button ID="btnSubmitAll" Text="验证两个表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitAll_Click" ValidateForms="ContentPanel1,ContentPanel2"
+            MarginTop="5px">
         </f:Button>
         <br />
         <br />

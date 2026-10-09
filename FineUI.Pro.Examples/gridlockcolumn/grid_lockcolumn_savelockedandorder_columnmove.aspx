@@ -4,6 +4,7 @@
 <html>
 <head runat="server">
     <title></title>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,27 +13,20 @@
             AllowColumnLocking="true" EnableCollapse="false" EnableColumnMove="true">
             <Columns>
                 <f:RowNumberField ColumnID="RowNumber" />
-                <f:BoundField ColumnID="Name" EnableLock="true" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" EnableLock="true" HeaderText="性别">
-                    <ItemTemplate>
-                        <%-- Container.DataItem 的类型是 System.Data.DataRowView 或者用户自定义类型 --%>
-                        <%--<asp:Label ID="Label2" runat="server" Text='<%# GetGender(DataBinder.Eval(Container.DataItem, "Gender")) %>'></asp:Label>--%>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField ColumnID="EntranceYear" EnableLock="true" DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField ColumnID="AtSchool" EnableLock="true" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" Width="400px" EnableLock="true" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" />
-                <f:BoundField EnableLock="true" DataField="ShenGao" ColumnID="ShenGao" HeaderText="身高" />
-                <f:BoundField EnableLock="true" DataField="TiZhong" ColumnID="TiZhong" HeaderText="体重" />
-                <f:BoundField EnableLock="true" DataField="XueYaDi" ColumnID="XueYaDi" HeaderText="血压（低）" />
-                <f:BoundField EnableLock="true" DataField="XueYaGao" ColumnID="XueYaGao" HeaderText="血压（高）" />
-                <f:BoundField EnableLock="true" DataField="ShiLiZuo" ColumnID="ShiLiZuo" HeaderText="视力（左）" />
-                <f:BoundField EnableLock="true" DataField="ShiLiYou" ColumnID="ShiLiYou" HeaderText="视力（右）" />
-                <f:ImageField ColumnID="Group" EnableLock="true" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField ColumnID="LogTime" EnableLock="true" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
+                <f:RenderField ColumnID="Name" EnableLock="true" DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" EnableLock="true" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField ColumnID="EntranceYear" EnableLock="true" DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField ColumnID="AtSchool" EnableLock="true" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" Width="400px" EnableLock="true" HeaderText="所学专业" DataField="Major" RendererFunction="renderMajor" />
+                <f:RenderField EnableLock="true" DataField="ShenGao" ColumnID="ShenGao" HeaderText="身高" />
+                <f:RenderField EnableLock="true" DataField="TiZhong" ColumnID="TiZhong" HeaderText="体重" />
+                <f:RenderField EnableLock="true" DataField="XueYaDi" ColumnID="XueYaDi" HeaderText="血压（低）" />
+                <f:RenderField EnableLock="true" DataField="XueYaGao" ColumnID="XueYaGao" HeaderText="血压（高）" />
+                <f:RenderField EnableLock="true" DataField="ShiLiZuo" ColumnID="ShiLiZuo" HeaderText="视力（左）" />
+                <f:RenderField EnableLock="true" DataField="ShiLiYou" ColumnID="ShiLiYou" HeaderText="视力（右）" />
+                <f:RenderField ColumnID="Group" EnableLock="true" HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+                <f:RenderField ColumnID="LogTime" EnableLock="true" DataField="LogTime" HeaderText="注册日期" FieldType="Date" Renderer="Date"
+                    RendererArgument="yyyy-MM-dd" />
             </Columns>
             <Listeners>
                 <f:Listener Event="columnlock" Handler="onGridColumnLock" />
@@ -45,15 +39,15 @@
         <br />
         <f:Button runat="server" ID="btnRefresh" Text="刷新本页面（保存列锁定状态和列顺序）" ClickHandler="onRefreshClick"></f:Button>
         <br />
-<br />
-<f:Label runat="server" ID="labResult" EncodeText="false"></f:Label>
+        <br />
+        <f:Label runat="server" ID="labResult" EncodeText="false"></f:Label>
         <br />
         <br />
         注：列拖拽排序时可能会改变列的锁定状态。
     </form>
 
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
-
         var labResultClientID = '<%= labResult.ClientID %>';
 
         function onRefreshClick(event) {
@@ -63,7 +57,7 @@
         function showLockedTips(grid) {
             var lockedLeftColumns = [];
 
-            $.each(grid.columns, function (index, column) {
+            $.each(grid.columns, function(index, column) {
                 if (column.locked) {
                     lockedLeftColumns.push(column.text || column.columnId);
                 }
@@ -79,7 +73,7 @@
             showLockedTips(grid);
 
             // 列锁定和列顺序
-            var configedColumns = $.map(grid.columns, function (column, index) {
+            var configedColumns = $.map(grid.columns, function(column, index) {
                 return {
                     ColumnID: column.columnId,
                     Locked: column.locked
@@ -111,8 +105,6 @@
             // 显示锁定列提示信息
             showLockedTips(this);
         }
-
-
 
     </script>
 </body>

@@ -38,23 +38,7 @@ namespace FineUI.Pro.Examples.grid
 
         protected void Grid1_RowDataBound(object sender, GridRowEventArgs e)
         {
-            System.Web.UI.WebControls.DropDownList ddlGender = (System.Web.UI.WebControls.DropDownList)Grid1.Rows[e.RowIndex].FindControl("ddlGender");
-            System.Web.UI.WebControls.TextBox tbxGender = (System.Web.UI.WebControls.TextBox)Grid1.Rows[e.RowIndex].FindControl("tbxGender");
-
-            DataRowView row = e.DataItem as DataRowView;
-
-            int gender = Convert.ToInt32(row["Gender"]);
-            if (gender == 1)
-            {
-                ddlGender.SelectedValue = "男";
-                tbxGender.Text = "男";
-            }
-            else
-            {
-                ddlGender.SelectedValue = "女";
-                tbxGender.Text = "女";
-            }
-
+            // 选择项初值由客户端渲染函数读取 Gender 或 Hobby 字段，无需查找模板控件。
         }
 
 
@@ -70,10 +54,10 @@ namespace FineUI.Pro.Examples.grid
                 sb.AppendFormat("<td>{0}</td>", rowDataKeys[1]);
 
                 GridRow row = Grid1.Rows[i];
-                //System.Web.UI.WebControls.DropDownList ddlGender = (System.Web.UI.WebControls.DropDownList)row.FindControl("ddlGender");
-                //sb.AppendFormat("<td>{0}</td>", ddlGender.SelectedValue);
-                System.Web.UI.WebControls.TextBox tbxGender = (System.Web.UI.WebControls.TextBox)row.FindControl("tbxGender");
-                sb.AppendFormat("<td>{0}</td>", tbxGender.Text);
+                //string ddlGender = GridInputUtil.GetValue(Grid1, row.RowID, "ddlGender");
+                //sb.AppendFormat("<td>{0}</td>", ddlGender);
+                string tbxGender = GridInputUtil.GetValue(Grid1, row.RowID, "tbxGender");
+                sb.AppendFormat("<td>{0}</td>", tbxGender);
 
                 sb.Append("</tr>");
             }

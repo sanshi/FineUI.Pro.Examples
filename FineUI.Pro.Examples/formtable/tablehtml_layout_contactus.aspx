@@ -6,13 +6,16 @@
 <head runat="server">
     <title></title>
     <meta name="sourcefiles" content="~/res/css/tablehtml.css" />
-    <link href="../res/css/tablehtml.css" rel="stylesheet" />
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+
+        <link href="<%= PageContext.ResolveUrl("~/res/css/tablehtml.css") %>" rel="stylesheet" />
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Window ID="Window1" runat="server" Title="联系我们" IsModal="false" EnableClose="false" EnableResize="true"
-            Width="650px" BodyPadding="10px">
+        <f:Window ID="Window1" runat="server" Title="联系我们" IsModal="false" EnableClose="false" EnableResize="true" Width="650px" BodyPadding="10px">
             <Items>
                 <f:ContentPanel ID="ContentPanel1" runat="server" ShowBorder="false" ShowHeader="false">
                     <table class="tablehtml">
@@ -34,8 +37,8 @@
                             <td class="f-widget-header label"><span class="redstar">*</span>电子邮箱：
                             </td>
                             <td class="f-widget-content" colspan="3">
-                                <f:TextBox ID="TextBox1" Required="true" ShowRedStar="true" Label="电子邮箱" ShowLabel="false" RegexPattern="EMAIL" MessageTarget="Qtip"
-                                    RegexMessage="请输入有效的邮箱地址" runat="server">
+                                <f:TextBox ID="TextBox1" Required="true" ShowRedStar="true" Label="电子邮箱" ShowLabel="false" RegexPattern="EMAIL"
+                                    MessageTarget="Qtip" RegexMessage="请输入有效的邮箱地址" runat="server">
                                 </f:TextBox>
                             </td>
                         </tr>
@@ -51,7 +54,8 @@
                             <td class="f-widget-header label"><span class="redstar">*</span>消息正文：
                             </td>
                             <td class="f-widget-content" colspan="3">
-                                <f:TextArea ID="TextArea1" Height="220px" Required="true" ShowRedStar="true" Label="消息正文" ShowLabel="false" MessageTarget="Qtip" runat="server">
+                                <f:TextArea ID="TextArea1" Height="220px" Required="true" ShowRedStar="true" Label="消息正文" ShowLabel="false" MessageTarget="Qtip"
+                                    runat="server">
                                 </f:TextArea>
                             </td>
                         </tr>

@@ -6,29 +6,33 @@
 <head runat="server">
     <title></title>
     <meta name="sourcefiles" content="~/res/css/tablestyle_noborder.css" />
-    <link href="../res/css/tablestyle_noborder.css" rel="stylesheet" />
-    <style>
-        .userphoto {
-            text-align: center;
-        }
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
 
-        .uploadbutton .f-field-body-cell-rightpart {
-            padding: 5px 20px !important;
-        }
+        <link href="<%= PageContext.ResolveUrl("~/res/css/tablestyle_noborder.css") %>" rel="stylesheet" />
+        <style>
+            .userphoto {
+                text-align: center;
+            }
 
-        .uploadbutton .f-btn {
-            width: 100%;
-        }
-    </style>
+            .uploadbutton .f-field-body-cell-rightpart {
+                padding: 5px 20px !important;
+            }
+
+            .uploadbutton .f-btn {
+                width: 100%;
+            }
+
+        </style>
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Window ID="Window1" runat="server" Title="信息录入" IsModal="false" EnableClose="false" EnableResize="true"
-            Width="850px" BodyPadding="0" AutoScroll="true">
+        <f:Window ID="Window1" runat="server" Title="信息录入" IsModal="false" EnableClose="false" EnableResize="true" Width="850px" BodyPadding="0"
+            AutoScroll="true">
             <Items>
-                <f:Form ID="Form1" LabelAlign="Right" RedStarPosition="BeforeText" LabelWidth="90px"
-                    ShowBorder="false" ShowHeader="false" runat="server"
+                <f:Form ID="Form1" LabelAlign="Right" RedStarPosition="BeforeText" LabelWidth="90px" ShowBorder="false" ShowHeader="false" runat="server"
                     EnableTableStyle="true" MessageTarget="Qtip">
                     <Items>
                         <f:Panel ID="Panel2" runat="server" ShowBorder="false" ShowHeader="false" Layout="HBox" BoxConfigAlign="StretchMax">
@@ -40,8 +44,10 @@
                                             <f:ListItem Text="男" Value="男" Selected="true" />
                                             <f:ListItem Text="女" Value="女" />
                                         </f:DropDownList>
-                                        <f:DatePicker ID="dpBirthDay" Label="出生日期" EmptyText="请选择日期" runat="server" EnableEdit="false" ShowRedStar="true" Required="true"></f:DatePicker>
-                                        <f:TextBox ID="tbxAge" runat="server" Label="年龄" Required="true" ShowRedStar="true" CompareMessage="年龄不能为空！"></f:TextBox>
+                                        <f:DatePicker ID="dpBirthDay" Label="出生日期" EmptyText="请选择日期" runat="server" EnableEdit="false" ShowRedStar="true"
+                                            Required="true"></f:DatePicker>
+                                        <f:TextBox ID="tbxAge" runat="server" Label="年龄" Required="true" ShowRedStar="true" CompareMessage="年龄不能为空！">
+                                        </f:TextBox>
                                         <f:DropDownList ID="ddlMarriage" Label="婚姻状况" ShowRedStar="true" Required="true" runat="server">
                                             <f:ListItem Text="未婚" Value="0" Selected="true" />
                                             <f:ListItem Text="已婚" Value="1" />
@@ -69,9 +75,11 @@
                                         </f:DropDownList>
                                     </Items>
                                 </f:Panel>
-                                <f:Panel ID="Panel4" CssClass="f-tablestyle-left-border" runat="server" BoxFlex="3" ShowBorder="false" ShowHeader="false" Layout="VBox">
+                                <f:Panel ID="Panel4" CssClass="f-tablestyle-left-border" runat="server" BoxFlex="3" ShowBorder="false" ShowHeader="false"
+                                    Layout="VBox">
                                     <Items>
-                                        <f:TextBox ID="tbxArchivesNum" runat="server" Label="档案号" ShowRedStar="true" Required="true" EmptyText="不填自动生成"></f:TextBox>
+                                        <f:TextBox ID="tbxArchivesNum" runat="server" Label="档案号" ShowRedStar="true" Required="true" EmptyText="不填自动生成">
+                                        </f:TextBox>
                                         <f:DropDownList ID="ddlReasonsFile" Label="建档原因" ShowRedStar="true" Required="true" runat="server">
                                             <f:ListItem Text="" Value="0" Selected="true" />
                                             <f:ListItem Text="糖尿病" Value="1" Selected="true" />
@@ -89,17 +97,19 @@
                                         <f:TextArea ID="tbxConfName" Label="并发症" runat="server" BoxFlex="1"></f:TextArea>
                                     </Items>
                                 </f:Panel>
-                                <f:Panel ID="Panel5" CssClass="nolabelpanel" Title="面板1" BoxFlex="2" runat="server" ShowBorder="false" ShowHeader="false" Layout="VBox">
+                                <f:Panel ID="Panel5" CssClass="nolabelpanel" Title="面板1" BoxFlex="2" runat="server" ShowBorder="false" ShowHeader="false"
+                                    Layout="VBox">
                                     <Items>
-                                        <f:Image ID="Image1" ImageUrl="~/res/images/blank_180.png" ImageHeight="120px" runat="server" BoxFlex="1" CssClass="userphoto">
+                                        <f:Image ID="Image1" ImageUrl="~/res/images/blank_180.png" ImageHeight="120px" runat="server" BoxFlex="1"
+                                            CssClass="userphoto">
                                         </f:Image>
-                                        <f:FileUpload ID="FileUpload1" runat="server" ButtonText="上传照片" ButtonOnly="true" CssClass="uploadbutton"></f:FileUpload>
+                                        <f:FileUpload ID="FileUpload1" runat="server" ButtonText="上传照片" ButtonOnly="true" CssClass="uploadbutton">
+                                        </f:FileUpload>
                                     </Items>
                                 </f:Panel>
                             </Items>
                         </f:Panel>
-                        <f:Form ID="Form7" ShowBorder="false" ShowHeader="false" runat="server"
-                            MessageTarget="Qtip">
+                        <f:Form ID="Form7" ShowBorder="false" ShowHeader="false" runat="server" MessageTarget="Qtip">
                             <Rows>
                                 <f:FormRow>
                                     <Items>

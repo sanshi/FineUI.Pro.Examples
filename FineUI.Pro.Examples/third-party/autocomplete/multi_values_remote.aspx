@@ -6,13 +6,16 @@
 <head runat="server">
     <title></title>
     <meta name="sourcefiles" content="~/third-party/autocomplete/search.ashx" />
-    <link rel="stylesheet" href="../../res/third-party/jqueryuiautocomplete/jquery-ui.css" />
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+
+        <link rel="stylesheet" href="<%= PageContext.ResolveUrl("~/res/third-party/jqueryuiautocomplete/jquery-ui.css") %>" />
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" runat="server" LabelWidth="60px" BodyPadding="10px" EnableCollapse="false"
-            Title="简单表单">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" runat="server" LabelWidth="60px" BodyPadding="10px" EnableCollapse="false" Title="简单表单">
             <Items>
                 <f:TextBox ID="TextBox1" runat="server" Label="标题" EmptyText="输入字母 a 试试，可以输入多个值">
                 </f:TextBox>
@@ -22,11 +25,11 @@
         参考：http://jqueryui.com/autocomplete/#multiple-remote
     </form>
 
-    <script src="../../res/third-party/jqueryuiautocomplete/jquery-ui.js" type="text/javascript"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/jqueryuiautocomplete/jquery-ui.js") %>" type="text/javascript"></script>
     <script type="text/javascript">
         var textbox1ID = '<%= TextBox1.ClientID %>';
 
-        F.ready(function () {
+        F.ready(function() {
 
             // 将字符串 val 以逗号空格作为分隔符，分隔成数组
             function split(val) {
@@ -39,31 +42,31 @@
                 return split(term).pop();
             }
 
-            $('#' + textbox1ID + ' input').bind("keydown", function (event) {
+            $('#' + textbox1ID + ' input').bind("keydown", function(event) {
                 // 通过 Tab 选择一项时，不会使当前文本框失去焦点
                 if (event.keyCode === $.ui.keyCode.TAB &&
-                        $(this).data("autocomplete").menu.active) {
+                    $(this).data("autocomplete").menu.active) {
                     event.preventDefault();
                 }
             }).autocomplete({
                 minLength: 0,
-                source: function (request, response) {
+                source: function(request, response) {
                     $.getJSON("search.ashx", {
                         term: extractLast(request.term)
                     }, response);
                 },
-                search: function () {
+                search: function() {
                     // 自定义的minLength（如果要限制两个字符才提示，把下面的1改为2即可）
                     var term = extractLast(this.value);
                     if (term.length < 1) {
                         return false;
                     }
                 },
-                focus: function () {
+                focus: function() {
                     // 阻止某一项获得焦点时，更新文本框的值
                     return false;
                 },
-                select: function (event, ui) {
+                select: function(event, ui) {
                     var terms = split(this.value);
                     // 移除用户正在输入项
                     terms.pop();

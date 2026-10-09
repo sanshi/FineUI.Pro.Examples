@@ -4,6 +4,7 @@
 <html>
 <head runat="server">
     <title></title>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -40,17 +41,13 @@
                                     SortDirection="ASC" OnSort="Grid1_Sort">
                                     <Columns>
                                         <f:RowNumberField />
-                                        <f:BoundField DataField="Name" SortField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                                        <f:TemplateField ColumnID="Gender" SortField="Gender" HeaderText="性别">
-                                            <ItemTemplate>
-                                                <asp:Label ID="Label1" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                                            </ItemTemplate>
-                                        </f:TemplateField>
-                                        <f:BoundField SortField="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" />
-                                        <f:CheckBoxField SortField="AtSchool" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                                        <f:BoundField ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" HeaderText="所学专业" />
-                                        <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png"
-                                            HeaderText="分组" />
+                                        <f:RenderField DataField="Name" SortField="Name" HeaderText="姓名" />
+                                        <f:RenderField ColumnID="Gender" SortField="Gender" HeaderText="性别" DataField="Gender"
+                                            RendererFunction="renderGender" />
+                                        <f:RenderField SortField="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" />
+                                        <f:RenderCheckField SortField="AtSchool" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                                        <f:RenderField ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" HeaderText="所学专业" />
+                                        <f:RenderField ColumnID="Group" HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
                                     </Columns>
                                 </f:Grid>
                             </Items>
@@ -65,5 +62,6 @@
         <f:Label runat="server" ID="labResult">
         </f:Label>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

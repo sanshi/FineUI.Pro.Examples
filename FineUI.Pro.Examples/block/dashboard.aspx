@@ -5,8 +5,12 @@
 <head runat="server">
     <title></title>
     <meta name="sourcefiles" content="~/res/css/dashboard.css;~/res/css/responsive_card.css;~/res/js/dashboard_chart.js;~/res/js/responsive_card.js" />
-    <link href="../res/css/dashboard.css" rel="stylesheet" id="linkDashboardCSS" runat="server" />
-    <link href="../res/css/responsive_card.css" rel="stylesheet" />
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+
+        <link rel="stylesheet" id="linkDashboardCSS" href="<%= PageContext.ResolveUrl("~/res/css/dashboard.css?v" + GlobalConfig.ProductVersion) %>" />
+        <link href="<%= PageContext.ResolveUrl("~/res/css/responsive_card.css") %>" rel="stylesheet" />
+    </asp:PlaceHolder>
 </head>
 <body class="f-body-darkerbg">
     <form id="form1" runat="server">
@@ -131,13 +135,11 @@
                     <Tabs>
                         <f:Tab runat="server" Layout="Block" BlockConfigSpace="0" Title="浏览量">
                             <Items>
-                                <f:ContentPanel BlockMD="6" BlockLG="8"
-                                    runat="server" ShowBorder="false" ShowHeader="false">
+                                <f:ContentPanel BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
                                     <div class="tabstrip-chart chart1">
                                     </div>
                                 </f:ContentPanel>
-                                <f:ContentPanel BlockMD="6" BlockLG="4" BodyPadding="20px"
-                                    runat="server" ShowBorder="false" ShowHeader="false">
+                                <f:ContentPanel BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false" ShowHeader="false">
                                     <table class="mytable">
                                         <thead>
                                             <tr>
@@ -198,13 +200,11 @@
                         </f:Tab>
                         <f:Tab runat="server" Layout="Block" BlockConfigSpace="0" Title="用户量">
                             <Items>
-                                <f:ContentPanel BlockMD="6" BlockLG="8"
-                                    runat="server" ShowBorder="false" ShowHeader="false">
+                                <f:ContentPanel BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
                                     <div class="tabstrip-chart chart2">
                                     </div>
                                 </f:ContentPanel>
-                                <f:ContentPanel BlockMD="6" BlockLG="4" BodyPadding="20px"
-                                    runat="server" ShowBorder="false" ShowHeader="false">
+                                <f:ContentPanel BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false" ShowHeader="false">
                                     <table class="mytable">
                                         <thead>
                                             <tr>
@@ -268,42 +268,42 @@
                         <f:Tool runat="server" ToolTip="打开详细数据" IconFont="_NewTab" ClickHandler="onTabstripToolClick"></f:Tool>
                     </Tools>
                 </f:TabStrip>
-                <f:Panel BlockMD="6" BlockLG="8" Layout="Block" BlockConfigSpace="20px"
-                    runat="server" ShowBorder="false" ShowHeader="false">
+                <f:Panel BlockMD="6" BlockLG="8" Layout="Block" BlockConfigSpace="20px" runat="server" ShowBorder="false" ShowHeader="false">
                     <Items>
-                        <f:Grid ID="Grid1" CssClass="mygrid responsive-card-grid" BlockMD="12"
-                            ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="表格示例"
-                            EnableCheckBoxSelect="true" EnableAlternateRowColor="true" EnableRowLines="true" KeepCurrentSelection="true"
-                            ResponsiveCardSize="MD" CardRendererFunction="renderResponsiveCard"
-                            runat="server" DataIDField="Id" DataAttributeFields="Name,Gender,Avatar,EntranceYear,Status,Desc">
+                        <f:Grid ID="Grid1" CssClass="mygrid responsive-card-grid" BlockMD="12" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true"
+                            Title="表格示例" EnableCheckBoxSelect="true" EnableAlternateRowColor="true" EnableRowLines="true" KeepCurrentSelection="true"
+                            ResponsiveCardSize="MD" CardRendererFunction="renderResponsiveCard" runat="server" DataIDField="Id"
+                            DataAttributeFields="Name,Gender,Avatar,EntranceYear,Status,Desc">
                             <Columns>
                                 <f:RenderField ColumnID="UserProfile" Width="250" RendererFunction="renderUserProfile" HeaderText="基本信息"></f:RenderField>
                                 <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" HeaderText="是否在校" />
-                                <f:RenderField Width="150px" ColumnID="Rate1" DataField="Rate1" FieldType="Int" HeaderText="评分" RendererFunction="renderRate1" />
-                                <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业" />
+                                <f:RenderField Width="150px" ColumnID="Rate1" DataField="Rate1" FieldType="Int" HeaderText="评分"
+                                    RendererFunction="renderRate1" />
+                                <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150px"
+                                    HeaderText="所学专业" />
                                 <f:RenderField ColumnID="Status" DataField="Status" RendererFunction="renderStatus" HeaderText="状态" />
                             </Columns>
                         </f:Grid>
-                        <f:Form CssClass="myform" BlockMD="12" Layout="Block" BlockConfigSpace="10px" BodyPadding="20px"
-                            runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="表单示例" LabelAlign="Right">
+                        <f:Form CssClass="myform" BlockMD="12" Layout="Block" BlockConfigSpace="10px" BodyPadding="20px" runat="server" ShowBorder="true"
+                            ShowBorderShadow="true" ShowHeader="true" Title="表单示例" LabelAlign="Right">
                             <Items>
                                 <f:Label ID="Label1" BlockMD="6" runat="server" Label="标签" Text="标签的值">
                                 </f:Label>
                                 <f:CheckBox ID="CheckBox1" BlockMD="6" runat="server" Text="复选框" Label="复选框">
                                 </f:CheckBox>
-                                <f:DropDownList ID="DropDownList1" BlockMD="6" runat="server" Required="true" ShowRedStar="true" AutoSelectFirstItem="false" Label="下拉列表">
+                                <f:DropDownList ID="DropDownList1" BlockMD="6" runat="server" Required="true" ShowRedStar="true" AutoSelectFirstItem="false"
+                                    Label="下拉列表">
                                     <f:ListItem Text="可选项 1" Selected="true" Value="0"></f:ListItem>
                                     <f:ListItem Text="可选项 2" Value="2"></f:ListItem>
                                     <f:ListItem Text="可选项 3" Value="3"></f:ListItem>
                                 </f:DropDownList>
-                                <f:TextBox ID="TextBox1" BlockMD="6" ShowRedStar="true" runat="server" Label="文本框" Required="true"
-                                    Text="">
+                                <f:TextBox ID="TextBox1" BlockMD="6" ShowRedStar="true" runat="server" Label="文本框" Required="true" Text="">
                                 </f:TextBox>
-                                <f:DatePicker runat="server" BlockMD="6" EnableEdit="false" Required="true" Label="日期" EmptyText="请选择日期"
-                                    ID="DatePicker1" SelectedDate="2014-07-10" ShowRedStar="true">
+                                <f:DatePicker runat="server" BlockMD="6" EnableEdit="false" Required="true" Label="日期" EmptyText="请选择日期" ID="DatePicker1"
+                                    SelectedDate="2014-07-10" ShowRedStar="true">
                                 </f:DatePicker>
-                                <f:TimePicker ID="TimePicker1" BlockMD="6" EnableEdit="false" ShowRedStar="true" Label="时间" Increment="30"
-                                    Required="true" Text="08:30" EmptyText="请选择时间" runat="server">
+                                <f:TimePicker ID="TimePicker1" BlockMD="6" EnableEdit="false" ShowRedStar="true" Label="时间" Increment="30" Required="true"
+                                    Text="08:30" EmptyText="请选择时间" runat="server">
                                 </f:TimePicker>
                                 <f:CheckBoxList ID="CheckBoxList1" BlockMD="12" Label="复选框列表" ColumnNumber="3" runat="server">
                                     <f:CheckItem Text="可选项 1" Value="value1" />
@@ -318,16 +318,14 @@
                         </f:Form>
                     </Items>
                 </f:Panel>
-                <f:Panel BlockMD="6" BlockLG="4" Layout="Block" BlockConfigSpace="20px"
-                    runat="server" ShowBorder="false" ShowHeader="false">
+                <f:Panel BlockMD="6" BlockLG="4" Layout="Block" BlockConfigSpace="20px" runat="server" ShowBorder="false" ShowHeader="false">
                     <Items>
-                        <f:ContentPanel BlockMD="12" BodyPadding="20px 20px 0 20px"
-                            runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="本站统计">
+                        <f:ContentPanel BlockMD="12" BodyPadding="20px 20px 0 20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true"
+                            Title="本站统计">
                             <ul class="mysitestats">
                             </ul>
                         </f:ContentPanel>
-                        <f:ContentPanel BlockMD="12" BodyPadding="20px"
-                            runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="访问来源">
+                        <f:ContentPanel BlockMD="12" BodyPadding="20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="访问来源">
                             <div class="mychart-pie"></div>
                         </f:ContentPanel>
                     </Items>
@@ -337,12 +335,11 @@
         <div class="f-widget-content" id="emptycontent"></div>
     </form>
 
-    <script src="../res/third-party/echarts/echarts.min.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/echarts/echarts.min.js") %>"></script>
     <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/dashboard_chart.js?v" + GlobalConfig.ProductVersion) %>"></script>
     <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/grid.js?v" + GlobalConfig.ProductVersion) %>"></script>
     <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/responsive_card.js?v" + GlobalConfig.ProductVersion) %>"></script>
     <script>
-
         var panel1ClientID = '<%= Panel1.ClientID %>';
 
 
@@ -355,9 +352,9 @@
             });
         }
 
-        F.ready(function () {
+        F.ready(function() {
 
-            $('.mycard .infoicon').click(function () {
+            $('.mycard .infoicon').click(function() {
                 var card1 = $(this).parents('.mycard');
                 var card2 = card1.siblings('.mycard');
                 // 翻转动画
@@ -367,8 +364,10 @@
 
             // 本站统计
             var siteStats = [];
+
             function addToSiteStats(title, content) {
-                siteStats.push('<li class="f-state-default f-corner-all"><div class="title">' + title + '</div><div class="content">' + content + '</div></li>');
+                siteStats.push('<li class="f-state-default f-corner-all"><div class="title">' + title + '</div><div class="content">' + content +
+                    '</div></li>');
             }
             var examplesCount = parent.getExamplesCount ? parent.getExamplesCount() : '---';
             var examplesCountTitle = '示例数';

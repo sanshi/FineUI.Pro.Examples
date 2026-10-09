@@ -35,9 +35,9 @@ namespace FineUI.Pro.Examples.grid
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            CheckBoxField field1 = (CheckBoxField)Grid1.FindColumn("CheckBoxField1");
-            CheckBoxField field2 = (CheckBoxField)Grid1.FindColumn("CheckBoxField2");
-            CheckBoxField field3 = (CheckBoxField)Grid1.FindColumn("CheckBoxField3");
+            RenderCheckField field1 = (RenderCheckField)Grid1.FindColumn("CheckBoxField1");
+            RenderCheckField field2 = (RenderCheckField)Grid1.FindColumn("CheckBoxField2");
+            RenderCheckField field3 = (RenderCheckField)Grid1.FindColumn("CheckBoxField3");
 
             StringBuilder sb = new StringBuilder();
             List<GridRow> selectedRows = GridSelectionUtil.GetSelectedRows(Grid1);
@@ -59,9 +59,9 @@ namespace FineUI.Pro.Examples.grid
                     sb.Append("<tr>");
 
                     sb.AppendFormat("<td>{0}</td>", rowIndex + 1);
-                    sb.AppendFormat("<td>{0}</td>", field1.GetCheckedState(rowIndex));
-                    sb.AppendFormat("<td>{0}</td>", field2.GetCheckedState(rowIndex));
-                    sb.AppendFormat("<td>{0}</td>", field3.GetCheckedState(rowIndex));
+                    sb.AppendFormat("<td>{0}</td>", GridColumnUtil.GetCheckedState(Grid1, field1.ColumnID, rowIndex));
+                    sb.AppendFormat("<td>{0}</td>", GridColumnUtil.GetCheckedState(Grid1, field2.ColumnID, rowIndex));
+                    sb.AppendFormat("<td>{0}</td>", GridColumnUtil.GetCheckedState(Grid1, field3.ColumnID, rowIndex));
 
                     sb.Append("</tr>");
                 }
@@ -81,17 +81,17 @@ namespace FineUI.Pro.Examples.grid
 
         private void ChangeCheckBoxStatus(bool checkedState)
         {
-            CheckBoxField field1 = (CheckBoxField)Grid1.FindColumn("CheckBoxField1");
-            CheckBoxField field2 = (CheckBoxField)Grid1.FindColumn("CheckBoxField2");
-            CheckBoxField field3 = (CheckBoxField)Grid1.FindColumn("CheckBoxField3");
+            RenderCheckField field1 = (RenderCheckField)Grid1.FindColumn("CheckBoxField1");
+            RenderCheckField field2 = (RenderCheckField)Grid1.FindColumn("CheckBoxField2");
+            RenderCheckField field3 = (RenderCheckField)Grid1.FindColumn("CheckBoxField3");
 
 
             foreach (GridRow row in GridSelectionUtil.GetSelectedRows(Grid1))
             {
                 int rowIndex = row.RowIndex;
-                field1.SetCheckedState(rowIndex, checkedState);
-                field2.SetCheckedState(rowIndex, checkedState);
-                field3.SetCheckedState(rowIndex, checkedState);
+                GridColumnUtil.SetCheckedState(Grid1, field1.ColumnID, rowIndex, checkedState);
+                GridColumnUtil.SetCheckedState(Grid1, field2.ColumnID, rowIndex, checkedState);
+                GridColumnUtil.SetCheckedState(Grid1, field3.ColumnID, rowIndex, checkedState);
             }
 
         }

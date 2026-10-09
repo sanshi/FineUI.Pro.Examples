@@ -5,7 +5,11 @@
 <head runat="server">
     <title></title>
     <meta name="sourcefiles" content="~/res/js/gridcard.js" />
-    <link type="text/css" rel="stylesheet" href="../res/css/gridcard.css" />
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+
+        <link type="text/css" rel="stylesheet" href="<%= PageContext.ResolveUrl("~/res/css/gridcard.css") %>" />
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -16,8 +20,10 @@
                 <f:Toolbar runat="server" Position="Top">
                     <Items>
                         <f:ToolbarFill runat="server"></f:ToolbarFill>
-                        <f:Button IconFont="_Table" ID="btnDisplayDefault" EnablePress="true" Pressed="false" runat="server" ClickHandler="onDisplayDefaultClick"></f:Button>
-                        <f:Button IconFont="_Gallery" ID="btnDisplayCard" EnablePress="true" Pressed="true" runat="server" ClickHandler="onDisplayCardClick"></f:Button>
+                        <f:Button IconFont="_Table" ID="btnDisplayDefault" EnablePress="true" Pressed="false" runat="server"
+                            ClickHandler="onDisplayDefaultClick"></f:Button>
+                        <f:Button IconFont="_Gallery" ID="btnDisplayCard" EnablePress="true" Pressed="true" runat="server" ClickHandler="onDisplayCardClick">
+                        </f:Button>
                     </Items>
                 </f:Toolbar>
             </Toolbars>
@@ -33,10 +39,9 @@
             </Columns>
         </f:Grid>
     </form>
-    <script src="../res/js/grid.js"></script>
-    <script src="../res/js/gridcard.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/gridcard.js") %>"></script>
     <script>
-
         var Grid1ClientID = '<%= Grid1.ClientID %>';
         var btnDisplayDefaultClientID = '<%= btnDisplayDefault.ClientID %>';
         var btnDisplayCardClientID = '<%= btnDisplayCard.ClientID %>';
@@ -47,6 +52,7 @@
 
             F(Grid1ClientID).setDisplayType('default');
         }
+
         function onDisplayCardClick(event) {
             F(btnDisplayDefaultClientID).setPressed(false);
             F(btnDisplayCardClientID).setPressed(true);

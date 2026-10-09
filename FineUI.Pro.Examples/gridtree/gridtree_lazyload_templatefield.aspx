@@ -8,9 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false"
-            EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId"
-            OnRowDataBound="Grid1_RowDataBound" OnRowLazyLoad="Grid1_RowLazyLoad">
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false" EnableTree="true"
+            TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId" OnRowDataBound="Grid1_RowDataBound" OnRowLazyLoad="Grid1_RowLazyLoad">
             <Columns>
                 <f:RowNumberField />
                 <f:BoundField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
@@ -31,6 +30,6 @@
         <br />
     </form>
 
-    <script src="../res/js/grid.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

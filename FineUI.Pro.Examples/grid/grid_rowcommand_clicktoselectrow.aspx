@@ -10,31 +10,32 @@
             color: red;
             font-weight: bold;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
-            runat="server" EnableCheckBoxSelect="true"
-            OnRowCommand="Grid1_RowCommand"
-            EnableRowClickEvent="true" OnRowClick="Grid1_RowClick">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true" runat="server"
+            EnableCheckBoxSelect="true" OnRowCommand="Grid1_RowCommand" EnableRowClickEvent="true" OnRowClick="Grid1_RowClick">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                    <ItemTemplate>
-                        <asp:Label ID="Label2" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField Hidden="true" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}" UrlEncode="true"
-                    Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
-                <f:ImageField ColumnID="Group" Hidden="true" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:LinkButtonField ColumnID="Action1" Width="60px" TextAlign="Center" CommandName="Action1" Text="按钮1" />
-                <f:LinkButtonField ColumnID="Action2" Width="60px" TextAlign="Center" CommandName="Action2" Text="按钮2" ClickToSelectRow="false" />
+                <f:RenderField DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField Hidden="true" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" RendererFunction="renderMajor" />
+                <f:RenderField ColumnID="Group" Hidden="true" HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+                <f:RenderField ColumnID="Action1" Width="60px" TextAlign="Center">
+                    <Commands>
+                        <f:Command CommandName="Action1" Text="按钮1" />
+                    </Commands>
+                </f:RenderField>
+                <f:RenderField ColumnID="Action2" Width="60px" TextAlign="Center">
+                    <Commands>
+                        <f:Command CommandName="Action2" Text="按钮2" CssClass="prevent-row-select" />
+                    </Commands>
+                </f:RenderField>
             </Columns>
         </f:Grid>
         <br />
@@ -52,6 +53,15 @@
         </ul>
     </form>
 
-    <script src="../res/js/grid.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script>
+        function onBeforeRowClick(event, rowId) {
+            return !$(event.target).closest('.prevent-row-select').length;
+        }
+        F.ready(function() {
+            F('<%= Grid1.ClientID %>').on('beforerowclick', onBeforeRowClick);
+        });
+
+    </script>
 </body>
 </html>

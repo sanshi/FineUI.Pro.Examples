@@ -5,28 +5,35 @@
 <html>
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="../../res/third-party/spectrum/spectrum.css" />
-    <style>
-        .mycolor {
-            display: inline-block !important;
-            width: 100px;
-            margin-right: 5px;
-        }
-        
-		.mycolor .sp-replacer {
-            border-width: 0;
-            background-color: transparent;
-        }
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+        <link rel="stylesheet" href="<%= PageContext.ResolveUrl("~/res/third-party/spectrum/spectrum.css") %>" />
+        <style>
+            .mycolor {
+                display: inline-block !important;
+                width: 100px;
+                margin-right: 5px;
+            }
 
-        .mycolor .sp-dd {
-            display: none;
-        }
+            .mycolor .sp-replacer {
+                border-width: 0;
+                background-color: transparent;
+            }
 
-        .mycolor .sp-preview {
-            margin-right: 0;
-            height: 100%;
-        }
-    </style>
+            .mycolor .sp-dd {
+                display: none;
+            }
+
+            .mycolor .sp-preview {
+                margin-right: 0;
+                height: 100%;
+            }
+
+        </style>
+
+
+
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -34,29 +41,13 @@
         <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" runat="server"
             DataKeyNames="Id,Name">
             <Columns>
-                <f:TemplateField Width="60px" EnableColumnHide="false" EnableHeaderMenu="false">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                    <ItemTemplate>
-                        <%-- Container.DataItem 的类型是 System.Data.DataRowView 或者用户自定义类型 --%>
-                        <%--<asp:Label ID="Label2" runat="server" Text='<%# GetGender(DataBinder.Eval(Container.DataItem, "Gender")) %>'></asp:Label>--%>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
-                <f:TemplateField HeaderText="颜色" Width="150px">
-                    <ItemTemplate>
-                        <asp:TextBox ID="tbxColor" CssClass="mycolor" runat="server" Width="100px" TabIndex='<%# Container.DataItemIndex + 10 %>'></asp:TextBox>
-                    </ItemTemplate>
-                </f:TemplateField>
+                <f:RowNumberField Width="60px" EnableColumnHide="false" EnableHeaderMenu="false" ColumnID="Number" />
+                <f:RenderField DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" RendererFunction="renderMajor" />
+                <f:RenderField HeaderText="颜色" Width="150px" RendererFunction="renderInput1" />
             </Columns>
         </f:Grid>
         <br />
@@ -66,20 +57,32 @@
         <br />
         <f:Label ID="labResult" EncodeText="false" runat="server">
         </f:Label>
-        
-    </form>
-    <script src="../../res/third-party/spectrum/spectrum.js" type="text/javascript"></script>
-    <script src="../../res/third-party/spectrum/i18n/jquery.spectrum-zh-cn.js" type="text/javascript"></script>
-    <script>
 
+    </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script>
+        function renderInput1(value, params) {
+            params.grid = this;
+            return createGridTextInput(value, params, {
+                id: 'tbxColor',
+                cssClass: 'mycolor',
+                width: '100px'
+            });
+        }
+
+    </script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/spectrum/spectrum.js") %>" type="text/javascript"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/spectrum/i18n/jquery.spectrum-zh-cn.js") %>" type="text/javascript"></script>
+    <script>
         function renderGender(value) {
             return value == 1 ? '男' : '女';
         }
 
-        
-        F.ready(function () {
 
-            $('.mycolor').each(function () {
+        F.ready(function() {
+
+            $('.mycolor').each(function() {
                 $(this).spectrum({
                     preferredFormat: "hex3",
                     showInput: true,

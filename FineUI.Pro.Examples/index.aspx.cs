@@ -15,11 +15,11 @@ namespace FineUI.Pro.Examples
     {
         #region 变量
 
-        // 左侧侧边栏宽度
-        private int SIDEBAR_WIDTH_CONSTANT = 320;
+        // 页面样式与侧边栏控件共用宽度，确保 CSS 变量和实际布局保持一致。
+        protected const int SIDEBAR_WIDTH_CONSTANT = 320;
 
         // 左侧侧边栏微型模式宽度
-        private int SIDEBAR_MINIMODE_WIDTH_CONSTANT = 70;
+        protected const int SIDEBAR_MINIMODE_WIDTH_CONSTANT = 70;
 
 
         // 是否仅显示社区版示例
@@ -254,18 +254,13 @@ namespace FineUI.Pro.Examples
                 cbxShowOnlyCommunity.Checked = _showOnlyCommunity;
 
                 menuTextCopyright.TextRawHtml = new RawHtml("<div class=\"copyright\">" +
-                    "<div class=\"version\"><a target=\"_blank\" href=\"http://fineui.com/pro/\"><img src=\"./res/images/logo/fineui.png\" alt=\"logo\"/></a>" +
+                    "<div class=\"version\"><a target=\"_blank\" href=\"http://fineui.com/pro/\"><img src=\"" + PageContext.ResolveUrl("~/res/images/logo/fineui.png") + "\" alt=\"logo\"/></a>" +
                     "<br/><span>FineUI.Pro v" + GlobalConfig.ProductVersion + "</span></div>" +
                     "<div class=\"actions\"><a target=\"_blank\" href=\"http://fineui.com/fans/\">免费社区</a>" +
                     "&nbsp;&nbsp;&nbsp;&nbsp;<a target=\"_blank\" href=\"http://fineui.com/versions/\">更新记录</a></div>" +
                     "</div>");
 
                 hfExamplesCount.Text = _examplesCount.ToString();
-
-                // 为CSS样式文件添加版本号，防止版本更新时客户端缓存
-                linkIndexCSS.Href = PageContext.ResolveUrl("~/res/css/index.css?v" + GlobalConfig.ProductVersion);
-                linkMobileViewCss.Href = PageContext.ResolveUrl("~/res/css/mobileview.css?v" + GlobalConfig.ProductVersion);
-                //litScriptIndex.Text = String.Format("<script src=\"{0}\"></script>", PageContext.ResolveUrl("~/res/js/index.js?v" + GlobalConfig.ProductVersion));
 
 
 
@@ -279,10 +274,6 @@ namespace FineUI.Pro.Examples
                 // 设置侧边栏宽度
                 sidebarRegion.Width = SIDEBAR_WIDTH_CONSTANT;
 
-                // 创建样式控件
-                litDynamicCSS.Text = String.Format("<style type=\"text/css\">:root {{ --sidebar-width: {0}px; --sidebar-minimode-width: {1}px; }}</style>",
-                    SIDEBAR_WIDTH_CONSTANT, 
-                    SIDEBAR_MINIMODE_WIDTH_CONSTANT);
 
             }
 

@@ -4,6 +4,7 @@
 <html>
 <head runat="server">
     <title></title>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -12,21 +13,13 @@
             EnableHeaderMenu="false">
             <Columns>
                 <f:RowNumberField ColumnID="RowNumber" />
-                <f:BoundField ColumnID="Name" DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                    <ItemTemplate>
-                        <%-- Container.DataItem 的类型是 System.Data.DataRowView 或者用户自定义类型 --%>
-                        <%--<asp:Label ID="Label2" runat="server" Text='<%# GetGender(DataBinder.Eval(Container.DataItem, "Gender")) %>'></asp:Label>--%>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField ColumnID="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField ColumnID="AtSchool" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
-                <%--<f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />--%>
-                <f:BoundField ColumnID="LogTime" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
+                <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField ColumnID="AtSchool" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" RendererFunction="renderMajor" />
+                <%--<f:RenderField ColumnID="Group" HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />--%>
+                <f:RenderField ColumnID="LogTime" DataField="LogTime" HeaderText="注册日期" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
             </Columns>
             <Toolbars>
                 <f:Toolbar runat="server" ToolbarAlign="Right" Position="Top">
@@ -36,11 +29,11 @@
                 </f:Toolbar>
             </Toolbars>
         </f:Grid>
-        <f:Window ID="Window1" runat="server" Title="列配置（双击行显示隐藏）" IsModal="true" EnableClose="true" IconFont="_Group"
-            Width="500px" Height="350px" Layout="HBox" BodyPadding="10px" Hidden="true">
+        <f:Window ID="Window1" runat="server" Title="列配置（双击行显示隐藏）" IsModal="true" EnableClose="true" IconFont="_Group" Width="500px" Height="350px"
+            Layout="HBox" BodyPadding="10px" Hidden="true">
             <Items>
-                <f:Grid ID="Grid2" BoxFlex="1" ShowBorder="true" ShowHeader="false" runat="server" EnableCollapse="false"
-                    DataIDField="ColumnID" EnableHeaderMenu="false" MarginRight="5px">
+                <f:Grid ID="Grid2" BoxFlex="1" ShowBorder="true" ShowHeader="false" runat="server" EnableCollapse="false" DataIDField="ColumnID"
+                    EnableHeaderMenu="false" MarginRight="5px">
                     <Columns>
                         <f:RowNumberField ColumnID="RowNumber"></f:RowNumberField>
                         <f:RenderField ColumnID="ColumnID" HeaderText="ID" />
@@ -51,8 +44,7 @@
                         <f:Listener Event="rowdblclick" Handler="onGridConfigDblClick" />
                     </Listeners>
                 </f:Grid>
-                <f:Panel ID="Panel1" runat="server" ShowBorder="false" ShowHeader="false" Width="120px"
-                    Layout="VBox" BoxConfigPosition="Start">
+                <f:Panel ID="Panel1" runat="server" ShowBorder="false" ShowHeader="false" Width="120px" Layout="VBox" BoxConfigPosition="Start">
                     <Items>
                         <f:Button ID="btnMoveUp" runat="server" Text="上移" MarginBottom="5px" ClickHandler="onMoveUpClick"></f:Button>
                         <f:Button ID="btnMoveDown" runat="server" Text="下移" MarginBottom="20px" ClickHandler="onMoveDownClick"></f:Button>
@@ -68,8 +60,8 @@
         <br />
         <f:Button runat="server" ID="btnRefresh" Text="刷新本页面（保持列顺序）" ClickHandler="onRefreshClick"></f:Button>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
-
         function onRefreshClick(event) {
             window.location.reload();
         }
@@ -84,7 +76,7 @@
             var gridConfig = F(gridConfigClientID);
 
             // 从配置表格读取配置数据
-            var configedColumns = $.map(gridConfig.data, function (item, index) {
+            var configedColumns = $.map(gridConfig.data, function(item, index) {
                 return {
                     ColumnID: item.id,
                     Hidden: !item.values['Hidden'],
@@ -92,10 +84,10 @@
                 };
             });
 
-            
+
             // 更新主表格
             var newcolumns = [];
-            $.each(configedColumns, function (index, item) {
+            $.each(configedColumns, function(index, item) {
                 var originalColumn = grid.getColumn(item.ColumnID);
                 originalColumn.hidden = item.Hidden;
                 originalColumn.text = item.HeaderText;
@@ -119,7 +111,7 @@
             var gridConfig = F(gridConfigClientID);
 
             // 初始化列配置表格
-            var records = $.map(grid.columns, function (item, index) {
+            var records = $.map(grid.columns, function(item, index) {
                 return {
                     id: item.columnId,
                     values: {
@@ -137,7 +129,7 @@
             F(wndClientID).show();
         }
 
-        
+
         // 切换列配置[显示]列
         function toggleGridConfigHidden(rowId) {
             var gridConfig = F(gridConfigClientID);
@@ -198,7 +190,7 @@
                 F.prompt({
                     message: '请输入新的列标题',
                     defaultValue: rowData.values['HeaderText'],
-                    ok: function (userInputValue) {
+                    ok: function(userInputValue) {
                         gridConfig.updateCellValue(rowData, 'HeaderText', userInputValue, true);
 
                         updateMainGridColumnConfig();
@@ -214,7 +206,7 @@
             var defaultValue = window.GRID_COLUMNCONFIG_DEFAULT;
 
             // 初始化列配置表格
-            var records = $.map(defaultValue, function (item, index) {
+            var records = $.map(defaultValue, function(item, index) {
                 return {
                     id: item.ColumnID,
                     values: {
@@ -232,8 +224,6 @@
         function onCloseWindowClick(event) {
             F(wndClientID).hide();
         }
-
-
 
     </script>
 </body>

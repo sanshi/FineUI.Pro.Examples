@@ -63,6 +63,62 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Xml.Linq" />
+    <Content Include="grid-server-render\bound_field.aspx" />
+    <Compile Include="grid-server-render\bound_field.aspx.cs">
+      <DependentUpon>bound_field.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grid-server-render\bound_field.aspx.designer.cs">
+      <DependentUpon>bound_field.aspx</DependentUpon>
+    </Compile>
+    <Content Include="grid-server-render\checkbox_field.aspx" />
+    <Compile Include="grid-server-render\checkbox_field.aspx.cs">
+      <DependentUpon>checkbox_field.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grid-server-render\checkbox_field.aspx.designer.cs">
+      <DependentUpon>checkbox_field.aspx</DependentUpon>
+    </Compile>
+    <Content Include="grid-server-render\hyperlink_field.aspx" />
+    <Compile Include="grid-server-render\hyperlink_field.aspx.cs">
+      <DependentUpon>hyperlink_field.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grid-server-render\hyperlink_field.aspx.designer.cs">
+      <DependentUpon>hyperlink_field.aspx</DependentUpon>
+    </Compile>
+    <Content Include="grid-server-render\image_field.aspx" />
+    <Compile Include="grid-server-render\image_field.aspx.cs">
+      <DependentUpon>image_field.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grid-server-render\image_field.aspx.designer.cs">
+      <DependentUpon>image_field.aspx</DependentUpon>
+    </Compile>
+    <Content Include="grid-server-render\linkbutton_field.aspx" />
+    <Compile Include="grid-server-render\linkbutton_field.aspx.cs">
+      <DependentUpon>linkbutton_field.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grid-server-render\linkbutton_field.aspx.designer.cs">
+      <DependentUpon>linkbutton_field.aspx</DependentUpon>
+    </Compile>
+    <Content Include="grid-server-render\window_field.aspx" />
+    <Compile Include="grid-server-render\window_field.aspx.cs">
+      <DependentUpon>window_field.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grid-server-render\window_field.aspx.designer.cs">
+      <DependentUpon>window_field.aspx</DependentUpon>
+    </Compile>
+    <Content Include="grid-server-render\template_field.aspx" />
+    <Compile Include="grid-server-render\template_field.aspx.cs">
+      <DependentUpon>template_field.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grid-server-render\template_field.aspx.designer.cs">
+      <DependentUpon>template_field.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="accordion\accordion_toomanypane.aspx" />
@@ -900,6 +956,7 @@
     <Content Include="res\css\index.css" />
     <Content Include="res\js\common.js" />
     <Content Include="res\js\grid.js" />
+    <Content Include="res\js\grid-pro.js" />
     <Content Include="res\js\gridcard.js" />
     <Content Include="res\js\index.js" />
     <Content Include="res\js\index-examples.js" />
@@ -1629,6 +1686,9 @@
     <Compile Include="Code\FilteredTable.cs" />
     <Compile Include="Code\GridSelectionMessage.cs" />
     <Compile Include="Code\GridSelectionUtil.cs" />
+    <Compile Include="Code\GridInputUtil.cs" />
+    <Compile Include="Code\GridColumnUtil.cs" />
+    <Compile Include="Code\GridExportUtil.cs" />
     <Compile Include="Code\UploadPageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>

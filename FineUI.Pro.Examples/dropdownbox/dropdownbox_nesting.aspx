@@ -5,6 +5,7 @@
 <head runat="server">
     <title></title>
 
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -51,13 +52,9 @@
                                 <f:Grid ID="Grid1" ShowBorder="true" ShowHeader="false" runat="server" DataIDField="Id" DataTextField="Name" BoxFlex="1"
                                     EnableMultiSelect="false">
                                     <Columns>
-                                        <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                                        <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                                            <ItemTemplate>
-                                                <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                                            </ItemTemplate>
-                                        </f:TemplateField>
-                                        <f:BoundField ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" HeaderText="所学专业" />
+                                        <f:RenderField DataField="Name" HeaderText="姓名" />
+                                        <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                                        <f:RenderField ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" HeaderText="所学专业" />
                                     </Columns>
                                 </f:Grid>
                             </Items>
@@ -72,5 +69,6 @@
         <f:Label runat="server" ID="labResult">
         </f:Label>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

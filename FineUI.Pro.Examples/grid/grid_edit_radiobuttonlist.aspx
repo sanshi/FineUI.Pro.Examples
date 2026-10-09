@@ -6,41 +6,32 @@
 <head runat="server">
     <title></title>
     <style>
-        .f-grid-tpl .gender input {
+        .f-grid-cell .gender input {
             margin: 3px;
         }
 
-        .f-grid-tpl .gender label {
+        .f-grid-cell .gender label {
             margin-left: 3px;
             margin-right: 10px;
         }
+
     </style>
+
+
+
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false"
-            runat="server" DataKeyNames="Id,Name" OnRowDataBound="Grid1_RowDataBound">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" runat="server"
+            DataKeyNames="Id,Name" OnRowDataBound="Grid1_RowDataBound">
             <Columns>
-                <f:TemplateField EnableColumnHide="false" EnableHeaderMenu="false">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField Width="150px" HeaderText="性别">
-                    <ItemTemplate>
-                        <asp:RadioButtonList runat="server" RepeatLayout="Flow" CssClass="gender" RepeatDirection="Horizontal" ID="rblGender">
-                            <asp:ListItem Text="男" Value="男"></asp:ListItem>
-                            <asp:ListItem Text="女" Value="女"></asp:ListItem>
-                        </asp:RadioButtonList>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
+                <f:RowNumberField EnableColumnHide="false" EnableHeaderMenu="false" ColumnID="Number" />
+                <f:RenderField DataField="Name" HeaderText="姓名" />
+                <f:RenderField Width="150px" HeaderText="性别" DataField="Gender" RendererFunction="renderChoice1" />
+                <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" RendererFunction="renderMajor" />
             </Columns>
         </f:Grid>
         <br />
@@ -51,5 +42,18 @@
         </f:Label>
         <br />
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script>
+        function renderChoice1(value, params) {
+            params.grid = this;
+            return createGridChoiceInput(value, params, {
+                id: 'rblGender',
+                cssClass: 'gender',
+                type: 'RadioButtonList'
+            });
+        }
+
+    </script>
 </body>
 </html>

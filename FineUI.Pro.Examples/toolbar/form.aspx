@@ -5,12 +5,12 @@
 <head runat="server">
     <title></title>
     <style>
-
         .thisform {
             position: absolute;
         }
 
     </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -49,25 +49,19 @@
             </Toolbars>
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                    <ItemTemplate>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
-                <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" />
+                <f:RenderField DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" DataField="Major"
+     RendererFunction="renderMajor" />
+                <f:RenderField ColumnID="Group" HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+                <f:RenderField DataField="LogTime" HeaderText="注册日期" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
             </Columns>
         </f:Grid>--%>
         <br />
         <br />
-        <f:Form CssClass="thisform" BodyPadding="10px" ID="Form3" LabelWidth="100px" EnableCollapse="false"
-            runat="server" Title="表单">
+        <f:Form CssClass="thisform" BodyPadding="10px" ID="Form3" LabelWidth="100px" EnableCollapse="false" runat="server" Title="表单">
             <Rows>
                 <f:FormRow ColumnWidths="40% 60%">
                     <Items>
@@ -79,17 +73,18 @@
                 </f:FormRow>
                 <f:FormRow ColumnWidths="40% 60%">
                     <Items>
-                        <f:DropDownList ID="DropDownList2" runat="server" Label="下拉列表" EmptyText="请选择一项" Required="true" ShowRedStar="true" AutoSelectFirstItem="false">
+                        <f:DropDownList ID="DropDownList2" runat="server" Label="下拉列表" EmptyText="请选择一项" Required="true" ShowRedStar="true"
+                            AutoSelectFirstItem="false">
                             <f:ListItem Text="可选项 1" Value="0"></f:ListItem>
                             <f:ListItem Text="可选项 2" Value="1"></f:ListItem>
                         </f:DropDownList>
-                        <f:TextBox ID="TextBox2" ShowRedStar="true" runat="server" Label="文本框" Required="true"
-                            Text="">
+                        <f:TextBox ID="TextBox2" ShowRedStar="true" runat="server" Label="文本框" Required="true" Text="">
                         </f:TextBox>
                     </Items>
                 </f:FormRow>
             </Rows>
         </f:Form>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

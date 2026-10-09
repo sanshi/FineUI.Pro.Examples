@@ -84,7 +84,7 @@ namespace FineUI.Pro.Examples.grid
 
         private void AddLeafColumn(GridColumnCollection columns, string headerText, string dataField, int width, bool locked)
         {
-            FineUI.Pro.BoundField bf = new FineUI.Pro.BoundField();
+            FineUI.Pro.RenderField bf = new FineUI.Pro.RenderField();
             bf.HeaderText = headerText;
             bf.DataField = dataField;
             bf.Width = Unit.Pixel(width);

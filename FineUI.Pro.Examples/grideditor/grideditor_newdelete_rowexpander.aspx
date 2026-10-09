@@ -5,6 +5,7 @@
 <html>
 <head runat="server">
     <title></title>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -66,18 +67,7 @@
                         <f:Command CommandName="Delete" Icon="Delete" ConfirmText="删除选中行？" ConfirmTarget="Top" />
                     </Commands>
                 </f:RenderField>
-                <f:TemplateField ColumnID="expander" RenderAsRowExpander="true" ExpandOnDoubleClick="false">
-                    <ItemTemplate>
-                        <div class="expander">
-                            <p>
-                                <strong>姓名：</strong><%# Eval("Name") %>
-                            </p>
-                            <p>
-                                <strong>简介：</strong><%# Eval("Desc") %>
-                            </p>
-                        </div>
-                    </ItemTemplate>
-                </f:TemplateField>
+                <f:RenderField ColumnID="expander" RenderAsRowExpander="true" DataField="Desc" RendererFunction="renderExpander" ExpandOnDblClick="false" />
             </Columns>
             <Listeners>
                 <f:Listener Event="rowcommand" Handler="onGrid1RowCommand" />
@@ -94,6 +84,7 @@
         <br />
         注：通过设置行扩展列的 ExpandOnDoubleClick 属性，来禁用双击展开行扩展列。
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
         var Grid1ClientID = '<%= Grid1.ClientID %>';
 

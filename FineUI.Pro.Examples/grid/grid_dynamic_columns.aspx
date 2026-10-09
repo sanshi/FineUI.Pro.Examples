@@ -9,8 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" runat="server" EnableCheckBoxSelect="true"
-            Title="表格（动态创建的列）">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" runat="server" EnableCheckBoxSelect="true" Title="表格（动态创建的列）">
         </f:Grid>
         <br />
         <f:Button ID="Button1" runat="server" Text="选中了哪些行" OnClick="Button1_Click">
@@ -26,5 +25,7 @@
             <li>FineUI.Pro支持在页面第一次初始化时动态创建控件，但是不支持在回发时动态创建控件。</li>
         </ul>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
 </body>
 </html>

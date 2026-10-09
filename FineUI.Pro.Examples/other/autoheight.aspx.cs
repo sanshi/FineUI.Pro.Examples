@@ -21,13 +21,14 @@ namespace FineUI.Pro.Examples.other
 
         private void LoadData()
         {
-            string LITEMPLATE = "<li><img src=\"../res/images/mm/{0}\"></img></li>";
+            string imageDirectory = PageContext.ResolveUrl("~/res/images/mm/");
+            string imageTemplate = "<li><img src=\"" + imageDirectory + "{0}\"></img></li>";
             StringBuilder sb = new StringBuilder();
             sb.Append("<ul class=\"mmlist\">");
-            sb.AppendFormat(LITEMPLATE, "1.jpg");
-            sb.AppendFormat(LITEMPLATE, "2.jpg");
-            sb.AppendFormat(LITEMPLATE, "3.jpg");
-            sb.AppendFormat(LITEMPLATE, "4.jpg");
+            sb.AppendFormat(imageTemplate, "1.jpg");
+            sb.AppendFormat(imageTemplate, "2.jpg");
+            sb.AppendFormat(imageTemplate, "3.jpg");
+            sb.AppendFormat(imageTemplate, "4.jpg");
             sb.Append("</ul>");
 
             string imagesHtml = sb.ToString();

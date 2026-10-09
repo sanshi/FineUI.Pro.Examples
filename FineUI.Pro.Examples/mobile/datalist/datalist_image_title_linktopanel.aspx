@@ -4,7 +4,10 @@
 <html>
 <head runat="server">
     <title></title>
-    <link href="../../res/css/datalist.css" rel="stylesheet" />
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+        <link href="<%= PageContext.ResolveUrl("~/res/css/datalist.css") %>" rel="stylesheet" />
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -19,8 +22,7 @@
                 </f:DataList>
             </Items>
         </f:Panel>
-        <f:Panel ID="Panel2" runat="server" ShowHeader="false" ShowBorder="false" Hidden="true"
-            BodyPadding="10px" IsViewPort="true" Layout="Fit">
+        <f:Panel ID="Panel2" runat="server" ShowHeader="false" ShowBorder="false" Hidden="true" BodyPadding="10px" IsViewPort="true" Layout="Fit">
             <Toolbars>
                 <f:Toolbar ID="Toolbar2" runat="server" Title="Panel2" HeaderStyle="true">
                     <Items>
@@ -34,7 +36,6 @@
         </f:Panel>
     </form>
     <script>
-
         var panel1 = '<%= Panel1.ClientID %>';
         var dataList1 = '<%= DataList1.ClientID %>';
 
@@ -47,16 +48,18 @@
             F.slideRight(panel2, panel1);
         }
 
-        F.ready(function () {
+        F.ready(function() {
 
-            F(dataList1).el.on('click', '.f-datalist-item-inner', function (event) {
+            F(dataList1).el.on('click', '.f-datalist-item-inner', function(event) {
                 var innerEl = $(this);
 
                 var text = innerEl.find('.item-text').text();
                 var desc = innerEl.find('.item-desc').text();
                 var imageUrl = innerEl.find('.item-img').attr('src');
                 F(toolbar2).setTitle(text);
-                F(label2).setValue('<div style="text-align:center;margin-bottom:15px;"><img style="width:60px;" src="' + imageUrl + '"/></div>' + desc);
+                F(label2).setValue(
+                    '<div style="text-align:center;margin-bottom:15px;"><img style="width:60px;" src="' + imageUrl + '"/></div>' +
+                    desc);
 
 
                 F.slideLeft(panel1, panel2);

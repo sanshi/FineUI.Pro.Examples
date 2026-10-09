@@ -5,6 +5,7 @@
 <html>
 <head runat="server">
     <title></title>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -14,9 +15,8 @@
             ShowPagingMessage="false">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField DataField="Name" DataSimulateTreeLevelField="TreeLevel" DataFormatString="{0}" HeaderText="地区" ExpandUnusedSpace="true"
-                    MinWidth="150px" />
-                <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
+                <f:RenderField DataField="Name" DataSimulateTreeLevelField="TreeLevel" HeaderText="地区" ExpandUnusedSpace="true" MinWidth="150px" />
+                <f:RenderField ColumnID="Group" HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
             </Columns>
             <PageItems>
                 <f:DropDownList runat="server" ID="ddlSheng" Width="120px" OnSelectedIndexChanged="ddlSheng_SelectedIndexChanged">
@@ -24,5 +24,6 @@
             </PageItems>
         </f:Grid>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

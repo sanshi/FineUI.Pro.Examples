@@ -6,10 +6,9 @@
     <title></title>
     <meta name="sourcefiles" content="~/third-party/webuploader/fileupload.ashx;~/common/Download.ashx" />
     <style>
-        
         .webuploader-element-invisible {
             position: absolute !important;
-            clip: rect(1px,1px,1px,1px);
+            clip: rect(1px, 1px, 1px, 1px);
         }
 
         .webuploader-pick-disable {
@@ -20,14 +19,14 @@
         .theuploadbutton {
             display: inline-block;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" runat="server" ShowHeader="true" ShowBorder="true" Title="论文分段上传"
-            Height="350px" EnableCollapse="false" EnableCheckBoxSelect="false" EmptyText="尚未上传文件"
-            DataIDField="id">
+        <f:Grid ID="Grid1" IsFluid="true" runat="server" ShowHeader="true" ShowBorder="true" Title="论文分段上传" Height="350px" EnableCollapse="false"
+            EnableCheckBoxSelect="false" EmptyText="尚未上传文件" DataIDField="id">
             <Columns>
                 <f:RenderField ColumnID="SectionName" DataField="sectionname" HeaderText="章节" />
                 <f:RenderField ColumnID="FileName" DataField="name" HeaderText="文件名" ExpandUnusedSpace="true" MinWidth="150px" />
@@ -45,9 +44,8 @@
         <br />
         注：由于第三方组件WebUploader限制，本示例支持的浏览器版本为：Chrome、Firefox、Safari、IE10+ 。
     </form>
-    <script src="../../res/third-party/webuploader/webuploader.nolog.js" type="text/javascript"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/webuploader/webuploader.nolog.js") %>" type="text/javascript"></script>
     <script type="text/javascript">
-
         var BASE_URL = '<%= PageContext.ResolveUrl("~/") %>';
         var SERVER_URL = BASE_URL + 'third-party/webuploader/fileupload.ashx?handler=Process';
 
@@ -132,7 +130,7 @@
             var uploader = WebUploader.create(uploaderOptions);
 
             // 添加到上传队列
-            uploader.on('fileQueued', function (file) {
+            uploader.on('fileQueued', function(file) {
                 // 将文件所属的表格行ID保存到 WebUploader 内部的 file 对象上
                 file.gridRowId = rowId;
 
@@ -147,7 +145,7 @@
             });
 
 
-            uploader.on('uploadProgress', function (file, percentage) {
+            uploader.on('uploadProgress', function(file, percentage) {
                 var cellEl = grid1.getCellEl(file.gridRowId, 'FileStatus').find('.f-grid-cell-text');
 
                 var barEl = cellEl.find('.f-progressbar-value');
@@ -155,24 +153,24 @@
                 // 避免重复创建
                 if (!barEl.length) {
                     cellEl.html('<div class="f-progressbar f-widget-content" style="height:12px;">' +
-                      '<div class="f-progressbar-value f-widget-header" style="width:0%">' +
-                      '</div></div>');
+                        '<div class="f-progressbar-value f-widget-header" style="width:0%">' +
+                        '</div></div>');
                     barEl = cellEl.find('.f-progressbar-value');
                 }
 
                 barEl.css('width', percentage * 100 + '%');
             });
 
-            uploader.on('uploadSuccess', function (file) {
+            uploader.on('uploadSuccess', function(file) {
                 grid1.updateCellValue(file.gridRowId, 'FileStatus', '上传成功', true);
             });
 
-            uploader.on('uploadError', function (file) {
+            uploader.on('uploadError', function(file) {
                 grid1.updateCellValue(file.gridRowId, 'FileStatus', '上传出错', true);
             });
 
             // 不管上传成功还是失败，都会触发 uploadComplete 事件
-            uploader.on('uploadComplete', function (file) {
+            uploader.on('uploadComplete', function(file) {
                 uploader.removeFile(file, true);
 
                 if (success) {
@@ -180,15 +178,15 @@
                 }
             });
 
-            uploader.on('error', function (type, arg, file) {
+            uploader.on('error', function(type, arg, file) {
                 if (type === 'F_EXCEED_SIZE') {
                     F.alert('文件[' + file.name + ']大小超出限制值（' + F.format.fileSize(arg) + '）');
                 } else if (type === 'Q_TYPE_DENIED') {
                     // 这个类型有两种成因：空文件、扩展名不在 accept 白名单里。
                     // 注意它派发时第二个参数就是 file 本身（不是大小上限），别照上面那条的签名去取。
-                    F.alert(arg.size
-                        ? '文件[' + arg.name + ']的类型不允许上传。'
-                        : '文件[' + arg.name + ']是空文件，无法上传。');
+                    F.alert(arg.size ?
+                        '文件[' + arg.name + ']的类型不允许上传。' :
+                        '文件[' + arg.name + ']是空文件，无法上传。');
                 }
             });
 
@@ -199,14 +197,14 @@
         function onGridDataLoad(event) {
             var grid1 = this;
 
-            grid1.el.find('a.theuploadbutton').each(function () {
+            grid1.el.find('a.theuploadbutton').each(function() {
                 var targetEl = $(this);
                 var rowEl = targetEl.parents('.f-grid-row');
                 var rowData = grid1.getRowData(rowEl);
 
                 initUploader(gridClientID, rowData.id, 'webuploader.webuploader_fixed', {
                     mimeTypes: '.doc,.docx'
-                }, 10, function () {
+                }, 10, function() {
                     F.customEvent('Grid1_Rebind');
                 });
             });
@@ -221,7 +219,7 @@
                 F.customEvent('Grid1_DeleteRow', rowData.id);
             });
         });
-        
+
     </script>
 </body>
 </html>

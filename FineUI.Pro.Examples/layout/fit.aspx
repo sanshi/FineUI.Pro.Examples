@@ -4,12 +4,13 @@
 <html>
 <head runat="server">
     <title></title>
+
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="Panel3" IsFluid="true" Title="面板一（未设置Layout属性）" runat="server" Height="300px" EnableCollapse="false"
-            BodyPadding="10px" ShowBorder="true" ShowHeader="true">
+        <f:Panel ID="Panel3" IsFluid="true" Title="面板一（未设置Layout属性）" runat="server" Height="300px" EnableCollapse="false" BodyPadding="10px" ShowBorder="true"
+            ShowHeader="true">
             <Items>
                 <f:Form ID="Form3" runat="server" ShowBorder="true" BodyPadding="10px" ShowHeader="false" Title="表单">
                     <Rows>
@@ -32,8 +33,8 @@
             </Items>
         </f:Panel>
         <br />
-        <f:Panel ID="Panel1" IsFluid="true" Title="面板二（Layout=Fit）" runat="server" Layout="Fit" Height="300px" EnableCollapse="false"
-            BodyPadding="10px" ShowBorder="true" ShowHeader="true">
+        <f:Panel ID="Panel1" IsFluid="true" Title="面板二（Layout=Fit）" runat="server" Layout="Fit" Height="300px" EnableCollapse="false" BodyPadding="10px"
+            ShowBorder="true" ShowHeader="true">
             <Items>
                 <f:Form ID="Form2" runat="server" ShowBorder="true" BodyPadding="10px" ShowHeader="false" Title="表单">
                     <Rows>
@@ -56,8 +57,8 @@
             </Items>
         </f:Panel>
         <br />
-        <f:Panel ID="Panel2" IsFluid="true" Title="面板三（Layout=Fit）" runat="server" Layout="Fit" Height="300px" EnableCollapse="false"
-            BodyPadding="10px" ShowBorder="true" ShowHeader="true">
+        <f:Panel ID="Panel2" IsFluid="true" Title="面板三（Layout=Fit）" runat="server" Layout="Fit" Height="300px" EnableCollapse="false" BodyPadding="10px"
+            ShowBorder="true" ShowHeader="true">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server">
                     <Items>
@@ -69,27 +70,21 @@
                 </f:Toolbar>
             </Toolbars>
             <Items>
-                <f:Grid DataIDField="Id" ID="Grid1" Title="表格" PageSize="4" ShowBorder="true" ShowHeader="false"
-                    runat="server" EnableCheckBoxSelect="true">
+                <f:Grid DataIDField="Id" ID="Grid1" Title="表格" PageSize="4" ShowBorder="true" ShowHeader="false" runat="server" EnableCheckBoxSelect="true">
                     <Columns>
                         <f:RowNumberField />
-                        <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                        <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                            <ItemTemplate>
-                                <%-- Container.DataItem 的类型是 System.Data.DataRowView 或者用户自定义类型 --%>
-                                <asp:Label ID="Label4" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                            </ItemTemplate>
-                        </f:TemplateField>
-                        <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                        <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                        <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                            DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                            UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
-                        <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
+                        <f:RenderField DataField="Name" HeaderText="姓名" />
+                        <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                        <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
+                        <f:RenderCheckField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                        <f:RenderField ColumnID="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" DataField="Major"
+                            RendererFunction="renderMajor" />
+                        <f:RenderField ColumnID="Group" HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
                     </Columns>
                 </f:Grid>
             </Items>
         </f:Panel>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

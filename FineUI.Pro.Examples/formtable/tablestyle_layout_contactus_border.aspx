@@ -6,16 +6,19 @@
 <head runat="server">
     <title></title>
     <meta name="sourcefiles" content="~/res/css/tablestyle_noborder.css" />
-    <link href="../res/css/tablestyle_noborder.css" rel="stylesheet" />
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+
+        <link href="<%= PageContext.ResolveUrl("~/res/css/tablestyle_noborder.css") %>" rel="stylesheet" />
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Window ID="Window1" runat="server" Title="联系我们" IsModal="false" EnableClose="false" EnableResize="true"
-            Width="550px" BodyPadding="0" AutoScroll="true">
+        <f:Window ID="Window1" runat="server" Title="联系我们" IsModal="false" EnableClose="false" EnableResize="true" Width="550px" BodyPadding="0"
+            AutoScroll="true">
             <Items>
-                <f:Form ID="Form1" ShowBorder="false" ShowHeader="false" runat="server"
-                    EnableTableStyle="true" MessageTarget="Qtip">
+                <f:Form ID="Form1" ShowBorder="false" ShowHeader="false" runat="server" EnableTableStyle="true" MessageTarget="Qtip">
                     <Items>
                         <f:Panel ID="Panel2" Layout="Column" ShowHeader="false" ShowBorder="false" runat="server">
                             <Items>
@@ -25,8 +28,7 @@
                                 </f:TextBox>
                             </Items>
                         </f:Panel>
-                        <f:TextBox ID="TextBox1" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL"
-                            RegexMessage="请输入有效的邮箱地址" runat="server">
+                        <f:TextBox ID="TextBox1" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址" runat="server">
                         </f:TextBox>
                         <f:TextBox ID="TextBox3" Required="true" ShowRedStar="true" Label="主题" runat="server">
                         </f:TextBox>

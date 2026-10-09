@@ -89,12 +89,12 @@ namespace FineUI.Pro.Examples.grid
                 sb.AppendFormat("<td>{0}</td>", rowDataKeys[1]);
 
                 GridRow row = Grid1.Rows[i];
-                System.Web.UI.WebControls.TextBox tbxYuwen = (System.Web.UI.WebControls.TextBox)row.FindControl("tbxYuwen");
-                sb.AppendFormat("<td>{0}</td>", tbxYuwen.Text);
-                System.Web.UI.WebControls.TextBox tbxShuxue = (System.Web.UI.WebControls.TextBox)row.FindControl("tbxShuxue");
-                sb.AppendFormat("<td>{0}</td>", tbxShuxue.Text);
-                System.Web.UI.WebControls.TextBox tbxYingyu = (System.Web.UI.WebControls.TextBox)row.FindControl("tbxYingyu");
-                sb.AppendFormat("<td>{0}</td>", tbxYingyu.Text);
+                string tbxYuwen = GridInputUtil.GetValue(Grid1, row.RowID, "tbxYuwen");
+                sb.AppendFormat("<td>{0}</td>", tbxYuwen);
+                string tbxShuxue = GridInputUtil.GetValue(Grid1, row.RowID, "tbxShuxue");
+                sb.AppendFormat("<td>{0}</td>", tbxShuxue);
+                string tbxYingyu = GridInputUtil.GetValue(Grid1, row.RowID, "tbxYingyu");
+                sb.AppendFormat("<td>{0}</td>", tbxYingyu);
 
                 sb.Append("</tr>");
             }

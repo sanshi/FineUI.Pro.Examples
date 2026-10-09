@@ -12,7 +12,7 @@ namespace FineUI.Pro.Examples.form
         {
             if (!IsPostBack)
             {
-                
+                Image2.ImageUrl = PageContext.ResolveUrl("~/res/icon/world.png");
             }
         }
 

@@ -46,9 +46,9 @@ namespace FineUI.Pro.Examples.grid
             {
                 // 数量输入框属于当前控件行，只能按行位置读取；先用稳定行ID找到当前控件行。
                 int rowIndex = selectedRows[i].RowIndex;
-                System.Web.UI.WebControls.TextBox tbxNumber = (System.Web.UI.WebControls.TextBox)Grid1.Rows[rowIndex].FindControl("tbxNumber");
+                string tbxNumber = GridInputUtil.GetValue(Grid1, Grid1.Rows[rowIndex].RowID, "tbxNumber");
 
-                sb.AppendFormat("<li>{0}（{1}）</li>", selectedDataKeys[i][2], tbxNumber.Text);
+                sb.AppendFormat("<li>{0}（{1}）</li>", selectedDataKeys[i][2], tbxNumber);
             }
             sb.Append("</ol><hr/>");
 

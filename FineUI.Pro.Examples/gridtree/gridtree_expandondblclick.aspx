@@ -8,16 +8,15 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false"
-            DataKeyNames="Id,Name"
-            EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId"
-            EnableRowDoubleClickEvent="true" OnRowDoubleClick="Grid1_RowDoubleClick" TreeExpandOnDblClick="false" >
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false" DataKeyNames="Id,Name"
+            EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId" EnableRowDoubleClickEvent="true"
+            OnRowDoubleClick="Grid1_RowDoubleClick" TreeExpandOnDblClick="false">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
-                <f:BoundField Width="150px" DataField="Type" HeaderText="类型" />
-                <f:BoundField Width="150px" DataField="Size" HeaderText="大小" />
-                <f:BoundField Width="150px" DataField="ModifyDate" DataFormatString="{0:yyyy-MM-dd}" HeaderText="修改日期" />
+                <f:RenderField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
+                <f:RenderField Width="150px" DataField="Type" HeaderText="类型" />
+                <f:RenderField Width="150px" DataField="Size" HeaderText="大小" />
+                <f:RenderField Width="150px" DataField="ModifyDate" HeaderText="修改日期" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
             </Columns>
         </f:Grid>
         <br />

@@ -6,7 +6,11 @@
 <head runat="server">
     <title></title>
     <meta name="sourcefiles" content="~/third-party/autocomplete/gridsearch.ashx" />
-    <link rel="stylesheet" href="../../res/third-party/jqueryuiautocomplete/jquery-ui.css" />
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+
+        <link rel="stylesheet" href="<%= PageContext.ResolveUrl("~/res/third-party/jqueryuiautocomplete/jquery-ui.css") %>" />
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -28,11 +32,7 @@
                 </f:Toolbar>
             </Toolbars>
             <Columns>
-                <f:TemplateField ColumnID="Number" Width="60px">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
+                <f:RowNumberField ColumnID="Number" Width="60px" />
                 <f:RenderField Width="150px" ColumnID="Name" DataField="Name" HeaderText="姓名">
                     <Editor>
                         <f:TextBox ID="tbxEditorName" EmptyText="请输入汉字“张”试试" runat="server">
@@ -90,7 +90,7 @@
 
     </form>
 
-    <script src="../../res/third-party/jqueryuiautocomplete/jquery-ui.js" type="text/javascript"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/jqueryuiautocomplete/jquery-ui.js") %>" type="text/javascript"></script>
     <script type="text/javascript">
         var Grid1ClientID = '<%= Grid1.ClientID %>';
 

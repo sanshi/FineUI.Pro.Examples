@@ -8,6 +8,7 @@
         ol li {
             margin-bottom: 5px;
         }
+
     </style>
 </head>
 <body>
@@ -27,7 +28,7 @@
         <div>
             安装完成后的截图：
             <br />
-            <img alt="FineUI toolbox" src="../res/images/toolbox.png" />
+            <img alt="FineUI toolbox" src="<%= PageContext.ResolveUrl("~/res/images/toolbox.png") %>" />
         </div>
     </form>
 </body>

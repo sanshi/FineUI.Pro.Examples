@@ -12,6 +12,9 @@ namespace FineUI.Pro.Examples.iframe
         {
             if (!IsPostBack)
             {
+                // 说明文字内含图片链接，在服务端补全应用地址，避免在控件属性中写入 ASPX 表达式。
+                Label2.Text = String.Format(Label2.Text, PageContext.ResolveUrl("~/res/images/formchangeconfirm.png"));
+
                 
             }
         }

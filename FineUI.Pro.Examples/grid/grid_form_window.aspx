@@ -24,11 +24,7 @@
                 </f:Toolbar>
             </Toolbars>
             <Columns>
-                <f:TemplateField Width="60px">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
+                <f:RowNumberField Width="60px" ColumnID="Number" />
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名">
                 </f:RenderField>
                 <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别" Hidden="true">
@@ -46,7 +42,11 @@
                         <f:Command CommandName="Edit" Icon="Pencil" />
                     </Commands>
                 </f:RenderField>
-                <f:LinkButtonField ColumnID="Delete" Width="50px" ConfirmText="删除选中行？" ConfirmTarget="Top" CommandName="Delete" Icon="Delete" />
+                <f:RenderField ColumnID="Delete" Width="50px">
+                    <Commands>
+                        <f:Command ConfirmText="删除选中行？" ConfirmTarget="Top" CommandName="Delete" Icon="Delete" />
+                    </Commands>
+                </f:RenderField>
             </Columns>
             <Listeners>
                 <f:Listener Event="rowcommand" Handler="onGrid1RowCommand" />

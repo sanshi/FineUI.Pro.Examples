@@ -10,12 +10,11 @@
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
         <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" PageSize="10" ShowBorder="true" ShowHeader="true"
-            AllowPaging="true" IsDatabasePaging="true" runat="server" EnableCheckBoxSelect="true"
-            OnPageIndexChanged="Grid1_PageIndexChanged">
+            AllowPaging="true" IsDatabasePaging="true" runat="server" EnableCheckBoxSelect="true" OnPageIndexChanged="Grid1_PageIndexChanged">
             <Columns>
                 <f:RowNumberField EnablePagingNumber="true" Width="60px" />
-                <f:BoundField Width="150px" DataField="Id" HeaderText="ID" />
-                <f:BoundField ExpandUnusedSpace="true" MinWidth="150px" DataField="EntranceTime" HeaderText="时间" />
+                <f:RenderField Width="150px" DataField="Id" HeaderText="ID" />
+                <f:RenderField ExpandUnusedSpace="true" MinWidth="150px" DataField="EntranceTime" HeaderText="时间" />
             </Columns>
         </f:Grid>
         <br />
@@ -57,15 +56,14 @@
         </f:DropDownList>
     </form>
     <script>
-
         var cbxShowPagingMessageClientID = '<%= cbxShowPagingMessage.ClientID %>';
         var bgPagingTypeClientID = '<%= bgPagingType.ClientID %>';
         var ddlMaxPagingNumberButtonClientID = '<%= ddlMaxPagingNumberButton.ClientID %>';
-        
+
 
         function getPressedPaingType() {
             var pressedPaingType = '';
-            $.each(F(bgPagingTypeClientID).items, function (index, item) {
+            $.each(F(bgPagingTypeClientID).items, function(index, item) {
                 if (item.isPressed()) {
                     pressedPaingType = item.getText();
                     return false; // break
@@ -76,7 +74,8 @@
 
         function reloadPage() {
             var pressedPaingType = getPressedPaingType();
-            window.location.href = './gridpaging_pagingtype.aspx?type=' + pressedPaingType + '&message=' + F(cbxShowPagingMessageClientID).isChecked() + '&maxnumberbutton=' + F(ddlMaxPagingNumberButtonClientID).getValue();
+            window.location.href = './gridpaging_pagingtype.aspx?type=' + pressedPaingType + '&message=' + F(cbxShowPagingMessageClientID).isChecked() +
+                '&maxnumberbutton=' + F(ddlMaxPagingNumberButtonClientID).getValue();
         }
 
         function OnCheckBoxChange(event, checked) {

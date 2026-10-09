@@ -9,14 +9,11 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false"
-            runat="server"
-            AllowCellEditing="true" ClicksToEdit="1"
-            OnRowDataBound="Grid1_RowDataBound">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false" runat="server"
+            AllowCellEditing="true" ClicksToEdit="1" OnRowDataBound="Grid1_RowDataBound">
             <Columns>
                 <f:RowNumberField></f:RowNumberField>
-                <f:BoundField ColumnID="Name" DataField="Name" HeaderText="收费项目" ExpandUnusedSpace="true" MinWidth="150px">
-                </f:BoundField>
+                <f:RenderField ColumnID="Name" DataField="Name" HeaderText="收费项目" ExpandUnusedSpace="true" MinWidth="150px" />
             </Columns>
             <Listeners>
                 <f:Listener Event="afteredit" Handler="onGridAfterEdit" />
@@ -38,9 +35,9 @@
         </ul>
     </form>
     <script>
-
         function updateTotalCell(grid, rowId) {
-            var me = grid, total = 0;
+            var me = grid,
+                total = 0;
             for (var i = _MINYEAR; i <= _MAXYEAR; i++) {
                 total += me.getCellValue(rowId, 'Year_' + i);
             }
@@ -49,7 +46,8 @@
         }
 
         function onGridAfterEdit(event, value, params) {
-            var me = this, rowId = params.rowId;
+            var me = this,
+                rowId = params.rowId;
             if (params.columnId === 'Year_' + _MINYEAR) {
                 for (var i = _MINYEAR + 1; i <= _MAXYEAR; i++) {
                     me.updateCellValue(rowId, 'Year_' + i, value);

@@ -103,17 +103,7 @@ namespace FineUI.Pro.Examples.data
 
                 foreach (GridColumn column in mht.Columns)
                 {
-                    string html = row.Values[column.ColumnIndex].ToString();
-
-                    if (column.ColumnID == "tfNumber")
-                    {
-                        html = (row.FindControl("spanNumber") as System.Web.UI.HtmlControls.HtmlGenericControl).InnerText;
-                    }
-                    else if (column.ColumnID == "tfGender")
-                    {
-                        html = (row.FindControl("labGender") as AspNet.Label).Text;
-                    }
-
+                    string html = GridExportUtil.GetCellHtml(row, column, this);
 
                     sb.AppendFormat("<td>{0}</td>", html);
                 }

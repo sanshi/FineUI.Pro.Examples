@@ -10,20 +10,18 @@
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
         <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" runat="server"
-            AllowSorting="true" SortField="HZData1"
-            SortDirection="ASC" OnSort="Grid1_Sort" EnableHeaderMenu="true">
+            AllowSorting="true" SortField="HZData1" SortDirection="ASC" OnSort="Grid1_Sort" EnableHeaderMenu="true">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField DataField="Year" HeaderText="统计年份" />
-                <f:BoundField BoxFlex="1" DataField="LogTime" TextAlign="Center" DataFormatString="{0:yyyy-MM-dd}" HeaderText="记录时间" />
+                <f:RenderField DataField="Year" HeaderText="统计年份" />
+                <f:RenderField BoxFlex="1" DataField="LogTime" TextAlign="Center" HeaderText="记录时间" FieldType="Date" Renderer="Date"
+                    RendererArgument="yyyy-MM-dd" />
                 <f:GroupField ColumnID="anhui" HeaderText="安徽省" TextAlign="Center">
                     <Columns>
                         <f:GroupField HeaderText="合肥市" TextAlign="Center">
                             <Columns>
-                                <f:BoundField DataField="AHData1" SortField="AHData1" HeaderText="数据一"
-                                    TextAlign="Center" />
-                                <f:BoundField DataField="AHData2" SortField="AHData2" HeaderText="数据二"
-                                    TextAlign="Center" />
+                                <f:RenderField DataField="AHData1" SortField="AHData1" HeaderText="数据一" TextAlign="Center" />
+                                <f:RenderField DataField="AHData2" SortField="AHData2" HeaderText="数据二" TextAlign="Center" />
                             </Columns>
                         </f:GroupField>
                     </Columns>
@@ -32,18 +30,14 @@
                     <Columns>
                         <f:GroupField ColumnID="zhumadian" HeaderText="驻马店市" TextAlign="Center" Hidden="true">
                             <Columns>
-                                <f:BoundField DataField="HZData1" SortField="HZData1" HeaderText="数据一"
-                                    TextAlign="Center" />
-                                <f:BoundField DataField="HZData2" SortField="HZData2" HeaderText="数据二"
-                                    TextAlign="Center" />
+                                <f:RenderField DataField="HZData1" SortField="HZData1" HeaderText="数据一" TextAlign="Center" />
+                                <f:RenderField DataField="HZData2" SortField="HZData2" HeaderText="数据二" TextAlign="Center" />
                             </Columns>
                         </f:GroupField>
                         <f:GroupField HeaderText="漯河市" TextAlign="Center">
                             <Columns>
-                                <f:BoundField DataField="HLData1" SortField="HLData1" HeaderText="数据一"
-                                    TextAlign="Center" />
-                                <f:BoundField DataField="HLData2" SortField="HLData2" HeaderText="数据二"
-                                    TextAlign="Center" />
+                                <f:RenderField DataField="HLData1" SortField="HLData1" HeaderText="数据一" TextAlign="Center" />
+                                <f:RenderField DataField="HLData2" SortField="HLData2" HeaderText="数据二" TextAlign="Center" />
                             </Columns>
                         </f:GroupField>
                     </Columns>

@@ -8,16 +8,16 @@
         #mylogo {
             position: absolute;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Window ID="Window2" Width="650px" Height="300px" Icon="TagBlue" Title="窗体（观察图片随着窗体大小的变化）" EnableClose="false"
-            EnableMaximize="true" EnableCollapse="false" runat="server" EnableResize="true"
-            IsModal="false" AutoScroll="true" BodyPadding="10px">
+        <f:Window ID="Window2" Width="650px" Height="300px" Icon="TagBlue" Title="窗体（观察图片随着窗体大小的变化）" EnableClose="false" EnableMaximize="true"
+            EnableCollapse="false" runat="server" EnableResize="true" IsModal="false" AutoScroll="true" BodyPadding="10px">
             <Content>
-                <img id="mylogo" src="../res/images/logo/fineui_500.png" alt="Logo" />
+                <img id="mylogo" src="<%= PageContext.ResolveUrl("~/res/images/logo/fineui_500.png") %>" alt="Logo" />
             </Content>
             <Listeners>
                 <f:Listener Event="resize" Handler="onWindowResize" />
@@ -26,9 +26,9 @@
         </f:Window>
     </form>
     <script>
-
         // 保持图片的长宽比
-        var LOGO_WIDTH = 500, LOGO_HEIGHT = 500;
+        var LOGO_WIDTH = 500,
+            LOGO_HEIGHT = 500;
 
         // resize，render
         function onWindowResize(event) {

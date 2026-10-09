@@ -4,7 +4,7 @@
 <html>
 <head runat="server">
     <title></title>
-    <%--<link href="../res/google-code-prettify/prettify.css" rel="stylesheet" />--%>
+    <%--<link href="<%= PageContext.ResolveUrl("~/res/google-code-prettify/prettify.css") %>" rel="stylesheet" />--%>
     <link type="text/css" rel="stylesheet" id="linkPrettifyTheme" runat="server" />
     <style type="text/css">
         body.f-body {
@@ -26,10 +26,20 @@
             background-color: transparent;
         }
 
-        li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9 {
+        li.L0,
+        li.L1,
+        li.L2,
+        li.L3,
+        li.L4,
+        li.L5,
+        li.L6,
+        li.L7,
+        li.L8,
+        li.L9 {
             /* 使用主题背景色 */
             background-color: transparent;
         }
+
     </style>
 </head>
 <body onload="prettyPrint();">
@@ -37,7 +47,7 @@
     <form id="form1" runat="server">
         <asp:Literal runat="server" ID="desc"></asp:Literal>
     </form>
-    <script src="../res/google-code-prettify/prettify.js"></script>
-    <script src="../res/google-code-prettify/lang-basic.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/google-code-prettify/prettify.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/google-code-prettify/lang-basic.js") %>"></script>
 </body>
 </html>

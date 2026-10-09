@@ -6,47 +6,25 @@
 <head runat="server">
     <title></title>
 
+
+
+
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格"  EnableCollapse="false"
-            runat="server"
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" runat="server"
             DataKeyNames="Id,Name">
             <Columns>
-                <f:TemplateField Width="60px" EnableColumnHide="false" EnableHeaderMenu="false">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                    <ItemTemplate>
-                        <%-- Container.DataItem 的类型是 System.Data.DataRowView 或者用户自定义类型 --%>
-                        <%--<asp:Label ID="Label2" runat="server" Text='<%# GetGender(DataBinder.Eval(Container.DataItem, "Gender")) %>'></asp:Label>--%>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
-                <f:TemplateField HeaderText="语文">
-                    <ItemTemplate>
-                        <asp:TextBox ID="tbxYuwen" CssClass="group1" runat="server" Width="60px" TabIndex="<%# Container.DataItemIndex + 10 %>" Text="<%# GetRandomNumber() %>"></asp:TextBox>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:TemplateField HeaderText="数学">
-                    <ItemTemplate>
-                        <asp:TextBox ID="tbxShuxue" CssClass="group2" runat="server" Width="60px" TabIndex="<%# Container.DataItemIndex + 10 + GetDataSourceCount() %>" Text="<%# GetRandomNumber() %>"></asp:TextBox>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:TemplateField HeaderText="英语">
-                    <ItemTemplate>
-                        <asp:TextBox ID="tbxYingyu" CssClass="group3" runat="server" Width="60px" TabIndex="<%# Container.DataItemIndex + 10 + GetDataSourceCount() * 2 %>" Text="<%# GetRandomNumber() %>"></asp:TextBox>
-                    </ItemTemplate>
-                </f:TemplateField>
+                <f:RowNumberField Width="60px" EnableColumnHide="false" EnableHeaderMenu="false" ColumnID="Number" />
+                <f:RenderField DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" RendererFunction="renderMajor" />
+                <f:RenderField HeaderText="语文" RendererFunction="renderInput1" />
+                <f:RenderField HeaderText="数学" RendererFunction="renderInput2" />
+                <f:RenderField HeaderText="英语" RendererFunction="renderInput3" />
             </Columns>
         </f:Grid>
         <br />
@@ -64,24 +42,61 @@
         </f:Label>
         <br />
     </form>
-    
+
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script>
+        function renderInput1(value, params) {
+            params.grid = this;
+            value = Math.floor(Math.random() * 101);
+            return createGridTextInput(value, params, {
+                id: 'tbxYuwen',
+                cssClass: 'group1',
+                width: '60px',
+                tabIndex: params.rowIndex + 10 + this.data.length * 0
+            });
+        }
+
+        function renderInput2(value, params) {
+            params.grid = this;
+            value = Math.floor(Math.random() * 101);
+            return createGridTextInput(value, params, {
+                id: 'tbxShuxue',
+                cssClass: 'group2',
+                width: '60px',
+                tabIndex: params.rowIndex + 10 + this.data.length * 1
+            });
+        }
+
+        function renderInput3(value, params) {
+            params.grid = this;
+            value = Math.floor(Math.random() * 101);
+            return createGridTextInput(value, params, {
+                id: 'tbxYingyu',
+                cssClass: 'group3',
+                width: '60px',
+                tabIndex: params.rowIndex + 10 + this.data.length * 2
+            });
+        }
+
+    </script>
     <script type="text/javascript">
         var gridClientID = '<%= Grid1.ClientID %>';
-        var inputselector = '.f-grid-tpl input';
+        var inputselector = '.f-grid-cell input';
 
         function registerEnterEvent() {
             var grid = F(gridClientID);
-            
-            grid.el.on('keypress', inputselector, function (event) {
+
+            grid.el.on('keypress', inputselector, function(event) {
                 if (event.keyCode === F.KEY.ENTER) {
                     var row = $(this).parents('.f-grid-row');
-                    
+
                     var inputs = row.find(inputselector);
                     // 一行中有多少个输入框
                     var inputCount = inputs.length;
                     // 当前输入框在本行中的序号（用来标示那一列）
                     var inputIndex = inputs.index(this);
-                    
+
                     // 查找下一行
                     var nextRow = row.next();
                     if (nextRow.length) {
@@ -101,7 +116,7 @@
         }
 
 
-        F.ready(function () {
+        F.ready(function() {
             registerEnterEvent();
         });
 

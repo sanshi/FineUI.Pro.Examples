@@ -8,22 +8,21 @@
     <style>
         .webuploader-element-invisible {
             position: absolute !important;
-            clip: rect(1px,1px,1px,1px);
+            clip: rect(1px, 1px, 1px, 1px);
         }
 
         .webuploader-pick-disable {
             opacity: 0.6;
             pointer-events: none;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" runat="server" ShowHeader="true" ShowBorder="true" Title="文件上传"
-            Height="350px"
-            EnableCollapse="false" EnableCheckBoxSelect="false" EmptyText="尚未上传文件"
-            DataIDField="id" OnRowCommand="Grid1_RowCommand">
+        <f:Grid ID="Grid1" IsFluid="true" runat="server" ShowHeader="true" ShowBorder="true" Title="文件上传" Height="350px" EnableCollapse="false"
+            EnableCheckBoxSelect="false" EmptyText="尚未上传文件" DataIDField="id" OnRowCommand="Grid1_RowCommand">
             <Toolbars>
                 <f:Toolbar runat="server">
                     <Items>
@@ -36,34 +35,39 @@
                 </f:Toolbar>
             </Toolbars>
             <Columns>
-                <f:BoundField ColumnID="FileName" DataField="name" HeaderText="文件名" ExpandUnusedSpace="true" MinWidth="150px" />
-                <f:BoundField ColumnID="FileType" DataField="type" HeaderText="类型" />
+                <f:RenderField ColumnID="FileName" DataField="name" HeaderText="文件名" ExpandUnusedSpace="true" MinWidth="150px" />
+                <f:RenderField ColumnID="FileType" DataField="type" HeaderText="类型" />
                 <f:RenderField ColumnID="FileSize" DataField="size" HeaderText="大小" Renderer="FileSize" />
-                <f:BoundField ColumnID='FileStatus' DataField="status" NullDisplayText="已完成" HeaderText="状态" />
-                <f:LinkButtonField ColumnID="Delete" ConfirmText="你确定要删除这个文件吗？" ConfirmTarget="Top"
-                    CommandName="Delete" IconUrl="~/res/icon/delete.png" />
+                <f:RenderField ColumnID="FileStatus" DataField="status" NullDisplayText="已完成" HeaderText="状态" />
+                <f:RenderField ColumnID="Delete">
+                    <Commands>
+                        <f:Command ConfirmText="你确定要删除这个文件吗？" ConfirmTarget="Top" CommandName="Delete" IconUrl="~/res/icon/delete.png" />
+                    </Commands>
+                </f:RenderField>
             </Columns>
         </f:Grid>
         <br />
         <br />
         注：由于第三方组件WebUploader限制，本示例支持的浏览器版本为：Chrome、Firefox、Safari、IE10+ 。
     </form>
-    <script src="../../res/third-party/webuploader/webuploader.nolog.js" type="text/javascript"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/webuploader/webuploader.nolog.js") %>" type="text/javascript"></script>
     <script type="text/javascript">
-
         // 选中行数只有浏览器知道，所以在这里拼；<b> 是我们自己写的可信 HTML，用 F.rawHtml 原样输出。
         // 客户端已经拿着选中行的标识，用自定义回发直接送到服务端，不必让服务端再从回发状态里反推。
         // （确认框是异步的，没法在这个函数里等用户点完，所以先 return false，点确定后由 ok 回调发起回发。
         //   自定义回发不带表单验证、回发前禁用按钮这些按钮内置回发才有的特性，需要的话在这里自己写。）
         function onDeleteButtonClick(event) {
             var grid = F(gridClientID);
-            if (!grid.hasSelection()) { F.alert('请至少选择一项！'); return false; }
+            if (!grid.hasSelection()) {
+                F.alert('请至少选择一项！');
+                return false;
+            }
 
             var selectedRows = grid.getSelectedRows();
             F.confirm({
                 message: F.rawHtml('你确定要删除选中的&nbsp;<b>' + selectedRows.length + '</b>&nbsp;个文件吗？'),
                 messageIcon: 'warning',
-                ok: function () {
+                ok: function() {
                     F.customEvent('Grid1_DeleteRows', {
                         selectedRows: selectedRows
                     });
@@ -80,7 +84,7 @@
         var BASE_URL = '<%= PageContext.ResolveUrl("~/") %>';
         var SERVER_URL = BASE_URL + 'third-party/webuploader/fileupload.ashx?handler=Process';
 
-        F.ready(function () {
+        F.ready(function() {
             var grid1 = F(gridClientID);
 
             var uploader = WebUploader.create({
@@ -121,12 +125,12 @@
             //        'FileStatus': '等待上传'
             //    }, true);
             //});
-            
+
 
             // 当一批文件添加进队列以后触发
-            uploader.on('filesQueued', function (files) {
+            uploader.on('filesQueued', function(files) {
                 var records = [];
-                $.each(files, function (index, file) {
+                $.each(files, function(index, file) {
                     records.push({
                         id: file.id,
                         values: {
@@ -141,7 +145,7 @@
             });
 
 
-            uploader.on('uploadProgress', function (file, percentage) {
+            uploader.on('uploadProgress', function(file, percentage) {
                 var cellEl = grid1.getCellEl(file.id, 'FileStatus').find('.f-grid-cell-text');
 
                 var barEl = cellEl.find('.f-progressbar-value');
@@ -149,38 +153,38 @@
                 // 避免重复创建
                 if (!barEl.length) {
                     cellEl.html('<div class="f-progressbar f-widget-content" style="height:12px;">' +
-                      '<div class="f-progressbar-value f-widget-header" style="width:0%">' +
-                      '</div></div>');
+                        '<div class="f-progressbar-value f-widget-header" style="width:0%">' +
+                        '</div></div>');
                     barEl = cellEl.find('.f-progressbar-value');
                 }
 
                 barEl.css('width', percentage * 100 + '%');
             });
 
-            uploader.on('uploadSuccess', function (file) {
+            uploader.on('uploadSuccess', function(file) {
                 var cellEl = grid1.getCellEl(file.id, 'FileStatus').find('.f-grid-cell-text');
                 cellEl.text('上传成功');
             });
 
-            uploader.on('uploadError', function (file) {
+            uploader.on('uploadError', function(file) {
                 var cellEl = grid1.getCellEl(file.id, 'FileStatus').find('.f-grid-cell-text');
                 cellEl.text('上传出错');
             });
 
             // 不管上传成功还是失败，都会触发 uploadComplete 事件
-            uploader.on('uploadComplete', function (file) {
+            uploader.on('uploadComplete', function(file) {
                 uploader.removeFile(file, true);
             });
 
 
             // 当开始上传流程时触发
-            uploader.on('startUpload', function () {
+            uploader.on('startUpload', function() {
                 // 禁用删除按钮
                 F(btnDeleteClientID).disable();
             });
 
             // 当所有文件上传结束时触发
-            uploader.on('uploadFinished', function () {
+            uploader.on('uploadFinished', function() {
                 // 启用删除按钮
                 F(btnDeleteClientID).enable();
 
@@ -189,23 +193,24 @@
             });
 
             // 动态更新 formData 的值
-            uploader.on('uploadBeforeSend', function (obj, data, headers) {
+            uploader.on('uploadBeforeSend', function(obj, data, headers) {
                 data.param1 = new Date().getTime();
             });
 
 
-            uploader.on('error', function (type, arg, file) {
+            uploader.on('error', function(type, arg, file) {
                 if (type === 'F_EXCEED_SIZE') {
                     F.alert('文件[' + file.name + ']大小超出限制值（' + F.format.fileSize(arg) + '）');
                 } else if (type === 'Q_TYPE_DENIED') {
                     // 这个类型有两种成因：空文件、扩展名不在 accept 白名单里。
                     // 注意它派发时第二个参数就是 file 本身（不是大小上限），别照上面那条的签名去取。
-                    F.alert(arg.size
-                        ? '文件[' + arg.name + ']的类型不允许上传。'
-                        : '文件[' + arg.name + ']是空文件，无法上传。');
+                    F.alert(arg.size ?
+                        '文件[' + arg.name + ']的类型不允许上传。' :
+                        '文件[' + arg.name + ']是空文件，无法上传。');
                 }
             });
         });
+
     </script>
 </body>
 </html>

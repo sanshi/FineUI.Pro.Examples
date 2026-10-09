@@ -5,12 +5,12 @@
 <html>
 <head runat="server">
     <title></title>
+
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false"
-            runat="server"
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false" runat="server"
             AllowCellEditing="true" ClicksToEdit="1">
             <Columns>
                 <f:RowNumberField />
@@ -21,9 +21,8 @@
                     </Editor>
                 </f:RenderField>
                 <f:RenderCheckField Width="150px" ColumnID="AtSchool" DataField="AtSchool" HeaderText="RenderCheckField" />
-                <f:CheckBoxField ColumnID="CheckBoxField1" Width="150px" RenderAsStaticField="true" DataField="AtSchool" HeaderText="CheckBoxField1" />
-                <f:CheckBoxField ColumnID="CheckBoxField2" Width="150px" RenderAsStaticField="false"
-                    DataField="AtSchool" HeaderText="CheckBoxField2" />
+                <f:RenderCheckField ColumnID="CheckBoxField1" Width="150px" RenderAsStaticField="true" DataField="AtSchool" HeaderText="CheckBoxField1" />
+                <f:RenderCheckField ColumnID="CheckBoxField2" Width="150px" RenderAsStaticField="false" DataField="AtSchool" HeaderText="CheckBoxField2" />
                 <f:RenderField ColumnID="Major" DataField="Major" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业">
                     <Editor>
                         <f:TextBox ID="tbxEditorMajor" Required="true" runat="server">
@@ -45,12 +44,11 @@
         <br />
         <br />
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
     <script>
-
         function renderGender(value) {
             return value == 1 ? '男' : '女';
         }
-
 
     </script>
 </body>

@@ -16,6 +16,7 @@
             padding: 10px 5px;
             font-family: Consolas, Courier New, monospace;
         }
+
     </style>
 </head>
 <body>
@@ -59,7 +60,7 @@
     &lt;FineUI.Pro DebugMode="false" /&gt;
             </pre>
                 FineUI.Pro 配置节中的参数：
-            <br />
+                <br />
                 <ul>
                     <li>Theme: 样式主题，内置 10 种主题（默认值：Pure_Black）
                         <ul style="padding-top: 8px;">
@@ -91,11 +92,11 @@
                 <br />
                 <div style="margin-bottom: 5px;">
                     注 1：移动端（Android,iOS）网站需要启用DisplayMode和MobileAdaption属性（Web.config）：
-					<br/>
-					<br/>
-					&lt;FineUI.Pro DisplayMode="Large" MobileAdaption="true" EnableAnimation="true" /&gt;
+                    <br />
+                    <br />
+                    &lt;FineUI.Pro DisplayMode="Large" MobileAdaption="true" EnableAnimation="true" /&gt;
                 </div>
-				<br />
+                <br />
                 <%--<div style="margin-bottom: 5px;">
                     注 2：IE8需要启用JSLibrary属性（Web.config）：
 					<br/>
@@ -191,8 +192,8 @@
     &lt;/system.web&gt;
 &lt;/location&gt;</pre>
                 <br />
-				同样，静态资源目录也无需表单认证，添加例外如下：
-				<pre>
+                同样，静态资源目录也无需表单认证，添加例外如下：
+                <pre>
 &lt;location path="res"&gt;
     &lt;system.web&gt;
       &lt;authorization&gt;
@@ -200,11 +201,11 @@
       &lt;/authorization&gt;
     &lt;/system.web&gt;
 &lt;/location&gt;</pre>
-<br />
+                <br />
             </li>
             <li>
                 <strong>
-					使用 Visual Studio 的 NuGet 下载最新的 JSON 库
+                    使用 Visual Studio 的 NuGet 下载最新的 JSON 库
                 </strong>
                 <br />
                 <br />
@@ -214,10 +215,10 @@
                 Newtonsoft.Json.dll 在不同的 .Net 版本有不同的 DLL，建议您使用 Visual Studio 的 NuGet 工具下载最新的 JSON 库：
                 <br />
                 <br />
-                <img src="../res/images/json.net.1.png" alt="Json.NET" />
+                <img src="<%= PageContext.ResolveUrl("~/res/images/json.net.1.png") %>" alt="Json.NET" />
                 <br />
                 <br />
-                <img src="../res/images/json.net.2.png" alt="Json.NET" />
+                <img src="<%= PageContext.ResolveUrl("~/res/images/json.net.2.png") %>" alt="Json.NET" />
                 <br />
                 <br />
                 注：使用 NuGet 安装时，VS 会自动修改 Web.config 文件并增加相关信息，无需手工配置！

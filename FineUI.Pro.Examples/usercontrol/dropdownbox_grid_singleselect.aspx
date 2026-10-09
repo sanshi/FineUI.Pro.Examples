@@ -12,11 +12,11 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉表格（复杂布局）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉表格（复杂布局）"
+            ShowHeader="true">
             <Items>
-                <f:DropDownBox runat="server" ID="DropDownBox1" EmptyText="请从下拉表格中选择（单选）" 
-                    DataControlID="Grid1" EnableMultiSelect="false" MatchFieldWidth="false">
+                <f:DropDownBox runat="server" ID="DropDownBox1" EmptyText="请从下拉表格中选择（单选）" DataControlID="Grid1" EnableMultiSelect="false"
+                    MatchFieldWidth="false">
                     <PopPanel>
                         <f:UserControlConnector runat="server">
                             <uc1:SelectUserControl runat="server" EnableGridMultiSelect="false" ID="SelectUserControl1" />
@@ -31,5 +31,6 @@
         <f:Label runat="server" ID="labResult">
         </f:Label>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

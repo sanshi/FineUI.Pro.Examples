@@ -15,10 +15,10 @@ namespace FineUI.Pro.Examples.grid
         {
             if (!IsPostBack)
             {
-                CheckBoxField cbfAtSchool = Grid1.FindColumn("AtSchool") as CheckBoxField;
+                RenderCheckField cbfAtSchool = Grid1.FindColumn("AtSchool") as RenderCheckField;
                 cbfAtSchool.HeaderTextRawHtml = new RawHtml("是否在校<i class=\"f-icon f-iconfont f-iconfont-filter custom-filter\"></i>");
 
-                BoundField bfEntranceYear = Grid1.FindColumn("EntranceYear") as BoundField;
+                RenderField bfEntranceYear = Grid1.FindColumn("EntranceYear") as RenderField;
                 bfEntranceYear.HeaderTextRawHtml = new RawHtml("入学年份<i class=\"f-icon f-iconfont f-iconfont-filter custom-filter\"></i>");
 
 

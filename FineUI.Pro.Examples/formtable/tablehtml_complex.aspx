@@ -5,24 +5,29 @@
 <head runat="server">
     <title></title>
     <meta name="sourcefiles" content="~/res/css/tablehtml.css" />
-    <link href="../res/css/tablehtml.css" rel="stylesheet" />
-    <style>
-        .tablehtml td.label1,
-        .tablehtml td.label2 {
-            width: 80px;
-            text-align: center;
-        }
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
 
-        .tablehtml td.label {
-            width: 120px;
-            text-align: right;
-        }
+        <link href="<%= PageContext.ResolveUrl("~/res/css/tablehtml.css") %>" rel="stylesheet" />
+        <style>
+            .tablehtml td.label1,
+            .tablehtml td.label2 {
+                width: 80px;
+                text-align: center;
+            }
 
-        .tablehtml td.label3 {
-            width: 80px;
-            text-align: right;
-        }
-    </style>
+            .tablehtml td.label {
+                width: 120px;
+                text-align: right;
+            }
+
+            .tablehtml td.label3 {
+                width: 80px;
+                text-align: right;
+            }
+
+        </style>
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="_form1" runat="server">
@@ -131,8 +136,8 @@
                 </tr>
             </table>
         </f:ContentPanel>
-        <f:Button runat="server" Text="验证此表单并提交" CssClass="marginr" ValidateForms="ContentPanel1"
-            ID="btnSubmitForm1" OnClick="btnSubmitForm1_Click" MarginTop="5px">
+        <f:Button runat="server" Text="验证此表单并提交" CssClass="marginr" ValidateForms="ContentPanel1" ID="btnSubmitForm1" OnClick="btnSubmitForm1_Click"
+            MarginTop="5px">
         </f:Button>
         <br />
         <br />

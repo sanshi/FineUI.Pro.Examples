@@ -32,6 +32,6 @@
         </f:Button>
         <f:Button ID="btnReload" Text="服务端重载当前地址" runat="server" OnClick="btnReload_Click"></f:Button>
     </form>
-    <script src="../res/js/grid.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

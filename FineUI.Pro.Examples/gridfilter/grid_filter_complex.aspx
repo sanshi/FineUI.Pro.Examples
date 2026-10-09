@@ -5,6 +5,7 @@
 <head runat="server">
     <title></title>
     <meta name="sourcefiles" content="~/Code/NewFilteredTable.cs" />
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,7 +14,7 @@
             AllowFilters="true" OnFilterChanged="Grid1_FilterChanged">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField ColumnID="Name" DataField="Name" DataFormatString="{0}" HeaderText="姓名" EnableFilter="true">
+                <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名" EnableFilter="true">
                     <Filter EnableMultiConditions="true" MatcherDefault="any">
                         <Operator>
                             <f:DropDownList runat="server">
@@ -24,13 +25,8 @@
                             </f:DropDownList>
                         </Operator>
                     </Filter>
-                </f:BoundField>
-                <f:TemplateField ColumnID="Gender" HeaderText="性别" EnableFilter="true">
-                    <ItemTemplate>
-                        <%-- Container.DataItem 的类型是 System.Data.DataRowView 或者用户自定义类型 --%>
-                        <%--<asp:Label ID="Label2" runat="server" Text='<%# GetGender(DataBinder.Eval(Container.DataItem, "Gender")) %>'></asp:Label>--%>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
+                </f:RenderField>
+                <f:RenderField ColumnID="Gender" HeaderText="性别" EnableFilter="true" DataField="Gender" RendererFunction="renderGender">
                     <Filter>
                         <Field>
                             <f:RadioButtonList runat="server">
@@ -39,8 +35,8 @@
                             </f:RadioButtonList>
                         </Field>
                     </Filter>
-                </f:TemplateField>
-                <f:BoundField ColumnID="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" EnableFilter="true">
+                </f:RenderField>
+                <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" EnableFilter="true">
                     <Filter EnableMultiConditions="true">
                         <Operator>
                             <f:DropDownList ID="DropDownList2" runat="server">
@@ -53,8 +49,8 @@
                             <f:NumberBox runat="server" ID="NumberBox1" NoDecimal="true" NoNegative="true"></f:NumberBox>
                         </Field>
                     </Filter>
-                </f:BoundField>
-                <f:CheckBoxField ColumnID="AtSchool" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" EnableFilter="true">
+                </f:RenderField>
+                <f:RenderCheckField ColumnID="AtSchool" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" EnableFilter="true">
                     <Filter>
                         <Field>
                             <f:RadioButtonList ID="RadioButtonList1" runat="server">
@@ -63,10 +59,9 @@
                             </f:RadioButtonList>
                         </Field>
                     </Filter>
-                </f:CheckBoxField>
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" EnableFilter="true">
+                </f:RenderCheckField>
+                <f:RenderField ColumnID="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" EnableFilter="true" DataField="Major"
+                    RendererFunction="renderMajor">
                     <Filter>
                         <Field>
                             <f:CheckBoxList ColumnNumber="1" runat="server">
@@ -78,17 +73,17 @@
                             </f:CheckBoxList>
                         </Field>
                     </Filter>
-                </f:HyperLinkField>
-                <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png"
-                    HeaderText="分组" EnableFilter="true">
+                </f:RenderField>
+                <f:RenderField ColumnID="Group" HeaderText="分组" EnableFilter="true" DataField="Group" RendererFunction="renderGroup">
                     <Filter>
                         <Field>
                             <f:DropDownList ID="groupList" EnableMultiSelect="true" AutoSelectFirstItem="false" MultiSelectMode="Tags" runat="server">
                             </f:DropDownList>
                         </Field>
                     </Filter>
-                </f:ImageField>
-                <f:BoundField ColumnID="LogTime" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="注册日期" EnableFilter="true">
+                </f:RenderField>
+                <f:RenderField ColumnID="LogTime" DataField="LogTime" HeaderText="注册日期" EnableFilter="true" FieldType="Date" Renderer="Date"
+                    RendererArgument="yyyy-MM-dd">
                     <Filter EnableMultiConditions="true">
                         <Operator>
                             <f:DropDownList ID="DropDownList3" runat="server">
@@ -101,12 +96,13 @@
                             <f:DatePicker runat="server" ID="DatePicker1"></f:DatePicker>
                         </Field>
                     </Filter>
-                </f:BoundField>
+                </f:RenderField>
             </Columns>
         </f:Grid>
         <br />
         <br />
         <f:Label runat="server" ID="labResult" EncodeText="false"></f:Label>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

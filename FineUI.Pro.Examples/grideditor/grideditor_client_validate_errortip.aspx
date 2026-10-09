@@ -5,14 +5,17 @@
 <html>
 <head runat="server">
     <title></title>
-    <style>
-        .f-grid-cell.errortip {
-            background-image: url(../res/images/errortip.gif);
-            background-repeat: repeat-x;
-            background-position: bottom;
-        }
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+        <style>
+            .f-grid-cell.errortip {
+                background-image: url('<%= PageContext.ResolveUrl("~/res/images/errortip.gif") %>');
+                background-repeat: repeat-x;
+                background-position: bottom;
+            }
 
-    </style>
+        </style>
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">

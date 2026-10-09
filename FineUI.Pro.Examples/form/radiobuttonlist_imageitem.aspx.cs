@@ -38,7 +38,7 @@ namespace FineUI.Pro.Examples.form
             {
                 // 只信任图标模板骨架 + 可信 URL；数据字段（名称）经 HtmlEncode 转义（与另两种方式完全一致）
                 c.Display = String.Format("<img src=\"{0}\" style=\"vertical-align:middle;\" />&nbsp;{1}",
-                    ResolveUrl("~/res/icon/flag_" + c.Code + ".png"), HttpUtility.HtmlEncode(c.Name));
+                    PageContext.ResolveUrl("~/res/icon/flag_" + c.Code + ".png"), HttpUtility.HtmlEncode(c.Name));
                 list.Add(c);
             }
 
@@ -71,7 +71,7 @@ namespace FineUI.Pro.Examples.form
 
             // 只信任图标模板骨架 + 可信 URL；数据字段（名称）经 HtmlEncode 转义，杜绝 XSS
             e.Item.TextRawHtml = new RawHtml("<img src=\"{0}\" style=\"vertical-align:middle;\" />&nbsp;{1}",
-                ResolveUrl("~/res/icon/flag_" + c.Code + ".png"),
+                PageContext.ResolveUrl("~/res/icon/flag_" + c.Code + ".png"),
                 HttpUtility.HtmlEncode(c.Name));
         }
 
@@ -88,7 +88,7 @@ namespace FineUI.Pro.Examples.form
                     Value = c.Code,
                     // TextRawHtml 便捷写法：只信任图标模板，名称经 HtmlEncode 转义
                     TextRawHtml = new RawHtml("<img src=\"{0}\" style=\"vertical-align:middle;\" />&nbsp;{1}",
-                        ResolveUrl("~/res/icon/flag_" + c.Code + ".png"),
+                        PageContext.ResolveUrl("~/res/icon/flag_" + c.Code + ".png"),
                         HttpUtility.HtmlEncode(c.Name))
                 });
             }

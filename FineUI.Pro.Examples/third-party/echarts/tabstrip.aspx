@@ -4,18 +4,23 @@
 <html>
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="../../res/third-party/openlayers/ol.css" />
-    <style>
-        .mycontentpanel .f-panel-body > div {
-            width: 100%;
-            height: 100%;
-        }
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+        <link rel="stylesheet" href="<%= PageContext.ResolveUrl("~/res/third-party/openlayers/ol.css") %>" />
+        <style>
+            .mycontentpanel .f-panel-body>div {
+                width: 100%;
+                height: 100%;
+            }
 
-        #chart, #olmap {
-            height: 100%;
-            width: 100%;
-        }
-    </style>
+            #chart,
+            #olmap {
+                height: 100%;
+                width: 100%;
+            }
+
+        </style>
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -42,8 +47,8 @@
         </f:TabStrip>
         <div class="f-widget-content" id="emptycontent"></div>
     </form>
-    <script src="../../res/third-party/echarts/echarts.min.js"></script>
-    <script src="../../res/third-party/openlayers/ol.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/echarts/echarts.min.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/openlayers/ol.js") %>"></script>
     <script type="text/javascript">
         var TabStrip1ClientID = '<%= TabStrip1.ClientID %>';
 
@@ -53,6 +58,7 @@
         function emptyContentColor() {
             return $('#emptycontent').css('color');
         }
+
         function randomColors() {
             var colors = ['#c23531', '#2f4554', '#61a0a8', '#d48265', '#91c7ae', '#749f83', '#ca8622', '#bda29a', '#6e7074', '#546570', '#c4ccd3'];
             var randomIndex = Math.random() * colors.length;
@@ -69,7 +75,7 @@
             }
         }
 
-        F.ready(function () {
+        F.ready(function() {
             // 初始化ECharts
             var contentColor = emptyContentColor();
             var option = {
@@ -99,12 +105,26 @@
                     type: 'pie',
                     radius: '55%',
                     center: ['50%', '60%'],
-                    data: [
-                        { value: 335, name: '直接访问' },
-                        { value: 310, name: '邮件营销' },
-                        { value: 234, name: '联盟广告' },
-                        { value: 135, name: '视频广告' },
-                        { value: 1548, name: '搜索引擎' }
+                    data: [{
+                            value: 335,
+                            name: '直接访问'
+                        },
+                        {
+                            value: 310,
+                            name: '邮件营销'
+                        },
+                        {
+                            value: 234,
+                            name: '联盟广告'
+                        },
+                        {
+                            value: 135,
+                            name: '视频广告'
+                        },
+                        {
+                            value: 1548,
+                            name: '搜索引擎'
+                        }
                     ],
                     itemStyle: {
                         emphasis: {
@@ -134,15 +154,14 @@
 
 
             // 选项卡切换或者窗体大小改变时，更新当前选项卡内的图表
-            F(TabStrip1ClientID).on('tabchange', function (event, tab) {
+            F(TabStrip1ClientID).on('tabchange', function(event, tab) {
                 updateChartInTabStrip();
             });
-            F.windowResize(function () {
+            F.windowResize(function() {
                 updateChartInTabStrip();
             });
 
         });
-
 
     </script>
 </body>

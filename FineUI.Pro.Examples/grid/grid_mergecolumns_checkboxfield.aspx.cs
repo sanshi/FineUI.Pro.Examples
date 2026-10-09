@@ -38,7 +38,7 @@ namespace FineUI.Pro.Examples.grid
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            CheckBoxField field1 = (CheckBoxField)Grid1.FindColumn("CheckBoxField1");
+            RenderCheckField field1 = (RenderCheckField)Grid1.FindColumn("CheckBoxField1");
 
             StringBuilder sb = new StringBuilder();
             List<GridRow> selectedRows = GridSelectionUtil.GetSelectedRows(Grid1);
@@ -58,7 +58,7 @@ namespace FineUI.Pro.Examples.grid
                     sb.Append("<tr>");
 
                     sb.AppendFormat("<td>{0}</td>", rowIndex + 1);
-                    sb.AppendFormat("<td>{0}</td>", field1.GetCheckedState(rowIndex));
+                    sb.AppendFormat("<td>{0}</td>", GridColumnUtil.GetCheckedState(Grid1, field1.ColumnID, rowIndex));
 
                     sb.Append("</tr>");
                 }

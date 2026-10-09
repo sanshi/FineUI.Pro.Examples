@@ -9,23 +9,21 @@
             font-weight: bold;
             color: red;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
         <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" Height="400px" runat="server" EnableCollapse="false"
-            EnableCheckBoxSelect="true"
-            EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId"
-            OnRowDataBound="Grid1_RowDataBound"
-            AllowPaging="true" IsDatabasePaging="true" PageSize="2" OnPageIndexChanged="Grid1_PageIndexChanged"
-            EnableSummary="true" SummaryPosition="Bottom">
+            EnableCheckBoxSelect="true" EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId" OnRowDataBound="Grid1_RowDataBound"
+            AllowPaging="true" IsDatabasePaging="true" PageSize="2" OnPageIndexChanged="Grid1_PageIndexChanged" EnableSummary="true" SummaryPosition="Bottom">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
-                <f:BoundField Width="150px" DataField="Type" HeaderText="类型" />
-                <f:BoundField ColumnID="Size" Width="150px" DataField="Size" HeaderText="大小" />
-                <f:BoundField Width="150px" DataField="ModifyDate" DataFormatString="{0:yyyy-MM-dd}" HeaderText="修改日期" />
+                <f:RenderField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
+                <f:RenderField Width="150px" DataField="Type" HeaderText="类型" />
+                <f:RenderField ColumnID="Size" Width="150px" DataField="Size" HeaderText="大小" />
+                <f:RenderField Width="150px" DataField="ModifyDate" HeaderText="修改日期" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
             </Columns>
             <PageItems>
                 <f:ToolbarSeparator runat="server"></f:ToolbarSeparator>
@@ -40,9 +38,8 @@
         <br />
     </form>
 
-    <script src="../res/js/grid.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
-
         var gridID = '<%= Grid1.ClientID %>';
 
         function onExpandAllClick(event) {

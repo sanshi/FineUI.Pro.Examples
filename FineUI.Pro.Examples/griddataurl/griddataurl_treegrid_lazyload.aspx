@@ -10,9 +10,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" EnableCheckBoxSelect="true"
-            runat="server" DataUrl="~/griddataurl/griddataurl_treegrid_lazyload.ashx"
-            EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId"
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" EnableCheckBoxSelect="true" runat="server"
+            DataUrl="~/griddataurl/griddataurl_treegrid_lazyload.ashx" EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId"
             RowDataBoundFunction="gridRowDataBound">
             <Columns>
                 <f:RowNumberField></f:RowNumberField>
@@ -22,15 +21,14 @@
                 </f:RenderField>
                 <f:RenderField ColumnID="Size" DataField="Size" HeaderText="大小">
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="ModifyDate" DataField="ModifyDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="修改日期">
+                <f:RenderField Width="150px" ColumnID="ModifyDate" DataField="ModifyDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                    HeaderText="修改日期">
                 </f:RenderField>
             </Columns>
         </f:Grid>
     </form>
-	<script src="../res/js/grid.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
-
         // 自定义客户端行数据绑定函数
         function gridRowDataBound(rowData) {
 
@@ -41,8 +39,6 @@
             }
 
         }
-
-
 
     </script>
 </body>

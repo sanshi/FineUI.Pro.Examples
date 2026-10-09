@@ -5,29 +5,23 @@
 <html>
 <head runat="server">
     <title></title>
+
+
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
+        <f:Grid AllowCellEditing="true" DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
             runat="server">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" DataFormatString="{0}"
-                    HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                    <ItemTemplate>
-                        <asp:Label ID="Label2" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校1" />
-                <f:CheckBoxField ColumnID="CheckBoxField1" RenderAsStaticField="false"
-                    DataField="AtSchool" HeaderText="是否在校1" />
-                <f:CheckBoxField ColumnID="CheckBoxField2" RenderAsStaticField="false"
-                    DataField="AtSchool" HeaderText="是否在校2" />
-                <f:CheckBoxField ColumnID="CheckBoxField3" RenderAsStaticField="false"
-                    DataField="AtSchool" HeaderText="是否在校3" />
+                <f:RenderField ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校1" />
+                <f:RenderCheckField ColumnID="CheckBoxField1" RenderAsStaticField="false" DataField="AtSchool" HeaderText="是否在校1" />
+                <f:RenderCheckField ColumnID="CheckBoxField2" RenderAsStaticField="false" DataField="AtSchool" HeaderText="是否在校2" />
+                <f:RenderCheckField ColumnID="CheckBoxField3" RenderAsStaticField="false" DataField="AtSchool" HeaderText="是否在校3" />
             </Columns>
             <Listeners>
                 <f:Listener Event="beforerowcontextmenu" Handler="onRowContextMenu" />
@@ -48,22 +42,25 @@
         </f:Label>
     </form>
 
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
     <script>
-
         var menuID = '<%= Menu1.ClientID %>';
 
         // 返回false，来阻止浏览器右键菜单
         function onRowContextMenu(event, rowId) {
-            F(menuID).show();  //showAt(event.pageX, event.pageY);
+            F(menuID).show(); //showAt(event.pageX, event.pageY);
             return false;
         }
 
+        var gridClientID = '<%= Grid1.ClientID %>';
+
         function onSelectRows(event) {
-            $('.f-grid-row-selected .f-grid-checkbox').addClass('f-checked');
+            setSelectedCheckColumns(gridClientID, ['CheckBoxField1', 'CheckBoxField2', 'CheckBoxField3'], true);
         }
 
         function onUnselectRows(event) {
-            $('.f-grid-row-selected .f-grid-checkbox').removeClass('f-checked');
+            setSelectedCheckColumns(gridClientID, ['CheckBoxField1', 'CheckBoxField2', 'CheckBoxField3'], false);
         }
 
     </script>

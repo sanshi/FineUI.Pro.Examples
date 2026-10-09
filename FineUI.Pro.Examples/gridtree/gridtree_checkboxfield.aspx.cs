@@ -39,9 +39,9 @@ namespace FineUI.Pro.Examples.gridtree
 
         protected void Grid1_RowDataBound(object sender, GridRowEventArgs e)
         {
-            // e.DataItem  -> System.Data.DataRowView or custom class.
-            // e.RowIndex -> Current row index.
-            // e.Values -> Rendered html for each column of this row.
+            // e.DataItem  -> System.Data.DataRowView 或自定义类。
+            // e.RowIndex -> 当前行索引。
+            // e.Values -> 当前行各列的数据。
 
             DataRowView row = e.DataItem as DataRowView;
 
@@ -52,7 +52,7 @@ namespace FineUI.Pro.Examples.gridtree
                 e.SetCellCssClass("FollowFolder", "hidethis");
             }
 
-            //CheckBoxField followFolderField = Grid1.FindColumn("FollowFolder") as CheckBoxField;
+            //RenderCheckField followFolderField = Grid1.FindColumn("FollowFolder") as RenderCheckField;
             //// 类型
             //string type = row["Type"].ToString();
             //if (type != "文件夹")
@@ -72,7 +72,7 @@ namespace FineUI.Pro.Examples.gridtree
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            CheckBoxField field1 = (CheckBoxField)Grid1.FindColumn("FollowFolder");
+            RenderCheckField field1 = (RenderCheckField)Grid1.FindColumn("FollowFolder");
 
             StringBuilder sb = new StringBuilder();
 
@@ -88,7 +88,7 @@ namespace FineUI.Pro.Examples.gridtree
 
             for (int i = 0; i < Grid1.Rows.Count; i++)
             {
-                bool followit = field1.GetCheckedState(i);
+                bool followit = GridColumnUtil.GetCheckedState(Grid1, field1.ColumnID, i);
 
                 if(followit) {
                 sb.Append("<tr>");

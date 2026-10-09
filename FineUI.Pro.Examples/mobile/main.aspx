@@ -6,7 +6,7 @@
     <title></title>
     <style>
         .mywindow,
-        .mywindow > .f-panel-bodyct > .f-panel-body {
+        .mywindow>.f-panel-bodyct>.f-panel-body {
             background-image: none;
             background-color: transparent;
             -moz-box-shadow: none;
@@ -14,7 +14,7 @@
             box-shadow: none;
         }
 
-        .themepanel > .f-panel-bodyct > .f-panel-body {
+        .themepanel>.f-panel-bodyct>.f-panel-body {
             background: none;
             background-color: #000;
         }
@@ -25,66 +25,64 @@
             padding-top: 5px;
         }
 
-            #themecontainer ul {
-                list-style-type: none;
-                margin: 10px 0 0;
-                padding: 0;
-            }
+        #themecontainer ul {
+            list-style-type: none;
+            margin: 10px 0 0;
+            padding: 0;
+        }
 
-                #themecontainer ul li {
-                    display: inline-block;
-                    margin: 0 0 10px 10px;
-                    padding: 0;
-                }
+        #themecontainer ul li {
+            display: inline-block;
+            margin: 0 0 10px 10px;
+            padding: 0;
+        }
 
-                    #themecontainer ul li .title {
-                        text-align: center;
-                        color: #666;
-                        font-size: 12px;
-                        display: none;
-                    }
+        #themecontainer ul li .title {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            display: none;
+        }
 
-                    #themecontainer ul li.hover,
-                    #themecontainer ul li.active {
-                        border-bottom-color: #fff;
-                    }
+        #themecontainer ul li.hover,
+        #themecontainer ul li.active {
+            border-bottom-color: #fff;
+        }
 
-                        #themecontainer ul li.hover .title,
-                        #themecontainer ul li.active .title {
-                            color: #fff;
-                            font-weight: bold;
-                        }
+        #themecontainer ul li.hover .title,
+        #themecontainer ul li.active .title {
+            color: #fff;
+            font-weight: bold;
+        }
 
-                    #themecontainer ul li img {
-                        width: 75px;
-                        border-radius: 5px;
-                    }
+        #themecontainer ul li img {
+            width: 75px;
+            border-radius: 5px;
+        }
 
-            #themecontainer .grouptitle {
-                color: #ccc;
-                font-size: 16px;
-                border-bottom: solid 1px #333;
-                padding: 5px;
-                margin: 10px;
-                margin-top: 0;
-            }
+        #themecontainer .grouptitle {
+            color: #ccc;
+            font-size: 16px;
+            border-bottom: solid 1px #333;
+            padding: 5px;
+            margin: 10px;
+            margin-top: 0;
+        }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="Panel1" CssClass="mypanel" IsViewPort="true" AutoScroll="true"
-            ShowBorder="false" ShowHeader="false" runat="server">
+        <f:Panel ID="Panel1" CssClass="mypanel" IsViewPort="true" AutoScroll="true" ShowBorder="false" ShowHeader="false" runat="server">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" Title="FineUI.Pro 移动示例" runat="server" ToolbarAlign="Right" HeaderStyle="true">
                     <Items>
-                        <f:Button ID="Button1" runat="server" Size="Small"
-                            IconFont="_MoreVertical" ShowMenuIcon="false" EnableDefaultState="false">
+                        <f:Button ID="Button1" runat="server" Size="Small" IconFont="_MoreVertical" ShowMenuIcon="false" EnableDefaultState="false">
                             <Menu runat="server">
                                 <f:MenuButton runat="server" Text="主题仓库" ClickHandler="onThemeSelectClick"></f:MenuButton>
                                 <f:MenuSeparator runat="server"></f:MenuSeparator>
-                                <f:MenuButton runat="server" Text="示例首页"
-                                    ClickHandler="onBackToHomeClick">
+                                <f:MenuButton runat="server" Text="示例首页" ClickHandler="onBackToHomeClick">
                                 </f:MenuButton>
                             </Menu>
                         </f:Button>
@@ -96,8 +94,7 @@
                 </f:DataList>
             </Items>
         </f:Panel>
-        <f:Panel ID="Panel2" CssClass="mypanel" runat="server" ShowHeader="false" ShowBorder="false" Hidden="true"
-            IsViewPort="true" AutoScroll="true">
+        <f:Panel ID="Panel2" CssClass="mypanel" runat="server" ShowHeader="false" ShowBorder="false" Hidden="true" IsViewPort="true" AutoScroll="true">
             <Toolbars>
                 <f:Toolbar ID="Toolbar2" runat="server" HeaderStyle="true">
                     <Items>
@@ -110,8 +107,7 @@
                 </f:DataList>
             </Items>
         </f:Panel>
-        <f:Panel ID="Panel3" CssClass="mypanel" runat="server" ShowHeader="false" ShowBorder="false" Hidden="true"
-            IsViewPort="true" AutoScroll="true">
+        <f:Panel ID="Panel3" CssClass="mypanel" runat="server" ShowHeader="false" ShowBorder="false" Hidden="true" IsViewPort="true" AutoScroll="true">
             <Toolbars>
                 <f:Toolbar ID="Toolbar3" runat="server" HeaderStyle="true">
                     <Items>
@@ -124,8 +120,8 @@
                 </f:DataList>
             </Items>
         </f:Panel>
-        <f:Window runat="server" ID="Window1" CssClass="mywindow" ShowHeader="false" ShowBorder="false" Hidden="true" HideOnMaskClick="true"
-            IsModal="true" BodyPadding="10px" Layout="VBox" PercentWidth="100%" EnableDefaultCorner="false" PositionY="Bottom">
+        <f:Window runat="server" ID="Window1" CssClass="mywindow" ShowHeader="false" ShowBorder="false" Hidden="true" HideOnMaskClick="true" IsModal="true"
+            BodyPadding="10px" Layout="VBox" PercentWidth="100%" EnableDefaultCorner="false" PositionY="Bottom">
             <Items>
                 <f:ContentPanel ID="ContentPanel1" CssClass="themepanel" Height="200px" AutoScroll="true" ShowHeader="false" runat="server">
                     <div id="themecontainer">
@@ -135,31 +131,33 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                    <img src="../res/images/themes/pure_black.png" alt="Pure Black" data-value="Pure_Black" />
+                                    <img src="<%= PageContext.ResolveUrl("~/res/images/themes/pure_black.png") %>" alt="Pure Black" data-value="Pure_Black" />
                                 </a>
                                 <div class="title">Pure Black</div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="../res/images/themes/pure_green.png" alt="Pure Green" data-value="Pure_Green" />
+                                    <img src="<%= PageContext.ResolveUrl("~/res/images/themes/pure_green.png") %>" alt="Pure Green" data-value="Pure_Green" />
                                 </a>
                                 <div class="title">Pure Green</div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="../res/images/themes/pure_blue.png" alt="Pure Blue" data-value="Pure_Blue" />
+                                    <img src="<%= PageContext.ResolveUrl("~/res/images/themes/pure_blue.png") %>" alt="Pure Blue" data-value="Pure_Blue" />
                                 </a>
                                 <div class="title">Pure Blue</div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="../res/images/themes/pure_purple.png" alt="Pure Purple" data-value="Pure_Purple" />
+                                    <img src="<%= PageContext.ResolveUrl("~/res/images/themes/pure_purple.png") %>" alt="Pure Purple"
+                                        data-value="Pure_Purple" />
                                 </a>
                                 <div class="title">Pure Purple</div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="../res/images/themes/pure_orange.png" alt="Pure Orange" data-value="Pure_Orange" />
+                                    <img src="<%= PageContext.ResolveUrl("~/res/images/themes/pure_orange.png") %>" alt="Pure Orange"
+                                        data-value="Pure_Orange" />
                                 </a>
                                 <div class="title">Pure Orange</div>
                             </li>
@@ -170,27 +168,28 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                    <img src="../res/images/themes/cupertino.png" alt="Cupertino" data-value="Cupertino" /></a>
+                                    <img src="<%= PageContext.ResolveUrl("~/res/images/themes/cupertino.png") %>" alt="Cupertino" data-value="Cupertino" /></a>
                                 <div class="title">Cupertino</div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="../res/images/themes/start.png" alt="Start" data-value="Start" /></a>
+                                    <img src="<%= PageContext.ResolveUrl("~/res/images/themes/start.png") %>" alt="Start" data-value="Start" /></a>
                                 <div class="title">Start</div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="../res/images/themes/dark_hive.png" alt="Dark Hive" data-value="Dark_Hive" /></a>
+                                    <img src="<%= PageContext.ResolveUrl("~/res/images/themes/dark_hive.png") %>" alt="Dark Hive" data-value="Dark_Hive" /></a>
                                 <div class="title">Dark Hive</div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="../res/images/themes/flick.png" alt="Flick" data-value="Flick" /></a>
+                                    <img src="<%= PageContext.ResolveUrl("~/res/images/themes/flick.png") %>" alt="Flick" data-value="Flick" /></a>
                                 <div class="title">Flick</div>
                             </li>
                             <li>
                                 <a href="#">
-                                    <img src="../res/images/themes/south_street.png" alt="South Street" data-value="South_Street" /></a>
+                                    <img src="<%= PageContext.ResolveUrl("~/res/images/themes/south_street.png") %>" alt="South Street"
+                                        data-value="South_Street" /></a>
                                 <div class="title">South Street</div>
                             </li>
                         </ul>
@@ -201,7 +200,6 @@
         <asp:XmlDataSource ID="XmlDataSource1" runat="server" EnableCaching="false" DataFile="~/res/menu.xml"></asp:XmlDataSource>
     </form>
     <script>
-
         var panel1ClientID = '<%= Panel1.ClientID %>';
         var dataList1ClientID = '<%= DataList1.ClientID %>';
 
@@ -271,7 +269,7 @@
             }
 
             var subMenus = [];
-            $.each(children, function (index, menu) {
+            $.each(children, function(index, menu) {
                 // fields: ['text', 'href', 'hrefTarget', 'arrow', 'level']
                 subMenus.push([menu.text, menu.navigateUrl, '_self', true, level ? (level + '-' + index) : index]);
             });
@@ -322,7 +320,7 @@
 
 
 
-        F.ready(function () {
+        F.ready(function() {
 
             var dataList1 = F(dataList1ClientID);
 
@@ -332,9 +330,10 @@
             }
 
             // 点击一级菜单和二级菜单
-            $('.mydatalist').on('click', '.f-datalist-item', function (event) {
+            $('.mydatalist').on('click', '.f-datalist-item', function(event) {
                 event.preventDefault();
-                var itemEl = $(this), datalist = F(itemEl.closest('.f-datalist').attr('id'));
+                var itemEl = $(this),
+                    datalist = F(itemEl.closest('.f-datalist').attr('id'));
                 var itemData = datalist.getItemData(itemEl);
 
                 // 这是一个目录，则改变网址的HASH值（hashchange驱动页面变化）
@@ -350,30 +349,30 @@
 
 
             // 页面第一次加载时，转到二级菜单不需要动画效果
-            F.noAnimation(function () {
+            F.noAnimation(function() {
                 checkHashChange();
             });
 
 
             // hashchange驱动页面变化
-            $(window).on('hashchange', function (event) {
+            $(window).on('hashchange', function(event) {
                 checkHashChange();
             });
 
 
             // 选中某个主题
-            $('#themecontainer li').on('click', function (event) {
+            $('#themecontainer li').on('click', function(event) {
                 event.preventDefault();
                 var imgNode = $(this).find('img');
 
                 var themeName = imgNode.attr('data-value');
                 F.cookie('Theme', themeName, {
-                    expires: 100  // 单位：天
+                    expires: 100 // 单位：天
                 });
 
                 var themeTitle = imgNode.attr('alt');
                 F.cookie('Theme_Title', themeTitle, {
-                    expires: 100  // 单位：天
+                    expires: 100 // 单位：天
                 });
 
                 top.window.location.reload();
@@ -381,7 +380,7 @@
         });
 
         function onBackToHomeClick(event) {
-            top.window.location.href='../';
+            top.window.location.href = '../';
         }
 
     </script>

@@ -10,9 +10,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" EnableCheckBoxSelect="true"
-            runat="server" DataIDField="Id" DataUrl="~/griddataurl/griddataurl_filter.ashx" DataMethod="POST"
-            AllowFilters="true">
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" EnableCheckBoxSelect="true" runat="server"
+            DataIDField="Id" DataUrl="~/griddataurl/griddataurl_filter.ashx" DataMethod="POST" AllowFilters="true">
             <Columns>
                 <f:RowNumberField></f:RowNumberField>
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名" EnableFilter="true">
@@ -27,11 +26,9 @@
                         </Operator>
                     </Filter>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                 </f:RenderField>
-                <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int"
-                    HeaderText="入学年份" EnableFilter="true">
+                <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份" EnableFilter="true">
                     <Filter EnableMultiConditions="true">
                         <Operator>
                             <f:DropDownList ID="DropDownList2" runat="server">
@@ -46,8 +43,8 @@
                     </Filter>
                 </f:RenderField>
                 <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" RenderAsStaticField="true" HeaderText="是否在校" />
-                <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor"
-                    ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业" EnableFilter="true">
+                <f:RenderField ColumnID="Major" DataField="Major" RendererFunction="renderMajor" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="所学专业"
+                    EnableFilter="true">
                     <Filter>
                         <Field>
                             <f:CheckBoxList ID="CheckBoxList1" ColumnNumber="1" runat="server">
@@ -66,6 +63,6 @@
         </f:Grid>
 
     </form>
-    <script src="../res/js/grid.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 </body>
 </html>

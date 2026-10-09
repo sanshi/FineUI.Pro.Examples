@@ -6,50 +6,33 @@
 <head runat="server">
     <title></title>
     <style>
-        .f-grid-tpl .hobby input {
+        .f-grid-cell .hobby input {
             margin: 3px;
         }
 
-        .f-grid-tpl .hobby label {
+        .f-grid-cell .hobby label {
             margin-left: 5px;
             margin-right: 10px;
         }
+
     </style>
+
+
+
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false"
-            runat="server" DataKeyNames="Id,Name" OnRowDataBound="Grid1_RowDataBound">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" runat="server"
+            DataKeyNames="Id,Name" OnRowDataBound="Grid1_RowDataBound">
             <Columns>
-                <f:TemplateField Width="60px" EnableColumnHide="false" EnableHeaderMenu="false">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" Width="60px" HeaderText="性别">
-                    <ItemTemplate>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
-                <f:TemplateField ColumnID="Hobby" Width="350px" HeaderText="爱好">
-                    <ItemTemplate>
-                        <asp:CheckBoxList runat="server" CssClass="hobby" RepeatLayout="Flow" RepeatDirection="Horizontal"
-                            ID="cblHobby">
-                            <asp:ListItem Text="读书" Value="reading"></asp:ListItem>
-                            <asp:ListItem Text="篮球" Value="basketball"></asp:ListItem>
-                            <asp:ListItem Text="旅游" Value="travel"></asp:ListItem>
-                            <asp:ListItem Text="电影" Value="movie"></asp:ListItem>
-                            <asp:ListItem Text="音乐" Value="music"></asp:ListItem>
-                        </asp:CheckBoxList>
-                    </ItemTemplate>
-                </f:TemplateField>
+                <f:RowNumberField Width="60px" EnableColumnHide="false" EnableHeaderMenu="false" ColumnID="Number" />
+                <f:RenderField DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" Width="60px" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" RendererFunction="renderMajor" />
+                <f:RenderField ColumnID="Hobby" Width="350px" HeaderText="爱好" DataField="Hobby" RendererFunction="renderChoice1" />
             </Columns>
         </f:Grid>
         <br />
@@ -60,5 +43,18 @@
         </f:Label>
         <br />
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script>
+        function renderChoice1(value, params) {
+            params.grid = this;
+            return createGridChoiceInput(value, params, {
+                id: 'cblHobby',
+                cssClass: 'hobby',
+                type: 'CheckBoxList'
+            });
+        }
+
+    </script>
 </body>
 </html>

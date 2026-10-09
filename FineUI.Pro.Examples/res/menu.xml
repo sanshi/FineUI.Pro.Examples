@@ -819,14 +819,10 @@
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="事件">
-			<TreeNode Text="行绑定事件" NavigateUrl="~/grid/grid_rowdatabound.aspx">
-			</TreeNode>
-			<TreeNode Text="行绑定事件（空白单元格）" Version="12.1" NavigateUrl="~/grid/grid_rowdatabound_emptycell.aspx">
-			</TreeNode>
-			<TreeNode Text="行预绑定事件" NavigateUrl="~/grid/grid_prerowdatabound.aspx">
-			</TreeNode>
-			<TreeNode Text="行预绑定事件（表格列的Attributes属性）" NavigateUrl="~/grid/grid_prerowdatabound_attributes.aspx">
-			</TreeNode>
+
+
+
+
 			<TreeNode Text="行预绑定事件（Cancelled属性）" NavigateUrl="~/grid/grid_prerowdatabound_cancelled.aspx">
 			</TreeNode>
 			<TreeNode Text="行单击回发事件" NavigateUrl="~/grid/grid_rowclick.aspx">
@@ -867,20 +863,16 @@
 		<TreeNode Text="动态创建列">
 			<TreeNode Text="动态创建的列" NavigateUrl="~/grid/grid_dynamic_columns.aspx">
 			</TreeNode>
-			<TreeNode Text="动态创建的模板列" NavigateUrl="~/grid/grid_dynamic_columns2.aspx">
-			</TreeNode>
+
 		</TreeNode>
 		<TreeNode Text="导出与下载">
 			<TreeNode Text="导出文件（ASP.NET的GridView控件）" NavigateUrl="~/grid/grid_excel_aspnet.aspx">
 			</TreeNode>
-			<TreeNode Text="导出文件（RenderControl，重新渲染模板列）" NavigateUrl="~/grid/grid_excel.aspx">
-			</TreeNode>
-			<TreeNode Text="导出文件（动态创建的模版列）" NavigateUrl="~/grid/grid_excel_dynamic_columns.aspx">
-			</TreeNode>
+
+
 			<TreeNode Text="导出文件（选择需要导出的列）" NavigateUrl="~/grid/grid_excel_selectcolumns.aspx">
 			</TreeNode>
-			<TreeNode Text="导出文件（FindControl，查找模板列中控件）" NavigateUrl="~/grid/grid_excel_findcontrol.aspx">
-			</TreeNode>
+
 			<TreeNode Text="导出文件（多表头）" NavigateUrl="~/grid/grid_excel_groupfield.aspx">
 			</TreeNode>
 			<TreeNode Text="导出文件（行内下载）" NavigateUrl="~/grid/grid_excel_rowcommand_download.aspx">
@@ -938,7 +930,7 @@
 			<TreeNode Text="标题栏样式（表格列的Attributes属性）" Version="12.2" NavigateUrl="~/grid/grid_header_column_attributes.aspx">
 			</TreeNode>
 		</TreeNode>
-		<TreeNode Text="模板列">
+		<TreeNode Text="输入控件列">
 			<TreeNode Text="编辑文本框" NavigateUrl="~/grid/grid_edit.aspx">
 			</TreeNode>
 			<TreeNode Text="编辑文本框（回车键选中下一行）" NavigateUrl="~/grid/grid_edit_selectrow.aspx">
@@ -949,10 +941,8 @@
 			</TreeNode>
 			<TreeNode Text="编辑下拉列表" NavigateUrl="~/grid/grid_edit_dropdownlist.aspx">
 			</TreeNode>
-			<TreeNode Text="编辑下拉列表（后台绑定数据）" NavigateUrl="~/grid/grid_edit_dropdownlist2.aspx">
-			</TreeNode>
-			<TreeNode Text="后台更新下拉列表" NavigateUrl="~/grid/grid_edit_dropdownlist_update.aspx">
-			</TreeNode>
+
+
 			<TreeNode Text="编辑单选框列表" NavigateUrl="~/grid/grid_edit_radiobuttonlist.aspx">
 			</TreeNode>
 			<TreeNode Text="编辑复选框列表" NavigateUrl="~/grid/grid_edit_checkboxlist.aspx">
@@ -961,8 +951,7 @@
 			</TreeNode>
 			<TreeNode Text="下拉列表同步到文本框" NavigateUrl="~/grid/grid_edit_dropdownlist_textbox.aspx">
 			</TreeNode>
-			<TreeNode Text="定时保存用户输入的值" NavigateUrl="~/grid/grid_edit_save_auto.aspx">
-			</TreeNode>
+
 			<TreeNode Text="遍历所有输入框（纵向）" NavigateUrl="~/grid/grid_edit_enterkey_v.aspx">
 			</TreeNode>
 			<TreeNode Text="遍历所有输入框（横向）" NavigateUrl="~/grid/grid_edit_enterkey_h.aspx">
@@ -971,8 +960,7 @@
 			</TreeNode>
 			<TreeNode Text="购物车" NavigateUrl="~/grid/grid_edit_cart.aspx">
 			</TreeNode>
-			<TreeNode Text="模板列中的按钮控件" NavigateUrl="~/grid/grid_edit_button.aspx">
-			</TreeNode>
+
 		</TreeNode>
 		<TreeNode Text="多表头">
 			<TreeNode Text="多表头" NavigateUrl="~/grid/grid_groupfield.aspx">
@@ -1749,6 +1737,40 @@
 			</TreeNode>
 			<TreeNode Text="长整型精度（主键为BIGINT）" NavigateUrl="~/gridother/long_precision.aspx">
 			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="服务端渲染列（Pro 专属）">
+			<TreeNode Text="绑定列：格式化与空值" NavigateUrl="~/grid-server-render/bound_field.aspx"></TreeNode>
+			<TreeNode Text="复选框列：状态与回发" NavigateUrl="~/grid-server-render/checkbox_field.aspx"></TreeNode>
+			<TreeNode Text="超链接列：绑定与参数编码" NavigateUrl="~/grid-server-render/hyperlink_field.aspx"></TreeNode>
+			<TreeNode Text="图片列：路径与尺寸" NavigateUrl="~/grid-server-render/image_field.aspx"></TreeNode>
+			<TreeNode Text="链接按钮列：行命令与确认" NavigateUrl="~/grid-server-render/linkbutton_field.aspx"></TreeNode>
+			<TreeNode Text="弹窗列：窗口地址与标题" NavigateUrl="~/grid-server-render/window_field.aspx"></TreeNode>
+			<TreeNode Text="模板列：数据绑定与服务端函数" NavigateUrl="~/grid-server-render/template_field.aspx"></TreeNode>
+			<TreeNode Text="动态创建的模板列" NavigateUrl="~/grid/grid_dynamic_columns2.aspx">
+			</TreeNode>
+			<TreeNode Text="导出文件（动态创建的模版列）" NavigateUrl="~/grid/grid_excel_dynamic_columns.aspx">
+			</TreeNode>
+			<TreeNode Text="导出文件（RenderControl，重新渲染模板列）" NavigateUrl="~/grid/grid_excel.aspx">
+			</TreeNode>
+			<TreeNode Text="导出文件（FindControl，查找模板列中控件）" NavigateUrl="~/grid/grid_excel_findcontrol.aspx">
+			</TreeNode>
+			<TreeNode Text="行预绑定事件" NavigateUrl="~/grid/grid_prerowdatabound.aspx">
+			</TreeNode>
+			<TreeNode Text="行预绑定事件（表格列的Attributes属性）" NavigateUrl="~/grid/grid_prerowdatabound_attributes.aspx">
+			</TreeNode>
+			<TreeNode Text="行绑定事件" NavigateUrl="~/grid/grid_rowdatabound.aspx">
+			</TreeNode>
+			<TreeNode Text="行绑定事件（空白单元格）" Version="12.1" NavigateUrl="~/grid/grid_rowdatabound_emptycell.aspx">
+			</TreeNode>
+			<TreeNode Text="编辑下拉列表（后台绑定数据）" NavigateUrl="~/grid/grid_edit_dropdownlist2.aspx">
+			</TreeNode>
+			<TreeNode Text="后台更新下拉列表" NavigateUrl="~/grid/grid_edit_dropdownlist_update.aspx">
+			</TreeNode>
+			<TreeNode Text="定时保存用户输入的值" NavigateUrl="~/grid/grid_edit_save_auto.aspx">
+			</TreeNode>
+			<TreeNode Text="模板列中的按钮控件" NavigateUrl="~/grid/grid_edit_button.aspx">
+			</TreeNode>
+			<TreeNode Text="模板列与树节点延迟加载" NavigateUrl="~/gridtree/gridtree_lazyload_templatefield.aspx"></TreeNode>
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="导航" IconFont="_Globe">

@@ -4,34 +4,22 @@
 <html>
 <head runat="server">
     <title></title>
+    <meta name="sourcefiles" content="~/Code/GridExportUtil.cs" />
+
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
-            runat="server">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true" runat="server">
             <Columns>
-                <f:TemplateField Width="60px">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="tfGender" HeaderText="性别" TextAlign="Center">
-                    <ItemTemplate>
-                        <%-- Container.DataItem 的类型是 System.Data.DataRowView 或者用户自定义类型 --%>
-                        <%--<asp:Label ID="Label2" runat="server" Text='<%# GetGender(DataBinder.Eval(Container.DataItem, "Gender")) %>'></asp:Label>--%>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" TextAlign="Center" />
-                <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
-                <f:ImageField ColumnID="Group" DataImageUrlField="Group" DataImageUrlFormatString="~/res/images/16/{0}.png" HeaderText="分组" />
-                <f:BoundField DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}"
-                    HeaderText="注册日期" />
+                <f:RowNumberField Width="60px" ColumnID="Number" />
+                <f:RenderField DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="tfGender" HeaderText="性别" TextAlign="Center" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField DataField="EntranceYear" HeaderText="入学年份" TextAlign="Center" />
+                <f:RenderCheckField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" RendererFunction="renderMajor" />
+                <f:RenderField ColumnID="Group" HeaderText="分组" DataField="Group" RendererFunction="renderGroup" />
+                <f:RenderField DataField="LogTime" HeaderText="注册日期" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
             </Columns>
         </f:Grid>
         <br />
@@ -40,10 +28,11 @@
         <f:Button ID="Button1" runat="server" Text="导出为Excel文件（客户端）" ClickHandler="onOutputExcelClick">
         </f:Button>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
         function onOutputExcelClick(event) {
             var GridMain = '#<% =Grid1.ClientID %>';
-            var gdv = $(GridMain).clone();//.find("f-grid-inner-main"); //$("[href='#']")  style="display: none;"
+            var gdv = $(GridMain).clone(); //.find("f-grid-inner-main"); //$("[href='#']")  style="display: none;"
             gdv.find('[class="f-grid-inner-locked"]').remove();
             gdv.find('[style="display: none;"]').remove();
             gdv.find("[class]").removeClass();
@@ -80,7 +69,7 @@
             downloadLink.click();
         }
         */
-        
+
         function export_raw(name, data) {
             var urlObject = window.URL || window.webkitURL || window;
 
@@ -91,15 +80,14 @@
             save_link.download = name;
             fake_click(save_link);
         }
+
         function fake_click(obj) {
             var ev = document.createEvent("MouseEvents");
             ev.initMouseEvent(
-                "click", true, false, window, 0, 0, 0, 0, 0
-                , false, false, false, false, 0, null
+                "click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null
             );
             obj.dispatchEvent(ev);
         }
-        
 
     </script>
 </body>

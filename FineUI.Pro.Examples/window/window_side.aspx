@@ -4,13 +4,16 @@
 <html>
 <head runat="server">
     <title></title>
-    <style>
-        body {
-            background: url(../res/images/bg/small/3.jpg) !important;
-            overflow: hidden;
-        }
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+        <style>
+            body {
+                background: url('<%= PageContext.ResolveUrl("~/res/images/bg/small/3.jpg") %>') !important;
+                overflow: hidden;
+            }
 
-    </style>
+        </style>
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">

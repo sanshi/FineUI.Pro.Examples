@@ -12,13 +12,13 @@
         <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" runat="server"
             EnableColumnMove="true" EnableSameGroupColumnMove="true">
             <Columns>
-                <f:BoundField ColumnID="Year" DataField="Year" HeaderText="统计年份" />
+                <f:RenderField ColumnID="Year" DataField="Year" HeaderText="统计年份" />
                 <f:GroupField ColumnID="anhui" HeaderText="安徽省" TextAlign="Center">
                     <Columns>
                         <f:GroupField ColumnID="hefei" HeaderText="合肥市" TextAlign="Center">
                             <Columns>
-                                <f:BoundField ColumnID="AHData1" DataField="AHData1" HeaderText="数据一" />
-                                <f:BoundField ColumnID="AHData2" DataField="AHData2" HeaderText="数据二" />
+                                <f:RenderField ColumnID="AHData1" DataField="AHData1" HeaderText="数据一" />
+                                <f:RenderField ColumnID="AHData2" DataField="AHData2" HeaderText="数据二" />
                             </Columns>
                         </f:GroupField>
                     </Columns>
@@ -27,19 +27,20 @@
                     <Columns>
                         <f:GroupField ColumnID="zhumadian" HeaderText="驻马店市" TextAlign="Center">
                             <Columns>
-                                <f:BoundField ColumnID="HZData1" DataField="HZData1" HeaderText="数据一" />
-                                <f:BoundField ColumnID="HZData2" DataField="HZData2" HeaderText="数据二" />
+                                <f:RenderField ColumnID="HZData1" DataField="HZData1" HeaderText="数据一" />
+                                <f:RenderField ColumnID="HZData2" DataField="HZData2" HeaderText="数据二" />
                             </Columns>
                         </f:GroupField>
                         <f:GroupField ColumnID="luohe" HeaderText="漯河市" TextAlign="Center">
                             <Columns>
-                                <f:BoundField ColumnID="HLData1" DataField="HLData1" HeaderText="数据一" />
-                                <f:BoundField ColumnID="HLData2" DataField="HLData2" HeaderText="数据二" />
+                                <f:RenderField ColumnID="HLData1" DataField="HLData1" HeaderText="数据一" />
+                                <f:RenderField ColumnID="HLData2" DataField="HLData2" HeaderText="数据二" />
                             </Columns>
                         </f:GroupField>
                     </Columns>
                 </f:GroupField>
-                <f:BoundField ColumnID="LogTime" BoxFlex="1" TextAlign="Center" DataField="LogTime" DataFormatString="{0:yyyy-MM-dd}" HeaderText="记录时间" />
+                <f:RenderField ColumnID="LogTime" BoxFlex="1" TextAlign="Center" DataField="LogTime" HeaderText="记录时间" FieldType="Date" Renderer="Date"
+                    RendererArgument="yyyy-MM-dd" />
             </Columns>
             <Listeners>
                 <f:Listener Event="columnmove" Handler="onGridColumnMove" />
@@ -54,7 +55,6 @@
     </form>
 
     <script>
-
         function onRefreshClick(event) {
             window.location.reload();
         }
@@ -64,7 +64,7 @@
             var grid = this;
 
             function getColumnIds(columns) {
-                return $.map(columns, function (item, index) {
+                return $.map(columns, function(item, index) {
                     var itemObj = {
                         columnId: item.columnId
                     };
@@ -83,7 +83,6 @@
                 columnIds: columnIds
             });
         }
-
 
     </script>
 </body>

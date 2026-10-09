@@ -33,31 +33,6 @@ namespace FineUI.Pro.Examples.grid
 
         #region Events
 
-        protected void Grid1_PreRowDataBound(object sender, GridPreRowEventArgs e)
-        {
-            // e.DataItem  -> System.Data.DataRowView or custom class.
-            // e.RowIndex -> Current row index.
-            // e.Values -> Rendered html for each column of this row.
-
-            DataRowView row = e.DataItem as DataRowView;
-
-
-            CheckBoxField atSchoolField = Grid1.FindColumn("AtSchool2") as CheckBoxField;
-
-            // 入学年份
-            int entranceYear = Convert.ToInt32(row["EntranceYear"]);
-            if (entranceYear <= 2004)
-            {
-                atSchoolField.Enabled = false;
-            }
-            else
-            {
-                atSchoolField.Enabled = true;
-            }
-
-        }
-
-
         protected void Grid1_RowCommand(object sender, GridCommandEventArgs e)
         {
             if (e.CommandName == "Action1" || e.CommandName == "Action2")
@@ -69,7 +44,7 @@ namespace FineUI.Pro.Examples.grid
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            CheckBoxField field1 = (CheckBoxField)Grid1.FindColumn("AtSchool2");
+            RenderCheckField field1 = (RenderCheckField)Grid1.FindColumn("AtSchool2");
 
             StringBuilder sb = new StringBuilder();
             List<GridRow> selectedRows = GridSelectionUtil.GetSelectedRows(Grid1);
@@ -89,7 +64,7 @@ namespace FineUI.Pro.Examples.grid
                     sb.Append("<tr>");
 
                     sb.AppendFormat("<td>{0}</td>", rowIndex + 1);
-                    sb.AppendFormat("<td>{0}</td>", field1.GetCheckedState(rowIndex));
+                    sb.AppendFormat("<td>{0}</td>", GridColumnUtil.GetCheckedState(Grid1, field1.ColumnID, rowIndex));
 
                     sb.Append("</tr>");
                 }

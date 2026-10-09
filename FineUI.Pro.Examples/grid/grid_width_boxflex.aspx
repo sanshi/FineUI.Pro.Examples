@@ -5,6 +5,8 @@
 <html>
 <head runat="server">
     <title></title>
+
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -13,24 +15,23 @@
             runat="server">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" Width="60px" HeaderText="性别">
-                    <ItemTemplate>
-                        <%-- Container.DataItem 的类型是 System.Data.DataRowView 或者用户自定义类型 --%>
-                        <%--<asp:Label ID="Label2" runat="server" Text='<%# GetGender(DataBinder.Eval(Container.DataItem, "Gender")) %>'></asp:Label>--%>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField Width="60px" DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField Width="60px" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" MinWidth="200px" BoxFlex="1" HeaderText="所学专业（BoxFlex=1）" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" />
-                <f:BoundField MinWidth="200px" BoxFlex="2" DataField="Desc" DataToolTipField="Desc" HeaderText="个人简介（BoxFlex=2）" />
+                <f:RenderField DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" Width="60px" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField Width="60px" DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField Width="60px" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" MinWidth="200px" BoxFlex="1" HeaderText="所学专业（BoxFlex=1）" DataField="Major" RendererFunction="renderMajor" />
+                <f:RenderField MinWidth="200px" BoxFlex="2" DataField="Desc" HeaderText="个人简介（BoxFlex=2）" RendererFunction="renderTooltip1" />
             </Columns>
         </f:Grid>
         <br />
         <br />
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script>
+        function renderTooltip1(value, params) {
+            return $('<span>').text(value).attr('data-qtip', F.htmlEncode(value));
+        }
+
+    </script>
 </body>
 </html>

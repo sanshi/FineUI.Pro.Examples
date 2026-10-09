@@ -54,9 +54,9 @@ namespace FineUI.Pro.Examples.grid
 
         protected void Grid1_RowDataBound(object sender, GridRowEventArgs e)
         {
-            // e.DataItem  -> System.Data.DataRowView or custom class.
-            // e.RowIndex -> Current row index.
-            // e.Values -> Rendered html for each column of this row.
+            // e.DataItem  -> System.Data.DataRowView 或自定义类。
+            // e.RowIndex -> 当前行索引。
+            // e.Values -> 当前行各列的数据。
 
             DataRowView row = e.DataItem as DataRowView;
             int entranceYear = Convert.ToInt32(row["EntranceYear"]);

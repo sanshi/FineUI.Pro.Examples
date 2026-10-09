@@ -8,15 +8,14 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false"
-            EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId"
-            RowDataBoundFunction="onGrid1RowDataBound">
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false" EnableTree="true"
+            TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId" RowDataBoundFunction="onGrid1RowDataBound">
             <Columns>
                 <f:RowNumberField />
-                <f:BoundField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
-                <f:BoundField Width="150px" DataField="Type" HeaderText="类型" />
-                <f:BoundField Width="150px" DataField="Size" HeaderText="大小" />
-                <f:BoundField Width="150px" DataField="ModifyDate" DataFormatString="{0:yyyy-MM-dd}" HeaderText="修改日期" />
+                <f:RenderField ColumnID="Name" ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="名称" />
+                <f:RenderField Width="150px" DataField="Type" HeaderText="类型" />
+                <f:RenderField Width="150px" DataField="Size" HeaderText="大小" />
+                <f:RenderField Width="150px" DataField="ModifyDate" HeaderText="修改日期" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd" />
             </Columns>
         </f:Grid>
         <br />
@@ -26,10 +25,9 @@
         <br />
     </form>
 
-    <script src="../res/js/grid.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
 
     <script>
-
         function onGrid1RowDataBound(rowData) {
             var rowId = rowData.id;
 
@@ -45,8 +43,7 @@
 
                 if (fileType === 'png' || fileType === 'ico' || fileType === 'gif') {
                     rowData.iconFont = 'f-iconfont-pic';
-                }
-                else {
+                } else {
                     rowData.icon = F.resolveUrl('/res/images/filetype/vs_' + fileType + '.png');
                 }
             }

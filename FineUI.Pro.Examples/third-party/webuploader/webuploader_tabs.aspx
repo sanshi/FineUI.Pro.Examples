@@ -6,31 +6,28 @@
     <title></title>
     <meta name="sourcefiles" content="~/third-party/webuploader/fileupload.ashx;~/common/Download.ashx" />
     <style>
-        
         .webuploader-element-invisible {
             position: absolute !important;
-            clip: rect(1px,1px,1px,1px);
+            clip: rect(1px, 1px, 1px, 1px);
         }
 
         .webuploader-pick-disable {
             opacity: 0.6;
             pointer-events: none;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:TabStrip ID="TabStrip1" IsFluid="true" Height="350px" ShowBorder="true" TabPosition="Top"
-            EnableTabCloseMenu="false" ActiveTabIndex="0"
+        <f:TabStrip ID="TabStrip1" IsFluid="true" Height="350px" ShowBorder="true" TabPosition="Top" EnableTabCloseMenu="false" ActiveTabIndex="0"
             runat="server">
             <Tabs>
-                <f:Tab ID="Tab1" Title="上传压缩文档" BodyPadding="10px" Layout="Fit"
-                    runat="server">
+                <f:Tab ID="Tab1" Title="上传压缩文档" BodyPadding="10px" Layout="Fit" runat="server">
                     <Items>
-                        <f:Grid ID="Grid1" runat="server" ShowHeader="false" ShowBorder="true"
-                            EnableCollapse="false" EnableCheckBoxSelect="false" EmptyText="尚未上传文件"
-                            DataIDField="id" OnRowCommand="Grid1_RowCommand">
+                        <f:Grid ID="Grid1" runat="server" ShowHeader="false" ShowBorder="true" EnableCollapse="false" EnableCheckBoxSelect="false"
+                            EmptyText="尚未上传文件" DataIDField="id" OnRowCommand="Grid1_RowCommand">
                             <Toolbars>
                                 <f:Toolbar ID="Toolbar1" runat="server">
                                     <Items>
@@ -39,21 +36,22 @@
                                 </f:Toolbar>
                             </Toolbars>
                             <Columns>
-                                <f:BoundField ColumnID="FileName" DataField="name" HeaderText="文件名" ExpandUnusedSpace="true" MinWidth="150px" />
+                                <f:RenderField ColumnID="FileName" DataField="name" HeaderText="文件名" ExpandUnusedSpace="true" MinWidth="150px" />
                                 <f:RenderField ColumnID="FileSize" DataField="size" HeaderText="大小" Renderer="FileSize" />
-                                <f:BoundField ColumnID='FileStatus' DataField="status" NullDisplayText="已完成" HeaderText="状态" />
-                                <f:LinkButtonField ColumnID="Delete" Width="60px" ConfirmText="你确定要删除这个文件吗？" ConfirmTarget="Top"
-                                    CommandName="Delete" IconUrl="~/res/icon/delete.png" />
+                                <f:RenderField ColumnID="FileStatus" DataField="status" NullDisplayText="已完成" HeaderText="状态" />
+                                <f:RenderField ColumnID="Delete" Width="60px">
+                                    <Commands>
+                                        <f:Command ConfirmText="你确定要删除这个文件吗？" ConfirmTarget="Top" CommandName="Delete" IconUrl="~/res/icon/delete.png" />
+                                    </Commands>
+                                </f:RenderField>
                             </Columns>
                         </f:Grid>
                     </Items>
                 </f:Tab>
-                <f:Tab ID="Tab2" Title="上传图片文档" BodyPadding="10px" Layout="Fit"
-                    runat="server">
+                <f:Tab ID="Tab2" Title="上传图片文档" BodyPadding="10px" Layout="Fit" runat="server">
                     <Items>
-                        <f:Grid ID="Grid2" runat="server" ShowHeader="false" ShowBorder="true"
-                            EnableCollapse="false" EnableCheckBoxSelect="false" EmptyText="尚未上传图片"
-                            DataIDField="id" OnRowCommand="Grid2_RowCommand">
+                        <f:Grid ID="Grid2" runat="server" ShowHeader="false" ShowBorder="true" EnableCollapse="false" EnableCheckBoxSelect="false"
+                            EmptyText="尚未上传图片" DataIDField="id" OnRowCommand="Grid2_RowCommand">
                             <Toolbars>
                                 <f:Toolbar runat="server">
                                     <Items>
@@ -62,11 +60,14 @@
                                 </f:Toolbar>
                             </Toolbars>
                             <Columns>
-                                <f:BoundField ColumnID="FileName" DataField="name" HeaderText="文件名" ExpandUnusedSpace="true" MinWidth="150px" />
+                                <f:RenderField ColumnID="FileName" DataField="name" HeaderText="文件名" ExpandUnusedSpace="true" MinWidth="150px" />
                                 <f:RenderField ColumnID="FileSize" DataField="size" HeaderText="大小" Renderer="FileSize" />
-                                <f:BoundField ColumnID='FileStatus' DataField="status" NullDisplayText="已完成" HeaderText="状态" />
-                                <f:LinkButtonField ColumnID="Delete" Width="60px" ConfirmText="你确定要删除这个图片吗？" ConfirmTarget="Top"
-                                    CommandName="Delete" IconUrl="~/res/icon/delete.png" />
+                                <f:RenderField ColumnID="FileStatus" DataField="status" NullDisplayText="已完成" HeaderText="状态" />
+                                <f:RenderField ColumnID="Delete" Width="60px">
+                                    <Commands>
+                                        <f:Command ConfirmText="你确定要删除这个图片吗？" ConfirmTarget="Top" CommandName="Delete" IconUrl="~/res/icon/delete.png" />
+                                    </Commands>
+                                </f:RenderField>
                             </Columns>
                         </f:Grid>
                     </Items>
@@ -80,9 +81,8 @@
         <br />
         注：由于第三方组件WebUploader限制，本示例支持的浏览器版本为：Chrome、Firefox、Safari、IE10+ 。
     </form>
-    <script src="../../res/third-party/webuploader/webuploader.nolog.js" type="text/javascript"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/webuploader/webuploader.nolog.js") %>" type="text/javascript"></script>
     <script type="text/javascript">
-
         var BASE_URL = '<%= PageContext.ResolveUrl("~/") %>';
         var SERVER_URL = BASE_URL + 'third-party/webuploader/fileupload.ashx?handler=Process';
 
@@ -137,9 +137,9 @@
             //});
 
             // 当一批文件添加进队列以后触发
-            uploader.on('filesQueued', function (files) {
+            uploader.on('filesQueued', function(files) {
                 var records = [];
-                $.each(files, function (index, file) {
+                $.each(files, function(index, file) {
                     records.push({
                         id: file.id,
                         values: {
@@ -152,7 +152,7 @@
                 grid1.addNewRecords(records, true);
             });
 
-            uploader.on('uploadProgress', function (file, percentage) {
+            uploader.on('uploadProgress', function(file, percentage) {
                 var cellEl = grid1.getCellEl(file.id, 'FileStatus').find('.f-grid-cell-text');
 
                 var barEl = cellEl.find('.f-progressbar-value');
@@ -160,47 +160,47 @@
                 // 避免重复创建
                 if (!barEl.length) {
                     cellEl.html('<div class="f-progressbar f-widget-content" style="height:12px;">' +
-                      '<div class="f-progressbar-value f-widget-header" style="width:0%">' +
-                      '</div></div>');
+                        '<div class="f-progressbar-value f-widget-header" style="width:0%">' +
+                        '</div></div>');
                     barEl = cellEl.find('.f-progressbar-value');
                 }
 
                 barEl.css('width', percentage * 100 + '%');
             });
 
-            uploader.on('uploadSuccess', function (file) {
+            uploader.on('uploadSuccess', function(file) {
                 var cellEl = grid1.getCellEl(file.id, 'FileStatus').find('.f-grid-cell-text');
                 cellEl.text('上传成功');
             });
 
-            uploader.on('uploadError', function (file) {
+            uploader.on('uploadError', function(file) {
                 var cellEl = grid1.getCellEl(file.id, 'FileStatus').find('.f-grid-cell-text');
                 cellEl.text('上传出错');
             });
 
             // 不管上传成功还是失败，都会触发 uploadComplete 事件
-            uploader.on('uploadComplete', function (file) {
+            uploader.on('uploadComplete', function(file) {
                 uploader.removeFile(file, true);
             });
 
 
             // 所有文件上传成功
-            uploader.on('uploadFinished', function () {
+            uploader.on('uploadFinished', function() {
                 if (success) {
                     success.call(uploader);
                 }
             });
 
 
-            uploader.on('error', function (type, arg, file) {
+            uploader.on('error', function(type, arg, file) {
                 if (type === 'F_EXCEED_SIZE') {
                     F.alert('文件[' + file.name + ']大小超出限制值（' + F.format.fileSize(arg) + '）');
                 } else if (type === 'Q_TYPE_DENIED') {
                     // 这个类型有两种成因：空文件、扩展名不在 accept 白名单里。
                     // 注意它派发时第二个参数就是 file 本身（不是大小上限），别照上面那条的签名去取。
-                    F.alert(arg.size
-                        ? '文件[' + arg.name + ']的类型不允许上传。'
-                        : '文件[' + arg.name + ']是空文件，无法上传。');
+                    F.alert(arg.size ?
+                        '文件[' + arg.name + ']的类型不允许上传。' :
+                        '文件[' + arg.name + ']是空文件，无法上传。');
                 }
             });
         }
@@ -229,9 +229,9 @@
         var btnSelectFiles2ClientID = '<%= btnSelectFiles2.ClientID %>';
         var grid2ClientID = '<%= Grid2.ClientID %>';
 
-        F.ready(function () {
+        F.ready(function() {
 
-            initUploader(grid1ClientID, btnSelectFiles1ClientID, 'webuploader.webuploader_tabs.1', undefined, 10, function () {
+            initUploader(grid1ClientID, btnSelectFiles1ClientID, 'webuploader.webuploader_tabs.1', undefined, 10, function() {
                 F.customEvent('Grid1_Rebind');
             });
 
@@ -240,13 +240,11 @@
                 title: 'Images',
                 extensions: 'gif,jpg,jpeg,bmp,png',
                 mimeTypes: 'image/*'
-            }, 1, function () {
+            }, 1, function() {
                 F.customEvent('Grid2_Rebind');
             });
 
         });
-
-
 
     </script>
 </body>

@@ -8,10 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false"
-            EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId"
-            OnRowDataBound="Grid1_RowDataBound"
-            AllowCellEditing="true" ClicksToEdit="1"
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false" EnableTree="true"
+            TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId" OnRowDataBound="Grid1_RowDataBound" AllowCellEditing="true" ClicksToEdit="1"
             OnRowCommand="Grid1_RowCommand">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server">
@@ -29,8 +27,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Type" DataField="Type" HeaderText="类型"
-                    RendererFunction="renderType">
+                <f:RenderField ColumnID="Type" DataField="Type" HeaderText="类型" RendererFunction="renderType">
                     <Editor>
                         <f:DropDownList ID="ddlType" Required="true" runat="server">
                             <f:ListItem Text="文件夹" Value="文件夹"></f:ListItem>
@@ -52,15 +49,18 @@
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="ModifyDate" DataField="ModifyDate" HeaderText="修改日期" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy-MM-dd">
+                <f:RenderField Width="150px" ColumnID="ModifyDate" DataField="ModifyDate" HeaderText="修改日期" FieldType="Date" Renderer="Date"
+                    RendererArgument="yyyy-MM-dd">
                     <Editor>
                         <f:DatePicker ID="DatePicker1" Required="true" runat="server">
                         </f:DatePicker>
                     </Editor>
                 </f:RenderField>
-                <f:LinkButtonField ColumnID="Delete" ConfirmText="删除选中行？" ConfirmTarget="Top"
-                    CommandName="Delete" Icon="Delete" />
+                <f:RenderField ColumnID="Delete">
+                    <Commands>
+                        <f:Command ConfirmText="删除选中行？" ConfirmTarget="Top" CommandName="Delete" Icon="Delete" />
+                    </Commands>
+                </f:RenderField>
             </Columns>
         </f:Grid>
         <br />
@@ -74,8 +74,8 @@
         <br />
     </form>
     <script>
-
         var ddlTypeID = '<%= ddlType.ClientID %>';
+
         function renderType(value) {
             return F(ddlTypeID).getTextByValue(value);
         }

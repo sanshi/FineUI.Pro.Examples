@@ -4,6 +4,9 @@
 <html>
 <head runat="server">
     <title></title>
+
+
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -11,30 +14,13 @@
         <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" runat="server"
             DataKeyNames="Id,Name" EnableMultiSelect="true" ArrowKeySelection="false">
             <Columns>
-                <f:TemplateField Width="60px" EnableColumnHide="false" EnableHeaderMenu="false">
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# Container.DataItemIndex + 1 %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
-                <f:TemplateField ColumnID="Gender" HeaderText="性别">
-                    <ItemTemplate>
-                        <%-- Container.DataItem 的类型是 System.Data.DataRowView 或者用户自定义类型 --%>
-                        <%--<asp:Label ID="Label2" runat="server" Text='<%# GetGender(DataBinder.Eval(Container.DataItem, "Gender")) %>'></asp:Label>--%>
-                        <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
-                    </ItemTemplate>
-                </f:TemplateField>
-                <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
-                <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
-                <f:TemplateField ColumnID="Group" HeaderText="分组">
-                    <ItemTemplate>
-                        <asp:TextBox ID="tbxGroupName" runat="server" Width="60px"
-                            Text='<%# Eval("Group") %>'></asp:TextBox>
-                    </ItemTemplate>
-                </f:TemplateField>
+                <f:RowNumberField Width="60px" EnableColumnHide="false" EnableHeaderMenu="false" ColumnID="Number" />
+                <f:RenderField DataField="Name" HeaderText="姓名" />
+                <f:RenderField ColumnID="Gender" HeaderText="性别" DataField="Gender" RendererFunction="renderGender" />
+                <f:RenderField DataField="EntranceYear" HeaderText="入学年份" />
+                <f:RenderCheckField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
+                <f:RenderField ColumnID="Major" HeaderText="所学专业" ExpandUnusedSpace="true" MinWidth="150px" DataField="Major" RendererFunction="renderMajor" />
+                <f:RenderField ColumnID="Group" HeaderText="分组" DataField="Group" RendererFunction="renderInput1" />
             </Columns>
         </f:Grid>
         <br />
@@ -58,15 +44,28 @@
         <br />
     </form>
 
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script>
+        function renderInput1(value, params) {
+            params.grid = this;
+            return createGridTextInput(value, params, {
+                id: 'tbxGroupName',
+                cssClass: '',
+                width: '60px'
+            });
+        }
+
+    </script>
     <script type="text/javascript">
         var gridClientID = '<%= Grid1.ClientID %>';
-        var inputselector = '.f-grid-tpl input';
+        var inputselector = '.f-grid-cell input';
 
 
         function registerEnterEvent() {
             var grid = F(gridClientID);
 
-            grid.el.on('keydown', inputselector, function (event) {
+            grid.el.on('keydown', inputselector, function(event) {
 
                 // 如果是 ENTER键 或者 TAB键 或者 向下箭头
                 if (event.keyCode === F.KEY.ENTER || event.keyCode === F.KEY.TAB || event.keyCode === F.KEY.DOWN) {
@@ -121,13 +120,13 @@
             });
 
             // 点击选中文本框中的文本
-            grid.el.on('click', inputselector, function (event) {
+            grid.el.on('click', inputselector, function(event) {
                 $(this).select();
             });
 
         }
 
-        F.ready(function () {
+        F.ready(function() {
             registerEnterEvent();
         });
 

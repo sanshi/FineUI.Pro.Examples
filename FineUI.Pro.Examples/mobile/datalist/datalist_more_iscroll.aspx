@@ -4,32 +4,34 @@
 <html>
 <head runat="server">
     <title></title>
-    <link href="../../res/css/datalist.css" rel="stylesheet" />
-    <style>
-        .item-desc {
-            word-break: break-all;
-            white-space: normal;
-        }
+    <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
+    <asp:PlaceHolder runat="server">
+        <link href="<%= PageContext.ResolveUrl("~/res/css/datalist.css") %>" rel="stylesheet" />
+        <style>
+            .item-desc {
+                word-break: break-all;
+                white-space: normal;
+            }
 
-        #wrapper {
-            position: absolute;
-            z-index: 1;
-            top: 0;
-            bottom: 0;
-            left: -9999px;
-            width: 100%;
-            overflow: auto;
-        }
+            #wrapper {
+                position: absolute;
+                z-index: 1;
+                top: 0;
+                bottom: 0;
+                left: -9999px;
+                width: 100%;
+                overflow: auto;
+            }
 
-        #scroller {
-            position: absolute;
-            z-index: 1;
-            -webkit-tap-highlight-color: rgba(0,0,0,0);
-            width: 100%;
-            padding: 0;
-        }
+            #scroller {
+                position: absolute;
+                z-index: 1;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                width: 100%;
+                padding: 0;
+            }
 
-        /*
+            /*
             #scroller ul {
                 list-style: none;
                 padding: 0;
@@ -49,29 +51,31 @@
             }
             */
 
-        #myFrame {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
+            #myFrame {
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
 
-        #pullDown, #pullUp {
-            background: #fff;
-            height: 50px;
-            line-height: 40px;
-            padding: 5px 10px;
-            border-bottom: 1px solid #ccc;
-            font-weight: bold;
-            font-size: 14px;
-            color: #888;
-        }
+            #pullDown,
+            #pullUp {
+                background: #fff;
+                height: 50px;
+                line-height: 40px;
+                padding: 5px 10px;
+                border-bottom: 1px solid #ccc;
+                font-weight: bold;
+                font-size: 14px;
+                color: #888;
+            }
 
-            #pullDown .pullDownIcon, #pullUp .pullUpIcon {
+            #pullDown .pullDownIcon,
+            #pullUp .pullUpIcon {
                 display: block;
                 float: left;
                 width: 40px;
                 height: 40px;
-                background: url(../../res/images/pull-icon@2x.png) 0 0 no-repeat;
+                background: url('<%= PageContext.ResolveUrl("~/res/images/pull-icon@2x.png") %>') 0 0 no-repeat;
                 -webkit-background-size: 40px 80px;
                 background-size: 40px 80px;
                 -webkit-transition-property: -webkit-transform;
@@ -94,7 +98,8 @@
                 -webkit-transform: rotate(0deg) translateZ(0);
             }
 
-            #pullDown.loading .pullDownIcon, #pullUp.loading .pullUpIcon {
+            #pullDown.loading .pullDownIcon,
+            #pullUp.loading .pullUpIcon {
                 background-position: 0 100%;
                 -webkit-transform: rotate(0deg) translateZ(0);
                 -webkit-transition-duration: 0ms;
@@ -104,16 +109,18 @@
                 -webkit-animation-timing-function: linear;
             }
 
-        @-webkit-keyframes loading {
-            from {
-                -webkit-transform: rotate(0deg) translateZ(0);
+            @-webkit-keyframes loading {
+                from {
+                    -webkit-transform: rotate(0deg) translateZ(0);
+                }
+
+                to {
+                    -webkit-transform: rotate(360deg) translateZ(0);
+                }
             }
 
-            to {
-                -webkit-transform: rotate(360deg) translateZ(0);
-            }
-        }
-    </style>
+        </style>
+    </asp:PlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -148,9 +155,8 @@
         </div>
 
     </form>
-    <script src="../../res/third-party/iscroll/iscroll.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/iscroll/iscroll.js") %>"></script>
     <script>
-
         // 本示例代码参考：https://davidwalsh.name/iphone-scrollbars
         // 本示例代码参考：https://davidwalsh.name/demo/iscroll/examples/pull-to-refresh/
 
@@ -169,7 +175,7 @@
                 eventName: 'PullUpAction',
                 // 不显示页面加载动画
                 enableAjaxLoading: false,
-                complete: function (data) {
+                complete: function(data) {
                     // AJAX回发结束
                     myScroll.refresh();
                 }
@@ -186,7 +192,7 @@
             myScroll = new iScroll('wrapper', {
                 useTransition: true,
                 topOffset: pullDownOffset,
-                onRefresh: function () {
+                onRefresh: function() {
                     if (pullDownEl.className.match('loading')) {
                         pullDownEl.className = '';
                         pullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉刷新...';
@@ -195,7 +201,7 @@
                         pullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载...';
                     }
                 },
-                onScrollMove: function () {
+                onScrollMove: function() {
                     if (this.y > 5 && !pullDownEl.className.match('flip')) {
                         pullDownEl.className = 'flip';
                         pullDownEl.querySelector('.pullDownLabel').innerHTML = '松开开始刷新...';
@@ -214,7 +220,7 @@
                         this.maxScrollY = pullUpOffset;
                     }
                 },
-                onScrollEnd: function () {
+                onScrollEnd: function() {
                     if (pullDownEl.className.match('flip')) {
                         pullDownEl.className = 'loading';
                         pullDownEl.querySelector('.pullDownLabel').innerHTML = '正在加载...';
@@ -227,14 +233,18 @@
                 }
             });
 
-            setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+            setTimeout(function() {
+                document.getElementById('wrapper').style.left = '0';
+            }, 800);
         }
 
-        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, false);
 
         //document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
 
-        F.ready(function () {
+        F.ready(function() {
             loaded();
         });
 

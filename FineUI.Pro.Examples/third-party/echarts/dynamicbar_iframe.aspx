@@ -1,4 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dynamicbar_iframe.aspx.cs" Inherits="FineUI.Pro.Examples.third_party.echarts.dynamicbar_iframe" %>
+<%@ Import Namespace="FineUI.Pro" %>
 
 <!DOCTYPE html>
 
@@ -13,12 +14,13 @@
 
     <div id="container" style="height: 100%"></div>
 
-    <script src="../../res/third-party/echarts/echarts.min.js"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/third-party/echarts/echarts.min.js") %>"></script>
     <script>
         var dom = document.getElementById("container");
         var myChart = echarts.init(dom);
         var barOptions = document.getElementById("hfBarOptions").value;
         myChart.setOption(JSON.parse(barOptions));
+
     </script>
 </body>
 </html>

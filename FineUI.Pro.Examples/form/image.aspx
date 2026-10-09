@@ -13,9 +13,9 @@
         <f:Image ID="Image1" runat="server" Icon="World">
         </f:Image>
         <br />
-        ImageUrl="../res/icon/world.png"：
+        ImageUrl = PageContext.ResolveUrl("~/res/icon/world.png")：
         <br />
-        <f:Image ID="Image2" runat="server" ImageUrl="../res/icon/world.png">
+        <f:Image ID="Image2" runat="server">
         </f:Image>
         <br />
         ImageUrl="~/res/images/logo/favicon.ico" ImageCssStyle="border:solid 1px #ccc;padding:5px;"：

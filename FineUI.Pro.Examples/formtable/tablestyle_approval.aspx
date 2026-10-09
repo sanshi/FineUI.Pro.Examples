@@ -4,6 +4,7 @@
 <html>
 <head runat="server">
     <title></title>
+
 </head>
 <body>
     <form id="_form1" runat="server">
@@ -79,20 +80,17 @@
                         <f:Grid ID="GridInfo" runat="server" ShowBorder="true" ShowHeader="false" EnableColumnLines="true" EnableRowLines="true">
                             <Columns>
                                 <f:RowNumberField runat="server" ID="XH" ColumnID="XH" HeaderText="序号" TextAlign="Right" HeaderTextAlign="Center" Width="50" />
-                                <f:BoundField runat="server" ID="ACTIVITYNAME" ColumnID="ACTIVITYNAME" DataField="ACTIVITYNAME" HeaderText="步骤"
+                                <f:RenderField runat="server" ID="ACTIVITYNAME" ColumnID="ACTIVITYNAME" DataField="ACTIVITYNAME" HeaderText="步骤"
                                     HeaderTextAlign="Center" TextAlign="Left" Width="100" />
-                                <f:BoundField runat="server" ID="OPTORNAME" ColumnID="OPTORNAME" DataField="OPTORNAME" HeaderText="办理人" HeaderTextAlign="Center"
-                                    TextAlign="Left" Width="100" />
-                                <f:TemplateField runat="server" ID="OPTIONSTATE" ColumnID="OPTIONSTATE" HeaderText="办理状态" HeaderTextAlign="Center"
-                                    TextAlign="Center" Width="100">
-                                    <ItemTemplate>
-                                        <%#Eval("OPTIONSTATE")==null?"已提交申请":(Eval("OPTIONSTATE").ToString()=="1"?"通过":"驳回") %>
-                                    </ItemTemplate>
-                                </f:TemplateField>
-                                <f:BoundField runat="server" ID="OPTIONREMARK" ColumnID="OPTIONREMARK" DataField="OPTIONREMARK" HeaderText="办理意见"
+                                <f:RenderField runat="server" ID="OPTORNAME" ColumnID="OPTORNAME" DataField="OPTORNAME" HeaderText="办理人"
+                                    HeaderTextAlign="Center" TextAlign="Left" Width="100" />
+                                <f:RenderField runat="server" ID="OPTIONSTATE" ColumnID="OPTIONSTATE" HeaderText="办理状态" HeaderTextAlign="Center"
+                                    TextAlign="Center" Width="100" DataField="OPTIONSTATE" RendererFunction="renderApproval1" />
+                                <f:RenderField runat="server" ID="OPTIONREMARK" ColumnID="OPTIONREMARK" DataField="OPTIONREMARK" HeaderText="办理意见"
                                     HeaderTextAlign="Center" TextAlign="Left" ExpandUnusedSpace="true" MinWidth="150px" />
-                                <f:BoundField runat="server" ID="CREATETIME" ColumnID="CREATETIME" DataField="CREATETIME" HeaderText="操作时间"
-                                    HeaderTextAlign="Center" TextAlign="Left" DataFormatString="{0:yyyy-MM-dd HH:mm:ss}" Width="150" />
+                                <f:RenderField runat="server" ID="CREATETIME" ColumnID="CREATETIME" DataField="CREATETIME" HeaderText="操作时间"
+                                    HeaderTextAlign="Center" TextAlign="Left" Width="150" FieldType="Date" Renderer="Date"
+                                    RendererArgument="yyyy-MM-dd HH:mm:ss" />
                             </Columns>
                         </f:Grid>
                     </Items>
@@ -116,5 +114,14 @@
             </Items>
         </f:Window>
     </form>
+    <script>
+        function renderApproval1(value, params) {
+            if (value === '' || value === null) {
+                return '已提交申请';
+            }
+            return String(value) === '1' ? '通过' : '驳回';
+        }
+
+    </script>
 </body>
 </html>

@@ -36,6 +36,7 @@
             </Items>
         </f:Panel>
     </form>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <asp:ContentPlaceHolder ID="scriptCPH" runat="server">
     </asp:ContentPlaceHolder>
 </body>

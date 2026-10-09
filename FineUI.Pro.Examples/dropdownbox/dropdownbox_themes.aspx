@@ -5,7 +5,7 @@
 <head runat="server">
     <title></title>
     <style>
-        .themepanel > .f-panel-bodyct > .f-panel-body {
+        .themepanel>.f-panel-bodyct>.f-panel-body {
             background: none;
             background-color: #000;
         }
@@ -16,56 +16,59 @@
             padding: 5px 0;
         }
 
-            #themecontainer ul {
-                list-style-type: none;
-                margin: 10px 0 0;
-                padding: 0;
-            }
+        #themecontainer ul {
+            list-style-type: none;
+            margin: 10px 0 0;
+            padding: 0;
+        }
 
-                #themecontainer ul li {
-                    display: inline-block;
-                    margin: 0 0 10px 10px;
-                    padding: 0;
-                }
+        #themecontainer ul li {
+            display: inline-block;
+            margin: 0 0 10px 10px;
+            padding: 0;
+        }
 
-                    #themecontainer ul li .title {
-                        text-align: center;
-                        color: #666;
-                        font-size: 12px;
-                        margin-top: 10px;
-                    }
+        #themecontainer ul li .title {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            margin-top: 10px;
+        }
 
-                    #themecontainer ul li.hover,
-                    #themecontainer ul li.active {
-                        border-bottom-color: #fff;
-                    }
+        #themecontainer ul li.hover,
+        #themecontainer ul li.active {
+            border-bottom-color: #fff;
+        }
 
-                        #themecontainer ul li.hover .title,
-                        #themecontainer ul li.active .title {
-                            color: #fff;
-                            font-weight: bold;
-                        }
+        #themecontainer ul li.hover .title,
+        #themecontainer ul li.active .title {
+            color: #fff;
+            font-weight: bold;
+        }
 
-                    #themecontainer ul li img {
-                        width: 100px;
-                        border-radius: 5px;
-                    }
+        #themecontainer ul li img {
+            width: 100px;
+            border-radius: 5px;
+        }
 
-            #themecontainer .grouptitle {
-                color: #ccc;
-                font-size: 16px;
-                border-bottom: solid 1px #333;
-                padding: 5px;
-                margin: 10px;
-            }
+        #themecontainer .grouptitle {
+            color: #ccc;
+            font-size: 16px;
+            border-bottom: solid 1px #333;
+            padding: 5px;
+            margin: 10px;
+        }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="自定义下拉框" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="自定义下拉框"
+            ShowHeader="true">
             <Items>
-                <f:DropDownBox runat="server" ID="DropDownBox1" Value="Pure_Black" Text="Pure Black" MatchFieldWidth="false" EnableMultiSelect="false" CustomData="true">
+                <f:DropDownBox runat="server" ID="DropDownBox1" Value="Pure_Black" Text="Pure Black" MatchFieldWidth="false" EnableMultiSelect="false"
+                    CustomData="true">
                     <PopPanel>
                         <f:ContentPanel ID="ContentPanel1" CssClass="themepanel" Hidden="true" ShowHeader="false" Width="600" AutoScroll="true" runat="server">
                             <div id="themecontainer">
@@ -75,31 +78,36 @@
                                 <ul>
                                     <li>
                                         <a href="#">
-                                            <img src="../res/images/themes/pure_black.png" alt="Pure Black" data-value="Pure_Black" />
+                                            <img src="<%= PageContext.ResolveUrl("~/res/images/themes/pure_black.png") %>" alt="Pure Black"
+                                                data-value="Pure_Black" />
                                         </a>
                                         <div class="title">Pure Black</div>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="../res/images/themes/pure_green.png" alt="Pure Green" data-value="Pure_Green" />
+                                            <img src="<%= PageContext.ResolveUrl("~/res/images/themes/pure_green.png") %>" alt="Pure Green"
+                                                data-value="Pure_Green" />
                                         </a>
                                         <div class="title">Pure Green</div>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="../res/images/themes/pure_blue.png" alt="Pure Blue" data-value="Pure_Blue" />
+                                            <img src="<%= PageContext.ResolveUrl("~/res/images/themes/pure_blue.png") %>" alt="Pure Blue"
+                                                data-value="Pure_Blue" />
                                         </a>
                                         <div class="title">Pure Blue</div>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="../res/images/themes/pure_purple.png" alt="Pure Purple" data-value="Pure_Purple" />
+                                            <img src="<%= PageContext.ResolveUrl("~/res/images/themes/pure_purple.png") %>" alt="Pure Purple"
+                                                data-value="Pure_Purple" />
                                         </a>
                                         <div class="title">Pure Purple</div>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="../res/images/themes/pure_orange.png" alt="Pure Orange" data-value="Pure_Orange" />
+                                            <img src="<%= PageContext.ResolveUrl("~/res/images/themes/pure_orange.png") %>" alt="Pure Orange"
+                                                data-value="Pure_Orange" />
                                         </a>
                                         <div class="title">Pure Orange</div>
                                     </li>
@@ -110,27 +118,30 @@
                                 <ul>
                                     <li>
                                         <a href="#">
-                                            <img src="../res/images/themes/cupertino.png" alt="Cupertino" data-value="Cupertino" /></a>
+                                            <img src="<%= PageContext.ResolveUrl("~/res/images/themes/cupertino.png") %>" alt="Cupertino"
+                                                data-value="Cupertino" /></a>
                                         <div class="title">Cupertino</div>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="../res/images/themes/start.png" alt="Start" data-value="Start" /></a>
+                                            <img src="<%= PageContext.ResolveUrl("~/res/images/themes/start.png") %>" alt="Start" data-value="Start" /></a>
                                         <div class="title">Start</div>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="../res/images/themes/dark_hive.png" alt="Dark Hive" data-value="Dark_Hive" /></a>
+                                            <img src="<%= PageContext.ResolveUrl("~/res/images/themes/dark_hive.png") %>" alt="Dark Hive"
+                                                data-value="Dark_Hive" /></a>
                                         <div class="title">Dark Hive</div>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="../res/images/themes/flick.png" alt="Flick" data-value="Flick" /></a>
+                                            <img src="<%= PageContext.ResolveUrl("~/res/images/themes/flick.png") %>" alt="Flick" data-value="Flick" /></a>
                                         <div class="title">Flick</div>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="../res/images/themes/south_street.png" alt="South Street" data-value="South_Street" /></a>
+                                            <img src="<%= PageContext.ResolveUrl("~/res/images/themes/south_street.png") %>" alt="South Street"
+                                                data-value="South_Street" /></a>
                                         <div class="title">South Street</div>
                                     </li>
                                 </ul>
@@ -160,7 +171,7 @@
             if (!themeName) {
                 themeName = 'Pure_Black';
             }
-            $('#themecontainer li').each(function () {
+            $('#themecontainer li').each(function() {
                 var cnode = $(this);
                 if (cnode.find('img').attr('data-value') === themeName) {
                     cnode.addClass('active');
@@ -171,13 +182,13 @@
         }
 
 
-        F.ready(function () {
+        F.ready(function() {
 
-            $('#themecontainer li').hover(function () {
+            $('#themecontainer li').hover(function() {
                 $(this).addClass('hover');
-            }, function () {
+            }, function() {
                 $(this).removeClass('hover');
-            }).click(function (event) {
+            }).click(function(event) {
                 event.preventDefault();
                 var imgNode = $(this).find('img');
 
@@ -193,6 +204,7 @@
             });
 
         });
+
     </script>
 </body>
 </html>

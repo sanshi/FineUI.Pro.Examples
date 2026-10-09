@@ -35,14 +35,14 @@ namespace FineUI.Pro.Examples.grid
 
         protected void Grid1_RowDataBound(object sender, GridRowEventArgs e)
         {
-            // e.DataItem  -> System.Data.DataRowView or custom class.
-            // e.RowIndex -> Current row index.
-            // e.Values -> Rendered html for each column of this row.
+            // e.DataItem  -> System.Data.DataRowView 或自定义类。
+            // e.RowIndex -> 当前行索引。
+            // e.Values -> 当前行各列的数据。
 
             DataRowView row = e.DataItem as DataRowView;
 
 
-            CheckBoxField atSchoolField = Grid1.FindColumn("AtSchool2") as CheckBoxField;
+            RenderCheckField atSchoolField = Grid1.FindColumn("AtSchool2") as RenderCheckField;
 
             // 入学年份
             int entranceYear = Convert.ToInt32(row["EntranceYear"]);
@@ -66,7 +66,7 @@ namespace FineUI.Pro.Examples.grid
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            CheckBoxField field1 = (CheckBoxField)Grid1.FindColumn("AtSchool2");
+            RenderCheckField field1 = (RenderCheckField)Grid1.FindColumn("AtSchool2");
 
             StringBuilder sb = new StringBuilder();
             List<GridRow> selectedRows = GridSelectionUtil.GetSelectedRows(Grid1);
@@ -86,7 +86,7 @@ namespace FineUI.Pro.Examples.grid
                     sb.Append("<tr>");
 
                     sb.AppendFormat("<td>{0}</td>", rowIndex + 1);
-                    sb.AppendFormat("<td>{0}</td>", field1.GetCheckedState(rowIndex));
+                    sb.AppendFormat("<td>{0}</td>", GridColumnUtil.GetCheckedState(Grid1, field1.ColumnID, rowIndex));
 
                     sb.Append("</tr>");
                 }
