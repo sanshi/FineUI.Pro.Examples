@@ -11,8 +11,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid AllowCellEditing="true" DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" PageSize="3" ShowBorder="true"
-            ShowHeader="true" OnPreRowDataBound="Grid1_PreRowDataBound" runat="server" EnableCheckBoxSelect="true" OnRowCommand="Grid1_RowCommand">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" PageSize="3" ShowBorder="true" ShowHeader="true"
+            OnPreRowDataBound="Grid1_PreRowDataBound" runat="server" EnableCheckBoxSelect="true" OnRowCommand="Grid1_RowCommand">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField DataField="Name" HeaderText="姓名" />
@@ -41,6 +41,6 @@
         注：本示例不显示入学年份小于2004的行数据（通过PreRowDataBound事件参数Cancelled控制，在服务器端数据绑定时过滤数据）。
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
-    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
 </body>
 </html>

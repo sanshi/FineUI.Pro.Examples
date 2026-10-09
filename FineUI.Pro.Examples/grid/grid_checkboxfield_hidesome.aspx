@@ -17,8 +17,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid AllowCellEditing="true" DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
-            runat="server" OnRowCommand="Grid1_RowCommand" OnRowDataBound="Grid1_RowDataBound">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true" runat="server"
+            OnRowCommand="Grid1_RowCommand" OnRowDataBound="Grid1_RowDataBound">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField DataField="Name" HeaderText="姓名" />
@@ -40,7 +40,7 @@
             </Columns>
         </f:Grid>
         <br />
-        <f:Button ID="Button1" runat="server" Text="选中行复选框的状态" OnClick="Button1_Click">
+        <f:Button ID="Button1" runat="server" Text="选中行复选框的状态" ClickHandler="onReadCheckStatesClick">
         </f:Button>
         <br />
         <f:Label ID="labResult" EncodeText="false" runat="server">
@@ -50,6 +50,16 @@
         注：复选框仅仅是通过CSS样式隐藏（display:none;）。
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
-    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
+    <script>
+        function onReadCheckStatesClick(event) {
+            var grid = F('<%= Grid1.ClientID %>');
+            F.customEvent('CheckSelectedRows', {
+                rows: getGridCheckRows(grid, ["AtSchool2"], true)
+            });
+            return false;
+        }
+
+    </script>
 </body>
 </html>

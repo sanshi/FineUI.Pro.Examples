@@ -4,12 +4,12 @@
 <html>
 <head runat="server">
     <title></title>
-    <meta name="sourcefiles" content="~/res/css/dashboard.css;~/res/css/responsive_card.css;~/res/js/dashboard_chart.js;~/res/js/responsive_card.js" />
+    <meta name="sourcefiles" content="~/res/css/dashboard.css;~/res/css/responsive-card.css;~/res/js/dashboard-chart.js;~/res/js/responsive-card.js" />
     <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
     <asp:PlaceHolder runat="server">
 
         <link rel="stylesheet" id="linkDashboardCSS" href="<%= PageContext.ResolveUrl("~/res/css/dashboard.css?v" + GlobalConfig.ProductVersion) %>" />
-        <link href="<%= PageContext.ResolveUrl("~/res/css/responsive_card.css") %>" rel="stylesheet" />
+        <link href="<%= PageContext.ResolveUrl("~/res/css/responsive-card.css") %>" rel="stylesheet" />
     </asp:PlaceHolder>
 </head>
 <body class="f-body-darkerbg">
@@ -336,9 +336,9 @@
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/third-party/echarts/echarts.min.js") %>"></script>
-    <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/dashboard_chart.js?v" + GlobalConfig.ProductVersion) %>"></script>
+    <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/dashboard-chart.js?v" + GlobalConfig.ProductVersion) %>"></script>
     <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/grid.js?v" + GlobalConfig.ProductVersion) %>"></script>
-    <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/responsive_card.js?v" + GlobalConfig.ProductVersion) %>"></script>
+    <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/responsive-card.js?v" + GlobalConfig.ProductVersion) %>"></script>
     <script>
         var panel1ClientID = '<%= Panel1.ClientID %>';
 

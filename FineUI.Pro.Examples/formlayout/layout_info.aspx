@@ -17,16 +17,17 @@
         .uploadbutton .f-btn {
             width: 100%;
         }
+
     </style>
 </head>
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Window ID="Window1" runat="server" Title="信息录入" IsModal="false" EnableClose="false" EnableResize="true"
-            Width="850px" BodyPadding="10px" AutoScroll="true">
+        <f:Window ID="Window1" runat="server" Title="信息录入" IsModal="false" EnableClose="false" EnableResize="true" Width="850px" BodyPadding="10px"
+            AutoScroll="true">
             <Items>
-                <f:Form ID="Form1" LabelAlign="Right" MessageTarget="Qtip" RedStarPosition="BeforeText" LabelWidth="90px"
-                    ShowBorder="false" ShowHeader="false" runat="server">
+                <f:Form ID="Form1" LabelAlign="Right" MessageTarget="Qtip" RedStarPosition="BeforeText" LabelWidth="90px" ShowBorder="false" ShowHeader="false"
+                    runat="server">
                     <Items>
                         <f:Panel ID="Panel2" runat="server" ShowBorder="false" ShowHeader="false" Layout="HBox" BoxConfigAlign="StretchMax">
                             <Items>
@@ -37,8 +38,10 @@
                                             <f:ListItem Text="男" Value="男" Selected="true" />
                                             <f:ListItem Text="女" Value="女" />
                                         </f:DropDownList>
-                                        <f:DatePicker ID="dpBirthDay" Label="出生日期" EmptyText="请选择日期" runat="server" EnableEdit="false" ShowRedStar="true" Required="true"></f:DatePicker>
-                                        <f:TextBox ID="tbxAge" runat="server" Label="年龄" Required="true" ShowRedStar="true" CompareMessage="年龄不能为空！"></f:TextBox>
+                                        <f:DatePicker ID="dpBirthDay" Label="出生日期" EmptyText="请选择日期" runat="server" EnableEdit="false" ShowRedStar="true"
+                                            Required="true"></f:DatePicker>
+                                        <f:TextBox ID="tbxAge" runat="server" Label="年龄" Required="true" ShowRedStar="true" CompareMessage="年龄不能为空！">
+                                        </f:TextBox>
                                         <f:DropDownList ID="ddlMarriage" Label="婚姻状况" ShowRedStar="true" Required="true" runat="server">
                                             <f:ListItem Text="未婚" Value="0" Selected="true" />
                                             <f:ListItem Text="已婚" Value="1" />
@@ -88,8 +91,9 @@
                                 </f:Panel>
                                 <f:Panel ID="Panel5" Title="面板1" BoxFlex="2" runat="server" ShowBorder="false" ShowHeader="false" Layout="VBox">
                                     <Items>
-                                        <f:FileUpload ID="FileUpload1" CssClass="uploadbutton" runat="server" ButtonText="上传照片" ButtonOnly="true"></f:FileUpload>
-                                        <f:Image ID="Image1" CssClass="userphoto" ImageUrl="~/res/images/blank_180.png" runat="server" BoxFlex="1">
+                                        <f:FileUpload ID="FileUpload1" CssClass="uploadbutton" runat="server" ButtonText="上传照片" ButtonOnly="true">
+                                        </f:FileUpload>
+                                        <f:Image ID="Image1" CssClass="userphoto" ImageUrl="~/res/images/blank-180.png" runat="server" BoxFlex="1">
                                         </f:Image>
                                     </Items>
                                 </f:Panel>

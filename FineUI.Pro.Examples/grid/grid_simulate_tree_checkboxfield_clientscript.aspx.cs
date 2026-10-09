@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -96,41 +97,31 @@ namespace FineUI.Pro.Examples.grid
 
         #region Events
 
-        protected void Grid1_RowCommand(object sender, GridCommandEventArgs e)
+        protected void Page_CustomEvent(object sender, CustomEventArgs e)
         {
-            // 当前行[复选框]列的选中状态
-            RenderCheckField checkField = (RenderCheckField)Grid1.FindColumn("CheckBoxField1");
-            bool crowCheckState = GridColumnUtil.GetCheckedState(Grid1, checkField.ColumnID, e.RowIndex);
-
-            if (e.CommandName == "Action1" || e.CommandName == "Action2")
+            if (e.EventName != "GridRowCommand")
             {
-                object[] keys = Grid1.DataKeys[e.RowIndex];
-                labResult.Text = String.Format("你点击了第 {0} 行，第 {1} 列，行命令是 {2}", e.RowIndex + 1, e.ColumnIndex + 1, e.CommandName) +
-                       "<br />" +
-                       String.Format("当前行数据 - 编号：{0}，姓名：{1}，复选框列：{2}", keys[0], keys[1], crowCheckState);
+                return;
             }
-            else if (e.CommandName == "CheckBox1")
+            JObject arguments = e.EventArgumentsAsJObject;
+            GridRow row = Grid1.FindRow(arguments.Value<string>("rowId"));
+            if (row == null)
             {
-                // 当前行的TreeLevel
-                int crowTreeLevel = Convert.ToInt32(Grid1.DataKeys[e.RowIndex][2]);
-                //Notify(String.Format("你点击了第 {0} 行，第 {1} 列，选中状态：{2}", e.RowIndex + 1, e.ColumnIndex + 1, checkState));
-
-                for (int i = e.RowIndex + 1, count = Grid1.DataKeys.Count; i < count; i++)
+                throw new HttpException(400, "找不到指定的表格行。");
+            }
+            if (e.EventName == "GridRowCommand")
+            {
+                string commandName = arguments.Value<string>("commandName");
+                if (commandName != "Action1" && commandName != "Action2")
                 {
-                    int treeLevel = Convert.ToInt32(Grid1.DataKeys[i][2]);
-
-                    // 当前行的子级（TreeLevel大于当前行的TreeLevel）
-                    if (treeLevel > crowTreeLevel)
-                    {
-                        GridColumnUtil.SetCheckedState(Grid1, checkField.ColumnID, i, crowCheckState);
-                    }
-                    else
-                    {
-                        // 跳出子级
-                        break;
-                    }
+                    return;
                 }
-
+                int columnIndex = Grid1.FindColumn(arguments.Value<string>("columnId")).ColumnIndex;
+                bool isChecked = arguments.Value<bool>("isChecked");
+                labResult.Text = String.Format("你点击了第 {0} 行，第 {1} 列，行命令是 {2}",
+                    row.RowIndex + 1, columnIndex + 1, commandName) + "<br />" +
+                    String.Format("当前行数据 - 编号：{0}，姓名：{1}，复选框列：{2}",
+                        row.DataKeys[0], HtmlEncode(Convert.ToString(row.DataKeys[1])), isChecked);
             }
         }
 

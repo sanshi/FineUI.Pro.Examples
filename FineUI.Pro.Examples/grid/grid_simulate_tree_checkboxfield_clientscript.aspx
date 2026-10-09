@@ -11,8 +11,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid AllowCellEditing="true" DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
-            runat="server" EnableCheckBoxSelect="true" DataKeyNames="Id,Name,TreeLevel" OnRowCommand="Grid1_RowCommand" OnRowDataBound="Grid1_RowDataBound">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true" runat="server"
+            EnableCheckBoxSelect="true" DataKeyNames="Id,Name,TreeLevel" OnRowDataBound="Grid1_RowDataBound">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField ColumnID="Name" DataField="Name" DataSimulateTreeLevelField="TreeLevel" HeaderText="地区" ExpandUnusedSpace="true"
@@ -34,6 +34,9 @@
                     </Columns>
                 </f:GroupField>
             </Columns>
+            <Listeners>
+                <f:Listener Event="rowcommand" Handler="onGrid1RowCommand" />
+            </Listeners>
         </f:Grid>
         <br />
         <f:Label ID="labResult" EncodeText="false" runat="server">
@@ -47,41 +50,37 @@
         </ul>
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
-    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
     <script>
-        var gridClientID = '<%= Grid1.ClientID %>';
-        var checkboxSelector = '.f-grid-cell-CheckBoxField1 .f-grid-checkbox';
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            var grid = F('<%= Grid1.ClientID %>');
+            F.customEvent('GridRowCommand', {
+                rowId: rowId,
+                columnId: columnId,
+                commandName: commandName,
+                isChecked: grid.getRowEl(rowId).find('.f-grid-cell-CheckBoxField1 .f-grid-checkbox').hasClass('f-checked')
+            });
+        }
 
         F.ready(function() {
-
-            var grid = F(gridClientID);
+            var grid = F('<%= Grid1.ClientID %>');
+            var checkboxSelector = '.f-grid-cell-CheckBoxField1 .f-grid-checkbox';
 
             function getRowLevel(rowEl) {
-                var rowData = grid.getRowData(rowEl);
-                // 当前行的层级
-                return $(rowData.values.Name).filter('.f-smtree-icon').length;
+                return $(grid.getRowData(rowEl).values.Name).filter('.f-smtree-icon').length;
             }
-
-            // 等当前单元格完成修改后再级联，避免读取到点击前的勾选状态。
-            grid.on('afteredit', function(event, value, params) {
-                if (params.columnId !== 'CheckBoxField1') {
-                    return;
-                }
-                var rowEl = grid.getRowEl(params.rowId);
+            grid.el.on('click', checkboxSelector, function(event) {
+                var rowEl = $(this).closest('.f-grid-row');
                 var rowLevel = getRowLevel(rowEl);
-                var rowChecked = value;
-
-                var nextRowEl = rowEl;
-                while ((nextRowEl = nextRowEl.next()).length) {
-                    if (getRowLevel(nextRowEl) > rowLevel) {
-                        var checkboxEl = nextRowEl.find(checkboxSelector);
-                        grid.updateCellValue(nextRowEl.attr('data-rowid'), 'CheckBoxField1', rowChecked);
-                    } else {
-                        break;
-                    }
+                var isChecked = $(this).hasClass('f-checked');
+                var childRowIDs = [];
+                var nextRowEl = rowEl.next();
+                while (nextRowEl.length && getRowLevel(nextRowEl) > rowLevel) {
+                    childRowIDs.push(grid.getRowData(nextRowEl).id);
+                    nextRowEl = nextRowEl.next();
                 }
+                setGridCheckColumns(grid, childRowIDs, ['CheckBoxField1'], isChecked);
             });
-
         });
 
     </script>

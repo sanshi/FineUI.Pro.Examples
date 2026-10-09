@@ -82,41 +82,15 @@ namespace FineUI.Pro.Examples.grideditor
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Page_CustomEvent(object sender, CustomEventArgs e)
         {
-            RenderCheckField field1 = (RenderCheckField)Grid1.FindColumn("CheckBoxField2");
-
-            StringBuilder sb = new StringBuilder();
-            List<GridRow> selectedRows = GridSelectionUtil.GetSelectedRows(Grid1);
-            int selectedCount = selectedRows.Count;
-            if (selectedCount > 0)
+            if (e.EventName == "CheckSelectedRows")
             {
-                sb.AppendFormat("共选中了 {0} 行：", selectedCount);
-                sb.Append("<table class=\"result\">");
-                sb.Append("<tr>");
-                sb.Append("<th>行号</th>");
-                sb.Append("<th>CheckBoxField2</th>");
-                sb.Append("</tr>");
-
-                for (int i = 0; i < selectedCount; i++)
-                {
-                    int rowIndex = selectedRows[i].RowIndex;
-                    sb.Append("<tr>");
-
-                    sb.AppendFormat("<td>{0}</td>", rowIndex + 1);
-                    sb.AppendFormat("<td>{0}</td>", GridColumnUtil.GetCheckedState(Grid1, field1.ColumnID, rowIndex));
-
-                    sb.Append("</tr>");
-                }
-
-                sb.Append("</table>");
+                labResult.Text = GridSelectionMessage.GetCheckStateResult(
+                    e.EventArgumentsAsJObject["rows"] as JArray,
+                    new string[] { "CheckBoxField2" },
+                    new string[] { "CheckBoxField2" }, false);
             }
-            else
-            {
-                sb.Append("<strong>没有选中任何一行！</strong>");
-            }
-
-            labResult.Text = sb.ToString();
         }
 
         #endregion

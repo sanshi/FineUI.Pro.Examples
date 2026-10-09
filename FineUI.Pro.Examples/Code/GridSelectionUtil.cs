@@ -34,5 +34,16 @@ namespace FineUI.Pro.Examples
         {
             return Array.IndexOf(grid.SelectedRowIDArray, rowID) >= 0;
         }
+
+        /// <summary>
+        /// 生成指定行的批量勾选脚本，用当前界面状态更新图标和开关文字。
+        /// 不重新绑定表格，避免本次回发把其他行已经手动修改的复选框恢复成初始值。
+        /// </summary>
+        public static string GetSetCheckColumnsReference(Grid grid, string[] rowIDs, string[] columnIDs, bool isChecked)
+        {
+            return String.Format("setGridCheckColumns(F({0}), {1}, {2}, {3});",
+                JsHelper.Enquote(grid.ClientID), JsHelper.EnquoteStringArray(rowIDs),
+                JsHelper.EnquoteStringArray(columnIDs), isChecked ? "true" : "false");
+        }
     }
 }

@@ -20,15 +20,75 @@ function renderDisabledCheck(value, params) {
     return value;
 }
 
-// 批量勾选时同时更新单元格和原始数据，后续回发才能读到新的布尔值。
+// 普通表格点击复选框不会更新行数据，查询时读取当前图标，而不是 values 中的初始值。
+// columnIds 指定需要提交的复选框列；selectedOnly 为 false 时读取全部行（包括折叠的树节点）。
+// 行号和姓名随状态一起提交，后台直接展示即可；使用数组保留选择顺序，避免数字 ID 对象键被重新排序。
+function getGridCheckRows(grid, columnIds, selectedOnly) {
+    if (grid.cellEditing) {
+        grid.saveEdit();
+    }
+    var allRowEls = grid.getRowEls();
+    var rowDataList;
+    if (selectedOnly === false) {
+        rowDataList = [];
+        allRowEls.each(function () {
+            rowDataList.push(grid.getRowData($(this)));
+        });
+    } else {
+        rowDataList = grid.getSelectedRows(true);
+    }
+
+    var rows = [];
+    rowDataList.forEach(function (rowData) {
+        var rowEl = grid.getRowEl(rowData.id);
+        var values = {
+            id: rowData.id,
+            // 树节点的 index 只表示同级下标；用全部行的位置显示全表行号，折叠节点也占一行。
+            rowNumber: grid.tree ? allRowEls.index(rowEl) + 1 : rowData.index + 1,
+            name: rowData.values.Name,
+            gender: parseInt(rowData.values.Gender, 10)
+        };
+        columnIds.forEach(function (columnId) {
+            values[columnId] = rowEl.find('.f-grid-cell-' + columnId + ' .f-grid-checkbox').hasClass('f-checked');
+        });
+        rows.push(values);
+    });
+    return rows;
+}
+
+// 批量设值前把行数据同步到当前界面，保证原来绑定为 true、后来手动取消的行也能再次勾选。
+// 使用公开的更新接口同步图标和开关文字，不需要给普通表格开启单元格编辑。
+function setGridCheckColumns(grid, rowIds, columnIds, isChecked) {
+    rowIds.forEach(function (rowId) {
+        var rowEl = grid.getRowEl(rowId);
+        var rowData = grid.getRowData(rowEl);
+        columnIds.forEach(function (columnId) {
+            rowData.values[columnId] = rowEl.find('.f-grid-cell-' + columnId + ' .f-grid-checkbox').hasClass('f-checked');
+            grid.updateCellValue(rowId, columnId, isChecked, true);
+        });
+    });
+}
+
+// 工具栏和右键菜单复用同一套批量勾选逻辑，只处理当前选中的行。
 function setSelectedCheckColumns(gridId, columnIds, isChecked) {
     var grid = F(gridId);
-    var values = {};
-    columnIds.forEach(function (columnId) {
-        values[columnId] = isChecked;
-    });
-    grid.getSelectedRows().forEach(function (rowId) {
-        grid.updateCellValue(rowId, values);
+    setGridCheckColumns(grid, grid.getSelectedRows(), columnIds, isChecked);
+}
+
+// 框架先切换复选框，再把当前状态交给后台；点击禁用的单元格不触发自定义回发。
+function bindGridCheckChange(grid, columnId) {
+    grid.el.on('click', '.f-grid-cell-' + columnId + ' .f-grid-checkbox', function (event) {
+        var checkboxEl = $(this);
+        if (checkboxEl.hasClass('f-state-disabled')
+            || checkboxEl.parentsUntil('.f-grid-row', '.f-state-disabled').length) {
+            return;
+        }
+        var rowData = grid.getRowData(checkboxEl.closest('.f-grid-row'));
+        F.customEvent('GridCheckChanged', {
+            rowId: rowData.id,
+            columnId: columnId,
+            isChecked: checkboxEl.hasClass('f-checked')
+        });
     });
 }
 

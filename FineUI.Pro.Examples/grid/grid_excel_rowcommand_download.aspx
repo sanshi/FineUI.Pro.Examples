@@ -40,7 +40,7 @@
         </f:Label>
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
-    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
     <script>
         F.ready(function() {
             var grid = F('<%= Grid1.ClientID %>');

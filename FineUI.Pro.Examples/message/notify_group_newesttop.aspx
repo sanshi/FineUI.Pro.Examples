@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
     <title></title>
-    <meta name="sourcefiles" content="~/res/js/notify_group.js" />
+    <meta name="sourcefiles" content="~/res/js/notify-group.js" />
     <style>
         .notify-group-item .f-messagebox-message {
             min-width: 260px;
@@ -21,7 +21,7 @@
         <br />
     </form>
 
-    <script src="<%= PageContext.ResolveUrl("~/res/js/notify_group.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/notify-group.js") %>"></script>
     <script type="text/javascript">
         var _orderNumber = 0;
 

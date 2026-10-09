@@ -17,7 +17,7 @@ namespace FineUI.Pro.Examples.gridcard
             {
                 ViewState["EMPTY_DATA_SOURCE"] = true;
 
-                Grid1.EmptyTextRawHtml = new RawHtml("<img src=\"{0}\" alt=\"No Data Found!\"/>", PageContext.ResolveUrl("~/res/images/no_data_found.png"));
+                Grid1.EmptyTextRawHtml = new RawHtml("<img src=\"{0}\" alt=\"No Data Found!\"/>", PageContext.ResolveUrl("~/res/images/no-data-found.png"));
             }
         }
 

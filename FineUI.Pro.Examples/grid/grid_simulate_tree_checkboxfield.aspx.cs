@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -96,54 +97,52 @@ namespace FineUI.Pro.Examples.grid
 
         #region Events
 
-        // 复选框修改完成后，继续执行原来的行内动作；此时后台可以读取修改后的布尔值。
-        protected void Grid1_AfterEdit(object sender, GridAfterEditEventArgs e)
+
+
+        protected void Page_CustomEvent(object sender, CustomEventArgs e)
         {
-            if (e.ColumnID == "CheckBoxField1")
+            if (e.EventName != "GridRowCommand" && e.EventName != "GridCheckChanged")
             {
-                // 子行更新会重绘表格，先保存父行的新状态，避免重绘后父行恢复旧值。
-                Grid1.Rows[e.RowIndex].SetCellValue(e.ColumnID,
-                    GridColumnUtil.GetCheckedState(Grid1, e.ColumnID, e.RowIndex));
-                Grid1_RowCommand(sender, new GridCommandEventArgs(
-                    e.RowIndex, e.RowID, e.ColumnIndex, e.ColumnID, "CheckBox1", String.Empty));
+                return;
             }
-        }
-
-        protected void Grid1_RowCommand(object sender, GridCommandEventArgs e)
-        {
-            // 当前行[复选框]列的选中状态
-            RenderCheckField checkField = (RenderCheckField)Grid1.FindColumn("CheckBoxField1");
-            bool crowCheckState = GridColumnUtil.GetCheckedState(Grid1, checkField.ColumnID, e.RowIndex);
-
-            if (e.CommandName == "Action1" || e.CommandName == "Action2")
+            JObject arguments = e.EventArgumentsAsJObject;
+            GridRow row = Grid1.FindRow(arguments.Value<string>("rowId"));
+            if (row == null)
             {
-                object[] keys = Grid1.DataKeys[e.RowIndex];
-                labResult.Text = String.Format("你点击了第 {0} 行，第 {1} 列，行命令是 {2}", e.RowIndex + 1, e.ColumnIndex + 1, e.CommandName) +
-                       "<br />" +
-                       String.Format("当前行数据 - 编号：{0}，姓名：{1}，复选框列：{2}", keys[0], keys[1], crowCheckState);
+                throw new HttpException(400, "找不到指定的表格行。");
             }
-            else if (e.CommandName == "CheckBox1")
-            {
-                // 当前行的TreeLevel
-                int crowTreeLevel = Convert.ToInt32(Grid1.DataKeys[e.RowIndex][2]);
-                //Notify(String.Format("你点击了第 {0} 行，第 {1} 列，选中状态：{2}", e.RowIndex + 1, e.ColumnIndex + 1, checkState));
 
-                for (int i = e.RowIndex + 1, count = Grid1.DataKeys.Count; i < count; i++)
+            if (e.EventName == "GridCheckChanged")
+            {
+                bool isChecked = arguments.Value<bool>("isChecked");
+                int currentLevel = Convert.ToInt32(row.DataKeys[2]);
+                List<string> childRowIDs = new List<string>();
+                for (int i = row.RowIndex + 1; i < Grid1.Rows.Count; i++)
                 {
-                    int treeLevel = Convert.ToInt32(Grid1.DataKeys[i][2]);
-
-                    // 当前行的子级（TreeLevel大于当前行的TreeLevel）
-                    if (treeLevel > crowTreeLevel)
+                    GridRow childRow = Grid1.Rows[i];
+                    if (Convert.ToInt32(childRow.DataKeys[2]) <= currentLevel)
                     {
-                        GridColumnUtil.SetCheckedState(Grid1, checkField.ColumnID, i, crowCheckState);
-                    }
-                    else
-                    {
-                        // 跳出子级
                         break;
                     }
+                    childRowIDs.Add(childRow.RowID);
                 }
-
+                // 只更新子行图标，保留父行和其它分支刚才在客户端修改的状态。
+                PageContext.RegisterStartupScript(GridSelectionUtil.GetSetCheckColumnsReference(Grid1,
+                    childRowIDs.ToArray(), new string[] { "CheckBoxField1" }, isChecked));
+            }
+            else if (e.EventName == "GridRowCommand")
+            {
+                string commandName = arguments.Value<string>("commandName");
+                if (commandName != "Action1" && commandName != "Action2")
+                {
+                    return;
+                }
+                int columnIndex = Grid1.FindColumn(arguments.Value<string>("columnId")).ColumnIndex;
+                bool isChecked = arguments.Value<bool>("isChecked");
+                labResult.Text = String.Format("你点击了第 {0} 行，第 {1} 列，行命令是 {2}",
+                    row.RowIndex + 1, columnIndex + 1, commandName) + "<br />" +
+                    String.Format("当前行数据 - 编号：{0}，姓名：{1}，复选框列：{2}",
+                        row.DataKeys[0], HtmlEncode(Convert.ToString(row.DataKeys[1])), isChecked);
             }
         }
 

@@ -1,4 +1,5 @@
 using System;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
@@ -45,47 +46,15 @@ namespace FineUI.Pro.Examples.grid
 
         #region Events
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Page_CustomEvent(object sender, CustomEventArgs e)
         {
-            RenderCheckField field1 = (RenderCheckField)Grid1.FindColumn("CheckBoxField1");
-            RenderCheckField field2 = (RenderCheckField)Grid1.FindColumn("CheckBoxField2");
-            RenderCheckField field3 = (RenderCheckField)Grid1.FindColumn("CheckBoxField3");
-
-            StringBuilder sb = new StringBuilder();
-            List<GridRow> selectedRows = GridSelectionUtil.GetSelectedRows(Grid1);
-            int selectedCount = selectedRows.Count;
-            if (selectedCount > 0)
+            if (e.EventName == "CheckSelectedRows")
             {
-                sb.AppendFormat("共选中了 {0} 行：", selectedCount);
-                sb.Append("<table class=\"result\">");
-                sb.Append("<tr>");
-                sb.Append("<th>行号</th>");
-                sb.Append("<th>是否在校1</th>");
-                sb.Append("<th>是否在校2</th>");
-                sb.Append("<th>是否在校3</th>");
-                sb.Append("</tr>");
-
-                for (int i = 0; i < selectedCount; i++)
-                {
-                    int rowIndex = selectedRows[i].RowIndex;
-                    sb.Append("<tr>");
-
-                    sb.AppendFormat("<td>{0}</td>", rowIndex + 1);
-                    sb.AppendFormat("<td>{0}</td>", GridColumnUtil.GetCheckedState(Grid1, field1.ColumnID, rowIndex));
-                    sb.AppendFormat("<td>{0}</td>", GridColumnUtil.GetCheckedState(Grid1, field2.ColumnID, rowIndex));
-                    sb.AppendFormat("<td>{0}</td>", GridColumnUtil.GetCheckedState(Grid1, field3.ColumnID, rowIndex));
-
-                    sb.Append("</tr>");
-                }
-
-                sb.Append("</table>");
+                labResult.Text = GridSelectionMessage.GetCheckStateResult(
+                    e.EventArgumentsAsJObject["rows"] as JArray,
+                    new string[] { "CheckBoxField1", "CheckBoxField2", "CheckBoxField3" },
+                    new string[] { "是否在校1", "是否在校2", "是否在校3" });
             }
-            else
-            {
-                sb.Append("<strong>没有选中任何一行！</strong>");
-            }
-
-            labResult.Text = sb.ToString();
         }
 
 

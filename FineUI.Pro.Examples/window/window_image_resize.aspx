@@ -17,7 +17,7 @@
         <f:Window ID="Window2" Width="650px" Height="300px" Icon="TagBlue" Title="窗体（观察图片随着窗体大小的变化）" EnableClose="false" EnableMaximize="true"
             EnableCollapse="false" runat="server" EnableResize="true" IsModal="false" AutoScroll="true" BodyPadding="10px">
             <Content>
-                <img id="mylogo" src="<%= PageContext.ResolveUrl("~/res/images/logo/fineui_500.png") %>" alt="Logo" />
+                <img id="mylogo" src="<%= PageContext.ResolveUrl("~/res/images/logo/fineui-500.png") %>" alt="Logo" />
             </Content>
             <Listeners>
                 <f:Listener Event="resize" Handler="onWindowResize" />

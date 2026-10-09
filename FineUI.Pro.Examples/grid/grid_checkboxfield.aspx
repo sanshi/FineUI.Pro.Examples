@@ -11,8 +11,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid AllowCellEditing="true" DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
-            runat="server" OnRowCommand="Grid1_RowCommand">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true" runat="server"
+            OnRowCommand="Grid1_RowCommand">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField DataField="Name" HeaderText="姓名" />
@@ -34,13 +34,23 @@
             </Columns>
         </f:Grid>
         <br />
-        <f:Button ID="Button1" runat="server" Text="选中行复选框的状态" OnClick="Button1_Click">
+        <f:Button ID="Button1" runat="server" Text="选中行复选框的状态" ClickHandler="onReadCheckStatesClick">
         </f:Button>
         <br />
         <f:Label ID="labResult" EncodeText="false" runat="server">
         </f:Label>
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
-    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
+    <script>
+        function onReadCheckStatesClick(event) {
+            var grid = F('<%= Grid1.ClientID %>');
+            F.customEvent('CheckSelectedRows', {
+                rows: getGridCheckRows(grid, ["CheckBoxField1"], true)
+            });
+            return false;
+        }
+
+    </script>
 </body>
 </html>

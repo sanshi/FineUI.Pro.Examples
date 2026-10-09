@@ -56,7 +56,7 @@ namespace FineUI.Pro.Examples.gridtree
                 }
                 else
                 {
-                    e.TreeNodeIconUrl = String.Format("~/res/images/filetype/vs_{0}.png", fileType);
+                    e.TreeNodeIconUrl = String.Format("~/res/images/filetype/vs-{0}.png", fileType);
                 }
             }
         }

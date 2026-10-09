@@ -100,7 +100,7 @@
                                     <f:Button runat="server" CssClass="icononlyaction" ID="btnThemeSelect" ToolTip="主题仓库" IconAlign="Top" IconFont="_Skin"
                                         EnableDefaultState="false" TabIndex="-1" ClickHandler="onThemeSelectClick">
                                     </f:Button>
-                                    <f:Button runat="server" CssClass="userpicaction" ID="btnUserAvatar" Text="三生石上" IconUrl="~/res/images/my_face_80.jpg"
+                                    <f:Button runat="server" CssClass="userpicaction" ID="btnUserAvatar" Text="三生石上" IconUrl="~/res/images/my-face-80.jpg"
                                         IconAlign="Left" EnableDefaultState="false">
                                         <Menu runat="server" ID="menuSettings">
                                             <f:MenuCheckBox runat="server" ID="cbxShowOnlyCommunity" Text="仅显示社区版示例" ClickHandler="onShowOnlyCommunityClick">

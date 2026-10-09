@@ -70,9 +70,17 @@ namespace FineUI.Pro.Examples.gridtree
         }
 
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void Page_CustomEvent(object sender, CustomEventArgs e)
         {
-            RenderCheckField field1 = (RenderCheckField)Grid1.FindColumn("FollowFolder");
+            if (e.EventName != "ReadFollowFolders")
+            {
+                return;
+            }
+            JArray rows = e.EventArgumentsAsJObject["rows"] as JArray;
+            if (rows == null)
+            {
+                throw new HttpException(400, "缺少目录关注状态。");
+            }
 
             StringBuilder sb = new StringBuilder();
 
@@ -86,23 +94,20 @@ namespace FineUI.Pro.Examples.gridtree
             }
             sb.Append("</tr>");
 
-            for (int i = 0; i < Grid1.Rows.Count; i++)
+            foreach (JObject row in rows)
             {
-                bool followit = GridColumnUtil.GetCheckedState(Grid1, field1.ColumnID, i);
+                bool followit = row.Value<bool>("FollowFolder");
 
-                if(followit) {
+                if (!followit)
+                {
+                    continue;
+                }
                 sb.Append("<tr>");
 
-                sb.AppendFormat("<td>{0}</td>", i + 1);
-
-                object[] dataKeys = Grid1.DataKeys[i];
-                for (int j = 0; j < dataKeys.Length; j++)
-                {
-                    sb.AppendFormat("<td>{0}</td>", dataKeys[j]);
-                }
-
+                sb.AppendFormat("<td>{0}</td>", row.Value<int>("rowNumber"));
+                sb.AppendFormat("<td>{0}</td>", HtmlEncode(row.Value<string>("id")));
+                sb.AppendFormat("<td>{0}</td>", HtmlEncode(row.Value<string>("name")));
                 sb.Append("</tr>");
-                }
             }
 
             sb.Append("</table>");

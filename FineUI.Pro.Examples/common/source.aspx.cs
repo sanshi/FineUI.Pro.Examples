@@ -94,7 +94,7 @@ namespace FineUI.Pro.Examples
         private string GetIconUrl(string url)
         {
             string suffix = url.Substring(url.LastIndexOf('.') + 1);
-            return "~/res/images/filetype/vs_" + suffix + ".png";
+            return "~/res/images/filetype/vs-" + suffix + ".png";
         }
 
         private string GetShortFileName(string fileName)

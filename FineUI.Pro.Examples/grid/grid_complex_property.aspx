@@ -23,7 +23,7 @@
             </Columns>
         </f:Grid>
     </form>
-    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
     <script>
         function renderSchool1(value, params) {
             return value === 'True' || value === true ? '是' : '否';

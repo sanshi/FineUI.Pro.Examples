@@ -355,8 +355,8 @@
     <Content Include="gridtree\gridtree_custompostback.aspx" />
     <Content Include="gridtree\gridtree_rowexpander.aspx" />
     <Content Include="grid\grid_empty_icon_text.aspx" />
-    <Content Include="res\css\responsive_card.css" />
-    <Content Include="res\js\responsive_card.js" />
+    <Content Include="res\css\responsive-card.css" />
+    <Content Include="res\js\responsive-card.js" />
     <Content Include="gridcard\card_avatar.aspx" />
     <Content Include="gridcard\card_rebind.aspx" />
     <Content Include="gridcard\card_multiselect_checkboxonly.aspx" />
@@ -541,8 +541,8 @@
     <Content Include="res\css\dashboard.css" />
     <Content Include="res\css\gridcard.css" />
     <Content Include="res\css\mobileview.css" />
-    <Content Include="res\js\dashboard_chart.js" />
-    <Content Include="res\css\tablestyle_noborder.css" />
+    <Content Include="res\js\dashboard-chart.js" />
+    <Content Include="res\css\tablestyle-noborder.css" />
     <Content Include="formtable\tablestyle_form_emptylabel.aspx" />
     <Content Include="formtable\tablestyle_layout_contactus_border.aspx" />
     <Content Include="formtable\tablestyle_layout_info_border.aspx" />
@@ -956,12 +956,12 @@
     <Content Include="res\css\index.css" />
     <Content Include="res\js\common.js" />
     <Content Include="res\js\grid.js" />
-    <Content Include="res\js\grid-pro.js" />
+    <Content Include="res\js\grid-extra.js" />
     <Content Include="res\js\gridcard.js" />
     <Content Include="res\js\index.js" />
     <Content Include="res\js\index-examples.js" />
     <Content Include="res\js\mobileview.js" />
-    <Content Include="res\js\notify_group.js" />
+    <Content Include="res\js\notify-group.js" />
     <Content Include="res\languages\zh_UEY.js" />
     <Content Include="res\themes\custom_default\theme.config" />
     <Content Include="res\themes\custom_default\theme.css" />
@@ -1687,7 +1687,6 @@
     <Compile Include="Code\GridSelectionMessage.cs" />
     <Compile Include="Code\GridSelectionUtil.cs" />
     <Compile Include="Code\GridInputUtil.cs" />
-    <Compile Include="Code\GridColumnUtil.cs" />
     <Compile Include="Code\GridExportUtil.cs" />
     <Compile Include="Code\UploadPageBase.cs">
       <SubType>ASPXCodeBehind</SubType>

@@ -4,11 +4,11 @@
 <html>
 <head runat="server">
     <title></title>
-    <meta name="sourcefiles" content="~/res/css/responsive_card.css;~/res/js/grid.js;~/res/js/responsive_card.js" />
+    <meta name="sourcefiles" content="~/res/css/responsive-card.css;~/res/js/grid.js;~/res/js/responsive-card.js" />
     <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
     <asp:PlaceHolder runat="server">
 
-        <link href="<%= PageContext.ResolveUrl("~/res/css/responsive_card.css") %>" rel="stylesheet" />
+        <link href="<%= PageContext.ResolveUrl("~/res/css/responsive-card.css") %>" rel="stylesheet" />
         <style>
         </style>
     </asp:PlaceHolder>
@@ -31,6 +31,6 @@
         注：缩放浏览器窗口：屏幕宽度小于 992px（中屏以下）时，表格自动切换为卡片模式；否则显示为普通表格。通过 ResponsiveCardSize="MD" 实现，由屏幕尺寸主导显示模式。
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
-    <script src="<%= PageContext.ResolveUrl("~/res/js/responsive_card.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/responsive-card.js") %>"></script>
 </body>
 </html>

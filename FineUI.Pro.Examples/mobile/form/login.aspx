@@ -9,11 +9,11 @@
             text-align: center;
         }
 
-            .mypic img {
-                border-radius: 50%;
-                width: 100px;
-                height: 100px;
-            }
+        .mypic img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
 
         .myhyperlinkcontainer {
             text-align: center;
@@ -25,9 +25,10 @@
             margin-right: 5px;
         }
 
-            .myhyperlink a {
-                font-size: 0.8em;
-            }
+        .myhyperlink a {
+            font-size: 0.8em;
+        }
+
     </style>
 </head>
 <body>
@@ -41,7 +42,7 @@
             <Items>
                 <f:SimpleForm ID="SimpleForm1" runat="server" ShowBorder="false" ShowHeader="false" Layout="VBox" MessageTarget="None">
                     <Items>
-                        <f:Image runat="server" CssClass="mypic" ImageUrl="~/res/images/my_face_80.jpg"></f:Image>
+                        <f:Image runat="server" CssClass="mypic" ImageUrl="~/res/images/my-face-80.jpg"></f:Image>
                         <f:TextBox ID="tbxUserName" Label="用户名" ShowLabel="false" EmptyText="请输入用户名" Required="true" runat="server">
                         </f:TextBox>
                         <f:TextBox ID="tbxPassword" Label="密码" ShowLabel="false" TextMode="Password" EmptyText="请输入密码" Required="true" runat="server">
@@ -50,8 +51,10 @@
                         </f:Button>
                         <f:Panel runat="server" CssClass="myhyperlinkcontainer" ShowBorder="false" ShowHeader="false">
                             <Items>
-                                <f:HyperLink ID="HyperLink1" runat="server" CssClass="myhyperlink" NavigateUrl="http://fineui.com/bbs/" Text="新用户注册"></f:HyperLink>
-                                <f:HyperLink ID="HyperLink2" runat="server" CssClass="myhyperlink" NavigateUrl="http://fineui.com/bbs/" Text="忘记密码？"></f:HyperLink>
+                                <f:HyperLink ID="HyperLink1" runat="server" CssClass="myhyperlink" NavigateUrl="http://fineui.com/bbs/" Text="新用户注册">
+                                </f:HyperLink>
+                                <f:HyperLink ID="HyperLink2" runat="server" CssClass="myhyperlink" NavigateUrl="http://fineui.com/bbs/" Text="忘记密码？">
+                                </f:HyperLink>
                             </Items>
                         </f:Panel>
                     </Items>

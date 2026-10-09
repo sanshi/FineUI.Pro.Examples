@@ -13,6 +13,7 @@
             font-size: 14px;
             font-weight: bold;
         }
+
     </style>
 </head>
 <body>
@@ -25,14 +26,13 @@
     </form>
 
     <script type="text/javascript">
-
         var basePath = '<%= PageContext.ResolveUrl("~/") %>';
 
         function openExampleHello(notifyId) {
             parent.addExampleTab({
                 iframeUrl: basePath + 'basic/hello.aspx',
                 title: '你好 FineUI.Pro',
-                icon: basePath + 'res/images/filetype/vs_aspx.png',
+                icon: basePath + 'res/images/filetype/vs-aspx.png',
                 refreshWhenExist: true
             });
 

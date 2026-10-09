@@ -34,7 +34,7 @@
         <br />
         <f:Button ID="Button2" CssClass="marginr" runat="server" Text="保存数据" OnClick="Button2_Click">
         </f:Button>
-        <f:Button ID="Button1" runat="server" Text="获取复选框列的状态（CheckBoxField2）" OnClick="Button1_Click">
+        <f:Button ID="Button1" runat="server" Text="获取复选框列的状态（CheckBoxField2）" ClickHandler="onReadCheckStatesClick">
         </f:Button>
         <br />
         <br />
@@ -44,8 +44,16 @@
         <br />
         <br />
     </form>
-    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
     <script>
+        function onReadCheckStatesClick(event) {
+            var grid = F('<%= Grid1.ClientID %>');
+            F.customEvent('CheckSelectedRows', {
+                rows: getGridCheckRows(grid, ["CheckBoxField2"], true)
+            });
+            return false;
+        }
+
         function renderGender(value) {
             return value == 1 ? '男' : '女';
         }

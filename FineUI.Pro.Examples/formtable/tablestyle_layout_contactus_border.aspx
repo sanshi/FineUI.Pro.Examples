@@ -5,11 +5,11 @@
 <html>
 <head runat="server">
     <title></title>
-    <meta name="sourcefiles" content="~/res/css/tablestyle_noborder.css" />
+    <meta name="sourcefiles" content="~/res/css/tablestyle-noborder.css" />
     <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
     <asp:PlaceHolder runat="server">
 
-        <link href="<%= PageContext.ResolveUrl("~/res/css/tablestyle_noborder.css") %>" rel="stylesheet" />
+        <link href="<%= PageContext.ResolveUrl("~/res/css/tablestyle-noborder.css") %>" rel="stylesheet" />
     </asp:PlaceHolder>
 </head>
 <body>

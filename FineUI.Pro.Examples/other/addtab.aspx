@@ -8,18 +8,15 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Button ID="Button1" runat="server" ClickHandler="onOpenHelloFineUIClick"
-            Text="向父页面添加选项卡">
+        <f:Button ID="Button1" runat="server" ClickHandler="onOpenHelloFineUIClick" Text="向父页面添加选项卡">
         </f:Button>
         <br />
         <br />
-        <f:Button ID="Button4" runat="server" ClickHandler="onOpenHelloFineUI2Click"
-            Text="向父页面添加选项卡（图标字体，与上个按钮添加的选项卡为同一个）">
+        <f:Button ID="Button4" runat="server" ClickHandler="onOpenHelloFineUI2Click" Text="向父页面添加选项卡（图标字体，与上个按钮添加的选项卡为同一个）">
         </f:Button>
         <br />
         <br />
-        <f:Button ID="Button2" runat="server" ClickHandler="onCloseActiveTabClick"
-            Text="关闭当前选项卡">
+        <f:Button ID="Button2" runat="server" ClickHandler="onCloseActiveTabClick" Text="关闭当前选项卡">
         </f:Button>
         <br />
         <br />
@@ -27,7 +24,6 @@
         </f:Button>
     </form>
     <script type="text/javascript">
-
         var basePath = '<%= PageContext.ResolveUrl("~/") %>';
 
         function onOpenHelloFineUIClick(event) {
@@ -35,7 +31,7 @@
                 id: 'hello_fineui_tab',
                 iframeUrl: basePath + 'basic/hello.aspx',
                 title: '你好 FineUI.Pro',
-                icon: basePath + 'res/images/filetype/vs_aspx.png',
+                icon: basePath + 'res/images/filetype/vs-aspx.png',
                 refreshWhenExist: true
             });
         }
@@ -54,6 +50,7 @@
         function onCloseActiveTabClick(event) {
             parent.removeActiveTab();
         }
+
     </script>
 </body>
 </html>

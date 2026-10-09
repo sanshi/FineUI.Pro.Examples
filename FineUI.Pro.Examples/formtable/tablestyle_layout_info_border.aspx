@@ -5,11 +5,11 @@
 <html>
 <head runat="server">
     <title></title>
-    <meta name="sourcefiles" content="~/res/css/tablestyle_noborder.css" />
+    <meta name="sourcefiles" content="~/res/css/tablestyle-noborder.css" />
     <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
     <asp:PlaceHolder runat="server">
 
-        <link href="<%= PageContext.ResolveUrl("~/res/css/tablestyle_noborder.css") %>" rel="stylesheet" />
+        <link href="<%= PageContext.ResolveUrl("~/res/css/tablestyle-noborder.css") %>" rel="stylesheet" />
         <style>
             .userphoto {
                 text-align: center;
@@ -100,7 +100,7 @@
                                 <f:Panel ID="Panel5" CssClass="nolabelpanel" Title="面板1" BoxFlex="2" runat="server" ShowBorder="false" ShowHeader="false"
                                     Layout="VBox">
                                     <Items>
-                                        <f:Image ID="Image1" ImageUrl="~/res/images/blank_180.png" ImageHeight="120px" runat="server" BoxFlex="1"
+                                        <f:Image ID="Image1" ImageUrl="~/res/images/blank-180.png" ImageHeight="120px" runat="server" BoxFlex="1"
                                             CssClass="userphoto">
                                         </f:Image>
                                         <f:FileUpload ID="FileUpload1" runat="server" ButtonText="上传照片" ButtonOnly="true" CssClass="uploadbutton">

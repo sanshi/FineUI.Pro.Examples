@@ -9,11 +9,11 @@
             text-align: center;
         }
 
-            .mypic img {
-                border-radius: 50%;
-                width: 100px;
-                height: 100px;
-            }
+        .mypic img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
 
         .myhyperlinkcontainer {
             text-align: center;
@@ -25,9 +25,9 @@
             margin-right: 5px;
         }
 
-            .myhyperlink a {
-                font-size: 0.8em;
-            }
+        .myhyperlink a {
+            font-size: 0.8em;
+        }
 
 
         .myerrorlist {
@@ -35,9 +35,9 @@
             padding: 0 0 0 30px;
         }
 
-            .myerrorlist li {
-                margin: 10px 0;
-            }
+        .myerrorlist li {
+            margin: 10px 0;
+        }
 
         .myerrorlist-errorfield {
             margin-bottom: 5px;
@@ -47,6 +47,7 @@
         .myerrorlist-errormsg {
             font-size: 14px;
         }
+
     </style>
 </head>
 <body>
@@ -60,9 +61,9 @@
             <Items>
                 <f:SimpleForm ID="SimpleForm1" runat="server" ShowBorder="false" ShowHeader="false" Layout="VBox" MessageTarget="None">
                     <Items>
-                        <f:Image runat="server" CssClass="mypic" ImageUrl="~/res/images/my_face_80.jpg"></f:Image>
-                        <f:TextBox ID="tbxUserName" Label="电子邮箱" ShowLabel="false" EmptyText="请输入电子邮箱" Required="true"
-                            RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址" runat="server">
+                        <f:Image runat="server" CssClass="mypic" ImageUrl="~/res/images/my-face-80.jpg"></f:Image>
+                        <f:TextBox ID="tbxUserName" Label="电子邮箱" ShowLabel="false" EmptyText="请输入电子邮箱" Required="true" RegexPattern="EMAIL"
+                            RegexMessage="请输入有效的邮箱地址" runat="server">
                         </f:TextBox>
                         <f:TextBox ID="tbxPassword" Label="密码" ShowLabel="false" TextMode="Password" EmptyText="请输入密码" Required="true" runat="server">
                         </f:TextBox>
@@ -70,8 +71,10 @@
                         </f:Button>
                         <f:Panel runat="server" CssClass="myhyperlinkcontainer" ShowBorder="false" ShowHeader="false">
                             <Items>
-                                <f:HyperLink ID="HyperLink1" runat="server" CssClass="myhyperlink" NavigateUrl="http://fineui.com/bbs/" Text="新用户注册"></f:HyperLink>
-                                <f:HyperLink ID="HyperLink2" runat="server" CssClass="myhyperlink" NavigateUrl="http://fineui.com/bbs/" Text="忘记密码？"></f:HyperLink>
+                                <f:HyperLink ID="HyperLink1" runat="server" CssClass="myhyperlink" NavigateUrl="http://fineui.com/bbs/" Text="新用户注册">
+                                </f:HyperLink>
+                                <f:HyperLink ID="HyperLink2" runat="server" CssClass="myhyperlink" NavigateUrl="http://fineui.com/bbs/" Text="忘记密码？">
+                                </f:HyperLink>
                             </Items>
                         </f:Panel>
                     </Items>
@@ -80,7 +83,6 @@
         </f:Panel>
     </form>
     <script>
-
         var SimpleForm1ClientID = '<%= SimpleForm1.ClientID %>';
 
         // 验证表单
@@ -96,7 +98,8 @@
 
 
             // 验证失败的字段（包含多个）
-            var alertHtml = ['<ul class="myerrorlist">'], loopItem;
+            var alertHtml = ['<ul class="myerrorlist">'],
+                loopItem;
             for (var i = 1, count = validResult.length; i < count; i++) {
                 loopItem = validResult[i];
                 alertHtml.push('<li><div class="myerrorlist-errorfield">' + F.htmlEncode(loopItem.fieldLabel) + '</div>' +
@@ -110,7 +113,7 @@
                 messageIcon: '',
                 header: false,
                 buttonPlain: true,
-                ok: function () {
+                ok: function() {
                     // 让第一个验证失败的字段获取焦点
                     validResult[1].focus(true, 200);
                 }

@@ -44,7 +44,7 @@
                 if (fileType === 'png' || fileType === 'ico' || fileType === 'gif') {
                     rowData.iconFont = 'f-iconfont-pic';
                 } else {
-                    rowData.icon = F.resolveUrl('/res/images/filetype/vs_' + fileType + '.png');
+                    rowData.icon = F.resolveUrl('/res/images/filetype/vs-' + fileType + '.png');
                 }
             }
         }

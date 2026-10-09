@@ -11,9 +11,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid EnableAfterEditEvent="true" OnAfterEdit="Grid1_AfterEdit" AllowCellEditing="true" DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格"
-            EnableCollapse="false" ShowBorder="true" ShowHeader="true" runat="server" EnableCheckBoxSelect="true" DataKeyNames="Id,Name,TreeLevel"
-            OnRowCommand="Grid1_RowCommand" OnRowDataBound="Grid1_RowDataBound">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true" runat="server"
+            EnableCheckBoxSelect="true" DataKeyNames="Id,Name,TreeLevel" OnRowDataBound="Grid1_RowDataBound">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField DataField="Name" DataSimulateTreeLevelField="TreeLevel" EncodeText="true" HeaderText="地区" ExpandUnusedSpace="true"
@@ -35,6 +34,9 @@
                     </Columns>
                 </f:GroupField>
             </Columns>
+            <Listeners>
+                <f:Listener Event="rowcommand" Handler="onGrid1RowCommand" />
+            </Listeners>
         </f:Grid>
         <br />
         <f:Label ID="labResult" EncodeText="false" runat="server">
@@ -48,6 +50,22 @@
         </ul>
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
-    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
+    <script>
+        function onGrid1RowCommand(event, rowId, rowIndex, columnId, commandName) {
+            var grid = F('<%= Grid1.ClientID %>');
+            F.customEvent('GridRowCommand', {
+                rowId: rowId,
+                columnId: columnId,
+                commandName: commandName,
+                isChecked: grid.getRowEl(rowId).find('.f-grid-cell-CheckBoxField1 .f-grid-checkbox').hasClass('f-checked')
+            });
+        }
+
+        F.ready(function() {
+            bindGridCheckChange(F('<%= Grid1.ClientID %>'), 'CheckBoxField1');
+        });
+
+    </script>
 </body>
 </html>

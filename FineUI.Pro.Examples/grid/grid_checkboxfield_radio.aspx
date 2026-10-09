@@ -17,8 +17,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid AllowCellEditing="true" DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
-            runat="server">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true" runat="server">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField ExpandUnusedSpace="true" MinWidth="150px" DataField="Name" HeaderText="姓名" />
@@ -32,30 +31,40 @@
         </f:Grid>
         <br />
         <br />
-        <f:Button ID="Button1" runat="server" Text="选中行复选框的状态" OnClick="Button1_Click">
+        <f:Button ID="Button1" runat="server" Text="选中行复选框的状态" ClickHandler="onReadCheckStatesClick">
         </f:Button>
         <br />
         <f:Label ID="labResult" EncodeText="false" runat="server">
         </f:Label>
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
-    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
     <script>
+        function onReadCheckStatesClick(event) {
+            var grid = F('<%= Grid1.ClientID %>');
+            F.customEvent('CheckSelectedRows', {
+                rows: getGridCheckRows(grid, ["CheckBoxField1", "CheckBoxField2", "CheckBoxField3"], true)
+            });
+            return false;
+        }
+
         var grid1ClientID = '<%= Grid1.ClientID %>';
 
         F.ready(function() {
             var grid = F(grid1ClientID);
-            // 等框架写入新布尔值后再处理互斥；点击时读取图标可能仍是修改前的状态。
-            grid.on('afteredit', function(event, value, params) {
-                var checkColumns = ['CheckBoxField1', 'CheckBoxField2', 'CheckBoxField3'];
-                if (value !== true || checkColumns.indexOf(params.columnId) < 0) {
+            grid.el.on('click', '.f-grid-checkboxfield .f-grid-checkbox', function(event) {
+                var checkboxEl = $(this);
+                if (!checkboxEl.hasClass('f-checked')) {
                     return;
                 }
-                grid.resolveRow(function(rowData) {
-                    if (rowData.id !== params.rowId) {
-                        grid.updateCellValue(rowData.id, params.columnId, false);
-                    }
+                var columnId = checkboxEl.closest('.f-grid-cell').attr('data-columnid');
+                var currentRowId = grid.getRowData(checkboxEl.closest('.f-grid-row')).id;
+                var otherRowIDs = grid.getRowEls().map(function() {
+                    return grid.getRowData($(this)).id;
+                }).get().filter(function(rowId) {
+                    return rowId !== currentRowId;
                 });
+                setGridCheckColumns(grid, otherRowIDs, [columnId], false);
             });
         });
 

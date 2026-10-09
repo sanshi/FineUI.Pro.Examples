@@ -28,15 +28,15 @@
         <ol>
             <li>展开IIS管理器，在网站菜单上点击右键，点击属性菜单，选择服务选项卡，按下图选中启用压缩的复选框。
                 <br />
-                <img src="<%= PageContext.ResolveUrl("~/res/images/enable_gzip_iis6_1.png") %>" />
+                <img src="<%= PageContext.ResolveUrl("~/res/images/enable-gzip-iis6-1.png") %>" />
                 <br />
-                <img src="<%= PageContext.ResolveUrl("~/res/images/enable_gzip_iis6_2.png") %>" />
+                <img src="<%= PageContext.ResolveUrl("~/res/images/enable-gzip-iis6-2.png") %>" />
                 <br />
             </li>
             <li>从<a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=56fc92ee-a71a-4c73-b628-ade629c89499&DisplayLang=en">这里</a>下载IIS
                 6.0资源工具包，安装后运行Metabase Explorer。
                 <br />
-                <img src="<%= PageContext.ResolveUrl("~/res/images/enable_gzip_iis6_3.png") %>" />
+                <img src="<%= PageContext.ResolveUrl("~/res/images/enable-gzip-iis6-3.png") %>" />
                 <br />
             </li>
             <li>展开 LM>W3SVC>Filters>Compression，你需要如下编辑 gzip 和 deflate 两个菜单。
@@ -47,12 +47,12 @@
                 <br />
                 HcFileExtensions:htm,html,js,css
                 <br />
-                <img src="<%= PageContext.ResolveUrl("~/res/images/enable_gzip_iis6_4.png") %>" />
+                <img src="<%= PageContext.ResolveUrl("~/res/images/enable-gzip-iis6-4.png") %>" />
                 <br />
             </li>
             <li>重启IIS。
                 <br />
-                <img src="<%= PageContext.ResolveUrl("~/res/images/enable_gzip_iis6_5.png") %>" />
+                <img src="<%= PageContext.ResolveUrl("~/res/images/enable-gzip-iis6-5.png") %>" />
             </li>
         </ol>
         <div>

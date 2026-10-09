@@ -13,8 +13,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid AllowCellEditing="true" DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true"
-            runat="server" OnRowCommand="Grid1_RowCommand">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" Title="表格" EnableCollapse="false" ShowBorder="true" ShowHeader="true" runat="server"
+            OnRowCommand="Grid1_RowCommand">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField DataField="Name" HeaderText="姓名" />
@@ -36,21 +36,29 @@
             </Columns>
         </f:Grid>
         <br />
-        <f:Button ID="Button1" runat="server" Text="选中行复选框的状态" OnClick="Button1_Click">
+        <f:Button ID="Button1" runat="server" Text="选中行复选框的状态" ClickHandler="onReadCheckStatesClick">
         </f:Button>
         <br />
         <f:Label ID="labResult" EncodeText="false" runat="server">
         </f:Label>
         <br />
         <br />
-        注：这里使用的是行预绑定事件（PreRowDataBound），而不是行绑定事件（RowDataBound）！
+        注：入学年份不晚于 2004 年的行，通过列渲染函数禁用复选框。
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
-    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-pro.js") %>"></script>
+    <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
     <script>
+        function onReadCheckStatesClick(event) {
+            var grid = F('<%= Grid1.ClientID %>');
+            F.customEvent('CheckSelectedRows', {
+                rows: getGridCheckRows(grid, ["AtSchool2"], true)
+            });
+            return false;
+        }
+
         function renderAtSchool(value, params) {
             if (Number(params.rowData.values.EntranceYear) <= 2004) {
-                // 同时禁用单元格编辑，点击图标或单元格空白处都不能改变状态。
+                // 较早入学的行保持初始状态，点击复选框不能改变勾选。
                 params.cellCls = 'f-state-disabled f-grid-cell-uneditable';
             }
             return value;

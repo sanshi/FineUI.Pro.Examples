@@ -53,7 +53,7 @@
         <div class="phonebg">
             <asp:Literal ID="litIFrame" runat="server"></asp:Literal>
             <div class="qrcode">
-                <img src="<%= PageContext.ResolveUrl("~/res/images/fineuipro_mobile.png?v2") %>" />
+                <img src="<%= PageContext.ResolveUrl("~/res/images/fineuipro-mobile.png?v2") %>" />
                 <div class="desc">
                     请打开手机，扫描二维码
                     <br />
