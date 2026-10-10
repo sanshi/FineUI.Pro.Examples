@@ -54,11 +54,12 @@
             var grid = F(grid1ClientID);
             grid.el.on('click', '.f-grid-checkboxfield .f-grid-checkbox', function(event) {
                 var checkboxEl = $(this);
-                if (!checkboxEl.hasClass('f-checked')) {
+                var columnId = checkboxEl.closest('.f-grid-cell').attr('data-columnid');
+                var rowData = grid.getRowData(checkboxEl.closest('.f-grid-row'));
+                if (!rowData.values[columnId]) {
                     return;
                 }
-                var columnId = checkboxEl.closest('.f-grid-cell').attr('data-columnid');
-                var currentRowId = grid.getRowData(checkboxEl.closest('.f-grid-row')).id;
+                var currentRowId = rowData.id;
                 var otherRowIDs = grid.getRowEls().map(function() {
                     return grid.getRowData($(this)).id;
                 }).get().filter(function(rowId) {

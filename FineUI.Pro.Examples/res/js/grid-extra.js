@@ -20,7 +20,7 @@ function renderDisabledCheck(value, params) {
     return value;
 }
 
-// 普通表格点击复选框不会更新行数据，查询时读取当前图标，而不是 values 中的初始值。
+// 复选框点击后已同步行数据，按列标识符读取当前状态并交给后台。
 // columnIds 指定需要提交的复选框列；selectedOnly 为 false 时读取全部行（包括折叠的树节点）。
 // 行号和姓名随状态一起提交，后台直接展示即可；使用数组保留选择顺序，避免数字 ID 对象键被重新排序。
 function getGridCheckRows(grid, columnIds, selectedOnly) {
@@ -49,22 +49,22 @@ function getGridCheckRows(grid, columnIds, selectedOnly) {
             gender: parseInt(rowData.values.Gender, 10)
         };
         columnIds.forEach(function (columnId) {
-            values[columnId] = rowEl.find('.f-grid-cell-' + columnId + ' .f-grid-checkbox').hasClass('f-checked');
+            values[columnId] = rowData.values[columnId];
         });
         rows.push(values);
     });
     return rows;
 }
 
-// 批量设值前把行数据同步到当前界面，保证原来绑定为 true、后来手动取消的行也能再次勾选。
-// 使用公开的更新接口同步图标和开关文字，不需要给普通表格开启单元格编辑。
+// 批量勾选通过更新接口同步行数据、图标和开关文字，不新增编辑修改记录。
 function setGridCheckColumns(grid, rowIds, columnIds, isChecked) {
     rowIds.forEach(function (rowId) {
-        var rowEl = grid.getRowEl(rowId);
-        var rowData = grid.getRowData(rowEl);
         columnIds.forEach(function (columnId) {
-            rowData.values[columnId] = rowEl.find('.f-grid-cell-' + columnId + ' .f-grid-checkbox').hasClass('f-checked');
-            grid.updateCellValue(rowId, columnId, isChecked, true);
+            // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+            // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+            grid.updateCellValue(rowId, {
+                [columnId]: isChecked
+            }, true);
         });
     });
 }
@@ -79,6 +79,10 @@ function setSelectedCheckColumns(gridId, columnIds, isChecked) {
 function bindGridCheckChange(grid, columnId) {
     grid.el.on('click', '.f-grid-cell-' + columnId + ' .f-grid-checkbox', function (event) {
         var checkboxEl = $(this);
+        // 同列标识符可能出现在嵌套表格中；父表格不能替子表格提交状态。
+        if (!checkboxEl.closest('.f-grid').is(grid.el)) {
+            return;
+        }
         if (checkboxEl.hasClass('f-state-disabled')
             || checkboxEl.parentsUntil('.f-grid-row', '.f-state-disabled').length) {
             return;
@@ -87,7 +91,7 @@ function bindGridCheckChange(grid, columnId) {
         F.customEvent('GridCheckChanged', {
             rowId: rowData.id,
             columnId: columnId,
-            isChecked: checkboxEl.hasClass('f-checked')
+            isChecked: rowData.values[columnId]
         });
     });
 }

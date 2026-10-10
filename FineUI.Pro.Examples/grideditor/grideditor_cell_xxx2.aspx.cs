@@ -168,7 +168,7 @@ namespace FineUI.Pro.Examples.grideditor
                 }
                 catch (Exception)
                 {
-                    // nothing
+                    // 关闭参数不是有效 JSON 时，保留原表格数据。
                 }
 
                 if (dataObj != null)
@@ -181,13 +181,15 @@ namespace FineUI.Pro.Examples.grideditor
                     bool atSchool = dataObj.Value<bool>("AtSchool");
                     string major = dataObj.Value<string>("Major");
 
+                    // 用列 ID 与值组成对象，逐项生成更新脚本，保留原来的更新顺序。
+                    // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
                     StringBuilder sb = new StringBuilder();
-                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, "Name", name));
-                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, "Gender", gender));
-                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, "EntranceYear", entranceYear));
-                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, "EntranceDate", entranceDate));
-                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, "AtSchool", atSchool.ToString().ToLower()));
-                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, "Major", major));
+                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, new JObject { { "Name", name } }));
+                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, new JObject { { "Gender", gender } }));
+                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, new JObject { { "EntranceYear", entranceYear } }));
+                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, new JObject { { "EntranceDate", entranceDate } }));
+                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, new JObject { { "AtSchool", atSchool.ToString().ToLower() } }));
+                    sb.Append(Grid1.GetUpdateCellValueReference(rowid, new JObject { { "Major", major } }));
 
                     PageContext.RegisterStartupScript(sb.ToString());
                 }

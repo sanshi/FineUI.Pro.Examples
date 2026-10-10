@@ -78,8 +78,14 @@
             var checkboxFieldID = this.getAttr('data-tag'),
                 checked = this.getValue();
 
-            var checkboxEls = grid1.el.find('.f-grid-cell-' + checkboxFieldID + ' .f-grid-checkbox');
-            checkboxEls.toggleClass('f-checked', checked);
+            // 更新接口同时切换开关显示和当前行值，不新增编辑修改记录。
+            grid1.getRowEls().each(function() {
+                // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                grid1.updateCellValue($(this), {
+                    [checkboxFieldID]: checked
+                }, true);
+            });
         }
 
     </script>

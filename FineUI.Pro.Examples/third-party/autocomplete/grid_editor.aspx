@@ -204,6 +204,8 @@
                     var selectedCell = grid.getSelectedCell();
                     var rowId = selectedCell[0];
 
+                    // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                    // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
                     grid.updateCellValue(rowId, {
                         'Name': ui.item.value,
                         'Gender': ui.item.gender,

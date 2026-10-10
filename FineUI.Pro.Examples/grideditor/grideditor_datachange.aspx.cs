@@ -56,7 +56,11 @@ namespace FineUI.Pro.Examples.grideditor
         protected void btnUpdateCells_Click(object sender, EventArgs e)
         {
             // 使用稳定行 ID，单列和多列修改均保留编辑记录，不重绑数据。
-            PageContext.RegisterStartupScript(Grid1.GetUpdateCellValueReference("101", "Name", "服务端修改"));
+            // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+            PageContext.RegisterStartupScript(Grid1.GetUpdateCellValueReference("101", new JObject
+            {
+                { "Name", "服务端修改" }
+            }));
             PageContext.RegisterStartupScript(Grid1.GetUpdateCellValueReference("101", new JObject
             {
                 { "Gender", 0 }, { "Major", "服务端专业" }

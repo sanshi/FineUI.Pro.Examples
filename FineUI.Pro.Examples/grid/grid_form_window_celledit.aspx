@@ -175,6 +175,8 @@
             var rowId = F(hfFormIDClientID).getValue();
 
             if (rowId) {
+                // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
                 grid1.updateCellValue(rowId, {
                     'Name': F(tbxFormUserNameClientID).getValue(),
                     'Gender': F(rblFormGenderClientID).getValue(),

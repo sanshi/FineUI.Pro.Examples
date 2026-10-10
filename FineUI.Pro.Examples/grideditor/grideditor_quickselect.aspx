@@ -113,6 +113,8 @@
             var grid1 = F(grid1ClientID);
             var rowValue = this.getRowValue(grid2RowId);
 
+            // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+            // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
             grid1.updateCellValue(currentQuickSelectRowId, {
                 'Code': grid2RowId,
                 'Name': rowValue.Name,

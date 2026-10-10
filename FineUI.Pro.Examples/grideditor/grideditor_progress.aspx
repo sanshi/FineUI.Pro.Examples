@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false"
-            runat="server" AllowCellEditing="true" ClicksToEdit="1">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" runat="server"
+            AllowCellEditing="true" ClicksToEdit="1">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名">
@@ -19,8 +19,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                     <Editor>
                         <f:DropDownList ID="ddlGender" Required="true" runat="server">
                             <f:ListItem Text="男" Value="1" />
@@ -52,17 +51,16 @@
         <f:Label ID="labResult" EncodeText="false" runat="server">
         </f:Label>
         <br />
-        
+
     </form>
     <script>
-
         var grid1ClientID = '<%= Grid1.ClientID %>';
 
         function renderGender(value) {
             return value == 1 ? '男' : '女';
         }
 
-        
+
         function renderProgress1(value) {
             return F.progressHtml(value, {
                 textVisible: true
@@ -77,10 +75,10 @@
             });
         }
 
-        
+
         function changeProgress1(increment) {
             var grid1 = F(grid1ClientID);
-            grid1.getRowEls().each(function () {
+            grid1.getRowEls().each(function() {
                 var rowEl = $(this);
                 var progressEl = rowEl.find('.f-grid-cell-Progress1 .f-progressbar-outer');
                 var progressValue = parseInt(progressEl.attr('data-progressvalue'));
@@ -93,7 +91,11 @@
                     progressValue = 0;
                 }
 
-                grid1.updateCellValue(rowEl, 'Progress1', progressValue);
+                // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                grid1.updateCellValue(rowEl, {
+                    Progress1: progressValue
+                });
             });
         }
 

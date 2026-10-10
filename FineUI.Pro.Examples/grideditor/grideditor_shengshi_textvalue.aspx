@@ -9,8 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false"
-            runat="server"
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false" runat="server"
             AllowCellEditing="true" ClicksToEdit="1">
             <Columns>
                 <f:RowNumberField></f:RowNumberField>
@@ -20,8 +19,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                     <Editor>
                         <f:DropDownList ID="ddlGender" Required="true" runat="server">
                             <f:ListItem Text="男" Value="1" />
@@ -29,15 +27,13 @@
                         </f:DropDownList>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="Sheng" DataField="Sheng"
-                    HeaderText="所在省" RendererFunction="renderSheng">
+                <f:RenderField Width="150px" ColumnID="Sheng" DataField="Sheng" HeaderText="所在省" RendererFunction="renderSheng">
                     <Editor>
                         <f:DropDownList ID="ddlSheng" Required="true" runat="server">
                         </f:DropDownList>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="Shi" DataField="Shi"
-                    HeaderText="所在市" RendererFunction="renderShi">
+                <f:RenderField Width="150px" ColumnID="Shi" DataField="Shi" HeaderText="所在市" RendererFunction="renderShi">
                     <Editor>
                         <f:DropDownList ID="ddlShi" Required="true" runat="server">
                         </f:DropDownList>
@@ -71,7 +67,6 @@
         </ul>
     </form>
     <script>
-
         var gridClientID = '<%= Grid1.ClientID %>';
         var ddlShiClientID = '<%= ddlShi.ClientID %>';
         var ddlShengClientID = '<%= ddlSheng.ClientID %>';
@@ -132,7 +127,8 @@
 
         // 根据省代码获取省名称
         function getShengName(shengValue) {
-            var shengName = '', sheng;
+            var shengName = '',
+                sheng;
             if (shengValue) {
                 for (var i = 0, count = window._SHENG.length; i < count; i++) {
                     sheng = window._SHENG[i];
@@ -147,7 +143,8 @@
 
         // 根据省代码和市代码获取市名称
         function getShiName(shengValue, shiValue) {
-            var shiData = window._SHI[shengValue], shi, shiName = '';
+            var shiData = window._SHI[shengValue],
+                shi, shiName = '';
             if (shiData) {
                 for (var i = 0, count = shiData.length; i < count; i++) {
                     shi = shiData[i];
@@ -161,7 +158,7 @@
         }
 
         // 页面加载完毕
-        F.ready(function () {
+        F.ready(function() {
             F(ddlShengClientID).loadData(window._SHENG);
         });
 
@@ -196,7 +193,11 @@
                     var shi = grid.getCellValue(params.rowId, 'Shi');
                     // 如果结束编辑时，市 不属于 当前 省，则清空 市
                     if ($.inArray(shi, shidata) < 0) {
-                        grid.updateCellValue(params.rowId, 'Shi', '');
+                        // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                        // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                        grid.updateCellValue(params.rowId, {
+                            Shi: ''
+                        });
                     }
                 }
             }

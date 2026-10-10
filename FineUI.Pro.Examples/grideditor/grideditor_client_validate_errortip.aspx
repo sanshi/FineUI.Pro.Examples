@@ -196,9 +196,15 @@
                 columnId = params.columnId;
             if (columnId === 'Name') {
                 if (!value) {
-                    grid1.updateCellValue(rowId, 'Name.cls', 'errortip');
+                    // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                    // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                    grid1.updateCellValue(rowId, {
+                        'Name.cls': 'errortip'
+                    });
                 } else {
-                    grid1.updateCellValue(rowId, 'Name.cls', '');
+                    grid1.updateCellValue(rowId, {
+                        'Name.cls': ''
+                    });
                 }
             }
         }
@@ -209,7 +215,9 @@
             var grid1 = F(grid1ClientID);
 
             $.each(grid1.data, function(index, rowData) {
-                grid1.updateCellValue(rowData.id, 'Name.cls', '');
+                grid1.updateCellValue(rowData.id, {
+                    'Name.cls': ''
+                });
             });
         }
 

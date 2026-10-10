@@ -138,20 +138,34 @@
                     var priceWithTax = (value * 1.03).toFixed(2);
                     var tax = (parseFloat(priceWithTax) - value).toFixed(2);
 
-                    me.updateCellValue(rowId, 'PriceWithTax', priceWithTax);
-                    me.updateCellValue(rowId, 'Tax', tax);
+                    // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                    // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                    me.updateCellValue(rowId, {
+                        PriceWithTax: priceWithTax
+                    });
+                    me.updateCellValue(rowId, {
+                        Tax: tax
+                    });
                 } else if (columnId === 'PriceWithTax') {
                     var price = (value / 1.03).toFixed(2);
                     var tax = (value - parseFloat(price)).toFixed(2);
 
-                    me.updateCellValue(rowId, 'Price', price);
-                    me.updateCellValue(rowId, 'Tax', tax);
+                    me.updateCellValue(rowId, {
+                        Price: price
+                    });
+                    me.updateCellValue(rowId, {
+                        Tax: tax
+                    });
                 } else if (columnId === 'Tax') {
                     var price = (value / 0.03).toFixed(2);
                     var priceWithTax = (value + parseFloat(price)).toFixed(2);
 
-                    me.updateCellValue(rowId, 'Price', price);
-                    me.updateCellValue(rowId, 'PriceWithTax', priceWithTax);
+                    me.updateCellValue(rowId, {
+                        Price: price
+                    });
+                    me.updateCellValue(rowId, {
+                        PriceWithTax: priceWithTax
+                    });
                 }
 
                 // 更新合计行

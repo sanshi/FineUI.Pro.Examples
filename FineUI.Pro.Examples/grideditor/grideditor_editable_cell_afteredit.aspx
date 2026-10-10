@@ -9,10 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false"
-            runat="server"
-            AllowCellEditing="true" ClicksToEdit="1"
-            OnRowDataBound="Grid1_RowDataBound">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false" runat="server"
+            AllowCellEditing="true" ClicksToEdit="1" OnRowDataBound="Grid1_RowDataBound">
             <Columns>
                 <f:RowNumberField></f:RowNumberField>
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名">
@@ -21,8 +19,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                     <Editor>
                         <f:DropDownList ID="ddlGender" Required="true" runat="server">
                             <f:ListItem Text="男" Value="1" />
@@ -32,13 +29,12 @@
                 </f:RenderField>
                 <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份">
                     <Editor>
-                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000"
-                            MaxValue="2025" runat="server">
+                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期">
+                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                    HeaderText="入学日期">
                     <Editor>
                         <f:DatePicker ID="DatePicker1" Required="true" runat="server">
                         </f:DatePicker>
@@ -72,7 +68,6 @@
         注：修改[是否在校]会同时改变[所学专业]单元格的可编辑状态。
     </form>
     <script>
-
         var Grid1ClientID = '<%= Grid1.ClientID %>';
 
         function renderGender(value) {
@@ -80,13 +75,21 @@
         }
 
         function onGridAfterEdit(event, value, params) {
-            var grid1 = this, rowId = params.rowId, columnId = params.columnId;
+            var grid1 = this,
+                rowId = params.rowId,
+                columnId = params.columnId;
 
             if (columnId === 'AtSchool') {
                 if (!value) {
-                    grid1.updateCellValue(rowId, 'Major.cls', 'f-grid-cell-uneditable');
+                    // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                    // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                    grid1.updateCellValue(rowId, {
+                        'Major.cls': 'f-grid-cell-uneditable'
+                    });
                 } else {
-                    grid1.updateCellValue(rowId, 'Major.cls', '');
+                    grid1.updateCellValue(rowId, {
+                        'Major.cls': ''
+                    });
                 }
             }
         }

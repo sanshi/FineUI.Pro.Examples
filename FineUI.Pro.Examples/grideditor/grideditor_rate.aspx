@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false"
-            runat="server" AllowCellEditing="true" ClicksToEdit="1">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格" EnableCollapse="false" runat="server"
+            AllowCellEditing="true" ClicksToEdit="1">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名">
@@ -19,8 +19,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                     <Editor>
                         <f:DropDownList ID="ddlGender" Required="true" runat="server">
                             <f:ListItem Text="男" Value="1" />
@@ -47,10 +46,9 @@
         <f:Label ID="labResult" EncodeText="false" runat="server">
         </f:Label>
         <br />
-        
+
     </form>
     <script>
-
         var grid1ClientID = '<%= Grid1.ClientID %>';
 
         function renderGender(value) {
@@ -58,6 +56,7 @@
         }
 
         var desc = ['terrible', 'bad', 'normal', 'good', 'wonderful'];
+
         function renderRate2Text(val) {
             var rateText = '-';
             if (val > 0) {
@@ -89,12 +88,12 @@
         }
 
 
-        F.ready(function () {
+        F.ready(function() {
 
             var grid1 = F(grid1ClientID);
 
             // 注册评分事件
-            F.rateEvents(grid1.el, function (event, value) {
+            F.rateEvents(grid1.el, function(event, value) {
                 var target = $(event.target);
                 var cellEl = target.closest('.f-grid-cell');
 
@@ -102,7 +101,11 @@
                 var columnId = grid1.getColumnId(cellEl);
 
                 // 更新单元格的值
-                grid1.updateCellValue(rowId, columnId, value);
+                // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                grid1.updateCellValue(rowId, {
+                    [columnId]: value
+                });
             });
 
         });

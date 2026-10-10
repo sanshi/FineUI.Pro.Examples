@@ -57,13 +57,14 @@
             var grid = F(gridClientID);
             grid.el.on('click', '.f-grid-cell-CheckBoxField1 .f-grid-checkbox', function(event) {
                 var checkboxEl = $(this);
-                if (!checkboxEl.hasClass('f-checked')) {
+                var row = checkboxEl.closest('.f-grid-row');
+                var rowData = grid.getRowData(row);
+                if (!rowData.values.CheckBoxField1) {
                     return;
                 }
-                var row = checkboxEl.closest('.f-grid-row');
-                var group = grid.getRowData(row).values.GroupB;
+                var group = rowData.values.GroupB;
 
-                // 只取消相邻同组的行，保留其它分组的选择；查询时仍读取各行当前图标。
+                // 只取消相邻同组的行，保留其它分组的选择；更新后行数据也保存最新状态。
                 function uncheckRow(nextRow) {
                     var data = grid.getRowData(nextRow);
                     if (data.values.GroupB !== group) {

@@ -9,42 +9,35 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false"
-            runat="server"
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false" runat="server"
             AllowCellEditing="true" ClicksToEdit="1">
             <Columns>
                 <f:RowNumberField></f:RowNumberField>
-                <f:RenderField ColumnID="Year" DataField="Year" FieldType="Int"
-                    HeaderText="年份" ExpandUnusedSpace="true" MinWidth="150px">
+                <f:RenderField ColumnID="Year" DataField="Year" FieldType="Int" HeaderText="年份" ExpandUnusedSpace="true" MinWidth="150px">
                     <Editor>
-                        <f:NumberBox NoDecimal="true" NoNegative="true" MinValue="2000" Required="true"
-                            MaxValue="2025" runat="server">
+                        <f:NumberBox NoDecimal="true" NoNegative="true" MinValue="2000" Required="true" MaxValue="2025" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="XueFei" DataField="XueFei" FieldType="Int"
-                    HeaderText="学费">
+                <f:RenderField ColumnID="XueFei" DataField="XueFei" FieldType="Int" HeaderText="学费">
                     <Editor>
                         <f:NumberBox NoDecimal="true" NoNegative="true" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="ZhusuFei" DataField="ZhusuFei" FieldType="Int"
-                    HeaderText="住宿费">
+                <f:RenderField ColumnID="ZhusuFei" DataField="ZhusuFei" FieldType="Int" HeaderText="住宿费">
                     <Editor>
                         <f:NumberBox NoDecimal="true" NoNegative="true" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="HuoshiFei" DataField="HuoshiFei" FieldType="Int"
-                    HeaderText="伙食费">
+                <f:RenderField ColumnID="HuoshiFei" DataField="HuoshiFei" FieldType="Int" HeaderText="伙食费">
                     <Editor>
                         <f:NumberBox NoDecimal="true" NoNegative="true" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="ShubenFei" DataField="ShubenFei" FieldType="Int"
-                    HeaderText="书本费">
+                <f:RenderField ColumnID="ShubenFei" DataField="ShubenFei" FieldType="Int" HeaderText="书本费">
                     <Editor>
                         <f:NumberBox NoDecimal="true" NoNegative="true" runat="server">
                         </f:NumberBox>
@@ -77,13 +70,12 @@
         </ul>
     </form>
     <script>
-
         function calculateHejiValue(rowValue) {
             var total = 0;
 
             function addColumnValue(columnName) {
                 var columnValue = rowValue[columnName];
-                if (typeof (columnValue) === 'number') {
+                if (typeof(columnValue) === 'number') {
                     total += columnValue;
                 }
             }
@@ -102,7 +94,11 @@
         }
 
         function onGridAfterEdit(event, value, params) {
-            this.updateCellValue(params.rowId, 'Heji', calculateHejiValue(params.rowValue));
+            // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+            // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+            this.updateCellValue(params.rowId, {
+                Heji: calculateHejiValue(params.rowValue)
+            });
         }
 
     </script>

@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false"
-            runat="server" AllowCellEditing="true" ClicksToEdit="1">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false" runat="server"
+            AllowCellEditing="true" ClicksToEdit="1">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名">
@@ -43,7 +43,6 @@
         <br />
     </form>
     <script>
-
         function renderGender(value) {
             return value == 1 ? '男' : '女';
         }
@@ -54,17 +53,20 @@
             // 如果取消复选框选中，则不做处理
             if (value && params.columnId === 'TestColumn1') {
                 // 遍历所有的行
-                grid1.getRowEls().each(function () {
+                grid1.getRowEls().each(function() {
                     var row = grid1.getRowData($(this));
                     if (row.id !== params.rowId) {
                         // 如果不是当前操作的行，则取消单元格选中
-                        grid1.updateCellValue(row.id, params.columnId, false);
+                        // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                        // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                        grid1.updateCellValue(row.id, {
+                            [params.columnId]: false
+                        });
                     }
                 });
 
             }
         }
-
 
     </script>
 </body>

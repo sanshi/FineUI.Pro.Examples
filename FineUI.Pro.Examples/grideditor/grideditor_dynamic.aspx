@@ -42,7 +42,11 @@
                 total += me.getCellValue(rowId, 'Year_' + i);
             }
 
-            me.updateCellValue(rowId, 'TotalFee', total);
+            // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+            // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+            me.updateCellValue(rowId, {
+                TotalFee: total
+            });
         }
 
         function onGridAfterEdit(event, value, params) {
@@ -50,7 +54,9 @@
                 rowId = params.rowId;
             if (params.columnId === 'Year_' + _MINYEAR) {
                 for (var i = _MINYEAR + 1; i <= _MAXYEAR; i++) {
-                    me.updateCellValue(rowId, 'Year_' + i, value);
+                    me.updateCellValue(rowId, {
+                        ['Year_' + i]: value
+                    });
                 }
             }
 

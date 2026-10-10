@@ -153,7 +153,11 @@
                 var chineseScore = me.getCellValue(rowId, 'ChineseScore');
                 var mathScore = me.getCellValue(rowId, 'MathScore');
 
-                me.updateCellValue(rowId, 'TotalScore', chineseScore + mathScore);
+                // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
+                me.updateCellValue(rowId, {
+                    TotalScore: chineseScore + mathScore
+                });
 
             }
         }

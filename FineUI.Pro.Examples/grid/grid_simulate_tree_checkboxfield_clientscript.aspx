@@ -58,7 +58,7 @@
                 rowId: rowId,
                 columnId: columnId,
                 commandName: commandName,
-                isChecked: grid.getRowEl(rowId).find('.f-grid-cell-CheckBoxField1 .f-grid-checkbox').hasClass('f-checked')
+                isChecked: grid.getRowData(rowId).values.CheckBoxField1
             });
         }
 
@@ -72,7 +72,7 @@
             grid.el.on('click', checkboxSelector, function(event) {
                 var rowEl = $(this).closest('.f-grid-row');
                 var rowLevel = getRowLevel(rowEl);
-                var isChecked = $(this).hasClass('f-checked');
+                var isChecked = grid.getRowData(rowEl).values.CheckBoxField1;
                 var childRowIDs = [];
                 var nextRowEl = rowEl.next();
                 while (nextRowEl.length && getRowLevel(nextRowEl) > rowLevel) {

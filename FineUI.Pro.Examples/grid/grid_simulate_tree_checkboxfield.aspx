@@ -58,7 +58,7 @@
                 rowId: rowId,
                 columnId: columnId,
                 commandName: commandName,
-                isChecked: grid.getRowEl(rowId).find('.f-grid-cell-CheckBoxField1 .f-grid-checkbox').hasClass('f-checked')
+                isChecked: grid.getRowData(rowId).values.CheckBoxField1
             });
         }
 

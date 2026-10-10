@@ -135,6 +135,8 @@
                 file.gridRowId = rowId;
 
                 // 更新当前行的数据（最后一个参数是强制更新，不显示左上角红色标记）
+                // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+                // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
                 grid1.updateCellValue(rowId, {
                     'FileName': file.name,
                     'FileType': file.ext,
@@ -162,11 +164,15 @@
             });
 
             uploader.on('uploadSuccess', function(file) {
-                grid1.updateCellValue(file.gridRowId, 'FileStatus', '上传成功', true);
+                grid1.updateCellValue(file.gridRowId, {
+                    FileStatus: '上传成功'
+                }, true);
             });
 
             uploader.on('uploadError', function(file) {
-                grid1.updateCellValue(file.gridRowId, 'FileStatus', '上传出错', true);
+                grid1.updateCellValue(file.gridRowId, {
+                    FileStatus: '上传出错'
+                }, true);
             });
 
             // 不管上传成功还是失败，都会触发 uploadComplete 事件

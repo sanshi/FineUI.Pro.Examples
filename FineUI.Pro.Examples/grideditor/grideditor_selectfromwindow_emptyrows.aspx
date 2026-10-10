@@ -134,6 +134,8 @@
 
             // cancelEdit用来取消编辑
             grid.cancelEdit();
+            // 对象中的键是列 ID，可用同一种写法更新一个或多个单元格。
+            // API：https://fineui.com/js/api/FineUI.Grid.html#updateCellValue
             grid.updateCellValue(selectedRow, values);
         }
 
