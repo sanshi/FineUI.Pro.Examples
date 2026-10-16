@@ -34,7 +34,12 @@
             <li>修改第一列的值，会同时更新后面几列的值</li>
         </ul>
     </form>
+    <script type="application/json" id="yearRange"><%= YearRangeJson %></script>
     <script>
+        var yearRange = JSON.parse(document.getElementById('yearRange').textContent);
+        window._MINYEAR = yearRange.minYear;
+        window._MAXYEAR = yearRange.maxYear;
+
         function updateTotalCell(grid, rowId) {
             var me = grid,
                 total = 0;

@@ -77,7 +77,11 @@
         <br />
 
     </form>
+    <script type="application/json" id="hobbyData"><%= HobbyDataJson %></script>
     <script>
+        // 完整列表包含其它分页中的爱好，编辑和显示时都从这里查名称。
+        window.hobbyTable = JSON.parse(document.getElementById('hobbyData').textContent);
+
         function renderGender(value) {
             return value == 1 ? '男' : '女';
         }

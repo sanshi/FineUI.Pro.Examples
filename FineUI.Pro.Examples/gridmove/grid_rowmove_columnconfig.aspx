@@ -60,8 +60,11 @@
         <br />
         <f:Button runat="server" ID="btnRefresh" Text="刷新本页面（保持列顺序）" ClickHandler="onRefreshClick"></f:Button>
     </form>
+    <script type="application/json" id="defaultColumnConfig"><%= DefaultColumnConfigJson %></script>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
+        window.GRID_COLUMNCONFIG_DEFAULT = JSON.parse(document.getElementById('defaultColumnConfig').textContent);
+
         function onRefreshClick(event) {
             window.location.reload();
         }

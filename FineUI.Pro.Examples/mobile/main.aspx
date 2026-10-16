@@ -199,7 +199,10 @@
         </f:Window>
         <asp:XmlDataSource ID="XmlDataSource1" runat="server" EnableCaching="false" DataFile="~/res/menu.xml"></asp:XmlDataSource>
     </form>
+    <script type="application/json" id="mobile-menu-data"><%= MenuDataJson %></script>
     <script>
+        var MENUSOURCE = JSON.parse(document.getElementById('mobile-menu-data').textContent);
+
         var panel1ClientID = '<%= Panel1.ClientID %>';
         var dataList1ClientID = '<%= DataList1.ClientID %>';
 

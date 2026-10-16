@@ -13,6 +13,9 @@ namespace FineUI.Pro.Examples.grideditor
 {
     public partial class grideditor_dropdownbox_grid_multi_paging : PageBase
     {
+        // 分页编辑器需要完整的爱好名称表；以非执行 JSON 输出，避免把数据拼进脚本。
+        protected string HobbyDataJson { get; private set; } = "[]";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -24,8 +27,10 @@ namespace FineUI.Pro.Examples.grideditor
                 Grid2.DataSource = hobbyTable;
                 Grid2.DataBind();
 
-                string hobbyTableScript = String.Format("window.hobbyTable={0};", JsonConvert.SerializeObject(hobbyTable));
-                PageContext.RegisterPreStartupScript(hobbyTableScript);
+                HobbyDataJson = JsonConvert.SerializeObject(hobbyTable, new JsonSerializerSettings
+                {
+                    StringEscapeHandling = StringEscapeHandling.EscapeHtml
+                });
             }
         }
 

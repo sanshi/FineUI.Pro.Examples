@@ -7,6 +7,7 @@ using System.Data;
 using System.Text;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace FineUI.Pro.Examples.grideditor
 {
@@ -14,6 +15,13 @@ namespace FineUI.Pro.Examples.grideditor
     {
         private int _minYear = 2014;
         private int _maxYear = 2017;
+
+        // 浏览器编辑年份列时使用服务端建列的同一范围，避免两处年份不一致。
+        protected string YearRangeJson => JsonConvert.SerializeObject(new
+        {
+            minYear = _minYear,
+            maxYear = _maxYear
+        });
 
         // 动态创建控件的代码都要放到Page_Init中，参考：http://www.cnblogs.com/sanshi/archive/2012/11/19/2776672.html
         protected void Page_Init(object sender, EventArgs e)
@@ -53,9 +61,6 @@ namespace FineUI.Pro.Examples.grideditor
             {
                 BindGrid();
 
-                // 注册脚本
-                string startScript = String.Format("window._MINYEAR={0};window._MAXYEAR={1};", _minYear, _maxYear);
-                PageContext.RegisterStartupScript(startScript);
             }
         }
 

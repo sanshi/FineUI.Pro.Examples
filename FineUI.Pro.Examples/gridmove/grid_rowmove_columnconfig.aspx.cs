@@ -7,6 +7,7 @@ using System.Data;
 using System.Text;
 using System.IO;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace FineUI.Pro.Examples.grid
 {
@@ -51,6 +52,11 @@ namespace FineUI.Pro.Examples.grid
             }
         };
 
+        // 客户端还原列顺序时读取这一份默认配置，与服务端首次建列使用同一数据。
+        protected string DefaultColumnConfigJson => JsonConvert.SerializeObject(
+            GRID_COLUMNCONFIG_DEFAULT,
+            new JsonSerializerSettings { StringEscapeHandling = StringEscapeHandling.EscapeHtml });
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -82,8 +88,6 @@ namespace FineUI.Pro.Examples.grid
 
                 BindGrid();
 
-                // 输出JS变量
-                PageContext.RegisterStartupScript(String.Format("window.GRID_COLUMNCONFIG_DEFAULT={0};", GRID_COLUMNCONFIG_DEFAULT.ToString(Newtonsoft.Json.Formatting.Indented)));
             }
         }
 

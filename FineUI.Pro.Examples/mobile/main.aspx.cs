@@ -7,11 +7,15 @@ using System.Data;
 using System.Text;
 using System.Xml;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace FineUI.Pro.Examples.mobile
 {
     public partial class main : MobilePageBase
     {
+        // 移动菜单只在首屏读取 XML；页面通过非执行 JSON 数据块交给浏览器逐级显示。
+        protected string MenuDataJson { get; private set; } = "[]";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -49,8 +53,10 @@ namespace FineUI.Pro.Examples.mobile
             //DataList1.DataSource = menuSource;
             //DataList1.DataBind();
 
-            // 注册脚本 - 移动菜单数据源
-            PageContext.RegisterStartupScript(String.Format("window.MENUSOURCE = {0};", menuSource.ToString()));
+            MenuDataJson = JsonConvert.SerializeObject(menuSource, new JsonSerializerSettings
+            {
+                StringEscapeHandling = StringEscapeHandling.EscapeHtml
+            });
         }
 
         private void ResolveXmlNode(XmlNode node, JObject parentMenu)
