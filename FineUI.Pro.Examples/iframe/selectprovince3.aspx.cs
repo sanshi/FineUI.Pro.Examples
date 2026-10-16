@@ -20,7 +20,9 @@ namespace FineUI.Pro.Examples.iframe
 
         private void BindSheng()
         {
-            ddlSheng.DataSource = DataSourceUtil.SHENG_JSON;
+            ddlSheng.DataTextField = "Name";
+            ddlSheng.DataValueField = "Code";
+            ddlSheng.DataSource = ProvinceCityCountyData.Provinces;
             ddlSheng.DataBind();
 
             ddlSheng.Items.Insert(0, new ListItem("选择省份", "-1"));
@@ -30,9 +32,9 @@ namespace FineUI.Pro.Examples.iframe
         {
             if (e.CloseArgument.StartsWith("SelectProvince$"))
             {
-                string provinceName = e.CloseArgument.Substring("SelectProvince$".Length);
+                string provinceCode = e.CloseArgument.Substring("SelectProvince$".Length);
 
-                ddlSheng.SelectedValue = provinceName;
+                ddlSheng.SelectedValue = provinceCode;
             }
         }
     }

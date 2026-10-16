@@ -121,6 +121,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\province-city-county.json" />
     <Content Include="accordion\accordion_toomanypane.aspx" />
     <Content Include="accordion\accordion_tool.aspx" />
     <Content Include="accordion\accordion_tree_index.aspx" />
@@ -1682,6 +1683,7 @@
     </Compile>
     <Compile Include="Code\BigDataUtil.cs" />
     <Compile Include="Code\DataSourceUtil.cs" />
+    <Compile Include="Code\ProvinceCityCountyData.cs" />
     <Compile Include="Code\NewFilteredTable.cs" />
     <Compile Include="Code\FilteredTable.cs" />
     <Compile Include="Code\GridSelectionMessage.cs" />

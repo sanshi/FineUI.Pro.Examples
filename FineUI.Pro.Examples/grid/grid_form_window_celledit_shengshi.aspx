@@ -109,14 +109,18 @@
         <br />
         注：初始[性别]和[入学日期]列处于隐藏状态。
     </form>
+    <script type="application/json" id="provinceCityData"><%= FineUI.Pro.Examples.ProvinceCityCountyData.ProvinceCityJson %></script>
     <script>
+        // 省市数据作为 JSON 放在页面中，列表保存编码，渲染时再查显示名称。
+        var provinceCityData = JSON.parse(document.getElementById('provinceCityData').textContent);
+
         // 根据省代码获取省名称
         function getShengName(shengValue) {
             var shengName = '',
                 sheng;
             if (shengValue) {
-                for (var i = 0, count = window._SHENG.length; i < count; i++) {
-                    sheng = window._SHENG[i];
+                for (var i = 0, count = provinceCityData.provinces.length; i < count; i++) {
+                    sheng = provinceCityData.provinces[i];
                     if (shengValue == sheng[0]) {
                         shengName = sheng[1];
                         break;
@@ -128,7 +132,7 @@
 
         // 根据省代码和市代码获取市名称
         function getShiName(shengValue, shiValue) {
-            var shiData = window._SHI[shengValue],
+            var shiData = provinceCityData.cities[shengValue],
                 shi, shiName = '';
             if (shiData) {
                 for (var i = 0, count = shiData.length; i < count; i++) {
@@ -189,7 +193,7 @@
         // 省下拉列表改变事件处理函数
         function onShengChange(event) {
             var sheng = this.getValue();
-            var shidata = window._SHI[sheng];
+            var shidata = provinceCityData.cities[sheng];
             F(ddlFormShiClientID).loadData(shidata);
         }
 
@@ -229,7 +233,7 @@
             var sheng = rowValue['Sheng'];
             F(ddlFormShengClientID).setValue(sheng);
 
-            var shidata = window._SHI[sheng];
+            var shidata = provinceCityData.cities[sheng];
             F(ddlFormShiClientID).loadData(shidata);
             F(ddlFormShiClientID).setValue(rowValue['Shi']);
 
@@ -304,7 +308,7 @@
 
 
             // 初始化省下拉列表
-            F(ddlFormShengClientID).loadData(window._SHENG);
+            F(ddlFormShengClientID).loadData(provinceCityData.provinces);
 
         });
 

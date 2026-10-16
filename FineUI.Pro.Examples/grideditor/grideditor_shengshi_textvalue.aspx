@@ -66,48 +66,14 @@
             </li>
         </ul>
     </form>
+    <script type="application/json" id="provinceCityData"><%= FineUI.Pro.Examples.ProvinceCityCountyData.ProvinceCityJson %></script>
     <script>
+        // 省市数据作为 JSON 放在页面中，列表保存编码，渲染时再查显示名称。
+        var provinceCityData = JSON.parse(document.getElementById('provinceCityData').textContent);
+
         var gridClientID = '<%= Grid1.ClientID %>';
         var ddlShiClientID = '<%= ddlShi.ClientID %>';
         var ddlShengClientID = '<%= ddlSheng.ClientID %>';
-
-        // 省市的数据输出到前台，类似如下结构
-        /*
-        window._SHENG = [
-            ["001", "北京"],
-            ["002", "河南"],
-            ["003", "河北"],
-            ["004", "湖南"],
-            ["005", "湖北"],
-            ["006", "广西"],
-            ["007", "安徽"]
-        ];
-        window._SHI = {
-            "001": [
-                ["001001", "北京市"]
-            ],
-            "002": [
-                ["002001", "郑州市"],
-                ["002002", "开封市"],
-                ["002003", "洛阳市"],
-                ["002004", "平顶山市"],
-                ["002005", "安阳市"],
-                ["002006", "鹤壁市"],
-                ["002007", "新乡市"],
-                ["002008", "焦作市"],
-                ["002009", "濮阳市"],
-                ["002010", "许昌市"],
-                ["002011", "漯河市"],
-                ["002012", "三门峡市"],
-                ["002013", "南阳市"],
-                ["002014", "商丘市"],
-                ["002015", "信阳市"],
-                ["002016", "周口市"],
-                ["002017", "驻马店市"],
-                ["002018", "济源市"]
-            ]
-        };
-        */
 
         // 渲染性别单元格
         function renderGender(value) {
@@ -130,8 +96,8 @@
             var shengName = '',
                 sheng;
             if (shengValue) {
-                for (var i = 0, count = window._SHENG.length; i < count; i++) {
-                    sheng = window._SHENG[i];
+                for (var i = 0, count = provinceCityData.provinces.length; i < count; i++) {
+                    sheng = provinceCityData.provinces[i];
                     if (shengValue == sheng[0]) {
                         shengName = sheng[1];
                         break;
@@ -143,7 +109,7 @@
 
         // 根据省代码和市代码获取市名称
         function getShiName(shengValue, shiValue) {
-            var shiData = window._SHI[shengValue],
+            var shiData = provinceCityData.cities[shengValue],
                 shi, shiName = '';
             if (shiData) {
                 for (var i = 0, count = shiData.length; i < count; i++) {
@@ -159,7 +125,7 @@
 
         // 页面加载完毕
         F.ready(function() {
-            F(ddlShengClientID).loadData(window._SHENG);
+            F(ddlShengClientID).loadData(provinceCityData.provinces);
         });
 
         // 单元格编辑前
@@ -171,7 +137,7 @@
 
                 var sheng = grid.getCellValue(params.rowId, 'Sheng');
 
-                var shidata = window._SHI[sheng];
+                var shidata = provinceCityData.cities[sheng];
                 if (shidata) {
                     ddlShi.enable();
                     ddlShi.setEmptyText('');
@@ -188,7 +154,7 @@
             var grid = F(gridClientID);
 
             if (params.columnId === 'Sheng') {
-                var shidata = window._SHI[value];
+                var shidata = provinceCityData.cities[value];
                 if (shidata) {
                     var shi = grid.getCellValue(params.rowId, 'Shi');
                     // 如果结束编辑时，市 不属于 当前 省，则清空 市

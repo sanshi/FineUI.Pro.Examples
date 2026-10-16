@@ -27,13 +27,13 @@
                         </f:DropDownList>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="Sheng" DataField="Sheng" HeaderText="所在省">
+                <f:RenderField Width="150px" ColumnID="Sheng" DataField="Sheng" HeaderText="所在省" RendererFunction="renderSheng">
                     <Editor>
                         <f:DropDownList ID="ddlSheng" Required="true" runat="server">
                         </f:DropDownList>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="Shi" DataField="Shi" HeaderText="所在市">
+                <f:RenderField Width="150px" ColumnID="Shi" DataField="Shi" HeaderText="所在市" RendererFunction="renderShi">
                     <Editor>
                         <f:DropDownList ID="ddlShi" Required="true" runat="server">
                         </f:DropDownList>
@@ -67,7 +67,33 @@
             </li>
         </ul>
     </form>
+    <script type="application/json" id="provinceCityData"><%= FineUI.Pro.Examples.ProvinceCityCountyData.ProvinceCityJson %></script>
     <script>
+        // 省市数据作为 JSON 放在页面中，列表保存编码，渲染时再查显示名称。
+        var provinceCityData = JSON.parse(document.getElementById('provinceCityData').textContent);
+
+        // 单元格保存固定编码，渲染时从统一数据查找名称。
+        function findPlaceName(items, code) {
+            if (!items) {
+                return '';
+            }
+            for (var i = 0; i < items.length; i++) {
+                if (items[i][0] === code) {
+                    return items[i][1];
+                }
+            }
+            return '';
+        }
+
+        function renderSheng(value) {
+            return findPlaceName(provinceCityData.provinces, value);
+        }
+
+        function renderShi(value, params) {
+            var provinceCode = params.rowValue['Sheng'];
+            return findPlaceName(provinceCityData.cities[provinceCode], value);
+        }
+
         var gridClientID = '<%= Grid1.ClientID %>';
         var ddlShiClientID = '<%= ddlShi.ClientID %>';
 
@@ -84,7 +110,7 @@
 
                 var sheng = grid.getCellValue(params.rowId, 'Sheng');
 
-                var shidata = window._SHI[sheng];
+                var shidata = provinceCityData.cities[sheng];
                 if (shidata) {
                     ddlShi.enable();
                     ddlShi.setEmptyText('');
@@ -101,7 +127,7 @@
             var grid = F(gridClientID);
 
             if (params.columnId === 'Sheng') {
-                var shidata = window._SHI[value];
+                var shidata = provinceCityData.cities[value];
                 if (shidata) {
                     var shi = grid.getCellValue(params.rowId, 'Shi');
                     // 如果结束编辑时，市 不属于 当前 省，则清空 市

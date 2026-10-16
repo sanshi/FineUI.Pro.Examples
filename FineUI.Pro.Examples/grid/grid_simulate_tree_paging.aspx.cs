@@ -59,34 +59,34 @@ namespace FineUI.Pro.Examples.grid
 
             DataRow row = null;
             String group = String.Empty;
-            foreach (string sheng in DataSourceUtil.SHENG_JSON)
+            foreach (ProvinceCityCountyItem sheng in ProvinceCityCountyData.Provinces)
             {
                 group = GenerateNextGroup().ToString();
 
                 row = table.NewRow();
                 row[0] = GenerateNextID();
-                row[1] = sheng;
+                row[1] = sheng.Name;
                 row[2] = group;
                 row[3] = 0;
                 table.Rows.Add(row);
 
-                foreach (string shi in DataSourceUtil.SHI_JSON[sheng])
+                foreach (ProvinceCityCountyItem shi in ProvinceCityCountyData.Cities(sheng.Code))
                 {
                     row = table.NewRow();
                     row[0] = GenerateNextID();
-                    row[1] = shi;
+                    row[1] = shi.Name;
                     row[2] = group;
                     row[3] = 1;
                     table.Rows.Add(row);
 
-                    JArray xianArray = (JArray)DataSourceUtil.XIAN_JSON[shi];
+                    var xianArray = ProvinceCityCountyData.Counties(shi.Code);
                     if (xianArray != null)
                     {
-                        foreach (string xian in xianArray)
+                        foreach (ProvinceCityCountyItem xian in xianArray)
                         {
                             row = table.NewRow();
                             row[0] = GenerateNextID();
-                            row[1] = xian;
+                            row[1] = xian.Name;
                             row[2] = group;
                             row[3] = 2;
                             table.Rows.Add(row);

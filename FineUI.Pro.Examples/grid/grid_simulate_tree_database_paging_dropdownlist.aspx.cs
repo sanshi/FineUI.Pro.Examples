@@ -25,7 +25,9 @@ namespace FineUI.Pro.Examples.grid
         #region BindShengList
         private void BindShengList()
         {
-            ddlSheng.DataSource = DataSourceUtil.SHENG_JSON;
+            ddlSheng.DataTextField = "Name";
+            ddlSheng.DataValueField = "Code";
+            ddlSheng.DataSource = ProvinceCityCountyData.Provinces;
             ddlSheng.DataBind();
 
             ddlSheng.Items.Insert(0, new ListItem("--选择省份--", "-1"));
@@ -74,7 +76,7 @@ namespace FineUI.Pro.Examples.grid
         {
             if (ddlSheng.SelectedValue == "-1")
             {
-                return DataSourceUtil.SHENG_JSON.Count;
+                return ProvinceCityCountyData.Provinces.Count;
             }
             else
             {
@@ -98,25 +100,25 @@ namespace FineUI.Pro.Examples.grid
             {
                 int rowbegin = pageIndex * pageSize;
                 int rowend = (pageIndex + 1) * pageSize;
-                if (rowend > DataSourceUtil.SHENG_JSON.Count)
+                if (rowend > ProvinceCityCountyData.Provinces.Count)
                 {
-                    rowend = DataSourceUtil.SHENG_JSON.Count;
+                    rowend = ProvinceCityCountyData.Provinces.Count;
                 }
 
                 for (int i = rowbegin; i < rowend; i++)
                 {
-                    string sheng = DataSourceUtil.SHENG_JSON[i].Value<string>();
+                    ProvinceCityCountyItem sheng = ProvinceCityCountyData.Provinces[i];
 
                     string group = GenerateNextGroup().ToString();
 
                     DataRow row = table.NewRow();
                     row[0] = GenerateNextID();
-                    row[1] = sheng;
+                    row[1] = sheng.Name;
                     row[2] = group;
                     row[3] = 0;
                     table.Rows.Add(row);
 
-                    AddShiRows(table, group, sheng);
+                    AddShiRows(table, group, sheng.Code);
 
                 }
             }
@@ -128,7 +130,7 @@ namespace FineUI.Pro.Examples.grid
 
                 DataRow row = table.NewRow();
                 row[0] = GenerateNextID();
-                row[1] = sheng;
+                row[1] = ProvinceCityCountyData.ProvinceName(sheng);
                 row[2] = group;
                 row[3] = 0;
                 table.Rows.Add(row);
@@ -141,23 +143,23 @@ namespace FineUI.Pro.Examples.grid
 
         private void AddShiRows(DataTable table, String group, string sheng)
         {
-            foreach (string shi in DataSourceUtil.SHI_JSON[sheng])
+            foreach (ProvinceCityCountyItem shi in ProvinceCityCountyData.Cities(sheng))
             {
                 DataRow row = table.NewRow();
                 row[0] = GenerateNextID();
-                row[1] = shi;
+                row[1] = shi.Name;
                 row[2] = group;
                 row[3] = 1;
                 table.Rows.Add(row);
 
-                JArray xianArray = (JArray)DataSourceUtil.XIAN_JSON[shi];
+                var xianArray = ProvinceCityCountyData.Counties(shi.Code);
                 if (xianArray != null)
                 {
-                    foreach (string xian in xianArray)
+                    foreach (ProvinceCityCountyItem xian in xianArray)
                     {
                         row = table.NewRow();
                         row[0] = GenerateNextID();
-                        row[1] = xian;
+                        row[1] = xian.Name;
                         row[2] = group;
                         row[3] = 2;
                         table.Rows.Add(row);

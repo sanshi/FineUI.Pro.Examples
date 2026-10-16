@@ -18,13 +18,15 @@ namespace FineUI.Pro.Examples.iframe
 
         private void BindSheng()
         {
-            ddlSheng.DataSource = DataSourceUtil.SHENG_JSON;
+            ddlSheng.DataTextField = "Name";
+            ddlSheng.DataValueField = "Code";
+            ddlSheng.DataSource = ProvinceCityCountyData.Provinces;
             ddlSheng.DataBind();
 
             string selectedParam = Request.QueryString["selected"];
             if (!String.IsNullOrEmpty(selectedParam))
             {
-                ddlSheng.SelectedValue = selectedParam;
+                ddlSheng.SelectedValue = ProvinceCityCountyData.ProvinceCode(selectedParam);
             }
         }
 
@@ -34,7 +36,7 @@ namespace FineUI.Pro.Examples.iframe
         {
             if (!String.IsNullOrEmpty(ddlSheng.SelectedValue) && ddlSheng.SelectedValue != "-1")
             {
-                PageContext.RegisterStartupScript(ActiveWindow.GetWriteBackValueReference(ddlSheng.SelectedValue) + ActiveWindow.GetHideReference());
+                PageContext.RegisterStartupScript(ActiveWindow.GetWriteBackValueReference(ProvinceCityCountyData.ProvinceName(ddlSheng.SelectedValue)) + ActiveWindow.GetHideReference());
             }
         }
 

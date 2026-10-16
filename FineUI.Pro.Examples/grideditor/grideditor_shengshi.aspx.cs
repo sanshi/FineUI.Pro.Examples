@@ -21,12 +21,11 @@ namespace FineUI.Pro.Examples.grideditor
                 BindGrid();
 
                 // 后台绑定 省 下拉列表数据
-                ddlSheng.DataSource = DataSourceUtil.SHENG_JSON;
+                ddlSheng.DataTextField = "Name";
+                ddlSheng.DataValueField = "Code";
+                ddlSheng.DataSource = ProvinceCityCountyData.Provinces;
                 ddlSheng.DataBind();
 
-                // 注册脚本
-                string startScript = String.Format("window._SHI={0};", DataSourceUtil.SHI_JSON.ToString(Formatting.None));
-                PageContext.RegisterStartupScript(startScript);
             }
         }
 
@@ -116,8 +115,8 @@ namespace FineUI.Pro.Examples.grideditor
             row[0] = 101;
             row[1] = "张萍萍";
             row[2] = 0;
-            row[3] = "河南";
-            row[4] = "驻马店市";
+            row[3] = "002";
+            row[4] = "002017";
             table.Rows.Add(row);
 
 
@@ -125,8 +124,8 @@ namespace FineUI.Pro.Examples.grideditor
             row[0] = 102;
             row[1] = "陈飞";
             row[2] = 1;
-            row[3] = "安徽";
-            row[4] = "合肥市";
+            row[3] = "007";
+            row[4] = "007001";
             table.Rows.Add(row);
 
 
@@ -134,8 +133,8 @@ namespace FineUI.Pro.Examples.grideditor
             row[0] = 103;
             row[1] = "董婷婷";
             row[2] = 0;
-            row[3] = "北京";
-            row[4] = "北京市";
+            row[3] = "001";
+            row[4] = "001001";
             table.Rows.Add(row);
 
             row = table.NewRow();
