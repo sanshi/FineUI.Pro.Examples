@@ -76,9 +76,9 @@
             </Listeners>
         </f:Grid>
         <br />
-        <f:Button ID="Button2" runat="server" Text="保存数据" OnClick="Button2_Click">
+        <f:Button CssClass="marginr" ID="Button2" runat="server" Text="保存数据" OnClick="Button2_Click">
         </f:Button>
-        <f:Button ID="Button1" runat="server" Text="重新初始化数据" OnClick="Button1_Click">
+        <f:Button CssClass="marginr" ID="Button1" runat="server" Text="重新初始化数据" OnClick="Button1_Click">
         </f:Button>
         <f:Button ID="Button3" runat="server" Text="清空数据" OnClick="Button3_Click">
         </f:Button>

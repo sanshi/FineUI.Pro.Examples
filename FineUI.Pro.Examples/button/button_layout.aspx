@@ -21,9 +21,9 @@
                 </f:Panel>--%>
         <f:Panel runat="server" Layout="HBox" ShowBorder="false" ShowHeader="false" Width="600px">
             <Items>
-                <f:Button ID="btnIcon3" Text="图标在上面" BoxFlex="1" IconAlign="Top" Icon="Email" runat="server" />
-                <f:Button ID="btnIcon4" Text="图标在下面" BoxFlex="1" IconAlign="Bottom" Icon="Star" runat="server" />
-                <f:Button ID="Button9" Text="图标在上面" BoxFlex="1" IconAlign="Top" IconFont="_Camera" runat="server" />
+                <f:Button CssClass="marginr" ID="btnIcon3" Text="图标在上面" BoxFlex="1" IconAlign="Top" Icon="Email" runat="server" />
+                <f:Button CssClass="marginr" ID="btnIcon4" Text="图标在下面" BoxFlex="1" IconAlign="Bottom" Icon="Star" runat="server" />
+                <f:Button CssClass="marginr" ID="Button9" Text="图标在上面" BoxFlex="1" IconAlign="Top" IconFont="_Camera" runat="server" />
                 <f:Button ID="Button10" Text="图标在下面" BoxFlex="1" IconAlign="Bottom" IconFont="_Phone" runat="server" />
             </Items>
         </f:Panel>

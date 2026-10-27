@@ -73,17 +73,17 @@
             </Listeners>
         </f:Grid>
         <br />
-        <f:Button ID="Button2" runat="server" Text="保存数据" Enabled="false" OnClick="Button2_Click">
+        <f:Button CssClass="marginr" ID="Button2" runat="server" Text="保存数据" Enabled="false" OnClick="Button2_Click">
         </f:Button>
-        <f:Button ID="btnRejectChanges" runat="server" Text="服务端撤销编辑" ConfirmText="确定要撤销未保存的编辑？" OnClick="btnRejectChanges_Click" />
-        <f:Button ID="btnReadChanges" runat="server" Text="读取修改记录" OnClick="btnReadChanges_Click" />
+        <f:Button CssClass="marginr" ID="btnRejectChanges" runat="server" Text="服务端撤销编辑" ConfirmText="确定要撤销未保存的编辑？" OnClick="btnRejectChanges_Click" />
+        <f:Button CssClass="marginr" ID="btnReadChanges" runat="server" Text="读取修改记录" OnClick="btnReadChanges_Click" />
         <f:Button ID="btnCommitChanges" runat="server" Text="仅确认客户端编辑" OnClick="btnCommitChanges_Click" />
         <br />
-        <f:Button ID="btnUpdateCells" runat="server" Text="服务端修改 101 行" OnClick="btnUpdateCells_Click" />
-        <f:Button ID="btnAddRecord" runat="server" Text="服务端插入第二行" OnClick="btnAddRecord_Click" />
-        <f:Button ID="btnAppendRecord" runat="server" Text="服务端追加末行" OnClick="btnAppendRecord_Click" />
-        <f:Button ID="btnDeleteRow" runat="server" Text="服务端删除 101 行" OnClick="btnDeleteRow_Click" />
-        <f:Button ID="btnForceDeleteRow" runat="server" Text="强制移除 102 行" OnClick="btnForceDeleteRow_Click" />
+        <f:Button CssClass="marginr" ID="btnUpdateCells" runat="server" Text="服务端修改 101 行" OnClick="btnUpdateCells_Click" />
+        <f:Button CssClass="marginr" ID="btnAddRecord" runat="server" Text="服务端插入第二行" OnClick="btnAddRecord_Click" />
+        <f:Button CssClass="marginr" ID="btnAppendRecord" runat="server" Text="服务端追加末行" OnClick="btnAppendRecord_Click" />
+        <f:Button CssClass="marginr" ID="btnDeleteRow" runat="server" Text="服务端删除 101 行" OnClick="btnDeleteRow_Click" />
+        <f:Button CssClass="marginr" ID="btnForceDeleteRow" runat="server" Text="强制移除 102 行" OnClick="btnForceDeleteRow_Click" />
         <f:Button ID="btnDeleteSelected" runat="server" Text="服务端删除选中行" OnClick="btnDeleteSelected_Click" />
         <br />
         <br />

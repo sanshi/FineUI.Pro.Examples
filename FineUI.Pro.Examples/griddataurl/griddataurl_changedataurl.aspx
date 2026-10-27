@@ -28,7 +28,7 @@
             </Columns>
         </f:Grid>
         <br />
-        <f:Button Text="切换网址数据源" runat="server" ID="btnRebind" OnClick="btnRebind_Click">
+        <f:Button CssClass="marginr" Text="切换网址数据源" runat="server" ID="btnRebind" OnClick="btnRebind_Click">
         </f:Button>
         <f:Button ID="btnReload" Text="服务端重载当前地址" runat="server" OnClick="btnReload_Click"></f:Button>
     </form>

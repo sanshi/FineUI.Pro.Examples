@@ -22,7 +22,7 @@
             </Columns>
         </f:Grid>
         <br />
-        <f:Button ID="Button1" runat="server" Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick">
+        <f:Button CssClass="marginr" ID="Button1" runat="server" Text="选中了哪些行" ClickHandler="onNotifySelectedRowsClick">
         </f:Button>
         <f:Button ID="Button2" runat="server" Text="改变数据源" OnClick="Button2_Click">
         </f:Button>

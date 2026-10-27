@@ -27,7 +27,7 @@
             </Columns>
         </f:Grid>
         <br />
-        <f:Button ID="Button1" runat="server" Text="选中了哪些行" OnClick="Button1_Click">
+        <f:Button CssClass="marginr" ID="Button1" runat="server" Text="选中了哪些行" OnClick="Button1_Click">
         </f:Button>
         <f:Button ID="Button2" runat="server" Text="关注的目录列表" ClickHandler="onReadFollowFoldersClick">
         </f:Button>

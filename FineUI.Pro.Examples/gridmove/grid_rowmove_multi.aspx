@@ -28,7 +28,7 @@
         <f:Button runat="server" ID="btnMoveDown" Text="选中行下移" CssClass="marginr" ClickHandler="onMoveDownClick"></f:Button>
         <br />
         <br />
-        <f:Button runat="server" ID="btnSaveToDB" Text="保存数据" ClickHandler="onSaveToDBClick"></f:Button>
+        <f:Button CssClass="marginr" runat="server" ID="btnSaveToDB" Text="保存数据" ClickHandler="onSaveToDBClick"></f:Button>
         <f:Button runat="server" ID="btnRefresh" Text="刷新本页面（请先点击保存按钮）" ClickHandler="onRefreshClick"></f:Button>
         <br />
         <br />

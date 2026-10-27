@@ -50,7 +50,7 @@
             </Columns>
         </f:Grid>
         <br />
-        <f:Button ID="Button1" runat="server" Text="将全部[入学年份]加一" ClickHandler="onButtonClick"></f:Button>
+        <f:Button CssClass="marginr" ID="Button1" runat="server" Text="将全部[入学年份]加一" ClickHandler="onButtonClick"></f:Button>
         <f:Button ID="Button2" runat="server" Text="保存数据" OnClick="Button2_Click">
         </f:Button>
         <br />

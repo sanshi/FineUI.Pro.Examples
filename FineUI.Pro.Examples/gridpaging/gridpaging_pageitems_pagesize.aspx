@@ -39,7 +39,7 @@
         <br />
         <br />
         <strong>出于性能考虑，请在实际项目中使用数据库分页（不要使用内存分页）！</strong>
-        <f:Button ID="btnServerPage" Text="服务端切到第二页" runat="server" OnClick="btnServerPage_Click"></f:Button>
+        <f:Button CssClass="marginr" ID="btnServerPage" Text="服务端切到第二页" runat="server" OnClick="btnServerPage_Click"></f:Button>
         <f:Button ID="btnServerSort" Text="服务端按入学年份降序并回首页" runat="server" OnClick="btnServerSort_Click"></f:Button>
     </form>
 

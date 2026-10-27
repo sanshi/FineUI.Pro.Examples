@@ -15,7 +15,7 @@
         <f:Button ID="btnCustomEvent" runat="server" Text="注册点击事件（1）" ClickHandler="onCustomEventClick"></f:Button>
         <br />
         <br />
-        <f:Button ID="btnSpecialEvent" runat="server" Text="注册特殊点击事件" ClickHandler="onSpecialEventClick"></f:Button>
+        <f:Button CssClass="marginr" ID="btnSpecialEvent" runat="server" Text="注册特殊点击事件" ClickHandler="onSpecialEventClick"></f:Button>
         <f:Button ID="btnDeleteSpecialEvent" runat="server" Text="删除特殊点击事件" Enabled="false" ClickHandler="onDeleteSpecialEventClick">
         </f:Button>
         <br />

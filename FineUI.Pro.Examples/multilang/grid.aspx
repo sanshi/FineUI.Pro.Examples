@@ -24,7 +24,7 @@
             </Columns>
         </f:Grid>
         <br />
-        <f:Button ID="Button1" runat="server" Text="<%$ Resources:ShowSelectedRows %>" OnClick="Button1_Click">
+        <f:Button CssClass="marginr" ID="Button1" runat="server" Text="<%$ Resources:ShowSelectedRows %>" OnClick="Button1_Click">
         </f:Button>
         <f:Button ID="Button2" runat="server" Text="<%$ Resources:ShowSelectedRowsClient %>" ClickHandler="onButton2Click">
         </f:Button>

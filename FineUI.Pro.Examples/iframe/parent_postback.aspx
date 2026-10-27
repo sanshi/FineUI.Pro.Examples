@@ -17,7 +17,7 @@
         <br />
         <f:Button ID="Button1" CssClass="marginr" runat="server" Text="页面一中的按钮">
         </f:Button>
-        <f:Button ID="btnServerRefresh" runat="server" Text="服务端刷新面板 IFrame" OnClick="btnServerRefresh_Click" />
+        <f:Button CssClass="marginr" ID="btnServerRefresh" runat="server" Text="服务端刷新面板 IFrame" OnClick="btnServerRefresh_Click" />
         <f:Button ID="Button2" runat="server" Text="刷新面板一中的IFrame" ClickHandler="onRefreshIFrameClick">
         </f:Button>
         <br />

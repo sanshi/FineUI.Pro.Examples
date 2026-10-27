@@ -16,6 +16,7 @@
             font-size: 1.5em;
             color: Green;
         }
+
     </style>
 </head>
 <body>
@@ -26,7 +27,7 @@
         <f:Label ID="Label1" runat="server" Text="文本一，注意观察文本的样式">
         </f:Label>
         <br />
-        <f:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="通过 CssStyle 修改文本的样式">
+        <f:Button CssClass="marginr" ID="Button1" runat="server" OnClick="Button1_Click" Text="通过 CssStyle 修改文本的样式">
         </f:Button>
         <f:Button ID="Button3" runat="server" OnClick="Button3_Click" Text="清空 CssStyle 设置的样式">
         </f:Button>
@@ -38,7 +39,7 @@
         <f:Label ID="Label2" runat="server" Text="文本二，注意观察文本的样式">
         </f:Label>
         <br />
-        <f:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="通过 CssClass 修改文本的样式">
+        <f:Button CssClass="marginr" ID="Button2" runat="server" OnClick="Button2_Click" Text="通过 CssClass 修改文本的样式">
         </f:Button>
         <f:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="清空 CssClass 设置的样式">
         </f:Button>

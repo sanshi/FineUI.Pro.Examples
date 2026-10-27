@@ -50,9 +50,9 @@
             </Columns>
         </f:Grid>
         <br />
-        <f:Button ID="btnUpdateGender" runat="server" Text="[性别]全部更新为男" ClickHandler="onUpdateGenderClick"></f:Button>
-        <f:Button ID="btnUpdateEntranceYear" runat="server" Text="[入学年份]全部更新为2008" ClickHandler="onUpdateEntranceYearClick"></f:Button>
-        <f:Button ID="btnUpdateAtSchoolTrue" runat="server" Text="[是否在校]全部更新为TRUE" ClickHandler="onUpdateAtSchoolTrueClick"></f:Button>
+        <f:Button CssClass="marginr" ID="btnUpdateGender" runat="server" Text="[性别]全部更新为男" ClickHandler="onUpdateGenderClick"></f:Button>
+        <f:Button CssClass="marginr" ID="btnUpdateEntranceYear" runat="server" Text="[入学年份]全部更新为2008" ClickHandler="onUpdateEntranceYearClick"></f:Button>
+        <f:Button CssClass="marginr" ID="btnUpdateAtSchoolTrue" runat="server" Text="[是否在校]全部更新为TRUE" ClickHandler="onUpdateAtSchoolTrueClick"></f:Button>
         <f:Button ID="btnUpdateAtSchoolFalse" runat="server" Text="[是否在校]全部更新为FALSE" ClickHandler="onUpdateAtSchoolFalseClick"></f:Button>
         <br />
         <br />
