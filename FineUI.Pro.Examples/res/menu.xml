@@ -791,6 +791,8 @@
 		<TreeNode Text="行命令">
 			<TreeNode Text="行内按钮事件" NavigateUrl="~/grid/grid_rowcommand.aspx">
 			</TreeNode>
+			<TreeNode Text="行命令弹窗（独立网址和标题字段）" NavigateUrl="~/grid/grid_rowcommand_window.aspx">
+			</TreeNode>
 			<TreeNode Text="行内按钮事件（客户端与服务端命令）" NavigateUrl="~/grid/grid_rowcommand_customcommand.aspx">
 			</TreeNode>
 			<TreeNode Text="行内按钮事件（禁用命令）" NavigateUrl="~/grid/grid_rowcommand_disabled.aspx">

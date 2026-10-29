@@ -10376,4 +10376,22 @@
       <DependentUpon>vbox_space.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="grid\grid_rowcommand_window.aspx" />
+    <Compile Include="grid\grid_rowcommand_window.aspx.cs">
+      <DependentUpon>grid_rowcommand_window.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grid\grid_rowcommand_window.aspx.designer.cs">
+      <DependentUpon>grid_rowcommand_window.aspx</DependentUpon>
+    </Compile>
+    <Content Include="grid\grid_rowcommand_window_details.aspx" />
+    <Compile Include="grid\grid_rowcommand_window_details.aspx.cs">
+      <DependentUpon>grid_rowcommand_window_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grid\grid_rowcommand_window_details.aspx.designer.cs">
+      <DependentUpon>grid_rowcommand_window_details.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
