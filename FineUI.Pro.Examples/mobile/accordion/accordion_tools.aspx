@@ -58,11 +58,11 @@
                     </Tools>
                     <Items>
                         <f:DataList runat="server" ID="DataList1">
-                            <f:DataListItem Text="列表项1" />
-                            <f:DataListItem Text="列表项2" />
-                            <f:DataListItem Text="列表项3" />
-                            <f:DataListItem Text="列表项4" />
-                            <f:DataListItem Text="列表项5" />
+                            <f:DataListItem Text="列表项1" Value="item1" />
+                            <f:DataListItem Text="列表项2" Value="item2" />
+                            <f:DataListItem Text="列表项3" Value="item3" />
+                            <f:DataListItem Text="列表项4" Value="item4" />
+                            <f:DataListItem Text="列表项5" Value="item5" />
                         </f:DataList>
                     </Items>
                 </f:AccordionPane>

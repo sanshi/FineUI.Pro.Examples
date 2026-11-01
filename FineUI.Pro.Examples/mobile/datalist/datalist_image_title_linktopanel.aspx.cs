@@ -29,6 +29,7 @@ namespace FineUI.Pro.Examples.mobile.datalist
         protected void DataList1_ItemDataBound(object sender, DataListItemEventArgs e)
         {
             DataRowView row = e.DataItem as DataRowView;
+            e.Item.Value = row["Id"].ToString();
 
             e.Item.TextRawHtml = new RawHtml(DATALIST_ITEM_TEMPLATE, 
                 PageContext.ResolveUrl("~/res/icon/flag_" + row["Image"] + ".png"), 

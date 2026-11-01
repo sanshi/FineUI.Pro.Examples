@@ -28,7 +28,7 @@
         </f:Button>
         <br />
         <f:Button CssClass="marginr" ID="btnSelectCell" runat="server" Text="选择第二页姓名单元格" OnClick="btnSelectCell_Click" />
-        <f:Button CssClass="marginr" ID="btnClearSelections" runat="server" Text="服务端清空全部选择" OnClick="btnClearSelections_Click" />
+        <f:Button CssClass="marginr" ID="btnClearSelection" runat="server" Text="服务端清空全部选择" OnClick="btnClearSelection_Click" />
         <f:Button ID="btnReadSelection" runat="server" Text="服务端读取选择" OnClick="btnReadSelection_Click" />
         <f:Label ID="labServerSelection" runat="server" />
         <f:Label ID="labResult" EncodeText="false" runat="server">

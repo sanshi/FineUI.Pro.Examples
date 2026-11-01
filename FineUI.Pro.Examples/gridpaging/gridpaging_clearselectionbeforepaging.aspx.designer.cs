@@ -66,7 +66,7 @@ namespace FineUI.Pro.Examples.gridpaging {
         /// </remarks>
         protected global::FineUI.Pro.Label labResult;
         protected global::FineUI.Pro.Button btnSelectCell;
-        protected global::FineUI.Pro.Button btnClearSelections;
+        protected global::FineUI.Pro.Button btnClearSelection;
         protected global::FineUI.Pro.Button btnReadSelection;
         protected global::FineUI.Pro.Label labServerSelection;
     }

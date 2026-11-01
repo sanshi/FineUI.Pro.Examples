@@ -612,6 +612,10 @@
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="杂项">
+			<TreeNode Text="统一清空选择" NavigateUrl="~/form/clear_selection.aspx">
+			</TreeNode>
+			<TreeNode Text="下拉列表赋值顺序" NavigateUrl="~/form/dropdownlist_assignment_order.aspx">
+			</TreeNode>
 			<TreeNode Text="重置表单" NavigateUrl="~/form/form_reset.aspx">
 			</TreeNode>
 			<TreeNode Text="动态创建表单元素" NavigateUrl="~/form/form_dynamic.aspx">

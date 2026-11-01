@@ -29,6 +29,7 @@ namespace FineUI.Pro.Examples.mobile.datalist
         protected void DataList1_ItemDataBound(object sender, DataListItemEventArgs e)
         {
             DataRowView row = e.DataItem as DataRowView;
+            e.Item.Value = row["Id"].ToString();
 
             string name = row["Name"].ToString();
 

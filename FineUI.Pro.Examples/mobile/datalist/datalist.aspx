@@ -15,15 +15,15 @@
             </Toolbars>
             <Items>
                 <f:DataList runat="server" ID="DataList1">
-                    <f:DataListItem Text="列表项1" />
-                    <f:DataListItem Text="列表项2" />
-                    <f:DataListItem Text="列表项3" />
-                    <f:DataListItem Text="列表项4" />
-                    <f:DataListItem Text="列表项5" />
-                    <f:DataListItem Text="列表项6" />
-                    <f:DataListItem Text="列表项7" />
-                    <f:DataListItem Text="列表项8" />
-                    <f:DataListItem Text="一个很长很长很长很长很长很长很长很长很长很长很长很长很长很的列表项" />
+                    <f:DataListItem Text="列表项1" Value="item1" />
+                    <f:DataListItem Text="列表项2" Value="item2" />
+                    <f:DataListItem Text="列表项3" Value="item3" />
+                    <f:DataListItem Text="列表项4" Value="item4" />
+                    <f:DataListItem Text="列表项5" Value="item5" />
+                    <f:DataListItem Text="列表项6" Value="item6" />
+                    <f:DataListItem Text="列表项7" Value="item7" />
+                    <f:DataListItem Text="列表项8" Value="item8" />
+                    <f:DataListItem Text="一个很长很长很长很长很长很长很长很长很长很长很长很长很长很的列表项" Value="item9" />
                 </f:DataList>
             </Items>
         </f:Panel>

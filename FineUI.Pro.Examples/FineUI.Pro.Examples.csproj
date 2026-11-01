@@ -599,6 +599,8 @@
     <Content Include="form\numberbox_textchange.aspx" />
     <Content Include="form\numberbox_round.aspx" />
     <Content Include="formlayout\layout_center_label.aspx" />
+    <Content Include="form\clear_selection.aspx" />
+    <Content Include="form\dropdownlist_assignment_order.aspx" />
     <Content Include="form\checkboxlist_radio.aspx" />
     <Content Include="form\form_textalign.aspx" />
     <Content Include="form\checkboxlist_at_least_one.aspx" />
@@ -3332,6 +3334,20 @@
     </Compile>
     <Compile Include="formlayout\layout_center_label.aspx.designer.cs">
       <DependentUpon>layout_center_label.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form\clear_selection.aspx.cs">
+      <DependentUpon>clear_selection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form\clear_selection.aspx.designer.cs">
+      <DependentUpon>clear_selection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form\dropdownlist_assignment_order.aspx.cs">
+      <DependentUpon>dropdownlist_assignment_order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form\dropdownlist_assignment_order.aspx.designer.cs">
+      <DependentUpon>dropdownlist_assignment_order.aspx</DependentUpon>
     </Compile>
     <Compile Include="form\checkboxlist_radio.aspx.cs">
       <DependentUpon>checkboxlist_radio.aspx</DependentUpon>

@@ -157,7 +157,7 @@ namespace FineUI.Pro.Examples.dropdownbox
 
         protected void btnClearValue_Click(object sender, EventArgs e)
         {
-            PageContext.RegisterStartupScript(String.Format("F('{0}').clearValue();", DropDownBox1.ClientID));
+            DropDownBox1.ClearSelection();
         }
 
         #endregion

@@ -31,6 +31,7 @@ namespace FineUI.Pro.Examples.mobile.datalist
         protected void DataList1_ItemDataBound(object sender, DataListItemEventArgs e)
         {
             DataRowView row = e.DataItem as DataRowView;
+            e.Item.Value = row["Id"].ToString();
 
             // 列表项文本为可信 HTML，使用 TextRawHtml + new RawHtml(...) 原样输出（替代旧的内联 raw 标记写法）
             e.Item.TextRawHtml = new RawHtml(DATALIST_ITEM_TEMPLATE_ACTIONS,
