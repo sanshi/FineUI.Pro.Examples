@@ -611,14 +611,16 @@
 			<TreeNode Text="自定义表格样式（复杂表格）" NavigateUrl="~/formtable/tablehtml_complex.aspx">
 			</TreeNode>
 		</TreeNode>
+		<TreeNode Text="动态控件">
+			<TreeNode Text="动态创建表单元素" NavigateUrl="~/form/form_dynamic.aspx">
+			</TreeNode>
+		</TreeNode>
 		<TreeNode Text="杂项">
 			<TreeNode Text="统一清空选择" NavigateUrl="~/form/clear_selection.aspx">
 			</TreeNode>
 			<TreeNode Text="下拉列表赋值顺序" NavigateUrl="~/form/dropdownlist_assignment_order.aspx">
 			</TreeNode>
 			<TreeNode Text="重置表单" NavigateUrl="~/form/form_reset.aspx">
-			</TreeNode>
-			<TreeNode Text="动态创建表单元素" NavigateUrl="~/form/form_dynamic.aspx">
 			</TreeNode>
 			<TreeNode Text="隐藏表单字段" NavigateUrl="~/form/form_hide_field.aspx">
 			</TreeNode>
