@@ -11,7 +11,7 @@
         <f:PageManager ID="PageManager1" runat="server" />
         <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10" EnableCollapse="false" Title="表单" ShowHeader="true" runat="server">
             <Items>
-                <f:TwinTriggerBox ID="TwinTriggerBox1" ShowLabel="false" Trigger1Icon="Clear" ShowTrigger1="false" EmptyText="搜索用户名" Trigger2Icon="Search"
+                <f:TwinTriggerBox ID="TwinTriggerBox1" ShowLabel="false" Trigger1Icon="Clear" EmptyText="搜索用户名" Trigger2Icon="Search"
                     OnTrigger1Click="TwinTriggerBox1_Trigger1Click" OnTrigger2Click="TwinTriggerBox1_Trigger2Click" AutoShowClearIcon="true" runat="server">
                     <Listeners>
                         <f:Listener Event="change" Handler="onTwinTriggerBox1Change"></f:Listener>
