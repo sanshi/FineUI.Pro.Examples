@@ -2097,6 +2097,12 @@
 			<TreeNode Text="表格与表单（布局，接口与动态加载）" NavigateUrl="~/master/formlist.aspx">
 			</TreeNode>
 		</TreeNode>
+		<TreeNode Text="数据列表（DataList）">
+			<TreeNode Text="基础列表" NavigateUrl="~/datalist/datalist.aspx" />
+			<TreeNode Text="数据绑定与追加" NavigateUrl="~/datalist/datalist_databind.aspx" />
+			<TreeNode Text="选择与清空" NavigateUrl="~/datalist/datalist_selection.aspx" />
+			<TreeNode Text="分组与模板" NavigateUrl="~/datalist/datalist_group.aspx" />
+		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="移动" IconFont="_Mobile">
 		<TreeNode Text="移动首页" NavigateUrl="~/mobile/?file=main.aspx" IsEnterprise="true">

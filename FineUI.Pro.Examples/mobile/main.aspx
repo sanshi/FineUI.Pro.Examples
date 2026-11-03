@@ -327,7 +327,7 @@
 
             var dataList1 = F(dataList1ClientID);
 
-            // 社区版不支持DataList
+            // 页面可能未完成控件初始化；移动菜单仍需企业版的工具栏和切页动画。
             if (!dataList1) {
                 return;
             }

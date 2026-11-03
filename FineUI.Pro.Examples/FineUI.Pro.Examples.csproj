@@ -892,6 +892,10 @@
     <Content Include="mobile\button\button.aspx" />
     <Content Include="mobile\button\buttongroup_tabstrip.aspx" />
     <Content Include="mobile\button\buttongroup_vertical.aspx" />
+    <Content Include="datalist\datalist.aspx" />
+    <Content Include="datalist\datalist_databind.aspx" />
+    <Content Include="datalist\datalist_selection.aspx" />
+    <Content Include="datalist\datalist_group.aspx" />
     <Content Include="mobile\datalist\datalist.aspx" />
     <Content Include="res\css\datalist.css" />
     <Content Include="mobile\datalist\datalist_selectedvalue.aspx" />
@@ -6727,6 +6731,34 @@
     </Compile>
     <Compile Include="mobile\button\buttongroup_vertical.aspx.designer.cs">
       <DependentUpon>buttongroup_vertical.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datalist\datalist.aspx.cs">
+      <DependentUpon>datalist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datalist\datalist.aspx.designer.cs">
+      <DependentUpon>datalist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datalist\datalist_databind.aspx.cs">
+      <DependentUpon>datalist_databind.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datalist\datalist_databind.aspx.designer.cs">
+      <DependentUpon>datalist_databind.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datalist\datalist_selection.aspx.cs">
+      <DependentUpon>datalist_selection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datalist\datalist_selection.aspx.designer.cs">
+      <DependentUpon>datalist_selection.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="datalist\datalist_group.aspx.cs">
+      <DependentUpon>datalist_group.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="datalist\datalist_group.aspx.designer.cs">
+      <DependentUpon>datalist_group.aspx</DependentUpon>
     </Compile>
     <Compile Include="mobile\datalist\datalist.aspx.cs">
       <DependentUpon>datalist.aspx</DependentUpon>
