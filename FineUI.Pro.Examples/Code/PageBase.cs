@@ -130,13 +130,14 @@ namespace FineUI.Pro.Examples
                     }
                 }
 
-                // GIF加载动画
+                // 兼容旧 GIF 演示保存的编号，当前示例优先使用下方的 CSS 动画设置。
                 HttpCookie loadingCookie = Request.Cookies["Loading"];
                 if (loadingCookie != null)
                 {
                     int loadingNumber = Convert.ToInt32(loadingCookie.Value);
+#pragma warning disable CS0618
                     pm.LoadingImageNumber = loadingNumber;
-                    // 使用GIF加载动画时，需要先禁用页面加载动画（CSS）
+#pragma warning restore CS0618
                     pm.LoadingCSSNumber = 0;
                 }
                 // 优先使用页面加载动画（CSS）

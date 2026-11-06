@@ -15,8 +15,7 @@ namespace FineUI.Pro.Examples.form
                 DatePicker1.SelectedDate = DateTime.Now;
 
                 // 启用大字体模式
-                if (PageManager1.EnableLargeMode ||
-                    PageManager1.DisplayMode == DisplayMode.Large ||
+                if (PageManager1.DisplayMode == DisplayMode.Large ||
                     PageManager1.DisplayMode == DisplayMode.LargeSpace)
                 {
                     SimpleForm1.Width = (Unit)700;

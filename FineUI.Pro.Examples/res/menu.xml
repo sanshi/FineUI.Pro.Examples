@@ -16,6 +16,8 @@
 			</TreeNode>
 			<TreeNode Text="配置 Web.config" NavigateUrl="~/config/modify_webconfig.aspx">
 			</TreeNode>
+			<TreeNode Text="全局配置属性" NavigateUrl="~/config/global_properties.aspx">
+			</TreeNode>
 			<TreeNode Text="图标" NavigateUrl="~/config/icons.aspx">
 			</TreeNode>
 			<TreeNode Text="图标字体（默认）" NavigateUrl="~/config/iconfont.aspx">

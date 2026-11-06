@@ -35,6 +35,7 @@
         <asp:Literal EnableViewState="false" runat="server" ID="litIcons"></asp:Literal>
         <br />
         <br />
+        <p>这些 GIF 供维护旧页面时查阅。新页面使用 <code>LoadingCSSNumber</code> 选择 1～6 号 CSS 加载动画。</p>
     </form>
 </body>
 </html>

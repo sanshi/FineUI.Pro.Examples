@@ -13,8 +13,7 @@ namespace FineUI.Pro.Examples.form
             if (!IsPostBack)
             {
                 // 启用大字体模式
-                if (PageManager1.EnableLargeMode || 
-                    PageManager1.DisplayMode == DisplayMode.Large ||
+                if (PageManager1.DisplayMode == DisplayMode.Large ||
                     PageManager1.DisplayMode == DisplayMode.LargeSpace)
                 {
                     Form1.LabelWidth = (Unit)120;

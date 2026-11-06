@@ -172,6 +172,7 @@
     <Content Include="config\iconfont_fa.aspx" />
     <Content Include="config\enable_gzip_iis6.aspx" />
     <Content Include="config\modify_webconfig.aspx" />
+    <Content Include="config\global_properties.aspx" />
     <Content Include="csp\button.aspx" />
     <Content Include="csp\grid.aspx" />
     <Content Include="csp\htmleditor.aspx" />
@@ -963,6 +964,7 @@
     <Content Include="res\css\index.css" />
     <Content Include="res\js\common.js" />
     <Content Include="res\js\grid.js" />
+    <Content Include="res\js\global-properties.js" />
     <Content Include="res\js\grid-extra.js" />
     <Content Include="res\js\gridcard.js" />
     <Content Include="res\js\index.js" />
@@ -1775,8 +1777,15 @@
       <DependentUpon>modify_webconfig.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="config\global_properties.aspx.cs">
+      <DependentUpon>global_properties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="config\modify_webconfig.aspx.designer.cs">
       <DependentUpon>modify_webconfig.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="config\global_properties.aspx.designer.cs">
+      <DependentUpon>global_properties.aspx</DependentUpon>
     </Compile>
     <Compile Include="csp\button.aspx.cs">
       <DependentUpon>button.aspx</DependentUpon>

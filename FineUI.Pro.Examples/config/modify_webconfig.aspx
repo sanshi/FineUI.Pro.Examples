@@ -23,7 +23,7 @@
     <form id="form1" runat="server">
         <f:PageManager runat="server"></f:PageManager>
         <div>
-            在开发项目之前请配置好 Web.config：
+            在开发项目之前请配置好 Web.config。完整配置清单见<a href="global_properties.aspx">全局配置属性</a>。
         </div>
         <ol>
             <li><strong>设置 configuration 配置节：</strong>

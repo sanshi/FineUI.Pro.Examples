@@ -7,14 +7,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <f:PageManager ID="PageManager1" LoadingCSSNumber="-1" PageLoadingImageUrl="~/res/images/loading/loading-bar.gif" runat="server" />
-        <br />
-        GIF制作工具：http://ajaxload.info/ http://loadinfo.net/
-        <br />
-        <br />
-        注：制作 GIF 图片时需要指定前台色和背景色，必须保证背景色和页面的背景色一致。
-        <br />
-        <br />
+        <f:PageManager ID="PageManager1" EnablePageLoading="true" LoadingCSSNumber="3" runat="server" />
+        <p>打开页面时显示第 3 种 CSS 加载动画。可将 LoadingCSSNumber 设为 1～6 选择其他样式。</p>
     </form>
 </body>
 </html>
