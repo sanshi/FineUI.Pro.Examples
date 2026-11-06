@@ -94,7 +94,7 @@ namespace FineUI.Pro.Examples.grideditor
         {
             if (Session[KEY_FOR_DATASOURCE_SESSION] == null)
             {
-                Session[KEY_FOR_DATASOURCE_SESSION] = DataSourceUtil.GetDataTable();
+                Session[KEY_FOR_DATASOURCE_SESSION] = DataSourceUtil.GetDataTable(includeEntranceTime: true);
             }
             return (DataTable)Session[KEY_FOR_DATASOURCE_SESSION];
         }
