@@ -9656,8 +9656,15 @@
       <DependentUpon>tabstrip.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="tabstrip\reorder.aspx.cs">
+      <DependentUpon>reorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="tabstrip\tabstrip.aspx.designer.cs">
       <DependentUpon>tabstrip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tabstrip\reorder.aspx.designer.cs">
+      <DependentUpon>reorder.aspx</DependentUpon>
     </Compile>
     <Compile Include="toolbar\menu_dynamic2.aspx.cs">
       <DependentUpon>menu_dynamic2.aspx</DependentUpon>
@@ -10120,6 +10127,7 @@
     <Content Include="layout\fit.aspx" />
     <Content Include="tabstrip\tabstrip_iframe.aspx" />
     <Content Include="tabstrip\tabstrip.aspx" />
+    <Content Include="tabstrip\reorder.aspx" />
     <Content Include="other\autoheight.aspx" />
   </ItemGroup>
   <ItemGroup>

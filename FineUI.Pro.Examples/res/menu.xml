@@ -1893,6 +1893,8 @@
 		<TreeNode Text="选项卡控件">
 			<TreeNode Text="基本用法" NavigateUrl="~/tabstrip/tabstrip.aspx">
 			</TreeNode>
+			<TreeNode Text="选项卡拖动排序与滚轮浏览" NavigateUrl="~/tabstrip/reorder.aspx">
+			</TreeNode>
 			<TreeNode Text="自动回发" NavigateUrl="~/tabstrip/tabstrip_autopostback.aspx">
 			</TreeNode>
 			<TreeNode Text="关闭图标与右键菜单" NavigateUrl="~/tabstrip/tabstrip_enableclose.aspx" >
