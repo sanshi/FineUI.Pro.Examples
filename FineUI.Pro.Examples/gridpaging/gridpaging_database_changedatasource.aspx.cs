@@ -141,6 +141,8 @@ namespace FineUI.Pro.Examples.gridpaging
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+            // 先回到首页再读取新数据，避免从第五页切换后，首页却显示新数据源的末页记录。
+            Grid1.PageIndex = 0;
             if (ViewState["DataSource"].ToString() == "Source1")
             {
                 BindGrid2();
@@ -150,8 +152,6 @@ namespace FineUI.Pro.Examples.gridpaging
                 BindGrid();
             }
 
-            // 切换数据源时，默认转到第一页
-            Grid1.PageIndex = 0;
         }
 
         #endregion

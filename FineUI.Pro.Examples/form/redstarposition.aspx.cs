@@ -17,7 +17,23 @@ namespace FineUI.Pro.Examples.form
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
-            if (tbxUserName.Text == "admin" && tbxPassword.Text == "admin")
+            ShowLoginResult(tbxUserName.Text, tbxPassword.Text);
+        }
+
+        protected void btnLoginForm2_Click(object sender, EventArgs e)
+        {
+            ShowLoginResult(TextBox1.Text, TextBox2.Text);
+        }
+
+        protected void btnLoginForm3_Click(object sender, EventArgs e)
+        {
+            ShowLoginResult(TextBox3.Text, TextBox4.Text);
+        }
+
+        // 每张表单使用自己的输入，提交第二、第三张表单时也能得到对应的登录结果。
+        private void ShowLoginResult(string userName, string password)
+        {
+            if (userName == "admin" && password == "admin")
             {
                 ShowNotify("成功登录！", MessageBoxIcon.Success);
             }
