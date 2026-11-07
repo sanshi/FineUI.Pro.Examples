@@ -63,7 +63,7 @@
                 <f:Toolbar ID="Toolbar2" runat="server" ToolbarAlign="Right" Position="Bottom">
                     <Items>
                         <f:Button ID="Button1" Text="登录" Type="Button" ValidateForms="SimpleForm2" ValidateTarget="Top"
-                            runat="server" OnClick="btnLogin_Click">
+                            runat="server" OnClick="btnLoginForm2_Click">
                         </f:Button>
                     </Items>
                 </f:Toolbar>
@@ -83,7 +83,7 @@
                 <f:Toolbar ID="Toolbar3" runat="server" ToolbarAlign="Right" Position="Bottom">
                     <Items>
                         <f:Button ID="Button3" Text="登录" Type="Button" ValidateForms="SimpleForm3" ValidateTarget="Top"
-                            runat="server" OnClick="btnLogin_Click">
+                            runat="server" OnClick="btnLoginForm3_Click">
                         </f:Button>
                     </Items>
                 </f:Toolbar>
