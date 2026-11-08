@@ -12,7 +12,7 @@
             <f:Button runat="server" ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
         </Items>
     </f:SimpleForm>
-    <p>工具栏的 HTML 源码按钮可以查看、修改正文。应用时保留支持的排版，移除脚本、事件、表格、图片等未支持结构；取消不改变正文。</p>
+    <p>点击 HTML 源码，在原正文区域查看和修改代码；源码按钮保持按下，其余工具按钮禁用，编辑器高度不变。再次点击切回正文，保留支持的排版并过滤不支持的内容。</p>
     <p>内置编辑器默认启用，使用 Text 读写 HTML；旧编辑器仍可显式设置 Editor。</p>
 </form>
 </body></html>
