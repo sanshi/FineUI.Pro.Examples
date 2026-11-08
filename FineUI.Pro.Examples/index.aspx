@@ -231,7 +231,7 @@
                             </div>
                         </f:ContentPanel>
                         <f:TabStrip ID="mainTabStrip" CssClass="centerregion" ShowInkBar="true" BoxFlex="1" ShowBorder="true" EnableTabCloseMenu="true"
-                            runat="server">
+                            EnableTabMove="true" EnableTabWheelScroll="true" runat="server">
                             <Tabs>
                                 <f:Tab ID="tabHomepage" Title="首页" IconFont="_Home" EnableIFrame="true" IFrameUrl="~/common/main.aspx" runat="server">
                                 </f:Tab>
