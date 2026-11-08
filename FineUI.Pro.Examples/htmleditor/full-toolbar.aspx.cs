@@ -2,7 +2,7 @@ using System;
 
 namespace FineUI.Pro.Examples.htmleditor
 {
-    public partial class source : PageBase
+    public partial class FullToolbar : PageBase
     {
         protected void Button1_Click(object sender, EventArgs e)
         {

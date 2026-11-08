@@ -11,5 +11,12 @@ namespace FineUI.Pro.Examples.htmleditor
         protected global::FineUI.Pro.TextArea TextArea1;
         protected global::FineUI.Pro.Button Button1;
         protected global::FineUI.Pro.Button Button2;
+        protected global::FineUI.Pro.Button btnOpenEditor;
+        protected global::FineUI.Pro.Window Window1;
+        protected global::FineUI.Pro.TabStrip TabStrip1;
+        protected global::FineUI.Pro.Tab Tab1;
+        protected global::FineUI.Pro.HtmlEditor HtmlEditor3;
+        protected global::FineUI.Pro.Tab Tab2;
+        protected global::FineUI.Pro.HtmlEditor HtmlEditor4;
     }
 }

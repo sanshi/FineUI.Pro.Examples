@@ -13,6 +13,5 @@
         </Items>
     </f:SimpleForm>
     <p>通过 Options.toolbar 命令数组选择按钮；不需要加载或配置第三方皮肤。</p>
-    <p>内置编辑器默认启用，使用 Text 读写 HTML；旧编辑器仍可显式设置 Editor。</p>
 </form>
 </body></html>

@@ -12,26 +12,39 @@
             <f:Button runat="server" ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
         </Items>
     </f:SimpleForm>
+    <f:Button runat="server" ID="btnOpenEditor" Text="打开编辑窗口" ClickHandler="onOpenEditorClick" />
+    <f:Window runat="server" ID="Window1" Title="窗口与隐藏选项卡" Hidden="true" Width="760" Height="460"
+              Layout="Fit" EnableResize="true" BodyPadding="0">
+        <Items>
+            <f:TabStrip runat="server" ID="TabStrip1" ShowBorder="false">
+                <Tabs>
+                    <f:Tab runat="server" ID="Tab1" Title="第一份文档" Layout="Fit" BodyPadding="0">
+                        <Items>
+                            <f:HtmlEditor runat="server" ID="HtmlEditor3" ShowLabel="false" Margin="0" Text="&lt;p&gt;窗口中的第一份文档&lt;/p&gt;" />
+                        </Items>
+                    </f:Tab>
+                    <f:Tab runat="server" ID="Tab2" Title="隐藏选项卡" Layout="Fit" BodyPadding="0">
+                        <Items>
+                            <f:HtmlEditor runat="server" ID="HtmlEditor4" ShowLabel="false" Margin="0" Text="&lt;p&gt;切换选项卡后继续编辑&lt;/p&gt;" />
+                        </Items>
+                    </f:Tab>
+                </Tabs>
+            </f:TabStrip>
+        </Items>
+    </f:Window>
     <p>两个编辑器拥有独立的内容、选区和撤销记录；改变浏览器宽度可观察工具栏换行。</p>
-    <p>内置编辑器默认启用，使用 Text 读写 HTML；旧编辑器仍可显式设置 Editor。</p>
 </form>
 <script nonce="<%= PageManager.Instance.CspScriptsNonceValue %>">
-F.ready(function () {
-    var editorWindow = new F.Window({
-        id: 'Window1', renderTo: document.body, title: '窗口与隐藏选项卡', hidden: true,
-        width: 760, height: 460, layout: 'fit', resizable: true,
-        items: [{ type: 'TabStrip', id: 'TabStrip1', items: [
-            { type: 'Tab', id: 'Tab1', title: '第一份文档', layout: 'fit', items: [
-                { type: 'HtmlEditor', id: 'HtmlEditor3', showLabel: false, value: '<p>窗口中的第一份文档</p>' }
-            ] },
-            { type: 'Tab', id: 'Tab2', title: '隐藏选项卡', layout: 'fit', items: [
-                { type: 'HtmlEditor', id: 'HtmlEditor4', showLabel: false, value: '<p>切换选项卡后继续编辑</p>' }
-            ] }
-        ] }]
-    });
-    new F.Button({ id: 'btnOpenEditor', renderTo: document.body, text: '打开编辑窗口', handler: function () {
-        editorWindow.show();
-    } });
-});
-</script>
+        function getHtmlEditorContent() {
+            return F.ui.HtmlEditor1.getValue();
+        }
+
+        function getSourceContent() {
+            return F.ui.TextArea1.getValue();
+        }
+
+        function onOpenEditorClick() {
+            F.ui.Window1.show();
+        }
+    </script>
 </body></html>

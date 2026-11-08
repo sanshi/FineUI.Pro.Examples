@@ -10476,19 +10476,12 @@
     <Compile Include="htmleditor\basic.aspx.designer.cs">
       <DependentUpon>basic.aspx</DependentUpon>
     </Compile>
-    <Content Include="htmleditor\formatting.aspx" />
-    <Compile Include="htmleditor\formatting.aspx.cs">
-      <DependentUpon>formatting.aspx</DependentUpon>
+    <Content Include="htmleditor\full-toolbar.aspx" />
+    <Compile Include="htmleditor\full-toolbar.aspx.cs">
+      <DependentUpon>full-toolbar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="htmleditor\formatting.aspx.designer.cs">
-      <DependentUpon>formatting.aspx</DependentUpon>
-    </Compile>
-    <Content Include="htmleditor\source.aspx" />
-    <Compile Include="htmleditor\source.aspx.cs">
-      <DependentUpon>source.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="htmleditor\source.aspx.designer.cs">
-      <DependentUpon>source.aspx</DependentUpon>
+    <Compile Include="htmleditor\full-toolbar.aspx.designer.cs">
+      <DependentUpon>full-toolbar.aspx</DependentUpon>
     </Compile>
     <Content Include="htmleditor\readonly.aspx" />
     <Compile Include="htmleditor\readonly.aspx.cs">
@@ -10510,13 +10503,6 @@
     </Compile>
     <Compile Include="htmleditor\layout.aspx.designer.cs">
       <DependentUpon>layout.aspx</DependentUpon>
-    </Compile>
-    <Content Include="htmleditor\csp.aspx" />
-    <Compile Include="htmleditor\csp.aspx.cs">
-      <DependentUpon>csp.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="htmleditor\csp.aspx.designer.cs">
-      <DependentUpon>csp.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

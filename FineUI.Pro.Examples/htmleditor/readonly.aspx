@@ -14,6 +14,5 @@
         </Items>
     </f:SimpleForm>
     <p>只读时允许选择、复制和查看源码；正文和源码均不可修改。可使用下方按钮切换。</p>
-    <p>内置编辑器默认启用，使用 Text 读写 HTML；旧编辑器仍可显式设置 Editor。</p>
 </form>
 </body></html>
