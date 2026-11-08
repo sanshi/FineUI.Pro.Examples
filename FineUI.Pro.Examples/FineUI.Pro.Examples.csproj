@@ -10459,4 +10459,14 @@
       <DependentUpon>grid_rowcommand_window_details.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="form\field_helper_text.aspx" />
+    <Compile Include="form\field_helper_text.aspx.cs">
+      <DependentUpon>field_helper_text.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form\field_helper_text.aspx.designer.cs">
+      <DependentUpon>field_helper_text.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

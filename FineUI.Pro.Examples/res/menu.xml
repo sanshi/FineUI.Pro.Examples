@@ -144,7 +144,8 @@
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="输入框">
-			<TreeNode Text="文本框" NavigateUrl="~/form/textbox.aspx">
+			<TreeNode Text="字段帮助与下方错误提示" NavigateUrl="~/form/field_helper_text.aspx" Version="16.1.2"></TreeNode>
+            <TreeNode Text="文本框" NavigateUrl="~/form/textbox.aspx">
 			</TreeNode>
 			<TreeNode Text="文本框（自动回发）" NavigateUrl="~/form/textbox_autopostback.aspx">
 			</TreeNode>
