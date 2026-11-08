@@ -10468,5 +10468,55 @@
     <Compile Include="form\field_helper_text.aspx.designer.cs">
       <DependentUpon>field_helper_text.aspx</DependentUpon>
     </Compile>
+
+    <Content Include="htmleditor\basic.aspx" />
+    <Compile Include="htmleditor\basic.aspx.cs">
+      <DependentUpon>basic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="htmleditor\basic.aspx.designer.cs">
+      <DependentUpon>basic.aspx</DependentUpon>
+    </Compile>
+    <Content Include="htmleditor\formatting.aspx" />
+    <Compile Include="htmleditor\formatting.aspx.cs">
+      <DependentUpon>formatting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="htmleditor\formatting.aspx.designer.cs">
+      <DependentUpon>formatting.aspx</DependentUpon>
+    </Compile>
+    <Content Include="htmleditor\source.aspx" />
+    <Compile Include="htmleditor\source.aspx.cs">
+      <DependentUpon>source.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="htmleditor\source.aspx.designer.cs">
+      <DependentUpon>source.aspx</DependentUpon>
+    </Compile>
+    <Content Include="htmleditor\readonly.aspx" />
+    <Compile Include="htmleditor\readonly.aspx.cs">
+      <DependentUpon>readonly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="htmleditor\readonly.aspx.designer.cs">
+      <DependentUpon>readonly.aspx</DependentUpon>
+    </Compile>
+    <Content Include="htmleditor\toolbar.aspx" />
+    <Compile Include="htmleditor\toolbar.aspx.cs">
+      <DependentUpon>toolbar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="htmleditor\toolbar.aspx.designer.cs">
+      <DependentUpon>toolbar.aspx</DependentUpon>
+    </Compile>
+    <Content Include="htmleditor\layout.aspx" />
+    <Compile Include="htmleditor\layout.aspx.cs">
+      <DependentUpon>layout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="htmleditor\layout.aspx.designer.cs">
+      <DependentUpon>layout.aspx</DependentUpon>
+    </Compile>
+    <Content Include="htmleditor\csp.aspx" />
+    <Compile Include="htmleditor\csp.aspx.cs">
+      <DependentUpon>csp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="htmleditor\csp.aspx.designer.cs">
+      <DependentUpon>csp.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>
