@@ -5,8 +5,8 @@
     <title>多实例与容器布局</title>
     <style>
         /* 窗口已有外框，嵌入的编辑器去掉自身外框、圆角和聚焦光晕，避免出现重复边界。 */
-        .htmleditor-in-tab .f-field-htmleditor-fineui,
-        .htmleditor-in-tab .f-field-htmleditor-fineui:focus-within {
+        .htmleditor-in-tab .f-field-htmleditor-default,
+        .htmleditor-in-tab .f-field-htmleditor-default:focus-within {
             border: 0;
             border-radius: 0;
             box-shadow: none;
