@@ -1,6 +1,19 @@
 <%@ Page Language="C#" ClientIDMode="Static" ValidateRequest="false" AutoEventWireup="true" CodeBehind="layout.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.layout" %>
 <!DOCTYPE html>
-<html><head runat="server"><title>多实例与容器布局</title></head><body>
+<html>
+<head runat="server">
+    <title>多实例与容器布局</title>
+    <style>
+        /* 窗口已有外框，嵌入的编辑器去掉自身外框、圆角和聚焦光晕，避免出现重复边界。 */
+        .htmleditor-in-tab .f-field-htmleditor-fineui,
+        .htmleditor-in-tab .f-field-htmleditor-fineui:focus-within {
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
 <form id="form1" runat="server">
     <f:PageManager ID="PageManager1" runat="server" />
     <f:SimpleForm ID="SimpleForm1" runat="server" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="多实例与容器布局">
@@ -12,6 +25,7 @@
             <f:Button runat="server" ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
         </Items>
     </f:SimpleForm>
+    <br />
     <f:Button runat="server" ID="btnOpenEditor" Text="打开编辑窗口" ClickHandler="onOpenEditorClick" />
     <f:Window runat="server" ID="Window1" Title="窗口与隐藏选项卡" Hidden="true" Width="760" Height="460"
               Layout="Fit" EnableResize="true" BodyPadding="0">
@@ -20,12 +34,12 @@
                 <Tabs>
                     <f:Tab runat="server" ID="Tab1" Title="第一份文档" Layout="Fit" BodyPadding="0">
                         <Items>
-                            <f:HtmlEditor runat="server" ID="HtmlEditor3" ShowLabel="false" Margin="0" Text="&lt;p&gt;窗口中的第一份文档&lt;/p&gt;" />
+                            <f:HtmlEditor runat="server" ID="HtmlEditor3" CssClass="htmleditor-in-tab" ShowLabel="false" Margin="0" Text="&lt;p&gt;窗口中的第一份文档&lt;/p&gt;" />
                         </Items>
                     </f:Tab>
                     <f:Tab runat="server" ID="Tab2" Title="隐藏选项卡" Layout="Fit" BodyPadding="0">
                         <Items>
-                            <f:HtmlEditor runat="server" ID="HtmlEditor4" ShowLabel="false" Margin="0" Text="&lt;p&gt;切换选项卡后继续编辑&lt;/p&gt;" />
+                            <f:HtmlEditor runat="server" ID="HtmlEditor4" CssClass="htmleditor-in-tab" ShowLabel="false" Margin="0" Text="&lt;p&gt;切换选项卡后继续编辑&lt;/p&gt;" />
                         </Items>
                     </f:Tab>
                 </Tabs>
