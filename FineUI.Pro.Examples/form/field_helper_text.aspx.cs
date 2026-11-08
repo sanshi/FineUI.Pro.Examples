@@ -20,7 +20,7 @@ namespace FineUI.Pro.Examples.form
 
         protected void btnRead_Click(object sender, EventArgs e)
         {
-            labResult.Text = tbxEmail.HelperText;
+            labResult.Text = "当前填写说明：" + tbxEmail.HelperText;
         }
     }
 }
