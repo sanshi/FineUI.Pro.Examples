@@ -2314,6 +2314,14 @@
 			<TreeNode Text="Region（多个侧边区域）" NavigateUrl="~/layout/region_multiregions.aspx">
 			</TreeNode>
 		</TreeNode>
+		<TreeNode Text="图表">
+			<TreeNode Text="基础柱状图" NavigateUrl="~/chart/bar.aspx" />
+			<TreeNode Text="基础折线图" NavigateUrl="~/chart/line.aspx" />
+			<TreeNode Text="基础面积图" NavigateUrl="~/chart/area.aspx" />
+			<TreeNode Text="基础饼图" NavigateUrl="~/chart/pie.aspx" />
+			<TreeNode Text="折柱混合图" NavigateUrl="~/chart/combination.aspx" />
+			<TreeNode Text="图表绑定与 Grid 联动" NavigateUrl="~/chart/sales.aspx" />
+		</TreeNode>
 		<TreeNode Text="Block">
 			<TreeNode Text="响应式首页" IconFont="_Responsive" NavigateUrl="~/block/dashboard.aspx">
 			</TreeNode>

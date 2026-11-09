@@ -41,6 +41,13 @@ namespace FineUI.Pro.Examples.block
         /// </remarks>
         protected global::FineUI.Pro.Panel Panel1;
 
+        protected global::FineUI.Pro.Chart ChartCardViews;
+        protected global::FineUI.Pro.Chart ChartCardTrend;
+        protected global::FineUI.Pro.Chart ChartCardUsers;
+        protected global::FineUI.Pro.Chart ChartTabViews;
+        protected global::FineUI.Pro.Chart ChartTabUsers;
+        protected global::FineUI.Pro.Chart ChartTrafficSources;
+
         /// <summary>
         /// Grid1 control.
         /// </summary>

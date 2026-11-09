@@ -4,7 +4,7 @@
 <html>
 <head runat="server">
     <title></title>
-    <meta name="sourcefiles" content="~/res/css/dashboard.css;~/res/css/responsive-card.css;~/res/js/dashboard-chart.js;~/res/js/responsive-card.js" />
+    <meta name="sourcefiles" content="~/res/css/dashboard.css;~/res/css/responsive-card.css;~/res/js/responsive-card.js" />
     <%-- 将资源表达式放在独立容器内，保持 head 可追加控件，确保 FineUI 能插入公共脚本和样式。 --%>
     <asp:PlaceHolder runat="server">
 
@@ -26,7 +26,12 @@
                         <div class="number">
                             12,000
                         </div>
-                        <div class="chart chart1">
+                        <div class="chart">
+                            <f:Chart ID="ChartCardViews" runat="server" Height="60px" CategoryField="Category" Compact="true">
+                                <Series>
+                                    <f:ChartSeries Key="views" Type="Bar" Name="浏览量" ValueField="Views" />
+                                </Series>
+                            </f:Chart>
                         </div>
                         <div class="footer f-widget-content">
                             日均浏览量 15,000
@@ -53,7 +58,12 @@
                         <div class="number">
                             800
                         </div>
-                        <div class="chart chart2">
+                        <div class="chart">
+                            <f:Chart ID="ChartCardTrend" runat="server" Height="60px" CategoryField="Category" Compact="true">
+                                <Series>
+                                    <f:ChartSeries Key="views" Type="Area" Name="独立 IP" ValueField="Views" Smooth="true" ShowSymbol="true" />
+                                </Series>
+                            </f:Chart>
                         </div>
                         <div class="footer f-widget-content">
                             日均独立IP 900
@@ -80,7 +90,13 @@
                         <div class="number">
                             900
                         </div>
-                        <div class="chart chart3">
+                        <div class="chart">
+                            <f:Chart ID="ChartCardUsers" runat="server" Height="60px" CategoryField="Category" Compact="true">
+                                <Series>
+                                    <f:ChartSeries Key="users" Type="Bar" Name="用户数" ValueField="Users" />
+                                    <f:ChartSeries Key="views" Type="Line" Name="浏览量" ValueField="Views" Smooth="true" ShowSymbol="true" />
+                                </Series>
+                            </f:Chart>
                         </div>
                         <div class="footer f-widget-content">
                             周同比 10% <i class="f-icon f-iconfont f-iconfont-triangle-down"></i>
@@ -135,10 +151,15 @@
                     <Tabs>
                         <f:Tab runat="server" Layout="Block" BlockConfigSpace="0" Title="浏览量">
                             <Items>
-                                <f:ContentPanel BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
-                                    <div class="tabstrip-chart chart1">
-                                    </div>
-                                </f:ContentPanel>
+                                <f:Panel BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
+                                    <Items>
+                                        <f:Chart ID="ChartTabViews" runat="server" Height="350px" CategoryField="Category" Title="浏览量趋势">
+                                            <Series>
+                                                <f:ChartSeries Key="views" Type="Area" Name="浏览量" ValueField="Views" Smooth="true" />
+                                            </Series>
+                                        </f:Chart>
+                                    </Items>
+                                </f:Panel>
                                 <f:ContentPanel BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false" ShowHeader="false">
                                     <table class="mytable">
                                         <thead>
@@ -200,10 +221,16 @@
                         </f:Tab>
                         <f:Tab runat="server" Layout="Block" BlockConfigSpace="0" Title="用户量">
                             <Items>
-                                <f:ContentPanel BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
-                                    <div class="tabstrip-chart chart2">
-                                    </div>
-                                </f:ContentPanel>
+                                <f:Panel BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
+                                    <Items>
+                                        <f:Chart ID="ChartTabUsers" runat="server" Height="350px" CategoryField="Category" Title="用户数与浏览量" ShowLegend="true">
+                                            <Series>
+                                                <f:ChartSeries Key="users" Type="Bar" Name="用户数" ValueField="Users" />
+                                                <f:ChartSeries Key="views" Type="Line" Name="浏览量" ValueField="Views" Smooth="true" />
+                                            </Series>
+                                        </f:Chart>
+                                    </Items>
+                                </f:Panel>
                                 <f:ContentPanel BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false" ShowHeader="false">
                                     <table class="mytable">
                                         <thead>
@@ -325,9 +352,17 @@
                             <ul class="mysitestats">
                             </ul>
                         </f:ContentPanel>
-                        <f:ContentPanel BlockMD="12" BodyPadding="20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="访问来源">
-                            <div class="mychart-pie"></div>
-                        </f:ContentPanel>
+                        <f:Panel BlockMD="12" BodyPadding="20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="访问来源">
+                            <Items>
+                                <f:Chart ID="ChartTrafficSources" runat="server" Height="300px" CategoryField="Category"
+                                    Title="用户访问来源" Subtitle="这是说明文字" TitleAlign="Center"
+                                    ShowLegend="true" LegendPosition="Left" PieCenter="50%,60%">
+                                    <Series>
+                                        <f:ChartSeries Key="source" Type="Pie" Name="访问来源" ValueField="Value" />
+                                    </Series>
+                                </f:Chart>
+                            </Items>
+                        </f:Panel>
                     </Items>
                 </f:Panel>
             </Items>
@@ -335,8 +370,6 @@
         <div class="f-widget-content" id="emptycontent"></div>
     </form>
 
-    <script src="<%= PageContext.ResolveUrl("~/res/third-party/echarts/echarts.min.js") %>"></script>
-    <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/dashboard-chart.js?v" + GlobalConfig.ProductVersion) %>"></script>
     <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/grid.js?v" + GlobalConfig.ProductVersion) %>"></script>
     <script type="text/javascript" src="<%= PageContext.ResolveUrl("~/res/js/responsive-card.js?v" + GlobalConfig.ProductVersion) %>"></script>
     <script>

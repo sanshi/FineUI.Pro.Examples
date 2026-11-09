@@ -543,7 +543,6 @@
     <Content Include="res\css\dashboard.css" />
     <Content Include="res\css\gridcard.css" />
     <Content Include="res\css\mobileview.css" />
-    <Content Include="res\js\dashboard-chart.js" />
     <Content Include="res\css\tablestyle-noborder.css" />
     <Content Include="formtable\tablestyle_form_emptylabel.aspx" />
     <Content Include="formtable\tablestyle_layout_contactus_border.aspx" />
@@ -895,6 +894,12 @@
     <Content Include="mobile\button\buttongroup_vertical.aspx" />
     <Content Include="datalist\datalist.aspx" />
     <Content Include="datalist\datalist_databind.aspx" />
+    <Content Include="chart\bar.aspx" />
+    <Content Include="chart\line.aspx" />
+    <Content Include="chart\area.aspx" />
+    <Content Include="chart\pie.aspx" />
+    <Content Include="chart\combination.aspx" />
+    <Content Include="chart\sales.aspx" />
     <Content Include="datalist\datalist_selection.aspx" />
     <Content Include="datalist\datalist_group.aspx" />
     <Content Include="mobile\datalist\datalist.aspx" />
@@ -6748,6 +6753,44 @@
     <Compile Include="datalist\datalist.aspx.designer.cs">
       <DependentUpon>datalist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="chart\ChartSamples.cs" />
+    <Compile Include="chart\bar.aspx.cs">
+      <DependentUpon>bar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar.aspx.designer.cs">
+      <DependentUpon>bar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\line.aspx.cs">
+      <DependentUpon>line.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\line.aspx.designer.cs">
+      <DependentUpon>line.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\area.aspx.cs">
+      <DependentUpon>area.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\area.aspx.designer.cs">
+      <DependentUpon>area.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\pie.aspx.cs">
+      <DependentUpon>pie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\pie.aspx.designer.cs">
+      <DependentUpon>pie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\combination.aspx.cs">
+      <DependentUpon>combination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\combination.aspx.designer.cs">
+      <DependentUpon>combination.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\sales.aspx.cs" />
+    <Compile Include="chart\sales.aspx.designer.cs" />
     <Compile Include="datalist\datalist_databind.aspx.cs">
       <DependentUpon>datalist_databind.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
