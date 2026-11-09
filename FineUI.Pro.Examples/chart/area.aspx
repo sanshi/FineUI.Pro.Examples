@@ -7,7 +7,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartArea" runat="server" Height="350px" CategoryField="Category" ShowTooltip="false">
+        <f:Chart ID="ChartArea" runat="server" Height="550px" CategoryField="Category" ShowTooltip="false" CategoryBoundaryGap="false">
             <Series>
                 <f:ChartSeries Key="value" Type="Area" Name="数值" ValueField="Value" />
             </Series>

@@ -894,6 +894,12 @@
     <Content Include="mobile\button\buttongroup_vertical.aspx" />
     <Content Include="datalist\datalist.aspx" />
     <Content Include="datalist\datalist_databind.aspx" />
+    <Content Include="chart\bar\background.aspx" />
+    <Content Include="chart\bar\point_color.aspx" />
+    <Content Include="chart\line\smooth.aspx" />
+    <Content Include="chart\area\stacked.aspx" />
+    <Content Include="chart\pie\doughnut.aspx" />
+    <Content Include="chart\pie\half_doughnut.aspx" />
     <Content Include="chart\bar.aspx" />
     <Content Include="chart\line.aspx" />
     <Content Include="chart\area.aspx" />
@@ -6754,6 +6760,48 @@
       <DependentUpon>datalist.aspx</DependentUpon>
     </Compile>
     <Compile Include="chart\ChartSamples.cs" />
+    <Compile Include="chart\bar\background.aspx.cs">
+      <DependentUpon>background.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\background.aspx.designer.cs">
+      <DependentUpon>background.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\point_color.aspx.cs">
+      <DependentUpon>point_color.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\point_color.aspx.designer.cs">
+      <DependentUpon>point_color.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\line\smooth.aspx.cs">
+      <DependentUpon>smooth.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\line\smooth.aspx.designer.cs">
+      <DependentUpon>smooth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\area\stacked.aspx.cs">
+      <DependentUpon>stacked.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\area\stacked.aspx.designer.cs">
+      <DependentUpon>stacked.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\pie\doughnut.aspx.cs">
+      <DependentUpon>doughnut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\pie\doughnut.aspx.designer.cs">
+      <DependentUpon>doughnut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\pie\half_doughnut.aspx.cs">
+      <DependentUpon>half_doughnut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\pie\half_doughnut.aspx.designer.cs">
+      <DependentUpon>half_doughnut.aspx</DependentUpon>
+    </Compile>
     <Compile Include="chart\bar.aspx.cs">
       <DependentUpon>bar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

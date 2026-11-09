@@ -7,9 +7,9 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartPie" runat="server" Height="350px" CategoryField="Category"
+        <f:Chart ID="ChartPie" runat="server" Height="550px" CategoryField="Category"
             Title="Referer of a Website" Subtitle="Fake Data" TitleAlign="Center"
-            ShowLegend="true" LegendPosition="Left"
+            ShowLegend="true" LegendPosition="Left" PieEmphasisShadow="true"
             PieRadius="50%" Palette="#5070dd,#b6d634,#505372,#ff994d,#0ca8df">
             <Series>
                 <f:ChartSeries Key="value" Type="Pie" Name="Access From" ValueField="Value" />

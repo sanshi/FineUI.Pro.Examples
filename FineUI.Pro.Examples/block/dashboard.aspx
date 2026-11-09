@@ -356,7 +356,7 @@
                             <Items>
                                 <f:Chart ID="ChartTrafficSources" runat="server" Height="300px" CategoryField="Category"
                                     Title="用户访问来源" Subtitle="这是说明文字" TitleAlign="Center"
-                                    ShowLegend="true" LegendPosition="Left" PieCenter="50%,60%">
+                                    ShowLegend="true" LegendPosition="Left" LegendTop="top" PieEmphasisShadow="true" PieCenter="50%,60%">
                                     <Series>
                                         <f:ChartSeries Key="source" Type="Pie" Name="访问来源" ValueField="Value" />
                                     </Series>

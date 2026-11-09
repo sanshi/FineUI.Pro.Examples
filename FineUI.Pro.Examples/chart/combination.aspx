@@ -7,7 +7,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartCombo" runat="server" Height="350px" CategoryField="Category" ShowLegend="true">
+        <f:Chart ID="ChartCombo" runat="server" Height="550px" CategoryField="Category" ShowLegend="true">
             <Series>
                 <f:ChartSeries Key="evaporation" Type="Bar" Name="Evaporation" ValueField="Evaporation" />
                 <f:ChartSeries Key="precipitation" Type="Bar" Name="Precipitation" ValueField="Precipitation" />

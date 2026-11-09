@@ -2314,14 +2314,6 @@
 			<TreeNode Text="Region（多个侧边区域）" NavigateUrl="~/layout/region_multiregions.aspx">
 			</TreeNode>
 		</TreeNode>
-		<TreeNode Text="图表">
-			<TreeNode Text="基础柱状图" NavigateUrl="~/chart/bar.aspx" />
-			<TreeNode Text="基础折线图" NavigateUrl="~/chart/line.aspx" />
-			<TreeNode Text="基础面积图" NavigateUrl="~/chart/area.aspx" />
-			<TreeNode Text="基础饼图" NavigateUrl="~/chart/pie.aspx" />
-			<TreeNode Text="折柱混合图" NavigateUrl="~/chart/combination.aspx" />
-			<TreeNode Text="图表绑定与 Grid 联动" NavigateUrl="~/chart/sales.aspx" />
-		</TreeNode>
 		<TreeNode Text="Block">
 			<TreeNode Text="响应式首页" IconFont="_Responsive" NavigateUrl="~/block/dashboard.aspx">
 			</TreeNode>
@@ -2420,6 +2412,28 @@
 			<TreeNode Text="面板高度随IFrame的高度变化（ButtonGroup）" NavigateUrl="~/iframe/iframe_autoheight.aspx">
 			</TreeNode>
 		</TreeNode>
+	</TreeNode>
+	<TreeNode Text="图表" IconFont="BarChart">
+		<TreeNode Text="柱状图">
+			<TreeNode Text="基础柱状图" NavigateUrl="~/chart/bar.aspx" />
+			<TreeNode Text="带背景色的柱状图" NavigateUrl="~/chart/bar/background.aspx" />
+			<TreeNode Text="单柱配色" NavigateUrl="~/chart/bar/point_color.aspx" />
+		</TreeNode>
+		<TreeNode Text="折线图">
+			<TreeNode Text="基础折线图" NavigateUrl="~/chart/line.aspx" />
+			<TreeNode Text="平滑折线图" NavigateUrl="~/chart/line/smooth.aspx" />
+		</TreeNode>
+		<TreeNode Text="面积图">
+			<TreeNode Text="基础面积图" NavigateUrl="~/chart/area.aspx" />
+			<TreeNode Text="堆叠面积图" NavigateUrl="~/chart/area/stacked.aspx" />
+		</TreeNode>
+		<TreeNode Text="饼图">
+			<TreeNode Text="基础饼图" NavigateUrl="~/chart/pie.aspx" />
+			<TreeNode Text="环形图" NavigateUrl="~/chart/pie/doughnut.aspx" />
+			<TreeNode Text="半环形图" NavigateUrl="~/chart/pie/half_doughnut.aspx" />
+		</TreeNode>
+		<TreeNode Text="折柱混合图" NavigateUrl="~/chart/combination.aspx" />
+		<TreeNode Text="图表绑定与 Grid 联动" NavigateUrl="~/chart/sales.aspx" />
 	</TreeNode>
 	<TreeNode Text="其他" IconFont="_More">
 		<TreeNode Text="多语言">
