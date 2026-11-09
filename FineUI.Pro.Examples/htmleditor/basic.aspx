@@ -12,6 +12,6 @@
             <f:Button runat="server" ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
         </Items>
     </f:SimpleForm>
-    <p>基础工具栏提供正文/标题、文字样式、列表、链接及常用编辑操作；编辑正文后可获取 HTML，也可以修改下方 HTML 后重新设置。</p>
+    <p>本例使用 FineUI 内置编辑器，编辑内核采用 ProseMirror。基础工具栏提供正文/标题、文字样式、列表、链接及常用编辑操作。编辑正文后可获取 HTML，也可以修改下方 HTML 后重新设置。</p>
 </form>
 </body></html>
