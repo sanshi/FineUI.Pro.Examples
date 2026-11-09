@@ -664,7 +664,7 @@
 			</TreeNode>
 			<TreeNode Text="同时定义客户端事件和服务端事件" NavigateUrl="~/form/checkbox_client_server_event.aspx">
 			</TreeNode>
-			<TreeNode Text="字段帮助与下方错误提示" NavigateUrl="~/form/field_helper_text.aspx" Version="16.1.3"></TreeNode>
+			<TreeNode Text="字段帮助与下方错误提示" NavigateUrl="~/form/field_helper_text.aspx" Version="16.2.0"></TreeNode>
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="表格" IconFont="_Table">
