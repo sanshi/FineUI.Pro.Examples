@@ -2416,8 +2416,13 @@
 	<TreeNode Text="图表" IconFont="BarChart">
 		<TreeNode Text="柱状图">
 			<TreeNode Text="基础柱状图" NavigateUrl="~/chart/bar.aspx" />
+			<TreeNode Text="坐标轴刻度与标签对齐" NavigateUrl="~/chart/bar/tick_align.aspx" />
 			<TreeNode Text="带背景色的柱状图" NavigateUrl="~/chart/bar/background.aspx" />
 			<TreeNode Text="单柱配色" NavigateUrl="~/chart/bar/point_color.aspx" />
+			<TreeNode Text="世界人口总量 - 条形图" NavigateUrl="~/chart/bar/world_population.aspx" />
+			<TreeNode Text="多 Y 轴示例" NavigateUrl="~/chart/combination.aspx" />
+			<TreeNode Text="折柱混合" NavigateUrl="~/chart/bar/mix_line_bar.aspx" />
+			<TreeNode Text="图表绑定与 Grid 联动" NavigateUrl="~/chart/sales.aspx" />
 		</TreeNode>
 		<TreeNode Text="折线图">
 			<TreeNode Text="基础折线图" NavigateUrl="~/chart/line.aspx" />
@@ -2432,8 +2437,6 @@
 			<TreeNode Text="环形图" NavigateUrl="~/chart/pie/doughnut.aspx" />
 			<TreeNode Text="半环形图" NavigateUrl="~/chart/pie/half_doughnut.aspx" />
 		</TreeNode>
-		<TreeNode Text="折柱混合图" NavigateUrl="~/chart/combination.aspx" />
-		<TreeNode Text="图表绑定与 Grid 联动" NavigateUrl="~/chart/sales.aspx" />
 	</TreeNode>
 	<TreeNode Text="其他" IconFont="_More">
 		<TreeNode Text="多语言">

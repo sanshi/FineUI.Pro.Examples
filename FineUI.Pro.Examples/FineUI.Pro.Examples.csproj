@@ -895,6 +895,9 @@
     <Content Include="datalist\datalist.aspx" />
     <Content Include="datalist\datalist_databind.aspx" />
     <Content Include="chart\bar\background.aspx" />
+    <Content Include="chart\bar\world_population.aspx" />
+    <Content Include="chart\bar\mix_line_bar.aspx" />
+    <Content Include="chart\bar\tick_align.aspx" />
     <Content Include="chart\bar\point_color.aspx" />
     <Content Include="chart\line\smooth.aspx" />
     <Content Include="chart\area\stacked.aspx" />
@@ -6764,8 +6767,29 @@
       <DependentUpon>background.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="chart\bar\world_population.aspx.cs">
+      <DependentUpon>world_population.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\mix_line_bar.aspx.cs">
+      <DependentUpon>mix_line_bar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\tick_align.aspx.cs">
+      <DependentUpon>tick_align.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="chart\bar\background.aspx.designer.cs">
       <DependentUpon>background.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\world_population.aspx.designer.cs">
+      <DependentUpon>world_population.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\mix_line_bar.aspx.designer.cs">
+      <DependentUpon>mix_line_bar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\tick_align.aspx.designer.cs">
+      <DependentUpon>tick_align.aspx</DependentUpon>
     </Compile>
     <Compile Include="chart\bar\point_color.aspx.cs">
       <DependentUpon>point_color.aspx</DependentUpon>
