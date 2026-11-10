@@ -5,7 +5,7 @@ namespace FineUI.Pro.Examples.chart
     {
         protected global::FineUI.Pro.PageManager PageManager1;
         protected global::FineUI.Pro.Chart ChartDailyVisits;
-        protected global::FineUI.Pro.Window WindowVisitDetails;
+        protected global::FineUI.Pro.SimpleForm SimpleFormVisitDetails;
         protected global::FineUI.Pro.Label labVisitDate;
         protected global::FineUI.Pro.Label labVisitCount;
         protected global::FineUI.Pro.Label labConversionCount;

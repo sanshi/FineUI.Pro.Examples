@@ -6,7 +6,6 @@ namespace FineUI.Pro.Examples.chart
         protected global::FineUI.Pro.PageManager PageManager1;
         protected global::FineUI.Pro.ToolbarText ToolbarTextChartScope;
         protected global::FineUI.Pro.DatePicker dpFocus;
-        protected global::FineUI.Pro.Button btnFocus;
         protected global::FineUI.Pro.Chart ChartDateFocus;
     }
 }

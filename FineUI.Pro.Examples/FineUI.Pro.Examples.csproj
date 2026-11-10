@@ -903,6 +903,11 @@
     <Content Include="chart\area\stacked.aspx" />
     <Content Include="chart\pie\doughnut.aspx" />
     <Content Include="chart\pie\half_doughnut.aspx" />
+    <Content Include="chart\bar\object_array.aspx" />
+    <Content Include="chart\bar\negative.aspx" />
+    <Content Include="chart\bar\stack_normalization.aspx" />
+    <Content Include="chart\pie\scrollable_legend.aspx" />
+    <Content Include="chart\pie\label_align.aspx" />
     <Content Include="chart\bar\stacked_horizontal.aspx" />
     <Content Include="chart\line\stacked.aspx" />
     <Content Include="chart\area\gradient_stacked.aspx" />
@@ -6828,6 +6833,41 @@
     </Compile>
     <Compile Include="chart\line\smooth.aspx.designer.cs">
       <DependentUpon>smooth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\object_array.aspx.cs">
+      <DependentUpon>object_array.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\object_array.aspx.designer.cs">
+      <DependentUpon>object_array.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\negative.aspx.cs">
+      <DependentUpon>negative.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\negative.aspx.designer.cs">
+      <DependentUpon>negative.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\stack_normalization.aspx.cs">
+      <DependentUpon>stack_normalization.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\stack_normalization.aspx.designer.cs">
+      <DependentUpon>stack_normalization.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\pie\scrollable_legend.aspx.cs">
+      <DependentUpon>scrollable_legend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\pie\scrollable_legend.aspx.designer.cs">
+      <DependentUpon>scrollable_legend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\pie\label_align.aspx.cs">
+      <DependentUpon>label_align.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\pie\label_align.aspx.designer.cs">
+      <DependentUpon>label_align.aspx</DependentUpon>
     </Compile>
     <Compile Include="chart\bar\stacked_horizontal.aspx.cs">
       <DependentUpon>stacked_horizontal.aspx</DependentUpon>

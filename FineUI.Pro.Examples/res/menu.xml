@@ -2419,6 +2419,9 @@
 			<TreeNode Text="坐标轴刻度与标签对齐" NavigateUrl="~/chart/bar/tick_align.aspx" />
 			<TreeNode Text="带背景色的柱状图" NavigateUrl="~/chart/bar/background.aspx" />
 			<TreeNode Text="单柱配色" NavigateUrl="~/chart/bar/point_color.aspx" />
+			<TreeNode Text="对象数组的输入格式" NavigateUrl="~/chart/bar/object_array.aspx" />
+			<TreeNode Text="正负条形图" NavigateUrl="~/chart/bar/negative.aspx" />
+			<TreeNode Text="堆叠柱状图的归一化" NavigateUrl="~/chart/bar/stack_normalization.aspx" />
 			<TreeNode Text="堆叠条形图" NavigateUrl="~/chart/bar/stacked_horizontal.aspx" />
 			<TreeNode Text="瀑布图（柱状图模拟）" NavigateUrl="~/chart/bar/waterfall.aspx" />
 			<TreeNode Text="柱条间距" NavigateUrl="~/chart/bar/spacing.aspx" />
@@ -2461,6 +2464,8 @@
 			<TreeNode Text="环形图" NavigateUrl="~/chart/pie/doughnut.aspx" />
 			<TreeNode Text="半环形图" NavigateUrl="~/chart/pie/half_doughnut.aspx" />
 			<TreeNode Text="饼图扇区间隙" NavigateUrl="~/chart/pie/pad_angle.aspx" />
+			<TreeNode Text="可滚动的图例" NavigateUrl="~/chart/pie/scrollable_legend.aspx" />
+			<TreeNode Text="饼图标签对齐" NavigateUrl="~/chart/pie/label_align.aspx" />
 			<TreeNode Text="圆角环形图" NavigateUrl="~/chart/pie/rounded_doughnut.aspx" />
 			<TreeNode Text="南丁格尔玫瑰图" NavigateUrl="~/chart/pie/rose.aspx" />
 			<TreeNode Text="数据联动">

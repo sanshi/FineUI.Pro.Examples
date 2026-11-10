@@ -8,30 +8,34 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager runat="server" ID="PageManager1" />
-        <f:Panel runat="server" IsFluid="true" Title="每日访问量" ShowHeader="true" ShowBorder="true" BodyPadding="8">
+        <f:Panel runat="server" Layout="Block" BlockConfigSpace="16" IsFluid="true" ShowHeader="false" ShowBorder="false">
             <Items>
-                <f:Chart runat="server" ID="ChartDailyVisits" Height="550px" DataCategoryField="Category" DataIDField="Id" OnPointClick="ChartDailyVisits_PointClick">
-                    <Series>
-                        <f:ChartSeries Key="amount" Type="Line" Name="访问量" DataValueField="Amount" />
-                    </Series>
-                </f:Chart>
+                <f:Panel runat="server" BlockLG="8" Height="550px" Layout="Fit" Title="每日访问量" ShowHeader="true" ShowBorder="true" BodyPadding="8">
+                    <Items>
+                        <f:Chart runat="server" ID="ChartDailyVisits" DataCategoryField="Category" DataIDField="Id" OnPointClick="ChartDailyVisits_PointClick">
+                            <Series>
+                                <f:ChartSeries Key="amount" Type="Line" Name="访问量" DataValueField="Amount" />
+                            </Series>
+                        </f:Chart>
+                    </Items>
+                </f:Panel>
+                <f:SimpleForm runat="server" ID="SimpleFormVisitDetails" BlockLG="4" Height="550px" Title="当日访问详情" ShowHeader="true" ShowBorder="true" BodyPadding="16" LabelWidth="72">
+                    <Items>
+                        <f:Label runat="server" ID="labVisitDate" Label="日期" Text="—" />
+                        <f:Label runat="server" ID="labVisitCount" Label="访问量" Text="—" />
+                        <f:Label runat="server" ID="labConversionCount" Label="转化量" Text="—" />
+                        <f:Label runat="server" ID="labConversionRate" Label="转化率" Text="—" />
+                    </Items>
+                </f:SimpleForm>
             </Items>
         </f:Panel>
-        <f:Window runat="server" ID="WindowVisitDetails" Title="访问详情" Hidden="true" IsModal="true" EnableClose="true" Width="320px" Height="210px" BodyPadding="16">
-            <Items>
-                <f:Label runat="server" ID="labVisitDate" ShowLabel="false" />
-                <f:Label runat="server" ID="labVisitCount" ShowLabel="false" />
-                <f:Label runat="server" ID="labConversionCount" ShowLabel="false" />
-                <f:Label runat="server" ID="labConversionRate" ShowLabel="false" />
-            </Items>
-        </f:Window>
 
-        <p>点击折线上的日期数据点，弹出当日访问量、转化量和转化率。</p>
+        <p>点击折线上的日期点，右侧表单显示当天的访问量、转化量和转化率。</p>
         <section aria-label="关键属性">
             <p><strong>关键属性</strong></p>
             <ul>
                 <li><code>DataIDField="Id"</code> 以完整日期识别记录，例如 2026-09-03。</li>
-                <li><code>OnPointClick</code> 后台按日期读取完整记录，填充详情 Window，再打开窗口。</li>
+                <li><code>OnPointClick</code> 按日期读取完整记录，更新只读表单中的 Label。</li>
             </ul>
         </section>
     </form>
