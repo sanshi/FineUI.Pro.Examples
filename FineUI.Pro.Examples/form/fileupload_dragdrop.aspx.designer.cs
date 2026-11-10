@@ -11,6 +11,7 @@ namespace FineUI.Pro.Examples.form
         protected global::FineUI.Pro.FileUpload filePhoto;
         protected global::FineUI.Pro.FileUpload filePhotos;
         protected global::FineUI.Pro.Button btnSubmit;
-        protected global::FineUI.Pro.Label labResult;
+        protected global::FineUI.Pro.Label labPhotoResult;
+        protected global::FineUI.Pro.Label labPhotosResult;
     }
 }

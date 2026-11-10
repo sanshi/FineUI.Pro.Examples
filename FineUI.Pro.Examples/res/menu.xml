@@ -334,6 +334,8 @@
 			</TreeNode>
 			<TreeNode Text="上传控件（拖放上传）" NavigateUrl="~/form/fileupload_dragdrop.aspx">
 			</TreeNode>
+			<TreeNode Text="上传控件（拖放后立即上传）" NavigateUrl="~/form/fileupload_dragdrop_auto.aspx">
+			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="表单布局">
 			<TreeNode Text="按钮与表单" NavigateUrl="~/formlayout/layout_panel.aspx">

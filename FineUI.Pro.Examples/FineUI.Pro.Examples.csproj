@@ -1171,6 +1171,7 @@
     <Content Include="form\checkbox.aspx" />
     <Content Include="form\fileupload_multiple.aspx" />
     <Content Include="form\fileupload_dragdrop.aspx" />
+    <Content Include="form\fileupload_dragdrop_auto.aspx" />
     <Content Include="formlayout\layout_panel.aspx" />
     <Content Include="form\twintriggerbox.aspx" />
     <Content Include="form\textbox.aspx" />
@@ -8524,6 +8525,13 @@
     </Compile>
     <Compile Include="form\fileupload_dragdrop.aspx.designer.cs">
       <DependentUpon>fileupload_dragdrop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form\fileupload_dragdrop_auto.aspx.cs">
+      <DependentUpon>fileupload_dragdrop_auto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form\fileupload_dragdrop_auto.aspx.designer.cs">
+      <DependentUpon>fileupload_dragdrop_auto.aspx</DependentUpon>
     </Compile>
     <Compile Include="formlayout\layout_panel.aspx.cs">
       <DependentUpon>layout_panel.aspx</DependentUpon>

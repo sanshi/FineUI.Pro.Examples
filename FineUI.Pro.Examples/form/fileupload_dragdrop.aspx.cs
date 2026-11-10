@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Web;
 
 namespace FineUI.Pro.Examples.form
 {
@@ -8,15 +8,21 @@ namespace FineUI.Pro.Examples.form
     {
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            labPhotoResult.Text = "单张图片：" + FormatUploadedFiles(filePhoto.PostedFiles);
+            labPhotosResult.Text = "多张图片：" + FormatUploadedFiles(filePhotos.PostedFiles);
+            SimpleForm1.Reset();
+        }
+
+        private static string FormatUploadedFiles(IEnumerable<HttpPostedFile> files)
+        {
             var results = new List<string>();
-            foreach (var file in filePhoto.PostedFiles.Concat(filePhotos.PostedFiles))
+            foreach (var file in files)
             {
                 string error;
                 results.Add(ValidateUploadFile(file, out error) ? file.FileName : file.FileName + "（" + error + "）");
             }
 
-            labResult.Text = results.Count == 0 ? "请选择图片。" : "服务器收到：" + string.Join("、", results.ToArray());
-            SimpleForm1.Reset();
+            return results.Count == 0 ? "未选择文件" : string.Join("、", results.ToArray());
         }
     }
 }
