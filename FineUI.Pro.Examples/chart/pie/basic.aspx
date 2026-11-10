@@ -7,12 +7,12 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartPie" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartPie" runat="server" Height="550px" DataCategoryField="Category"
             Title="Referer of a Website" Subtitle="Fake Data" TitleAlign="Center"
             ShowLegend="true" LegendPosition="Left" PieEmphasisShadow="true"
             PieRadius="50%" Palette="#5070dd,#b6d634,#505372,#ff994d,#0ca8df">
             <Series>
-                <f:ChartSeries Key="value" Type="Pie" Name="Access From" ValueField="Value" />
+                <f:ChartSeries Key="value" Type="Pie" Name="Access From" DataValueField="Value" />
             </Series>
         </f:Chart>
         <p>扇区表示各访问来源所占比例，来源和访问量沿用官网示例。<a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-simple" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>

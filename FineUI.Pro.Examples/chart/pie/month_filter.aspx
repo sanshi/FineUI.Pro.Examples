@@ -17,9 +17,9 @@
                 </f:Toolbar>
             </Toolbars>
             <Items>
-                <f:SimpleForm runat="server" IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="64">
+                <f:SimpleForm runat="server" IsFluid="true" MaxWidth="240px" ShowHeader="false" ShowBorder="false" LabelWidth="64">
                     <Items>
-                        <f:DropDownList runat="server" ID="ddlMonth" Label="月份" Width="240px" OnSelectedIndexChanged="ddlMonth_SelectedIndexChanged">
+                        <f:DropDownList runat="server" ID="ddlMonth" Label="月份" OnSelectedIndexChanged="ddlMonth_SelectedIndexChanged">
                             <f:ListItem Text="全部月份" Value="all" Selected="true" />
                             <f:ListItem Text="4 月" Value="2026-04" />
                             <f:ListItem Text="5 月" Value="2026-05" />
@@ -30,9 +30,9 @@
                         </f:DropDownList>
                     </Items>
                 </f:SimpleForm>
-                <f:Chart runat="server" ID="ChartChannelMonth" Height="550px" CategoryField="Category">
+                <f:Chart runat="server" ID="ChartChannelMonth" Height="550px" DataCategoryField="Category">
                     <Series>
-                        <f:ChartSeries Key="amount" Type="Pie" Name="访问量" ValueField="Amount" />
+                        <f:ChartSeries Key="amount" Type="Pie" Name="访问量" DataValueField="Amount" />
                     </Series>
                 </f:Chart>
             </Items>

@@ -12,9 +12,9 @@
             <Items>
                 <f:Panel runat="server" BlockLG="5" Height="550px" Layout="Fit" Title="渠道访问占比" ShowHeader="true" ShowBorder="true" BodyPadding="8">
                     <Items>
-                        <f:Chart runat="server" ID="ChartChannels" CategoryField="Category" DataKeyField="Key" OnPointClick="ChartChannels_PointClick">
+                        <f:Chart runat="server" ID="ChartChannels" DataCategoryField="Category" DataIDField="Id" OnPointClick="ChartChannels_PointClick">
                             <Series>
-                                <f:ChartSeries Key="amount" Type="Pie" Name="访问量" ValueField="Amount" />
+                                <f:ChartSeries Key="amount" Type="Pie" Name="访问量" DataValueField="Amount" />
                             </Series>
                         </f:Chart>
                     </Items>
@@ -29,9 +29,9 @@
                         </f:Toolbar>
                     </Toolbars>
                     <Items>
-                        <f:Chart runat="server" ID="ChartChannelTrend" CategoryField="Category">
+                        <f:Chart runat="server" ID="ChartChannelTrend" DataCategoryField="Category">
                             <Series>
-                                <f:ChartSeries Key="amount" Type="Line" Name="访问量" ValueField="Amount" />
+                                <f:ChartSeries Key="amount" Type="Line" Name="访问量" DataValueField="Amount" />
                             </Series>
                         </f:Chart>
                     </Items>
@@ -43,7 +43,7 @@
         <section aria-label="关键属性">
             <p><strong>关键属性</strong></p>
             <ul>
-                <li><code>DataKeyField="Key"</code> 扇区的业务键是渠道编号，例如 search 表示搜索。</li>
+                <li><code>DataIDField="Id"</code> 扇区的业务键是渠道编号，例如 search 表示搜索。</li>
                 <li><code>OnPointClick</code> 后台按渠道刷新趋势图。饼图继续展示全部渠道，以便换选。</li>
             </ul>
         </section>

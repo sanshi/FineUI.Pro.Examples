@@ -7,12 +7,12 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartBarSpacing" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartBarSpacing" runat="server" Height="550px" DataCategoryField="Category"
             ShowTooltip="false">
             <Series>
-                <f:ChartSeries Key="first" Type="Bar" Name="first" ValueField="First"
+                <f:ChartSeries Key="first" Type="Bar" Name="first" DataValueField="First"
                     BarGap="20%" BarCategoryGap="40%" />
-                <f:ChartSeries Key="second" Type="Bar" Name="second" ValueField="Second" />
+                <f:ChartSeries Key="second" Type="Bar" Name="second" DataValueField="Second" />
             </Series>
         </f:Chart>
         <p>比较同一个分类里两根柱之间的间距，以及相邻分类的柱组之间的间距。<a href="https://echarts.apache.org/handbook/zh/how-to/chart-types/bar/basic-bar/#柱条间距" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>

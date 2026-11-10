@@ -20,10 +20,10 @@
                         </f:Toolbar>
                     </Toolbars>
                     <Items>
-                        <f:Chart ID="ChartSales" runat="server" CategoryField="Category"
-                            DataKeyField="Month" OnPointClick="ChartSales_PointClick">
+                        <f:Chart ID="ChartSales" runat="server" DataCategoryField="Category"
+                            DataIDField="Month" OnPointClick="ChartSales_PointClick">
                             <Series>
-                                <f:ChartSeries Key="sales" Type="Bar" Name="销售额" ValueField="Amount" />
+                                <f:ChartSeries Key="sales" Type="Bar" Name="销售额" DataValueField="Amount" />
                             </Series>
                         </f:Chart>
                     </Items>
@@ -50,7 +50,7 @@
             <p><strong>关键属性</strong></p>
             <ul>
                 <li>
-                    <code>DataKeyField="Month"</code>
+                    <code>DataIDField="Month"</code>
                     点击月份柱时传递业务键，例如 2026-09。横轴上的「9 月」只用于显示。
                 </li>
                 <li>

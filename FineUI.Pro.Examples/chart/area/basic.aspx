@@ -7,9 +7,9 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartArea" runat="server" Height="550px" CategoryField="Category" ShowTooltip="false" CategoryBoundaryGap="false">
+        <f:Chart ID="ChartArea" runat="server" Height="550px" DataCategoryField="Category" ShowTooltip="false" CategoryBoundaryGap="false">
             <Series>
-                <f:ChartSeries Key="value" Type="Area" Name="数值" ValueField="Value" />
+                <f:ChartSeries Key="value" Type="Area" Name="数值" DataValueField="Value" />
             </Series>
         </f:Chart>
         <p>面积图填充折线下方区域，分类和数值沿用官网示例。<a href="https://echarts.apache.org/examples/zh/editor.html?c=area-basic" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>

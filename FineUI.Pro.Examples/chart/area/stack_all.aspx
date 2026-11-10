@@ -7,12 +7,12 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartAreaStackAll" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartAreaStackAll" runat="server" Height="550px" DataCategoryField="Category"
             ShowTooltip="false">
             <Series>
-                <f:ChartSeries Key="baseline" Type="Line" Name="stack" ValueField="Baseline"
+                <f:ChartSeries Key="baseline" Type="Line" Name="stack" DataValueField="Baseline"
                     Stack="stack" StackStrategy="all" />
-                <f:ChartSeries Key="change" Type="Area" Name="stack" ValueField="Change"
+                <f:ChartSeries Key="change" Type="Area" Name="stack" DataValueField="Change"
                     Stack="stack" StackStrategy="all" />
             </Series>
         </f:Chart>

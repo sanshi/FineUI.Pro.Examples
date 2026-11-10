@@ -7,10 +7,10 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartPieRose" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartPieRose" runat="server" Height="550px" DataCategoryField="Category"
             ShowTooltip="false" PieRoseType="area" PieRadius="50%">
             <Series>
-                <f:ChartSeries Key="value" Type="Pie" Name="value" ValueField="Value" />
+                <f:ChartSeries Key="value" Type="Pie" Name="value" DataValueField="Value" />
             </Series>
         </f:Chart>
         <p>五个扇区角度相同，数值较大的扇区向外伸得更远。<a href="https://echarts.apache.org/handbook/zh/how-to/chart-types/pie/rose/" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>

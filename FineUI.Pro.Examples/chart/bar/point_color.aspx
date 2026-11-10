@@ -7,10 +7,10 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartBarPointColor" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartBarPointColor" runat="server" Height="550px" DataCategoryField="Category"
             ShowTooltip="false">
             <Series>
-                <f:ChartSeries Key="value" Type="Bar" Name="数值" ValueField="Value" ColorField="PointColor" />
+                <f:ChartSeries Key="value" Type="Bar" Name="数值" DataValueField="Value" DataColorField="PointColor" />
             </Series>
         </f:Chart>
         <p>为星期二的数据行指定颜色，其余柱子沿用系列配色。<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-data-color" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
@@ -18,7 +18,7 @@
             <p><strong>关键属性</strong></p>
             <ul>
                 <li>
-                    <code>ColorField="PointColor"</code>
+                    <code>DataColorField="PointColor"</code>
                     从每行读取颜色。本例只有 Tue 提供 #505372，其他柱子继续使用系列配色。
                 </li>
             </ul>

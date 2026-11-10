@@ -25,9 +25,9 @@
                         </f:RadioButtonList>
                     </Items>
                 </f:SimpleForm>
-                <f:Chart runat="server" ID="ChartMetricTrend" Height="550px" CategoryField="Category">
+                <f:Chart runat="server" ID="ChartMetricTrend" Height="550px" DataCategoryField="Category">
                     <Series>
-                        <f:ChartSeries Key="amount" Type="Line" Name="人数" ValueField="Amount" />
+                        <f:ChartSeries Key="amount" Type="Line" Name="人数" DataValueField="Amount" />
                     </Series>
                 </f:Chart>
             </Items>

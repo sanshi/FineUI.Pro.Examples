@@ -7,10 +7,10 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartLineDashed" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartLineDashed" runat="server" Height="550px" DataCategoryField="Category"
             ShowTooltip="false">
             <Series>
-                <f:ChartSeries Key="value" Type="Line" Name="value" ValueField="Value"
+                <f:ChartSeries Key="value" Type="Line" Name="value" DataValueField="Value"
                     LineColor="#008000" LineWidth="4" LineType="dashed" />
             </Series>
         </f:Chart>

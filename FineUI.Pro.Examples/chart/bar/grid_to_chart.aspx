@@ -11,7 +11,7 @@
         <f:Panel runat="server" Layout="Block" BlockConfigSpace="16" IsFluid="true" ShowHeader="false" ShowBorder="false">
             <Items>
                 <f:Grid runat="server" ID="GridRegions" BlockLG="4" Title="区域" ShowHeader="true" ShowBorder="true" Height="550px"
-                    DataIDField="Key" EnableRowClickEvent="true" OnRowClick="GridRegions_RowClick">
+                    DataIDField="Id" EnableRowClickEvent="true" OnRowClick="GridRegions_RowClick">
                     <Columns>
                         <f:RenderField DataField="Category" HeaderText="区域" ExpandUnusedSpace="true" />
                         <f:RenderField DataField="Amount" HeaderText="累计销售额" Width="108px" TextAlign="Right" />
@@ -26,9 +26,9 @@
                         </f:Toolbar>
                     </Toolbars>
                     <Items>
-                        <f:Chart runat="server" ID="ChartRegionMonths" CategoryField="Category">
+                        <f:Chart runat="server" ID="ChartRegionMonths" DataCategoryField="Category">
                             <Series>
-                                <f:ChartSeries Key="amount" Type="Bar" Name="销售额（元）" ValueField="Amount" />
+                                <f:ChartSeries Key="amount" Type="Bar" Name="销售额（元）" DataValueField="Amount" />
                             </Series>
                         </f:Chart>
                     </Items>
@@ -40,7 +40,7 @@
         <section aria-label="关键属性">
             <p><strong>关键属性</strong></p>
             <ul>
-                <li><code>DataIDField="Key"</code> Grid 使用区域业务键识别当前行，例如 east 对应华东。</li>
+                <li><code>DataIDField="Id"</code> Grid 使用区域业务键识别当前行，例如 east 对应华东。</li>
                 <li><code>EnableRowClickEvent="true"</code> 启用 <code>OnRowClick</code>，后台通过行的业务键查询该区域的月度销售额，并更新柱状图。</li>
             </ul>
         </section>

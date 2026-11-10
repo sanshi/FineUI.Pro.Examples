@@ -27,9 +27,9 @@
                             12,000
                         </div>
                         <div class="chart">
-                            <f:Chart ID="ChartCardViews" runat="server" Height="60px" CategoryField="Category" Compact="true">
+                            <f:Chart ID="ChartCardViews" runat="server" Height="60px" DataCategoryField="Category" Compact="true">
                                 <Series>
-                                    <f:ChartSeries Key="views" Type="Bar" Name="浏览量" ValueField="Views" />
+                                    <f:ChartSeries Key="views" Type="Bar" Name="浏览量" DataValueField="Views" />
                                 </Series>
                             </f:Chart>
                         </div>
@@ -59,9 +59,9 @@
                             800
                         </div>
                         <div class="chart">
-                            <f:Chart ID="ChartCardTrend" runat="server" Height="60px" CategoryField="Category" Compact="true">
+                            <f:Chart ID="ChartCardTrend" runat="server" Height="60px" DataCategoryField="Category" Compact="true">
                                 <Series>
-                                    <f:ChartSeries Key="views" Type="Area" Name="独立 IP" ValueField="Views" Smooth="true" ShowSymbol="true" />
+                                    <f:ChartSeries Key="views" Type="Area" Name="独立 IP" DataValueField="Views" Smooth="true" ShowSymbol="true" />
                                 </Series>
                             </f:Chart>
                         </div>
@@ -91,10 +91,10 @@
                             900
                         </div>
                         <div class="chart">
-                            <f:Chart ID="ChartCardUsers" runat="server" Height="60px" CategoryField="Category" Compact="true">
+                            <f:Chart ID="ChartCardUsers" runat="server" Height="60px" DataCategoryField="Category" Compact="true">
                                 <Series>
-                                    <f:ChartSeries Key="users" Type="Bar" Name="用户数" ValueField="Users" />
-                                    <f:ChartSeries Key="views" Type="Line" Name="浏览量" ValueField="Views" Smooth="true" ShowSymbol="true" />
+                                    <f:ChartSeries Key="users" Type="Bar" Name="用户数" DataValueField="Users" />
+                                    <f:ChartSeries Key="views" Type="Line" Name="浏览量" DataValueField="Views" Smooth="true" ShowSymbol="true" />
                                 </Series>
                             </f:Chart>
                         </div>
@@ -153,9 +153,9 @@
                             <Items>
                                 <f:Panel BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
                                     <Items>
-                                        <f:Chart ID="ChartTabViews" runat="server" Height="350px" CategoryField="Category" Title="浏览量趋势">
+                                        <f:Chart ID="ChartTabViews" runat="server" Height="350px" DataCategoryField="Category" Title="浏览量趋势">
                                             <Series>
-                                                <f:ChartSeries Key="views" Type="Area" Name="浏览量" ValueField="Views" Smooth="true" />
+                                                <f:ChartSeries Key="views" Type="Area" Name="浏览量" DataValueField="Views" Smooth="true" />
                                             </Series>
                                         </f:Chart>
                                     </Items>
@@ -223,10 +223,10 @@
                             <Items>
                                 <f:Panel BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
                                     <Items>
-                                        <f:Chart ID="ChartTabUsers" runat="server" Height="350px" CategoryField="Category" Title="用户数与浏览量" ShowLegend="true">
+                                        <f:Chart ID="ChartTabUsers" runat="server" Height="350px" DataCategoryField="Category" Title="用户数与浏览量" ShowLegend="true">
                                             <Series>
-                                                <f:ChartSeries Key="users" Type="Bar" Name="用户数" ValueField="Users" />
-                                                <f:ChartSeries Key="views" Type="Line" Name="浏览量" ValueField="Views" Smooth="true" />
+                                                <f:ChartSeries Key="users" Type="Bar" Name="用户数" DataValueField="Users" />
+                                                <f:ChartSeries Key="views" Type="Line" Name="浏览量" DataValueField="Views" Smooth="true" />
                                             </Series>
                                         </f:Chart>
                                     </Items>
@@ -354,11 +354,11 @@
                         </f:ContentPanel>
                         <f:Panel BlockMD="12" BodyPadding="20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="访问来源">
                             <Items>
-                                <f:Chart ID="ChartTrafficSources" runat="server" Height="300px" CategoryField="Category"
+                                <f:Chart ID="ChartTrafficSources" runat="server" Height="300px" DataCategoryField="Category"
                                     Title="用户访问来源" Subtitle="这是说明文字" TitleAlign="Center"
                                     ShowLegend="true" LegendPosition="Left" LegendTop="top" PieEmphasisShadow="true" PieCenter="50%,60%">
                                     <Series>
-                                        <f:ChartSeries Key="source" Type="Pie" Name="访问来源" ValueField="Value" />
+                                        <f:ChartSeries Key="source" Type="Pie" Name="访问来源" DataValueField="Value" />
                                     </Series>
                                 </f:Chart>
                             </Items>

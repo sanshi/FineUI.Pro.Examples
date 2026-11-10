@@ -12,9 +12,9 @@
             <Items>
                 <f:Panel runat="server" BlockLG="6" Height="550px" Layout="Fit" Title="访问渠道占比" ShowHeader="true" ShowBorder="true" BodyPadding="8">
                     <Items>
-                        <f:Chart runat="server" ID="ChartChannelDetails" CategoryField="Category" DataKeyField="Key" OnPointClick="ChartChannelDetails_PointClick">
+                        <f:Chart runat="server" ID="ChartChannelDetails" DataCategoryField="Category" DataIDField="Id" OnPointClick="ChartChannelDetails_PointClick">
                             <Series>
-                                <f:ChartSeries Key="amount" Type="Pie" Name="访问量" ValueField="Amount" />
+                                <f:ChartSeries Key="amount" Type="Pie" Name="访问量" DataValueField="Amount" />
                             </Series>
                         </f:Chart>
                     </Items>
@@ -40,7 +40,7 @@
         <section aria-label="关键属性">
             <p><strong>关键属性</strong></p>
             <ul>
-                <li><code>DataKeyField</code> 扇区提交渠道编号，例如 search 表示搜索。</li>
+                <li><code>DataIDField</code> 扇区提交渠道编号，例如 search 表示搜索。</li>
                 <li><code>OnPointClick</code> 按渠道查询月度记录，刷新 Grid 和当前选择说明。</li>
             </ul>
         </section>

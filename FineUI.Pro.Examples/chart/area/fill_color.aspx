@@ -7,11 +7,11 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartAreaFillColor" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartAreaFillColor" runat="server" Height="550px" DataCategoryField="Category"
             ShowTooltip="false">
             <Series>
-                <f:ChartSeries Key="first" Type="Area" Name="系列一" ValueField="First" />
-                <f:ChartSeries Key="second" Type="Area" Name="系列二" ValueField="Second" AreaColor="#ff0"
+                <f:ChartSeries Key="first" Type="Area" Name="系列一" DataValueField="First" />
+                <f:ChartSeries Key="second" Type="Area" Name="系列二" DataValueField="Second" AreaColor="#ff0"
                     AreaOpacity="0.5" />
             </Series>
         </f:Chart>

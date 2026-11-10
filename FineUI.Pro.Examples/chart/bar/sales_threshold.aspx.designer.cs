@@ -5,8 +5,7 @@ namespace FineUI.Pro.Examples.chart
     {
         protected global::FineUI.Pro.PageManager PageManager1;
         protected global::FineUI.Pro.ToolbarText ToolbarTextChartScope;
-        protected global::FineUI.Pro.NumberBox nbxMinimum;
-        protected global::FineUI.Pro.Button btnFilter;
+        protected global::FineUI.Pro.DropDownList ddlMinimum;
         protected global::FineUI.Pro.Chart ChartSalesThreshold;
     }
 }

@@ -25,9 +25,9 @@
                     <f:CheckItem Text="西南" Value="southwest" />
                     <f:CheckItem Text="西北" Value="northwest" />
                 </f:CheckBoxList>
-                <f:Chart runat="server" ID="ChartAreaSales" Height="550px" CategoryField="Category">
+                <f:Chart runat="server" ID="ChartAreaSales" Height="550px" DataCategoryField="Category">
                     <Series>
-                        <f:ChartSeries Key="amount" Type="Area" Name="销售额（元）" ValueField="Amount" />
+                        <f:ChartSeries Key="amount" Type="Area" Name="销售额（元）" DataValueField="Amount" />
                     </Series>
                 </f:Chart>
             </Items>

@@ -17,15 +17,15 @@
                 </f:Toolbar>
             </Toolbars>
             <Items>
-                <f:SimpleForm runat="server" ID="SimpleFormDateRange" IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="78">
+                <f:SimpleForm runat="server" ID="SimpleFormDateRange" IsFluid="true" MaxWidth="280px" ShowHeader="false" ShowBorder="false" LabelAlign="Top">
                     <Items>
                         <f:DatePicker runat="server" ID="dpVisitRange" Label="日期范围" DateFormatString="yyyy-MM-dd"
                             DisplayType="DayRange" EnableEdit="false" OnTextChanged="dpVisitRange_TextChanged" />
                     </Items>
                 </f:SimpleForm>
-                <f:Chart runat="server" ID="ChartVisitRange" Height="550px" CategoryField="Category">
+                <f:Chart runat="server" ID="ChartVisitRange" Height="550px" DataCategoryField="Category">
                     <Series>
-                        <f:ChartSeries Key="amount" Type="Line" Name="访问量" ValueField="Amount" />
+                        <f:ChartSeries Key="amount" Type="Line" Name="访问量" DataValueField="Amount" />
                     </Series>
                 </f:Chart>
             </Items>

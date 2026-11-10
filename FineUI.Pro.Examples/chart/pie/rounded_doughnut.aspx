@@ -7,12 +7,12 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartPieRoundedDoughnut" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartPieRoundedDoughnut" runat="server" Height="550px" DataCategoryField="Category"
             ShowLegend="true" LegendTop="5%" PieRadius="40%,70%" PieAvoidLabelOverlap="false"
             PieBorderRadius="10" PieBorderColor="#fff" PieBorderWidth="2" PieShowLabel="false"
             PieLabelPosition="center" PieEmphasisLabelSize="40" PieEmphasisLabelFontWeight="bold">
             <Series>
-                <f:ChartSeries Key="source" Type="Pie" Name="Access From" ValueField="Value" />
+                <f:ChartSeries Key="source" Type="Pie" Name="Access From" DataValueField="Value" />
             </Series>
         </f:Chart>
         <p>扇区设置 10 像素圆角和 2 像素白色描边。指向扇区时，名称显示在环形中央。<a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-borderRadius" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>

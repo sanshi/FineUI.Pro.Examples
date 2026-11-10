@@ -7,15 +7,15 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartLineStacked" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartLineStacked" runat="server" Height="550px" DataCategoryField="Category"
             Title="Stacked Line" TitleAlign="Left" ShowLegend="true" CategoryBoundaryGap="false"
             ShowSaveAsImage="true">
             <Series>
-                <f:ChartSeries Key="email" Type="Line" Name="Email" ValueField="Email" Stack="Total" />
-                <f:ChartSeries Key="unionAds" Type="Line" Name="Union Ads" ValueField="UnionAds" Stack="Total" />
-                <f:ChartSeries Key="videoAds" Type="Line" Name="Video Ads" ValueField="VideoAds" Stack="Total" />
-                <f:ChartSeries Key="direct" Type="Line" Name="Direct" ValueField="Direct" Stack="Total" />
-                <f:ChartSeries Key="searchEngine" Type="Line" Name="Search Engine" ValueField="SearchEngine"
+                <f:ChartSeries Key="email" Type="Line" Name="Email" DataValueField="Email" Stack="Total" />
+                <f:ChartSeries Key="unionAds" Type="Line" Name="Union Ads" DataValueField="UnionAds" Stack="Total" />
+                <f:ChartSeries Key="videoAds" Type="Line" Name="Video Ads" DataValueField="VideoAds" Stack="Total" />
+                <f:ChartSeries Key="direct" Type="Line" Name="Direct" DataValueField="Direct" Stack="Total" />
+                <f:ChartSeries Key="searchEngine" Type="Line" Name="Search Engine" DataValueField="SearchEngine"
                     Stack="Total" />
             </Series>
         </f:Chart>

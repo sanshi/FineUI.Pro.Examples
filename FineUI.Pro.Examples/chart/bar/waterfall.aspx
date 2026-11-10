@@ -7,13 +7,13 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartBarWaterfall" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartBarWaterfall" runat="server" Height="550px" DataCategoryField="Category"
             Title="Waterfall Chart" Subtitle="Living Expenses in Shenzhen" TitleAlign="Left"
             AxisPointerType="shadow">
             <Series>
-                <f:ChartSeries Key="placeholder" Type="Bar" Name="Placeholder" ValueField="Offset"
+                <f:ChartSeries Key="placeholder" Type="Bar" Name="Placeholder" DataValueField="Offset"
                     Stack="Total" ItemOpacity="0" ShowTooltip="false" />
-                <f:ChartSeries Key="cost" Type="Bar" Name="Life Cost" ValueField="Cost" Stack="Total"
+                <f:ChartSeries Key="cost" Type="Bar" Name="Life Cost" DataValueField="Cost" Stack="Total"
                     ShowLabel="true" LabelPosition="inside" />
             </Series>
         </f:Chart>

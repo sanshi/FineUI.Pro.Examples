@@ -30,7 +30,7 @@ namespace FineUI.Pro.Examples.chart
         {
             var rows = DailyVisitData.DailyVisits();
             return metric == "conversions"
-                ? rows.Select(row => new ChartRow(row.Key, row.Category, DailyVisitData.FindVisit(row.Key).Conversions)).ToArray()
+                ? rows.Select(row => new ChartRow(row.Id, row.Category, DailyVisitData.FindVisit(row.Id).Conversions)).ToArray()
                 : rows;
         }
 

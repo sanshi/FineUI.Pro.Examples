@@ -7,13 +7,13 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartLineStep" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartLineStep" runat="server" Height="550px" DataCategoryField="Category"
             Title="Step Line" TitleAlign="Left" ShowLegend="true" ShowSaveAsImage="true">
             <Series>
-                <f:ChartSeries Key="start" Type="Line" Name="Step Start" ValueField="AtStart" Step="start" />
-                <f:ChartSeries Key="middle" Type="Line" Name="Step Middle" ValueField="AtMiddle"
+                <f:ChartSeries Key="start" Type="Line" Name="Step Start" DataValueField="AtStart" Step="start" />
+                <f:ChartSeries Key="middle" Type="Line" Name="Step Middle" DataValueField="AtMiddle"
                     Step="middle" />
-                <f:ChartSeries Key="end" Type="Line" Name="Step End" ValueField="AtEnd" Step="end" />
+                <f:ChartSeries Key="end" Type="Line" Name="Step End" DataValueField="AtEnd" Step="end" />
             </Series>
         </f:Chart>
         <p>三条系列分别在前一个数据点、两点之间的中点和后一个数据点改变高度。<a href="https://echarts.apache.org/examples/zh/editor.html?c=line-step" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>

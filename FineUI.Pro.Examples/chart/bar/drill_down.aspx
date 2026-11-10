@@ -18,9 +18,9 @@
                 </f:Toolbar>
             </Toolbars>
             <Items>
-                <f:Chart runat="server" ID="ChartRegionSales" Height="550px" CategoryField="Category" DataKeyField="Key" OnPointClick="ChartRegionSales_PointClick">
+                <f:Chart runat="server" ID="ChartRegionSales" Height="550px" DataCategoryField="Category" DataIDField="Id" OnPointClick="ChartRegionSales_PointClick">
                     <Series>
-                        <f:ChartSeries Key="amount" Type="Bar" Name="销售额（元）" ValueField="Amount" />
+                        <f:ChartSeries Key="amount" Type="Bar" Name="销售额（元）" DataValueField="Amount" />
                     </Series>
                 </f:Chart>
             </Items>
@@ -30,7 +30,7 @@
         <section aria-label="关键属性">
             <p><strong>关键属性</strong></p>
             <ul>
-                <li><code>DataKeyField="Key"</code> 用区域编号识别被点击的柱，例如 east 表示华东。</li>
+                <li><code>DataIDField="Id"</code> 用区域编号识别被点击的柱，例如 east 表示华东。</li>
                 <li><code>OnPointClick</code> 后台在同一张图表中重绑城市数据；城市是末级，点击后保持当前视图。</li>
             </ul>
         </section>

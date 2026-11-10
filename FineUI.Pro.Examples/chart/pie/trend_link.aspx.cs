@@ -29,7 +29,7 @@ namespace FineUI.Pro.Examples.chart
 
         protected void ChartChannels_PointClick(object sender, ChartPointEventArgs e)
         {
-            BindTrend(e.DataKey);
+            BindTrend(e.PointID);
         }
 
         protected void btnAllChannels_Click(object sender, EventArgs e)

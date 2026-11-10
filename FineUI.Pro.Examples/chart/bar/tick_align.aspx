@@ -7,10 +7,10 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartBarTickAlign" runat="server" Height="550px" CategoryField="Category"
+        <f:Chart ID="ChartBarTickAlign" runat="server" Height="550px" DataCategoryField="Category"
             AxisTickAlignWithLabel="true" AxisPointerType="shadow">
             <Series>
-                <f:ChartSeries Key="value" Type="Bar" Name="Direct" ValueField="Value" BarWidth="60%" />
+                <f:ChartSeries Key="value" Type="Bar" Name="Direct" DataValueField="Value" BarWidth="60%" />
             </Series>
         </f:Chart>
         <p>Mon、Tue 等文字是分类标签。显示短刻度时，开启对齐会把短线放到对应柱子的正下方，关闭时则放在相邻分类的分界处。短刻度是否显示沿用 ECharts 的自动设置。<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-tick-align" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
