@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <meta name="sourcefiles" content="~/chart/ChartInteractionData.cs" />
+    <meta name="sourcefiles" content="~/chart/data/DailyVisitData.cs;~/chart/data/ChartDataRows.cs" />
     <title>日期范围筛选折线图</title>
 </head>
 <body>

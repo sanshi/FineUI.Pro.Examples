@@ -2,7 +2,7 @@ using System;
 
 namespace FineUI.Pro.Examples.chart
 {
-    public partial class combination : PageBase
+    public partial class Combination : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

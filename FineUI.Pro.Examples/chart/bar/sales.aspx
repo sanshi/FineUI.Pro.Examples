@@ -1,8 +1,8 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="sales.aspx.cs" Inherits="FineUI.Pro.Examples.chart.sales" %>
+<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="sales.aspx.cs" Inherits="FineUI.Pro.Examples.chart.Sales" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <meta name="sourcefiles" content="~/chart/ChartSamples.cs" />
+    <meta name="sourcefiles" content="~/chart/bar/SalesOrderData.cs" />
     <title>图表绑定与 Grid 联动</title>
 </head>
 <body>

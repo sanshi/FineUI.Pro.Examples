@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <meta name="sourcefiles" content="~/chart/ChartInteractionData.cs" />
+    <meta name="sourcefiles" content="~/chart/data/RegionSalesData.cs;~/chart/data/ChartDataRows.cs" />
     <title>Grid 选行联动柱状图</title>
 </head>
 <body>

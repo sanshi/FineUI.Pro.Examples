@@ -2,7 +2,7 @@ using System;
 
 namespace FineUI.Pro.Examples.chart
 {
-    public partial class line : PageBase
+    public partial class LineBasic : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {

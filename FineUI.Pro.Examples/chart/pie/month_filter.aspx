@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <meta name="sourcefiles" content="~/chart/ChartInteractionData.cs" />
+    <meta name="sourcefiles" content="~/chart/data/ChannelVisitData.cs;~/chart/data/ChartDataRows.cs" />
     <title>下拉筛选饼图月份</title>
 </head>
 <body>
@@ -17,9 +17,9 @@
                 </f:Toolbar>
             </Toolbars>
             <Items>
-                <f:SimpleForm runat="server" IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
+                <f:SimpleForm runat="server" IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="64">
                     <Items>
-                        <f:DropDownList runat="server" ID="ddlMonth" Label="月份" OnSelectedIndexChanged="ddlMonth_SelectedIndexChanged">
+                        <f:DropDownList runat="server" ID="ddlMonth" Label="月份" Width="240px" OnSelectedIndexChanged="ddlMonth_SelectedIndexChanged">
                             <f:ListItem Text="全部月份" Value="all" Selected="true" />
                             <f:ListItem Text="4 月" Value="2026-04" />
                             <f:ListItem Text="5 月" Value="2026-05" />

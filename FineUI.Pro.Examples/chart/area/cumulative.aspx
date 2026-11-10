@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <meta name="sourcefiles" content="~/chart/ChartInteractionData.cs" />
+    <meta name="sourcefiles" content="~/chart/data/RegionSalesData.cs;~/chart/data/ChartDataRows.cs" />
     <title>复选切换累计面积图</title>
 </head>
 <body>

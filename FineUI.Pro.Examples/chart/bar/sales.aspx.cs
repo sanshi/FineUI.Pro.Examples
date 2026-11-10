@@ -2,7 +2,7 @@ using System;
 
 namespace FineUI.Pro.Examples.chart
 {
-    public partial class sales : PageBase
+    public partial class Sales : PageBase
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -15,22 +15,22 @@ namespace FineUI.Pro.Examples.chart
 
         private void BindSales(bool recent)
         {
-            ChartSales.DataSource = ChartSamples.Months(recent);
+            ChartSales.DataSource = SalesOrderData.Months(recent);
             ChartSales.DataBind();
         }
 
         private void BindOrders(string month = null, bool recent = false)
         {
-            var orders = ChartSamples.Details(month, recent);
+            var orders = SalesOrderData.Details(month, recent);
             GridOrders.DataSource = orders;
             GridOrders.DataBind();
-            ToolbarTextOrderScope.Text = ChartSamples.OrderScope(month, recent, orders.Length);
+            ToolbarTextOrderScope.Text = SalesOrderData.OrderScope(month, recent, orders.Length);
         }
 
         protected void ChartSales_PointClick(object sender, ChartPointEventArgs e)
         {
             // 月份来自浏览器，例如 2026-09。只查询属于示例订单范围的月份。
-            if (ChartSamples.HasMonth(e.DataKey))
+            if (SalesOrderData.HasMonth(e.DataKey))
             {
                 BindOrders(e.DataKey);
             }

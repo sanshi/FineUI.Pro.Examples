@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <meta name="sourcefiles" content="~/chart/ChartInteractionData.cs" />
+    <meta name="sourcefiles" content="~/chart/data/DailyVisitData.cs;~/chart/data/ChartDataRows.cs" />
     <title>单选切换折线指标</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
             <Items>
                 <f:SimpleForm runat="server" IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
                     <Items>
-                        <f:RadioButtonList runat="server" ID="rblMetric" Label="指标" ColumnNumber="2" OnSelectedIndexChanged="rblMetric_SelectedIndexChanged">
+                        <f:RadioButtonList runat="server" ID="rblMetric" Label="指标" AutoColumnWidth="true" OnSelectedIndexChanged="rblMetric_SelectedIndexChanged">
                             <f:RadioItem Text="访问量" Value="visits" Selected="true" />
                             <f:RadioItem Text="转化量" Value="conversions" />
                         </f:RadioButtonList>

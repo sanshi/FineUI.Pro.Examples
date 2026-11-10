@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
-    <meta name="sourcefiles" content="~/chart/ChartInteractionData.cs" />
+    <meta name="sourcefiles" content="~/chart/data/RegionSalesData.cs;~/chart/data/ChartDataRows.cs" />
     <title>复选筛选面积图</title>
 </head>
 <body>
@@ -17,10 +17,13 @@
                 </f:Toolbar>
             </Toolbars>
             <Items>
-                <f:CheckBoxList runat="server" ID="cblRegions" ShowLabel="false" ColumnNumber="3" AutoColumnWidth="true" OnSelectedIndexChanged="cblRegions_SelectedIndexChanged">
+                <f:CheckBoxList runat="server" ID="cblRegions" ShowLabel="false" AutoColumnWidth="true" OnSelectedIndexChanged="cblRegions_SelectedIndexChanged">
                     <f:CheckItem Text="华东" Value="east" Selected="true" />
                     <f:CheckItem Text="华北" Value="north" />
                     <f:CheckItem Text="华南" Value="south" />
+                    <f:CheckItem Text="华中" Value="central" />
+                    <f:CheckItem Text="西南" Value="southwest" />
+                    <f:CheckItem Text="西北" Value="northwest" />
                 </f:CheckBoxList>
                 <f:Chart runat="server" ID="ChartAreaSales" Height="550px" CategoryField="Category">
                     <Series>
