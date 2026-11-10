@@ -19,7 +19,7 @@
             <Items>
                 <f:SimpleForm runat="server" IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
                     <Items>
-                        <f:CheckBox runat="server" ID="cbxCumulative" ShowLabel="false" Text="按月累计" OnCheckedChanged="ChangeAreaMode" />
+                        <f:CheckBox runat="server" ID="cbxCumulative" ShowLabel="false" Text="按月累计" OnCheckedChanged="cbxCumulative_CheckedChanged" />
                     </Items>
                 </f:SimpleForm>
                 <f:Chart runat="server" ID="ChartCumulativeSales" Height="550px" CategoryField="Category">

@@ -15,7 +15,7 @@ namespace FineUI.Pro.Examples.chart
             }
         }
 
-        protected void ChangeMetric(object sender, EventArgs e)
+        protected void rblMetric_SelectedIndexChanged(object sender, EventArgs e)
         {
             var metric = rblMetric.SelectedValue;
             var rows = ChartInteractionData.DailyMetric(metric);

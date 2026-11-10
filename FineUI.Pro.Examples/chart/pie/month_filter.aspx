@@ -19,7 +19,7 @@
             <Items>
                 <f:SimpleForm runat="server" IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
                     <Items>
-                        <f:DropDownList runat="server" ID="ddlMonth" Label="月份" OnSelectedIndexChanged="FilterMonth">
+                        <f:DropDownList runat="server" ID="ddlMonth" Label="月份" OnSelectedIndexChanged="ddlMonth_SelectedIndexChanged">
                             <f:ListItem Text="全部月份" Value="all" Selected="true" />
                             <f:ListItem Text="4 月" Value="2026-04" />
                             <f:ListItem Text="5 月" Value="2026-05" />

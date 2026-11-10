@@ -12,7 +12,7 @@
             <Items>
                 <f:Panel runat="server" BlockLG="6" Height="550px" Layout="Fit" Title="访问渠道占比" ShowHeader="true" ShowBorder="true" BodyPadding="8">
                     <Items>
-                        <f:Chart runat="server" ID="ChartChannelDetails" CategoryField="Category" DataKeyField="Key" OnPointClick="ReadChannel">
+                        <f:Chart runat="server" ID="ChartChannelDetails" CategoryField="Category" DataKeyField="Key" OnPointClick="ChartChannelDetails_PointClick">
                             <Series>
                                 <f:ChartSeries Key="amount" Type="Pie" Name="访问量" ValueField="Amount" />
                             </Series>
@@ -23,7 +23,7 @@
                     <Toolbars>
                         <f:Toolbar runat="server" Position="Top">
                             <Items>
-                                <f:Button runat="server" ID="btnClear" Text="清除选择" OnClick="ClearChannel" CssClass="marginr" />
+                                <f:Button runat="server" ID="btnClear" Text="清除选择" OnClick="btnClear_Click" CssClass="marginr" />
                                 <f:ToolbarText runat="server" ID="ToolbarTextChartScope" />
                             </Items>
                         </f:Toolbar>

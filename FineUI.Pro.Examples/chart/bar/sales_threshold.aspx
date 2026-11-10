@@ -20,7 +20,7 @@
                 <f:SimpleForm runat="server" IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
                     <Items>
                         <f:NumberBox runat="server" ID="nbxMinimum" Label="最低金额（元）" NoDecimal="true" NoNegative="true" />
-                        <f:Button runat="server" ID="btnFilter" Text="筛选" OnClick="FilterSales" />
+                        <f:Button runat="server" ID="btnFilter" Text="筛选" OnClick="btnFilter_Click" />
                     </Items>
                 </f:SimpleForm>
                 <f:Chart runat="server" ID="ChartSalesThreshold" Height="550px" CategoryField="Category">

@@ -19,7 +19,7 @@
             <Items>
                 <f:SimpleForm runat="server" IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
                     <Items>
-                        <f:RadioButtonList runat="server" ID="rblMetric" Label="指标" ColumnNumber="2" OnSelectedIndexChanged="ChangeMetric">
+                        <f:RadioButtonList runat="server" ID="rblMetric" Label="指标" ColumnNumber="2" OnSelectedIndexChanged="rblMetric_SelectedIndexChanged">
                             <f:RadioItem Text="访问量" Value="visits" Selected="true" />
                             <f:RadioItem Text="转化量" Value="conversions" />
                         </f:RadioButtonList>
