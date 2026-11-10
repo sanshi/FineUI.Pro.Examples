@@ -779,6 +779,7 @@
     <Content Include="gridmove\grid_columnmove_groupfield.aspx" />
     <Content Include="gridmove\grid_columnmove_orderwidthhidden.aspx" />
     <Content Include="gridmove\grid_rowmove.aspx" />
+    <Content Include="gridmove\grid_rowsort.aspx" />
     <Content Include="gridmove\grid_rowmove_between2grid.aspx" />
     <Content Include="gridmove\grid_rowmove_columnconfig.aspx" />
     <Content Include="grid\grid_mergecolumns_groupfield.aspx" />
@@ -5869,6 +5870,13 @@
     </Compile>
     <Compile Include="gridmove\grid_rowmove.aspx.designer.cs">
       <DependentUpon>grid_rowmove.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="gridmove\grid_rowsort.aspx.cs">
+      <DependentUpon>grid_rowsort.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="gridmove\grid_rowsort.aspx.designer.cs">
+      <DependentUpon>grid_rowsort.aspx</DependentUpon>
     </Compile>
     <Compile Include="gridmove\grid_rowmove_between2grid.aspx.cs">
       <DependentUpon>grid_rowmove_between2grid.aspx</DependentUpon>
