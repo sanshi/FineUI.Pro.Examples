@@ -903,6 +903,14 @@
     <Content Include="chart\area\stacked.aspx" />
     <Content Include="chart\pie\doughnut.aspx" />
     <Content Include="chart\pie\half_doughnut.aspx" />
+    <Content Include="chart\bar\stacked_horizontal.aspx" />
+    <Content Include="chart\line\stacked.aspx" />
+    <Content Include="chart\area\gradient_stacked.aspx" />
+    <Content Include="chart\pie\pad_angle.aspx" />
+    <Content Include="chart\bar\waterfall.aspx" />
+    <Content Include="chart\line\step.aspx" />
+    <Content Include="chart\area\fill_color.aspx" />
+    <Content Include="chart\pie\rounded_doughnut.aspx" />
     <Content Include="chart\bar.aspx" />
     <Content Include="chart\line.aspx" />
     <Content Include="chart\area.aspx" />
@@ -6804,6 +6812,62 @@
     </Compile>
     <Compile Include="chart\line\smooth.aspx.designer.cs">
       <DependentUpon>smooth.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\stacked_horizontal.aspx.cs">
+      <DependentUpon>stacked_horizontal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\stacked_horizontal.aspx.designer.cs">
+      <DependentUpon>stacked_horizontal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\line\stacked.aspx.cs">
+      <DependentUpon>stacked.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\line\stacked.aspx.designer.cs">
+      <DependentUpon>stacked.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\area\gradient_stacked.aspx.cs">
+      <DependentUpon>gradient_stacked.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\area\gradient_stacked.aspx.designer.cs">
+      <DependentUpon>gradient_stacked.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\pie\pad_angle.aspx.cs">
+      <DependentUpon>pad_angle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\pie\pad_angle.aspx.designer.cs">
+      <DependentUpon>pad_angle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\waterfall.aspx.cs">
+      <DependentUpon>waterfall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\waterfall.aspx.designer.cs">
+      <DependentUpon>waterfall.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\line\step.aspx.cs">
+      <DependentUpon>step.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\line\step.aspx.designer.cs">
+      <DependentUpon>step.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\area\fill_color.aspx.cs">
+      <DependentUpon>fill_color.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\area\fill_color.aspx.designer.cs">
+      <DependentUpon>fill_color.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\pie\rounded_doughnut.aspx.cs">
+      <DependentUpon>rounded_doughnut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\pie\rounded_doughnut.aspx.designer.cs">
+      <DependentUpon>rounded_doughnut.aspx</DependentUpon>
     </Compile>
     <Compile Include="chart\area\stacked.aspx.cs">
       <DependentUpon>stacked.aspx</DependentUpon>

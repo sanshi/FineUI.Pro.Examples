@@ -2419,6 +2419,8 @@
 			<TreeNode Text="坐标轴刻度与标签对齐" NavigateUrl="~/chart/bar/tick_align.aspx" />
 			<TreeNode Text="带背景色的柱状图" NavigateUrl="~/chart/bar/background.aspx" />
 			<TreeNode Text="单柱配色" NavigateUrl="~/chart/bar/point_color.aspx" />
+			<TreeNode Text="堆叠条形图" NavigateUrl="~/chart/bar/stacked_horizontal.aspx" />
+			<TreeNode Text="瀑布图（柱状图模拟）" NavigateUrl="~/chart/bar/waterfall.aspx" />
 			<TreeNode Text="世界人口总量 - 条形图" NavigateUrl="~/chart/bar/world_population.aspx" />
 			<TreeNode Text="多 Y 轴示例" NavigateUrl="~/chart/combination.aspx" />
 			<TreeNode Text="折柱混合" NavigateUrl="~/chart/bar/mix_line_bar.aspx" />
@@ -2427,15 +2429,21 @@
 		<TreeNode Text="折线图">
 			<TreeNode Text="基础折线图" NavigateUrl="~/chart/line.aspx" />
 			<TreeNode Text="平滑折线图" NavigateUrl="~/chart/line/smooth.aspx" />
+			<TreeNode Text="堆叠折线图" NavigateUrl="~/chart/line/stacked.aspx" />
+			<TreeNode Text="阶梯折线图" NavigateUrl="~/chart/line/step.aspx" />
 		</TreeNode>
 		<TreeNode Text="面积图">
 			<TreeNode Text="基础面积图" NavigateUrl="~/chart/area.aspx" />
 			<TreeNode Text="堆叠面积图" NavigateUrl="~/chart/area/stacked.aspx" />
+			<TreeNode Text="渐变堆叠面积图" NavigateUrl="~/chart/area/gradient_stacked.aspx" />
+			<TreeNode Text="双色填充面积图" NavigateUrl="~/chart/area/fill_color.aspx" />
 		</TreeNode>
 		<TreeNode Text="饼图">
 			<TreeNode Text="基础饼图" NavigateUrl="~/chart/pie.aspx" />
 			<TreeNode Text="环形图" NavigateUrl="~/chart/pie/doughnut.aspx" />
 			<TreeNode Text="半环形图" NavigateUrl="~/chart/pie/half_doughnut.aspx" />
+			<TreeNode Text="饼图扇区间隙" NavigateUrl="~/chart/pie/pad_angle.aspx" />
+			<TreeNode Text="圆角环形图" NavigateUrl="~/chart/pie/rounded_doughnut.aspx" />
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="其他" IconFont="_More">

@@ -1,0 +1,40 @@
+<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="waterfall.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarWaterfall" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>瀑布图（柱状图模拟）</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <f:PageManager ID="PageManager1" runat="server" />
+        <f:Chart ID="ChartBarWaterfall" runat="server" Height="550px" CategoryField="Category"
+            Title="Waterfall Chart" Subtitle="Living Expenses in Shenzhen" TitleAlign="Left"
+            AxisPointerType="shadow">
+            <Series>
+                <f:ChartSeries Key="placeholder" Type="Bar" Name="Placeholder" ValueField="Offset"
+                    Stack="Total" ItemOpacity="0" ShowTooltip="false" />
+                <f:ChartSeries Key="cost" Type="Bar" Name="Life Cost" ValueField="Cost" Stack="Total"
+                    ShowLabel="true" LabelPosition="inside" />
+            </Series>
+        </f:Chart>
+        <p>透明占位柱和费用柱共用同一堆叠组。占位值抬高费用柱的起点，悬停时只显示费用。<a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-waterfall" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>。</p>
+        <section aria-label="关键属性">
+            <p><strong>关键属性</strong></p>
+            <ul>
+                <li>
+                    <code>Stack="Total"</code>
+                    占位和费用使用同一个堆叠组。例如 Rent 的 1200 元从占位值 1700 开始绘制。
+                </li>
+                <li>
+                    <code>ItemOpacity="0"</code>、<code>ShowTooltip="false"</code>
+                    这两项只设在占位系列。占位柱透明且仍参与堆叠，提示框只显示实际费用。
+                </li>
+                <li>
+                    <code>ShowLabel="true"</code>、<code>LabelPosition="inside"</code>
+                    在费用柱内部显示原始费用，例如 Rent 柱内显示 1200。
+                </li>
+            </ul>
+        </section>
+    </form>
+</body>
+</html>
