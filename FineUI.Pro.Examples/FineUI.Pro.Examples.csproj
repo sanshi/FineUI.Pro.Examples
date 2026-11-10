@@ -1170,6 +1170,7 @@
     <Content Include="dropdownlist\dropdownlist_enableedit.aspx" />
     <Content Include="form\checkbox.aspx" />
     <Content Include="form\fileupload_multiple.aspx" />
+    <Content Include="form\fileupload_dragdrop.aspx" />
     <Content Include="formlayout\layout_panel.aspx" />
     <Content Include="form\twintriggerbox.aspx" />
     <Content Include="form\textbox.aspx" />
@@ -8516,6 +8517,13 @@
     </Compile>
     <Compile Include="form\fileupload_multiple.aspx.designer.cs">
       <DependentUpon>fileupload_multiple.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="form\fileupload_dragdrop.aspx.cs">
+      <DependentUpon>fileupload_dragdrop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="form\fileupload_dragdrop.aspx.designer.cs">
+      <DependentUpon>fileupload_dragdrop.aspx</DependentUpon>
     </Compile>
     <Compile Include="formlayout\layout_panel.aspx.cs">
       <DependentUpon>layout_panel.aspx</DependentUpon>
