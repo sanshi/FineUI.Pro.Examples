@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
+    <meta name="sourcefiles" content="~/chart/ChartSamples.cs" />
     <title>图表绑定与 Grid 联动</title>
 </head>
 <body>
@@ -9,7 +10,7 @@
         <f:PageManager ID="PageManager1" runat="server" />
         <f:Panel runat="server" Layout="Block" BlockConfigSpace="16" IsFluid="true" ShowHeader="false" ShowBorder="false">
             <Items>
-                <f:Panel runat="server" BlockLG="7" ShowHeader="true" ShowBorder="true" Title="月度销售额（元）" BodyPadding="8px">
+                <f:Panel runat="server" BlockLG="7" Height="550px" Layout="Fit" ShowHeader="true" ShowBorder="true" Title="月度销售额（元）" BodyPadding="8px">
                     <Toolbars>
                         <f:Toolbar runat="server" Position="Top">
                             <Items>
@@ -19,7 +20,7 @@
                         </f:Toolbar>
                     </Toolbars>
                     <Items>
-                        <f:Chart ID="ChartSales" runat="server" Height="286px" CategoryField="Category"
+                        <f:Chart ID="ChartSales" runat="server" CategoryField="Category"
                             DataKeyField="Month" OnPointClick="ChartSales_PointClick">
                             <Series>
                                 <f:ChartSeries Key="sales" Type="Bar" Name="销售额" ValueField="Amount" />
@@ -27,7 +28,7 @@
                         </f:Chart>
                     </Items>
                 </f:Panel>
-                <f:Grid ID="GridOrders" runat="server" BlockLG="5" Height="386px" Title="订单明细" ShowHeader="true" ShowBorder="true">
+                <f:Grid ID="GridOrders" runat="server" BlockLG="5" Height="550px" Title="订单明细" ShowHeader="true" ShowBorder="true">
                     <Toolbars>
                         <f:Toolbar runat="server" Position="Top">
                             <Items>

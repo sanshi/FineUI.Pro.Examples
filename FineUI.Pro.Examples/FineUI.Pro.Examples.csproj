@@ -909,8 +909,24 @@
     <Content Include="chart\pie\pad_angle.aspx" />
     <Content Include="chart\bar\waterfall.aspx" />
     <Content Include="chart\line\step.aspx" />
+    <Content Include="chart\pie\rose.aspx" />
+    <Content Include="chart\area\stack_all.aspx" />
+    <Content Include="chart\line\dashed.aspx" />
+    <Content Include="chart\bar\spacing.aspx" />
     <Content Include="chart\area\fill_color.aspx" />
     <Content Include="chart\pie\rounded_doughnut.aspx" />
+    <Content Include="chart\bar\grid_to_chart.aspx" />
+    <Content Include="chart\bar\drill_down.aspx" />
+    <Content Include="chart\line\date_range.aspx" />
+    <Content Include="chart\line\point_details.aspx" />
+    <Content Include="chart\area\region_filter.aspx" />
+    <Content Include="chart\pie\trend_link.aspx" />
+    <Content Include="chart\bar\sales_threshold.aspx" />
+    <Content Include="chart\line\metric_switch.aspx" />
+    <Content Include="chart\line\date_focus.aspx" />
+    <Content Include="chart\area\cumulative.aspx" />
+    <Content Include="chart\pie\month_filter.aspx" />
+    <Content Include="chart\pie\channel_details.aspx" />
     <Content Include="chart\bar.aspx" />
     <Content Include="chart\line.aspx" />
     <Content Include="chart\area.aspx" />
@@ -6855,12 +6871,125 @@
     <Compile Include="chart\line\step.aspx.designer.cs">
       <DependentUpon>step.aspx</DependentUpon>
     </Compile>
+    <Compile Include="chart\pie\rose.aspx.cs">
+      <DependentUpon>rose.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\pie\rose.aspx.designer.cs">
+      <DependentUpon>rose.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\area\stack_all.aspx.cs">
+      <DependentUpon>stack_all.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\area\stack_all.aspx.designer.cs">
+      <DependentUpon>stack_all.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\line\dashed.aspx.cs">
+      <DependentUpon>dashed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\line\dashed.aspx.designer.cs">
+      <DependentUpon>dashed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\spacing.aspx.cs">
+      <DependentUpon>spacing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\spacing.aspx.designer.cs">
+      <DependentUpon>spacing.aspx</DependentUpon>
+    </Compile>
     <Compile Include="chart\area\fill_color.aspx.cs">
       <DependentUpon>fill_color.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="chart\area\fill_color.aspx.designer.cs">
       <DependentUpon>fill_color.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\ChartInteractionData.cs" />
+    <Compile Include="chart\bar\grid_to_chart.aspx.cs">
+      <DependentUpon>grid_to_chart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\grid_to_chart.aspx.designer.cs">
+      <DependentUpon>grid_to_chart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\drill_down.aspx.cs">
+      <DependentUpon>drill_down.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\drill_down.aspx.designer.cs">
+      <DependentUpon>drill_down.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\line\date_range.aspx.cs">
+      <DependentUpon>date_range.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\line\date_range.aspx.designer.cs">
+      <DependentUpon>date_range.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\line\point_details.aspx.cs">
+      <DependentUpon>point_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\line\point_details.aspx.designer.cs">
+      <DependentUpon>point_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\area\region_filter.aspx.cs">
+      <DependentUpon>region_filter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\area\region_filter.aspx.designer.cs">
+      <DependentUpon>region_filter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\bar\sales_threshold.aspx.cs">
+      <DependentUpon>sales_threshold.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\bar\sales_threshold.aspx.designer.cs">
+      <DependentUpon>sales_threshold.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\line\metric_switch.aspx.cs">
+      <DependentUpon>metric_switch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\line\metric_switch.aspx.designer.cs">
+      <DependentUpon>metric_switch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\line\date_focus.aspx.cs">
+      <DependentUpon>date_focus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\line\date_focus.aspx.designer.cs">
+      <DependentUpon>date_focus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\area\cumulative.aspx.cs">
+      <DependentUpon>cumulative.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\area\cumulative.aspx.designer.cs">
+      <DependentUpon>cumulative.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\pie\month_filter.aspx.cs">
+      <DependentUpon>month_filter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\pie\month_filter.aspx.designer.cs">
+      <DependentUpon>month_filter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\pie\channel_details.aspx.cs">
+      <DependentUpon>channel_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\pie\channel_details.aspx.designer.cs">
+      <DependentUpon>channel_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="chart\pie\trend_link.aspx.cs">
+      <DependentUpon>trend_link.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="chart\pie\trend_link.aspx.designer.cs">
+      <DependentUpon>trend_link.aspx</DependentUpon>
     </Compile>
     <Compile Include="chart\pie\rounded_doughnut.aspx.cs">
       <DependentUpon>rounded_doughnut.aspx</DependentUpon>

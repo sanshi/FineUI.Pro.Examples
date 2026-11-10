@@ -1,0 +1,51 @@
+<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="month_filter.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieMonthFilter" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta name="sourcefiles" content="~/chart/ChartInteractionData.cs" />
+    <title>下拉筛选饼图月份</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <f:PageManager ID="PageManager1" runat="server" />
+        <f:Panel runat="server" IsFluid="true" Title="访问渠道构成" ShowHeader="true" ShowBorder="true" BodyPadding="8">
+            <Toolbars>
+                <f:Toolbar runat="server" Position="Top">
+                    <Items>
+                        <f:ToolbarText runat="server" ID="ToolbarTextChartScope" />
+                    </Items>
+                </f:Toolbar>
+            </Toolbars>
+            <Items>
+                <f:SimpleForm runat="server" IsFluid="true" ShowHeader="false" ShowBorder="false" LabelWidth="108">
+                    <Items>
+                        <f:DropDownList runat="server" ID="ddlMonth" Label="月份" OnSelectedIndexChanged="FilterMonth">
+                            <f:ListItem Text="全部月份" Value="all" Selected="true" />
+                            <f:ListItem Text="4 月" Value="2026-04" />
+                            <f:ListItem Text="5 月" Value="2026-05" />
+                            <f:ListItem Text="6 月" Value="2026-06" />
+                            <f:ListItem Text="7 月" Value="2026-07" />
+                            <f:ListItem Text="8 月" Value="2026-08" />
+                            <f:ListItem Text="9 月" Value="2026-09" />
+                        </f:DropDownList>
+                    </Items>
+                </f:SimpleForm>
+                <f:Chart runat="server" ID="ChartChannelMonth" Height="550px" CategoryField="Category">
+                    <Series>
+                        <f:ChartSeries Key="amount" Type="Pie" Name="访问量" ValueField="Amount" />
+                    </Series>
+                </f:Chart>
+            </Items>
+        </f:Panel>
+
+        <p>从下拉列表选择一个月份，饼图显示当月各渠道占比。选择「全部月份」可恢复六个月汇总。</p>
+        <section aria-label="关键属性">
+            <p><strong>关键属性</strong></p>
+            <ul>
+                <li><code>DropDownList</code> 下拉项使用完整月份键，全部月份使用 all。</li>
+                <li><code>OnSelectedIndexChanged</code> 后台使用同一批数据计算扇区和总访问量。</li>
+            </ul>
+        </section>
+    </form>
+</body>
+</html>

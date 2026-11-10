@@ -2421,22 +2421,40 @@
 			<TreeNode Text="单柱配色" NavigateUrl="~/chart/bar/point_color.aspx" />
 			<TreeNode Text="堆叠条形图" NavigateUrl="~/chart/bar/stacked_horizontal.aspx" />
 			<TreeNode Text="瀑布图（柱状图模拟）" NavigateUrl="~/chart/bar/waterfall.aspx" />
+			<TreeNode Text="柱条间距" NavigateUrl="~/chart/bar/spacing.aspx" />
 			<TreeNode Text="世界人口总量 - 条形图" NavigateUrl="~/chart/bar/world_population.aspx" />
 			<TreeNode Text="多 Y 轴示例" NavigateUrl="~/chart/combination.aspx" />
 			<TreeNode Text="折柱混合" NavigateUrl="~/chart/bar/mix_line_bar.aspx" />
-			<TreeNode Text="图表绑定与 Grid 联动" NavigateUrl="~/chart/sales.aspx" />
+			<TreeNode Text="数据联动">
+				<TreeNode Text="图表绑定与 Grid 联动" NavigateUrl="~/chart/sales.aspx" />
+				<TreeNode Text="Grid 选行联动柱状图" NavigateUrl="~/chart/bar/grid_to_chart.aspx" />
+				<TreeNode Text="柱状图钻取与返回" NavigateUrl="~/chart/bar/drill_down.aspx" />
+				<TreeNode Text="金额门槛筛选柱状图" NavigateUrl="~/chart/bar/sales_threshold.aspx" />
+			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="折线图">
 			<TreeNode Text="基础折线图" NavigateUrl="~/chart/line.aspx" />
 			<TreeNode Text="平滑折线图" NavigateUrl="~/chart/line/smooth.aspx" />
 			<TreeNode Text="堆叠折线图" NavigateUrl="~/chart/line/stacked.aspx" />
 			<TreeNode Text="阶梯折线图" NavigateUrl="~/chart/line/step.aspx" />
+			<TreeNode Text="虚线折线图" NavigateUrl="~/chart/line/dashed.aspx" />
+			<TreeNode Text="数据联动">
+				<TreeNode Text="日期范围筛选折线图" NavigateUrl="~/chart/line/date_range.aspx" />
+				<TreeNode Text="点击折线点查看详情" NavigateUrl="~/chart/line/point_details.aspx" />
+				<TreeNode Text="单选切换折线指标" NavigateUrl="~/chart/line/metric_switch.aspx" />
+				<TreeNode Text="折线图与日期选择器双向联动" NavigateUrl="~/chart/line/date_focus.aspx" />
+			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="面积图">
 			<TreeNode Text="基础面积图" NavigateUrl="~/chart/area.aspx" />
 			<TreeNode Text="堆叠面积图" NavigateUrl="~/chart/area/stacked.aspx" />
 			<TreeNode Text="渐变堆叠面积图" NavigateUrl="~/chart/area/gradient_stacked.aspx" />
 			<TreeNode Text="双色填充面积图" NavigateUrl="~/chart/area/fill_color.aspx" />
+			<TreeNode Text="正负值堆叠面积图" NavigateUrl="~/chart/area/stack_all.aspx" />
+			<TreeNode Text="数据联动">
+				<TreeNode Text="复选筛选面积图" NavigateUrl="~/chart/area/region_filter.aspx" />
+				<TreeNode Text="复选切换累计面积图" NavigateUrl="~/chart/area/cumulative.aspx" />
+			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="饼图">
 			<TreeNode Text="基础饼图" NavigateUrl="~/chart/pie.aspx" />
@@ -2444,6 +2462,12 @@
 			<TreeNode Text="半环形图" NavigateUrl="~/chart/pie/half_doughnut.aspx" />
 			<TreeNode Text="饼图扇区间隙" NavigateUrl="~/chart/pie/pad_angle.aspx" />
 			<TreeNode Text="圆角环形图" NavigateUrl="~/chart/pie/rounded_doughnut.aspx" />
+			<TreeNode Text="南丁格尔玫瑰图" NavigateUrl="~/chart/pie/rose.aspx" />
+			<TreeNode Text="数据联动">
+				<TreeNode Text="饼图联动趋势图" NavigateUrl="~/chart/pie/trend_link.aspx" />
+				<TreeNode Text="下拉筛选饼图月份" NavigateUrl="~/chart/pie/month_filter.aspx" />
+				<TreeNode Text="饼图扇区联动渠道明细表" NavigateUrl="~/chart/pie/channel_details.aspx" />
+			</TreeNode>
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="其他" IconFont="_More">
