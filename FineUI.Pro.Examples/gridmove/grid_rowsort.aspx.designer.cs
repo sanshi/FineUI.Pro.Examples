@@ -6,5 +6,7 @@ namespace FineUI.Pro.Examples.grid
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         protected global::FineUI.Pro.PageManager PageManager1;
         protected global::FineUI.Pro.Grid Grid1;
+        protected global::FineUI.Pro.Button btnSaveToDB;
+        protected global::FineUI.Pro.Button btnRefresh;
     }
 }
