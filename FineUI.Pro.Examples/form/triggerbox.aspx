@@ -8,20 +8,16 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
-            ShowBorder="true" Title="表单" ShowHeader="true" runat="server">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" ShowBorder="true" Title="表单" ShowHeader="true" runat="server">
             <Items>
-                <f:TriggerBox ID="tbxMyBox1" ShowLabel="false" Readonly="false" TriggerIcon="Search"
-                    EmptyText="打开弹出窗口" runat="server" EnableClickAction="true">
+                <f:TriggerBox ID="tbxMyBox1" ShowLabel="false" Readonly="false" TriggerIcon="Search" EmptyText="打开弹出窗口" runat="server" EnableClickAction="true">
                     <Listeners>
                         <f:Listener Event="triggerclick" Handler="onMyBox1TriggerClick" />
                     </Listeners>
                 </f:TriggerBox>
             </Items>
         </f:SimpleForm>
-        <f:Window ID="Window1" Title="弹出窗口" BodyPadding="10px" IsModal="true" Hidden="true"
-            Target="Top" Width="450px" Height="300px"
-            runat="server">
+        <f:Window ID="Window1" Title="弹出窗口" BodyPadding="10px" IsModal="true" Hidden="true" Target="Top" Width="450px" Height="300px" runat="server">
             <Items>
                 <f:Button ID="btnCloseWindow" Text="关闭当前窗口" OnClick="btnCloseWindow_Click" runat="server">
                 </f:Button>
@@ -40,5 +36,28 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示点击触发器打开弹窗，再通过窗内按钮关闭弹窗并向输入框回填文字。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>打开、关闭并回填</h3>
+            <ol>
+                <li>
+                    点击提示为“打开弹出窗口”的输入框，或点击右侧搜索图标。<br />
+                    结果：浏览器直接显示标题为“弹出窗口”的窗体，打开时无需回发。
+                </li>
+                <li>
+                    点击窗体内的“关闭当前窗口”按钮。<br />
+                    结果：按钮回发后，后台隐藏窗体，输入框显示“弹出窗口被关闭了”。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>TriggerIcon</code>：设为 Search，显示搜索图标。</li>
+                <li><code>EnableClickAction</code>：设为 true，点击输入区域也触发 triggerclick。</li>
+                <li><code>Hidden</code>：窗口初始为 true；关闭按钮处理后再次隐藏。</li>
+                <li><code>OnClick</code>：窗内按钮绑定后台事件，关闭窗口并回填输入框。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

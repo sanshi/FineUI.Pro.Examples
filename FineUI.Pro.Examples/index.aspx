@@ -76,7 +76,7 @@
                                         <div class="breadcrumb-inner">
                                         </div>
                                         <div class="breadcrumb-icons">
-                                            <a data-qtip="查看源代码" href="javascript:onToolSourceCodeClick();"><i
+                                            <a data-qtip="查看页面描述和源代码" href="javascript:onToolSourceCodeClick();"><i
                                                     class="f-icon f-iconfont f-iconfont-code"></i></a>
                                             <a data-qtip="刷新本页" href="javascript:onToolRefreshClick();"><i class="f-icon f-iconfont f-iconfont-refresh"></i></a>
                                             <a data-qtip="在新标签页中打开" href="javascript:onToolNewWindowClick();"><i
@@ -230,28 +230,35 @@
                                 </div>
                             </div>
                         </f:ContentPanel>
-                        <f:TabStrip ID="mainTabStrip" CssClass="centerregion" ShowInkBar="true" BoxFlex="1" ShowBorder="true" EnableTabCloseMenu="true"
-                            EnableTabMove="true" EnableTabWheelScroll="true" runat="server">
-                            <Tabs>
-                                <f:Tab ID="tabHomepage" Title="首页" IconFont="_Home" EnableIFrame="true" IFrameUrl="~/common/main.aspx" runat="server">
-                                </f:Tab>
-                            </Tabs>
-                            <Tools>
-                                <f:Tool runat="server" IconFont="_Code" CssClass="tabtool viewcode" ToolTip="查看源代码" ID="toolSourceCode"
-                                    ClickHandler="onToolSourceCodeClick"></f:Tool>
-                                <f:Tool runat="server" IconFont="_Refresh" CssClass="tabtool" ToolTip="刷新本页" ID="toolRefresh" ClickHandler="onToolRefreshClick">
-                                </f:Tool>
-                                <f:Tool runat="server" IconFont="_NewTab" CssClass="tabtool" ToolTip="在新标签页中打开" ID="toolNewWindow"
-                                    ClickHandler="onToolNewWindowClick"></f:Tool>
-                            </Tools>
-                        </f:TabStrip>
+                        <f:Panel ID="panelExampleWorkspace" CssClass="source-code-viewer-workspace" Layout="Region" BoxFlex="1" ShowBorder="false"
+                            ShowHeader="false" runat="server">
+                            <Items>
+                                <f:TabStrip ID="mainTabStrip" CssClass="centerregion" ShowInkBar="true" RegionPosition="Center" ShowBorder="true"
+                                    EnableTabCloseMenu="true" EnableTabMove="true" EnableTabWheelScroll="true" runat="server">
+                                    <Tabs>
+                                        <f:Tab ID="tabHomepage" Title="首页" IconFont="_Home" EnableIFrame="true" IFrameUrl="~/common/main.aspx" runat="server">
+                                        </f:Tab>
+                                    </Tabs>
+                                    <Tools>
+                                        <f:Tool runat="server" IconFont="_Code" CssClass="tabtool viewcode" ToolTip="查看页面描述和源代码" ID="toolSourceCode"
+                                            ClickHandler="onToolSourceCodeClick"></f:Tool>
+                                        <f:Tool runat="server" IconFont="_Refresh" CssClass="tabtool" ToolTip="刷新本页" ID="toolRefresh"
+                                            ClickHandler="onToolRefreshClick">
+                                        </f:Tool>
+                                        <f:Tool runat="server" IconFont="_NewTab" CssClass="tabtool" ToolTip="在新标签页中打开" ID="toolNewWindow"
+                                            ClickHandler="onToolNewWindowClick"></f:Tool>
+                                    </Tools>
+                                </f:TabStrip>
+                                <f:Panel ID="panelExampleDetails" RegionPosition="Bottom" Height="360px" MinHeight="220px" RegionSplit="true"
+                                    RegionSplitWidth="1" RegionSplitIcon="false" Hidden="true" ShowHeader="false" ShowBorder="false" EnableDefaultCorner="false"
+                                    EnableIFrame="true" runat="server"></f:Panel>
+                            </Items>
+                        </f:Panel>
                     </Items>
                 </f:Panel>
             </Items>
         </f:Panel>
-        <f:Window ID="windowSourceCode" IconFont="_Code" Title="源代码" Hidden="true" EnableIFrame="true" runat="server" IsModal="true" Width="1000px"
-            Height="600px" EnableClose="true" EnableMaximize="true" EnableResize="true">
-        </f:Window>
+
         <f:Window ID="windowThemeRoller" Title="主题仓库" Hidden="true" EnableIFrame="true" IFrameUrl="./common/themes.aspx" ClearIFrameAfterClose="false"
             runat="server" IsModal="true" Width="850px" Height="600px" EnableClose="true" EnableMaximize="true" EnableResize="true" WindowPosition="Center">
         </f:Window>
@@ -291,7 +298,8 @@
             treeMenu: '<%= treeMenu.ClientID %>',
             sidebarRegion: '<%= sidebarRegion.ClientID %>',
             btnCollapseSidebar: '<%= btnCollapseSidebar.ClientID %>',
-            windowSourceCode: '<%= windowSourceCode.ClientID %>',
+            exampleWorkspace: '<%= panelExampleWorkspace.ClientID %>',
+            exampleDetails: '<%= panelExampleDetails.ClientID %>',
             windowThemeRoller: '<%= windowThemeRoller.ClientID %>',
             windowLoadingSelector: '<%= windowLoadingSelector.ClientID %>',
             windowApplyTrial: '<%= windowApplyTrial.ClientID %>',

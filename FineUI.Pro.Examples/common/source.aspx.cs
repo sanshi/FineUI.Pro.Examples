@@ -13,6 +13,27 @@ namespace FineUI.Pro.Examples
         {
             if (!IsPostBack)
             {
+                // head 是服务器控件，直接写 <%= ... %> 会保留成字面量；在后台提供真正的客户端 ID。
+                var tabsMetadata = new System.Web.UI.HtmlControls.HtmlMeta();
+                tabsMetadata.Name = "fineui-source-tabs";
+                tabsMetadata.Content = TabStrip1.ClientID;
+                Header.Controls.Add(tabsMetadata);
+
+                if (Request.QueryString["description"] == "1")
+                {
+                    var descriptionTab = new Tab();
+                    descriptionTab.ID = "tabDescription";
+                    descriptionTab.Title = "页面描述";
+                    descriptionTab.AutoScroll = true;
+                    descriptionTab.BodyPadding = "28";
+                    // 普通 Tab 的正文通过 Content 模板承载，避免文字留在全屏选项卡背后的占位区域。
+                    descriptionTab.Content = new CompiledTemplateBuilder(container =>
+                    {
+                        container.Controls.Add(new LiteralControl("<article id=\"exampleDescriptionContent\" class=\"example-description\"></article>"));
+                    });
+                    TabStrip1.Tabs.Add(descriptionTab);
+                }
+
                 string files = Request.QueryString["files"];
 
                 if (String.IsNullOrEmpty(files))

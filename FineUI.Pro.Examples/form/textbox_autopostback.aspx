@@ -41,5 +41,43 @@
             <li>下面会显示文本[文本框二：你好]（后台触发了[文本框二]的TextChanged事件）</li>
         </ul>
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>对比文本改变时自动回发、借提交按钮处理变化和失去焦点时回发这三种触发方式。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>输入变化后更新</h3>
+            <ul>
+                <li>
+                    在“文本框一（自动回发）”中输入“hello”。<br />
+                    结果：文本改变后自动回发，后台读取当前文本，下方显示“文本框一：hello”。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-send" aria-hidden="true"></i>借提交按钮处理变化</h3>
+            <ol>
+                <li>
+                    在“文本框二”中输入“world”。<br />
+                    结果：该字段不会主动回发，暂不更新对应结果。
+                </li>
+                <li>
+                    点击“提交”。<br />
+                    结果：此次请求触发文本框二的变化事件，后台读取输入，下方显示“文本框二：world”。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-keyboard" aria-hidden="true"></i>离开字段后更新</h3>
+            <ul>
+                <li>
+                    在“文本框三（失去焦点事件）”中输入“world”，然后点击页面空白处。<br />
+                    结果：失去焦点后回发，后台读取当前文本，下方显示“文本框三：world”。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>AutoPostBack</code>：第一个文本框设为 true，文本变化时主动发起回发。</li>
+                <li><code>OnTextChanged</code>：文本变化事件，后台读取当前输入并更新对应标签。</li>
+                <li><code>EnableImplicitChangeEvents</code>：本页在 PageManager 中开启，使未主动回发的文本框也能在其它控件发起的请求中报告变化。</li>
+                <li><code>EnableBlurEvent</code>：第三个文本框设为 true，启用失去焦点事件。</li>
+                <li><code>OnBlur</code>：失去焦点时回发处理，不随每次输入立即更新。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

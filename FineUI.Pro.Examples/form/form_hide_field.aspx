@@ -9,8 +9,7 @@
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Form LabelWidth="100px" BodyPadding="10px" EnableCollapse="false"
-            ID="Form2" IsFluid="true" runat="server" Title="表单">
+        <f:Form LabelWidth="100px" BodyPadding="10px" EnableCollapse="false" ID="Form2" IsFluid="true" runat="server" Title="表单">
             <Rows>
                 <f:FormRow>
                     <Items>
@@ -35,13 +34,14 @@
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:DropDownList ID="DropDownList3" Label="审批人" Required="true" EmptyText="请选择审批人" runat="server" ShowRedStar="true" AutoSelectFirstItem="false">
+                        <f:DropDownList ID="DropDownList3" Label="审批人" Required="true" EmptyText="请选择审批人" runat="server" ShowRedStar="true"
+                            AutoSelectFirstItem="false">
                             <f:ListItem Text="老大甲" Value="0"></f:ListItem>
                             <f:ListItem Text="老大乙" Value="1"></f:ListItem>
                             <f:ListItem Text="老大丙" Value="2"></f:ListItem>
                         </f:DropDownList>
-                        <f:NumberBox ID="NumberBox1" Label="申请数量" NoDecimal="true" NoNegative="true" EmptyText="请输入申请数量" MaxValue="1000" Required="true" runat="server"
-                            ShowRedStar="true" />
+                        <f:NumberBox ID="NumberBox1" Label="申请数量" NoDecimal="true" NoNegative="true" EmptyText="请输入申请数量" MaxValue="1000" Required="true"
+                            runat="server" ShowRedStar="true" />
                     </Items>
                 </f:FormRow>
                 <f:FormRow>
@@ -52,8 +52,7 @@
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:Panel ID="Panel2" runat="server" ShowBorder="false"
-                            ShowHeader="false">
+                        <f:Panel ID="Panel2" runat="server" ShowBorder="false" ShowHeader="false">
                             <Items>
                                 <f:Button ID="btnSubmitForm2" Text="验证表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitForm2_Click"
                                     ValidateForms="Form2">
@@ -65,19 +64,15 @@
             </Rows>
         </f:Form>
         <br />
-        <f:Button ID="btnShowHideTitle" Text="显示隐藏[标题]" CssClass="marginr" runat="server"
-            OnClick="btnShowHideTitle_Click">
+        <f:Button ID="btnShowHideTitle" Text="显示隐藏[标题]" CssClass="marginr" runat="server" OnClick="btnShowHideTitle_Click">
         </f:Button>
-        <f:Button ID="btnShowHidePhone" Text="显示隐藏[电话]" runat="server"
-            OnClick="btnShowHidePhone_Click">
+        <f:Button ID="btnShowHidePhone" Text="显示隐藏[电话]" runat="server" OnClick="btnShowHidePhone_Click">
         </f:Button>
         <br />
         <br />
-        <f:Button ID="btnShowHideFormRow2" Text="显示隐藏第二行" CssClass="marginr" runat="server"
-            OnClick="btnShowHideFormRow2_Click">
+        <f:Button ID="btnShowHideFormRow2" Text="显示隐藏第二行" CssClass="marginr" runat="server" OnClick="btnShowHideFormRow2_Click">
         </f:Button>
-        <f:Button ID="btnShowHideFormRow3" Text="显示隐藏第三行（隐藏后显示空白行）" CssClass="marginr" runat="server"
-            OnClick="btnShowHideFormRow3_Click">
+        <f:Button ID="btnShowHideFormRow3" Text="显示隐藏第三行（隐藏后显示空白行）" CssClass="marginr" runat="server" OnClick="btnShowHideFormRow3_Click">
         </f:Button>
         <br />
         <br />
@@ -89,5 +84,44 @@
             </li>
         </ul>
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示隐藏单个字段或整行，并对比保留空白位置与释放布局空间这两种隐藏方式。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>隐藏单个字段</h3>
+            <ul>
+                <li>
+                    点击“显示隐藏[标题]”。<br />
+                    结果：按钮回发后由后台隐藏“标题”，原来的位置仍为空白，同行的“流水号”不向左补位。
+                </li>
+                <li>
+                    点击“显示隐藏[电话]”。<br />
+                    结果：按钮回发后由后台隐藏“电话”，释放其占用空间，同一行的“申请人”向左补位。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>隐藏整行</h3>
+            <ul>
+                <li>
+                    点击“显示隐藏第二行”。<br />
+                    结果：“电话、申请人”整行隐藏并释放高度，后面的行向上补位。
+                </li>
+                <li>
+                    点击“显示隐藏第三行（隐藏后显示空白行）”。<br />
+                    结果：“编号、电子邮箱”整行隐藏，仍保留一整行空白。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>恢复显示</h3>
+            <ul>
+                <li>
+                    再次点击对应的显示隐藏按钮。<br />
+                    结果：相应字段或整行恢复显示；各次切换都由按钮回发，后台反转 Hidden。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>HideMode</code>：标题和第三行设为 Visibility，隐藏后占位；电话和第二行使用默认 Display，隐藏后释放空间。</li>
+                <li><code>Hidden</code>：后台按钮事件反转此值，切换字段或整行的显示。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

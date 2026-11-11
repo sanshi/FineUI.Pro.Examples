@@ -9,11 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            Title="简单表单" LabelAlign="Top" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" Title="简单表单" LabelAlign="Top" ShowHeader="true">
             <Items>
-                <f:TextArea runat="server" ID="TextArea1" EmptyText="文本框的高度会自动扩展" Label="自动扩展高度的文本输入框"
-                    AutoGrowHeight="true" AutoGrowHeightMin="100" AutoGrowHeightMax="600">
+                <f:TextArea runat="server" ID="TextArea1" EmptyText="文本框的高度会自动扩展" Label="自动扩展高度的文本输入框" AutoGrowHeight="true" AutoGrowHeightMin="100"
+                    AutoGrowHeightMax="600">
                 </f:TextArea>
             </Items>
         </f:SimpleForm>
@@ -21,5 +20,31 @@
         <f:Label ID="labResult" runat="server">
         </f:Label>
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示多行文本框随内容增减自动调整高度，并将高度限制在 100 到 600 像素之间。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>随内容调整高度</h3>
+            <ol>
+                <li>
+                    选中并删除文本框中的全部内容。<br />
+                    结果：输入框缩小到最小高度 100 像素。
+                </li>
+                <li>
+                    连续输入或粘贴多行文字。<br />
+                    结果：输入框逐渐增高，达到 600 像素后不再增高，更多内容可在框内滚动阅读。
+                </li>
+                <li>
+                    再次删除部分文字。<br />
+                    结果：输入框随内容减少而降低；所有高度调整都在浏览器完成，无需回发。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>AutoGrowHeight</code>：设为 true，按内容自动调整高度。</li>
+                <li><code>AutoGrowHeightMin</code>：设为 100，内容很少时也保留此高度。</li>
+                <li><code>AutoGrowHeightMax</code>：设为 600，内容较多时不再继续增高。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -170,6 +170,34 @@ namespace FineUI.Pro.Examples
 
             }
 
+            // 普通 POST 也会返回完整页面，需要重新输出入口；仅 AJAX 增量响应不重复注册。
+            if (!PageContext.IsFineUIAjaxPostBack() && Header != null)
+            {
+                string sourceUrl = ResolveUrl("~/common/source.aspx");
+                string currentPath = Request.AppRelativeCurrentExecutionFilePath.ToLowerInvariant();
+                string viewerMode = null;
+                if (currentPath == "~/common/source.aspx")
+                {
+                    viewerMode = "source";
+                }
+                else if (currentPath == "~/common/source_file.aspx")
+                {
+                    viewerMode = "file";
+                }
+                var metadata = new System.Web.UI.HtmlControls.HtmlMeta();
+                metadata.Name = viewerMode == null ? "fineui-example-source" : "fineui-source-code-viewer";
+                metadata.Content = viewerMode ?? sourceUrl;
+                Header.Controls.Add(metadata);
+
+                var viewerStyle = new System.Web.UI.HtmlControls.HtmlLink();
+                viewerStyle.Href = ResolveUrl("~/res/css/source-code-viewer.css?v" + GlobalConfig.ProductVersion);
+                viewerStyle.Attributes["rel"] = "stylesheet";
+                Header.Controls.Add(viewerStyle);
+
+                string viewerScript = "<script src=\"" + ResolveUrl("~/res/js/source-code-viewer.js?v" + GlobalConfig.ProductVersion) + "\"></script>";
+                PageContext.RegisterPostStartupScript("FineUIPro_Examples_source_code_viewer", viewerScript, false);
+            }
+
             base.OnInit(e);
         }
 

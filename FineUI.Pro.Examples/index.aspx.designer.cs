@@ -376,13 +376,15 @@ namespace FineUI.Pro.Examples
         protected global::FineUI.Pro.Tool toolNewWindow;
 
         /// <summary>
-        /// windowSourceCode 控件。
+        /// 查看器工作区控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::FineUI.Pro.Window windowSourceCode;
+        protected global::FineUI.Pro.Panel panelExampleWorkspace;
+
+        protected global::FineUI.Pro.Panel panelExampleDetails;
 
         /// <summary>
         /// windowThemeRoller 控件。
