@@ -28,8 +28,6 @@
 			</TreeNode>
 			<TreeNode Text="图标字体（FontAwesome）" NavigateUrl="~/config/iconfont_fa.aspx">
 			</TreeNode>
-			<TreeNode Text="CssClass与CssStyle属性" NavigateUrl="~/other/cssstyle.aspx">
-			</TreeNode>
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="表单" IconFont="_Edit">
@@ -2700,9 +2698,13 @@
 			<TreeNode Text="Label与Literal的区别" NavigateUrl="~/aspnet/aspnet_literal.aspx">
 			</TreeNode>
 		</TreeNode>
-		<TreeNode Text="释放window.F命名空间" NavigateUrl="~/other/noconflict.aspx">
-		</TreeNode>
-		<TreeNode Text="IIS6 中启用 GZIP 压缩" NavigateUrl="~/config/enable_gzip_iis6.aspx">
+		<TreeNode Text="杂项">
+			<TreeNode Text="CssClass与CssStyle属性" NavigateUrl="~/other/cssstyle.aspx">
+			</TreeNode>
+			<TreeNode Text="释放window.F命名空间" NavigateUrl="~/other/noconflict.aspx">
+			</TreeNode>
+			<TreeNode Text="IIS6 中启用 GZIP 压缩" NavigateUrl="~/config/enable_gzip_iis6.aspx">
+			</TreeNode>
 		</TreeNode>
 	</TreeNode>
 </Tree>
