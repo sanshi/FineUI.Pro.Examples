@@ -1328,7 +1328,7 @@
 			</TreeNode>
 			<TreeNode Text="树表格（禁用双击展开树节点）" NavigateUrl="~/gridtree/gridtree_expandondblclick.aspx">
 			</TreeNode>
-			<TreeNode Text="树表格（树序号，3000个节点）" NavigateUrl="~/gridtree/gridtree_largedata.aspx">
+			<TreeNode Text="树表格（树序号，3500个节点）" NavigateUrl="~/gridtree/gridtree_largedata.aspx">
 			</TreeNode>
 			<TreeNode Text="展开行">
 				<TreeNode Text="树表格（展开指定行）" NavigateUrl="~/gridtree/gridtree_expandrows.aspx">
@@ -1389,7 +1389,7 @@
 			<TreeNode Text="列锁定">
 				<TreeNode Text="树表格（列锁定）" NavigateUrl="~/gridtree/gridtree_lockcolumn.aspx">
 				</TreeNode>
-				<TreeNode Text="树表格（列锁定，3000个节点）" NavigateUrl="~/gridtree/gridtree_lockcolumn_largedata.aspx">
+				<TreeNode Text="树表格（列锁定，3500个节点）" NavigateUrl="~/gridtree/gridtree_lockcolumn_largedata.aspx">
 				</TreeNode>
 			</TreeNode>
 		</TreeNode>

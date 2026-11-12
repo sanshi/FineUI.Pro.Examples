@@ -23,8 +23,30 @@
         </f:Grid>
         <br />
         <br />
-        注：这个表格禁用表头菜单，禁用列宽度调整。
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>同时关闭列标题菜单与拖动调整列宽的入口。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>检查被关闭的表头操作</h3>
+            <ul>
+                <li>把鼠标移到<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>列标题和两列之间的边缘，尝试打开菜单或拖动列宽。<br />结果：列标题不提供菜单按钮，列边缘也不能拖动改宽；数据内容仍正常显示。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：这个表格禁用表头菜单，禁用列宽度调整。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableHeaderMenu</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为 <code>false</code>，初始为
+                    <code>false</code>，关闭列标题菜单。
+                </li>
+                <li><code>EnableColumnResize</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为 <code>false</code>，初始为
+                    <code>false</code>，关闭列边缘拖动调宽。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

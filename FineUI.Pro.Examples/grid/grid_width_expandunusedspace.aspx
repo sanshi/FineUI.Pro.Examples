@@ -33,5 +33,22 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>让个人简介列填满其余列之后的可用宽度。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>调整可用宽度核对列宽</h3>
+            <ol>
+                <li>缩窄再放宽<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（[个人简介]占据空余空间100%）(改变页面大小来观察每列宽度的变化)">表格（[个人简介]占据空余空间100%）(改变页面大小来观察每列宽度的变化)</strong>所在区域。<br />结果：个人简介承担剩余空间，普通固定宽度列不按同样比例伸缩。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>ExpandUnusedSpace</code>（<strong>个人简介列</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（[个人简介]占据空余空间100%）(改变页面大小来观察每列宽度的变化)">表格（[个人简介]占据空余空间100%）(改变页面大小来观察每列宽度的变化)</strong>）：个人简介列开启填充剩余宽度，其他列使用自己的固定宽度。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

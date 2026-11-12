@@ -25,9 +25,9 @@
                 </f:TemplateField>
                 <f:BoundField DataField="EntranceYear" HeaderText="入学年份" />
                 <f:CheckBoxField RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major"
-                    DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                    UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
+                <f:HyperLinkField ColumnID="Major" HeaderText="所学专业" DataToolTipField="Major" DataTextField="Major" DataTextFormatString="{0}"
+                    DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}" UrlEncode="true" Target="_blank"
+                    ExpandUnusedSpace="true" MinWidth="150px" />
                 <f:TemplateField>
                     <ItemTemplate>
                         <asp:Button ID="Button1" UseSubmitBehavior="false" Text="删除" OnClick="Button1_Click" runat="server" />
@@ -45,11 +45,28 @@
         </f:Label>
         <br />
         <br />
-        注：
-        <ul>
-            <li>不支持在模板列中放置FineUI.Pro控件！</li>
-            <li>需要为模板列中的ASP.NET按钮控件设置属性：UseSubmitBehavior="false"</li>
-        </ul>
+
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在服务器模板列内放置 ASP.NET 按钮，并从按钮的所属行读取记录标识。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>识别模板按钮对应的行</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>不同记录中的删除按钮。<br />结果：后台由按钮的命名容器找到所在行，结果区显示要删除的行索引、编号和用户名；示例仅输出目标信息，没有执行实际删除。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <ul>
+                <li>不支持在模板列中放置FineUI.Pro控件！</li>
+                <li>需要为模板列中的ASP.NET按钮控件设置属性：UseSubmitBehavior="false"</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>NamingContainer / DataKeys</code>（<strong>模板内删除按钮</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：按钮先取得当前
+                    GridRow，再按行索引读取稳定主键和姓名。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

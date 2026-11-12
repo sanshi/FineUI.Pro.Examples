@@ -27,5 +27,22 @@
         <br />
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在相邻数据列之间显示竖向分割线，帮助区分列边界。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照本页样式规则</h3>
+            <ul>
+                <li>查看<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>相邻列之间的边界。<br />结果：数据区各列之间出现竖线，列内容、选择与数据顺序不变。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableColumnLines</code>（<strong>本页列与样式</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为
+                    <code>true</code>，显示数据列之间的竖向边线。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

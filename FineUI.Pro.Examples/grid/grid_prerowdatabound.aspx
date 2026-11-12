@@ -38,9 +38,29 @@
         <f:Label ID="labResult" EncodeText="false" runat="server">
         </f:Label>
         <br />
-        注：本示例不允许对入学年份小于2004的记录进行操作。
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在服务器行预绑定阶段按入学年份决定本行操作是否可用，并修改专业链接文字。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>比较可用与禁用的行入口</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>对照入学年份不小于 2004 和早于 2004 的记录，尝试操作是否在校及行内<strong>按钮</strong>。<br />结果：不小于 2004 的行允许操作，较早记录的对应入口禁用；专业链接还附带本行入学年份。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：本示例不允许对入学年份小于2004的记录进行操作。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>PreRowDataBound / Enabled</code>（<strong>本页服务器列与行处理</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：在每行绑定前读源数据，给该行即将渲染的列设置是否可用。
+                </li>
+                <li><code>DataTextFormatString</code>（<strong>本页服务器列与行处理</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：专业链接的显示格式逐行附加入学年份。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

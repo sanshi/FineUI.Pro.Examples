@@ -25,9 +25,7 @@
             </Columns>
         </f:Grid>
         <br />
-        <br />
-        注：如果设置FixedRowHeight=true，但是未设置RowHeight，则使用默认行高（不包含单元格的内边距）。
-        <br />
+        <br /><br />
         <br />
         <table class="result">
             <tbody>
@@ -66,5 +64,24 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>用固定行高显示记录。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>核对行高一致性</h3>
+            <ol>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>比较不同描述长度的记录，再向下滚动。<br />结果：各行使用同一套固定高度，滚动后后续记录也保持等高；长文字不会无限撑大单独一行，超出范围的内容受可用高度限制。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：如果设置FixedRowHeight=true，但是未设置RowHeight，则使用默认行高（不包含单元格的内边距）。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>FixedRowHeight</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为 <code>true</code>，初始为
+                    <code>true</code>，按统一行高显示记录。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

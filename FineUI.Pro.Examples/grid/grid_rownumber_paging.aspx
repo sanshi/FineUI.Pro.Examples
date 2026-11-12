@@ -26,9 +26,27 @@
         </f:Button>
         <br />
         <br />
-        <strong>出于性能考虑，请在实际项目中使用数据库分页（不要使用内存分页）！</strong>
+
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>跨页连续显示行序号，采用浏览器对完整记录分页。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>翻页核对序号连续性</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（内存分页，切换分页时序号连续）">表格（内存分页，切换分页时序号连续）</strong>下一页，再返回第一页。<br />结果：第二页的序号接在第一页末尾之后，不重新从 1 开始；行号由页索引与页大小计算，不作为业务主键。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>数据量较大时，建议采用数据库分页，避免首次加载与传输全部记录；本页保留内存分页用于对照。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnablePagingNumber</code>（<strong>序号列</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（内存分页，切换分页时序号连续）">表格（内存分页，切换分页时序号连续）</strong>）：初始为 <code>true</code>，把页偏移量计入显示序号。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

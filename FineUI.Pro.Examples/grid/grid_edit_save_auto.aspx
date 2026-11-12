@@ -22,16 +22,17 @@
         .f-field-label {
             word-break: break-all;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel2" runat="server" />
-        <f:Panel ID="Panel2" Margin="24px" runat="server" ShowBorder="false" Layout="HBox" BoxConfigAlign="Stretch"
-            BoxConfigPosition="Start" ShowHeader="false">
+        <f:Panel ID="Panel2" Margin="24px" runat="server" ShowBorder="false" Layout="HBox" BoxConfigAlign="Stretch" BoxConfigPosition="Start"
+            ShowHeader="false">
             <Items>
-                <f:Grid DataIDField="Id" ID="Grid1" ShowBorder="true" BoxFlex="1" ShowHeader="true" Title="表格（每隔30秒自动保存全部数据，并显示提示信息）" runat="server" EnableCollapse="false"
-                    DataKeyNames="Id,Name" EnableMultiSelect="false" Margin="0 5 0 0">
+                <f:Grid DataIDField="Id" ID="Grid1" ShowBorder="true" BoxFlex="1" ShowHeader="true" Title="表格（每隔30秒自动保存全部数据，并显示提示信息）" runat="server"
+                    EnableCollapse="false" DataKeyNames="Id,Name" EnableMultiSelect="false" Margin="0 5 0 0">
                     <Toolbars>
                         <f:Toolbar ID="Toolbar1" runat="server">
                             <Items>
@@ -52,15 +53,16 @@
                         <f:TemplateField ColumnID="Gender" HeaderText="性别">
                             <ItemTemplate>
                                 <%-- Container.DataItem 的类型是 System.Data.DataRowView 或者用户自定义类型 --%>
-                                <%--<asp:Label ID="Label2" runat="server" Text='<%# GetGender(DataBinder.Eval(Container.DataItem, "Gender")) %>'></asp:Label>--%>
+                                <%--<asp:Label ID="Label2" runat="server" Text='<%# GetGender(DataBinder.Eval(Container.DataItem, "Gender")) %>'></asp:Label>
+                                --%>
                                 <asp:Label ID="Label3" runat="server" Text='<%# GetGender(Eval("Gender")) %>'></asp:Label>
                             </ItemTemplate>
                         </f:TemplateField>
                         <f:BoundField ColumnID="EntranceYear" DataField="EntranceYear" HeaderText="入学年份" />
                         <f:CheckBoxField ColumnID="AtSchool" RenderAsStaticField="true" DataField="AtSchool" HeaderText="是否在校" />
-                        <f:HyperLinkField HeaderText="所学专业" ColumnID="Major" DataToolTipField="Major" DataTextField="Major"
-                            DataTextFormatString="{0}" DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}"
-                            UrlEncode="true" Target="_blank" ExpandUnusedSpace="true" MinWidth="150px" />
+                        <f:HyperLinkField HeaderText="所学专业" ColumnID="Major" DataToolTipField="Major" DataTextField="Major" DataTextFormatString="{0}"
+                            DataNavigateUrlFields="Major" DataNavigateUrlFormatString="http://gsa.ustc.edu.cn/search?q={0}" UrlEncode="true" Target="_blank"
+                            ExpandUnusedSpace="true" MinWidth="150px" />
                         <f:TemplateField HeaderText="语文成绩" ColumnID="ChineseScore">
                             <ItemTemplate>
                                 <asp:TextBox runat="server" Width="60px" ID="tbxTableChineseScore" CssClass="ChineseScore"
@@ -84,8 +86,8 @@
                         <f:Listener Event="rowselect" Handler="onGridRowselect" />
                     </Listeners>
                 </f:Grid>
-                <f:SimpleForm ID="SimpleForm1" runat="server" Width="300px" LabelAlign="Left" LabelWidth="100px" EnableCollapse="false"
-                    Title="详细信息" BodyPadding="5px 10px">
+                <f:SimpleForm ID="SimpleForm1" runat="server" Width="300px" LabelAlign="Left" LabelWidth="100px" EnableCollapse="false" Title="详细信息"
+                    BodyPadding="5px 10px">
                     <Items>
                         <f:Label runat="server" ID="labName" EncodeText="false" Label="姓名" Text="">
                         </f:Label>
@@ -161,7 +163,7 @@
             resultNode.text(num1 + num2);
 
             // F.smartLayout：回调函数执行完毕后再进行布局操作
-            F.smartLayout(function () {
+            F.smartLayout(function() {
                 updateDetailScore(rowEl);
             });
         }
@@ -170,7 +172,7 @@
             var grid = F(gridClientID);
 
 
-            grid.el.on('input', inputselector, function (event) {
+            grid.el.on('input', inputselector, function(event) {
                 doUpdateDetail(this);
             });
 
@@ -182,7 +184,7 @@
             var rowValue = grid.getRowValue(rowId);
 
             // F.smartLayout：回调函数执行完毕后再进行布局操作
-            F.smartLayout(function () {
+            F.smartLayout(function() {
                 F('<%= labName.ClientID %>').setValue(rowValue['Name']);
                 F('<%= labGender.ClientID %>').setValue(rowValue['Gender']);
                 F('<%= labEntranceYear.ClientID %>').setValue(rowValue['EntranceYear']);
@@ -196,16 +198,17 @@
 
 
         // 页面第一次加载完成后调用的函数
-        F.ready(function () {
+        F.ready(function() {
             registerAutoSaveEvent();
 
             // 30秒自动保存一次
-            window.setInterval(function () {
-               // F.customEvent('AutoSave');
+            window.setInterval(function() {
+                // 定时提交当前输入，让后台更新会话中的成绩；只创建定时器不会触发保存。
+                F.customEvent('AutoSave');
             }, 1000 * 30);
         });
 
-        
+
         /*
         var hideAutoSaveMessageTimer = null;
         function showAutoSaveSuccessMessage(msg) {
@@ -234,9 +237,28 @@
         }
         */
 
-
-        
-
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>每隔 30 秒回发保存模板中的成绩输入，也可点击按钮立即保存到会话示例数据。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>自动保存与手动保存</h3>
+            <ol>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（每隔30秒自动保存全部数据，并显示提示信息）">表格（每隔30秒自动保存全部数据，并显示提示信息）</strong>修改一行语文或<strong>数学成绩</strong>，等待约 30 秒。<br />结果：页面定时发送
+                    AutoSave，后台读取各行当前输入并更新会话中的成绩与总分，显示自动保存时间；会话只是本页模拟存储。</li>
+                <li>再次修改成绩，点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSave").ClientID %>'
+                        title="保存用户输入数据">保存用户输入数据</strong>。<br />结果：后台立即执行同一读取更新过程，提示手工保存时间；刷新示例可核对会话数据。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>setInterval / F.customEvent</code>（<strong>页面定时脚本</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（每隔30秒自动保存全部数据，并显示提示信息）">表格（每隔30秒自动保存全部数据，并显示提示信息）</strong>）：页面脚本以 <code>30000</code> 毫秒间隔发送 AutoSave，后台处理当前模板输入。</li>
+                <li><code>GridRow.FindControl / Session</code>（<strong>本页服务器列与行处理</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（每隔30秒自动保存全部数据，并显示提示信息）">表格（每隔30秒自动保存全部数据，并显示提示信息）</strong>）：逐行读取两个成绩框，按数据主键更新会话表中的成绩与总分。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

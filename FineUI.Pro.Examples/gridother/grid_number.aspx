@@ -27,5 +27,22 @@
         </f:Grid>
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/gridcard.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>为金额、小数、百分比及编号分别指定数字显示格式。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>比较不同数字列的输出</h3>
+            <ul>
+                <li>查看<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>中工资、绩点等数值列。<br />结果：各列分别显示千分位、小数位、百分比、科学记数或补零编号，具体形式由每列格式决定；同一数字类型不要求采用同一格式。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Renderer / RendererArgument</code>（<strong>数值列</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：按列选择 Number 渲染及格式字符串，例如
+                    <code>N2</code> 表示带分组分隔的两位小数。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>
