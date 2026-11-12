@@ -2112,6 +2112,7 @@
 				</TreeNode>
 			</TreeNode>
 			<TreeNode Text="组合用法">
+				<TreeNode Text="窗体（标题栏工具）" NavigateUrl="~/window/window_tools.aspx" Version="16.2.0"></TreeNode>
 				<TreeNode Text="窗体（工具栏）" NavigateUrl="~/window/window_toolbar.aspx">
 				</TreeNode>
 				<TreeNode Text="窗体（表单）" NavigateUrl="~/window/window_form.aspx">

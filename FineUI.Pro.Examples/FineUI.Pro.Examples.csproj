@@ -1414,6 +1414,7 @@
     <Content Include="panel\panel.aspx" />
     <Content Include="window\window.aspx" />
     <Content Include="window\window_bottomright.aspx" />
+    <Content Include="window\window_tools.aspx" />
     <Content Include="window\window_toolbar.aspx" />
     <Content Include="panel\panel_collapse.aspx" />
     <Content Include="panel\panel_tools.aspx" />
@@ -10333,6 +10334,13 @@
     </Compile>
     <Compile Include="window\window_bottomright.aspx.designer.cs">
       <DependentUpon>window_bottomright.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="window\window_tools.aspx.cs">
+      <DependentUpon>window_tools.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="window\window_tools.aspx.designer.cs">
+      <DependentUpon>window_tools.aspx</DependentUpon>
     </Compile>
     <Compile Include="window\window_toolbar.aspx.cs">
       <DependentUpon>window_toolbar.aspx</DependentUpon>
