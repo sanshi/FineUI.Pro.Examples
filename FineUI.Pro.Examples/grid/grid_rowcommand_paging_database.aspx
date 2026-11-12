@@ -44,5 +44,27 @@
         </f:Label>
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在数据库分页后使用当前页的行命令，避免用旧行位置识别记录。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>换页后点击行命令</h3>
+            <ol>
+                <li>将<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>切到第二页，再点击其中一行的<strong>按钮 1</strong>或<strong>按钮 2</strong>。<br />结果：命令回发后，后台按当前页的行数据处理，<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("labResult").ClientID %>'
+                        title="命令结果">命令结果</strong>显示当前记录的信息，不把相同页内行号当成第一页记录。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>PageSize</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为
+                    <code>5</code>，决定当前页的记录数；换页后命令处理必须仍以本次行标识识别数据。
+                </li>
+                <li><code>OnRowCommand</code>（<strong>行命令</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：当前命令读取本轮行数据或事件参数，不缓存上一页的行位置。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -22,7 +22,7 @@
                 </f:RenderField>
             </Columns>
         </f:Grid>
-        <br />入学年份为 2008 的编辑命令被禁用。<br />
+        <br /><br />
         <f:Label ID="labResult" EncodeText="false" runat="server" />
     </form>
     <script>
@@ -33,5 +33,23 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>按行数据禁用特定命令，其他行及同一行的其他命令仍可用。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>对照受限命令与可用命令</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="按行禁用命令">按行禁用命令</strong>中入学年份等于 2008 的行与其他记录的第一个命令。<br />结果：符合条件的首个命令呈现禁用外观且不能执行；其他入口仍可正常处理。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>入学年份为 2008 的编辑命令被禁用。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>RendererFunction</code>（<strong>行命令</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="按行禁用命令">按行禁用命令</strong>）：命令渲染函数读取当前行入学年份，只对
+                    2008 对应命令附加隐藏或禁用样式。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

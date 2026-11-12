@@ -43,7 +43,6 @@
         </f:Label>
         <br />
         <br />
-        注：入学年份不晚于 2004 年的行，通过列渲染函数禁用复选框。
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
@@ -65,5 +64,26 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>按入学年份禁用部分行的可编辑复选框，保留其他记录的切换能力。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照受限行与普通行</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>中入学年份不大于 2004 的记录与其他记录，尝试点击第二个是否在校列的复选框。<br />结果：命中条件的复选框呈现禁用外观且不能切换，其他行仍可正常修改。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：入学年份不晚于 2004 年的行，通过列渲染函数禁用复选框。</p>
+            <p>注：入学年份不晚于 2004 年的行，通过列渲染函数禁用复选框。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>RendererFunction</code>（<strong>可修改的复选框列</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：渲染时读取 EntranceYear；本页只对不大于
+                    2004 的记录附加隐藏或禁用样式。</li>
+                <li><code>CSS</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：给命中条件的单元格附加禁用类，不对整张表格禁用。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>
