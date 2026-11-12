@@ -32,8 +32,8 @@
         <br />
         <f:Label runat="server" ID="labResult">
         </f:Label>
-        <br />
-        注：如果表格分页，则需要同时指定 Values 和 Text 属性来设置下拉框的初始值。
+
+
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
@@ -44,5 +44,38 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在下拉表格中单选人员。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>选择并读取人员</h3>
+            <ol>
+                <li>
+                    展开下拉表格中选择“董婷婷”。<br />
+                    结果：该人员成为唯一选择，值为 103。
+                </li>
+                <li>
+                    收起可收起的面板后，点击“获取下拉框的选中值”。<br />
+                    结果：回发后由后台显示当前人员名称及业务值。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>恢复初始选择</h3>
+            <ol>
+                <li>
+                    修改选择后点击“重置表单”。<br />
+                    结果：客户端恢复页面初始的选择值和显示文字，不再保留刚改选的人员。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：如果表格分页，则需要同时指定 Values 和 Text 属性来设置下拉框的初始值。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableMultiSelect</code>：决定下拉框保留单个值还是多个值。 本页声明值为 false。</li>
+                <li><code>Values</code>：指定初始多选值。 本页声明值为 105。</li>
+                <li><code>MatchFieldWidth</code>：控制弹出面板是否强制匹配字段宽度。 本页声明值为 false。</li>
+                <li><code>DataIDField</code>：从数据对象指定字段取得行值。 本页声明值为 Id。</li>
+                <li><code>DataTextField</code>：从指定字段取得选中后显示的人员名称。 本页声明值为 Name。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

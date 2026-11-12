@@ -120,9 +120,26 @@
         <f:Button ID="btnSubmitAll" Text="验证两个表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitAll_Click" ValidateForms="ContentPanel1,ContentPanel2"
             MarginTop="5px">
         </f:Button>
-        <br />
-        <br />
-        注：推荐使用表单的EnableTableStyle属性，更简单，参考示例：表格样式->表格样式（表单）。
+
+
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示表格风格中标签、输入区域和单元格边线的对齐。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照表格风格的字段排列</h3>
+            <ol>
+                <li>
+                    对照本页各组字段的标签区域、输入区域与单元格边线。<br />
+                    结果：不同字段放在各自单元格中，标签与输入区按表格布局对齐；操作按钮保留在原来的位置。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：推荐使用表单的EnableTableStyle属性，更简单，参考示例：表格样式->表格样式（表单）。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>ShowLabel</code>：设为 false，标签文字由 HTML 表格的独立单元格提供。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

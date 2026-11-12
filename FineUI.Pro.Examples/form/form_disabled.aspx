@@ -132,5 +132,40 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>对比逐字段禁用、只读、错误标记和禁用整个表单面板的效果。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-power-off" aria-hidden="true"></i>禁用与只读</h3>
+            <ol>
+                <li>
+                    在“电子邮箱”输入“demo&#64;example.com”，点击“全部禁用”。<br />
+                    结果：回发后后台禁用各字段，不能继续输入或选择；已有值保留。
+                </li>
+                <li>
+                    点击“全部启用”，再点击“全部只读”。<br />
+                    结果：字段恢复启用后进入只读状态，已有文字保留但不能由用户修改。
+                </li>
+                <li>
+                    点击“取消只读”。<br />
+                    结果：恢复原有输入和选择能力；只读与禁用是不同的状态。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>面板与只读外观</h3>
+            <ul>
+                <li>
+                    先点击“禁用表单面板”，再点击“启用表单面板”。<br />
+                    结果：切换表单整体可用状态，和逐个字段设置是两条独立操作路径。
+                </li>
+                <li>
+                    在只读状态点击“添加只读样式（类似禁用样式）”，再点击“删除只读样式”。<br />
+                    结果：只读字段先显示半透明外观，再恢复原有外观；这里只改变样式，不把只读改成禁用。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>F.addCSS()</code>：临时添加 .f-readonly 的透明度样式；删除同名样式后恢复。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -69,5 +69,21 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>通过纯客户端 select 回调即时显示所选文字和值，按钮操作也不请求后台。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>响应客户端选中事件</h3>
+            <ol>
+                <li>
+                    在下拉面板重新选择另一项。<br />
+                    结果：浏览器的 select 监听器显示本次选中信息，无需后台回发。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>listeners.select</code>：监听用户从面板选中列表项的客户端动作。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

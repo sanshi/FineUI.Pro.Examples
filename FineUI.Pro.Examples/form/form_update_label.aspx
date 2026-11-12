@@ -94,5 +94,51 @@
         <br />
         <br />
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示按钮回发后由后台修改字段标签和验证规则，新规则立即作用于页面上的输入控件。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>改标签和邮箱规则</h3>
+            <ul>
+                <li>
+                    点击“更新[固定电话]标签”。<br />
+                    结果：按钮回发，后台在“固定电话”和“移动电话”之间切换标签，电话号码保持不变。
+                </li>
+                <li>
+                    点击“去除[电子邮箱]必填项”。<br />
+                    结果：后台同时取消 Required 和 ShowRedStar，邮箱星号消失，空邮箱不再产生必填错误。
+                </li>
+                <li>
+                    点击“去除[电子邮箱]的正则表达式验证”。<br />
+                    结果：后台把 RegexPattern 改为 None，之后不再按邮箱格式校验。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>改长度、数字和日期限制</h3>
+            <ul>
+                <li>
+                    点击“去除[描述]的最少5个字符限制”。<br />
+                    结果：后台清空 MinLength，描述保留其它规则，但不再要求至少 5 个字符。
+                </li>
+                <li>
+                    点击“将[申请数量]的最大值100改为10”，输入 11 后移开焦点。<br />
+                    结果：后台下发新上限 10，数量 11 显示错误。
+                </li>
+                <li>
+                    点击“限制[审批时间]的最大时间为今天”。<br />
+                    结果：后台把 MaxDate 改为今天，之后的日期不能通过验证。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>OnClick</code>：各修改按钮绑定后台事件，点击后通过回发更新已有控件。</li>
+                <li><code>Label</code>：修改显示的字段标签，保留字段当前值。</li>
+                <li><code>Required</code>：控制字段是否必须有值，与星号分别设置。</li>
+                <li><code>ShowRedStar</code>：控制标签上的必填星号。</li>
+                <li><code>RegexPattern</code>：设为 None 取消邮箱格式规则。</li>
+                <li><code>MinLength</code>：设为 null 取消最小字符长度。</li>
+                <li><code>MaxValue</code>：申请数量的新上限为 10。</li>
+                <li><code>MaxDate</code>：审批日期的新上限为今天。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -41,5 +41,26 @@
         </f:SimpleForm>
         <br />
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示通过 CSS 类切换字段标签颜色，并保留输入框当前内容。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-skin" aria-hidden="true"></i>切换标签样式</h3>
+            <ol>
+                <li>
+                    在用户名或密码中输入内容，点击“改变 Label 的样式”。<br />
+                    结果：回发后，后台给标签加上红色样式，输入值保留。
+                </li>
+                <li>
+                    再次点击同一按钮。<br />
+                    结果：标签切换为蓝色，之后在红、蓝之间循环，不重新创建字段。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>CssClass</code>：red、blue 样式类选择字段标签的颜色。</li>
+                <li><code>.f-field-fieldlabel</code>：本页 CSS 针对标签文字设置样式。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

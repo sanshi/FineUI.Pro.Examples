@@ -43,5 +43,21 @@
             <f:Button ID="Button6" Text="图标在下面" Size="Large" IconAlign="Bottom" IconFont="_Phone" runat="server" />
         </f:ButtonGroup>
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示纵向按钮分组，组合图片、字体图标和不同尺寸按钮。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对比分组排列</h3>
+            <ul>
+                <li>
+                    对照各组的文字图标按钮、只有图标的按钮和大按钮。<br />
+                    结果：每组按钮从上向下排列、左侧对齐，并形成连续的分组边框。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Vertical</code>：纵向组设为 true，使用纵向分组边框。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

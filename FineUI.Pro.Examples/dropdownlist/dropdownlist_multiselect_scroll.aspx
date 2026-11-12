@@ -48,5 +48,21 @@
         </f:Label>
     </form>
 
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在可滚动的选项面板中多选，并读取包含末尾选项的选择。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>滚动查看后面的选项</h3>
+            <ol>
+                <li>
+                    展开选项面板并滚动到底部，选择“可选择项20”。<br />
+                    结果：面板内部滚动，末尾选项仍可选；读取结果包含 Value20。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>MaxHeight</code>：弹层高度受限后出现滚动条，可以继续滚动访问后面的选项。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

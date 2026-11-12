@@ -41,7 +41,7 @@
                             <Items>
                                 <f:Label ID="lblApplyName" Label="申请人" runat="server"></f:Label>
                                 <f:TextBox runat="server" ID="txtApplyPhone" Label="申请人电话" EmptyText="请输入申请人电话" ShowRedStar="true" Required="true" BoxFlex="1"
-                                    Regex="^1[3|4|5|7|8][0-9]{9}$" RegexMessage="你输入的不合法的电话号码">
+                                    Regex="^1[34578][0-9]{9}$" RegexMessage="你输入的不合法的电话号码">
                                 </f:TextBox>
                             </Items>
                         </f:FormRow>
@@ -123,5 +123,27 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示表格风格的用车审批界面，组合申请字段、流程表格和审批意见，并根据意见显示或隐藏车辆选择行。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>切换审批意见</h3>
+            <ol>
+                <li>
+                    在“当前审批”中选择“驳回”。<br />
+                    结果：意见变化后回发，后台隐藏上方“选择车辆”整行。
+                </li>
+                <li>
+                    改选“同意”。<br />
+                    结果：后台恢复车辆选择行，已有其它字段值保留。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableTableStyle</code>：申请表启用表格风格，多列字段按标签与输入区域对齐。</li>
+                <li><code>OnSelectedIndexChanged</code>：审批意见改变时回发，后台修改车辆行的 Hidden。</li>
+                <li><code>Hidden</code>：隐藏整个 FormRow，使该行不再占用布局空间。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

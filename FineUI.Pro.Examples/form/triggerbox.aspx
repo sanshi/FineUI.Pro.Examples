@@ -23,8 +23,8 @@
                 </f:Button>
             </Items>
         </f:Window>
-        <br />
-        注：点击输入框即可弹出窗体（EnableClickAction=true）。
+
+
     </form>
 
     <script>
@@ -50,6 +50,8 @@
                     结果：按钮回发后，后台隐藏窗体，输入框显示“弹出窗口被关闭了”。
                 </li>
             </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：点击输入框即可弹出窗体（EnableClickAction=true）。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
                 <li><code>TriggerIcon</code>：设为 Search，显示搜索图标。</li>

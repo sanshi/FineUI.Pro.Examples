@@ -72,7 +72,27 @@
             </Toolbars>
         </f:Window>
 
-        注：推荐使用表单的EnableTableStyle属性，更简单，参考示例：表格样式->表格样式（联系我们）。
+
+
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示把联系表单的字段组织成表格风格的标签与输入区域。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照字段排列</h3>
+            <ol>
+                <li>
+                    在“姓、名”填写联系人，邮箱输入 reader&#64;example.com，填写主题和消息正文。<br />
+                    结果：姓名字段并排，其余字段纵向排列。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：推荐使用表单的EnableTableStyle属性，更简单，参考示例：表格样式->表格样式（联系我们）。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>ShowLabel</code>：隐藏控件内置标签，改用 HTML 表格单元格显示。</li>
+                <li><code>tablehtml</code>：手写 HTML 表格使用公共 tablehtml.css 形成边线与标签区域。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

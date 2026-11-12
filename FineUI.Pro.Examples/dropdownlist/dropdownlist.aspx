@@ -34,8 +34,37 @@
         <br />
         <f:Label runat="server" ID="labResult">
         </f:Label>
-        <br />
-        注：列表项的值不能为空字符串。
+
+
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在下拉面板中单项选择。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>选择并读取当前项</h3>
+            <ol>
+                <li>
+                    展开下拉列表，选择“可选择项8”。<br />
+                    结果：输入区显示该选项，原来的单选项被替换。
+                </li>
+                <li>
+                    点击“获取此下拉列表的选中项”。<br />
+                    结果：回发后由后台显示当前文字和选中值，其中包含 Value8；后台读取本次选择。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过按钮更新选择</h3>
+            <ol>
+                <li>
+                    点击“选中[可选项6]”。<br />
+                    结果：回发后由后台用按钮指定的选项替换当前选择，输入区同步显示对应文字。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：列表项的值不能为空字符串。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>SelectedValue</code>：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

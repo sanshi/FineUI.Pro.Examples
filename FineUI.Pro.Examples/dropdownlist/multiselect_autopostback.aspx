@@ -37,5 +37,21 @@
         </f:Label>
     </form>
 
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示通过回发处理选中项变化。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-send" aria-hidden="true"></i>响应选择变化</h3>
+            <ol>
+                <li>
+                    在下拉面板增加或取消一项。<br />
+                    结果：选择变化后自动回发，后台用本次选择更新结果；无需再点获取按钮。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>OnSelectedIndexChanged</code>：选择变化时处理当前值；Pro 中是否主动回发还受 AutoPostBack 控制。 本页声明值为 DropDownList1_SelectedIndexChanged。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

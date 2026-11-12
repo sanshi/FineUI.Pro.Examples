@@ -31,15 +31,8 @@
         <br />
         <f:Label ID="labResult3" EncodeText="false" runat="server">
         </f:Label>
-        <br />
-        <br />
-        注：本页通过 PageManager.EnableImplicitChangeEvents=true 专门保留 WebForms 的历史兼容行为：TextChanged 由回发数据变化驱动，即使本次回发由其他控件发起也可能触发。提交按钮没有服务端事件，显式 EnablePostBack=true
-        只用于发起这次教学回发。请仔细考虑如下逻辑：
-        <ul>
-            <li>在[文本框二]输入任意文本，比如：你好</li>
-            <li>点击[提交]按钮</li>
-            <li>下面会显示文本[文本框二：你好]（后台触发了[文本框二]的TextChanged事件）</li>
-        </ul>
+
+
     </form>
     <template id="example-description">
         <section aria-label="页面描述">
@@ -68,6 +61,13 @@
                     在“文本框三（失去焦点事件）”中输入“world”，然后点击页面空白处。<br />
                     结果：失去焦点后回发，后台读取当前文本，下方显示“文本框三：world”。
                 </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：本页通过 PageManager.EnableImplicitChangeEvents=true 专门保留 WebForms 的历史兼容行为：TextChanged 由回发数据变化驱动，即使本次回发由其他控件发起也可能触发。提交按钮没有服务端事件，显式 EnablePostBack=true 只用于发起这次教学回发。请仔细考虑如下逻辑：</p>
+            <ul>
+                <li>在[文本框二]输入任意文本，比如：你好</li>
+                <li>点击[提交]按钮</li>
+                <li>下面会显示文本[文本框二：你好]（后台触发了[文本框二]的TextChanged事件）</li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">

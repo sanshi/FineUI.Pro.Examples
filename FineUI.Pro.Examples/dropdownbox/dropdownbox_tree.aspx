@@ -56,5 +56,26 @@
         <f:Label runat="server" ID="labResult">
         </f:Label>
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在层级树中选择单个节点。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>选择树节点</h3>
+            <ol>
+                <li>
+                    展开下拉树，点击“河南省”下的“驻马店市”。<br />
+                    结果：选择替换为驻马店市，对应值为 zhumadian。
+                </li>
+                <li>
+                    点击面板外空白处收起，再点击“获取下拉框的选中值”。<br />
+                    结果：回发后由后台显示当前树节点文字和标识。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableMultiSelect</code>：决定下拉框保留单个值还是多个值。 本页声明值为 false。</li>
+                <li><code>Values</code>：指定初始多选值。 本页声明值为 henan。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

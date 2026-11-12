@@ -20,14 +20,8 @@
                 </f:Button>
             </Items>
         </f:SimpleForm>
-        <br />
-        <br />
-        注：
-        <ul>
-            <li>
-                提交表单时客户端验证[密码]必须为 6 个字符，否则标记为无效。
-            </li>
-        </ul>
+
+
     </form>
     <script>
         function passwordValidator() {
@@ -54,11 +48,14 @@
                     结果：长度检查通过后才回发，后台提示“表单验证通过！”。
                 </li>
             </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：</p>
+            <ul>
+                <li> 提交表单时客户端验证[密码]必须为 6 个字符，否则标记为无效。 </li>
+            </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
                 <li><code>ValidatorFunction</code>：指定 passwordValidator；函数读取当前密码，符合条件返回 true，否则返回错误文字。</li>
-                <li><code>Required</code>：密码框设为 true，空值仍按必填规则检查。</li>
-                <li><code>ValidateForms</code>：注册按钮指定 SimpleForm1，包含必填和自定义验证，通过后才回发。</li>
             </ul>
         </section>
     </template>

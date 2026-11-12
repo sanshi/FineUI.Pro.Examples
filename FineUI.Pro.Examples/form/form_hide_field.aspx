@@ -74,15 +74,8 @@
         </f:Button>
         <f:Button ID="btnShowHideFormRow3" Text="显示隐藏第三行（隐藏后显示空白行）" CssClass="marginr" runat="server" OnClick="btnShowHideFormRow3_Click">
         </f:Button>
-        <br />
-        <br />
-        注：
-        <ul>
-            <li>对比隐藏[标题]和隐藏[电话]的不同之处（[标题]的HideMode=Visibility）
-            </li>
-            <li>对比隐藏第二行和隐藏第三行的不同之处（FormRow3的HideMode=Visibility）
-            </li>
-        </ul>
+
+
     </form>
     <template id="example-description">
         <section aria-label="页面描述">
@@ -115,6 +108,12 @@
                     再次点击对应的显示隐藏按钮。<br />
                     结果：相应字段或整行恢复显示；各次切换都由按钮回发，后台反转 Hidden。
                 </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：</p>
+            <ul>
+                <li>对比隐藏[标题]和隐藏[电话]的不同之处（[标题]的HideMode=Visibility） </li>
+                <li>对比隐藏第二行和隐藏第三行的不同之处（FormRow3的HideMode=Visibility） </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">

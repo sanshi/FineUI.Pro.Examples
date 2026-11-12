@@ -39,8 +39,9 @@ namespace FineUI.Pro.Examples.form
                 // 保存到不可直接访问的目录，图片地址指向公共处理器（~/common/Download.ashx，带 inline=1 内联显示）
                 string savedName = SaveUploadFile(filePhoto);
 
+                // 结果保留头像等固定 HTML，用户名先编码，避免用户输入被当作标签解析。
                 labResult.Text = "<p>文件路径：" + HtmlEncode(originalName) + "</p>" +
-                    "<p>用户名：" + tbxUserName.Text + "</p>" +
+                    "<p>用户名：" + HtmlEncode(tbxUserName.Text) + "</p>" +
                     "<p>头像：<br /><img src=\"" + GetImageUrl(savedName) + "\" /></p>";
 
                 //// 清空表单字段（第一种方法）

@@ -33,10 +33,28 @@
         <br />
         <f:Label runat="server" EncodeText="false" ID="labResult">
         </f:Label>
-        <br />
-        <br />
-        注：支持键盘输入过滤，回车键选中当前过滤项或者取消当前项。
+
+
     </form>
 
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>用可移除标签展示多项选择，键入文字筛选并匹配已有项，初始保持未选择。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>保持初始空选择</h3>
+            <ol>
+                <li>
+                    初次打开页面，先不选择任何项。<br />
+                    结果：输入区没有选中值，显示“请从下拉列表中选择”提示；之后可从列表选择有效项。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：支持键盘输入过滤，回车键选中当前过滤项或者取消当前项。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>AutoSelectFirstItem</code>：为 false 时，不自动把第一项设为初始选择。 本页声明值为 false。</li>
+                <li><code>EmptyText</code>：未选择时显示输入提示。 本页声明值为 请从下拉列表中选择。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

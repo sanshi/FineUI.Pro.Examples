@@ -13,6 +13,29 @@
             <f:Button runat="server" ID="btnToggle" Text="切换只读" OnClick="btnToggle_Click" />
         </Items>
     </f:SimpleForm>
-    <p>只读时允许选择、复制和查看源码；正文和源码均不可修改。可使用下方按钮切换。</p>
+
+
 </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示内置富文本编辑器只读时的选择、复制和源码查看，以及恢复编辑。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>只读与恢复编辑</h3>
+            <ol>
+                <li>
+                    在“正文”尝试输入或点击加粗等编辑命令，再查看源码。<br />
+                    结果：初始为只读，正文及源码不能修改；仍可选择、复制和查看 HTML。
+                </li>
+                <li>
+                    点击“切换只读”，在正文输入“补充说明”。<br />
+                    结果：按钮回发后后台取消只读，正文和编辑命令恢复可用；再次点击恢复只读，保留当前内容。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>只读时允许选择、复制和查看源码；正文和源码均不可修改。可使用下方按钮切换。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Readonly</code>：本页初始为 true；后台反转 Readonly切换是否可编辑，保留正文。</li>
+            </ul>
+        </section>
+    </template>
 </body></html>

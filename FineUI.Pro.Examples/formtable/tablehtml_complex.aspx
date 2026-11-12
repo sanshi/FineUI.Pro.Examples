@@ -139,10 +139,28 @@
         <f:Button runat="server" Text="验证此表单并提交" CssClass="marginr" ValidateForms="ContentPanel1" ID="btnSubmitForm1" OnClick="btnSubmitForm1_Click"
             MarginTop="5px">
         </f:Button>
-        <br />
-        <br />
-        <br />
-        注：这个示例是由上下两个表格组成的。
+
+
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示用两个 HTML 表格拼成复杂订单表单，通过跨行和跨列单元格组织联系方式、办理人员及长文本。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>观察合并单元格</h3>
+            <ul>
+                <li>
+                    对照“联系方式”“订货”“收货”及下方发货条件、备注。<br />
+                    结果：联系方式跨六行，订货与收货各跨三行；长文本占用下方表格的多个单元格，两个表格边线衔接。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：这个示例是由上下两个表格组成的。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>rowspan</code>：HTML 单元格跨多行，用于联系方式及订货、收货分组。</li>
+                <li><code>colspan</code>：HTML 单元格跨多列，为发货条件和备注提供完整宽度。</li>
+                <li><code>ShowLabel</code>：输入控件隐藏内置标签，使用表格单元格显示名称。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

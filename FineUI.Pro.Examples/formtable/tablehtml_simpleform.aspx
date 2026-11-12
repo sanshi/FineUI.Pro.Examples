@@ -139,10 +139,26 @@
         </f:ContentPanel>
         <f:Button ID="Button2" runat="server" Text="注册" OnClick="btnRegister_Click" ValidateForms="ContentPanel3" ValidateTarget="Top" MarginTop="5px">
         </f:Button>
-        <br />
-        <br />
-        <br />
-        注：推荐使用表单的EnableTableStyle属性，更简单，参考示例：表格样式->表格样式（简单表单）。
+
+
     </form>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示三种手写 HTML 表格的表单排版，分别使用控件内置标签、独立标签单元格和公共表格样式。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>比较三块表格</h3>
+            <ul>
+                <li>
+                    对照三组用户名和密码字段。<br />
+                    结果：第一组使用控件内置标签，后两组隐藏内置标签，由 HTML 单元格显示标签；三组各自使用对应的表格 CSS。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：推荐使用表单的EnableTableStyle属性，更简单，参考示例：表格样式->表格样式（简单表单）。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>ShowLabel</code>：后两组设为 false，避免控件标签和表格单元格重复。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

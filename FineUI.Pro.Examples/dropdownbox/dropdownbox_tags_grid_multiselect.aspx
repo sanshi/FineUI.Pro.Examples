@@ -36,8 +36,8 @@
         <br />
         <f:Label runat="server" ID="labResult">
         </f:Label>
-        <br />
-        注：如果表格分页，则需要同时指定 Values 和 Text 属性来设置下拉框的初始值。
+
+
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
@@ -48,5 +48,23 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在下拉表格中多选人员，以标签显示和移除所选人员。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>移除一个选择标签</h3>
+            <ol>
+                <li>
+                    先在下拉面板选择两个可用项，再点击其中一个标签右侧的关闭图标。<br />
+                    结果：对应业务值与面板中的选择被取消，其它已选项保持不变。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：如果表格分页，则需要同时指定 Values 和 Text 属性来设置下拉框的初始值。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>MultiSelectMode</code>：Tags/tags 将选中的每项显示为可单独移除的标签。 本页声明值为 Tags。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

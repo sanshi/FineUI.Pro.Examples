@@ -21,9 +21,8 @@
         <br />
         <f:Button runat="server" Text="改变图片" ID="Button1" OnClick="Button1_Click">
         </f:Button>
-        <br />
-        <br />
-        注：在 F.ready 中注册图片的点击事件。
+
+
     </form>
     <script>
 
@@ -38,5 +37,27 @@
         });
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示图片点击提示，以及更换图片后继续使用同一个点击处理器。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>点击与切换图片</h3>
+            <ol>
+                <li>
+                    点击页面中的图片。<br />
+                    结果：客户端图片点击处理显示提示。
+                </li>
+                <li>
+                    点击“改变图片”，再点击图片。<br />
+                    结果：回发后，后台在蛋糕和地球图片之间切换；图片点击行为仍然可用。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：在 F.ready 中注册图片的点击事件。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>OnClick</code>：“改变图片”按钮回发更新图片地址。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>
