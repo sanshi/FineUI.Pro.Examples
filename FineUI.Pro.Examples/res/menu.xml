@@ -680,7 +680,7 @@
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="表格" IconFont="_Table">
-		<TreeNode Text="基本用法与数据绑定">
+		<TreeNode Text="基本用法">
 			<TreeNode Text="表格（FineUI）" NavigateUrl="~/grid/grid.aspx">
 			</TreeNode>
 			<TreeNode Text="表格（AspNet）" NavigateUrl="~/grid/grid_aspnet.aspx">
@@ -692,14 +692,6 @@
 			<TreeNode Text="数据库分页（FineUI）" NavigateUrl="~/gridpaging/gridpaging_database_fineui.aspx">
 			</TreeNode>
 			<TreeNode Text="数据库分页（AspNet）" NavigateUrl="~/gridpaging/gridpaging_database_aspnet.aspx">
-			</TreeNode>
-			<TreeNode Text="绑定到二级属性" NavigateUrl="~/grid/grid_complex_property.aspx">
-			</TreeNode>
-			<TreeNode Text="ID包含中文空格等特殊字符" NavigateUrl="~/grid/grid_id_specialchar.aspx">
-			</TreeNode>
-			<TreeNode Text="数字精度（Float，Double）" NavigateUrl="~/grid/grid_fieldtype_float_double.aspx">
-			</TreeNode>
-			<TreeNode Text="长整型精度（主键为BIGINT）" NavigateUrl="~/gridother/long_precision.aspx">
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="分页">
@@ -833,6 +825,16 @@
 			<TreeNode Text="复选框列（单选，单选框样式）" NavigateUrl="~/grid/grid_checkboxfield_radio.aspx">
 			</TreeNode>
 			<TreeNode Text="右键菜单(全选复选框列）" NavigateUrl="~/grid/grid_checkboxfield_rowcheckall_contextmenu.aspx">
+			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="序号列">
+			<TreeNode Text="序号列（内存分页）" NavigateUrl="~/grid/grid_rownumber_paging.aspx">
+			</TreeNode>
+			<TreeNode Text="序号列（数据库分页）" NavigateUrl="~/grid/grid_rownumber_paging_database.aspx">
+			</TreeNode>
+			<TreeNode Text="序号列（自定义宽度）" NavigateUrl="~/grid/grid_rownumber_width.aspx">
+			</TreeNode>
+			<TreeNode Text="序号列（靠左显示）" NavigateUrl="~/grid/grid_rownumber_align.aspx">
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="行命令">
@@ -1161,6 +1163,18 @@
 			<TreeNode Text="导出文件（双击下载）" NavigateUrl="~/grid/grid_excel_dblclick_download.aspx">
 			</TreeNode>
 		</TreeNode>
+		<TreeNode Text="列宽度">
+			<TreeNode Text="各列宽度固定" NavigateUrl="~/grid/grid_width.aspx">
+			</TreeNode>
+			<TreeNode Text="自适应列（一列）" NavigateUrl="~/grid/grid_width_expandunusedspace.aspx">
+			</TreeNode>
+			<TreeNode Text="自适应列（多列）" NavigateUrl="~/grid/grid_width_boxflex.aspx">
+			</TreeNode>
+			<TreeNode Text="各列宽度自适应" NavigateUrl="~/grid/grid_width_forcefit.aspx">
+			</TreeNode>
+			<TreeNode Text="各列宽度自适应（最小列宽度）" NavigateUrl="~/grid/grid_width_forcefit_minwidth.aspx">
+			</TreeNode>
+		</TreeNode>
 		<TreeNode Text="列锁定">
 			<TreeNode Text="列锁定" NavigateUrl="~/gridlockcolumn/grid_lockcolumn.aspx">
 			</TreeNode>
@@ -1199,6 +1213,28 @@
 				</TreeNode>
 				<TreeNode Text="右侧锁定（列拖拽排序）" NavigateUrl="~/gridlockcolumn/right_savelockedandorder_columnmove.aspx" IsEnterprise="true">
 				</TreeNode>
+			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="标题栏">
+			<TreeNode Text="隐藏标题栏" NavigateUrl="~/grid/grid_header_hide.aspx">
+			</TreeNode>
+			<TreeNode Text="改变标题栏文本和宽度" NavigateUrl="~/grid/grid_header_changetextwidth.aspx">
+			</TreeNode>
+			<TreeNode Text="改变标题栏文本和宽度（客户端脚本）" NavigateUrl="~/grid/grid_header_changetextwidth_script.aspx">
+			</TreeNode>
+			<TreeNode Text="标题栏自动换行" NavigateUrl="~/grid/grid_header_wrap.aspx">
+			</TreeNode>
+			<TreeNode Text="标题栏自动换行（多行文本省略）" NavigateUrl="~/grid/grid_header_wrap_line_clamp.aspx">
+			</TreeNode>
+			<TreeNode Text="禁用表头菜单" NavigateUrl="~/grid/grid_header_disablemenu.aspx">
+			</TreeNode>
+			<TreeNode Text="列管理菜单" NavigateUrl="~/grid/grid_header_custommenu.aspx">
+			</TreeNode>
+			<TreeNode Text="禁用表头排序菜单项" NavigateUrl="~/grid/grid_header_headermenusort.aspx">
+			</TreeNode>
+			<TreeNode Text="标题栏（提示信息）" NavigateUrl="~/grid/grid_header_tooltip.aspx">
+			</TreeNode>
+			<TreeNode Text="标题栏样式（表格列的Attributes属性）" Version="12.2" NavigateUrl="~/grid/grid_header_column_attributes.aspx">
 			</TreeNode>
 		</TreeNode>
 		<TreeNode Text="多表头">
@@ -1390,6 +1426,72 @@
 				<TreeNode Text="行分组（数据库分页与排序，分组合计，当前页合计）" NavigateUrl="~/gridrowgroup/gridrowgroup_database_sorting_summary_currentpage.aspx" IsEnterprise="true">
 				</TreeNode>
 				<TreeNode Text="行分组（数据库分页与排序，分组合计，全部页合计）" NavigateUrl="~/gridrowgroup/gridrowgroup_database_sorting_summary_allpage.aspx" IsEnterprise="true">
+				</TreeNode>
+			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="行与列样式">
+			<TreeNode Text="列样式" NavigateUrl="~/grid/grid_style_columnclass.aspx">
+			</TreeNode>
+			<TreeNode Text="行样式（RowCssClass）" NavigateUrl="~/grid/grid_style_rowcssclass.aspx">
+			</TreeNode>
+			<TreeNode Text="行样式（RowCssClass，列锁定）" NavigateUrl="~/grid/grid_style_rowcssclass_lockcolumn.aspx">
+			</TreeNode>
+			<TreeNode Text="行样式（RowAttributes）" NavigateUrl="~/grid/grid_style_rowattributes.aspx">
+			</TreeNode>
+			<TreeNode Text="行样式（客户端行渲染函数）" NavigateUrl="~/grid/grid_style_rowrenderer.aspx">
+			</TreeNode>
+			<TreeNode Text="单元格样式（CellCssClasses）" NavigateUrl="~/grid/grid_style_cellcssclasses.aspx">
+			</TreeNode>
+			<TreeNode Text="单元格样式（CellAttributes）" NavigateUrl="~/grid/grid_style_cellattributes.aspx">
+			</TreeNode>
+			<TreeNode Text="文本居中显示" NavigateUrl="~/grid/grid_centercolumn.aspx">
+			</TreeNode>
+			<TreeNode Text="启用文字选择" NavigateUrl="~/grid/grid_textselection.aspx">
+			</TreeNode>
+			<TreeNode Text="文字垂直靠上显示" NavigateUrl="~/grid/grid_text_top.aspx">
+			</TreeNode>
+			<TreeNode Text="列分割线" NavigateUrl="~/grid/grid_column_lines.aspx">
+			</TreeNode>
+			<TreeNode Text="自动换行" NavigateUrl="~/gridother/grid_linewrap.aspx">
+			</TreeNode>
+			<TreeNode Text="自动换行（多行文本省略）" NavigateUrl="~/gridother/grid_linewrap_lineclamp.aspx">
+			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="行密度和行高度">
+			<TreeNode Text="行密度">
+				<TreeNode Text="行密度" NavigateUrl="~/gridrowheight/grid_rowdensity.aspx">
+				</TreeNode>
+				<TreeNode Text="行密度（自动换行）" NavigateUrl="~/gridrowheight/grid_rowdensity_linewrap.aspx">
+				</TreeNode>
+				<TreeNode Text="行密度（自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_rowdensity_linewrap_lineclamp.aspx">
+				</TreeNode>
+			</TreeNode>
+			<TreeNode Text="行高固定">
+				<TreeNode Text="行高固定" NavigateUrl="~/gridrowheight/grid_fixedrowheight.aspx">
+				</TreeNode>
+				<TreeNode Text="行高固定（一键设置行高，自动换行）" NavigateUrl="~/gridrowheight/grid_fixedrowheight_rowheightlines_linewrap.aspx">
+				</TreeNode>
+				<TreeNode Text="行高固定（一键设置行高，自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_fixedrowheight_rowheightlines_linewrap_lineclamp.aspx">
+				</TreeNode>
+				<TreeNode Text="行高固定（手工设置行高，自动换行）" NavigateUrl="~/gridrowheight/grid_fixedrowheight_rowheight_linewrap.aspx">
+				</TreeNode>
+				<TreeNode Text="行高固定（手工设置行高，自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_fixedrowheight_rowheight_linewrap_lineclamp.aspx">
+				</TreeNode>
+				<TreeNode Text="行高固定与行密度（自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_fixedrowheight_rowdensity.aspx">
+				</TreeNode>
+			</TreeNode>
+			<TreeNode Text="自动换行（100行数据）">
+				<TreeNode Text="行高不同（自动换行）" NavigateUrl="~/gridrowheight/grid_100.aspx">
+				</TreeNode>
+				<TreeNode Text="行高不同（自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_100_lineclamp.aspx">
+				</TreeNode>
+				<TreeNode Text="行高不同（自动换行，列锁定）" NavigateUrl="~/gridrowheight/grid_100_lockcolumn.aspx">
+				</TreeNode>
+				<TreeNode Text="行高固定（自动换行）" NavigateUrl="~/gridrowheight/grid_100_rowheight.aspx">
+				</TreeNode>
+				<TreeNode Text="行高固定（自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_100_rowheight_lineclamp.aspx">
+				</TreeNode>
+				<TreeNode Text="行高固定（自动换行，列锁定）" NavigateUrl="~/gridrowheight/grid_100_lockcolumn_rowheight.aspx">
 				</TreeNode>
 			</TreeNode>
 		</TreeNode>
@@ -1607,144 +1709,6 @@
 			<TreeNode Text="卡片模式（重新绑定）" NavigateUrl="~/gridcard/card_rebind.aspx">
 			</TreeNode>
 		</TreeNode>
-		<TreeNode Text="显示与样式">
-			<TreeNode Text="单元格显示与格式化">
-				<TreeNode Text="货币栅格显示" NavigateUrl="~/grid/grid_currency.aspx">
-				</TreeNode>
-				<TreeNode Text="数字格式化字符串（RendererArgument）" NavigateUrl="~/gridother/grid_number.aspx" Version="13.1">
-				</TreeNode>
-				<TreeNode Text="数字格式化字符串（尾零省略）" NavigateUrl="~/gridother/grid_number_trailingzero.aspx" Version="13.1">
-				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="空数据提示">
-				<TreeNode Text="表格为空的提示" NavigateUrl="~/grid/grid_empty_text.aspx">
-				</TreeNode>
-				<TreeNode Text="表格为空的提示（内置图标和文案）" NavigateUrl="~/grid/grid_empty_icon_text.aspx">
-				</TreeNode>
-				<TreeNode Text="表格为空的提示（绝对定位）" NavigateUrl="~/grid/grid_empty_text_fewcolumns.aspx">
-				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="提示信息">
-				<TreeNode Text="提示信息（RendererFunction）" NavigateUrl="~/grid/grid_tooltip.aspx">
-				</TreeNode>
-				<TreeNode Text="提示信息（ShowToolTip）" NavigateUrl="~/grid/grid_tooltip_showtooltip.aspx">
-				</TreeNode>
-				<TreeNode Text="提示信息（仅截断时显示）" NavigateUrl="~/grid/grid_tooltip_whentruncated.aspx">
-				</TreeNode>
-				<TreeNode Text="提示信息（cellAttrs）" NavigateUrl="~/grid/grid_tooltip_cellattrs.aspx">
-				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="列宽度">
-				<TreeNode Text="各列宽度固定" NavigateUrl="~/grid/grid_width.aspx">
-				</TreeNode>
-				<TreeNode Text="自适应列（一列）" NavigateUrl="~/grid/grid_width_expandunusedspace.aspx">
-				</TreeNode>
-				<TreeNode Text="自适应列（多列）" NavigateUrl="~/grid/grid_width_boxflex.aspx">
-				</TreeNode>
-				<TreeNode Text="各列宽度自适应" NavigateUrl="~/grid/grid_width_forcefit.aspx">
-				</TreeNode>
-				<TreeNode Text="各列宽度自适应（最小列宽度）" NavigateUrl="~/grid/grid_width_forcefit_minwidth.aspx">
-				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="序号列">
-				<TreeNode Text="序号列（内存分页）" NavigateUrl="~/grid/grid_rownumber_paging.aspx">
-				</TreeNode>
-				<TreeNode Text="序号列（数据库分页）" NavigateUrl="~/grid/grid_rownumber_paging_database.aspx">
-				</TreeNode>
-				<TreeNode Text="序号列（自定义宽度）" NavigateUrl="~/grid/grid_rownumber_width.aspx">
-				</TreeNode>
-				<TreeNode Text="序号列（靠左显示）" NavigateUrl="~/grid/grid_rownumber_align.aspx">
-				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="标题栏">
-				<TreeNode Text="隐藏标题栏" NavigateUrl="~/grid/grid_header_hide.aspx">
-				</TreeNode>
-				<TreeNode Text="改变标题栏文本和宽度" NavigateUrl="~/grid/grid_header_changetextwidth.aspx">
-				</TreeNode>
-				<TreeNode Text="改变标题栏文本和宽度（客户端脚本）" NavigateUrl="~/grid/grid_header_changetextwidth_script.aspx">
-				</TreeNode>
-				<TreeNode Text="标题栏自动换行" NavigateUrl="~/grid/grid_header_wrap.aspx">
-				</TreeNode>
-				<TreeNode Text="标题栏自动换行（多行文本省略）" NavigateUrl="~/grid/grid_header_wrap_line_clamp.aspx">
-				</TreeNode>
-				<TreeNode Text="禁用表头菜单" NavigateUrl="~/grid/grid_header_disablemenu.aspx">
-				</TreeNode>
-				<TreeNode Text="列管理菜单" NavigateUrl="~/grid/grid_header_custommenu.aspx">
-				</TreeNode>
-				<TreeNode Text="禁用表头排序菜单项" NavigateUrl="~/grid/grid_header_headermenusort.aspx">
-				</TreeNode>
-				<TreeNode Text="标题栏（提示信息）" NavigateUrl="~/grid/grid_header_tooltip.aspx">
-				</TreeNode>
-				<TreeNode Text="标题栏样式（表格列的Attributes属性）" Version="12.2" NavigateUrl="~/grid/grid_header_column_attributes.aspx">
-				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="行与列样式">
-				<TreeNode Text="列样式" NavigateUrl="~/grid/grid_style_columnclass.aspx">
-				</TreeNode>
-				<TreeNode Text="行样式（RowCssClass）" NavigateUrl="~/grid/grid_style_rowcssclass.aspx">
-				</TreeNode>
-				<TreeNode Text="行样式（RowCssClass，列锁定）" NavigateUrl="~/grid/grid_style_rowcssclass_lockcolumn.aspx">
-				</TreeNode>
-				<TreeNode Text="行样式（RowAttributes）" NavigateUrl="~/grid/grid_style_rowattributes.aspx">
-				</TreeNode>
-				<TreeNode Text="行样式（客户端行渲染函数）" NavigateUrl="~/grid/grid_style_rowrenderer.aspx">
-				</TreeNode>
-				<TreeNode Text="单元格样式（CellCssClasses）" NavigateUrl="~/grid/grid_style_cellcssclasses.aspx">
-				</TreeNode>
-				<TreeNode Text="单元格样式（CellAttributes）" NavigateUrl="~/grid/grid_style_cellattributes.aspx">
-				</TreeNode>
-				<TreeNode Text="文本居中显示" NavigateUrl="~/grid/grid_centercolumn.aspx">
-				</TreeNode>
-				<TreeNode Text="启用文字选择" NavigateUrl="~/grid/grid_textselection.aspx">
-				</TreeNode>
-				<TreeNode Text="文字垂直靠上显示" NavigateUrl="~/grid/grid_text_top.aspx">
-				</TreeNode>
-				<TreeNode Text="列分割线" NavigateUrl="~/grid/grid_column_lines.aspx">
-				</TreeNode>
-				<TreeNode Text="自动换行" NavigateUrl="~/gridother/grid_linewrap.aspx">
-				</TreeNode>
-				<TreeNode Text="自动换行（多行文本省略）" NavigateUrl="~/gridother/grid_linewrap_lineclamp.aspx">
-				</TreeNode>
-			</TreeNode>
-			<TreeNode Text="行密度和行高度">
-				<TreeNode Text="行密度">
-					<TreeNode Text="行密度" NavigateUrl="~/gridrowheight/grid_rowdensity.aspx">
-					</TreeNode>
-					<TreeNode Text="行密度（自动换行）" NavigateUrl="~/gridrowheight/grid_rowdensity_linewrap.aspx">
-					</TreeNode>
-					<TreeNode Text="行密度（自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_rowdensity_linewrap_lineclamp.aspx">
-					</TreeNode>
-				</TreeNode>
-				<TreeNode Text="行高固定">
-					<TreeNode Text="行高固定" NavigateUrl="~/gridrowheight/grid_fixedrowheight.aspx">
-					</TreeNode>
-					<TreeNode Text="行高固定（一键设置行高，自动换行）" NavigateUrl="~/gridrowheight/grid_fixedrowheight_rowheightlines_linewrap.aspx">
-					</TreeNode>
-					<TreeNode Text="行高固定（一键设置行高，自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_fixedrowheight_rowheightlines_linewrap_lineclamp.aspx">
-					</TreeNode>
-					<TreeNode Text="行高固定（手工设置行高，自动换行）" NavigateUrl="~/gridrowheight/grid_fixedrowheight_rowheight_linewrap.aspx">
-					</TreeNode>
-					<TreeNode Text="行高固定（手工设置行高，自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_fixedrowheight_rowheight_linewrap_lineclamp.aspx">
-					</TreeNode>
-					<TreeNode Text="行高固定与行密度（自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_fixedrowheight_rowdensity.aspx">
-					</TreeNode>
-				</TreeNode>
-				<TreeNode Text="自动换行（100行数据）">
-					<TreeNode Text="行高不同（自动换行）" NavigateUrl="~/gridrowheight/grid_100.aspx">
-					</TreeNode>
-					<TreeNode Text="行高不同（自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_100_lineclamp.aspx">
-					</TreeNode>
-					<TreeNode Text="行高不同（自动换行，列锁定）" NavigateUrl="~/gridrowheight/grid_100_lockcolumn.aspx">
-					</TreeNode>
-					<TreeNode Text="行高固定（自动换行）" NavigateUrl="~/gridrowheight/grid_100_rowheight.aspx">
-					</TreeNode>
-					<TreeNode Text="行高固定（自动换行，多行文本省略）" NavigateUrl="~/gridrowheight/grid_100_rowheight_lineclamp.aspx">
-					</TreeNode>
-					<TreeNode Text="行高固定（自动换行，列锁定）" NavigateUrl="~/gridrowheight/grid_100_lockcolumn_rowheight.aspx">
-					</TreeNode>
-				</TreeNode>
-			</TreeNode>
-		</TreeNode>
 		<TreeNode Text="快捷导航">
 			<!--<TreeNode Text="文件目录浏览" NavigateUrl="~/gridcard/card_folder_and_file.aspx">
 				</TreeNode>-->
@@ -1796,6 +1760,42 @@
 			<TreeNode Text="模板列中的按钮控件" NavigateUrl="~/grid/grid_edit_button.aspx">
 			</TreeNode>
 			<TreeNode Text="模板列与树节点延迟加载" NavigateUrl="~/gridtree/gridtree_lazyload_templatefield.aspx"></TreeNode>
+		</TreeNode>
+		<TreeNode Text="杂项">
+			<TreeNode Text="绑定到二级属性" NavigateUrl="~/grid/grid_complex_property.aspx">
+			</TreeNode>
+			<TreeNode Text="ID包含中文空格等特殊字符" NavigateUrl="~/grid/grid_id_specialchar.aspx">
+			</TreeNode>
+			<TreeNode Text="数字精度（Float，Double）" NavigateUrl="~/grid/grid_fieldtype_float_double.aspx">
+			</TreeNode>
+			<TreeNode Text="长整型精度（主键为BIGINT）" NavigateUrl="~/gridother/long_precision.aspx">
+			</TreeNode>
+			<TreeNode Text="单元格显示与格式化">
+				<TreeNode Text="货币栅格显示" NavigateUrl="~/grid/grid_currency.aspx">
+				</TreeNode>
+				<TreeNode Text="数字格式化字符串（RendererArgument）" NavigateUrl="~/gridother/grid_number.aspx" Version="13.1">
+				</TreeNode>
+				<TreeNode Text="数字格式化字符串（尾零省略）" NavigateUrl="~/gridother/grid_number_trailingzero.aspx" Version="13.1">
+				</TreeNode>
+			</TreeNode>
+			<TreeNode Text="空数据提示">
+				<TreeNode Text="表格为空的提示" NavigateUrl="~/grid/grid_empty_text.aspx">
+				</TreeNode>
+				<TreeNode Text="表格为空的提示（内置图标和文案）" NavigateUrl="~/grid/grid_empty_icon_text.aspx">
+				</TreeNode>
+				<TreeNode Text="表格为空的提示（绝对定位）" NavigateUrl="~/grid/grid_empty_text_fewcolumns.aspx">
+				</TreeNode>
+			</TreeNode>
+			<TreeNode Text="提示信息">
+				<TreeNode Text="提示信息（RendererFunction）" NavigateUrl="~/grid/grid_tooltip.aspx">
+				</TreeNode>
+				<TreeNode Text="提示信息（ShowToolTip）" NavigateUrl="~/grid/grid_tooltip_showtooltip.aspx">
+				</TreeNode>
+				<TreeNode Text="提示信息（仅截断时显示）" NavigateUrl="~/grid/grid_tooltip_whentruncated.aspx">
+				</TreeNode>
+				<TreeNode Text="提示信息（cellAttrs）" NavigateUrl="~/grid/grid_tooltip_cellattrs.aspx">
+				</TreeNode>
+			</TreeNode>
 		</TreeNode>
 	</TreeNode>
 	<TreeNode Text="导航与列表" IconFont="_Globe">
@@ -2111,7 +2111,7 @@
 				<TreeNode Text="窗体（侧边窗体）" NavigateUrl="~/window/window_side.aspx" IsEnterprise="true">
 				</TreeNode>
 			</TreeNode>
-			<TreeNode Text="组合用法">
+			<TreeNode Text="杂项">
 				<TreeNode Text="窗体（标题栏工具）" NavigateUrl="~/window/window_tools.aspx" Version="16.2.0"></TreeNode>
 				<TreeNode Text="窗体（工具栏）" NavigateUrl="~/window/window_toolbar.aspx">
 				</TreeNode>
@@ -2134,9 +2134,7 @@
 			</TreeNode>
 		</TreeNode>
 	</TreeNode>
-	<TreeNode Text="布局" IconFont="_Layout">
-		<TreeNode Text="Fit" NavigateUrl="~/layout/fit.aspx">
-		</TreeNode>
+	<TreeNode Text="面板与布局" IconFont="_Layout">
 		<TreeNode Text="面板控件">
 			<TreeNode Text="面板" NavigateUrl="~/panel/panel.aspx">
 			</TreeNode>
@@ -2160,6 +2158,8 @@
 				<TreeNode Text="面板（背景图片）" NavigateUrl="~/panel/panel_bgimage.aspx">
 				</TreeNode>
 			</TreeNode>
+		</TreeNode>
+		<TreeNode Text="Fit 布局" NavigateUrl="~/layout/fit.aspx">
 		</TreeNode>
 		<TreeNode Text="Block 响应式布局">
 			<TreeNode Text="响应式首页" IconFont="_Responsive" NavigateUrl="~/block/dashboard.aspx">
