@@ -13,11 +13,13 @@
                 <tr>
                     <td></td>
                     <td style="text-align: center;">
-                        <f:Button ID="ButtonExample1" ClientIDMode="Static" CssClass="marginr" runat="server" Text="TopStart" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="TopStart"
-                            Width="100px"></f:Button>
-                        <f:Button ID="ButtonExample2" ClientIDMode="Static" CssClass="marginr" runat="server" Text="Top" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="Top" Width="100px">
+                        <f:Button ID="btnTopStart" ClientIDMode="Static" CssClass="marginr" runat="server" Text="TopStart" ToolTip="这是提示信息" ToolTipType="Qtip"
+                            ToolTipPosition="TopStart" Width="100px"></f:Button>
+                        <f:Button ID="btnTop" ClientIDMode="Static" CssClass="marginr" runat="server" Text="Top" ToolTip="这是提示信息" ToolTipType="Qtip"
+                            ToolTipPosition="Top" Width="100px">
                         </f:Button>
-                        <f:Button ID="ButtonExample3" ClientIDMode="Static" runat="server" Text="TopEnd" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="TopEnd" Width="100px"></f:Button>
+                        <f:Button ID="btnTopEnd" ClientIDMode="Static" runat="server" Text="TopEnd" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="TopEnd"
+                            Width="100px"></f:Button>
                     </td>
                     <td></td>
                 </tr>
@@ -34,12 +36,14 @@
                 </tr>
                 <tr>
                     <td style="text-align: right;">
-                        <f:Button ID="ButtonExample6" ClientIDMode="Static" runat="server" Text="Left" ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip" ToolTipPosition="Left" Width="100px">
+                        <f:Button ID="btnLeft" ClientIDMode="Static" runat="server" Text="Left" ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip"
+                            ToolTipPosition="Left" Width="100px">
                         </f:Button>
                     </td>
                     <td></td>
                     <td style="text-align: left;">
-                        <f:Button ID="ButtonExample7" ClientIDMode="Static" runat="server" Text="Right" ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip" ToolTipPosition="Right" Width="100px">
+                        <f:Button ID="btnRight" ClientIDMode="Static" runat="server" Text="Right" ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip"
+                            ToolTipPosition="Right" Width="100px">
                         </f:Button>
                     </td>
                 </tr>
@@ -59,7 +63,8 @@
                     <td style="text-align: center;">
                         <f:Button CssClass="marginr" runat="server" Text="BottomStart" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="BottomStart"
                             Width="100px"></f:Button>
-                        <f:Button ID="ButtonExample11" ClientIDMode="Static" CssClass="marginr" runat="server" Text="Bottom" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="Bottom" Width="100px">
+                        <f:Button ID="btnBottom" ClientIDMode="Static" CssClass="marginr" runat="server" Text="Bottom" ToolTip="这是提示信息" ToolTipType="Qtip"
+                            ToolTipPosition="Bottom" Width="100px">
                         </f:Button>
                         <f:Button runat="server" Text="BottomEnd" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="BottomEnd" Width="100px"></f:Button>
                     </td>
@@ -76,7 +81,10 @@
             <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对比提示位置和多行内容</h3>
             <ul>
                 <li>
-                    分别悬停 <strong class="example-control-reference" data-example-control="ButtonExample2" title="Top">Top</strong>、<strong class="example-control-reference" data-example-control="ButtonExample11" title="Bottom">Bottom</strong>、<strong class="example-control-reference" data-example-control="ButtonExample6" title="Left">Left</strong>、<strong class="example-control-reference" data-example-control="ButtonExample7" title="Right">Right</strong> 等按钮。<br />
+                    分别悬停 <strong class="example-control-reference" data-example-control="btnTop" title="Top">Top</strong>、<strong
+                        class="example-control-reference" data-example-control="btnBottom" title="Bottom">Bottom</strong>、<strong
+                        class="example-control-reference" data-example-control="btnLeft" title="Left">Left</strong>、<strong class="example-control-reference"
+                        data-example-control="btnRight" title="Right">Right</strong> 等按钮。<br />
                     结果：提示出现在按钮文字指定的相对方向，<code>Start</code>、<code>End</code> 控制沿该方向的对齐位置。
                 </li>
                 <li>
@@ -86,7 +94,11 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ToolTipPosition</code>（<strong class="example-control-reference" data-example-control="ButtonExample1" title="TopStart">TopStart</strong>、<strong class="example-control-reference" data-example-control="ButtonExample2" title="Top">Top</strong>、<strong class="example-control-reference" data-example-control="ButtonExample3" title="TopEnd">TopEnd</strong>、<strong class="example-control-reference" data-example-control="ButtonExample11" title="Bottom">Bottom</strong>）：使用 <code>TopStart</code>、<code>Top</code>、<code>TopEnd</code>、<code>Bottom</code> 及左右方向的对应位置。</li>
+                <li><code>ToolTipPosition</code>（<strong class="example-control-reference" data-example-control="btnTopStart"
+                        title="TopStart">TopStart</strong>、<strong class="example-control-reference" data-example-control="btnTop"
+                        title="Top">Top</strong>、<strong class="example-control-reference" data-example-control="btnTopEnd"
+                        title="TopEnd">TopEnd</strong>、<strong class="example-control-reference" data-example-control="btnBottom"
+                        title="Bottom">Bottom</strong>）：使用 <code>TopStart</code>、<code>Top</code>、<code>TopEnd</code>、<code>Bottom</code> 及左右方向的对应位置。</li>
             </ul>
         </section>
     </template>

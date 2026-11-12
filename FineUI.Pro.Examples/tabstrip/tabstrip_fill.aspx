@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:TabStrip ID="TabStrip1" IsFluid="true" Height="150px" TabFill="true" ShowBorder="true" ActiveTabIndex="0"
-            runat="server">
+        <f:TabStrip ID="TabStrip1" IsFluid="true" Height="150px" TabFill="true" ShowBorder="true" ActiveTabIndex="0" runat="server">
             <Tabs>
                 <f:Tab Title="标签一" BodyPadding="10px" runat="server">
                     <Items>
@@ -35,8 +34,7 @@
         </f:TabStrip>
         <br />
         <br />
-        <f:TabStrip ID="TabStrip2" IsFluid="true" Height="150px" TabFill="true" TabSpace="0" ShowBorder="true" ActiveTabIndex="1"
-            runat="server">
+        <f:TabStrip ID="TabStrip2" IsFluid="true" Height="150px" TabFill="true" TabSpace="0" ShowBorder="true" ActiveTabIndex="1" runat="server">
             <Tabs>
                 <f:Tab ID="Tab1" Title="标签一" BodyPadding="10px" runat="server">
                     <Items>
@@ -62,8 +60,7 @@
         </f:TabStrip>
         <br />
         <br />
-        <f:TabStrip ID="TabStrip3" IsFluid="true" Height="150px" TabFill="true" TabSpace="-1" ShowBorder="true" ActiveTabIndex="2"
-            runat="server">
+        <f:TabStrip ID="TabStrip3" IsFluid="true" Height="150px" TabFill="true" TabSpace="-1" ShowBorder="true" ActiveTabIndex="2" runat="server">
             <Tabs>
                 <f:Tab ID="Tab4" Title="标签一" BodyPadding="10px" runat="server">
                     <Items>
@@ -88,27 +85,33 @@
             </Tabs>
         </f:TabStrip>
         <br />
-        注意三个选项卡控件的区别：
-        <ul>
-            <li>第一次选项卡：TabFill="true" TabSpace="2"（默认值）</li>
-            <li>第二次选项卡：TabFill="true" TabSpace="0"</li>
-            <li>第三次选项卡：TabFill="true" TabSpace="-1"（选项卡标题栏之间的间隔完全不见了）</li>
-        </ul>
         <br />
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示让标签平分标题栏，并对比不同标签间距。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对比标题与当前项</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="第 1 个选项卡">第 1 个选项卡</strong>依次点击不同标签，对照本页其它组的同类标题。<br />结果：内容区随当前标签切换；标题方向、对齐、背景、边框或墨水条按本页配置显示。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>TabFill</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="第 1 个选项卡">第 1 个选项卡</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip2").ClientID %>' title="第 2 个选项卡">第 2 个选项卡</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip3").ClientID %>' title="第 3 个选项卡">第 3 个选项卡</strong>）：初始为<code>true</code>，让各标题分配可用宽度。</li>
-        <li><code>TabSpace</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip2").ClientID %>' title="第 2 个选项卡">第 2 个选项卡</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip3").ClientID %>' title="第 3 个选项卡">第 3 个选项卡</strong>）：各组分别设为<code>0</code>、<code>-1</code>，控制相邻标题之间的间隔。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示让标签平分标题栏，并对比不同标签间距。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对比平分宽度与标签间距</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>'
+                        title="第 1 个选项卡">第 1 个选项卡</strong>依次点击不同标签，对照本页其它组的同类标题。<br />结果：三组标签均平分各自标题栏；相邻标题的间距依次为 2、0、-1，最后一组的相邻边框重合。点击标签仍正常切换内容。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>TabFill</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="第 1 个选项卡">第 1 个选项卡</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip2").ClientID %>'
+                        title="第 2 个选项卡">第 2 个选项卡</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip3").ClientID %>' title="第 3 个选项卡">第 3
+                        个选项卡</strong>）：初始为<code>true</code>，让各标题分配可用宽度。</li>
+                <li><code>TabSpace</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="第 1 个选项卡">第 1 个选项卡</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip2").ClientID %>'
+                        title="第 2 个选项卡">第 2 个选项卡</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip3").ClientID %>' title="第 3 个选项卡">第 3 个选项卡</strong>）：第一组初始为
+                    <code>2</code>，第二组为 <code>0</code>，第三组为 <code>-1</code>；依次对照正常间距、零间距与相邻边框重合的效果。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

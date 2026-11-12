@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
-        <f:Panel ID="Panel1" runat="server" ShowHeader="false" ShowBorder="false" Layout="Fit"
-            BodyPadding="10px">
+        <f:Panel ID="Panel1" runat="server" ShowHeader="false" ShowBorder="false" Layout="Fit" BodyPadding="10px">
             <Toolbars>
                 <f:Toolbar ID="ToolbarExample1" ClientIDMode="Static" runat="server" Title="面板标题" HeaderStyle="true">
                 </f:Toolbar>
@@ -17,7 +16,7 @@
                     <Items>
                         <f:Button ID="Button1" runat="server" Text="按钮一" Size="Small" EnableDefaultState="false" ClickHandler="onButton1Click"></f:Button>
                         <f:ToolbarFill runat="server"></f:ToolbarFill>
-                        <f:Button ID="ButtonExample2" ClientIDMode="Static" runat="server" Text="菜单按钮" Size="Small" EnableDefaultState="false" ShowMenuIcon="false">
+                        <f:Button ID="btnMenu" ClientIDMode="Static" runat="server" Text="菜单按钮" Size="Small" EnableDefaultState="false" ShowMenuIcon="false">
                             <Menu runat="server">
                                 <f:MenuButton Text="菜单一" runat="server" ClickHandler="onMyMenuButtonClick"></f:MenuButton>
                                 <f:MenuButton Text="菜单二" runat="server" ClickHandler="onMyMenuButtonClick"></f:MenuButton>
@@ -34,7 +33,8 @@
                         <a href="http://baike.baidu.com/view/3645.htm" target="_blank"><b>比尔·盖茨</b></a>
                     </p>
                     <p>
-                        比尔·盖茨（Bill Gates），全名威廉·亨利·盖茨三世，简称比尔或盖茨。1955年10月28日出生于美国华盛顿州西雅图，13岁开始计算机编程设计，18岁考入哈佛大学，一年后从哈佛退学，1975年与好友保罗·艾伦一起创办了微软公司，比尔盖茨担任微软公司董事长、CEO和首席软件设计师。
+                        比尔·盖茨（Bill
+                        Gates），全名威廉·亨利·盖茨三世，简称比尔或盖茨。1955年10月28日出生于美国华盛顿州西雅图，13岁开始计算机编程设计，18岁考入哈佛大学，一年后从哈佛退学，1975年与好友保罗·艾伦一起创办了微软公司，比尔盖茨担任微软公司董事长、CEO和首席软件设计师。
                     </p>
                     <p>
                         比尔·盖茨1995-2007年连续13年成为《福布斯》全球富翁榜首富，连续20年成为《福布斯》美国富翁榜首富。
@@ -44,7 +44,6 @@
         </f:Panel>
     </form>
     <script>
-
         function onButton1Click(event) {
             F.alert('您点击了按钮一');
         }
@@ -59,21 +58,29 @@
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示移动面板中固定的内容区域与底部工具栏，并处理普通按钮和菜单动作。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>使用底部操作入口</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="按钮一">按钮一</strong>。<br />结果：浏览器显示本页按钮提示，内容面板继续保留。</li>
-        <li>打开底部的菜单按钮，再点击其中一项。<br />结果：菜单显示对应操作，点击后在浏览器提示当前菜单项。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：初始为<code>Fit</code>，外层使用 <code>Fit</code>，让内容区占据工具栏之外的空间。</li>
-        <li><code>Position</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarExample1").ClientID %>' title="面板标题">面板标题</strong>）：工具栏放在底部。</li>
-        <li><code>EnableDefaultState</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="按钮一">按钮一</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ButtonExample2").ClientID %>' title="菜单按钮">菜单按钮</strong>）：初始为<code>false</code>，本页底部按钮使用简化的默认外观。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示移动面板中固定的内容区域与底部工具栏，并处理普通按钮和菜单动作。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>使用底部操作入口</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="按钮一">按钮一</strong>。<br />结果：浏览器显示本页按钮提示，内容面板继续保留。</li>
+                <li>打开底部的菜单按钮，再点击其中一项。<br />结果：菜单显示对应操作，点击后在浏览器提示当前菜单项。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Layout</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：初始为<code>Fit</code>，外层使用
+                    <code>Fit</code>，让内容区占据工具栏之外的空间。
+                </li>
+                <li><code>Position</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarExample1").ClientID %>' title="面板标题">面板标题</strong>）：工具栏放在底部。</li>
+                <li><code>EnableDefaultState</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="按钮一">按钮一</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnMenu").ClientID %>'
+                        title="菜单按钮">菜单按钮</strong>）：初始为<code>false</code>，本页底部按钮使用简化的默认外观。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>
