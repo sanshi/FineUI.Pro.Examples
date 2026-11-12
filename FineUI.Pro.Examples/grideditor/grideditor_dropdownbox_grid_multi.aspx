@@ -9,8 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false"
-            runat="server"
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false" runat="server"
             AllowCellEditing="true" ClicksToEdit="1">
             <Columns>
                 <f:RowNumberField />
@@ -20,8 +19,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                     <Editor>
                         <f:DropDownList ID="ddlGender" Required="true" runat="server">
                             <f:ListItem Text="男" Value="1" />
@@ -31,24 +29,21 @@
                 </f:RenderField>
                 <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份">
                     <Editor>
-                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000"
-                            MaxValue="2025" runat="server">
+                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期">
+                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                    HeaderText="入学日期">
                     <Editor>
                         <f:DatePicker ID="DatePicker1" Required="true" runat="server">
                         </f:DatePicker>
                     </Editor>
                 </f:RenderField>
                 <f:RenderCheckField ColumnID="AtSchool" DataField="AtSchool" HeaderText="是否在校" />
-                <f:RenderField ColumnID="Hobby" DataField="Hobby"
-                    ExpandUnusedSpace="true" MinWidth="150px" HeaderText="兴趣爱好" RendererFunction="renderHobby">
+                <f:RenderField ColumnID="Hobby" DataField="Hobby" ExpandUnusedSpace="true" MinWidth="150px" HeaderText="兴趣爱好" RendererFunction="renderHobby">
                     <Editor>
-                        <f:DropDownBox runat="server" ID="DropDownBox1" EmptyText="请选择"
-                            EnableMultiSelect="true" AutoShowClearIcon="true">
+                        <f:DropDownBox runat="server" ID="DropDownBox1" EmptyText="请选择" EnableMultiSelect="true" AutoShowClearIcon="true">
                             <PopPanel>
                                 <f:Grid ID="Grid2" ShowBorder="true" ShowHeader="false" runat="server" EnableCheckBoxSelect="true" KeepCurrentSelection="true"
                                     Hidden="true" DataIDField="Code" DataTextField="Name" EnableMultiSelect="true">
@@ -93,12 +88,34 @@
 
             var hobbies = value.split(',');
 
-            return $.map(hobbies, function (hobby, index) {
+            return $.map(hobbies, function(hobby, index) {
                 return grid2.getRowData(hobby).text;
             }).join(', ');
 
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>用可多选的下拉表格作为单元格编辑器，按记录代码保存多项兴趣。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>在弹出内容中多选</h3>
+            <ol>
+                <li>打开<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>兴趣爱好</strong>编辑器，在弹出的表格中选中两项，再结束编辑。<br />结果：单元格显示所选兴趣名称，实际值保留对应<strong>代码</strong>集合；不把名称和选项<strong>代码</strong>混为同一个字段。
+                </li>
+                <li>再次进入同一<strong>兴趣爱好</strong>单元格。<br />结果：编辑器恢复刚才的选择，可继续增减选项。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownBox1").ClientID %>' title="兴趣爱好列的下拉框">兴趣爱好列的下拉框</strong>）：初始为
+                    <code>true</code>，允许下拉编辑器保留多项值。
+                </li>
+                <li><code>PopPanel</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownBox1").ClientID %>'
+                        title="兴趣爱好列的下拉框">兴趣爱好列的下拉框</strong>）：弹出内容由本页的复选框列表或表格提供，取其中的值与文字作为单元格编辑结果。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

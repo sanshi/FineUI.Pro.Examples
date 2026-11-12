@@ -54,20 +54,12 @@
         </f:Label>
         <br />
         <br />
-        注：
-        <ul>
-            <li>
-                如果未设置省份，则所在市下拉列表禁用，并且显示提示信息 - 请先选择省！
-            </li>
-            <li>
-                选择省份后，所在市下拉列表数据动态加载
-            </li>
-            <li>
-                更改省份后，如果所在所在市不属于当前省份，则清空所在市
-            </li>
-        </ul>
+
     </form>
-    <script type="application/json" id="provinceCityData"><%= FineUI.Pro.Examples.ProvinceCityCountyData.ProvinceCityJson %></script>
+    <script type="application/json" id="provinceCityData">
+        <%= FineUI.Pro.Examples.ProvinceCityCountyData.ProvinceCityJson %>
+
+    </script>
     <script>
         // 省市数据作为 JSON 放在页面中，列表保存编码，渲染时再查显示名称。
         var provinceCityData = JSON.parse(document.getElementById('provinceCityData').textContent);
@@ -143,5 +135,35 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在表格单元格中联动省与市，没有省份时限制城市编辑，换省后校验已有城市。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>按省份约束城市选择</h3>
+            <ol>
+                <li>找到尚未选择省份的行，单击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（单击编辑）">表格（单击编辑）</strong>的<strong>所在市</strong>单元格。<br />结果：城市编辑器禁用，并显示先选择省份的提示，不提供无所属省的城市选项。</li>
+                <li>先选择<strong><strong>所在省</strong></strong>，再打开<strong><strong>所在市</strong></strong>；随后把省份改为另一个省。<br />结果：城市选项按当前省重新加载；原城市不属于新省时被清空，需要重新选择合法城市。
+                </li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <ul>
+                <li>
+                    如果未设置省份，则<strong>所在市</strong>下拉列表禁用，并且显示提示信息 - 请先选择省！
+                </li>
+                <li>
+                    选择省份后，<strong>所在市</strong>下拉列表数据动态加载
+                </li>
+                <li>
+                    更改省份后，如果所在<strong>所在市</strong>不属于当前省份，则清空<strong>所在市</strong>
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>beforeedit / afteredit</code>（<strong>页面脚本</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（单击编辑）">表格（单击编辑）</strong>）：进入市编辑器前按当前省加载选项，省份结束编辑后检查并清空不再有效的城市。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

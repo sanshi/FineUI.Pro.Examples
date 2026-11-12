@@ -56,5 +56,8 @@ namespace FineUI.Pro.Examples.grideditor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::FineUI.Pro.Label labResult;
+
+        /// <summary>单元格编辑时使用的数字输入框。</summary>
+        protected global::FineUI.Pro.NumberBox NumberBoxExample2;
     }
 }
