@@ -81,5 +81,28 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在可编辑树表格中删除节点及其后代，删除立即交由后台处理。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>按树分支删除记录</h3>
+            <ul>
+                <li>选择<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="树表格">树表格</strong>一个带子节点的目录，点击<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnDelete").ClientID %>'
+                        title="删除选中行（可删除多行）">删除选中行（可删除多行）</strong>并确认。<br />结果：后台立即删除选中节点及其后代，重新绑定后整个分支消失。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>AllowCellEditing</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="树表格">树表格</strong>）：初始为
+                    <code>true</code>，让节点数据列采用对应编辑器，树形展示与数据编辑共同保留。
+                </li>
+                <li><code>DataParentIDField</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="树表格">树表格</strong>）：初始为
+                    <code>ParentId</code>，通过父节点标识维护层级；删除父节点时本页处理同时移除后代。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

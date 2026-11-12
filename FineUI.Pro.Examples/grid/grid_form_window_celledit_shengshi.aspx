@@ -107,9 +107,11 @@
         </f:Label>
         <br />
         <br />
-        注：初始[性别]和[入学日期]列处于隐藏状态。
     </form>
-    <script type="application/json" id="provinceCityData"><%= FineUI.Pro.Examples.ProvinceCityCountyData.ProvinceCityJson %></script>
+    <script type="application/json" id="provinceCityData">
+        <%= FineUI.Pro.Examples.ProvinceCityCountyData.ProvinceCityJson %>
+
+    </script>
     <script>
         // 省市数据作为 JSON 放在页面中，列表保存编码，渲染时再查显示名称。
         var provinceCityData = JSON.parse(document.getElementById('provinceCityData').textContent);
@@ -319,5 +321,30 @@
     </script>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在编辑窗体中联动省、市选项，先写回表格，最终统一提交修改。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>更换省份后选择所属城市</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格与表单">表格与表单</strong>一行的编辑入口，在窗体中改变<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlSheng").ClientID %>'
+                        title="表单的省">表单的省</strong>。<br />结果：浏览器根据新省份重新加载<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlShi").ClientID %>' title="表单的市">表单的市</strong>选项，不保留其他省份的城市候选。</li>
+                <li>选择有效城市，点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSave").ClientID %>'
+                        title="保存到表格">保存到表格</strong>，再点击<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSaveAll").ClientID %>'
+                        title="全部保存">全部保存</strong>。<br />结果：先在浏览器写回省市编码，表格两列显示相应中文名称并记为待保存；全部保存才回发，由后台应用当前变更。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：初始[性别]和[入学日期]列处于隐藏状态。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>change / loadData / RendererFunction</code>（<strong>省市下拉框与对应表格列</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格与表单">表格与表单</strong>）：省变化时装载该省城市，保存值使用业务编码，列渲染根据编码显示中文。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

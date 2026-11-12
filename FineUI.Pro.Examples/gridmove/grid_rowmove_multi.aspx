@@ -33,7 +33,6 @@
         <br />
         <br />
         <br />
-        注：请同时选中多行，然后进行操作。
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
@@ -73,5 +72,32 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>通过上移、下移按钮调整多条选中记录的顺序，并单独保存排列结果。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>批量移动所选行</h3>
+            <ol>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（可多选）">表格（可多选）</strong>选择相邻两行，点击<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnMoveUp").ClientID %>' title="选中行上移">选中行上移</strong>，再点击<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnMoveDown").ClientID %>'
+                        title="选中行下移">选中行下移</strong>。<br />结果：选中行作为有序集合移动，彼此相对顺序保留；上下边界不会越过列表范围。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSaveToDB").ClientID %>'
+                        title="保存数据">保存数据</strong>后再刷新。<br />结果：后台保存当前行标识排列，刷新时按保存结果重新绑定；仅点击移动不会自动执行保存。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：请同时选中多行，然后进行操作。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格（可多选）">表格（可多选）</strong>）：初始为
+                    <code>true</code>，允许同时选择多行，批量移动时保留选中集合的相对顺序。
+                </li>
+                <li><code>moveRowsUp / moveRowsDown</code>（<strong>页面移动脚本</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（可多选）">表格（可多选）</strong>）：改变实际记录顺序，后续保存提交稳定行标识列表。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -8,10 +8,9 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false"
-            EnableTree="true" TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId"
-            OnRowDataBound="Grid1_RowDataBound"
-            AllowCellEditing="true" ClicksToEdit="1" EnableCheckBoxSelect="true" AllowColumnLocking="true" TabVerticalNavigate="false">
+        <f:Grid ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="树表格" runat="server" EnableCollapse="false" EnableTree="true"
+            TreeColumn="Name" DataIDField="Id" DataParentIDField="ParentId" OnRowDataBound="Grid1_RowDataBound" AllowCellEditing="true" ClicksToEdit="1"
+            EnableCheckBoxSelect="true" AllowColumnLocking="true" TabVerticalNavigate="false">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField EnableLock="true" ColumnID="Name" Width="550px" DataField="Name" HeaderText="名称">
@@ -20,8 +19,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField EnableLock="true" Width="150px" ColumnID="Type" DataField="Type" HeaderText="类型"
-                    RendererFunction="renderType">
+                <f:RenderField EnableLock="true" Width="150px" ColumnID="Type" DataField="Type" HeaderText="类型" RendererFunction="renderType">
                     <Editor>
                         <f:DropDownList ID="ddlType" Required="true" runat="server">
                             <f:ListItem Text="文件夹" Value="文件夹"></f:ListItem>
@@ -63,12 +61,35 @@
         <br />
     </form>
     <script>
-
         var ddlTypeID = '<%= ddlType.ClientID %>';
+
         function renderType(value) {
             return F(ddlTypeID).getTextByValue(value);
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在锁定列的树表格中编辑节点字段，保持节点层级与列位置。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>编辑后保留父子关系</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="树表格">树表格</strong>一个可编辑节点的<strong>名称</strong>，输入<code>新名称</code>，修改<strong>类型</strong>或<strong>大小</strong>后点击<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>'
+                        title="保存数据">保存数据</strong>。<br />结果：后台按节点主键更新本轮修改并重新绑定，节点仍属于原父目录；不因改<strong>名称</strong>改变层级。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>AllowCellEditing</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="树表格">树表格</strong>）：初始为
+                    <code>true</code>，让节点数据列采用对应编辑器，树形展示与数据编辑共同保留。
+                </li>
+                <li><code>DataParentIDField</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="树表格">树表格</strong>）：初始为
+                    <code>ParentId</code>，通过父节点标识维护层级；删除父节点时本页处理同时移除后代。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>
