@@ -28,5 +28,25 @@
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>由按钮在后台指定排序列与方向，使数据顺序与表头标记同步更新。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过按钮指定排序</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>'
+                        title="[入学年份]倒序排列">[入学年份]倒序排列</strong>。<br />结果：后台把<strong>入学年份</strong>设为降序条件，重新绑定后较大的年份排在前面，列标题显示降序标记。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>SortField</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为
+                    <code>Gender</code>，指定排序使用的数据字段；未设置时初次加载不主动排序。
+                </li>
+                <li><code>SortDirection</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为 <code>ASC</code>，指定排序方向
+                    ASC 或 DESC，并与重新绑定后的记录保持一致。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

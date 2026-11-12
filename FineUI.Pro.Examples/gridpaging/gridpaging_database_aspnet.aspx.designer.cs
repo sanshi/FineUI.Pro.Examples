@@ -22,6 +22,11 @@ namespace FineUI.Pro.Examples.gridpaging {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
+        /// 管理页面所需的 FineUI 资源与源码查看器初始化。
+        /// </summary>
+        protected global::FineUI.Pro.PageManager PageManager1;
+
+        /// <summary>
         /// Grid1 control.
         /// </summary>
         /// <remarks>

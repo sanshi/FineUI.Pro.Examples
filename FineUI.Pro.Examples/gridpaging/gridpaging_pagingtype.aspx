@@ -33,7 +33,7 @@
                 <f:Button Text="Arrow" EnablePress="true" runat="server" />
                 <f:Button Text="NumberBox" EnablePress="true" runat="server" />
                 <f:Button Text="ArrowNumberBox" EnablePress="true" Pressed="true" runat="server" />
-                <f:Button Text="NumberButton" EnablePress="true" runat="server" />
+                <f:Button ID="btnNumber" ClientIDMode="Static" Text="NumberButton" EnablePress="true" runat="server" />
                 <f:Button Text="ArrowNumberButton" EnablePress="true" runat="server" />
             </Items>
             <Listeners>
@@ -91,5 +91,27 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>切换分页栏的箭头、页码输入框和数字按钮组合，并调整分页信息及数字按钮数量。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换分页栏组成</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control="btnNumber"
+                        title="NumberButton">NumberButton</strong>，再尝试点击其他分页类型按钮。<br />结果：页面重新采用所选分页类型，数字按钮、输入框及箭头随类型变化；仍可通过新分页栏换页。</li>
+                <li>切换<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("cbxShowPagingMessage").ClientID %>'
+                        title="显示分页信息">显示分页信息</strong>，修改旁边的数字按钮数量选项。<br />结果：分页统计文字及最多显示的数字页码数量随配置变化。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>PagingType</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：选择箭头、输入框或数字按钮组成的分页栏。</li>
+                <li><code>ShowPagingMessage</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：控制分页统计文字是否显示。</li>
+                <li><code>MaxPagingNumberButton</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：限制数字分页按钮的数量。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

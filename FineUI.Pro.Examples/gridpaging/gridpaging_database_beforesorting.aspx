@@ -61,5 +61,25 @@
         });
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在真正发出分页或排序请求前，按两个开关决定是否允许本次操作。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>在浏览器中拦截操作</h3>
+            <ol>
+                <li>取消<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("cbxEnableSorting").ClientID %>'
+                        title="允许排序">允许排序</strong>，再点击<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>的可排序列标题。<br />结果：浏览器提示不允许排序并取消该次操作，数据不重排。</li>
+                <li>取消<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("cbxEnablePaging").ClientID %>'
+                        title="允许分页">允许分页</strong>，再点击下一页；重新勾选对应开关后再试。<br />结果：关闭开关时提示不允许分页，页码和记录不变；开启后才正常发出相应请求。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>beforesorting / beforepaging</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：在排序或换页前检查开关，返回 false
+                    可取消当前操作，不必先请求后台。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

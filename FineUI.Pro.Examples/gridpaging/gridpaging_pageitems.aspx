@@ -42,5 +42,27 @@
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>把清空、重新绑定及选择操作放入表格的分页工具栏。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>使用分页栏中的自定义操作</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnClearData").ClientID %>'
+                        title="清空数据">清空数据</strong>。<br />结果：后台清空表格数据，分页栏更新为空数据状态。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnRebind").ClientID %>'
+                        title="重新绑定数据">重新绑定数据</strong>。<br />结果：后台重新绑定示例记录，表格重新显示数据。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSelectAll").ClientID %>'
+                        title="选中所有行">选中所有行</strong>。<br />结果：后台选中表格记录；可通过本页读取选择的入口核对。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnClearSelect").ClientID %>'
+                        title="清空选中行">清空选中行</strong>。<br />结果：原有选择被清除，数据仍保留。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>PageItems</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（内存分页）">表格（内存分页）</strong>）：把自定义按钮插入分页栏；按钮处理与普通按钮一致。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

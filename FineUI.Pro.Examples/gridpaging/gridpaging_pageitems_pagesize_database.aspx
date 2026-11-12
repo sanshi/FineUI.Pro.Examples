@@ -37,5 +37,22 @@
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>使用自定义下拉列表修改页大小，对照后台按新页大小取数的结果。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>修改每页记录数</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlPageSize").ClientID %>'
+                        title="下拉列表">每页记录数</strong>中选择另一项，例如从 5 改为 10 或从 10 改为 20。<br />结果：触发页大小更新，后台按新的每页记录数重新查询；表格行数和总页数随之变化。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>PageSize</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格（数据库分页）">表格（数据库分页）</strong>）：初始为
+                    <code>5</code>，指定每页最多显示的记录数。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

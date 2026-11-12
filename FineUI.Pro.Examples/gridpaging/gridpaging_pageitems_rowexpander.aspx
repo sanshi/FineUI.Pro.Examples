@@ -38,5 +38,25 @@
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在分页工具栏放置一个按钮，统一展开或折叠表格每行的描述信息。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换每行描述</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnShowRowExpanders").ClientID %>'
+                        title="显示隐藏描述信息">显示隐藏描述信息</strong>。<br />结果：按钮切换展开状态，各行描述区域一起收起；再次点击恢复展开。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>ExpandAllRowExpanders</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格（内存分页）">表格（内存分页）</strong>）：初始为
+                    <code>true</code>，控制所有行扩展区域是否展开。
+                </li>
+                <li><code>PageItems</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（内存分页）">表格（内存分页）</strong>）：把切换按钮放进分页工具栏，与分页入口共同布局。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -42,5 +42,24 @@
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>用弹性占位项把分页工具栏中的自定义按钮与分页控件分布在左、中、右侧。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>使用分页栏中的自定义操作</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnClearData").ClientID %>'
+                        title="清空数据">清空数据</strong>。<br />结果：后台清空表格数据，分页栏更新为空数据状态。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>PageItems</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（内存分页）">表格（内存分页）</strong>）：把自定义按钮插入分页栏；按钮处理与普通按钮一致。</li>
+                <li><code>ToolbarFill</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（内存分页）">表格（内存分页）</strong>）：在工具栏中占用剩余空间，使相邻内容分布到不同侧。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

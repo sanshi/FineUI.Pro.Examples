@@ -26,5 +26,22 @@
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在可排序列标题上显示随当前状态改变的排序提示。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看下一次排序提示</h3>
+            <ul>
+                <li>将鼠标移到<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>的可排序列标题，点击该列后再次悬停。<br />结果：提示随当前排序状态改变，说明再次点击将采用的排序方向；列标题标记与记录顺序一致。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>SortingToolTip</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为
+                    <code>true</code>，在可排序列标题上显示与当前状态对应的操作提示。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>
