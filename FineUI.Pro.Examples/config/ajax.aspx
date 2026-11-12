@@ -95,5 +95,19 @@
 
         
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>按控件类名筛选 FineUI.Pro 支持 AJAX 更新的属性清单。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>按类名查找属性</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("tbxSearch").ClientID %>' title="搜索类名">搜索类名</strong>输入 <code>TextBox</code>。<br />结果：浏览器只显示类名包含 TextBox 的属性分组；本页不是按属性名搜索，也没有详情抽屉。</li>
+        <li>清空搜索文字。<br />结果：所有控件分组重新显示，列表中的属性可作为后台更新能力的查询入口。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>change</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("tbxSearch").ClientID %>' title="搜索类名">搜索类名</strong>）：搜索框文字变化后，在浏览器按各分组的类名过滤，不发送查询回发。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

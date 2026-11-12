@@ -60,5 +60,18 @@
                 href="http://www.codeproject.com/Articles/31073/Enable-Gzip-compression-in-IIS-6-0-for-ASP-NET-2-0">http://www.codeproject.com/Articles/31073/Enable-Gzip-compression-in-IIS-6-0-for-ASP-NET-2-0</a>
         </div>
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>展示历史 IIS6 环境启用 GZIP 的手工配置步骤，供对应环境核对。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>核对本机环境与步骤</h3>
+    <ul>
+        <li>依次查看<strong class="example-control-reference" data-example-control="form1" title="页面表单">配置步骤</strong>，在自己的对应环境执行。<br />结果：本页只展示说明和截图，不会自动修改开发工具或服务器配置；版本不同应按实际环境核对。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>适用环境</code>（<strong class="example-control-reference" data-example-control="form1" title="页面表单">页面表单</strong>）：本页步骤专门针对 IIS6，不能当作其它 IIS 版本的通用配置。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

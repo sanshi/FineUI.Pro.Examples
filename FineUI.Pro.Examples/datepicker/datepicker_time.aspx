@@ -43,8 +43,8 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="开始日期">开始日期</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>" title="结束日期">结束日期</strong>）：设为<code>yyyy-MM-dd HH:mm:ss</code>，控制选中值的文字格式。</li>
-                <li><code>ShowTime</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="开始日期">开始日期</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>" title="结束日期">结束日期</strong>）：设为 <code>true</code>，在日期选择中同时提供时间列。</li>
+                <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="开始日期">开始日期</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>" title="结束日期">结束日期</strong>）：初始为<code>yyyy-MM-dd HH:mm:ss</code>，控制选中值的文字格式。</li>
+                <li><code>ShowTime</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="开始日期">开始日期</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>" title="结束日期">结束日期</strong>）：初始为 <code>true</code>，在日期选择中同时提供时间列。</li>
             </ul>
         </section>
     </template>

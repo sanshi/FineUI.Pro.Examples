@@ -63,13 +63,13 @@
 <template id="example-description">
 <section aria-label="页面描述">
     <p>演示直接在浏览器中勾选、取消和反选全部树节点。</p>
-    <h3><i class="f-iconfont f-iconfont-check-box" aria-hidden="true"></i>批量修改勾选集合</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-check-box" aria-hidden="true"></i>批量修改勾选集合</h3>
     <ul>
         <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnGetCheckedValues").ClientID %>' title="获取选中的复选框">获取选中的复选框</strong>。<br />结果：当前树的可勾选节点一起勾选；操作直接在浏览器执行。</li>
     </ul>
-    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>EnableCheckBox</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：设为<code>true</code>，显示可操作的节点复选框。</li>
+        <li><code>EnableCheckBox</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：初始为<code>true</code>，显示可操作的节点复选框。</li>
     </ul>
 </section>
 </template>

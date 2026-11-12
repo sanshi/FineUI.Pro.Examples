@@ -37,5 +37,19 @@
         <br />
         注：本示例不支持文件上传，请根据UEditor官网文档自行配置。
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>让 UEditor 填充可调整大小的窗体，重点查看编辑区随容器变化。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整窗体中的编辑区</h3>
+    <ul>
+        <li>拖动<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="简单表单">简单表单</strong>的边缘，分别放大和缩小。<br />结果：<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("HtmlEditor1").ClientID %>' title="文本编辑器">文本编辑器</strong>跟随窗体内容区域重新计算大小，工具栏和编辑内容保留。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="简单表单">简单表单</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("SimpleForm1").ClientID %>' title="表单">表单</strong>）：初始为 <code>Fit</code>，规定容器内子控件的排列和空间分配方式。</li>
+        <li><code>EnableResize</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="简单表单">简单表单</strong>）：初始为 <code>true</code>，控制是否允许拖动窗体边缘调整大小。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

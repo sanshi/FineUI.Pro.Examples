@@ -61,7 +61,7 @@
             <p>注：本示例支持的浏览器版本为：<code>Edge</code>、<code>Chrome</code>、<code>Firefox</code>、<code>Safari</code>、<code>IE10</code>+。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Multiple</code>（<strong class="example-control-reference" data-example-control="<%= filePhotos.ClientID %>" title="个人照片">个人照片</strong>）：设为 <code>true</code>，允许在系统文件对话框中一次选择多个文件。</li>
+                <li><code>Multiple</code>（<strong class="example-control-reference" data-example-control="<%= filePhotos.ClientID %>" title="个人照片">个人照片</strong>）：初始为 <code>true</code>，允许在系统文件对话框中一次选择多个文件。</li>
                 <li><code>PostedFiles</code>（<strong class="example-control-reference" data-example-control="<%= filePhotos.ClientID %>" title="个人照片">个人照片</strong>）：后台取得本次提交的全部文件，逐个检查并保存；保存目录位于可直接访问的静态资源目录之外。</li>
             </ul>
         </section>

@@ -238,5 +238,18 @@
         <br />
         <br />
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>展示当前开发模式接入 FineUI 所需的服务注册、请求管线和配置文件写法。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>对照项目配置</h3>
+    <ul>
+        <li>按页面中的<strong class="example-control-reference" data-example-control="form1" title="页面表单">配置代码</strong>依次核对自己的项目。<br />结果：服务注册、页面入口与 FineUI 配置配套使用；本页展示配置写法，不会修改当前网站设置。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>FineUI</code>（<strong class="example-control-reference" data-example-control="form1" title="页面表单">页面表单</strong>）：配置必须与当前项目类型一致；本页展示本端实际接入方式，修改配置后需要重新加载或启动自己的项目。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

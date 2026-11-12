@@ -49,5 +49,22 @@
         }
 
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>限制用户拖动窗体边缘时可达到的最小和最大尺寸。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>对照本页窗体效果</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体">窗体</strong>。拖动窗体边缘，分别尝试缩小到 300px 以下和放大到 600px 以上。<br />结果：宽高被限制在本页配置的 300px 至 600px 范围。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>MinWidth</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体">窗体</strong>）：初始为 <code>200px</code>，限制缩小窗体时的最小宽度。</li>
+        <li><code>MaxWidth</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体">窗体</strong>）：初始为 <code>500px</code>，限制放大窗体时的最大宽度。</li>
+        <li><code>MinHeight</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体">窗体</strong>）：初始为 <code>200px</code>，限制缩小窗体时的最小高度。</li>
+        <li><code>MaxHeight</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体">窗体</strong>）：初始为 <code>500px</code>，限制放大窗体时的最大高度。</li>
+        <li><code>EnableResize</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体">窗体</strong>）：初始为 <code>true</code>，控制是否允许拖动窗体边缘调整大小。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

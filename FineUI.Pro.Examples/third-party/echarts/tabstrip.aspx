@@ -27,7 +27,7 @@
         <f:PageManager ID="PageManager2" AutoSizePanelID="TabStrip1" runat="server" />
         <f:TabStrip ID="TabStrip1" CssClass="mytabstrip" Margin="24px" ShowInkBar="true" runat="server" ShowBorder="true" ActiveTabIndex="0">
             <Tabs>
-                <f:Tab runat="server" Title="统计图" Layout="Fit" BodyPadding="10px">
+                <f:Tab ID="TabExample1" ClientIDMode="Static" runat="server" Title="统计图" Layout="Fit" BodyPadding="10px">
                     <Items>
                         <f:ContentPanel runat="server" CssClass="mycontentpanel" ShowBorder="false" ShowHeader="false">
                             <div id="chart">
@@ -164,5 +164,18 @@
         });
 
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>把第三方图表放在选项卡中，在切换和容器尺寸变化后重新适配图表大小。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>切换图表并调整大小</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="选项卡">选项卡</strong>切换统计图与地图，再调整浏览器尺寸。<br />结果：激活的图表按当前可见区域绘制和调整，隐藏标签不会占用另一张图的显示空间。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>tabchange / resize</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="选项卡">选项卡</strong>）：切换到可见标签后再取得容器尺寸，图表实例随当前容器重新调整。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

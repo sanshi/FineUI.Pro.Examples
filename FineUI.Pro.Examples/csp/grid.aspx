@@ -23,7 +23,7 @@
             </Columns>
         </f:Grid>
         <br />
-        <f:Button Text="选中了哪些行" ClickHandler="onShowSelectedNamesClick" runat="server"></f:Button>
+        <f:Button ID="ButtonExample1" ClientIDMode="Static" Text="选中了哪些行" ClickHandler="onShowSelectedNamesClick" runat="server"></f:Button>
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
@@ -58,5 +58,19 @@
         }
 
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>为严格 CSP 页面放行所需外部脚本来源，再用外部依赖渲染表格。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>验证外部依赖与选择</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>中的性别列。<br />结果：本页具名渲染函数可以调用已加载的外部依赖，单元格显示中文性别。</li>
+        <li>点击<strong class="example-control-reference" data-example-control="ButtonExample1" title="选中了哪些行">选中了哪些行</strong>。<br />结果：没有选择时显示空选择提示；选中记录后再次点击显示对应姓名。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>CSP 脚本来源</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：只为本页使用的外部依赖放行相应来源，加载成功后才由渲染函数使用。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

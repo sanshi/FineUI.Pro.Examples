@@ -63,11 +63,32 @@
                 <f:Listener runat="server" Event="rowexpandercollapse" Handler="onConfigRowCollapse" />
             </Listeners>
         </f:Grid>
-        <p>初始值取自 FineUI.Pro 的空配置。点击名称或左侧加号可查看完整取值和使用条件。示例属性写在 Web.config 的 <code>&lt;FineUI.Pro /&gt;</code> 节点上。</p>
-        <p>配置节注册和完整示例见<a href="modify_webconfig.aspx">配置 Web.config</a>。</p>
+
+
     </form>
     <script type="application/json" id="configPropertyCatalog" data-format="xml" data-example-label="Web.config 属性写法"
             data-grid="<%= Grid1.ClientID %>" data-category="<%= ddlCategory.ClientID %>" data-search="<%= tbxSearch.ClientID %>" data-count="<%= labResultCount.ClientID %>"><%= CatalogJson %></script>
     <script src="<%= PageContext.ResolveUrl("~/res/js/global-properties.js") %>"></script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>按分类和关键词查阅本端全局配置的含义、默认值、可选值及配置文件写法。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>筛选并查看详情</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("tbxSearch").ClientID %>' title="搜索配置项">搜索配置项</strong>输入 <code>Theme</code>。<br />结果：列表仅保留匹配项，结果数量随之更新。</li>
+        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlCategory").ClientID %>' title="配置分类">配置分类</strong>选择一个分类或控件，再点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="全局配置属性">全局配置属性</strong>中的属性名。<br />结果：分类与关键词组合过滤，详情展示该项的使用条件和本端代码。</li>
+        <li>使用输入框的清除图标清除条件。<br />结果：恢复较完整的属性清单；查询操作本身不会更改网站配置。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <p>初始值取自 FineUI.Pro 的空配置。点击名称或左侧加号可查看完整取值和使用条件。示例属性写在 Web.config 的 <code>&lt;FineUI.Pro /&gt;</code> 节点上。</p>
+    <p>配置节注册和完整示例见<a href="modify_webconfig.aspx">配置 Web.config</a>。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EmptyText</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="全局配置属性">全局配置属性</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlCategory").ClientID %>' title="配置分类">配置分类</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("tbxSearch").ClientID %>' title="搜索配置项">搜索配置项</strong>）：初始为 <code>未找到匹配的配置项，可缩短关键词或清除筛选条件。</code>、<code>全部分类</code>、<code>名称、含义或可选值</code>，为空时显示输入提示；表格无记录时显示对应空结果文字。</li>
+        <li><code>AutoSelectFirstItem</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlCategory").ClientID %>' title="配置分类">配置分类</strong>）：初始为 <code>false</code>，控制未显式选择时是否自动选中第一项。</li>
+        <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlCategory").ClientID %>' title="配置分类">配置分类</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("tbxSearch").ClientID %>' title="搜索配置项">搜索配置项</strong>）：初始为 <code>true</code>，有值时显示清除图标，便于移除筛选条件。</li>
+        <li><code>默认值与可选值</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="全局配置属性">全局配置属性</strong>）：清单展示产品默认配置，区别于示例站当前覆盖后的设置。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

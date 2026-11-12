@@ -59,7 +59,9 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server"></f:PageManager>
-        <asp:Literal EnableViewState="false" runat="server" ID="litIcons"></asp:Literal>
+        <div id="loadingAnimations">
+            <asp:Literal EnableViewState="false" runat="server" ID="litIcons"></asp:Literal>
+        </div>
     </form>
 
     <script>
@@ -97,5 +99,18 @@
         });
     </script>
 
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>预览六种纯 CSS 加载动画，并保存当前选择供后续页面加载使用。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>选择加载动画</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control="loadingAnimations" title="加载动画列表">加载动画列表</strong>点击编号 3。<br />结果：当前项切换为第 3 种动画，选择写入 Loading_CSS Cookie；刷新页面后仍保持该选中项。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Loading_CSS</code>（<strong class="example-control-reference" data-example-control="loadingAnimations" title="加载动画列表">加载动画列表</strong>）：通过 Cookie 保存选中的动画编号，页面重新加载时读取；不是 GIF 图片资源。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

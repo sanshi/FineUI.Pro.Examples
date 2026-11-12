@@ -33,5 +33,18 @@
         <br />
         注：本示例通过 Options 属性设置 CKEditor 的背景色（浅蓝色），语言（繁体中文）和工具栏（自定义）。参考文档：http://docs.ckeditor.com/#!/guide/dev_configuration
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>通过 Options 覆盖 CKEditor 的默认配置，重点对照自定义工具栏或菜单。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>对照自定义配置</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("HtmlEditor1").ClientID %>' title="文本编辑器">文本编辑器</strong>的顶部工具栏与菜单区域。<br />结果：工具栏使用本页配置的按钮组合。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Options</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("HtmlEditor1").ClientID %>' title="文本编辑器">文本编辑器</strong>）：把本页提供的配置对象传给 CKEditor；具体键名使用该编辑器自己的 API。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

@@ -17,9 +17,7 @@
         <br />
         <br />
         注：改变页面大小，观察窗体的高度变化。
-        <ul>
-            <li>窗体设置KeepLastSize=true，以便在窗体处于隐藏状态时，改变其高度有效</li>
-        </ul>
+
         <br />
         <br />
         <f:Window ID="Window1" Width="650px" Icon="TagBlue" Title="窗体" Hidden="true"
@@ -81,5 +79,25 @@
         });
 
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>显示窗体时按页面可用高度计算尺寸，让较长内容在窗体内滚动。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>对照本页窗体效果</h3>
+    <ul>
+        <li>查看<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体">窗体</strong>。<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnShowWindow").ClientID %>' title="显示窗体">显示窗体</strong>，再调整浏览器窗口高度。<br />结果：窗体按本页脚本计算的可用高度显示，内容超出时在窗体内滚动。</li>
+    </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+            <li>窗体设置KeepLastSize=true，以便在窗体处于隐藏状态时，改变其高度有效</li>
+        </ul>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>KeepLastSize</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体">窗体</strong>）：初始为 <code>true</code>，关闭后再次打开时，沿用关闭前的尺寸。</li>
+        <li><code>FixedPosition</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体">窗体</strong>）：初始为 <code>true</code>，采用固定定位，页面滚动时保持相对视口的位置。</li>
+        <li><code>AutoScroll</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体">窗体</strong>）：初始为 <code>true</code>，内容超出可用区域时允许在控件内滚动。</li>
+        <li><code>show()</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体">窗体</strong>）：显示前由客户端脚本根据页面高度传入窗体尺寸。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

@@ -195,5 +195,20 @@
         });
 
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>为表格姓名单元格接入服务器自动补全，编辑后可以提交表格修改。</p>
+    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>在单元格编辑器内选姓名</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格（进入编辑状态后，从自动完成提示框中选择）">表格（进入编辑状态后，从自动完成提示框中选择）</strong>的姓名单元格，输入张并选择候选。<br />结果：候选名称回填当前行姓名，自动补全不会修改其它行。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>' title="保存数据">保存数据</strong>。<br />结果：后台读取本轮表格修改，结果区显示修改数据，随后重新绑定表格。</li>
+    </ol>
+    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>AllowCellEditing / ClicksToEdit</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格（进入编辑状态后，从自动完成提示框中选择）">表格（进入编辑状态后，从自动完成提示框中选择）</strong>）：允许单击进入单元格编辑；自动补全绑定到该列实际文本编辑器。</li>
+        <li><code>autocomplete.source</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("tbxEditorName").ClientID %>' title="请输入汉字“张”试试">请输入汉字张试试</strong>）：候选名称由服务器查询接口返回。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>
