@@ -28,10 +28,6 @@
             </Columns>
         </f:Grid>
         <br />
-        注：
-        <ul>
-            <li>上下左右键遍历文本框</li>
-        </ul>
         <br />
         <f:Button runat="server" ID="Button1" OnClick="Button1_Click" CssClass="marginr" Text="获取用户输入的分组值">
         </f:Button>
@@ -136,5 +132,21 @@
         });
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>通过上下左右方向键在行内成绩输入框之间移动。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>按当前页面规则移动输入位置</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>靠前记录的<strong>语文</strong>输入框，按右、下、左、上方向键。<br />结果：输入位置按按键方向移到相邻行或列；本页处理输入导航，不依赖切换 FineUI 单元格编辑器。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>keydown / preventDefault</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>）：页面自行确定目标输入框并阻止相应按键的默认行为，不以浏览器默认 Tab 顺序代替本页导航。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

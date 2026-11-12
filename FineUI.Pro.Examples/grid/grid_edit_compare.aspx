@@ -37,12 +37,7 @@
             </Columns>
         </f:Grid>
         <br />
-        注：
-        <ul>
-            <li>使用Tab键遍历一列当中所有的文本输入框（通过TextBox的TabIndex属性）</li>
-            <li>使用Enter键遍历一列当中所有的文本输入框（JavaScript函数registerEnterEvent）</li>
-            <li>比较两个输入框的文本是否相同（JavaScript函数registerCompareEvent）</li>
-        </ul>
+
         <br />
         <f:Button runat="server" ID="Button1" OnClick="Button1_Click" CssClass="marginr" Text="获取用户输入的分组值">
         </f:Button>
@@ -138,5 +133,23 @@
         });
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>比较同一行两次输入是否一致，在本行显示比较结果。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>逐行核对两次录入</h3>
+            <ol>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>同一行的<strong>分组一</strong>和<strong>分组二</strong>都输入<code>123</code>。<br />结果：<strong><strong>比较结果</strong></strong>显示两组录入一致；再把其中一项改成
+                    456，结果立即变为两组录入不一致。</li>
+                <li>在其中一列输入框按 Enter 或 Tab。<br />结果：继续在同列其他行中录入；Enter 的移动由页面脚本处理，Tab 顺序通过输入框的 tabIndex 安排。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>input / tabIndex</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>）：输入事件比较本行两项文本，不比较不同记录；<strong>分组二</strong>使用单独的 Tab 顺序。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

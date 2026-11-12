@@ -24,12 +24,7 @@
             </Columns>
         </f:Grid>
         <br />
-        注：
-        <ul>
-            <li>输入控件由 RenderField 的客户端渲染函数创建，提交时按行读取输入值。</li>
-            <li>使用Tab键遍历所有的文本输入框（通过TextBox的TabIndex属性）</li>
-            <li>使用Enter键遍历所有的文本输入框（JavaScript函数registerEnterEvent）</li>
-        </ul>
+
         <br />
         <f:Button runat="server" ID="Button1" OnClick="Button1_Click" CssClass="marginr" Text="获取用户输入的分组值">
         </f:Button>
@@ -82,5 +77,30 @@
         });
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在表格分组列直接放置文本输入框，批量读取各行当前输入。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>输入多行分组值</h3>
+            <ol>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>前两行<strong>分组</strong>输入框分别填写<code>999</code>和<code>888</code>。<br />结果：每行保留自己的文字；这是常驻的行内输入，不必先进入单元格编辑。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="获取用户输入的分组值">获取用户输入的分组值</strong>。<br />结果：客户端按行标识、<strong>姓名</strong>及当前输入收集数据并提交，后台显示各行读取结果；没有保存数据源的处理。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>逐行移动输入框</h3>
+            <ul>
+                <li>点击一个<strong>分组</strong>输入框后按 Enter 或 Tab。<br />结果：输入位置移到下一行，原文字自动选中；基础页只移动输入框，不同步改变选中行。Enter 由页面事件处理，Tab 使用输入框的 tabIndex 顺序。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>RendererFunction</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>）：按每行数据生成常驻输入或选择元素，页面脚本从实际行元素读取用户输入。</li>
+                <li><code>OnClick / GridInputUtil.GetValue</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：将各行输入交给后台读取；输入不会因为仅修改 DOM
+                    就自动写回源数据。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

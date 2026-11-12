@@ -32,14 +32,7 @@
             </Columns>
         </f:Grid>
         <br />
-        注：
-        <ul>
-            <li>点击文本框选中文本</li>
-            <li>使用 Enter 或者 Tab 键遍历所有的文本输入框</li>
-            <li>遍历文本框时同时选中所在的行</li>
-            <li>在表格最后一行选中时，按 Enter 或者 Tab 键自动点击 [保存数据] 按钮</li>
-            <li>提交后弹出对话框，按 Enter 键或者 ESC 键关闭弹出框</li>
-        </ul>
+
         <br />
         <f:Button runat="server" ID="Button1" OnClick="Button1_Click" CssClass="marginr" Text="获取用户输入的分组值">
         </f:Button>
@@ -123,5 +116,26 @@
         });
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>逐行输入并同步选择行，到最后一行继续导航时自动提交保存。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>在导航末尾触发保存</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>靠前记录的<strong>分组</strong>输入框，按 Enter 或 Tab。<br />结果：目标输入框原文字被选中，表格行选择同时移动到该行，不把输入位置留在旧行。</li>
+                <li>移动到最后一行后继续按 Enter 或 Tab。<br />结果：页面主动点击<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmit").ClientID %>' title="保存数据">保存数据</strong>，提交当前输入并清空行选择；提示框可用
+                    Enter 或 ESC 关闭。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>keydown / preventDefault</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>）：页面自行确定目标输入框并阻止相应按键的默认行为，不以浏览器默认 Tab 顺序代替本页导航。</li>
+                <li><code>selectRow</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：导航时选中目标行，使输入框所在行与表格选择一致。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -40,5 +40,25 @@
         <br />
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>将多层分组表头与学生数据一起导出，保留表头的层级关系。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>导出分组表头与行数据</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="导出为Excel文件">导出为Excel文件</strong>。<br />结果：后台读取表格列和数据，以附件返回 myexcel.xls；多层标题按分组生成对应合并单元格，数据仍对应叶子列。本页生成的是 HTML 表格文件，不是原生 XLSX 工作簿。
+                </li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Content-Type / Content-Disposition</code>（<strong>页面导出处理</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：设置 Excel
+                    响应类型与附件文件名，让浏览器按下载处理，不在示例 iframe 中显示文件内容。</li>
+                <li><code>GroupField / colspan / rowspan</code>（<strong>页面导出处理</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：遍历表头层级，用行列合并保留分组标题与叶子列的对应关系。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

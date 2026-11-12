@@ -42,5 +42,31 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>导出前在选择窗体中勾选需要的列，文件只包含本次选择的字段。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>选择导出字段</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSelectColumns").ClientID %>'
+                        title="选择需要导出的列（注意Window控件的EnableAjax属性）">选择需要导出的列（注意Window控件的EnableAjax属性）</strong>，在窗体中取消<strong>姓名</strong>列的勾选。<br />结果：列选择保留在窗体内，主表的<strong>姓名</strong>列仍显示；这里选择的是导出字段。
+                </li>
+                <li>点击选择窗体中的导出入口。<br />结果：关闭参数带回选中的列标题，父页关闭事件通过普通回发生成 MyExcelFile.xls；文件中不再包含取消的<strong>姓名</strong>列。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>OnClose / CloseArgument</code>（<strong>页面导出处理</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：关闭窗体时读取以 # 分隔的列标题，只导出对应列。
+                </li>
+                <li><code>EnableIFrame</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="选择需要导出的列">选择需要导出的列</strong>）：初始为
+                    <code>true</code>，使用独立子页显示可导出的列与勾选入口。
+                </li>
+                <li><code>EnableAjax</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="选择需要导出的列">选择需要导出的列</strong>）：初始为
+                    <code>false</code>，关闭事件使用普通回发，让附件响应由浏览器接收。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

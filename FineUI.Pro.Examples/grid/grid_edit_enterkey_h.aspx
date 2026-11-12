@@ -28,10 +28,7 @@
             </Columns>
         </f:Grid>
         <br />
-        注：
-        <ul>
-            <li>Tab/Enter遍历文本框时，先遍历一行的文本框，然后再遍历下一行的文本框</li>
-        </ul>
+
         <br />
         <f:Button runat="server" ID="Button1" OnClick="Button1_Click" CssClass="marginr" Text="获取用户输入的分组值">
         </f:Button>
@@ -122,5 +119,21 @@
         });
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>用 Enter 或 Tab 按行横向遍历各列成绩输入框。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>按当前页面规则移动输入位置</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>靠前记录的<strong>语文</strong>输入框，按 Enter 或 Tab。<br />结果：先进入同一行的下一列，行末转到下一行第一列；末尾按脚本规则循环。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>keypress / tabIndex</code>（<strong>行内输入与页面脚本</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：Enter 事件由脚本安排目标输入框；Tab
+                    通过各输入框的 tabIndex 按相同方向遍历。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>
