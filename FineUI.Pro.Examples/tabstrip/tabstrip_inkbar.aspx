@@ -258,7 +258,25 @@
         </f:TabStrip>
         <br />
         <br />
-        注：低版本IE浏览器不支持左侧和右侧选项卡。
+
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示用墨水条跟随当前标签，并比较墨水条在标题不同边缘的位置。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>对比标题与当前项</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="第 1 个选项卡">第 1 个选项卡</strong>依次点击不同标签，对照本页其它组的同类标题。<br />结果：内容区随当前标签切换；标题方向、对齐、背景、边框或墨水条按本页配置显示。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>低版本<code>IE</code>浏览器不支持左侧和右侧选项卡。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>ShowInkBar</code>（本页各选项卡，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="第 1 个选项卡">第 1 个选项卡</strong>）：为当前标题显示墨水条。 本页使用<code>true</code>。</li>
+        <li><code>InkBarPosition</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip5").ClientID %>' title="第 5 个选项卡">第 5 个选项卡</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip6").ClientID %>' title="第 6 个选项卡">第 6 个选项卡</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip7").ClientID %>' title="第 7 个选项卡">第 7 个选项卡</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip8").ClientID %>' title="第 8 个选项卡">第 8 个选项卡</strong>）：指定墨水条位于标题的哪一边。 本页使用<code>Top</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

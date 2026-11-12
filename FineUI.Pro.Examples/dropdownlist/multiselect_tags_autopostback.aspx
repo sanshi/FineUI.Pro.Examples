@@ -50,7 +50,7 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnSelectedIndexChanged</code>：选择变化时处理当前值；Pro 中是否主动回发还受 AutoPostBack 控制。 本页声明值为 DropDownList1_SelectedIndexChanged。</li>
+                <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：选择变化时处理当前值；<code>Pro</code> 中是否主动回发还受 <code>AutoPostBack</code> 控制。 本页声明值为 <code>DropDownList1</code><code>_SelectedIndexChanged</code>。</li>
             </ul>
         </section>
     </template>

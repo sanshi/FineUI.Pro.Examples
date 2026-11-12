@@ -99,7 +99,7 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableTableStyle</code>：两个表单分别启用表格风格。</li>
+                <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="第 1 个表单">第 1 个表单</strong>、<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第 2 个表单</strong>）：两个表单分别启用表格风格。</li>
             </ul>
         </section>
     </template>

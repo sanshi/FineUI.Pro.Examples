@@ -46,7 +46,26 @@
         </f:Label>
         <br />
         <br />
-        注：树节点的NodeID属性可以包含特殊字符，比如：.$#@!^&*\"'
+
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示树节点标识包含中文、空格和特殊字符时，仍可正常选择和读取。</p>
+    <h3><i class="f-iconfont f-iconfont-check" aria-hidden="true"></i>读取特殊标识</h3>
+    <ol>
+        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>选择名称包含中文及符号的节点。<br />结果：节点正常高亮，特殊字符不会被当成选择器语法拆开。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnGetSelectedValues").ClientID %>' title="获取选中的节点列表">获取选中的节点列表</strong>。<br />结果：后台读取原始节点标识，在结果区域显示对应节点集合。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>树节点的<code>NodeID</code>属性可以包含特殊字符，比如：.$#&#64;!^&*\"'</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>NodeID</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：本页保留中文、空格及 .$#@!^&* 等字符作为完整标识。</li>
+        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：允许选择多个节点，再一次读取当前集合。 本页使用<code>true</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

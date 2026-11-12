@@ -45,7 +45,7 @@
     </script>
     <template id="example-description">
         <section aria-label="页面描述">
-            <p>在下拉表格中单选人员，也可保留用户自由输入文字。</p>
+            <p>在<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>" title="下拉表格">下拉表格</strong>中单选人员，也可保留用户自由输入文字。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>输入列表之外的文字</h3>
             <ol>
                 <li>
@@ -55,7 +55,7 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableEdit</code>：允许输入列表之外的文字，选中项与自由输入按不同方式读取。 本页声明值为 true。</li>
+                <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：允许输入列表之外的文字，选中项与自由输入按不同方式读取。 本页声明值为 <code>true</code>。</li>
             </ul>
         </section>
     </template>

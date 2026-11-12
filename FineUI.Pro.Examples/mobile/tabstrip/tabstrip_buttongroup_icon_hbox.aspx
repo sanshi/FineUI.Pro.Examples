@@ -90,5 +90,21 @@
 
 
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示用 <code>HBox</code> 让带图标的切页按钮等分当前宽度。</p>
+    <h3><i class="f-iconfont f-iconfont-list" aria-hidden="true"></i>从按钮切换内容</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="选项卡">选项卡</strong>对应的切页按钮中，依次点击第二个和第三个入口。<br />结果：对应内容被激活；原生标签标题栏保持隐藏，按钮样式、图标位置与伸展规则保持本页设置。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>ShowTabHeader</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="选项卡">选项卡</strong>）：设为 <code>false</code>，隐藏原生标签标题栏。 本页使用<code>false</code>。</li>
+        <li><code>EnablePressGroup</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ButtonGroup1").ClientID %>' title="按钮组">按钮组</strong>）：以互斥按下状态标识当前入口。 本页使用<code>true</code>。</li>
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ButtonGroup1").ClientID %>' title="按钮组">按钮组</strong>）：导航按钮所在容器使用 <code>HBox</code> 或由 <code>Fit</code> 包含 <code>HBox</code> 按钮组。 本页使用<code>HBox</code>。</li>
+        <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="one">one</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>' title="two">two</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button3").ClientID %>' title="three">three</strong>）：对应导航按钮等分剩余宽度。 本页使用<code>1</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

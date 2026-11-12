@@ -53,5 +53,21 @@
 
 
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示可折叠的分组面板，在同一页面组织表单与普通内容。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>分别展开和折叠分组</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("GroupPanel1").ClientID %>' title="分组面板一">分组面板一</strong>标题栏的展开图标，在名称或备注中输入文字。<br />结果：初始折叠的分组展开，显示内部表单。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>' title="展开/折叠分组面板二">展开/折叠分组面板二</strong>。<br />结果：后台切换第二个分组，第一组表单内容继续保留。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableCollapse</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("GroupPanel1").ClientID %>' title="分组面板一">分组面板一</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("GroupPanel2").ClientID %>' title="分组面板二">分组面板二</strong>）：给对应分组显示折叠入口。 本页使用<code>true</code>。</li>
+        <li><code>Collapsed</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("GroupPanel1").ClientID %>' title="分组面板一">分组面板一</strong>）：第一组初始为 <code>true</code>，等待用户展开。 本页使用<code>true</code>。</li>
+        <li><code>BodyPadding</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("GroupPanel1").ClientID %>' title="分组面板一">分组面板一</strong>）：给分组内容与边框预留内边距。 本页使用<code>10</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

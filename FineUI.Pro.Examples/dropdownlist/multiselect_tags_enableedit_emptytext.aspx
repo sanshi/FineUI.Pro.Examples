@@ -44,15 +44,15 @@
             <ol>
                 <li>
                     初次打开页面，先不选择任何项。<br />
-                    结果：输入区没有选中值，显示“请从下拉列表中选择”提示；之后可从列表选择有效项。
+                    结果：输入区没有选中值，显示<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="请从下拉列表中选择">请从下拉列表中选择</strong>提示；之后可从列表选择有效项。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
             <p>注：支持键盘输入过滤，回车键选中当前过滤项或者取消当前项。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>AutoSelectFirstItem</code>：为 false 时，不自动把第一项设为初始选择。 本页声明值为 false。</li>
-                <li><code>EmptyText</code>：未选择时显示输入提示。 本页声明值为 请从下拉列表中选择。</li>
+                <li><code>AutoSelectFirstItem</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="请从下拉列表中选择">请从下拉列表中选择</strong>）：为 <code>false</code> 时，不自动把第一项设为初始选择。 本页声明值为 <code>false</code>。</li>
+                <li><code>EmptyText</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="请从下拉列表中选择">请从下拉列表中选择</strong>）：未选择时显示输入提示。 本页声明值为 <strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="请从下拉列表中选择">请从下拉列表中选择</strong>。</li>
             </ul>
         </section>
     </template>

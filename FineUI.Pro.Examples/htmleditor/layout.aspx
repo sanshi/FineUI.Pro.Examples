@@ -62,7 +62,7 @@
     </script>
     <template id="example-description">
         <section aria-label="页面描述">
-            <p>演示多份独立富文本和窗口选项卡中的编辑器，切换容器后继续编辑。</p>
+            <p>演示多份独立富文本和窗口<strong class="example-control-reference" data-example-control="<%= TabStrip1.ClientID %>" title="选项卡">选项卡</strong>中的编辑器，切换容器后继续编辑。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>多实例与隐藏容器</h3>
             <ol>
                 <li>
@@ -70,8 +70,8 @@
                     结果：第二份文档不随之变化；各实例内容和撤销记录独立。
                 </li>
                 <li>
-                    点击“打开编辑窗口”，切到“隐藏选项卡”，编辑其中的正文。<br />
-                    结果：先前隐藏的编辑器展开后正常排版；切回第一份文档，再切回来，已编辑内容保留。
+                    点击<strong class="example-control-reference" data-example-control="<%= btnOpenEditor.ClientID %>" title="打开编辑窗口">打开编辑窗口</strong>，切到<strong class="example-control-reference" data-example-control="<%= Tab2.ClientID %>" title="隐藏选项卡">隐藏选项卡</strong>，编辑其中的正文。<br />
+                    结果：先前隐藏的编辑器展开后正常排版；切回<strong class="example-control-reference" data-example-control="<%= Tab1.ClientID %>" title="第一份文档">第一份文档</strong>，再切回来，已编辑内容保留。
                 </li>
                 <li>
                     拖动窗口边缘或调整浏览器宽度。<br />
@@ -82,7 +82,7 @@
             <p>两个编辑器拥有独立的内容、选区和撤销记录；改变浏览器宽度可观察工具栏换行。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Layout</code>：窗口及 Tab 使用 Fit 布局，编辑器随容器填充；隐藏页签显示后会重新计算可用尺寸。</li>
+                <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="<%= Window1.ClientID %>" title="窗口与隐藏选项卡">窗口与隐藏选项卡</strong>）：窗口及 <code>Tab</code> 使用 <code>Fit</code> 布局，编辑器随容器填充；隐藏页签显示后会重新计算可用尺寸。</li>
             </ul>
         </section>
     </template>

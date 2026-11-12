@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:ButtonGroup runat="server" Vertical="true">
+        <f:ButtonGroup ID="ButtonGroupExample1" ClientIDMode="Static" runat="server" Vertical="true">
             <f:Button ID="btnIcon1" Text="图标在左侧（很长的文本）" Icon="Email" runat="server" />
             <f:Button ID="btnIcon2" Text="图标在右侧" IconAlign="Right" Icon="Star" runat="server" />
             <f:Button ID="Button7" Text="图标在左侧" IconFont="_Home" runat="server" />
@@ -55,7 +55,7 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Vertical</code>：纵向组设为 true，使用纵向分组边框。</li>
+                <li><code>Vertical</code>（本页全部按钮组，如<strong class="example-control-reference" data-example-control="ButtonGroupExample1" title="第 1 个按钮组">第 1 个按钮组</strong>）：纵向组设为 <code>true</code>，使用纵向分组边框。</li>
             </ul>
         </section>
     </template>

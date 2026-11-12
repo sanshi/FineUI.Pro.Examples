@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head runat="server">
+    <meta name="fineui-example-frame" content="#myiframe" />
     <title></title>
     <style>
         .phonebg {

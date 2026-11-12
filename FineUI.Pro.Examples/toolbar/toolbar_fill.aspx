@@ -55,5 +55,20 @@
         <br />
         <f:Button runat="server" ID="btnHideFill2" Text="显示隐藏[按钮七]后面的ToolbarFill" OnClick="btnHideFill2_Click"></f:Button>
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示用填充项把工具栏项目分到左、中、右，并在隐藏填充项后重新分配空间。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>隐藏项目后重新分配</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnHideFill1").ClientID %>' title="显示隐藏[按钮一]和后面的ToolbarFill">显示隐藏[按钮一]和后面的ToolbarFill</strong>。<br />结果：后台一起切换按钮一与相邻填充项，其余项目立即按剩余填充项重排。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnHideFill2").ClientID %>' title="显示隐藏[按钮七]后面的ToolbarFill">显示隐藏[按钮七]后面的ToolbarFill</strong>。<br />结果：只切换对应填充项，左右项目的分布改变，输入框内容继续保留。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>ToolbarFill</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarFill1").ClientID %>' title="第 1 个ToolbarFill">第 1 个ToolbarFill</strong>）：占据可伸展空间，多个填充项共同分配同一行的剩余宽度。</li>
+        <li><code>Hidden</code>（<strong>指定填充项</strong>）：隐藏填充项后不再为它分配宽度。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

@@ -76,5 +76,32 @@
         }
 
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示面板的折叠、标题与图标更新，以及工具栏项目的显示和文字更新。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>折叠和更新面板</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button3").ClientID %>' title="展开/折叠内容面板">展开/折叠内容面板</strong>。<br />结果：后台切换内容面板的展开状态，外层面板与其它工具栏项目继续保留。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>' title="检查面板的折叠状态">检查面板的折叠状态</strong>。<br />结果：读取目标面板当前状态并显示提示。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button4").ClientID %>' title="更新面板的标题">更新面板的标题</strong>。<br />结果：后台替换面板标题文字，面板内容继续保留。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-refresh" aria-hidden="true"></i>更新工具栏项目</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button5").ClientID %>' title="更新工具条文本一的值">更新工具条文本一的值</strong>。<br />结果：后台把新的时间文字写入原工具栏文本项。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button6").ClientID %>' title="显示/隐藏工具条文本一">显示/隐藏工具条文本一</strong>。<br />结果：切换文本项显示状态，其余项目重新分配空间。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button7").ClientID %>' title="隐藏工具栏">隐藏工具栏</strong>。<br />结果：隐藏整个工具栏；点击显示工具栏可恢复。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-pic" aria-hidden="true"></i>切换图标与可信文字</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button9").ClientID %>' title="点击修改面板图标（在三个图标之前切换）">点击修改面板图标（在三个图标之前切换）</strong>。<br />结果：在本页准备的三个图标之间切换；清空图标按钮可移除当前图标。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableCollapse</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：开启标题栏的折叠入口。 本页使用<code>true</code>。</li>
+        <li><code>Title</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：后台更新面板标题。 本页使用<code>面板</code>。</li>
+        <li><code>Text</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarText1").ClientID %>' title="第 1 个ToolbarText">第 1 个ToolbarText</strong>）：更新对应工具栏文本项的内容。 本页使用<code>工具条文本一</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

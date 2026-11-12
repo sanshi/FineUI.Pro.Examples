@@ -8,7 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel IsFluid="true" ShowBorder="true" BodyPadding="10px" Height="300px" Title="面板" EnableCollapse="false" runat="server">
+        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" ShowBorder="true" BodyPadding="10px" Height="300px" Title="面板" EnableCollapse="false" runat="server">
             <Toolbars>
                 <f:Toolbar runat="server">
                     <Items>
@@ -59,5 +59,23 @@
         }
 
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示菜单中的互斥语言选择和可同时勾选的站点集合，并读取最新结果。</p>
+    <h3><i class="f-iconfont f-iconfont-check-box" aria-hidden="true"></i>选择语言与多个站点</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnLangMenu").ClientID %>' title="系统语言">系统语言</strong>。<br />结果：浏览器展开语言菜单。</li>
+        <li>选择<strong>简体中文</strong>。<br />结果：同组其它语言取消勾选，变化事件回发，后台更新当前语言结果。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSiteMenu").ClientID %>' title="喜欢的站点">喜欢的站点</strong>。<br />结果：浏览器展开可以多选的站点菜单。</li>
+        <li>勾选<strong>microsoft.com</strong>，再取消勾选。<br />结果：其它站点的勾选继续保留，结果集合随本次操作加入或移除对应站点。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>GroupName</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("MenuLangEnglish").ClientID %>' title="第 1 个复选菜单项">第 1 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("MenuLangZHCN").ClientID %>' title="第 2 个复选菜单项">第 2 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("MenuLangZHTW").ClientID %>' title="第 3 个复选菜单项">第 3 个复选菜单项</strong>）：语言菜单项使用相同组名，形成互斥选择；站点项不分同一互斥组。 本页使用<code>MenuLang</code>。</li>
+        <li><code>Checked</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("MenuLangEnglish").ClientID %>' title="第 1 个复选菜单项">第 1 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("MenuSiteBaidu").ClientID %>' title="第 4 个复选菜单项">第 4 个复选菜单项</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("MenuSiteGoogle").ClientID %>' title="第 5 个复选菜单项">第 5 个复选菜单项</strong>）：声明初始勾选状态，与菜单项的可用状态区分。 本页使用<code>true</code>。</li>
+        <li><code>OnCheckedChanged</code>（本页各复选菜单项，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("MenuLangEnglish").ClientID %>' title="第 1 个复选菜单项">第 1 个复选菜单项</strong>）：勾选变化后读取当前状态并更新本页结果。 本页各组分别使用<code>MenuLang_CheckedChanged</code>、<code>MenuSite_CheckedChanged</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

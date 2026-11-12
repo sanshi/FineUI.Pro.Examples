@@ -131,7 +131,7 @@
         </table>
         <br />
         <br />
-        注：本示例新增的选项卡和手工点击右侧菜单新增的选项卡是同一个！
+
     </form>
     <script type="text/javascript">
 
@@ -172,5 +172,24 @@
         }
 
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示用一组图标按钮打开其它示例，并与框架菜单复用同一个示例标签。</p>
+    <h3><i class="f-iconfont f-iconfont-link" aria-hidden="true"></i>从按钮打开示例</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="登录页面">登录页面</strong>。<br />结果：在父框架打开登录示例；再次从框架菜单进入同一示例时，激活已有标签。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button11").ClientID %>' title="区域布局">区域布局</strong>。<br />结果：在父框架打开<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button11").ClientID %>' title="区域布局">区域布局</strong>示例，当前导航页仍可切回。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+    <ul>
+        <li>本示例新增的选项卡和手工点击右侧菜单新增的选项卡是同一个！</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>addExampleTabByHref()</code>（<strong>父框架导航函数</strong>）：根据菜单中相同的示例地址查找或打开标签；本页应在示例框架内操作。</li>
+        <li><code>IconAlign</code>（本页各按钮，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="登录页面">登录页面</strong>）：导航按钮将图标放在文字上方。 本页使用<code>Top</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

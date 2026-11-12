@@ -13,10 +13,10 @@
 <body class="f-body-darkerbg">
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel IsFluid="true" runat="server"
+        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" runat="server"
             Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
             <Items>
-                <f:Panel runat="server" BlockMD="12" BlockLG="4"
+                <f:Panel ID="PanelExample2" ClientIDMode="Static" runat="server" BlockMD="12" BlockLG="4"
                     Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
                     <Items>
                         <f:Panel BlockMD="6" BlockLG="12" Height="200px"
@@ -27,7 +27,7 @@
                         </f:Panel>
                     </Items>
                 </f:Panel>
-                <f:Panel runat="server" BlockMD="12" BlockLG="8"
+                <f:Panel ID="PanelExample5" ClientIDMode="Static" runat="server" BlockMD="12" BlockLG="8"
                     Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
                     <Items>
                         <f:Panel BlockSM="6" BlockMD="3" Height="150px"
@@ -47,7 +47,7 @@
                         </f:Panel>
                     </Items>
                 </f:Panel>
-                <f:Panel runat="server" BlockMD="12"
+                <f:Panel ID="PanelExample11" ClientIDMode="Static" runat="server" BlockMD="12"
                     Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
                     <Items>
                         <f:Panel BlockMD="4" Height="200px"
@@ -67,5 +67,20 @@
             </Items>
         </f:Panel>
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示组合多层嵌套的 <code>Block</code> 布局。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整宽度比较排列</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>，从外到内对照面板编号，并缩小浏览器。<br />结果：每层都以自己的内容宽度分配子块，各组按自身设置换行，编号和内容保留。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample2").ClientID %>' title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample5").ClientID %>' title="第 5 个面板">第 5 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample11").ClientID %>' title="第 11 个面板">第 11 个面板</strong>）：父容器使用 <code>Block</code>，按可用宽度排列内容块。 本页使用<code>Block</code>。</li>
+        <li><code>BlockMD</code>（本页各面板，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample2").ClientID %>' title="第 2 个面板">第 2 个面板</strong>）：指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。 本页各组分别使用<code>12</code>、<code>6</code>、<code>3</code>、<code>4</code>。</li>
+        <li><code>BlockConfigSpace</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample2").ClientID %>' title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample5").ClientID %>' title="第 5 个面板">第 5 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample11").ClientID %>' title="第 11 个面板">第 11 个面板</strong>）：父容器中相邻块之间的间隔。 本页使用<code>20px</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

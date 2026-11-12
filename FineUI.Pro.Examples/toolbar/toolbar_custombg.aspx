@@ -8,7 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel IsFluid="true" ShowBorder="true" BodyPadding="10px" Title="面板" EnableCollapse="false"
+        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" ShowBorder="true" BodyPadding="10px" Title="面板" EnableCollapse="false"
             runat="server">
             <Toolbars>
                 <f:Toolbar runat="server" ToolbarAlign="Right" CssClass="f-state-default">
@@ -36,5 +36,18 @@
             </Content>
         </f:Panel>
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示用自定义背景显示工具栏，并让按钮使用与背景协调的简化外观。</p>
+    <h3><i class="f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照背景与按钮状态</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="面板">面板</strong>对照普通按钮与禁用按钮。<br />结果：工具栏显示本页 CSS 背景，按钮不使用通常的块状默认底色；禁用按钮仍不可点击。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableDefaultState</code>（本页各按钮，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="按钮一">按钮一</strong>）：本页按钮设为 <code>false</code>，简化默认外观。 本页使用<code>false</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

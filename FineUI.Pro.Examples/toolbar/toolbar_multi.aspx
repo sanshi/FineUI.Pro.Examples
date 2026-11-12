@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel IsFluid="true" ShowBorder="true" BodyPadding="10px" Height="500px" Title="面板" EnableCollapse="false"
+        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" ShowBorder="true" BodyPadding="10px" Height="500px" Title="面板" EnableCollapse="false"
             runat="server" AutoScroll="true">
             <Toolbars>
                 <f:Toolbar runat="server">
@@ -63,5 +63,20 @@
         </f:Panel>
 
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示在同一面板的上方和下方放置多行工具栏，并分别控制对齐方式。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照各行工具栏</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="面板">面板</strong>上方、下方的多行按钮。<br />结果：工具栏按声明顺序逐行排列，各行可以分别左对齐、居中或右对齐。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Position</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Toolbar3").ClientID %>' title="第 4 个工具栏">第 4 个工具栏</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Toolbar4").ClientID %>' title="第 5 个工具栏">第 5 个工具栏</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Toolbar5").ClientID %>' title="第 6 个工具栏">第 6 个工具栏</strong>）：本页组合顶部和底部工具栏。 本页使用<code>Bottom</code>。</li>
+        <li><code>ToolbarAlign</code>（本页各工具栏，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Toolbar1").ClientID %>' title="第 2 个工具栏">第 2 个工具栏</strong>）：分别控制每一行的按钮对齐。 本页各组分别使用<code>Center</code>、<code>Right</code>。</li>
+        <li><code>ToolbarFill</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarFill1").ClientID %>' title="ToolbarFill">ToolbarFill</strong>）：填充项把同一行中的按钮分到两端。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

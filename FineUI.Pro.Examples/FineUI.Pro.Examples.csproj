@@ -1007,6 +1007,8 @@
     <Content Include="panel\panel_tools_customtoolahead.aspx" />
     <Content Include="res\css\index.css" />
     <Content Include="res\js\common.js" />
+    <Content Include="res\js\example-control-reference.js" />
+    <Content Include="res\css\example-control-reference.css" />
     <Content Include="res\js\source-code-viewer.js" />
     <Content Include="res\js\source-code-filter.js" />
     <Content Include="res\css\source-code-viewer.css" />

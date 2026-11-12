@@ -41,7 +41,7 @@
             <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>查看每项的提示</h3>
             <ol>
                 <li>
-                    展开下拉列表，将鼠标移到其中一项。<br />
+                    展开<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>，将鼠标移到其中一项。<br />
                     结果：提示信息来自该项绑定的数据，选中后仍保留原来的文字与业务值。
                 </li>
             </ol>
@@ -49,7 +49,7 @@
             <p>注：通过列表项绑定事件，可以动态设置每一项的属性（本例为每个列表项增加提示信息）。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnItemDataBound</code>：数据项绑定时补充该选项的显示内容或悬停提示。 本页声明值为 DropDownList1_ItemDataBound。</li>
+                <li><code>OnItemDataBound</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：数据项绑定时补充该选项的显示内容或悬停提示。 本页声明值为 <code>DropDownList1</code><code>_ItemDataBound</code>。</li>
             </ul>
         </section>
     </template>

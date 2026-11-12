@@ -47,15 +47,15 @@
                     结果：客户端图片点击处理显示提示。
                 </li>
                 <li>
-                    点击“改变图片”，再点击图片。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="改变图片">改变图片</strong>，再点击图片。<br />
                     结果：回发后，后台在蛋糕和地球图片之间切换；图片点击行为仍然可用。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：在 F.ready 中注册图片的点击事件。</p>
+            <p>注：在 <code>F.ready</code> 中注册图片的点击事件。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnClick</code>：“改变图片”按钮回发更新图片地址。</li>
+                <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="改变图片">改变图片</strong>）：<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="改变图片">改变图片</strong>按钮回发更新图片地址。</li>
             </ul>
         </section>
     </template>

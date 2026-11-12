@@ -34,5 +34,19 @@
             </Nodes>
         </f:Tree>
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示树的层级展开、节点选择以及初始展开和选中状态。</p>
+    <h3><i class="f-iconfont f-iconfont-list" aria-hidden="true"></i>展开与选择节点</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（内联）">树控件（内联）</strong>点击<code>河南省</code>前的展开图标，再点击<code>驻马店市</code>。<br />结果：浏览器展开当前目录并高亮选择的节点；点击其它节点时，单选高亮随之移动。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Nodes</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（内联）">树控件（内联）</strong>）：声明节点及父子关系，节点顺序与层级决定页面上的排列。</li>
+        <li><code>Expanded</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（内联）">树控件（内联）</strong>）：设为 <code>true</code> 的目录首次加载就展开；其子项可以直接点击。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

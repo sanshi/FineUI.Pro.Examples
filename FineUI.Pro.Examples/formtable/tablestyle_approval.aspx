@@ -129,19 +129,19 @@
             <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>切换审批意见</h3>
             <ol>
                 <li>
-                    在“当前审批”中选择“驳回”。<br />
-                    结果：意见变化后回发，后台隐藏上方“选择车辆”整行。
+                    在<strong class="example-control-reference" data-example-control="<%= Panel_CurrentApproval.ClientID %>" title="当前审批">当前审批</strong>中选择<code>驳回</code>。<br />
+                    结果：意见变化后回发，后台隐藏上方<strong class="example-control-reference" data-example-control="<%= ttb_SelectVehicle.ClientID %>" title="选择车辆">选择车辆</strong>整行。
                 </li>
                 <li>
-                    改选“同意”。<br />
+                    改选<code>同意</code>。<br />
                     结果：后台恢复车辆选择行，已有其它字段值保留。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableTableStyle</code>：申请表启用表格风格，多列字段按标签与输入区域对齐。</li>
-                <li><code>OnSelectedIndexChanged</code>：审批意见改变时回发，后台修改车辆行的 Hidden。</li>
-                <li><code>Hidden</code>：隐藏整个 FormRow，使该行不再占用布局空间。</li>
+                <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="<%= FormApply.ClientID %>" title="第 1 个表单（表单）">第 1 个表单（表单）</strong>）：申请表启用表格风格，多列字段按标签与输入区域对齐。</li>
+                <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= rbt_Approval.ClientID %>" title="意见">意见</strong>）：审批意见改变时回发，后台修改车辆行的 <code>Hidden</code>。</li>
+                <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="<%= fromSelectVehicle.ClientID %>" title="第 5 个表单行">第 5 个表单行</strong>）：隐藏整个 <code>FormRow</code>，使该行不再占用布局空间。</li>
             </ul>
         </section>
     </template>

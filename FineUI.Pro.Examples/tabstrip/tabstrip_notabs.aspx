@@ -113,5 +113,20 @@
         }
 
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示初始隐藏所有标签，再通过按钮显示和激活标签。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>使用本页切换入口</h3>
+    <ul>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnShowTab1").ClientID %>' title="显示标签一">显示标签一</strong>。<br />结果：按按钮配置显示、激活或切换指定标签，标题栏的隐藏规则保持不变。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnShowTab2").ClientID %>' title="显示标签二">显示标签二</strong>。<br />结果：按按钮配置显示、激活或切换指定标签，标题栏的隐藏规则保持不变。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnShowTab3").ClientID %>' title="显示标签三">显示标签三</strong>。<br />结果：按按钮配置显示、激活或切换指定标签，标题栏的隐藏规则保持不变。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tab1").ClientID %>' title="标签一">标签一</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tab2").ClientID %>' title="标签二">标签二</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tab3").ClientID %>' title="标签三">标签三</strong>）：本页标签初始隐藏，显示后才能在标题栏选择。 本页使用<code>true</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

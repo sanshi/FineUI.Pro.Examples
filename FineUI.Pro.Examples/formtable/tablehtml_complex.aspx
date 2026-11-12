@@ -148,7 +148,7 @@
             <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>观察合并单元格</h3>
             <ul>
                 <li>
-                    对照“联系方式”“订货”“收货”及下方发货条件、备注。<br />
+                    对照<strong>联系方式</strong>“订货”“收货”及下方<strong class="example-control-reference" data-example-control="<%= TextArea2.ClientID %>" title="发货条件">发货条件</strong>、备注。<br />
                     结果：联系方式跨六行，订货与收货各跨三行；长文本占用下方表格的多个单元格，两个表格边线衔接。
                 </li>
             </ul>
@@ -156,9 +156,9 @@
             <p>注：这个示例是由上下两个表格组成的。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>rowspan</code>：HTML 单元格跨多行，用于联系方式及订货、收货分组。</li>
-                <li><code>colspan</code>：HTML 单元格跨多列，为发货条件和备注提供完整宽度。</li>
-                <li><code>ShowLabel</code>：输入控件隐藏内置标签，使用表格单元格显示名称。</li>
+                <li><code>rowspan</code>（<strong>联系方式、订货和收货的 HTML 分组单元格</strong>）：HTML 单元格跨多行，用于联系方式及订货、收货分组。</li>
+                <li><code>colspan</code>（<strong>发货条件和备注的 HTML 单元格</strong>）：HTML 单元格跨多列，为<strong class="example-control-reference" data-example-control="<%= TextArea2.ClientID %>" title="发货条件">发货条件</strong>和备注提供完整宽度。</li>
+                <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control="<%= TextBox1.ClientID %>" title="订货单位">订货单位</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="订货联系人">订货联系人</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox3.ClientID %>" title="订货联系电话">订货联系电话</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox4.ClientID %>" title="收货单位">收货单位</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox5.ClientID %>" title="收货联系人">收货联系人</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox6.ClientID %>" title="收货联系电话">收货联系电话</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox7.ClientID %>" title="承办人">承办人</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox8.ClientID %>" title="销售代表">销售代表</strong>、<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>" title="起草人">起草人</strong>、<strong class="example-control-reference" data-example-control="<%= labCurrentTime.ClientID %>" title="起草时间">起草时间</strong>、<strong class="example-control-reference" data-example-control="<%= TextArea2.ClientID %>" title="发货条件">发货条件</strong>、<strong class="example-control-reference" data-example-control="<%= TextArea3.ClientID %>" title="备注">备注</strong>）：输入控件隐藏内置标签，使用表格单元格显示名称。</li>
             </ul>
         </section>
     </template>

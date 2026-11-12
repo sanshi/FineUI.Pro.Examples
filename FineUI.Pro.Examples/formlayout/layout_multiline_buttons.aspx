@@ -26,7 +26,7 @@
                 </f:TextBox>
                 <f:Panel ID="Panel1" runat="server" CssClass="f-field" ShowBorder="false" ShowHeader="false">
                     <Items>
-                        <f:Button runat="server" CssClass="marginr" Text="按钮一">
+                        <f:Button ID="ButtonExample1" ClientIDMode="Static" runat="server" CssClass="marginr" Text="按钮一">
                         </f:Button>
                         <f:Button ID="Button3" runat="server" CssClass="marginr" Text="按钮二">
                         </f:Button>
@@ -63,14 +63,14 @@
             <ul>
                 <li>
                     对照字段区域和底部操作按钮。<br />
-                    结果：两组按钮分别占一行，都使用 f-field 保持字段间距。
+                    结果：两组按钮分别占一行，都使用 <code>f</code>-<code>field</code> 保持字段间距。
                 </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：第一行按钮所在的面板设置了样式：CssClass="f-field"。</p>
+            <p>注：第一行按钮所在的面板设置了样式：<code>CssClass</code>="<code>f</code>-<code>field</code>"。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>CssClass</code>：f-field 为指定按钮容器提供与字段一致的间距。</li>
+                <li><code>CssClass</code>（本页全部按钮，如<strong class="example-control-reference" data-example-control="ButtonExample1" title="按钮一">按钮一</strong>）：<code>f</code>-<code>field</code> 为指定按钮容器提供与字段一致的间距。</li>
             </ul>
         </section>
     </template>

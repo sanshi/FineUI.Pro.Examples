@@ -17,10 +17,10 @@
 <body class="f-body-darkerbg">
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel IsFluid="true" runat="server"
+        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" runat="server"
             Layout="Block" BlockConfigSpace="20px" BlockConfigBlockCount="120" ShowBorder="false" ShowHeader="false">
             <Items>
-                <f:Panel CssClass="custompanel" BlockMD="20"
+                <f:Panel ID="PanelExample2" ClientIDMode="Static" CssClass="custompanel" BlockMD="20"
                     runat="server" ShowBorder="true" ShowHeader="true" Title="20">
                 </f:Panel>
                 <f:Panel CssClass="custompanel" BlockMD="20"
@@ -86,5 +86,19 @@
             </Items>
         </f:Panel>
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示使用 <code>120</code> 块总数组织一至六列等宽组合。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整宽度比较排列</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>，对照本页不同项目数量的各组布局。<br />结果：每组按总块数分配，<code>20</code> 块项目可在同一行排列六项；其它分组分别形成对应列数。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>BlockConfigBlockCount</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>）：指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。 本页使用<code>120</code>。</li>
+        <li><code>BlockMD</code>（本页各面板，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample2").ClientID %>' title="第 2 个面板（20）">第 2 个面板（20）</strong>）：指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

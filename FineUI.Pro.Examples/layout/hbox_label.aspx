@@ -63,5 +63,19 @@
             </Items>
         </f:Panel>
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示在水平盒布局中混排标签和其它字段。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
+    <ul>
+        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>' title="面板（ContentPanel）">面板（ContentPanel）</strong>中对照同排标签、字段及它们的对齐位置。<br />结果：各项按自己的宽度和本页对齐规则水平排列。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>' title="面板（ContentPanel）">面板（ContentPanel）</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>' title="面板（Label）">面板（Label）</strong>）：父容器使用本页对应的布局方式，决定其直接子项的排列。 本页使用<code>HBox</code>。</li>
+        <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="内容面板">内容面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel4").ClientID %>' title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Label1").ClientID %>' title="第 2 个标签">第 2 个标签</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel8").ClientID %>' title="第 4 个面板">第 4 个面板</strong>）：直接子项按此比例分配父容器剩余空间。 本页各组分别使用<code>1</code>、<code>2</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

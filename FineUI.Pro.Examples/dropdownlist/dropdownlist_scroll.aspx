@@ -53,13 +53,13 @@
             <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>滚动查看后面的选项</h3>
             <ol>
                 <li>
-                    展开选项面板并滚动到底部，选择“可选择项20”。<br />
-                    结果：面板内部滚动，末尾选项仍可选；读取结果包含 Value20。
+                    展开选项面板并滚动到底部，选择<code>可选择项20</code>。<br />
+                    结果：面板内部滚动，末尾选项仍可选；读取结果包含 <code>Value20</code>。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>MaxHeight</code>：弹层高度受限后出现滚动条，可以继续滚动访问后面的选项。</li>
+                <li><code>MaxHeight</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：弹层高度受限后出现滚动条，可以继续滚动访问后面的选项。</li>
             </ul>
         </section>
     </template>

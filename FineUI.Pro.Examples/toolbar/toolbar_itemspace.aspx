@@ -8,10 +8,10 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel IsFluid="true" ShowBorder="true" BodyPadding="10px" Title="面板" EnableCollapse="false"
+        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" ShowBorder="true" BodyPadding="10px" Title="面板" EnableCollapse="false"
             runat="server">
             <Toolbars>
-                <f:Toolbar ItemSpace="0" runat="server">
+                <f:Toolbar ID="ToolbarExample1" ClientIDMode="Static" ItemSpace="0" runat="server">
                     <Items>
                         <f:Button ID="Button1" runat="server" Text="按钮一"></f:Button>
                         <f:Button ID="Button2" runat="server" Text="按钮二"></f:Button>
@@ -25,7 +25,7 @@
                         <f:Button ID="Button6" runat="server" Text="按钮六"></f:Button>
                     </Items>
                 </f:Toolbar>
-                <f:Toolbar ItemSpace="16" runat="server">
+                <f:Toolbar ID="ToolbarExample3" ClientIDMode="Static" ItemSpace="16" runat="server">
                     <Items>
                         <f:Button ID="Button7" runat="server" Text="按钮七"></f:Button>
                         <f:Button ID="Button8" runat="server" Text="按钮八"></f:Button>
@@ -47,5 +47,18 @@
         </f:Panel>
 
     </form>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示改变工具栏相邻子项之间的间隔，分别对照不同间距。</p>
+    <h3><i class="f-iconfont f-iconfont-layout" aria-hidden="true"></i>比较相邻项目距离</h3>
+    <ul>
+        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="面板">面板</strong>及本页其它工具栏中各按钮之间的空隙。<br />结果：项目按本页设置的间距排列；间距改变不会调整按钮自身的文字与宽度。</li>
+    </ul>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>ItemSpace</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarExample1").ClientID %>' title="第 1 个工具栏">第 1 个工具栏</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarExample3").ClientID %>' title="第 3 个工具栏">第 3 个工具栏</strong>）：控制工具栏子项间距，本页各组使用不同值。 本页各组分别使用<code>0</code>、<code>16</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>

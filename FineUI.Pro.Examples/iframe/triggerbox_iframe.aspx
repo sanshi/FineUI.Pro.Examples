@@ -82,5 +82,22 @@
         }
 
     </script>
+<template id="example-description">
+<section aria-label="页面描述">
+    <p>演示触发器把当前值传入子窗体，并在回填后让父页后台读取最新字段。</p>
+    <h3><i class="f-iconfont f-iconfont-window" aria-hidden="true"></i>传入、回填与提交</h3>
+    <ol>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TriggerBox1").ClientID %>' title="在父页面弹出窗体的触发器">在父页面弹出窗体的触发器</strong>右侧搜索图标。<br />结果：客户端把当前文字编码到子页参数，并指定关闭时需要回写的控件；子页显示当前值。</li>
+        <li>在子页修改选择并按该页入口确认。<br />结果：选择值回填对应触发器和隐藏字段，窗体关闭。</li>
+        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="在父页面弹出窗体的提交">在父页面弹出窗体的提交</strong>。<br />结果：父页回发读取已经回填的当前值，并在结果标签中显示。</li>
+    </ol>
+    <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+    <ul class="example-description-properties">
+        <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TriggerBox1").ClientID %>' title="在父页面弹出窗体的触发器">在父页面弹出窗体的触发器</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TriggerBox2").ClientID %>' title="在本页面弹出窗体的触发器">在本页面弹出窗体的触发器</strong>）：触发器禁止直接编辑，由子页回填。 本页使用<code>false</code>。</li>
+        <li><code>setSaveStateControlIds()</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="第 1 个窗口（编辑）">第 1 个窗口（编辑）</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window2").ClientID %>' title="第 2 个窗口（编辑）">第 2 个窗口（编辑）</strong>）：打开前指定关闭回发需要保留的字段，避免回填值丢失。</li>
+        <li><code>Target</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="第 1 个窗口（编辑）">第 1 个窗口（编辑）</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window2").ClientID %>' title="第 2 个窗口（编辑）">第 2 个窗口（编辑）</strong>）：两组分别在父页面和当前页面显示窗体。 本页各组分别使用<code>Parent</code>、<code>Self</code>。</li>
+    </ul>
+</section>
+</template>
 </body>
 </html>
