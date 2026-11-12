@@ -49,7 +49,7 @@
     </ol>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>AutoLeafIdentification</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：保留目录的展开能力，允许原来没有子项的节点加载子树。 本页使用<code>false</code>。</li>
+        <li><code>AutoLeafIdentification</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：设为<code>false</code>，保留目录的展开能力，允许原来没有子项的节点加载子树。</li>
     </ul>
 </section>
 </template>

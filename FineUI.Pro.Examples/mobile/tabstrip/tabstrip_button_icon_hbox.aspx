@@ -111,9 +111,9 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>ShowTabHeader</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="选项卡">选项卡</strong>）：设为 <code>false</code>，隐藏原生标签标题栏。 本页使用<code>false</code>。</li>
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarExample1").ClientID %>' title="工具栏">工具栏</strong>）：导航按钮所在容器使用 <code>HBox</code> 或由 <code>Fit</code> 包含 <code>HBox</code> 按钮组。 本页使用<code>HBox</code>。</li>
-        <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="one">one</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>' title="two">two</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button3").ClientID %>' title="three">three</strong>）：对应导航按钮等分剩余宽度。 本页使用<code>1</code>。</li>
+        <li><code>ShowTabHeader</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="选项卡">选项卡</strong>）：设为<code>false</code>，隐藏原生标签标题栏。</li>
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarExample1").ClientID %>' title="工具栏">工具栏</strong>）：设为<code>HBox</code>，导航按钮所在容器使用 <code>HBox</code> 或由 <code>Fit</code> 包含 <code>HBox</code> 按钮组。</li>
+        <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="one">one</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>' title="two">two</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button3").ClientID %>' title="three">three</strong>）：设为<code>1</code>，对应导航按钮等分剩余宽度。</li>
     </ul>
 </section>
 </template>

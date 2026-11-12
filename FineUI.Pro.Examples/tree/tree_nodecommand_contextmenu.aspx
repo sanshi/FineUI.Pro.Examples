@@ -58,7 +58,7 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>OnNodeCommand</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：后台统一处理已开启点击事件的节点命令。 本页使用<code>Tree1_NodeCommand</code>。</li>
+        <li><code>OnNodeCommand</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：设为<code>Tree1_NodeCommand</code>，后台统一处理已开启点击事件的节点命令。</li>
         <li><code>EnableClickEvent</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：只为需要回发的指定节点开启命令。</li>
         <li><code>ClickHandler</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：西平县先执行确认处理，返回 <code>false</code> 时阻止后续回发。</li>
     </ul>

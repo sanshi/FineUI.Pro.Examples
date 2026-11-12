@@ -45,7 +45,7 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>AutoLeafIdentification</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="延迟加载的树控件">延迟加载的树控件</strong>）：设为 <code>false</code>，首次没有子节点的目录仍可以显示展开入口。 本页使用<code>false</code>。</li>
+        <li><code>AutoLeafIdentification</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="延迟加载的树控件">延迟加载的树控件</strong>）：设为<code>false</code>，首次没有子节点的目录仍可以显示展开入口。</li>
         <li><code>nodelazyload</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="延迟加载的树控件">延迟加载的树控件</strong>）：展开尚未加载的节点时取得其 <code>ID</code>，并加载对应的子节点。</li>
     </ul>
 </section>

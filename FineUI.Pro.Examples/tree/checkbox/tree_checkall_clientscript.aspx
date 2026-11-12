@@ -69,7 +69,7 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>EnableCheckBox</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：显示可操作的节点复选框。 本页使用<code>true</code>。</li>
+        <li><code>EnableCheckBox</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：设为<code>true</code>，显示可操作的节点复选框。</li>
     </ul>
 </section>
 </template>

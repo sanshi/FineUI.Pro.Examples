@@ -97,8 +97,8 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>CloseOnDblclick</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="选项卡">选项卡</strong>）：整体开启双击关闭；单个标签可以另外设为 <code>false</code>。 本页使用<code>true</code>。</li>
-        <li><code>EnableClose</code>（本页各选项卡页，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tab1").ClientID %>' title="标签一">标签一</strong>）：为 <code>false</code> 时，无论关闭图标还是双击都不能关闭该标签。 本页使用<code>true</code>。</li>
+        <li><code>CloseOnDblclick</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="选项卡">选项卡</strong>）：设为<code>true</code>，整体开启双击关闭；单个标签可以另外设为 <code>false</code>。</li>
+        <li><code>EnableClose</code>（本页各选项卡页，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tab1").ClientID %>' title="标签一">标签一</strong>）：设为<code>true</code>，为 <code>false</code> 时，无论关闭图标还是双击都不能关闭该标签。</li>
     </ul>
 </section>
 </template>

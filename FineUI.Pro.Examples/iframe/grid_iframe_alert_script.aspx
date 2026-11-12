@@ -73,8 +73,8 @@
     </ol>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid2").ClientID %>' title="Grid2">Grid2</strong>）：表格使用稳定的记录 <code>ID</code> 识别当前行。 本页使用<code>Id</code>。</li>
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="弹出窗体">弹出窗体</strong>）：编辑窗体使用独立子页面。 本页使用<code>true</code>。</li>
+        <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid2").ClientID %>' title="Grid2">Grid2</strong>）：设为<code>Id</code>，表格使用稳定的记录 <code>ID</code> 识别当前行。</li>
+        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="弹出窗体">弹出窗体</strong>）：设为<code>true</code>，编辑窗体使用独立子页面。</li>
         <li><code>IFrameUrl</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="弹出窗体">弹出窗体</strong>）：本页根据当前记录拼接子页面地址及必要参数。</li>
         <li><code>parentWindow</code>（<strong>子页面与父页面交互</strong>）：子页面向正确的父页面发送本页约定的更新通知。</li>
     </ul>

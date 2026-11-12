@@ -97,9 +97,9 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>EnableCollapse</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：开启标题栏的折叠入口。 本页使用<code>true</code>。</li>
-        <li><code>Title</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：后台更新面板标题。 本页使用<code>面板</code>。</li>
-        <li><code>Text</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarText1").ClientID %>' title="第 1 个ToolbarText">第 1 个ToolbarText</strong>）：更新对应工具栏文本项的内容。 本页使用<code>工具条文本一</code>。</li>
+        <li><code>EnableCollapse</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：设为<code>true</code>，开启标题栏的折叠入口。</li>
+        <li><code>Title</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：初始设为<code>面板</code>，后台更新面板标题。</li>
+        <li><code>Text</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarText1").ClientID %>' title="第 1 个ToolbarText">第 1 个ToolbarText</strong>）：初始设为<code>工具条文本一</code>，更新对应工具栏文本项的内容。</li>
     </ul>
 </section>
 </template>

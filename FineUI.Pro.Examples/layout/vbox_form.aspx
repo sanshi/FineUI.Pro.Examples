@@ -36,8 +36,8 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="表单（Layout=VBox）">表单（Layout=VBox）</strong>）：父容器使用本页对应的布局方式，决定其直接子项的排列。 本页使用<code>VBox</code>。</li>
-        <li><code>Height</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="表单（Layout=VBox）">表单（Layout=VBox）</strong>）：显式高度限定可用区域；未设置固定高度的对照组按内容和父布局计算。 本页使用<code>400px</code>。</li>
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="表单（Layout=VBox）">表单（Layout=VBox）</strong>）：设为<code>VBox</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。</li>
+        <li><code>Height</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="表单（Layout=VBox）">表单（Layout=VBox）</strong>）：设为<code>400px</code>，显式高度限定可用区域；未设置固定高度的对照组按内容和父布局计算。</li>
     </ul>
 </section>
 </template>

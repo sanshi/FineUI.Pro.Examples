@@ -87,9 +87,9 @@
     </ol>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlSheng").ClientID %>' title="省份">省份</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlShi").ClientID %>' title="地区市">地区市</strong>）：省、市变化时更新下一层数据。 本页各组分别使用<code>ddlSheng_SelectedIndexChanged</code>、<code>ddlShi_SelectedIndexChanged</code>。</li>
+        <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlSheng").ClientID %>' title="省份">省份</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlShi").ClientID %>' title="地区市">地区市</strong>）：各组分别设为<code>ddlSheng_SelectedIndexChanged</code>、<code>ddlShi_SelectedIndexChanged</code>，省、市变化时更新下一层数据。</li>
         <li><code>DataValueField</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlSheng").ClientID %>' title="省份">省份</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlShi").ClientID %>' title="地区市">地区市</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ddlXian").ClientID %>' title="县区市">县区市</strong>）：用稳定的地区代码关联上下级数据。</li>
-        <li><code>ValidateForms</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="选择">选择</strong>）：选择按钮先检查当前组合。 本页使用<code>SimpleForm1</code>。</li>
+        <li><code>ValidateForms</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="选择">选择</strong>）：设为<code>SimpleForm1</code>，选择按钮先检查当前组合。</li>
     </ul>
 </section>
 </template>

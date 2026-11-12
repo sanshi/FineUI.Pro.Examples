@@ -38,7 +38,7 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体一（数字输入框会自动获取焦点）">窗体一（数字输入框会自动获取焦点）</strong>）：窗体加载独立的数字输入页。 本页使用<code>true</code>。</li>
+        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体一（数字输入框会自动获取焦点）">窗体一（数字输入框会自动获取焦点）</strong>）：设为<code>true</code>，窗体加载独立的数字输入页。</li>
     </ul>
 </section>
 </template>

@@ -73,7 +73,7 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>HideOnClick</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("MenuText1").ClientID %>' title="第 1 个MenuText">第 1 个MenuText</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("MenuText2").ClientID %>' title="第 2 个MenuText">第 2 个MenuText</strong>）：控制文字菜单项点击后是否关闭当前菜单。 本页各组分别使用<code>false</code>、<code>true</code>。</li>
+        <li><code>HideOnClick</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("MenuText1").ClientID %>' title="第 1 个MenuText">第 1 个MenuText</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("MenuText2").ClientID %>' title="第 2 个MenuText">第 2 个MenuText</strong>）：各组分别设为<code>false</code>、<code>true</code>，控制文字菜单项点击后是否关闭当前菜单。</li>
     </ul>
 </section>
 </template>

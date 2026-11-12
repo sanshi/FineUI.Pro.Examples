@@ -57,8 +57,8 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Form2").ClientID %>' title="表单（Height=450px Width=750px Layout=Table）">表单（Height=450px Width=750px Layout=Table）</strong>）：父容器使用本页对应的布局方式，决定其直接子项的排列。 本页使用<code>Table</code>。</li>
-        <li><code>TableConfigColumns</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Form2").ClientID %>' title="表单（Height=450px Width=750px Layout=Table）">表单（Height=450px Width=750px Layout=Table）</strong>）：规定表格布局每行的列数。 本页使用<code>3</code>。</li>
+        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Form2").ClientID %>' title="表单（Height=450px Width=750px Layout=Table）">表单（Height=450px Width=750px Layout=Table）</strong>）：设为<code>Table</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。</li>
+        <li><code>TableConfigColumns</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Form2").ClientID %>' title="表单（Height=450px Width=750px Layout=Table）">表单（Height=450px Width=750px Layout=Table）</strong>）：设为<code>3</code>，规定表格布局每行的列数。</li>
         <li><code>ColSpan</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="Panel1">Panel1</strong>）：当前子项占用多列。</li>
     </ul>
 </section>

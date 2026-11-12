@@ -29,8 +29,8 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板一">面板一</strong>）：面板承载下一层独立页面。 本页使用<code>true</code>。</li>
-        <li><code>IFrameUrl</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板一">面板一</strong>）：指定下一层页面地址。 本页使用<code>parent_postback_top2.aspx</code>。</li>
+        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板一">面板一</strong>）：设为<code>true</code>，面板承载下一层独立页面。</li>
+        <li><code>IFrameUrl</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板一">面板一</strong>）：设为<code>parent_postback_top2.aspx</code>，指定下一层页面地址。</li>
         <li><code>GetCustomEventReference()</code>（<strong>子页通知代码</strong>）：子页向实际目标父页发送本例约定的事件和参数。</li>
     </ul>
 </section>

@@ -63,7 +63,7 @@
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
         <li><code>NodeID</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：本页保留中文、空格及 .$#@!^&* 等字符作为完整标识。</li>
-        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：允许选择多个节点，再一次读取当前集合。 本页使用<code>true</code>。</li>
+        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：设为<code>true</code>，允许选择多个节点，再一次读取当前集合。</li>
     </ul>
 </section>
 </template>

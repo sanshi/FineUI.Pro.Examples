@@ -59,7 +59,7 @@
     </ol>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>Position</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Toolbar1").ClientID %>' title="工具栏">工具栏</strong>）：保存工具栏放在窗体底部。 本页使用<code>Bottom</code>。</li>
+        <li><code>Position</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Toolbar1").ClientID %>' title="工具栏">工具栏</strong>）：设为<code>Bottom</code>，保存工具栏放在窗体底部。</li>
         <li><code>getIFrameWindow()</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体一">窗体一</strong>）：取得子页窗口对象，调用子页公开的保存函数。</li>
     </ul>
 </section>

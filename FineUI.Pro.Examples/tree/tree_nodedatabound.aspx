@@ -30,7 +30,7 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>OnNodeDataBound</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（NodeDataBound事件）">树控件（NodeDataBound事件）</strong>）：每个节点绑定后读取对应 XML 数据并设置本页显示。 本页使用<code>Tree1_NodeDataBound</code>。</li>
+        <li><code>OnNodeDataBound</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（NodeDataBound事件）">树控件（NodeDataBound事件）</strong>）：设为<code>Tree1_NodeDataBound</code>，每个节点绑定后读取对应 XML 数据并设置本页显示。</li>
         <li><code>TextRawHtml</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（NodeDataBound事件）">树控件（NodeDataBound事件）</strong>）：使用本页可信模板包裹文字，显示高亮样式。</li>
     </ul>
 </section>

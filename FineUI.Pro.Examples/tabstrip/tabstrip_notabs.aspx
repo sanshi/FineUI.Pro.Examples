@@ -124,7 +124,7 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tab1").ClientID %>' title="标签一">标签一</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tab2").ClientID %>' title="标签二">标签二</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tab3").ClientID %>' title="标签三">标签三</strong>）：本页标签初始隐藏，显示后才能在标题栏选择。 本页使用<code>true</code>。</li>
+        <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tab1").ClientID %>' title="标签一">标签一</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tab2").ClientID %>' title="标签二">标签二</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tab3").ClientID %>' title="标签三">标签三</strong>）：初始设为<code>true</code>，本页标签初始隐藏，显示后才能在标题栏选择。</li>
     </ul>
 </section>
 </template>

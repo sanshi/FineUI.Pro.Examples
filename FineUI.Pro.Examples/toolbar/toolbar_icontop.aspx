@@ -48,8 +48,8 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>IconAlign</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="刷新">刷新</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>' title="新建文件夹">新建文件夹</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button3").ClientID %>' title="新建文件">新建文件</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button5").ClientID %>' title="下载">下载</strong>）：普通按钮设为 <code>Top</code>，将图标放到文字上方。 本页使用<code>Top</code>。</li>
-        <li><code>ButtonIconAlign</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("filePhoto").ClientID %>' title="上传控件">上传控件</strong>）：上传控件的内部按钮使用上方图标。 本页使用<code>Top</code>。</li>
+        <li><code>IconAlign</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="刷新">刷新</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>' title="新建文件夹">新建文件夹</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button3").ClientID %>' title="新建文件">新建文件</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button5").ClientID %>' title="下载">下载</strong>）：设为<code>Top</code>，普通按钮设为 <code>Top</code>，将图标放到文字上方。</li>
+        <li><code>ButtonIconAlign</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("filePhoto").ClientID %>' title="上传控件">上传控件</strong>）：设为<code>Top</code>，上传控件的内部按钮使用上方图标。</li>
     </ul>
 </section>
 </template>

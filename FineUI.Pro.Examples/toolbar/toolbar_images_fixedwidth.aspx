@@ -66,7 +66,7 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>ImageWidth</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Image1").ClientID %>' title="第 1 个图片">第 1 个图片</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Image2").ClientID %>' title="第 2 个图片">第 2 个图片</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Image3").ClientID %>' title="第 3 个图片">第 3 个图片</strong>）：为各图片明确预留宽度。 本页使用<code>16px</code>。</li>
+        <li><code>ImageWidth</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Image1").ClientID %>' title="第 1 个图片">第 1 个图片</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Image2").ClientID %>' title="第 2 个图片">第 2 个图片</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Image3").ClientID %>' title="第 3 个图片">第 3 个图片</strong>）：设为<code>16px</code>，为各图片明确预留宽度。</li>
     </ul>
 </section>
 </template>

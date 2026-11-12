@@ -44,8 +44,8 @@
     </ul>
     <h3><i class="f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>ShowSelectedNode</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：设为 <code>false</code>，不显示选中节点外观。 本页使用<code>false</code>。</li>
-        <li><code>EnableNodeHoverState</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：设为 <code>false</code>，不显示鼠标悬停外观。 本页使用<code>false</code>。</li>
+        <li><code>ShowSelectedNode</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：设为<code>false</code>，不显示选中节点外观。</li>
+        <li><code>EnableNodeHoverState</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：设为<code>false</code>，不显示鼠标悬停外观。</li>
     </ul>
 </section>
 </template>
