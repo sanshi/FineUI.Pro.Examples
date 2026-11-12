@@ -27,7 +27,26 @@
     </form>
     <br />
     <br />
-    注：本表格不显示选中项。
+
     <script src="<%= PageContext.ResolveUrl("~/res/js/gridcard.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>保留卡片内容展示，但点击卡片时不显示常规行选中高亮。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>查看隐藏选择高亮后的点击效果</h3>
+            <ul>
+                <li>依次点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>前两张卡片正文。<br />结果：页面不出现常规选中行的强调外观，卡片资料正常显示。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：本表格不显示选中项。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>ShowSelectedRow</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为
+                    <code>false</code>，关闭普通选中行高亮，不影响卡片内容。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

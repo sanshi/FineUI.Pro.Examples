@@ -64,5 +64,25 @@
 
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>通过表头输入条件，用数据请求把过滤参数交给网址接口，再显示匹配记录。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>用条件重新请求异步数据</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong><strong>姓名</strong>过滤中选择包含，输入<code>张</code>并确定。<br />结果：浏览器通过本页配置的 POST 数据请求提交过滤条件，接口返回匹配记录；清除条件后重新取得完整结果。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>DataMethod</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为 <code>POST</code>，使用 POST
+                    向 DataUrl 发送过滤参数，与普通按钮回发分别处理。</li>
+                <li><code>AllowFilters</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为
+                    <code>true</code>，为启用过滤的列创建条件入口，结果由数据接口筛选返回。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

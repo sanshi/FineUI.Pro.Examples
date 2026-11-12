@@ -56,5 +56,24 @@
 
     </script>
     <script src="<%= PageContext.ResolveUrl("~/res/js/gridcard.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>点击另一张卡片时累积选择，不清掉之前已选择的卡片。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>按本页规则选择卡片</h3>
+            <ol>
+                <li>依次点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>前两张卡片正文。<br />结果：两张卡片同时保留选择；再操作一张卡片可取消对应项，不改变卡片资料。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="选中了哪些行">选中了哪些行</strong>。<br />结果：提示当前选中卡片对应的记录，不把卡片位置当作业务主键。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为
+                    <code>true</code>，新增选择时保留已有选中项。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

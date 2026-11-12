@@ -26,5 +26,24 @@
         </f:Grid>
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/gridcard.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>把表格记录渲染成学生资料卡片，随可用宽度自动排列换行。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>按卡片查看同一条记录</h3>
+            <ul>
+                <li>查看<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>第一张卡片，再调整示例可用宽度。<br />结果：每张卡片显示编号、<strong>姓名</strong>、<strong>性别</strong>、日期和专业等列信息；卡片按宽度重新排列，记录资料不变。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>DisplayType</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为 <code>Card</code>，使用 Card
+                    渲染记录，分页与选择仍基于同一组行数据。</li>
+                <li><code>CardRendererFunction</code>（<strong>页面展示配置</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：根据当前行生成卡片内容，可调用列渲染结果取得格式化文字。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

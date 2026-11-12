@@ -33,7 +33,7 @@
                         <f:Label runat="server" Text="转到行："></f:Label>
                         <f:NumberBox ID="nbRowNumber" runat="server" MinValue="1" MaxValue="10000" Text="1000" Increment="100" EnableCommas="true">
                         </f:NumberBox>
-                        <f:Button runat="server" Text="Go" ClickHandler="onGotoRow"></f:Button>
+                        <f:Button ID="btnGoToRow" ClientIDMode="Static" runat="server" Text="Go" ClickHandler="onGotoRow"></f:Button>
                         <f:ToolbarFill runat="server"></f:ToolbarFill>
                         <f:Label ID="labCurrentPosition" runat="server"></f:Label>
                     </Items>
@@ -55,5 +55,25 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>输入从 1 开始的行号，把大数据表格滚动到指定记录。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>直接跳到中间记录</h3>
+            <ol>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("nbRowNumber").ClientID %>'
+                        title="转到行">转到行</strong>输入<code>5000</code>，点击<strong class="example-control-reference" data-example-control="btnGoToRow"
+                        title="Go">Go</strong>。<br />结果：浏览器滚动到第 5000 行附近并渲染该位置的记录，不必逐页翻到该行。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>scrollToRow</code>（<strong>定位脚本</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（网址数据源，10000行）">表格（网址数据源，10000行）</strong>）：方法接收从 0 开始的行索引，本页把输入行号减 1 后再传入。</li>
+                <li><code>EnableBigDataRowTip</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（网址数据源，10000行）">表格（网址数据源，10000行）</strong>）：初始为 <code>true</code>，本页关闭默认悬浮行数提示，定位或自定义标签按本页脚本处理。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

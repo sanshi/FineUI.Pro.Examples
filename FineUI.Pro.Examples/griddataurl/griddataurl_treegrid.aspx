@@ -28,5 +28,26 @@
 
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>从数据网址取得带父子关系的记录，在名称列显示树形层级。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>异步数据到达后展开树</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>目录前的展开箭头。<br />结果：按加载数据的主键与父主键显示后代，其他分支保留当前展开状态。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>DataUrl</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为
+                    <code>~/griddataurl/griddataurl_treegrid.ashx</code>，为树节点提供数据接口。
+                </li>
+                <li><code>DataParentIDField</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为
+                    <code>ParentId</code>，使用父主键关联节点，不只按返回数组位置判断层级。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

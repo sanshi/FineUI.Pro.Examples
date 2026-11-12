@@ -58,5 +58,27 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在初始表格显示基础上切换表格与卡片，复用同一份记录。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换显示形式</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnDisplayCard").ClientID %>'
+                        title="卡片模式（卡片图标）">卡片模式（卡片图标）</strong>，再点击<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnDisplayDefault").ClientID %>'
+                        title="表格模式（表格图标）">表格模式（表格图标）</strong>。<br />结果：记录在行列形式与卡片形式之间转换，名称、<strong>性别</strong>等数据保留；模式按钮按下状态与实际显示一致，不发起业务保存。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>DisplayType</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为
+                    <code>Default</code>，初次采用本页声明的模式，按钮在 Default 与 Card 之间切换。
+                </li>
+                <li><code>CardRendererFunction</code>（<strong>页面展示配置</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：卡片模式调用对应内容函数；表格模式仍使用原列定义。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

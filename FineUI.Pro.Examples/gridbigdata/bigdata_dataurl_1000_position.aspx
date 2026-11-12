@@ -30,12 +30,33 @@
             </Columns>
         </f:Grid>
         <br />
-        <br />
-        注：行数提示显式在分页工具栏中（需启用EnableBigDataRowTip和PagingToolbarVisible，并设置BigDataRowTipPosition=PagingToolbar）。
-        <br />
+        <br /><br />
         <br />
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>把大数据可见行范围提示放到分页工具栏，滚动时直接更新栏中文字。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>在底栏查看当前范围</h3>
+            <ul>
+                <li>滚动<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（网址数据源，1000行）">表格（网址数据源，1000行）</strong>到中间位置。<br />结果：分页工具栏的显示起止行号随视口变化，总数仍为本页全部记录；不再依靠悬浮位置显示该提示。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>注：行数提示显式在分页工具栏中（需启用EnableBigDataRowTip和PagingToolbarVisible，并设置BigDataRowTipPosition=PagingToolbar）。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>BigDataRowTipPosition</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格（网址数据源，1000行）">表格（网址数据源，1000行）</strong>）：初始为
+                    <code>PagingToolbar</code>，采用 PagingToolbar，把范围信息放在表格底栏。
+                </li>
+                <li><code>PagingToolbarVisible</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格（网址数据源，1000行）">表格（网址数据源，1000行）</strong>）：初始为
+                    <code>true</code>，显示承载范围文字的工具栏。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

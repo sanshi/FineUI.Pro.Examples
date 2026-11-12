@@ -32,5 +32,25 @@
 
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>使用数据网址分页，区分浏览器处理与接口重新取数。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>分别核对换页与排序动作</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格">表格</strong>分页栏下一页，再返回第一页。<br />结果：每次通过 DataUrl 提交页索引与页大小，接口仅返回当前页并提供总记录数，页码与记录同步变化。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>IsDatabasePaging</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为
+                    <code>true</code>，只加载一页数据，接口还需提供总记录数。
+                </li>
+                <li><code>PageSize</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格">表格</strong>）：初始为 <code>5</code>，限制每页显示记录数。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>
