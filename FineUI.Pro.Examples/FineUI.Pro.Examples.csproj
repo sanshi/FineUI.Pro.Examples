@@ -1008,6 +1008,7 @@
     <Content Include="res\css\index.css" />
     <Content Include="res\js\common.js" />
     <Content Include="res\js\source-code-viewer.js" />
+    <Content Include="res\js\source-code-filter.js" />
     <Content Include="res\css\source-code-viewer.css" />
     <Content Include="res\js\grid.js" />
     <Content Include="res\js\global-properties.js" />

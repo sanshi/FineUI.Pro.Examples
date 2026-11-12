@@ -54,7 +54,9 @@ namespace FineUI.Pro.Examples
 
                 // 读取文件内容
                 string content = File.ReadAllText(fullPath);
-                desc.Text = "<pre class=\"prettyprint linenums\">" + HttpUtility.HtmlEncode(content) + "</pre>"; // linenums
+                bool isMarkup = fileType == "aspx" || fileType == "ascx" || fileType == "master";
+                string markupAttribute = isMarkup ? " data-example-page-source" : String.Empty;
+                desc.Text = "<pre class=\"prettyprint linenums\"" + markupAttribute + ">" + HttpUtility.HtmlEncode(content) + "</pre>"; // linenums
 
 
                 // 深色主题下，使用深色的prettify主题
