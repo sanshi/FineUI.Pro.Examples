@@ -28,13 +28,12 @@
         </f:Label>
         <br />
         <br />
-        注：
-        <ul>
-            <li>列[2014年]到[2017年]是在后台动态创建的</li>
-            <li>修改第一列的值，会同时更新后面几列的值</li>
-        </ul>
+
     </form>
-    <script type="application/json" id="yearRange"><%= YearRangeJson %></script>
+    <script type="application/json" id="yearRange">
+        <%= YearRangeJson %>
+
+    </script>
     <script>
         var yearRange = JSON.parse(document.getElementById('yearRange').textContent);
         window._MINYEAR = yearRange.minYear;
@@ -69,5 +68,32 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>按年份动态创建费用编辑列，首年修改可同步后续年份，并计算同一行合计。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>动态年份列联动计算</h3>
+            <ol>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（单击编辑）">表格（单击编辑）</strong>把最早年份费用改为<code>100</code>并结束编辑。<br />结果：后续年份费用同步为 100，合计重新按各年当前费用求和。</li>
+                <li>单独修改后面某一年的费用，再点击<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>'
+                        title="保存数据">保存数据</strong>。<br />结果：只更新该年及同一行合计；后台把各年费用写回示例数据，重新绑定后动态列继续正确显示。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <ul>
+                <li>列[2014年]到[2017年]是在后台动态创建的</li>
+                <li>修改第一列的值，会同时更新后面几列的值</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Columns / RowDataBoundFunction</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格（单击编辑）">表格（单击编辑）</strong>）：创建年份列，再在行绑定时将
+                    YearData 展开为各年份的列值。</li>
+                <li><code>afteredit / updateCellValue</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（单击编辑）">表格（单击编辑）</strong>）：修改最早年份时同步后续年份；任一费用变化后重算当前行的 TotalFee。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

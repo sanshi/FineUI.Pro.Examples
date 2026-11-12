@@ -77,15 +77,6 @@
         </f:Label>
         <br />
         <br />
-        本示例的很多功能都在客户端完成：
-        <ul>
-            <li>[新增数据]按钮的操作</li>
-            <li>[删除选中行]按钮的操作</li>
-            <li>[重置表格数据]按钮的操作</li>
-            <li>表格行中删除图标的操作</li>
-            <li>表格行中姓名列的编辑器TriggerBox，其点击触发按钮的操作</li>
-            <li>更新合计行操作（如下两种情况下触发：1.更新单元格值时 2.表格的 dataload 客户端事件）</li>
-        </ul>
     </form>
     <script>
         var grid1ClientID = '<%= Grid1.ClientID %>';
@@ -229,5 +220,38 @@
     </script>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>按 3% 税率联动计算不含税金额、含税金额与税额，并同步更新整表合计。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>行内联动与合计同步变化</h3>
+            <ol>
+                <li>编辑<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（单击编辑）">表格（单击编辑）</strong>一行的<strong>金额（不含税）</strong>为<code>100</code>，再结束编辑。<br />结果：浏览器立即把同一行<strong>金额（含税）</strong>计算为
+                    103.00、<strong>税额</strong>计算为 3.00，计算结果保留两位小数。</li>
+                <li>再从<strong>金额（含税）</strong>或<strong>税额</strong>列修改同一行。<br />结果：按本次改动的列反算另外两列；批量赋值期间暂停相关事件，避免互相触发形成循环。底部三列合计也按当前行数据重新计算，空数值按 0 参与。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <ul>
+                <li>[新增数据]按钮的操作</li>
+                <li>[删除选中行]按钮的操作</li>
+                <li>[重置表格数据]按钮的操作</li>
+                <li>表格行中删除图标的操作</li>
+                <li>表格行中姓名列的编辑器TriggerBox，其点击触发按钮的操作</li>
+                <li>更新合计行操作（如下两种情况下触发：1.更新单元格值时 2.表格的 dataload 客户端事件）</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>afteredit / updateCellValue</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（单击编辑）">表格（单击编辑）</strong>）：只对本次行更新关联金额，以行标识和列标识确定目标。</li>
+                <li><code>F.noEvent</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（单击编辑）">表格（单击编辑）</strong>）：在关联赋值期间临时不触发事件，避免金额计算反复相互调用。</li>
+                <li><code>updateSummaryCellValue</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（单击编辑）">表格（单击编辑）</strong>）：按当前行金额重新累计，更新合计单元格并避免添加普通修改标记。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

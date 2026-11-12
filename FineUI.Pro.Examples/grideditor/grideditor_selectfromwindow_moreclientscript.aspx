@@ -82,15 +82,6 @@
         </f:Window>
         <br />
         <br />
-        本示例中如下操作都使用客户端脚本完成：
-        <ul>
-            <li>[新增数据]按钮的操作</li>
-            <li>[删除选中行]按钮的操作</li>
-            <li>[重置表格数据]按钮的操作</li>
-            <li>表格行中删除图标的操作</li>
-            <li>表格行中姓名列的编辑器TriggerBox，其点击触发按钮的操作</li>
-            <li>从弹出窗体中返回数据并更新表格行的操作</li>
-        </ul>
     </form>
     <script>
         var grid1ClientID = '<%= Grid1.ClientID %>';
@@ -186,5 +177,41 @@
     </script>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid-extra.js") %>"></script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>从 IFrame 选择窗体取得用户资料，按原行标识回填当前表格。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>把窗体选择回填到原行</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnNew").ClientID %>'
+                        title="新增数据">新增数据</strong>。<br />结果：表格创建待编辑新行，接下来的选择回填作用于这条行。</li>
+                <li>单击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（进入编辑状态后，从弹出窗体中选择用户）">表格（进入编辑状态后，从弹出窗体中选择用户）</strong>的<strong>姓名</strong>单元格，点击<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("tbxEditorName").ClientID %>'
+                        title="触发器输入框">触发器输入框</strong>的搜索图标。<br />结果：打开选择窗体，并把当前编辑行标识传给子页面，避免回填到其他行。</li>
+                <li>在选择窗体双击张萍萍，或勾选该行后点击选择后关闭。<br />结果：当前行回填张萍萍及其<strong>性别</strong>、年份、专业等资料；子页面调用父页面的更新函数，关闭选择窗体后可继续编辑主表。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <p>本示例中如下操作都使用客户端脚本完成</p>
+            <ul>
+                <li>[新增数据]按钮的操作</li>
+                <li>[删除选中行]按钮的操作</li>
+                <li>[重置表格数据]按钮的操作</li>
+                <li>表格行中删除图标的操作</li>
+                <li>表格行中<strong>姓名</strong>列的编辑器TriggerBox，其点击触发按钮的操作</li>
+                <li>从弹出窗体中返回数据并更新表格行的操作</li>
+            </ul>
+            <p>本示例中如下操作都使用客户端脚本完成：</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableIFrame</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="选择用户">选择用户</strong>）：初始为
+                    <code>true</code>，在窗体中加载独立的用户选择页。
+                </li>
+                <li><code>updateGridRow / cancelEdit / updateCellValue</code>（<strong>页面脚本</strong>，作用于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（进入编辑状态后，从弹出窗体中选择用户）">表格（进入编辑状态后，从弹出窗体中选择用户）</strong>）：子页传回原行标识与字段值，父页先结束当前临时编辑，再更新这一行的关联字段。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

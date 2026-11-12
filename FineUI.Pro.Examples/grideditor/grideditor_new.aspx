@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" EnableCollapse="false"
-            runat="server" AllowCellEditing="true" ClicksToEdit="2" EnableCheckBoxSelect="true" >
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（双击编辑）" EnableCollapse="false" runat="server"
+            AllowCellEditing="true" ClicksToEdit="2" EnableCheckBoxSelect="true">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server">
                     <Items>
@@ -31,8 +31,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                     <Editor>
                         <f:DropDownList Required="true" runat="server">
                             <f:ListItem Text="男" Value="1" />
@@ -42,13 +41,12 @@
                 </f:RenderField>
                 <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份">
                     <Editor>
-                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000"
-                            MaxValue="2025" runat="server">
+                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期">
+                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                    HeaderText="入学日期">
                     <Editor>
                         <f:DatePicker ID="DatePicker1" Required="true" runat="server">
                         </f:DatePicker>
@@ -77,20 +75,22 @@
 
         function onNewClick(event) {
             F(Grid1ClientID).addNewRecord({
-                "Name": "新用户",
-                "Gender": "1",
-                "EntranceYear": "2015",
-                "EntranceDate": '<%= DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") %>',
-                "AtSchool": false,
-                "Major": "化学系"
-            },
-            false);
+                    "Name": "新用户",
+                    "Gender": "1",
+                    "EntranceYear": "2015",
+                    "EntranceDate": '<%= DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") %>',
+                    "AtSchool": false,
+                    "Major": "化学系"
+                },
+                false);
         }
 
         function onResetClick(event) {
             F.confirm({
                 message: '确定要重置表格数据？',
-                ok: function () { F(Grid1ClientID).rejectChanges(); },
+                ok: function() {
+                    F(Grid1ClientID).rejectChanges();
+                },
                 messageIcon: 'question'
             });
         }
@@ -100,8 +100,29 @@
             return value == 1 ? '男' : '女';
         }
 
-
-
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>先在浏览器添加与编辑记录，再统一保存或撤回本轮未提交变更。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>添加后提交新记录</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnNew").ClientID %>'
+                        title="新增数据">新增数据</strong>，填写新记录需要的内容。<br />结果：表格出现一条临时新增记录，可以继续编辑；此时尚未写入后台。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>'
+                        title="保存数据">保存数据</strong>。<br />结果：后台读取本轮变更，分别应用新增、修改与删除，再重新绑定示例数据，浏览器中的变更标记随绑定清除。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>撤回尚未保存的变化</h3>
+            <ul>
+                <li>在保存前点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnReset").ClientID %>'
+                        title="重置表格数据">重置表格数据</strong>并确认。<br />结果：通过客户端撤销恢复上次绑定的状态，未保存的新增和编辑被丢弃，待删除的原记录恢复；已保存到后台的数据不被这个操作回滚。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>addNewRecord</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（双击编辑）">表格（双击编辑）</strong>）：在浏览器创建待新增记录并提供初始字段值，保存前保留新增状态。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

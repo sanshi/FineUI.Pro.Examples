@@ -59,5 +59,33 @@
         }
 
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>对照布尔列的可编辑复选框与静态图标模式，读取指定列的正文勾选状态。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照三列布尔值</h3>
+            <ol>
+                <li>分别点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（单击编辑）">表格（单击编辑）</strong>中的 <strong><strong>RenderCheckField</strong></strong>、<strong><strong>CheckBoxField1</strong></strong>
+                    和 <strong><strong>CheckBoxField2</strong></strong>。<br />结果：<strong><strong>RenderCheckField</strong></strong> 与
+                    <strong><strong>CheckBoxField2</strong></strong> 可切换勾选；<strong><strong>CheckBoxField1</strong></strong> 只显示静态状态图标，不能通过点击编辑。三列初始都从 AtSchool
+                    字段取值。
+                </li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="获取复选框列的状态（CheckBoxField2）">获取复选框列的状态（CheckBoxField2）</strong>。<br />结果：客户端读取 <strong><strong>CheckBoxField2</strong></strong>
+                    各行的勾选状态并回发，后台在下方显示结果；这个入口读取的不是整行选择。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>RenderAsStaticField</code>（<strong>CheckBoxField1</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为
+                    <code>true</code>，为 true 时显示静态图标，为 false 时显示可操作的复选框。
+                </li>
+                <li><code>RenderAsStaticField</code>（<strong>CheckBoxField2</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为
+                    <code>false</code>，为 true 时显示静态图标，为 false 时显示可操作的复选框。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

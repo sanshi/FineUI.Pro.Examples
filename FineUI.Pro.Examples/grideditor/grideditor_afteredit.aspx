@@ -9,9 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false"
-            runat="server" AllowCellEditing="true" ClicksToEdit="1"
-            EnableAfterEditEvent="true" OnAfterEdit="Grid1_AfterEdit" >
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false" runat="server"
+            AllowCellEditing="true" ClicksToEdit="1" EnableAfterEditEvent="true" OnAfterEdit="Grid1_AfterEdit">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名">
@@ -20,8 +19,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                     <Editor>
                         <f:DropDownList ID="ddlGender" Required="true" runat="server">
                             <f:ListItem Text="男" Value="1" />
@@ -31,13 +29,12 @@
                 </f:RenderField>
                 <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份">
                     <Editor>
-                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000"
-                            MaxValue="2025" runat="server">
+                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期">
+                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                    HeaderText="入学日期">
                     <Editor>
                         <f:DatePicker ID="DatePicker1" Required="true" runat="server">
                         </f:DatePicker>
@@ -59,12 +56,27 @@
         <br />
     </form>
     <script>
-
         function renderGender(value) {
             return value == 1 ? '男' : '女';
         }
 
-
     </script>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>单元格结束编辑后立即回发保存当前修改，不再等待单独点击保存按钮。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>结束编辑即提交修改</h3>
+            <ul>
+                <li>单击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格（单击编辑）">表格（单击编辑）</strong>一行的<strong>姓名</strong>，输入<code>测试姓名</code>，再结束编辑。<br />结果：触发结束编辑回发，后台读取本轮修改、更新示例记录并重新绑定，下方显示修改数据。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>OnAfterEdit</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格（单击编辑）">表格（单击编辑）</strong>）：初始为
+                    <code>Grid1_AfterEdit</code>，结束编辑时发起本页后台保存处理。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>
