@@ -34,7 +34,7 @@
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server" Title="Panel2" HeaderStyle="true">
                     <Items>
-                        <f:Button ID="Button4" runat="server" Size="Small" Text="后退" ClickHandler="onBacktoPanel1Click"></f:Button>
+                        <f:Button ID="Button4" runat="server" Text="后退" ClickHandler="onBacktoPanel1Click"></f:Button>
                     </Items>
                 </f:Toolbar>
             </Toolbars>
@@ -68,21 +68,26 @@
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示在两个整屏移动面板之间滑入切换，并通过返回入口恢复上一面板。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>前进与返回</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="转到面板 2">转到面板 2</strong>。<br />结果：面板二滑入并替换当前可见面板。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button4").ClientID %>' title="后退">后退</strong>。<br />结果：按相反方向滑回面板一，各面板内容保留。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>IsViewPort</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>' title="第 2 个面板">第 2 个面板</strong>）：初始为<code>true</code>，每个面板使用当前可用视口区域。</li>
-        <li><code>F.slideLeft()</code>（<strong>面板切换脚本</strong>）：从当前面板滑入下一面板。</li>
-        <li><code>F.slideRight()</code>（<strong>面板切换脚本</strong>）：从下一面板滑回上一面板。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示在两个整屏移动面板之间滑入切换，并通过返回入口恢复上一面板。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>前进与返回</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="转到面板 2">转到面板 2</strong>。<br />结果：面板二滑入并替换当前可见面板。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button4").ClientID %>'
+                        title="后退">后退</strong>。<br />结果：按相反方向滑回面板一，各面板内容保留。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>IsViewPort</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>' title="第 2 个面板">第
+                        2 个面板</strong>）：初始为<code>true</code>，每个面板使用当前可用视口区域。</li>
+                <li><code>F.slideLeft()</code>（<strong>面板切换脚本</strong>）：从当前面板滑入下一面板。</li>
+                <li><code>F.slideRight()</code>（<strong>面板切换脚本</strong>）：从下一面板滑回上一面板。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

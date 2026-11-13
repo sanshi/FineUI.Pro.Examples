@@ -26,25 +26,6 @@
             box-shadow: 0px 0px 8px #333;
         }
 
-        .qrcode {
-            position: absolute;
-            bottom: 0;
-            left: 400px;
-            margin-bottom: 20px;
-        }
-
-        .qrcode img {
-            width: 180px;
-            height: 180px;
-            border: solid 1px #eee;
-        }
-
-        .qrcode .desc {
-            font-size: 12px;
-            text-align: center;
-            padding-top: 5px;
-        }
-
     </style>
 </head>
 <body>
@@ -53,14 +34,6 @@
 
         <div class="phonebg">
             <asp:Literal ID="litIFrame" runat="server"></asp:Literal>
-            <div class="qrcode">
-                <img src="<%= PageContext.ResolveUrl("~/res/images/fineuipro-mobile.png?v2") %>" />
-                <div class="desc">
-                    请打开手机，扫描二维码
-                    <br />
-                    移动示例支持 iOS、Android 系统
-                </div>
-            </div>
         </div>
 
     </form>

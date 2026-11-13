@@ -34,7 +34,7 @@
             <Toolbars>
                 <f:Toolbar runat="server" Title="Panel2" HeaderStyle="true">
                     <Items>
-                        <f:Button ID="Button2" runat="server" Size="Small" Text="后退" ClickHandler="onBacktoPanel1Click"></f:Button>
+                        <f:Button ID="Button2" runat="server" Text="后退" ClickHandler="onBacktoPanel1Click"></f:Button>
                     </Items>
                 </f:Toolbar>
             </Toolbars>
@@ -59,7 +59,7 @@
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server" Title="Panel3" HeaderStyle="true">
                     <Items>
-                        <f:Button ID="Button4" runat="server" Size="Small" Text="后退" ClickHandler="onBacktoPanel2Click"></f:Button>
+                        <f:Button ID="Button4" runat="server" Text="后退" ClickHandler="onBacktoPanel2Click"></f:Button>
                     </Items>
                 </f:Toolbar>
             </Toolbars>
@@ -101,21 +101,26 @@
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示用左右滑动效果切换移动面板，并保留返回入口。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换并返回原面板</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="转到面板 2">转到面板 2</strong>。<br />结果：浏览器通过本页左右滑动动画显示面板二，不重新加载已有面板内容。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button3").ClientID %>' title="转到面板 3">转到面板 3</strong>。<br />结果：继续滑入面板三；返回时按层级回到面板二和面板一。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>F.slideLeft()</code>（<strong>面板切换脚本</strong>）：把当前面板切换为目标面板，使用本页左右滑动效果。</li>
-        <li><code>F.slideRight()</code>（<strong>面板切换脚本</strong>）：沿返回方向恢复上一面板。</li>
-        <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>' title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel3").ClientID %>' title="第 3 个面板">第 3 个面板</strong>）：初始为<code>true</code>，待显示面板初始隐藏，由本页切换脚本管理可见状态。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示用左右滑动效果切换移动面板，并保留返回入口。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换并返回原面板</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="转到面板 2">转到面板 2</strong>。<br />结果：浏览器通过本页左右滑动动画显示面板二，不重新加载已有面板内容。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button3").ClientID %>'
+                        title="转到面板 3">转到面板 3</strong>。<br />结果：继续滑入面板三；返回时按层级回到面板二和面板一。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>F.slideLeft()</code>（<strong>面板切换脚本</strong>）：把当前面板切换为目标面板，使用本页左右滑动效果。</li>
+                <li><code>F.slideRight()</code>（<strong>面板切换脚本</strong>）：沿返回方向恢复上一面板。</li>
+                <li><code>Hidden</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>' title="第 2 个面板">第 2 个面板</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel3").ClientID %>' title="第 3 个面板">第
+                        3 个面板</strong>）：初始为<code>true</code>，待显示面板初始隐藏，由本页切换脚本管理可见状态。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

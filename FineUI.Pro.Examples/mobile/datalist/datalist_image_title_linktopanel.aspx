@@ -26,7 +26,7 @@
             <Toolbars>
                 <f:Toolbar ID="Toolbar2" runat="server" Title="Panel2" HeaderStyle="true">
                     <Items>
-                        <f:Button ID="Button4" runat="server" Size="Small" Text="后退" ClickHandler="onBacktoPanel1Click"></f:Button>
+                        <f:Button ID="Button4" runat="server" Text="后退" ClickHandler="onBacktoPanel1Click"></f:Button>
                     </Items>
                 </f:Toolbar>
             </Toolbars>

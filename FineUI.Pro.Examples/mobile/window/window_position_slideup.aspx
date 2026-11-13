@@ -18,7 +18,7 @@
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" Title="弹出窗体标题" runat="server" HeaderStyle="true" ToolbarAlign="Right">
                     <Items>
-                        <f:Button runat="server" ID="Button1" Size="Small" Text="关闭" ClickHandler="onCloseWindow1Click"></f:Button>
+                        <f:Button runat="server" ID="Button1" Text="关闭" ClickHandler="onCloseWindow1Click"></f:Button>
                     </Items>
                 </f:Toolbar>
             </Toolbars>
@@ -47,22 +47,31 @@
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示从底部滑入一个满屏移动窗体，并通过内部标题栏按钮关闭。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>滑入后关闭</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnOpenWindow").ClientID %>' title="从下方滑入窗体">从下方滑入窗体</strong>。<br />结果：窗体从底部进入，按本页设置占满当前视口，内部标题与内容同时显示。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="关闭">关闭</strong>。<br />结果：浏览器隐藏当前窗体，恢复下方原页面。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>PositionY</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗口">窗口</strong>）：初始为<code>Bottom</code>，窗体贴底定位。</li>
-        <li><code>PercentWidth</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗口">窗口</strong>）：初始为<code>100%</code>，使用当前视口全部宽度。</li>
-        <li><code>PercentHeight</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗口">窗口</strong>）：初始为<code>100%</code>，使用当前视口全部高度。</li>
-        <li><code>show()</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗口">窗口</strong>）：本页传入滑动显示参数，避免只作普通居中弹出。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示从底部滑入一个满屏移动窗体，并通过内部标题栏按钮关闭。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>滑入后关闭</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnOpenWindow").ClientID %>'
+                        title="从下方滑入窗体">从下方滑入窗体</strong>。<br />结果：窗体从底部进入，按本页设置占满当前视口，内部标题与内容同时显示。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="关闭">关闭</strong>。<br />结果：浏览器隐藏当前窗体，恢复下方原页面。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>PositionY</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>'
+                        title="窗口">窗口</strong>）：初始为<code>Bottom</code>，窗体贴底定位。</li>
+                <li><code>PercentWidth</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>'
+                        title="窗口">窗口</strong>）：初始为<code>100%</code>，使用当前视口全部宽度。</li>
+                <li><code>PercentHeight</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>'
+                        title="窗口">窗口</strong>）：初始为<code>100%</code>，使用当前视口全部高度。</li>
+                <li><code>show()</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗口">窗口</strong>）：本页传入滑动显示参数，避免只作普通居中弹出。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>
