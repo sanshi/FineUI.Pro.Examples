@@ -30,12 +30,12 @@
     </form>
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>
     <script>
-        function onRowOrderChanged() {
+        function onRowOrderChanged(event) {
             const rowIds = this.data.map(row => row.id);
             document.getElementById('rowSortResult').textContent = '当前顺序：' + rowIds.join('、');
         }
 
-        function onSaveToDBClick() {
+        function onSaveToDBClick(event) {
             // 提交行 ID 的排列，刷新时按这组 ID 重新读取学生数据。
             const rowIds = F('<%= Grid1.ClientID %>').data.map(row => row.id);
             F.customEvent('Grid1_RowSort', {
@@ -43,7 +43,7 @@
             });
         }
 
-        function onRefreshClick() {
+        function onRefreshClick(event) {
             window.location.reload();
         }
 
