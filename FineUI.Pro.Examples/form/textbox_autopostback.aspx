@@ -18,7 +18,7 @@
                 </f:TextBox>
                 <f:TextBox runat="server" ID="TextBox3" Label="文本框三（失去焦点事件）" EmptyText="输入字符后失去焦点，会触发Blur事件" EnableBlurEvent="true" OnBlur="TextBox3_Blur">
                 </f:TextBox>
-                <f:Button ID="btnSubmit" ClientIDMode="Static" runat="server" Text="提交" EnablePostBack="true">
+                <f:Button ID="btnSubmit" runat="server" Text="提交" EnablePostBack="true">
                 </f:Button>
             </Items>
         </f:SimpleForm>
@@ -53,7 +53,8 @@
                     结果：该字段不会主动回发，暂不更新对应结果。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="btnSubmit" title="提交">提交</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmit").ClientID %>'
+                        title="提交">提交</strong>。<br />
                     结果：此次请求触发<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>"
                         title="文本框二">文本框二</strong>的变化事件，后台读取输入，下方显示“文本框二：<code>world</code>”。
                 </li>

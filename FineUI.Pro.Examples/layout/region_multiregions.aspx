@@ -10,7 +10,7 @@
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
         <f:Panel ID="Panel1" Margin="24px" runat="server" ShowBorder="false" ShowHeader="false" Layout="Region">
             <Items>
-                <f:Panel ID="PanelExample2" ClientIDMode="Static" runat="server" RegionPosition="Top" RegionSplit="true" EnableCollapse="true" Height="50px"
+                <f:Panel ID="PanelExample2" runat="server" RegionPosition="Top" RegionSplit="true" EnableCollapse="true" Height="50px"
                     Title="顶部面板" ShowBorder="true" ShowHeader="false" BodyPadding="10px">
                     <Items>
                         <f:Label ID="Label1" runat="server" Text="顶部面板的内容">

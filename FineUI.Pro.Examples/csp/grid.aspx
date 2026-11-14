@@ -23,7 +23,7 @@
             </Columns>
         </f:Grid>
         <br />
-        <f:Button ID="btnShowSelectedRows" ClientIDMode="Static" Text="选中了哪些行" ClickHandler="onShowSelectedNamesClick" runat="server"></f:Button>
+        <f:Button ID="btnShowSelectedRows" Text="选中了哪些行" ClickHandler="onShowSelectedNamesClick" runat="server"></f:Button>
     </form>
 
     <script src="<%= PageContext.ResolveUrl("~/res/js/grid.js") %>"></script>

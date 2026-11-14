@@ -14,7 +14,7 @@
                 <f:Label runat="server" Text="面板内容"></f:Label>
             </Items>
             <Tools>
-                <f:Tool ID="ToolExample1" ClientIDMode="Static" runat="server" IconFont="_Gear" ToolTip="设置" ClickHandler="onToolIconClick"></f:Tool>
+                <f:Tool ID="ToolExample1" runat="server" IconFont="_Gear" ToolTip="设置" ClickHandler="onToolIconClick"></f:Tool>
                 <f:Tool ID="Tool13" runat="server" IconFont="_Wrench" ToolTip="设置" ClickHandler="onToolIconClick"></f:Tool>
                 <f:Tool ID="Tool1" runat="server" IconFont="_Download" ToolTip="下载" ClickHandler="onToolIconClick"></f:Tool>
                 <f:Tool ID="Tool3" runat="server" IconFont="_Upload" ToolTip="上传" ClickHandler="onToolIconClick"></f:Tool>

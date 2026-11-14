@@ -1,4 +1,4 @@
-<%@ Page Language="C#" ClientIDMode="Static" ValidateRequest="false" AutoEventWireup="true" CodeBehind="toolbar.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.toolbar" %>
+<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="toolbar.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.toolbar" %>
 <!DOCTYPE html>
 <html><head runat="server"><title>自定义工具栏</title>
 </head><body>

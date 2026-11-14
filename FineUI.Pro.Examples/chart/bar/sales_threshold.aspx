@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="sales_threshold.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarSalesThreshold" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sales_threshold.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarSalesThreshold" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

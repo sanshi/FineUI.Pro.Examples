@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="gradient_stacked.aspx.cs" Inherits="FineUI.Pro.Examples.chart.AreaGradientStacked" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="gradient_stacked.aspx.cs" Inherits="FineUI.Pro.Examples.chart.AreaGradientStacked" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

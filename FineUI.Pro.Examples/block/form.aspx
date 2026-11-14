@@ -17,10 +17,10 @@
 <body class="f-body-darkerbg">
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" runat="server"
+        <f:Panel ID="PanelExample1" IsFluid="true" runat="server"
             Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
             <Items>
-                <f:Panel ID="PanelExample2" ClientIDMode="Static" BlockMD="6"
+                <f:Panel ID="PanelExample2" BlockMD="6"
                     Layout="Block" BlockConfigSpace="20px"
                     runat="server" ShowBorder="false" ShowHeader="false">
                     <Items>
@@ -112,7 +112,7 @@
                             ShowRedStar="true" />
                         <f:TextArea ID="TextArea1" BlockMD="12" runat="server" Label="描述" ShowRedStar="true" Required="true">
                         </f:TextArea>
-                        <f:Panel ID="PanelExample6" ClientIDMode="Static" BlockMD="12" runat="server" ShowBorder="false" ShowHeader="false">
+                        <f:Panel ID="PanelExample6" BlockMD="12" runat="server" ShowBorder="false" ShowHeader="false">
                             <Items>
                                 <f:Button ID="btnSubmitForm3" Text="验证此表单并提交" runat="server" OnClick="btnSubmitForm3_Click"
                                     ValidateForms="Panel3">

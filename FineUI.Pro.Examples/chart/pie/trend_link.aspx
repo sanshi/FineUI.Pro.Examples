@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="trend_link.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieTrendLink" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="trend_link.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieTrendLink" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -19,7 +19,7 @@
                         </f:Chart>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="PanelExample3" ClientIDMode="Static" runat="server" BlockLG="7" Height="550px" Layout="Fit" Title="月度访问趋势" ShowHeader="true" ShowBorder="true" BodyPadding="8">
+                <f:Panel ID="PanelExample3" runat="server" BlockLG="7" Height="550px" Layout="Fit" Title="月度访问趋势" ShowHeader="true" ShowBorder="true" BodyPadding="8">
                     <Toolbars>
                         <f:Toolbar runat="server" Position="Top">
                             <Items>

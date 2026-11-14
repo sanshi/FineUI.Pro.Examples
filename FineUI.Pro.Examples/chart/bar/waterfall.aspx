@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="waterfall.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarWaterfall" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="waterfall.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarWaterfall" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

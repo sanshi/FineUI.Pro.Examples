@@ -13,13 +13,13 @@
                 <tr>
                     <td></td>
                     <td style="text-align: center;">
-                        <f:Button ID="btnTopStart" ClientIDMode="Static" CssClass="marginr" runat="server" Text="TopStart" ToolTip="这是提示信息" ToolTipType="Qtip"
+                        <f:Button ID="btnTopStart" CssClass="marginr" runat="server" Text="TopStart" ToolTip="这是提示信息" ToolTipType="Qtip"
                             ToolTipPosition="TopStart" Width="100px"></f:Button>
-                        <f:Button ID="btnTop" ClientIDMode="Static" CssClass="marginr" runat="server" Text="Top" ToolTip="这是提示信息" ToolTipType="Qtip"
-                            ToolTipPosition="Top" Width="100px">
+                        <f:Button ID="btnTop" CssClass="marginr" runat="server" Text="Top" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="Top"
+                            Width="100px">
                         </f:Button>
-                        <f:Button ID="btnTopEnd" ClientIDMode="Static" runat="server" Text="TopEnd" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="TopEnd"
-                            Width="100px"></f:Button>
+                        <f:Button ID="btnTopEnd" runat="server" Text="TopEnd" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="TopEnd" Width="100px">
+                        </f:Button>
                     </td>
                     <td></td>
                 </tr>
@@ -36,14 +36,14 @@
                 </tr>
                 <tr>
                     <td style="text-align: right;">
-                        <f:Button ID="btnLeft" ClientIDMode="Static" runat="server" Text="Left" ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip"
-                            ToolTipPosition="Left" Width="100px">
+                        <f:Button ID="btnLeft" runat="server" Text="Left" ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip" ToolTipPosition="Left"
+                            Width="100px">
                         </f:Button>
                     </td>
                     <td></td>
                     <td style="text-align: left;">
-                        <f:Button ID="btnRight" ClientIDMode="Static" runat="server" Text="Right" ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip"
-                            ToolTipPosition="Right" Width="100px">
+                        <f:Button ID="btnRight" runat="server" Text="Right" ToolTipRawHtml="这是提示信息<br>这是第二行提示信息" ToolTipType="Qtip" ToolTipPosition="Right"
+                            Width="100px">
                         </f:Button>
                     </td>
                 </tr>
@@ -63,8 +63,8 @@
                     <td style="text-align: center;">
                         <f:Button CssClass="marginr" runat="server" Text="BottomStart" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="BottomStart"
                             Width="100px"></f:Button>
-                        <f:Button ID="btnBottom" ClientIDMode="Static" CssClass="marginr" runat="server" Text="Bottom" ToolTip="这是提示信息" ToolTipType="Qtip"
-                            ToolTipPosition="Bottom" Width="100px">
+                        <f:Button ID="btnBottom" CssClass="marginr" runat="server" Text="Bottom" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="Bottom"
+                            Width="100px">
                         </f:Button>
                         <f:Button runat="server" Text="BottomEnd" ToolTip="这是提示信息" ToolTipType="Qtip" ToolTipPosition="BottomEnd" Width="100px"></f:Button>
                     </td>

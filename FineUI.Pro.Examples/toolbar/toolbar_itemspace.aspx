@@ -8,10 +8,10 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" ShowBorder="true" BodyPadding="10px" Title="面板" EnableCollapse="false"
+        <f:Panel ID="PanelExample1" IsFluid="true" ShowBorder="true" BodyPadding="10px" Title="面板" EnableCollapse="false"
             runat="server">
             <Toolbars>
-                <f:Toolbar ID="ToolbarExample1" ClientIDMode="Static" ItemSpace="0" runat="server">
+                <f:Toolbar ID="ToolbarExample1" ItemSpace="0" runat="server">
                     <Items>
                         <f:Button ID="Button1" runat="server" Text="按钮一"></f:Button>
                         <f:Button ID="Button2" runat="server" Text="按钮二"></f:Button>
@@ -25,7 +25,7 @@
                         <f:Button ID="Button6" runat="server" Text="按钮六"></f:Button>
                     </Items>
                 </f:Toolbar>
-                <f:Toolbar ID="ToolbarExample3" ClientIDMode="Static" ItemSpace="16" runat="server">
+                <f:Toolbar ID="ToolbarExample3" ItemSpace="16" runat="server">
                     <Items>
                         <f:Button ID="Button7" runat="server" Text="按钮七"></f:Button>
                         <f:Button ID="Button8" runat="server" Text="按钮八"></f:Button>

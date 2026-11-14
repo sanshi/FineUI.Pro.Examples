@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="metric_switch.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineMetricSwitch" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="metric_switch.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineMetricSwitch" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

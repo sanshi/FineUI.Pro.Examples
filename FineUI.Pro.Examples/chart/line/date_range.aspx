@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="date_range.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineDateRange" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="date_range.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineDateRange" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

@@ -8,7 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:ButtonGroup ID="ButtonGroupExample1" ClientIDMode="Static" runat="server" EnablePressGroup="true">
+        <f:ButtonGroup ID="ButtonGroupExample1" runat="server" EnablePressGroup="true">
             <f:Button ID="btnIcon1" Text="图标在左侧" EnablePress="true" Pressed="true" Icon="Email" runat="server" />
             <f:Button ID="btnIcon2" Text="图标在右侧" EnablePress="true" IconAlign="Right" Icon="Star" runat="server" />
             <f:Button ID="Button7" Text="图标在左侧" EnablePress="true" IconFont="_Home" runat="server" />
@@ -45,7 +45,7 @@
             </Listeners>
         </f:ButtonGroup>
         <br />
-        <f:Label ID="LabelExample3" ClientIDMode="Static" runat="server" Text="可以不选（AllowNonePress=true）："></f:Label>
+        <f:Label ID="LabelExample3" runat="server" Text="可以不选（AllowNonePress=true）："></f:Label>
         <f:ButtonGroup ID="ButtonGroup4" EnablePressGroup="true" AllowNonePress="true" runat="server">
             <Items>
                 <f:Button ID="Button15" Text="按钮一" EnablePress="true" Size="Large" IconAlign="Top" Icon="Email" runat="server" />
@@ -58,7 +58,7 @@
             </Listeners>
         </f:ButtonGroup>
         <br />
-        <f:Label ID="LabelExample4" ClientIDMode="Static" runat="server" Text="可以多选（AllowMultiPress=true）："></f:Label>
+        <f:Label ID="LabelExample4" runat="server" Text="可以多选（AllowMultiPress=true）："></f:Label>
         <f:ButtonGroup ID="ButtonGroup5" EnablePressGroup="true" AllowMultiPress="true" runat="server">
             <Items>
                 <f:Button ID="Button19" Text="按钮一" EnablePress="true" Size="Large" IconAlign="Top" Icon="Email" runat="server" />

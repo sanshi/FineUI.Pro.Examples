@@ -1,4 +1,4 @@
-<%@ Page Language="C#" ClientIDMode="Static" ValidateRequest="false" AutoEventWireup="true" CodeBehind="basic.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.basic" %>
+<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="basic.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.basic" %>
 <!DOCTYPE html>
 <html><head runat="server"><title>基础编辑与后台交互</title></head><body>
 <form id="form1" runat="server">

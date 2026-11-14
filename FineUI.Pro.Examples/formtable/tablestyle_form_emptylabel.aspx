@@ -56,21 +56,21 @@
         <f:Form ID="Form2" IsFluid="true" runat="server" ShowBorder="false" ShowHeader="false"
             Layout="HBox" EnableTableStyle="true" MessageTarget="Qtip">
             <Items>
-                <f:Panel ID="PanelExample1" ClientIDMode="Static" runat="server" ShowBorder="false" ShowHeader="false" BoxFlex="1" Layout="VBox">
+                <f:Panel ID="PanelExample1" runat="server" ShowBorder="false" ShowHeader="false" BoxFlex="1" Layout="VBox">
                     <Items>
                         <f:TextBox runat="server" Required="true" Label="国家"></f:TextBox>
                         <f:TextBox runat="server" Required="true" Label="邮编"></f:TextBox>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="PanelExample2" ClientIDMode="Static" runat="server" ShowBorder="false" ShowHeader="false" BoxFlex="1" Layout="VBox">
+                <f:Panel ID="PanelExample2" runat="server" ShowBorder="false" ShowHeader="false" BoxFlex="1" Layout="VBox">
                     <Items>
                         <f:TextBox runat="server" Required="true" Label="省份"></f:TextBox>
                         <f:TextBox runat="server" Required="true" Label="城市"></f:TextBox>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="PanelExample3" ClientIDMode="Static" runat="server" ShowBorder="false" ShowHeader="false" BoxFlex="1" Layout="VBox">
+                <f:Panel ID="PanelExample3" runat="server" ShowBorder="false" ShowHeader="false" BoxFlex="1" Layout="VBox">
                     <Items>
-                        <f:TextBox ID="TextBoxExample5" ClientIDMode="Static" runat="server" Required="true" Label="地址"></f:TextBox>
+                        <f:TextBox ID="TextBoxExample5" runat="server" Required="true" Label="地址"></f:TextBox>
                         <f:Label runat="server"></f:Label>
                     </Items>
                 </f:Panel>
@@ -86,7 +86,7 @@
             <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>观察空白占位与多列地址</h3>
             <ul>
                 <li>
-                    对照第一组<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="编号">编号</strong>右侧，以及地址组<strong class="example-control-reference" data-example-control="TextBoxExample5" title="地址">地址</strong>下方。<br />
+                    对照第一组<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="编号">编号</strong>右侧，以及地址组<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBoxExample5").ClientID %>' title="地址">地址</strong>下方。<br />
                     结果：空 Label 保留该单元格的空间和边线，其他字段不会自动填入空位。
                 </li>
             </ul>
@@ -94,7 +94,7 @@
             <ul class="example-description-properties">
                 <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="第 1 个表单">第 1 个表单</strong>、<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第 2 个表单</strong>）：让表单字段按表格风格显示。</li>
                 <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第 2 个表单</strong>）：<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第二个表单</strong>采用 <code>HBox</code>，三个子面板各以 <code>VBox</code> 排列字段。</li>
-                <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control="PanelExample1" title="第 1 个面板">第 1 个面板</strong>、<strong class="example-control-reference" data-example-control="PanelExample2" title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control="PanelExample3" title="第 3 个面板">第 3 个面板</strong>）：三个地址子面板均分可用宽度。</li>
+                <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample2").ClientID %>' title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample3").ClientID %>' title="第 3 个面板">第 3 个面板</strong>）：三个地址子面板均分可用宽度。</li>
                 <li><code>Text</code>（<strong class="example-control-reference" data-example-control="<%= Label3.ClientID %>" title="电话">电话</strong>、<strong class="example-control-reference" data-example-control="<%= Label16.ClientID %>" title="申请人">申请人</strong>、<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="编号">编号</strong>）：空 Label 不设置文字，用于保留表格中的空白单元格。</li>
             </ul>
         </section>

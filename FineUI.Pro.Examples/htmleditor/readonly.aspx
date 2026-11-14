@@ -1,4 +1,4 @@
-<%@ Page Language="C#" ClientIDMode="Static" ValidateRequest="false" AutoEventWireup="true" CodeBehind="readonly.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.ReadonlyPage" %>
+<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="readonly.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.ReadonlyPage" %>
 <!DOCTYPE html>
 <html><head runat="server"><title>只读与恢复编辑</title></head><body>
 <form id="form1" runat="server">

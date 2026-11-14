@@ -13,10 +13,10 @@
 <body class="f-body-darkerbg">
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" runat="server"
+        <f:Panel ID="PanelExample1" IsFluid="true" runat="server"
             Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
             <Items>
-                <f:Panel ID="PanelExample2" ClientIDMode="Static" runat="server" BlockMD="12" BlockLG="4"
+                <f:Panel ID="PanelExample2" runat="server" BlockMD="12" BlockLG="4"
                     Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
                     <Items>
                         <f:Panel BlockMD="6" BlockLG="12" Height="200px"
@@ -27,7 +27,7 @@
                         </f:Panel>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="PanelExample5" ClientIDMode="Static" runat="server" BlockMD="12" BlockLG="8"
+                <f:Panel ID="PanelExample5" runat="server" BlockMD="12" BlockLG="8"
                     Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
                     <Items>
                         <f:Panel BlockSM="6" BlockMD="3" Height="150px"
@@ -47,7 +47,7 @@
                         </f:Panel>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="PanelExample11" ClientIDMode="Static" runat="server" BlockMD="12"
+                <f:Panel ID="PanelExample11" runat="server" BlockMD="12"
                     Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
                     <Items>
                         <f:Panel BlockMD="4" Height="200px"

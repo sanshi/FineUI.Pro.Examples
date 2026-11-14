@@ -7,7 +7,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <f:PageManager ID="PageManager1" runat="server" />
+        <%-- 原生 GridView 翻页需要整页重新渲染；关闭 AJAX，避免只更新 ViewState 而保留旧表格。 --%>
+        <f:PageManager ID="PageManager1" EnableAjax="false" runat="server" />
         <asp:GridView ID="Grid1" Title="表格" EnableCollapse="false" PageSize="5" ShowBorder="true" ShowHeader="true" AllowPaging="true" runat="server"
             EnableCheckBoxSelect="true" Width="800px" AutoGenerateColumns="false" OnPageIndexChanging="Grid1_PageIndexChanging">
             <Columns>
@@ -41,6 +42,7 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
+                <li><code>EnableAjax</code>（<strong>页面的 PageManager1</strong>）：初始为 <code>false</code>，原生 ASP.NET GridView 换页时整页提交，重新显示当前页的表格内容。</li>
                 <li><code>DataSource / DataBind</code>（<strong class="example-control-reference" data-example-control='<%= Grid1.ClientID %>'
                         title="ASP.NET GridView">ASP.NET
                         GridView</strong>）：后台读取示例数据并绑定 ASP.NET GridView；此处是原生 ASP.NET 控件的对照示例。</li>

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="mix_line_bar.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarMixLineBar" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="mix_line_bar.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarMixLineBar" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

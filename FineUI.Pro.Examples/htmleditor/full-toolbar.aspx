@@ -1,4 +1,4 @@
-<%@ Page Language="C#" ClientIDMode="Static" ValidateRequest="false" AutoEventWireup="true" CodeBehind="full-toolbar.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.FullToolbar" %>
+<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="full-toolbar.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.FullToolbar" %>
 <!DOCTYPE html>
 <html><head runat="server"><title>完整工具栏</title></head><body>
 <form id="form1" runat="server">

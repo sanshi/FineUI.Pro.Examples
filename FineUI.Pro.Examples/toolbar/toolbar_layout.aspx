@@ -11,7 +11,7 @@
         <f:Panel ID="Panel1" IsFluid="true" ShowBorder="true" BodyPadding="10px" Title="面板" EnableCollapse="false"
             runat="server">
             <Toolbars>
-                <f:Toolbar ID="ToolbarExample1" ClientIDMode="Static" runat="server" Layout="HBox">
+                <f:Toolbar ID="ToolbarExample1" runat="server" Layout="HBox">
                     <Items>
                         <f:Button ID="Button1" runat="server" Text="按钮一" BoxFlex="1" MarginRight="5px"></f:Button>
                         <f:Button ID="Button2" runat="server" Text="按钮二" BoxFlex="1"></f:Button>

@@ -62,7 +62,7 @@
                         <f:Button runat="server" ID="Button2" Text="查询" ValidateForms="SimpleForm2"></f:Button>
                     </Items>
                 </f:SimpleForm>
-                <f:Panel ID="PanelExample4" ClientIDMode="Static" BoxFlex="1" ShowBorder="true" ShowHeader="false" runat="server">
+                <f:Panel ID="PanelExample4" BoxFlex="1" ShowBorder="true" ShowHeader="false" runat="server">
                     <Items>
                     </Items>
                 </f:Panel>

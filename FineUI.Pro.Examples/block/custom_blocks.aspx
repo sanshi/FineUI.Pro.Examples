@@ -17,10 +17,10 @@
 <body class="f-body-darkerbg">
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" runat="server"
+        <f:Panel ID="PanelExample1" IsFluid="true" runat="server"
             Layout="Block" BlockConfigSpace="20px" BlockConfigBlockCount="20" ShowBorder="false" ShowHeader="false">
             <Items>
-                <f:Panel ID="PanelExample2" ClientIDMode="Static" CssClass="custompanel" BlockSM="10" BlockMD="4"
+                <f:Panel ID="PanelExample2" CssClass="custompanel" BlockSM="10" BlockMD="4"
                     runat="server" ShowBorder="true" ShowHeader="true" Title="4">
                 </f:Panel>
                 <f:Panel CssClass="custompanel" BlockSM="5" BlockMD="4"

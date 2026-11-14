@@ -12,7 +12,7 @@
         <f:TabStrip ID="TabStrip1" IsFluid="true" Height="150px" ShowBorder="true" TabPosition="Top" ActiveTabIndex="0"
             runat="server">
             <Tabs>
-                <f:Tab ID="TabExample1" ClientIDMode="Static" IconFont="_Windows" TitleToolTip="标签一的提示文本" BodyPadding="10px" runat="server">
+                <f:Tab ID="TabExample1" IconFont="_Windows" TitleToolTip="标签一的提示文本" BodyPadding="10px" runat="server">
                     <Items>
                         <f:Label Text="第一个标签的内容" runat="server" />
                     </Items>

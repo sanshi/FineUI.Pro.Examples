@@ -12,7 +12,7 @@
         <f:TabStrip ID="TabStrip1" IsFluid="true" Height="500px" ShowBorder="true" ActiveTabIndex="0"
             runat="server">
             <Tabs>
-                <f:Tab ID="TabExample1" ClientIDMode="Static" Title="FineUI官网" EnableIFrame="true" IFrameUrl="https://fineui.com/" runat="server">
+                <f:Tab ID="TabExample1" Title="FineUI官网" EnableIFrame="true" IFrameUrl="https://fineui.com/" runat="server">
                 </f:Tab>
             </Tabs>
             <Toolbars>

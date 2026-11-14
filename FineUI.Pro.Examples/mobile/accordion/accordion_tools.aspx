@@ -44,7 +44,7 @@
                 <f:AccordionPane ID="AccordionPane1" runat="server" Title="面板一" IconUrl="~/res/images/16/1.png"
                     BodyPadding="2px 5px">
                     <Tools>
-                        <f:Tool ID="ToolExample1" ClientIDMode="Static" runat="server" CssClass="mybadge" Text="30"></f:Tool>
+                        <f:Tool ID="ToolExample1" runat="server" CssClass="mybadge" Text="30"></f:Tool>
                     </Tools>
                     <Items>
                         <f:Label ID="Label1" Text="面板一中的文本" runat="server">

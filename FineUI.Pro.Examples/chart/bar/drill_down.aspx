@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="drill_down.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarDrillDown" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="drill_down.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarDrillDown" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

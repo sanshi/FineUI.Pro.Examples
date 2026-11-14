@@ -37,7 +37,7 @@
         <f:Window runat="server" ID="Window1" CssClass="mywindow" ShowHeader="false" ShowBorder="false" Hidden="true" HideOnMaskClick="true" IsModal="true"
             BodyPadding="10px" Layout="VBox" BoxConfigSpace="5" PercentWidth="100%" EnableDefaultCorner="false" PositionY="Bottom">
             <Items>
-                <f:ButtonGroup ID="ButtonGroupExample1" ClientIDMode="Static" runat="server" MarginBottom="10px" Layout="VBox" Vertical="true">
+                <f:ButtonGroup ID="ButtonGroupExample1" runat="server" MarginBottom="10px" Layout="VBox" Vertical="true">
                     <f:Button runat="server" ID="Button1" Size="Large" Text="相册" ClickHandler="onOpenAlbumClick"></f:Button>
                     <f:Button runat="server" ID="Button2" Size="Large" Text="拍照" ClickHandler="onTakeAPictureClick"></f:Button>
                 </f:ButtonGroup>

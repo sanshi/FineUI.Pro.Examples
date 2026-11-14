@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="pad_angle.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PiePadAngle" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="pad_angle.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PiePadAngle" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="negative.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarNegative" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="negative.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarNegative" %>
 
 <!DOCTYPE html>
 <html>

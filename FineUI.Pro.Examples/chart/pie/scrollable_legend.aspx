@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="scrollable_legend.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieScrollableLegend" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="scrollable_legend.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieScrollableLegend" %>
 
 <!DOCTYPE html>
 <html>

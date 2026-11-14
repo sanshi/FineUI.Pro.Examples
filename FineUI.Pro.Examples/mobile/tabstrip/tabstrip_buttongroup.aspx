@@ -12,7 +12,7 @@
             <Toolbars>
                 <f:Toolbar ToolbarAlign="Center" runat="server" CssClass="f-widget-header mytoolbar">
                     <Items>
-                        <f:ButtonGroup ID="ButtonGroupExample1" ClientIDMode="Static" EnablePressGroup="true" runat="server">
+                        <f:ButtonGroup ID="ButtonGroupExample1" EnablePressGroup="true" runat="server">
                             <Items>
                                 <f:Button ID="Button1" runat="server" Text="标签一" EnablePress="true" Pressed="true">
                                 </f:Button>

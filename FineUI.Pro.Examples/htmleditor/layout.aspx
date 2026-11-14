@@ -1,4 +1,4 @@
-<%@ Page Language="C#" ClientIDMode="Static" ValidateRequest="false" AutoEventWireup="true" CodeBehind="layout.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.layout" %>
+<%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="layout.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.layout" %>
 
 <!DOCTYPE html>
 <html>

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="grid_to_chart.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarGridToChart" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="grid_to_chart.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarGridToChart" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

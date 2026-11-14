@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="dropdownlist_assignment_order.aspx.cs" Inherits="FineUI.Pro.Examples.form.dropdownlist_assignment_order" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dropdownlist_assignment_order.aspx.cs" Inherits="FineUI.Pro.Examples.form.dropdownlist_assignment_order" %>
 
 <!DOCTYPE html>
 <html>

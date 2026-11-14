@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="month_filter.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieMonthFilter" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="month_filter.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieMonthFilter" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

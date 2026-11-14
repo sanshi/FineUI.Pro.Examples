@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" ShowBorder="true" BodyPadding="10px" Height="300px" Title="面板" EnableCollapse="false"
-            runat="server">
+        <f:Panel ID="PanelExample1" IsFluid="true" ShowBorder="true" BodyPadding="10px" Height="300px" Title="面板" EnableCollapse="false" runat="server">
             <toolbars>
                 <f:Toolbar runat="server">
                     <Items>
@@ -17,7 +16,7 @@
                         </f:ToolbarText>
                         <f:ToolbarSeparator runat="server">
                         </f:ToolbarSeparator>
-                        <f:Button ID="btnUniversityMenu" ClientIDMode="Static" Text="中国科学技术大学" runat="server">
+                        <f:Button ID="btnUniversityMenu" Text="中国科学技术大学" runat="server">
                             <Menu ID="Menu1" runat="server">
                                 <f:MenuHyperLink ID="MenuHyperLink1" runat="server" Target="_blank" NavigateUrl="http://scms.ustc.edu.cn/" Text="化学与材料科学学院">
                                 </f:MenuHyperLink>

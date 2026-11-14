@@ -27,7 +27,7 @@
         <f:PageManager ID="PageManager2" AutoSizePanelID="TabStrip1" runat="server" />
         <f:TabStrip ID="TabStrip1" CssClass="mytabstrip" Margin="24px" ShowInkBar="true" runat="server" ShowBorder="true" ActiveTabIndex="0">
             <Tabs>
-                <f:Tab ID="TabExample1" ClientIDMode="Static" runat="server" Title="统计图" Layout="Fit" BodyPadding="10px">
+                <f:Tab ID="TabExample1" runat="server" Title="统计图" Layout="Fit" BodyPadding="10px">
                     <Items>
                         <f:ContentPanel runat="server" CssClass="mycontentpanel" ShowBorder="false" ShowHeader="false">
                             <div id="chart">

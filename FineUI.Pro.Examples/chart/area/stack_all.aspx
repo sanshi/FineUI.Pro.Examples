@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="stack_all.aspx.cs" Inherits="FineUI.Pro.Examples.chart.AreaStackAll" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="stack_all.aspx.cs" Inherits="FineUI.Pro.Examples.chart.AreaStackAll" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

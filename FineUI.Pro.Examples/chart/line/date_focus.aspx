@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="date_focus.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineDateFocus" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="date_focus.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineDateFocus" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

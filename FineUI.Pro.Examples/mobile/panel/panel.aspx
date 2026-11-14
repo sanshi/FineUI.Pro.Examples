@@ -10,13 +10,13 @@
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
         <f:Panel ID="Panel1" runat="server" ShowHeader="false" ShowBorder="false" Layout="Fit" BodyPadding="10px">
             <Toolbars>
-                <f:Toolbar ID="ToolbarExample1" ClientIDMode="Static" runat="server" Title="面板标题" HeaderStyle="true">
+                <f:Toolbar ID="ToolbarExample1" runat="server" Title="面板标题" HeaderStyle="true">
                 </f:Toolbar>
                 <f:Toolbar ID="Toolbar1" runat="server" Position="Bottom" CssClass="f-state-default">
                     <Items>
                         <f:Button ID="Button1" runat="server" Text="按钮一" EnableDefaultState="false" ClickHandler="onButton1Click"></f:Button>
                         <f:ToolbarFill runat="server"></f:ToolbarFill>
-                        <f:Button ID="btnMenu" ClientIDMode="Static" runat="server" Text="菜单按钮" EnableDefaultState="false" ShowMenuIcon="false">
+                        <f:Button ID="btnMenu" runat="server" Text="菜单按钮" EnableDefaultState="false" ShowMenuIcon="false">
                             <Menu runat="server">
                                 <f:MenuButton Text="菜单一" runat="server" ClickHandler="onMyMenuButtonClick"></f:MenuButton>
                                 <f:MenuButton Text="菜单二" runat="server" ClickHandler="onMyMenuButtonClick"></f:MenuButton>

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="smooth.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineSmooth" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="smooth.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineSmooth" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

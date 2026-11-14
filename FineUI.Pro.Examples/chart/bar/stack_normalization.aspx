@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="stack_normalization.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarStackNormalization" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="stack_normalization.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarStackNormalization" %>
 
 <!DOCTYPE html>
 <html>

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="stacked_horizontal.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarStackedHorizontal" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="stacked_horizontal.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarStackedHorizontal" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

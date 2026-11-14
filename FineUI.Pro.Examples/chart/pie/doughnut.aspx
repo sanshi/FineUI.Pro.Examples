@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="doughnut.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieDoughnut" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="doughnut.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieDoughnut" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

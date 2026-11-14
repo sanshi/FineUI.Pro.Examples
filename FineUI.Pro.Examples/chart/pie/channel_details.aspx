@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="channel_details.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieChannelDetails" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="channel_details.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieChannelDetails" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

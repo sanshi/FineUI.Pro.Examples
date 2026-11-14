@@ -9,7 +9,7 @@
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" CspScripts="true" CspScriptsAllowNonce="true" runat="server" />
 
-        <f:Button ID="btnDefault" ClientIDMode="Static" Text="缺省按钮" CssClass="marginr" runat="server" />
+        <f:Button ID="btnDefault" Text="缺省按钮" CssClass="marginr" runat="server" />
         <f:Button ID="btnPrimary" Text="主按钮" ButtonColor="Primary" runat="server" />
         <br />
         <br />

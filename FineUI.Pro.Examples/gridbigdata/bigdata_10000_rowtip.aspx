@@ -32,7 +32,7 @@
                         <f:Label runat="server" Text="转到行："></f:Label>
                         <f:NumberBox ID="nbRowNumber" runat="server" MinValue="1" MaxValue="10000" Text="1000" Increment="100" EnableCommas="true">
                         </f:NumberBox>
-                        <f:Button ID="btnGoToRow" ClientIDMode="Static" runat="server" Text="Go" ClickHandler="onGotoRow"></f:Button>
+                        <f:Button ID="btnGoToRow" runat="server" Text="Go" ClickHandler="onGotoRow"></f:Button>
                         <f:ToolbarFill runat="server"></f:ToolbarFill>
                         <f:Label ID="labRowTip" runat="server"></f:Label>
                     </Items>
@@ -70,8 +70,9 @@
             <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>定位后更新自定义范围提示</h3>
             <ol>
                 <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("nbRowNumber").ClientID %>'
-                        title="转到行">转到行</strong>输入<code>5000</code>，点击<strong class="example-control-reference" data-example-control="btnGoToRow"
-                        title="Go">Go</strong>。<br />结果：浏览器滚动到第 5000 行附近并渲染该位置的记录，不必逐页翻到该行。<strong class="example-control-reference"
+                        title="转到行">转到行</strong>输入<code>5000</code>，点击<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnGoToRow").ClientID %>' title="Go">Go</strong>。<br />结果：浏览器滚动到第 5000
+                    行附近并渲染该位置的记录，不必逐页翻到该行。<strong class="example-control-reference"
                         data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("labRowTip").ClientID %>' title="可见行范围提示">可见行范围提示</strong>显示新的可见行范围及总行数。
                 </li>
                 <li>继续滚动表格。<br />结果：行范围提示随视口更新，不始终停留在刚输入的行号；此处统计总数为本页完整示例数据。</li>

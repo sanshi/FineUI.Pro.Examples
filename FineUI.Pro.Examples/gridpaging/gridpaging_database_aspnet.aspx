@@ -8,7 +8,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <f:PageManager ID="PageManager1" runat="server" />
+        <%-- 原生表格和页码标签需要整页重新渲染；关闭 AJAX，让翻页后的记录和页码一起更新。 --%>
+        <f:PageManager ID="PageManager1" EnableAjax="false" runat="server" />
         <asp:GridView ID="Grid1" Title="表格" Width="800px" ShowBorder="true" runat="server" EnableCheckBoxSelect="true" AutoGenerateColumns="false">
             <Columns>
                 <asp:BoundField DataField="Name" DataFormatString="{0}" HeaderText="姓名" />
@@ -49,6 +50,7 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
+                <li><code>EnableAjax</code>（<strong>页面的 PageManager1</strong>）：初始为 <code>false</code>，翻页时整页提交，同时更新原生表格、页码标签和分页按钮状态。</li>
                 <li><code>DataSource / DataBind</code>（<strong class="example-control-reference" data-example-control='<%= Grid1.ClientID %>'
                         title="ASP.NET GridView">ASP.NET
                         GridView</strong>）：后台读取示例数据并绑定 ASP.NET GridView；此处是原生 ASP.NET 控件的对照示例。</li>

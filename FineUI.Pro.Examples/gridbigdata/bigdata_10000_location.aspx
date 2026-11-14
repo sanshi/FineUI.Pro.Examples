@@ -32,7 +32,7 @@
                         <f:Label runat="server" Text="转到行："></f:Label>
                         <f:NumberBox ID="nbRowNumber" runat="server" MinValue="1" MaxValue="10000" Text="1000" Increment="100" EnableCommas="true">
                         </f:NumberBox>
-                        <f:Button ID="btnGoToRow" ClientIDMode="Static" runat="server" Text="Go" ClickHandler="onGotoRow"></f:Button>
+                        <f:Button ID="btnGoToRow" runat="server" Text="Go" ClickHandler="onGotoRow"></f:Button>
                         <f:ToolbarFill runat="server"></f:ToolbarFill>
                         <f:Label ID="labCurrentPosition" runat="server"></f:Label>
                     </Items>
@@ -60,8 +60,9 @@
             <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>直接跳到中间记录</h3>
             <ol>
                 <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("nbRowNumber").ClientID %>'
-                        title="转到行">转到行</strong>输入<code>5000</code>，点击<strong class="example-control-reference" data-example-control="btnGoToRow"
-                        title="Go">Go</strong>。<br />结果：浏览器滚动到第 5000 行附近并渲染该位置的记录，不必逐页翻到该行。</li>
+                        title="转到行">转到行</strong>输入<code>5000</code>，点击<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnGoToRow").ClientID %>' title="Go">Go</strong>。<br />结果：浏览器滚动到第 5000
+                    行附近并渲染该位置的记录，不必逐页翻到该行。</li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">

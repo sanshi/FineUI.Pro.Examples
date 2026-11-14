@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="point_details.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LinePointDetails" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="point_details.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LinePointDetails" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

@@ -42,7 +42,7 @@
                             <Toolbars>
                                 <f:Toolbar runat="server" Position="Top">
                                     <Items>
-                                        <f:Label ID="LabelExample1" ClientIDMode="Static" runat="server" Text="是否在校："></f:Label>
+                                        <f:Label ID="LabelExample1" runat="server" Text="是否在校："></f:Label>
                                         <f:DropDownList ID="ddlAtSchool" OnSelectedIndexChanged="ddlSearch_SelectedIndexChanged" runat="server">
                                             <f:ListItem Text="全部" Value="-1" />
                                             <f:ListItem Text="在校" Value="1" />
@@ -69,7 +69,7 @@
             <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>组合下拉与表头过滤</h3>
             <ol>
                 <li>
-                    在弹出面板的<strong class="example-control-reference" data-example-control="LabelExample1" title="是否在校">是否在校</strong>下拉中选择<code>离校</code>。<br />
+                    在弹出面板的<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("LabelExample1").ClientID %>' title="是否在校">是否在校</strong>下拉中选择<code>离校</code>。<br />
                     结果：后台按离校状态重新加载表格。
                 </li>
                 <li>

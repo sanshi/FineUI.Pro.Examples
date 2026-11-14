@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="point_color.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarPointColor" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="point_color.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarPointColor" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

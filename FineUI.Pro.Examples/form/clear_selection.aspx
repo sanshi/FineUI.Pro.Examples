@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="clear_selection.aspx.cs" Inherits="FineUI.Pro.Examples.form.clear_selection" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="clear_selection.aspx.cs" Inherits="FineUI.Pro.Examples.form.clear_selection" %>
 
 <!DOCTYPE html>
 <html>

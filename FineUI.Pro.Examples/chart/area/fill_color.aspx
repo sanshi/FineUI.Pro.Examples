@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="fill_color.aspx.cs" Inherits="FineUI.Pro.Examples.chart.AreaFillColor" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="fill_color.aspx.cs" Inherits="FineUI.Pro.Examples.chart.AreaFillColor" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

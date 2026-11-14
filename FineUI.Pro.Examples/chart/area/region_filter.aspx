@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="region_filter.aspx.cs" Inherits="FineUI.Pro.Examples.chart.AreaRegionFilter" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="region_filter.aspx.cs" Inherits="FineUI.Pro.Examples.chart.AreaRegionFilter" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="object_array.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarObjectArray" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="object_array.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarObjectArray" %>
 
 <!DOCTYPE html>
 <html>

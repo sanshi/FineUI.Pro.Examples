@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="label_align.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieLabelAlign" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="label_align.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieLabelAlign" %>
 
 <!DOCTYPE html>
 <html>

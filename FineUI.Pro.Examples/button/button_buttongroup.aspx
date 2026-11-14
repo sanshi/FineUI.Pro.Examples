@@ -8,7 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:ButtonGroup ID="ButtonGroupExample1" ClientIDMode="Static" runat="server">
+        <f:ButtonGroup ID="ButtonGroupExample1" runat="server">
             <f:Button ID="btnIcon1" Text="图标在左侧" Icon="Email" runat="server" />
             <f:Button ID="btnIcon2" Text="图标在右侧" IconAlign="Right" Icon="Star" runat="server" />
             <f:Button ID="Button7" Text="图标在左侧" IconFont="_Home" runat="server" />

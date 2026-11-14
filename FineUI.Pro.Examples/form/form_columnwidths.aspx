@@ -18,7 +18,7 @@
         <f:Form BodyPadding="10px" EnableCollapse="false" LabelAlign="Left"
             ID="Form2" IsFluid="true" runat="server" Title="表单">
             <Rows>
-                <f:FormRow ID="FormRowExample1" ClientIDMode="Static" ColumnWidths="20px 50% 50%">
+                <f:FormRow ID="FormRowExample1" ColumnWidths="20px 50% 50%">
                     <Items>
                         <f:Label runat="server" CssClass="speciallabel" Text="1."></f:Label>
                         <f:Label ID="Label3" Label="电话" Text="0551-1234567" runat="server" />
@@ -26,7 +26,7 @@
                         </f:Label>
                     </Items>
                 </f:FormRow>
-                <f:FormRow ID="FormRowExample2" ClientIDMode="Static" ColumnWidths="20px 50% 50%">
+                <f:FormRow ID="FormRowExample2" ColumnWidths="20px 50% 50%">
                     <Items>
                         <f:Label ID="Label1" runat="server" CssClass="speciallabel" Text="2."></f:Label>
                         <f:Label ID="Label4" Label="编号" Text="200804170006" runat="server" />
@@ -35,7 +35,7 @@
                         </f:TextBox>
                     </Items>
                 </f:FormRow>
-                <f:FormRow ID="FormRowExample3" ClientIDMode="Static" ColumnWidths="20px 100%">
+                <f:FormRow ID="FormRowExample3" ColumnWidths="20px 100%">
                     <Items>
                         <f:Label ID="Label2" runat="server" CssClass="speciallabel" Text="3."></f:Label>
                         <f:DropDownList ID="DropDownList3" Label="审批人" runat="server" ForceSelection="false" Required="true" ShowRedStar="true">
@@ -45,14 +45,14 @@
                         </f:DropDownList>
                     </Items>
                 </f:FormRow>
-                <f:FormRow ID="FormRowExample4" ClientIDMode="Static" ColumnWidths="20px 100%">
+                <f:FormRow ID="FormRowExample4" ColumnWidths="20px 100%">
                     <Items>
                         <f:Label ID="Label5" runat="server" CssClass="speciallabel" Text="4."></f:Label>
                         <f:NumberBox ID="NumberBox1" Label="申请数量" NoDecimal="true" NoNegative="true" MaxValue="1000" Required="true" runat="server"
                             ShowRedStar="true" />
                     </Items>
                 </f:FormRow>
-                <f:FormRow ID="FormRowExample5" ClientIDMode="Static" ColumnWidths="20px 100%">
+                <f:FormRow ID="FormRowExample5" ColumnWidths="20px 100%">
                     <Items>
                         <f:Label ID="Label6" runat="server" CssClass="speciallabel" Text="5."></f:Label>
                         <f:TextArea ID="TextArea1" runat="server" Label="描述" ShowRedStar="true" Required="true">
@@ -99,7 +99,7 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ColumnWidths</code>（<strong class="example-control-reference" data-example-control="FormRowExample1" title="第 1 个表单行">第 1 个表单行</strong>、<strong class="example-control-reference" data-example-control="FormRowExample2" title="第 2 个表单行">第 2 个表单行</strong>、<strong class="example-control-reference" data-example-control="FormRowExample3" title="第 3 个表单行">第 3 个表单行</strong>、<strong class="example-control-reference" data-example-control="FormRowExample4" title="第 4 个表单行">第 4 个表单行</strong>、<strong class="example-control-reference" data-example-control="FormRowExample5" title="第 5 个表单行">第 5 个表单行</strong>）：各组分别设为<code>20px 50% 50%</code>、<code>20px 100%</code>。</li>
+                <li><code>ColumnWidths</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample1").ClientID %>' title="第 1 个表单行">第 1 个表单行</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample2").ClientID %>' title="第 2 个表单行">第 2 个表单行</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample3").ClientID %>' title="第 3 个表单行">第 3 个表单行</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample4").ClientID %>' title="第 4 个表单行">第 4 个表单行</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample5").ClientID %>' title="第 5 个表单行">第 5 个表单行</strong>）：各组分别设为<code>20px 50% 50%</code>、<code>20px 100%</code>。</li>
                 <li><code>IsFluid</code>（<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单">表单</strong>）：表单随父容器伸缩。</li>
             </ul>
         </section>

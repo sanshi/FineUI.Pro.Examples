@@ -46,11 +46,11 @@
         <br />
         <br />
         <br />
-        <f:Button ID="btnChangeTo0" ClientIDMode="Static" Text="0%" ClickHandler="onChangeTo0Click" runat="server" MarginRight="5"></f:Button>
+        <f:Button ID="btnChangeTo0" Text="0%" ClickHandler="onChangeTo0Click" runat="server" MarginRight="5"></f:Button>
         <f:Button Text="25%" ClickHandler="onChangeTo25Click" runat="server" MarginRight="5"></f:Button>
-        <f:Button ID="btnChangeTo50" ClientIDMode="Static" Text="50%" ClickHandler="onChangeTo50Click" runat="server" MarginRight="5"></f:Button>
+        <f:Button ID="btnChangeTo50" Text="50%" ClickHandler="onChangeTo50Click" runat="server" MarginRight="5"></f:Button>
         <f:Button Text="75%" ClickHandler="onChangeTo75Click" runat="server" MarginRight="5"></f:Button>
-        <f:Button ID="btnChangeTo100" ClientIDMode="Static" Text="100%" ClickHandler="onChangeTo100Click" runat="server" MarginRight="5"></f:Button>
+        <f:Button ID="btnChangeTo100" Text="100%" ClickHandler="onChangeTo100Click" runat="server" MarginRight="5"></f:Button>
         <br />
         <br />
     </form>

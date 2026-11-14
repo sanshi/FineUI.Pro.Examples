@@ -17,7 +17,7 @@
         <f:PageManager ID="PageManager1" EnableWatermark="true" WatermarkText="I❤︎FineUI" runat="server" />
         <f:Panel ID="Panel1" IsFluid="true" runat="server" Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
             <Items>
-                <f:ContentPanel ID="ContentPanelExample1" ClientIDMode="Static" BlockMD="6" BlockLG="3" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="false">
+                <f:ContentPanel ID="ContentPanelExample1" BlockMD="6" BlockLG="3" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="false">
                     <div class="mycard">
                         <div class="title">
                             今日浏览量
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </f:ContentPanel>
-                <f:ContentPanel ID="ContentPanelExample2" ClientIDMode="Static" BlockMD="6" BlockLG="3" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="false">
+                <f:ContentPanel ID="ContentPanelExample2" BlockMD="6" BlockLG="3" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="false">
                     <div class="mycard">
                         <div class="title">
                             今日独立IP
@@ -81,7 +81,7 @@
                         </div>
                     </div>
                 </f:ContentPanel>
-                <f:ContentPanel ID="ContentPanelExample3" ClientIDMode="Static" BlockMD="6" BlockLG="3" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="false">
+                <f:ContentPanel ID="ContentPanelExample3" BlockMD="6" BlockLG="3" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="false">
                     <div class="mycard">
                         <div class="title">
                             今日用户量
@@ -116,7 +116,7 @@
                         </div>
                     </div>
                 </f:ContentPanel>
-                <f:ContentPanel ID="ContentPanelExample4" ClientIDMode="Static" BlockMD="6" BlockLG="3" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="false">
+                <f:ContentPanel ID="ContentPanelExample4" BlockMD="6" BlockLG="3" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="false">
                     <div class="mycard rank">
                         <div class="title">
                             今日排名
@@ -147,11 +147,11 @@
                         </div>
                     </div>
                 </f:ContentPanel>
-                <f:TabStrip ID="TabStripExample1" ClientIDMode="Static" CssClass="mytabstrip" BlockMD="12" ShowInkBar="true" runat="server" ShowBorder="true" ShowBorderShadow="true" ActiveTabIndex="0">
+                <f:TabStrip ID="TabStripExample1" CssClass="mytabstrip" BlockMD="12" ShowInkBar="true" runat="server" ShowBorder="true" ShowBorderShadow="true" ActiveTabIndex="0">
                     <Tabs>
                         <f:Tab runat="server" Layout="Block" BlockConfigSpace="0" Title="浏览量">
                             <Items>
-                                <f:Panel ID="PanelExample2" ClientIDMode="Static" BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
+                                <f:Panel ID="PanelExample2" BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
                                     <Items>
                                         <f:Chart ID="ChartTabViews" runat="server" Height="350px" DataCategoryField="Category" Title="浏览量趋势">
                                             <Series>
@@ -160,7 +160,7 @@
                                         </f:Chart>
                                     </Items>
                                 </f:Panel>
-                                <f:ContentPanel ID="ContentPanelExample5" ClientIDMode="Static" BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false" ShowHeader="false">
+                                <f:ContentPanel ID="ContentPanelExample5" BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false" ShowHeader="false">
                                     <table class="mytable">
                                         <thead>
                                             <tr>
@@ -221,7 +221,7 @@
                         </f:Tab>
                         <f:Tab runat="server" Layout="Block" BlockConfigSpace="0" Title="用户量">
                             <Items>
-                                <f:Panel ID="PanelExample3" ClientIDMode="Static" BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
+                                <f:Panel ID="PanelExample3" BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
                                     <Items>
                                         <f:Chart ID="ChartTabUsers" runat="server" Height="350px" DataCategoryField="Category" Title="用户数与浏览量" ShowLegend="true">
                                             <Series>
@@ -231,7 +231,7 @@
                                         </f:Chart>
                                     </Items>
                                 </f:Panel>
-                                <f:ContentPanel ID="ContentPanelExample6" ClientIDMode="Static" BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false" ShowHeader="false">
+                                <f:ContentPanel ID="ContentPanelExample6" BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false" ShowHeader="false">
                                     <table class="mytable">
                                         <thead>
                                             <tr>
@@ -295,7 +295,7 @@
                         <f:Tool runat="server" ToolTip="打开详细数据" IconFont="_NewTab" ClickHandler="onTabstripToolClick"></f:Tool>
                     </Tools>
                 </f:TabStrip>
-                <f:Panel ID="PanelExample4" ClientIDMode="Static" BlockMD="6" BlockLG="8" Layout="Block" BlockConfigSpace="20px" runat="server" ShowBorder="false" ShowHeader="false">
+                <f:Panel ID="PanelExample4" BlockMD="6" BlockLG="8" Layout="Block" BlockConfigSpace="20px" runat="server" ShowBorder="false" ShowHeader="false">
                     <Items>
                         <f:Grid ID="Grid1" CssClass="mygrid responsive-card-grid" BlockMD="12" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true"
                             Title="表格示例" EnableCheckBoxSelect="true" EnableAlternateRowColor="true" EnableRowLines="true" KeepCurrentSelection="true"
@@ -311,7 +311,7 @@
                                 <f:RenderField ColumnID="Status" DataField="Status" RendererFunction="renderStatus" HeaderText="状态" />
                             </Columns>
                         </f:Grid>
-                        <f:Form ID="FormExample1" ClientIDMode="Static" CssClass="myform" BlockMD="12" Layout="Block" BlockConfigSpace="10px" BodyPadding="20px" runat="server" ShowBorder="true"
+                        <f:Form ID="FormExample1" CssClass="myform" BlockMD="12" Layout="Block" BlockConfigSpace="10px" BodyPadding="20px" runat="server" ShowBorder="true"
                             ShowBorderShadow="true" ShowHeader="true" Title="表单示例" LabelAlign="Right">
                             <Items>
                                 <f:Label ID="Label1" BlockMD="6" runat="server" Label="标签" Text="标签的值">
@@ -345,14 +345,14 @@
                         </f:Form>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="PanelExample5" ClientIDMode="Static" BlockMD="6" BlockLG="4" Layout="Block" BlockConfigSpace="20px" runat="server" ShowBorder="false" ShowHeader="false">
+                <f:Panel ID="PanelExample5" BlockMD="6" BlockLG="4" Layout="Block" BlockConfigSpace="20px" runat="server" ShowBorder="false" ShowHeader="false">
                     <Items>
-                        <f:ContentPanel ID="ContentPanelExample7" ClientIDMode="Static" BlockMD="12" BodyPadding="20px 20px 0 20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true"
+                        <f:ContentPanel ID="ContentPanelExample7" BlockMD="12" BodyPadding="20px 20px 0 20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true"
                             Title="本站统计">
                             <ul class="mysitestats">
                             </ul>
                         </f:ContentPanel>
-                        <f:Panel ID="PanelExample6" ClientIDMode="Static" BlockMD="12" BodyPadding="20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="访问来源">
+                        <f:Panel ID="PanelExample6" BlockMD="12" BodyPadding="20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="访问来源">
                             <Items>
                                 <f:Chart ID="ChartTrafficSources" runat="server" Height="300px" DataCategoryField="Category"
                                     Title="用户访问来源" Subtitle="这是说明文字" TitleAlign="Center"

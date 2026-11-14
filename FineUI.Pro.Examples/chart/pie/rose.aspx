@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="rose.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieRose" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="rose.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieRose" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="cumulative.aspx.cs" Inherits="FineUI.Pro.Examples.chart.AreaCumulative" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="cumulative.aspx.cs" Inherits="FineUI.Pro.Examples.chart.AreaCumulative" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

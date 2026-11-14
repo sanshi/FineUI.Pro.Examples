@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="dashed.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineDashed" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="dashed.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineDashed" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

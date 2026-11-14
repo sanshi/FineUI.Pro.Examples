@@ -32,7 +32,7 @@
                 </f:TextBox>
             </Items>
             <Toolbars>
-                <f:Toolbar ID="ToolbarExample1" ClientIDMode="Static" Position="Bottom" runat="server">
+                <f:Toolbar ID="ToolbarExample1" Position="Bottom" runat="server">
                     <Items>
                         <f:Button runat="server" Text="测试按钮"></f:Button>
                         <f:ToolbarFill runat="server"></f:ToolbarFill>
@@ -53,7 +53,7 @@
     </form>
     <template id="example-description">
         <section aria-label="页面描述">
-            <p>演示将文件选择按钮放进<strong class="example-control-reference" data-example-control="ToolbarExample1" title="工具栏">工具栏</strong>，选定后直接更新头像预览。</p>
+            <p>演示将文件选择按钮放进<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarExample1").ClientID %>' title="工具栏">工具栏</strong>，选定后直接更新头像预览。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-upload" aria-hidden="true"></i>先上传头像</h3>
             <ol>
                 <li>

@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="sales.aspx.cs" Inherits="FineUI.Pro.Examples.chart.Sales" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sales.aspx.cs" Inherits="FineUI.Pro.Examples.chart.Sales" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

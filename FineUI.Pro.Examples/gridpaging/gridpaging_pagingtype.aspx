@@ -33,7 +33,7 @@
                 <f:Button Text="Arrow" EnablePress="true" runat="server" />
                 <f:Button Text="NumberBox" EnablePress="true" runat="server" />
                 <f:Button Text="ArrowNumberBox" EnablePress="true" Pressed="true" runat="server" />
-                <f:Button ID="btnNumber" ClientIDMode="Static" Text="NumberButton" EnablePress="true" runat="server" />
+                <f:Button ID="btnNumber" Text="NumberButton" EnablePress="true" runat="server" />
                 <f:Button Text="ArrowNumberButton" EnablePress="true" runat="server" />
             </Items>
             <Listeners>
@@ -96,7 +96,7 @@
             <p>切换分页栏的箭头、页码输入框和数字按钮组合，并调整分页信息及数字按钮数量。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换分页栏组成</h3>
             <ol>
-                <li>点击<strong class="example-control-reference" data-example-control="btnNumber"
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnNumber").ClientID %>'
                         title="NumberButton">NumberButton</strong>，再尝试点击其他分页类型按钮。<br />结果：页面重新采用所选分页类型，数字按钮、输入框及箭头随类型变化；仍可通过新分页栏换页。</li>
                 <li>切换<strong class="example-control-reference"
                         data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("cbxShowPagingMessage").ClientID %>'

@@ -16,7 +16,7 @@
         <f:TabStrip ID="TabStrip1" IsFluid="true" Height="350px" ShowBorder="true" TabPosition="Top"
             EnableTabCloseMenu="false" ActiveTabIndex="1" runat="server">
             <Tabs>
-                <f:Tab ID="TabExample1" ClientIDMode="Static" CssClass="tab-maxwidth" Title="标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）"
+                <f:Tab ID="TabExample1" CssClass="tab-maxwidth" Title="标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）"
                     TitleToolTip="标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）" BodyPadding="10px" runat="server">
                     <Items>
                         <f:Label ID="Label1" Text="第一个标签的内容" runat="server" />
@@ -46,8 +46,8 @@
     </ul>
     <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>CssClass</code>（<strong class="example-control-reference" data-example-control="TabExample1" title="标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）">标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）</strong>）：初始为<code>tab-maxwidth</code>，本页标签设置 <code>tab</code>-<code>maxwidth</code> 样式；该样式把标题最大宽度限制为 <code>150px</code>。</li>
-        <li><code>TitleToolTip</code>（<strong class="example-control-reference" data-example-control="TabExample1" title="标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）">标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）</strong>）：初始为<code>标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）</code>，悬停时显示完整标题文字。</li>
+        <li><code>CssClass</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabExample1").ClientID %>' title="标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）">标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）</strong>）：初始为<code>tab-maxwidth</code>，本页标签设置 <code>tab</code>-<code>maxwidth</code> 样式；该样式把标题最大宽度限制为 <code>150px</code>。</li>
+        <li><code>TitleToolTip</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabExample1").ClientID %>' title="标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）">标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）</strong>）：初始为<code>标签一（这个标签的标题文字超长，真的很长很长很长很长很长很长很长，非常非常长，够长了吧）</code>，悬停时显示完整标题文字。</li>
     </ul>
 </section>
 </template>

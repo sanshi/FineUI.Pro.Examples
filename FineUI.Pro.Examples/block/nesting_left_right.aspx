@@ -13,10 +13,10 @@
 <body class="f-body-darkerbg">
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="PanelExample1" ClientIDMode="Static" IsFluid="true" runat="server"
+        <f:Panel ID="PanelExample1" IsFluid="true" runat="server"
             Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
             <Items>
-                <f:Panel ID="PanelExample2" ClientIDMode="Static" runat="server" BlockMD="8"
+                <f:Panel ID="PanelExample2" runat="server" BlockMD="8"
                     Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
                     <Items>
                         <f:Panel BlockMD="6" Height="300px"
@@ -33,7 +33,7 @@
                         </f:Panel>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="PanelExample7" ClientIDMode="Static" runat="server" BlockMD="4"
+                <f:Panel ID="PanelExample7" runat="server" BlockMD="4"
                     Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
                     <Items>
                         <f:Panel BlockMD="12" Height="300px"

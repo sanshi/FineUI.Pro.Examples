@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="datalist.aspx.cs" Inherits="FineUI.Pro.Examples.datalist.datalist" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="datalist.aspx.cs" Inherits="FineUI.Pro.Examples.datalist.datalist" %>
 
 <!DOCTYPE html>
 <html>

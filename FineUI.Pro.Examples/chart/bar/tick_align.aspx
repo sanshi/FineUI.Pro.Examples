@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="tick_align.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarTickAlign" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="tick_align.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarTickAlign" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

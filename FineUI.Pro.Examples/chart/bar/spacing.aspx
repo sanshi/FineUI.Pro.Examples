@@ -1,4 +1,4 @@
-<%@ Page Language="C#" AutoEventWireup="true" ClientIDMode="Static" CodeBehind="spacing.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarSpacing" %>
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="spacing.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarSpacing" %>
 <!DOCTYPE html>
 <html>
 <head runat="server">

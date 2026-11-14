@@ -32,7 +32,7 @@
                         </f:Button>
                     </Items>
                 </f:Toolbar>
-                <f:Toolbar ID="ToolbarExample2" ClientIDMode="Static" runat="server" Position="Bottom" ToolbarAlign="Right">
+                <f:Toolbar ID="ToolbarExample2" runat="server" Position="Bottom" ToolbarAlign="Right">
                     <Items>
                         <f:Button runat="server" ID="btnChangeText" OnClick="btnChangeText_Click" Text="修改窗体内的文本值"></f:Button>
                         <f:Button ID="btnClose" runat="server" OnClick="btnClose_Click" Text="关闭窗体">
@@ -52,8 +52,8 @@
     </ul>
     <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
     <ul class="example-description-properties">
-        <li><code>Position</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Toolbar3").ClientID %>' title="第 1 个工具栏">第 1 个工具栏</strong>、<strong class="example-control-reference" data-example-control="ToolbarExample2" title="第 2 个工具栏">第 2 个工具栏</strong>）：初始为 <code>Top</code>、<code>Bottom</code>，指定工具栏位于容器顶部或底部。</li>
-        <li><code>ToolbarAlign</code>（<strong class="example-control-reference" data-example-control="ToolbarExample2" title="第 2 个工具栏">第 2 个工具栏</strong>）：初始为 <code>Right</code>，指定工具栏项目的对齐方式。</li>
+        <li><code>Position</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Toolbar3").ClientID %>' title="第 1 个工具栏">第 1 个工具栏</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarExample2").ClientID %>' title="第 2 个工具栏">第 2 个工具栏</strong>）：初始为 <code>Top</code>、<code>Bottom</code>，指定工具栏位于容器顶部或底部。</li>
+        <li><code>ToolbarAlign</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarExample2").ClientID %>' title="第 2 个工具栏">第 2 个工具栏</strong>）：初始为 <code>Right</code>，指定工具栏项目的对齐方式。</li>
         <li><code>Text</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window2").ClientID %>' title="窗体">窗体</strong>）：正文的值由修改按钮更新，工具栏不随正文内容一起替换。</li>
     </ul>
 </section>

@@ -10,7 +10,7 @@
         <f:PageManager ID="PageManager1" AutoSizePanelID="TabStrip1" runat="server" />
         <f:TabStrip ID="TabStrip1" ShowBorder="false" runat="server" ActiveTabIndex="0" ShowTabHeader="false">
             <Toolbars>
-                <f:Toolbar ID="ToolbarExample1" ClientIDMode="Static" runat="server" CssClass="f-widget-header mytoolbar" Layout="HBox" BoxConfigSpace="5">
+                <f:Toolbar ID="ToolbarExample1" runat="server" CssClass="f-widget-header mytoolbar" Layout="HBox" BoxConfigSpace="5">
                     <Items>
                         <f:Button ID="Button1" runat="server" Text="one" Icon="Cake" BoxFlex="1" EnablePress="true" Pressed="true">
                         </f:Button>

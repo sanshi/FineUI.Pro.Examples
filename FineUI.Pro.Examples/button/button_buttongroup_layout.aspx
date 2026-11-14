@@ -11,7 +11,7 @@
         <f:Panel ID="Panel1" Margin="24px" ShowBorder="false" ShowHeader="false" CssClass="f-widget-content" AutoScroll="true" Layout="VBox"
             BoxConfigAlign="Start" BoxConfigSpace="10" BodyPadding="10px" runat="server">
             <Items>
-                <f:ButtonGroup ID="ButtonGroupExample1" ClientIDMode="Static" runat="server" Layout="HBox" Width="600px">
+                <f:ButtonGroup ID="ButtonGroupExample1" runat="server" Layout="HBox" Width="600px">
                     <f:Button ID="btnIcon1" Text="图标在左侧" BoxFlex="1" Icon="Email" runat="server" />
                     <f:Button ID="btnIcon2" Text="图标在右侧" BoxFlex="1" IconAlign="Right" Icon="Star" runat="server" />
                     <f:Button ID="Button7" Text="图标在左侧" BoxFlex="1" IconFont="_Home" runat="server" />
@@ -50,7 +50,7 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Layout</code>（本页全部按钮组，如<strong class="example-control-reference" data-example-control="ButtonGroupExample1" title="第 1 个按钮组">第 1 个按钮组</strong>）：横向组使用 <code>HBox</code>，纵向组使用 <code>VBox</code>。</li>
+                <li><code>Layout</code>（本页全部按钮组，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ButtonGroupExample1").ClientID %>' title="第 1 个按钮组">第 1 个按钮组</strong>）：横向组使用 <code>HBox</code>，纵向组使用 <code>VBox</code>。</li>
                 <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control="<%= btnIcon1.ClientID %>" title="第 1 个按钮（图标在左侧）">第 1 个按钮（图标在左侧）</strong>、<strong class="example-control-reference" data-example-control="<%= btnIcon2.ClientID %>" title="第 2 个按钮（图标在右侧）">第 2 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="<%= Button7.ClientID %>" title="第 3 个按钮（图标在左侧）">第 3 个按钮（图标在左侧）</strong>、<strong class="example-control-reference" data-example-control="<%= Button8.ClientID %>" title="第 4 个按钮（图标在右侧）">第 4 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="<%= btnIcon3.ClientID %>" title="第 5 个按钮（图标在上面）">第 5 个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="<%= btnIcon4.ClientID %>" title="第 6 个按钮（图标在下面）">第 6 个按钮（图标在下面）</strong>、<strong class="example-control-reference" data-example-control="<%= Button9.ClientID %>" title="第 7 个按钮（图标在上面）">第 7 个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="<%= Button10.ClientID %>" title="第 8 个按钮（图标在下面）">第 8 个按钮（图标在下面）</strong>）：横向组的按钮设为 <code>1</code>，等分组内可用宽度。</li>
             </ul>
         </section>
