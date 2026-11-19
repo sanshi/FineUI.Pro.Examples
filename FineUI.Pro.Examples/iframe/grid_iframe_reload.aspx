@@ -84,7 +84,8 @@
                 <li><code>IFrameUrl</code>（<strong class="example-control-reference"
                         data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="弹出窗体">弹出窗体</strong>）：本页根据当前记录拼接子页面地址及必要参数。
                 </li>
-                <li><code>GetCustomEventReference()</code>（<strong>子页面与父页面交互</strong>）：子页面向正确的父页面发送本页约定的更新通知。</li>
+                <li><code>F.customEvent()</code>（<strong>父页面的更新函数</strong>）：子页面调用父页的 <code>reloadGrid</code>，再由该函数发送 <code>ReloadGrid</code>
+                    自定义事件，将参数传给后台并更新表格，子窗体保持打开。</li>
             </ul>
         </section>
     </template>

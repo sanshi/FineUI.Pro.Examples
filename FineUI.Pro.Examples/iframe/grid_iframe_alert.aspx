@@ -77,7 +77,7 @@
                 <li><code>IFrameUrl</code>（<strong class="example-control-reference"
                         data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="弹出窗体">弹出窗体</strong>）：本页根据当前记录拼接子页面地址及必要参数。
                 </li>
-                <li><code>GetCustomEventReference()</code>（<strong>子页面与父页面交互</strong>）：子页面向正确的父页面发送本页约定的更新通知。</li>
+                <li><code>ActiveWindow.GetHidePostBackReference()</code>（<strong>子页面的确认后动作</strong>）：作为保存成功提示的确认动作，在确认后关闭子窗体，并将参数传给父页面的关闭回发事件，更新表格标题。</li>
             </ul>
         </section>
     </template>

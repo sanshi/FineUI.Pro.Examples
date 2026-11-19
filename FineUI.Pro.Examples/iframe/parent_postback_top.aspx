@@ -21,11 +21,11 @@
     </form>
     <template id="example-description">
         <section aria-label="页面描述">
-            <p>演示从多层 <code>iframe</code> 中通知外层页面，区分当前子页与最终需要更新的父页。</p>
-            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>从内层通知外层</h3>
+            <p>演示多层 <code>iframe</code> 中的窗体显示位置与回发目标：窗体显示在顶层，关闭后回发最初打开它的第二层页面。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>顶层显示与关闭回发</h3>
             <ul>
                 <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
-                        title="面板一">面板一</strong>逐层进入子页，点击其中通知外层页面的入口。<br />结果：目标父页处理对应回发或更新脚本，外层结果标签显示本次通知；已有 <code>iframe</code> 结构保留。</li>
+                        title="面板一">面板一</strong>打开第二层页面中的任一弹窗入口，再在弹出的第三层页面点击<strong>关闭本窗体，回发父页面</strong>。<br />结果：窗体关闭，第二层页面回发并更新页面加载时间；最外层页面保持不变。</li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
@@ -35,7 +35,7 @@
                 <li><code>IFrameUrl</code>（<strong class="example-control-reference"
                         data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
                         title="面板一">面板一</strong>）：初始为<code>parent_postback_top2.aspx</code>，指定下一层页面地址。</li>
-                <li><code>GetCustomEventReference()</code>（<strong>子页通知代码</strong>）：子页向实际目标父页发送本例约定的事件和参数。</li>
+                <li><code>ActiveWindow.GetHidePostBackReference()</code>（<strong>第三层页面的关闭按钮</strong>）：关闭当前窗体并回发最初打开它的第二层页面；窗体显示在顶层，不改变回发目标。</li>
             </ul>
         </section>
     </template>

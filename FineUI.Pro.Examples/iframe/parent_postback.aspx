@@ -40,7 +40,7 @@
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>从内层通知外层</h3>
             <ul>
                 <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
-                        title="面板一">面板一</strong>逐层进入子页，点击其中通知外层页面的入口。<br />结果：目标父页处理对应回发或更新脚本，外层结果标签显示本次通知；已有 <code>iframe</code> 结构保留。</li>
+                        title="面板一">面板一</strong>中的第三层页面点击<strong>关闭本窗体，回发父页面和父页面的父页面</strong>。<br />结果：窗体关闭，第二层和最外层页面依次回发，各自的页面加载时间更新。</li>
                 <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnServerRefresh").ClientID %>'
                         title="服务端刷新面板 IFrame">服务端刷新面板 IFrame</strong>。<br />结果：只刷新指定面板中的 <code>iframe</code>，不重新加载整个外层页面。</li>
             </ul>
@@ -52,7 +52,9 @@
                 <li><code>IFrameUrl</code>（<strong class="example-control-reference"
                         data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
                         title="面板一">面板一</strong>）：初始为<code>parent_postback2.aspx</code>，指定下一层页面地址。</li>
-                <li><code>GetCustomEventReference()</code>（<strong>子页通知代码</strong>）：子页向实际目标父页发送本例约定的事件和参数。</li>
+                <li><code>F.customEvent()</code>（<strong>第二层页面的关闭处理</strong>）：第三层页面关闭窗体并回发第二层页面后，由第二层调用
+                    <code>parent.F.customEvent('Test3WindowClose')</code>，通知最外层页面回发并更新页面加载时间。
+                </li>
             </ul>
         </section>
     </template>
