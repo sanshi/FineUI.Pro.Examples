@@ -32,8 +32,7 @@
             </Nodes>
         </f:Tree>
         <br />
-        <f:Button ID="btnGetSelectedValues" OnClick="btnGetSelectedValues_Click" CssClass="marginr"
-            runat="server" Text="获取选中的节点列表">
+        <f:Button ID="btnGetSelectedValues" OnClick="btnGetSelectedValues_Click" CssClass="marginr" runat="server" Text="获取选中的节点列表">
         </f:Button>
         <f:Button ID="btnSelectOthers" OnClick="btnSelectOthers_Click" runat="server" Text="继续选中[合肥市]和[黄山市]">
         </f:Button>
@@ -43,21 +42,28 @@
         <br />
         <br />
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示连续点击节点累加选择，并切换是否保留原有选中项。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>累加并读取选择</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>连续点击两个不同节点。<br />结果：不按 <code>Ctrl</code> 也能保留原选择并继续累加；再次点击已选节点可按本页规则调整集合。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSelectOthers").ClientID %>' title="继续选中[合肥市]和[黄山市]">继续选中[合肥市]和[黄山市]</strong>。<br />结果：后台保留当前集合，再加入按钮指定的合肥市、黄山市。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：初始为<code>true</code>，允许当前选择包含多个节点。</li>
-        <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：初始为<code>true</code>，连续点击时保留之前的选择。</li>
-        <li><code>SelectedNodeIDArray</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：保存并更新当前节点标识集合。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示连续点击节点累加选择，并切换是否保留原有选中项。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>累加并读取选择</h3>
+            <ol>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树控件">树控件</strong>连续点击两个不同节点。<br />结果：不按 <code>Ctrl</code> 也能保留原选择并继续累加；再次点击已选节点可按本页规则调整集合。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSelectOthers").ClientID %>'
+                        title="继续选中[合肥市]和[黄山市]">继续选中[合肥市]和[黄山市]</strong>。<br />结果：后台保留当前集合，再加入按钮指定的合肥市、黄山市。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树控件">树控件</strong>）：初始为<code>true</code>，允许当前选择包含多个节点。</li>
+                <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树控件">树控件</strong>）：初始为<code>true</code>，连续点击时保留之前的选择。</li>
+                <li><code>SelectedNodeIDArray</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：保存并更新当前节点标识集合。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

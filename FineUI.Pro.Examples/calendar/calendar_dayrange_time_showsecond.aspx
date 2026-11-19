@@ -8,8 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy-MM-dd HH:mm"
-            OnDateSelect="Calendar1_DateSelect" ID="Calendar1" DisplayType="DayRange" ShowTime="true" ShowSecond="false">
+        <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy-MM-dd HH:mm" OnDateSelect="Calendar1_DateSelect" ID="Calendar1"
+            DisplayType="DayRange" ShowTime="true" ShowSecond="false">
         </f:Calendar>
         <br />
         <br />
@@ -34,8 +34,10 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>" title="日历">日历</strong>）：初始为<code>yyyy-MM-dd HH:mm</code>，控制选中值的文字格式。</li>
-                <li><code>ShowSecond</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>" title="日历">日历</strong>）：初始为 <code>false</code>，时间面板只显示小时和分钟，不创建秒列；输出格式也不含秒。</li>
+                <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>"
+                        title="日历">日历</strong>）：初始为<code>yyyy-MM-dd HH:mm</code>，控制选中值的文字格式。</li>
+                <li><code>ShowSecond</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>"
+                        title="日历">日历</strong>）：初始为 <code>false</code>，时间面板只显示小时和分钟，不创建秒列；输出格式也不含秒。</li>
             </ul>
         </section>
     </template>

@@ -8,13 +8,12 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉树（多选，延迟加载）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉树（多选，延迟加载）"
+            ShowHeader="true">
             <Items>
                 <f:DropDownBox runat="server" ID="DropDownBox1" EnableMultiSelect="true" Values="henan,anhui">
                     <PopPanel>
-                        <f:Tree ID="Tree1" ShowHeader="false" Hidden="true"
-                            AutoLeafIdentification="false" OnNodeLazyLoad="Tree1_NodeLazyLoad"
+                        <f:Tree ID="Tree1" ShowHeader="false" Hidden="true" AutoLeafIdentification="false" OnNodeLazyLoad="Tree1_NodeLazyLoad"
                             EnableMultiSelect="true" KeepCurrentSelection="true" runat="server">
                             <Nodes>
                                 <f:TreeNode Text="中国" Expanded="true" NodeID="china">
@@ -68,8 +67,10 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>AutoLeafIdentification</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>" title="Tree">Tree</strong>）：为 <code>false</code> 时由页面明确控制叶子节点与延迟加载节点。 本页声明值为 <code>false</code>。</li>
-                <li><code>OnNodeLazyLoad</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>" title="Tree">Tree</strong>）：展开尚未加载的节点时，请求后台补充子节点。 本页声明值为 <code>Tree1</code><code>_NodeLazyLoad</code>。</li>
+                <li><code>AutoLeafIdentification</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>"
+                        title="Tree">Tree</strong>）：为 <code>false</code> 时由页面明确控制叶子节点与延迟加载节点。 本页声明值为 <code>false</code>。</li>
+                <li><code>OnNodeLazyLoad</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>"
+                        title="Tree">Tree</strong>）：展开尚未加载的节点时，请求后台补充子节点。 本页声明值为 <code>Tree1</code><code>_NodeLazyLoad</code>。</li>
             </ul>
         </section>
     </template>

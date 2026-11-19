@@ -81,16 +81,26 @@
             <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对照字段排列</h3>
             <ol>
                 <li>
-                    在<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="姓">姓</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox4.ClientID %>" title="名">名</strong>填写联系人，邮箱输入 <code>reader</code>&#64;<code>example.com</code>，填写主题和<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="消息正文">消息正文</strong>。<br />
+                    在<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="姓">姓</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= TextBox4.ClientID %>" title="名">名</strong>填写联系人，邮箱输入
+                    <code>reader</code>&#64;<code>example.com</code>，填写主题和<strong class="example-control-reference"
+                        data-example-control="<%= TextArea1.ClientID %>" title="消息正文">消息正文</strong>。<br />
                     结果：姓名字段并排，其余字段纵向排列。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：推荐使用表单的<code>EnableTableStyle</code>属性，更简单，参考示例：表格样式->表格样式（<strong class="example-control-reference" data-example-control="<%= Window1.ClientID %>" title="联系我们">联系我们</strong>）。</p>
+            <p>注：推荐使用表单的<code>EnableTableStyle</code>属性，更简单，参考示例：表格样式->表格样式（<strong class="example-control-reference"
+                    data-example-control="<%= Window1.ClientID %>" title="联系我们">联系我们</strong>）。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="姓">姓</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox4.ClientID %>" title="名">名</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox1.ClientID %>" title="电子邮箱">电子邮箱</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox3.ClientID %>" title="主题">主题</strong>、<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="消息正文">消息正文</strong>）：隐藏控件内置标签，改用 HTML 表格单元格显示。</li>
-                <li><code>tablehtml</code>（本页全部文本框，如<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="姓">姓</strong>）：手写 HTML 表格使用公共 <code>tablehtml.css</code> 形成边线与标签区域。</li>
+                <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>"
+                        title="姓">姓</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox4.ClientID %>"
+                        title="名">名</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox1.ClientID %>"
+                        title="电子邮箱">电子邮箱</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox3.ClientID %>"
+                        title="主题">主题</strong>、<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>"
+                        title="消息正文">消息正文</strong>）：隐藏控件内置标签，改用 HTML 表格单元格显示。</li>
+                <li><code>tablehtml</code>（本页全部文本框，如<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>"
+                        title="姓">姓</strong>）：手写 HTML 表格使用公共 <code>tablehtml.css</code> 形成边线与标签区域。</li>
             </ul>
         </section>
     </template>

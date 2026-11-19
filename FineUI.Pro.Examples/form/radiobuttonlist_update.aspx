@@ -9,49 +9,39 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" runat="server" LabelWidth="120px" EnableCollapse="false"
-            BodyPadding="10px" ShowBorder="true" ShowHeader="true"
-            Title="简单表单">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" runat="server" LabelWidth="120px" EnableCollapse="false" BodyPadding="10px" ShowBorder="true"
+            ShowHeader="true" Title="简单表单">
             <Items>
                 <f:RadioButtonList ID="RadioButtonList1" Label="列表一" runat="server">
                     <f:RadioItem Text="可选项 1" Value="value1" />
                     <f:RadioItem Text="可选项 2" Value="value2" Selected="true" />
                     <f:RadioItem Text="可选项 3" Value="value3" />
                 </f:RadioButtonList>
-                <f:Button ID="btnUpdateList1" CssClass="marginr" Text="更新列表一" OnClick="btnUpdateList1_Click"
-                    runat="server">
+                <f:Button ID="btnUpdateList1" CssClass="marginr" Text="更新列表一" OnClick="btnUpdateList1_Click" runat="server">
                 </f:Button>
-                <f:Button ID="btnCheckedItemsList1" Text="获取列表一的选中项" OnClick="btnCheckedItemsList1_Click"
-                    runat="server">
+                <f:Button ID="btnCheckedItemsList1" Text="获取列表一的选中项" OnClick="btnCheckedItemsList1_Click" runat="server">
                 </f:Button>
                 <f:Label runat="server">
                 </f:Label>
-                <f:RadioButtonList ID="RadioButtonList2" Label="列表二（竖排）" ColumnNumber="3" ColumnVertical="true"
-                    runat="server">
+                <f:RadioButtonList ID="RadioButtonList2" Label="列表二（竖排）" ColumnNumber="3" ColumnVertical="true" runat="server">
                 </f:RadioButtonList>
-                <f:Button ID="btnUpdateList2" CssClass="marginr" Text="更新列表二" OnClick="btnUpdateList2_Click"
-                    runat="server">
+                <f:Button ID="btnUpdateList2" CssClass="marginr" Text="更新列表二" OnClick="btnUpdateList2_Click" runat="server">
                 </f:Button>
-                <f:Button ID="btnCheckedItemsList2" Text="获取列表二的选中项" OnClick="btnCheckedItemsList2_Click"
-                    runat="server">
+                <f:Button ID="btnCheckedItemsList2" Text="获取列表二的选中项" OnClick="btnCheckedItemsList2_Click" runat="server">
                 </f:Button>
                 <f:Label ID="Label1" runat="server">
                 </f:Label>
-                <f:RadioButtonList ID="RadioButtonList4" Label="列表四" ColumnNumber="3" ColumnVertical="true"
-                    runat="server">
+                <f:RadioButtonList ID="RadioButtonList4" Label="列表四" ColumnNumber="3" ColumnVertical="true" runat="server">
                 </f:RadioButtonList>
-                <f:Button ID="btnUpdateList4" CssClass="marginr" Text="更新列表四（可反复操作）" OnClick="btnUpdateList4_Click"
-                    runat="server">
+                <f:Button ID="btnUpdateList4" CssClass="marginr" Text="更新列表四（可反复操作）" OnClick="btnUpdateList4_Click" runat="server">
                 </f:Button>
-                <f:Button ID="btnCheckedItemsList4" Text="获取列表四的选中项" OnClick="btnCheckedItemsList4_Click"
-                    runat="server">
+                <f:Button ID="btnCheckedItemsList4" Text="获取列表四的选中项" OnClick="btnCheckedItemsList4_Click" runat="server">
                 </f:Button>
             </Items>
         </f:SimpleForm>
         <br />
         <br />
-        <f:RadioButtonList ID="RadioButtonList3" Width="700px" Label="列表三" ColumnNumber="3"
-            ColumnVertical="false" runat="server">
+        <f:RadioButtonList ID="RadioButtonList3" Width="700px" Label="列表三" ColumnNumber="3" ColumnVertical="false" runat="server">
             <f:RadioItem Text="可选项 1" Value="value1" />
             <f:RadioItem Text="可选项 2" Value="value2" />
             <f:RadioItem Text="可选项 3" Value="value3" />
@@ -62,11 +52,9 @@
             <f:RadioItem Text="可选项 8" Value="value8" />
         </f:RadioButtonList>
         <br />
-        <f:Button ID="btnUpdateList3" CssClass="marginr" Text="更新列表三" OnClick="btnUpdateList3_Click"
-            runat="server">
+        <f:Button ID="btnUpdateList3" CssClass="marginr" Text="更新列表三" OnClick="btnUpdateList3_Click" runat="server">
         </f:Button>
-        <f:Button ID="btnCheckedItemsList3" Text="获取列表三的选中项" OnClick="btnCheckedItemsList3_Click"
-            runat="server">
+        <f:Button ID="btnCheckedItemsList3" Text="获取列表三的选中项" OnClick="btnCheckedItemsList3_Click" runat="server">
         </f:Button>
     </form>
     <template id="example-description">
@@ -79,24 +67,29 @@
                     结果：回发后由后台替换为 <code>4</code> 个“数据绑定值”选项，并选中 <code>value1</code>。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnCheckedItemsList1.ClientID %>" title="获取列表一的选中项">获取列表一的选中项</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnCheckedItemsList1.ClientID %>"
+                        title="获取列表一的选中项">获取列表一的选中项</strong>。<br />
                     结果：显示更新后的当前选中值 <code>value1</code>。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>反复填充和清空</h3>
             <ol>
                 <li>
-                    <strong class="example-control-reference" data-example-control="<%= RadioButtonList4.ClientID %>" title="列表四">列表四</strong>为空时点击<strong class="example-control-reference" data-example-control="<%= btnUpdateList4.ClientID %>" title="更新列表四（可反复操作）">更新列表四（可反复操作）</strong>。<br />
+                    <strong class="example-control-reference" data-example-control="<%= RadioButtonList4.ClientID %>" title="列表四">列表四</strong>为空时点击<strong
+                        class="example-control-reference" data-example-control="<%= btnUpdateList4.ClientID %>"
+                        title="更新列表四（可反复操作）">更新列表四（可反复操作）</strong>。<br />
                     结果：<strong class="example-control-reference" data-example-control="<%= RadioButtonList4.ClientID %>" title="列表四">列表四</strong>填入选项并出现默认选择。
                 </li>
                 <li>
                     再点同一个按钮。<br />
-                    结果：<strong class="example-control-reference" data-example-control="<%= RadioButtonList4.ClientID %>" title="列表四">列表四</strong>全部选项清空；继续点击可以重新填充。
+                    结果：<strong class="example-control-reference" data-example-control="<%= RadioButtonList4.ClientID %>"
+                        title="列表四">列表四</strong>全部选项清空；继续点击可以重新填充。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DataSource</code>（本页全部单选框列表，如<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>" title="列表一">列表一</strong>）：提供新数据后重新绑定，再设置当前选中值；获取按钮读取本次选择。</li>
+                <li><code>DataSource</code>（本页全部单选框列表，如<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>"
+                        title="列表一">列表一</strong>）：提供新数据后重新绑定，再设置当前选中值；获取按钮读取本次选择。</li>
             </ul>
         </section>
     </template>

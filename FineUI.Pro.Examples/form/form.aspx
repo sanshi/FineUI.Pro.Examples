@@ -4,17 +4,17 @@
 <html>
 <head runat="server">
     <title></title>
-	<style>
-		#Form2 .f-panel-body .f-field {
-			margin-bottom: 20px;
-		}
-	</style>
+    <style>
+        #Form2 .f-panel-body .f-field {
+            margin-bottom: 20px;
+        }
+
+    </style>
 </head>
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Form IsFluid="true" BodyPadding="10px" ID="Form1" LabelWidth="100px" EnableCollapse="false"
-            runat="server" Title="表单 1" RedStarPosition="AfterText">
+        <f:Form IsFluid="true" BodyPadding="10px" ID="Form1" LabelWidth="100px" EnableCollapse="false" runat="server" Title="表单 1" RedStarPosition="AfterText">
             <Rows>
                 <f:FormRow>
                     <Items>
@@ -50,11 +50,10 @@
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:Panel ID="Panel1" runat="server" ShowBorder="false"
-                            ShowHeader="false">
+                        <f:Panel ID="Panel1" runat="server" ShowBorder="false" ShowHeader="false">
                             <Items>
-                                <f:Button runat="server" Text="验证此表单并提交" CssClass="marginr" ValidateForms="Form1"
-                                    ID="btnSubmitForm1" OnClick="btnSubmitForm1_Click">
+                                <f:Button runat="server" Text="验证此表单并提交" CssClass="marginr" ValidateForms="Form1" ID="btnSubmitForm1"
+                                    OnClick="btnSubmitForm1_Click">
                                 </f:Button>
                             </Items>
                         </f:Panel>
@@ -63,8 +62,7 @@
             </Rows>
         </f:Form>
         <br />
-        <f:Form IsFluid="true" LabelWidth="100px" BodyPadding="10px" EnableCollapse="false"
-            ID="Form2" runat="server" Title="表单 2">
+        <f:Form IsFluid="true" LabelWidth="100px" BodyPadding="10px" EnableCollapse="false" ID="Form2" runat="server" Title="表单 2">
             <Rows>
                 <f:FormRow>
                     <Items>
@@ -76,15 +74,14 @@
                 <f:FormRow>
                     <Items>
                         <f:Label ID="Label4" Label="编号" Text="200804170006" runat="server" />
-                        <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL"
-                            RegexMessage="请输入有效的邮箱地址" runat="server">
+                        <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址" runat="server">
                         </f:TextBox>
                     </Items>
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:DropDownList ID="DropDownList3" Label="审批人" runat="server" Required="true" ShowRedStar="true"
-                            EmptyText="请选择审批人" AutoSelectFirstItem="false">
+                        <f:DropDownList ID="DropDownList3" Label="审批人" runat="server" Required="true" ShowRedStar="true" EmptyText="请选择审批人"
+                            AutoSelectFirstItem="false">
                             <f:ListItem Text="老大甲" Value="0"></f:ListItem>
                             <f:ListItem Text="老大乙" Value="1"></f:ListItem>
                             <f:ListItem Text="老大丙" Value="2"></f:ListItem>
@@ -108,8 +105,7 @@
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:Panel ID="Panel2" runat="server" ShowBorder="false"
-                            ShowHeader="false">
+                        <f:Panel ID="Panel2" runat="server" ShowBorder="false" ShowHeader="false">
                             <Items>
                                 <f:Button ID="btnSubmitForm2" Text="验证此表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitForm2_Click"
                                     ValidateForms="Form2">
@@ -121,8 +117,7 @@
             </Rows>
         </f:Form>
         <br />
-        <f:Button ID="btnSubmitAll" Text="验证两个表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitAll_Click"
-            ValidateForms="Form1,Form2">
+        <f:Button ID="btnSubmitAll" Text="验证两个表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitAll_Click" ValidateForms="Form1,Form2">
         </f:Button>
     </form>
     <template id="example-description">
@@ -131,11 +126,16 @@
             <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>只验证当前表单</h3>
             <ol>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="表单 1">表单 1</strong> 的<strong class="example-control-reference" data-example-control="<%= btnSubmitForm1.ClientID %>" title="第 1 个面板的验证此表单并提交">第 1 个面板的验证此表单并提交</strong>、<strong class="example-control-reference" data-example-control="<%= btnSubmitForm2.ClientID %>" title="第 2 个面板的验证此表单并提交">第 2 个面板的验证此表单并提交</strong>。<br />
-                    结果：空的必填选择和文本会阻止提交；<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单 2">表单 2</strong> 的字段不影响这次检查。
+                    点击<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="表单 1">表单 1</strong> 的<strong
+                        class="example-control-reference" data-example-control="<%= btnSubmitForm1.ClientID %>" title="第 1 个面板的验证此表单并提交">第 1
+                        个面板的验证此表单并提交</strong>、<strong class="example-control-reference" data-example-control="<%= btnSubmitForm2.ClientID %>"
+                        title="第 2 个面板的验证此表单并提交">第 2 个面板的验证此表单并提交</strong>。<br />
+                    结果：空的必填选择和文本会阻止提交；<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单 2">表单 2</strong>
+                    的字段不影响这次检查。
                 </li>
                 <li>
-                    关闭提示，在<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="表单 1">表单 1</strong> 勾选复选框、开关和<strong class="example-control-reference" data-example-control="<%= RadioButton1.ClientID %>" title="单选框">单选框</strong>，选择一个下拉项并输入文本，再次提交。<br />
+                    关闭提示，在<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="表单 1">表单 1</strong> 勾选复选框、开关和<strong
+                        class="example-control-reference" data-example-control="<%= RadioButton1.ClientID %>" title="单选框">单选框</strong>，选择一个下拉项并输入文本，再次提交。<br />
                     结果：通过后仅提交并显示<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="表单 1">表单 1</strong> 的当前字段值。
                 </li>
             </ol>
@@ -143,7 +143,9 @@
             <ol>
                 <li>
                     点击<strong class="example-control-reference" data-example-control="<%= btnSubmitAll.ClientID %>" title="验证两个表单并提交">验证两个表单并提交</strong>。<br />
-                    结果：两个表单都参与验证；<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单 2">表单 2</strong> 需要有效邮箱、<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>" title="审批人">审批人</strong>、<code>0</code> 到 <code>1000</code> 的非负整数数量和说明。
+                    结果：两个表单都参与验证；<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单 2">表单 2</strong>
+                    需要有效邮箱、<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>"
+                        title="审批人">审批人</strong>、<code>0</code> 到 <code>1000</code> 的非负整数数量和说明。
                 </li>
                 <li>
                     关闭提示，补齐两个表单的必填项，再点击同一按钮。<br />
@@ -152,7 +154,12 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ValidateForms</code>（<strong class="example-control-reference" data-example-control="<%= btnSubmitForm1.ClientID %>" title="第 1 个面板的验证此表单并提交">第 1 个面板的验证此表单并提交</strong>、<strong class="example-control-reference" data-example-control="<%= btnSubmitForm2.ClientID %>" title="第 2 个面板的验证此表单并提交">第 2 个面板的验证此表单并提交</strong>、<strong class="example-control-reference" data-example-control="<%= btnSubmitAll.ClientID %>" title="验证两个表单并提交">验证两个表单并提交</strong>）：单表单按钮分别指定 <code>Form1</code> 或 <code>Form2</code>，联合按钮指定 <code>Form1</code>,<code>Form2</code>。</li>
+                <li><code>ValidateForms</code>（<strong class="example-control-reference" data-example-control="<%= btnSubmitForm1.ClientID %>"
+                        title="第 1 个面板的验证此表单并提交">第 1 个面板的验证此表单并提交</strong>、<strong class="example-control-reference"
+                        data-example-control="<%= btnSubmitForm2.ClientID %>" title="第 2 个面板的验证此表单并提交">第 2 个面板的验证此表单并提交</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= btnSubmitAll.ClientID %>" title="验证两个表单并提交">验证两个表单并提交</strong>）：单表单按钮分别指定
+                    <code>Form1</code> 或 <code>Form2</code>，联合按钮指定 <code>Form1</code>,<code>Form2</code>。
+                </li>
             </ul>
         </section>
     </template>

@@ -76,7 +76,8 @@
             <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>先筛专业，再选人员</h3>
             <ol>
                 <li>
-                    展开外层下拉框，再展开里面的<strong class="example-control-reference" data-example-control="<%= ddbMajor.ClientID %>" title="专业">专业</strong>下拉框，勾选<code>化学系</code>。<br />
+                    展开外层下拉框，再展开里面的<strong class="example-control-reference" data-example-control="<%= ddbMajor.ClientID %>"
+                        title="专业">专业</strong>下拉框，勾选<code>化学系</code>。<br />
                     结果：内层保留所选专业；收起专业面板后按化学系过滤外层表格。
                 </li>
                 <li>
@@ -87,13 +88,16 @@
             <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>通过性别继续筛选</h3>
             <ol>
                 <li>
-                    重新展开外层面板，在<strong class="example-control-reference" data-example-control="<%= ddlGender.ClientID %>" title="性别">性别</strong>中选择<code>女</code>。<br />
+                    重新展开外层面板，在<strong class="example-control-reference" data-example-control="<%= ddlGender.ClientID %>"
+                        title="性别">性别</strong>中选择<code>女</code>。<br />
                     结果：表格只显示满足当前性别与专业条件的人员；内层面板的选择不直接成为外层人员值。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DataControlID</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">请从下拉表格中选择</strong>、<strong class="example-control-reference" data-example-control="<%= ddbMajor.ClientID %>" title="专业">专业</strong>）：指定弹出面板中提供选择数据的控件。 本页声明值为 <code>Grid1</code>。</li>
+                <li><code>DataControlID</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="请从下拉表格中选择">请从下拉表格中选择</strong>、<strong class="example-control-reference" data-example-control="<%= ddbMajor.ClientID %>"
+                        title="专业">专业</strong>）：指定弹出面板中提供选择数据的控件。 本页声明值为 <code>Grid1</code>。</li>
             </ul>
         </section>
     </template>

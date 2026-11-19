@@ -12,13 +12,11 @@
         <f:Button ID="btnIcon2" Text="图标在右侧" IconAlign="Right" IconFont="_Car" runat="server" />
         <br />
         <br />
-        <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" IconFont="_Camera" runat="server"
-            CssClass="marginr" />
+        <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" IconFont="_Camera" runat="server" CssClass="marginr" />
         <f:Button ID="btnIcon4" Text="图标在下面" IconAlign="Bottom" IconFont="_Phone" runat="server" />
         <br />
         <br />
-        <f:Button ID="btnCustomIcon" Text="点击修改图标（在三个图标之前切换）" OnClick="btnCustomIcon_Click"
-            IconFont="_VolumeUp" runat="server" />
+        <f:Button ID="btnCustomIcon" Text="点击修改图标（在三个图标之前切换）" OnClick="btnCustomIcon_Click" IconFont="_VolumeUp" runat="server" />
         <br />
         <br />
         只有图片的按钮：
@@ -37,8 +35,7 @@
         <f:Button ID="Button4" Size="Large" Text="图标在右侧" IconAlign="Right" IconFont="_Car" runat="server" />
         <br />
         <br />
-        <f:Button ID="Button5" Size="Large" Text="图标在上面" IconAlign="Top" IconFont="_Camera" runat="server"
-            CssClass="marginr" />
+        <f:Button ID="Button5" Size="Large" Text="图标在上面" IconAlign="Top" IconFont="_Camera" runat="server" CssClass="marginr" />
         <f:Button ID="Button6" Size="Large" Text="图标在下面" IconAlign="Bottom" IconFont="_Phone" runat="server" />
         <br />
         <br />
@@ -56,14 +53,22 @@
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>连续切换图标</h3>
             <ul>
                 <li>
-                    连续点击标为<strong class="example-control-reference" data-example-control="<%= btnCustomIcon.ClientID %>" title="点击修改图标（在三个图标之前切换）">点击修改图标（在三个图标之前切换）</strong>的按钮。<br />
+                    连续点击标为<strong class="example-control-reference" data-example-control="<%= btnCustomIcon.ClientID %>"
+                        title="点击修改图标（在三个图标之前切换）">点击修改图标（在三个图标之前切换）</strong>的按钮。<br />
                     结果：回发后，后台按音量大、音量小、静音的顺序循环更换图标。
                 </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>IconFont</code>（本页全部按钮，如<strong class="example-control-reference" data-example-control="<%= btnIcon1.ClientID %>" title="第 1 个按钮（图标在左侧）">第 1 个按钮（图标在左侧）</strong>）：指定字体图标，页面使用主页、汽车、相机、电话和音量图标。</li>
-                <li><code>IconAlign</code>（<strong class="example-control-reference" data-example-control="<%= btnIcon2.ClientID %>" title="第 2 个按钮（图标在右侧）">第 2 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="<%= btnIcon3.ClientID %>" title="第 3 个按钮（图标在上面）">第 3 个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="<%= btnIcon4.ClientID %>" title="第 4 个按钮（图标在下面）">第 4 个按钮（图标在下面）</strong>、<strong class="example-control-reference" data-example-control="<%= Button4.ClientID %>" title="第 11 个按钮（图标在右侧）">第 11 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="<%= Button5.ClientID %>" title="第 12 个按钮（图标在上面）">第 12 个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="<%= Button6.ClientID %>" title="第 13 个按钮（图标在下面）">第 13 个按钮（图标在下面）</strong>）：控制图标相对文字的位置。</li>
+                <li><code>IconFont</code>（本页全部按钮，如<strong class="example-control-reference" data-example-control="<%= btnIcon1.ClientID %>"
+                        title="第 1 个按钮（图标在左侧）">第 1 个按钮（图标在左侧）</strong>）：指定字体图标，页面使用主页、汽车、相机、电话和音量图标。</li>
+                <li><code>IconAlign</code>（<strong class="example-control-reference" data-example-control="<%= btnIcon2.ClientID %>" title="第 2 个按钮（图标在右侧）">第 2
+                        个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="<%= btnIcon3.ClientID %>" title="第 3 个按钮（图标在上面）">第 3
+                        个按钮（图标在上面）</strong>、<strong class="example-control-reference" data-example-control="<%= btnIcon4.ClientID %>" title="第 4 个按钮（图标在下面）">第 4
+                        个按钮（图标在下面）</strong>、<strong class="example-control-reference" data-example-control="<%= Button4.ClientID %>" title="第 11 个按钮（图标在右侧）">第
+                        11 个按钮（图标在右侧）</strong>、<strong class="example-control-reference" data-example-control="<%= Button5.ClientID %>"
+                        title="第 12 个按钮（图标在上面）">第 12 个按钮（图标在上面）</strong>、<strong class="example-control-reference"
+                        data-example-control="<%= Button6.ClientID %>" title="第 13 个按钮（图标在下面）">第 13 个按钮（图标在下面）</strong>）：控制图标相对文字的位置。</li>
             </ul>
         </section>
     </template>

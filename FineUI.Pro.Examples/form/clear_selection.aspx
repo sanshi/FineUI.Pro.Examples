@@ -130,18 +130,24 @@
             <h3><i class="f-icon f-iconfont f-iconfont-close" aria-hidden="true"></i>清空后读取选择</h3>
             <ol>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnClearSelection.ClientID %>" title="清空全部选择">清空全部选择</strong>，再点击<strong class="example-control-reference" data-example-control="<%= btnReadSelection.ClientID %>" title="读取当前选择">读取当前选择</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnClearSelection.ClientID %>"
+                        title="清空全部选择">清空全部选择</strong>，再点击<strong class="example-control-reference" data-example-control="<%= btnReadSelection.ClientID %>"
+                        title="读取当前选择">读取当前选择</strong>。<br />
                     结果：按钮回发后由后台清空七类控件的选择，读取结果中各类选中数量和表格当前单元格为<code>0</code>；选项数据保留，树勾选仍保留。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnClearAndSelect.ClientID %>" title="清空后重新选中甲">清空后重新选中甲</strong>，再<strong class="example-control-reference" data-example-control="<%= btnReadSelection.ClientID %>" title="读取当前选择">读取当前选择</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnClearAndSelect.ClientID %>"
+                        title="清空后重新选中甲">清空后重新选中甲</strong>，再<strong class="example-control-reference" data-example-control="<%= btnReadSelection.ClientID %>"
+                        title="读取当前选择">读取当前选择</strong>。<br />
                     结果：同一轮先清空再赋值后，七类控件均选中甲；清空动作不会覆盖后面的赋值。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-check-box" aria-hidden="true"></i>单独取消树勾选</h3>
             <ul>
                 <li>
-                    点击树区的<strong class="example-control-reference" data-example-control="<%= btnUncheckNodes.ClientID %>" title="取消树节点勾选">取消树节点勾选</strong>，再<strong class="example-control-reference" data-example-control="<%= btnReadSelection.ClientID %>" title="读取当前选择">读取当前选择</strong>。<br />
+                    点击树区的<strong class="example-control-reference" data-example-control="<%= btnUncheckNodes.ClientID %>"
+                        title="取消树节点勾选">取消树节点勾选</strong>，再<strong class="example-control-reference" data-example-control="<%= btnReadSelection.ClientID %>"
+                        title="读取当前选择">读取当前选择</strong>。<br />
                     结果：树勾选数量变为<code>0</code>；节点高亮与勾选是两个独立状态，清空选择不等于清空勾选。
                 </li>
             </ul>
@@ -150,9 +156,26 @@
             <p>树的清空选择只取消节点高亮，保留节点勾选和展开状态；取消勾选请使用树区域内的按钮。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ClearSelection()</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>" title="表格（Grid）">表格（Grid）</strong>、<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>" title="树（Tree）">树（Tree）</strong>、<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉选择框">下拉选择框</strong>、<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>" title="第 1 个复选框列表">第 1 个复选框列表</strong>、<strong class="example-control-reference" data-example-control="<%= DataList1.ClientID %>" title="数据列表">数据列表</strong>、<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="复选框列表">复选框列表</strong>、<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>" title="单选框列表">单选框列表</strong>）：清空表格、<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉选择框">下拉选择框</strong>、<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>、<code>DataList</code>、树、<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="复选框列表">复选框列表</strong>和<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>" title="单选框列表">单选框列表</strong>的选中状态，不删除数据。</li>
-                <li><code>UncheckAllNodes()</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>" title="树（Tree）">树（Tree）</strong>）：单独<strong class="example-control-reference" data-example-control="<%= btnUncheckNodes.ClientID %>" title="取消树节点勾选">取消树节点勾选</strong>；树的选中、高亮和展开状态独立。</li>
-                <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="<%= DataList1.ClientID %>" title="数据列表">数据列表</strong>、<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="复选框列表">复选框列表</strong>）：清空后仍可重新赋值；本例使用稳定值 <code>a</code> 选中<code>甲</code>。</li>
+                <li><code>ClearSelection()</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>"
+                        title="表格（Grid）">表格（Grid）</strong>、<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>"
+                        title="树（Tree）">树（Tree）</strong>、<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉选择框">下拉选择框</strong>、<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>"
+                        title="第 1 个复选框列表">第 1 个复选框列表</strong>、<strong class="example-control-reference" data-example-control="<%= DataList1.ClientID %>"
+                        title="数据列表">数据列表</strong>、<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>"
+                        title="复选框列表">复选框列表</strong>、<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>"
+                        title="单选框列表">单选框列表</strong>）：清空表格、<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉选择框">下拉选择框</strong>、<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>、<code>DataList</code>、树、<strong class="example-control-reference"
+                        data-example-control="<%= CheckBoxList1.ClientID %>" title="复选框列表">复选框列表</strong>和<strong class="example-control-reference"
+                        data-example-control="<%= RadioButtonList1.ClientID %>" title="单选框列表">单选框列表</strong>的选中状态，不删除数据。</li>
+                <li><code>UncheckAllNodes()</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>"
+                        title="树（Tree）">树（Tree）</strong>）：单独<strong class="example-control-reference" data-example-control="<%= btnUncheckNodes.ClientID %>"
+                        title="取消树节点勾选">取消树节点勾选</strong>；树的选中、高亮和展开状态独立。</li>
+                <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control="<%= DataList1.ClientID %>"
+                        title="数据列表">数据列表</strong>、<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>"
+                        title="复选框列表">复选框列表</strong>）：清空后仍可重新赋值；本例使用稳定值 <code>a</code> 选中<code>甲</code>。</li>
             </ul>
         </section>
     </template>

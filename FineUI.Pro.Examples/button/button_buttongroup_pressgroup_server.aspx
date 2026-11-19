@@ -73,7 +73,6 @@
 
     </form>
     <script>
-
         function onButtonGroup3PressChange(event, btn) {
             F.customEvent('ButtonGroupItemPress', 'ButtonGroup3');
         }
@@ -85,7 +84,6 @@
         function onButtonGroup5PressChange(event, btn) {
             F.customEvent('ButtonGroupItemPress', 'ButtonGroup5');
         }
-
 
     </script>
 </body>

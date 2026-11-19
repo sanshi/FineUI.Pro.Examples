@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉列表（初始值为空）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉列表（初始值为空）"
+            ShowHeader="true">
             <Items>
                 <f:DropDownList runat="server" ID="DropDownList1" AutoSelectFirstItem="false" EmptyText="请选择一项">
                     <f:ListItem Text="可选项1" Value="Value1" />
@@ -25,8 +25,7 @@
                     <f:ListItem Text="普通型1 &lt; L &gt; 1.5" Value="普通型1 &lt; L &gt; 1.5" />
                 </f:DropDownList>
 
-                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click"
-                    CssClass="marginr">
+                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" runat="server" OnClick="btnGetSelection_Click">
                 </f:Button>
@@ -44,13 +43,17 @@
             <ol>
                 <li>
                     初次打开页面，先不选择任何项。<br />
-                    结果：输入区没有选中值，显示<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="请选择一项">请选择一项</strong>提示；之后可从列表选择有效项。
+                    结果：输入区没有选中值，显示<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="请选择一项">请选择一项</strong>提示；之后可从列表选择有效项。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>AutoSelectFirstItem</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="请选择一项">请选择一项</strong>）：为 <code>false</code> 时，不自动把第一项设为初始选择。 本页声明值为 <code>false</code>。</li>
-                <li><code>EmptyText</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="请选择一项">请选择一项</strong>）：未选择时显示输入提示。 本页声明值为 <strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="请选择一项">请选择一项</strong>。</li>
+                <li><code>AutoSelectFirstItem</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="请选择一项">请选择一项</strong>）：为 <code>false</code> 时，不自动把第一项设为初始选择。 本页声明值为 <code>false</code>。</li>
+                <li><code>EmptyText</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="请选择一项">请选择一项</strong>）：未选择时显示输入提示。 本页声明值为 <strong class="example-control-reference"
+                        data-example-control="<%= DropDownList1.ClientID %>" title="请选择一项">请选择一项</strong>。</li>
             </ul>
         </section>
     </template>

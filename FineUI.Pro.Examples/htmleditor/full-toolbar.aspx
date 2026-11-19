@@ -1,23 +1,32 @@
 <%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="full-toolbar.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.FullToolbar" %>
+
 <!DOCTYPE html>
-<html><head runat="server"><title>完整工具栏</title></head><body>
-<form id="form1" runat="server">
-    <f:PageManager ID="PageManager1" runat="server" />
-    <f:SimpleForm ID="SimpleForm1" runat="server" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="完整工具栏">
-        <Items>
-            <f:HtmlEditor runat="server" ID="HtmlEditor1" Label="正文" Height="320" Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" Readonly="false" ToolbarSet="Full" />
+<html>
+<head runat="server">
+    <title>完整工具栏</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <f:PageManager ID="PageManager1" runat="server" />
+        <f:SimpleForm ID="SimpleForm1" runat="server" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="完整工具栏">
+            <Items>
+                <f:HtmlEditor runat="server" ID="HtmlEditor1" Label="正文" Height="320"
+                    Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;"
+                    Readonly="false" ToolbarSet="Full" />
 
-            <f:TextArea runat="server" ID="TextArea1" Label="HTML 内容" Height="120" Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" />
-            <f:Button runat="server" ID="Button1" Text="获取编辑器内容" CssClass="marginr" OnClick="Button1_Click" />
-            <f:Button runat="server" ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
-        </Items>
-    </f:SimpleForm>
+                <f:TextArea runat="server" ID="TextArea1" Label="HTML 内容" Height="120"
+                    Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" />
+                <f:Button runat="server" ID="Button1" Text="获取编辑器内容" CssClass="marginr" OnClick="Button1_Click" />
+                <f:Button runat="server" ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
+            </Items>
+        </f:SimpleForm>
 
 
-</form>
+    </form>
     <template id="example-description">
         <section aria-label="页面描述">
-            <p>演示<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>" title="完整工具栏">完整工具栏</strong>提供的字体、颜色、对齐和源码视图等扩展编辑功能。</p>
+            <p>演示<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>"
+                    title="完整工具栏">完整工具栏</strong>提供的字体、颜色、对齐和源码视图等扩展编辑功能。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>使用完整工具栏</h3>
             <ul>
                 <li>
@@ -30,11 +39,15 @@
                 </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>本例通过 <code>ToolbarSet</code>="<code>Full</code>" 启用<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>" title="完整工具栏">完整工具栏</strong>，在基础编辑功能上增加字体、字号、文字颜色、背景色、对齐、引用和分隔线；HTML 源码按钮始终位于最后。点击颜色按钮展开色块面板，选择颜色后自动收起；<strong>默认颜色</strong>恢复主题文字色，<strong>无高亮</strong>移除文字背景。</p>
+            <p>本例通过 <code>ToolbarSet</code>="<code>Full</code>" 启用<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>"
+                    title="完整工具栏">完整工具栏</strong>，在基础编辑功能上增加字体、字号、文字颜色、背景色、对齐、引用和分隔线；HTML
+                源码按钮始终位于最后。点击颜色按钮展开色块面板，选择颜色后自动收起；<strong>默认颜色</strong>恢复主题文字色，<strong>无高亮</strong>移除文字背景。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ToolbarSet</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>" title="正文">正文</strong>）：本页预设为 <code>Full</code>；<code>Full</code> 额外提供字体、字号、颜色、对齐等命令。</li>
+                <li><code>ToolbarSet</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>"
+                        title="正文">正文</strong>）：本页预设为 <code>Full</code>；<code>Full</code> 额外提供字体、字号、颜色、对齐等命令。</li>
             </ul>
         </section>
     </template>
-</body></html>
+</body>
+</html>

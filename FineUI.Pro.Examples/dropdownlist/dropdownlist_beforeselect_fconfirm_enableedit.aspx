@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉列表（确认对话框，F.confirm）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉列表（确认对话框，F.confirm）"
+            ShowHeader="true">
             <Items>
                 <f:DropDownList runat="server" ID="DropDownList1" EnableEdit="true">
                     <Items>
@@ -30,8 +30,7 @@
                     </Listeners>
                 </f:DropDownList>
 
-                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click"
-                    CssClass="marginr">
+                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" runat="server" OnClick="btnGetSelection_Click">
                 </f:Button>
@@ -45,7 +44,6 @@
     </form>
 
     <script>
-
         function onDropDownListBeforeSelect(event, selectedValue) {
             // this代表当前下拉列表对象
             var ddl = this;
@@ -53,12 +51,12 @@
             // F.confirm是异步函数，直接返回
             F.confirm({
                 message: '确定改变选中项？',
-                ok: function () {
+                ok: function() {
                     // 重新设置选中项
                     ddl.hidePopEl();
                     ddl.setValue(selectedValue);
                 },
-                cancel: function () {
+                cancel: function() {
                     // 如果用户手工输入值，则可能输入框中的值已经改变，需要还原
                     ddl.hidePopEl();
                     ddl.setValue(ddl.getValue());
@@ -68,7 +66,6 @@
             // 需要显式的返回 false，来阻止执行返回的脚本
             return false;
         }
-        
 
     </script>
     <template id="example-description">
@@ -77,7 +74,8 @@
             <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>确认后才改变选择</h3>
             <ol>
                 <li>
-                    展开<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>，点击<strong>可选择项8</strong>，在确认对话框中选择<code>取消</code>。<br />
+                    展开<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>，点击<strong>可选择项8</strong>，在确认对话框中选择<code>取消</code>。<br />
                     结果：此次选择被撤销，输入区继续显示原来的选择。
                 </li>
                 <li>
@@ -86,10 +84,12 @@
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>的属性设置为<code>EnableEdit</code>=<code>true</code>（<code>ForceSelection</code>默认为<code>true</code>）。</p>
+            <p>注：<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                    title="下拉列表">下拉列表</strong>的属性设置为<code>EnableEdit</code>=<code>true</code>（<code>ForceSelection</code>默认为<code>true</code>）。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>beforeselect</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：改变选择前执行；取消时返回 <code>false</code>。异步 <code>F.confirm</code> 的回调中再完成确认后的选择。</li>
+                <li><code>beforeselect</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：改变选择前执行；取消时返回 <code>false</code>。异步 <code>F.confirm</code> 的回调中再完成确认后的选择。</li>
             </ul>
         </section>
     </template>

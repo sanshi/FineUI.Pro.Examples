@@ -88,35 +88,53 @@
             <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>设置并读取单选值</h3>
             <ol>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnServerSetSelectedValue.ClientID %>" title="选中上面列表中的第一项">选中上面列表中的第一项</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnServerSetSelectedValue.ClientID %>"
+                        title="选中上面列表中的第一项">选中上面列表中的第一项</strong>。<br />
                     结果：回发后由后台选中<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>" title="列表一">列表一</strong>的第一项。
                 </li>
                 <li>
-                    在<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>" title="列表一">列表一</strong>改选第三项，再点击<strong class="example-control-reference" data-example-control="<%= btnServerGetSelectedValue.ClientID %>" title="获取上面列表的选中项">获取上面列表的选中项</strong>。<br />
+                    在<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>" title="列表一">列表一</strong>改选第三项，再点击<strong
+                        class="example-control-reference" data-example-control="<%= btnServerGetSelectedValue.ClientID %>"
+                        title="获取上面列表的选中项">获取上面列表的选中项</strong>。<br />
                     结果：回发后由后台显示 <code>value3</code>，第一项会自动取消选中。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnClientGetSelectedValue.ClientID %>" title="获取上面列表的选中项（JavaScript 脚本）">获取上面列表的选中项（JavaScript 脚本）</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnClientGetSelectedValue.ClientID %>"
+                        title="获取上面列表的选中项（JavaScript 脚本）">获取上面列表的选中项（JavaScript 脚本）</strong>。<br />
                     结果：浏览器直接读取并显示同一个当前值，无需回发。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>变化事件和排列方式</h3>
             <ul>
                 <li>
-                    在<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>" title="列表三（自动回发）">列表三（自动回发）</strong>中切换选项。<br />
+                    在<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>"
+                        title="列表三（自动回发）">列表三（自动回发）</strong>中切换选项。<br />
                     结果：选择变化后回发，后台显示当前选项值，每次仅保留一项选中。
                 </li>
                 <li>
-                    对照<strong class="example-control-reference" data-example-control="<%= RadioButtonList2.ClientID %>" title="列表二（一列）">列表二（一列）</strong>和<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>。<br />
+                    对照<strong class="example-control-reference" data-example-control="<%= RadioButtonList2.ClientID %>" title="列表二（一列）">列表二（一列）</strong>和<strong
+                        class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>。<br />
                     结果：同样是单选列表，前者只有一列，后者分为三列并按列向下排列。
                 </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>" title="列表一">列表一</strong>、<strong class="example-control-reference" data-example-control="<%= RadioButtonList2.ClientID %>" title="列表二（一列）">列表二（一列）</strong>、<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>" title="列表三（自动回发）">列表三（自动回发）</strong>、<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>）：读取或设置单个选项值，例如 <code>value1</code>。</li>
-                <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="<%= RadioButtonList2.ClientID %>" title="列表二（一列）">列表二（一列）</strong>、<strong class="example-control-reference" data-example-control="<%= RadioButtonList3.ClientID %>" title="列表二（三列）">列表二（三列）</strong>、<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>" title="列表三（自动回发）">列表三（自动回发）</strong>、<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>）：控制列数，本页对比一列和三列。</li>
-                <li><code>ColumnVertical</code>（<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>）：<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四</strong>设为 <code>true</code>，优先按列向下排列。</li>
-                <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>" title="列表三（自动回发）">列表三（自动回发）</strong>）：<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>" title="列表三（自动回发）">列表三</strong>选择变化时回发，后台显示当前值。</li>
+                <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>"
+                        title="列表一">列表一</strong>、<strong class="example-control-reference" data-example-control="<%= RadioButtonList2.ClientID %>"
+                        title="列表二（一列）">列表二（一列）</strong>、<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>"
+                        title="列表三（自动回发）">列表三（自动回发）</strong>、<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>"
+                        title="列表四（竖排）">列表四（竖排）</strong>）：读取或设置单个选项值，例如 <code>value1</code>。</li>
+                <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="<%= RadioButtonList2.ClientID %>"
+                        title="列表二（一列）">列表二（一列）</strong>、<strong class="example-control-reference" data-example-control="<%= RadioButtonList3.ClientID %>"
+                        title="列表二（三列）">列表二（三列）</strong>、<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>"
+                        title="列表三（自动回发）">列表三（自动回发）</strong>、<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>"
+                        title="列表四（竖排）">列表四（竖排）</strong>）：控制列数，本页对比一列和三列。</li>
+                <li><code>ColumnVertical</code>（<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>"
+                        title="列表四（竖排）">列表四（竖排）</strong>）：<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>"
+                        title="列表四（竖排）">列表四</strong>设为 <code>true</code>，优先按列向下排列。</li>
+                <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>"
+                        title="列表三（自动回发）">列表三（自动回发）</strong>）：<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>"
+                        title="列表三（自动回发）">列表三</strong>选择变化时回发，后台显示当前值。</li>
             </ul>
         </section>
     </template>

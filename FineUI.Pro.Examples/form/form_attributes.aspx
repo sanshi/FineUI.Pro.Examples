@@ -9,6 +9,7 @@
             color: red;
             font-weight: bold;
         }
+
     </style>
 </head>
 <body>
@@ -58,20 +59,13 @@
             <area href="javascript:select('云南');" coords="205,308,242,325" shape="rect">
             <area href="javascript:select('广西');" coords="271,312,308,332" shape="rect">
             <area href="javascript:select('西藏');" coords="74,221,140,250" shape="rect">
-            <area href="javascript:select('甘肃');" coords="211,158,244,177,266,214,250,219,231,188,204,167,171,162,165,133,191,133,208,156"
-                shape="poly">
-            <area href="javascript:select('内蒙古');" coords="295,126,254,137,268,160,297,155,311,149,352,114,361,101,337,97"
-                shape="poly">
-            <area href="javascript:select('重庆');" coords="261,260,264,274,282,267,301,235,285,234,260,257"
-                shape="poly">
-            <area href="javascript:select('安徽');" coords="358,211,371,227,380,243,370,253,359,253,352,236,352,216,354,211"
-                shape="poly">
-            <area href="javascript:select('陕西');" coords="295,226,298,184,290,171,286,174,285,194,275,220,271,228,295,227"
-                shape="poly">
-            <area href="javascript:select('江苏');" coords="368,201,378,201,385,212,393,221,393,230,377,229,371,217,367,202"
-                shape="poly">
-            <area href="javascript:select('福建');" coords="375,313,393,275,373,270,355,299,374,312"
-                shape="poly">
+            <area href="javascript:select('甘肃');" coords="211,158,244,177,266,214,250,219,231,188,204,167,171,162,165,133,191,133,208,156" shape="poly">
+            <area href="javascript:select('内蒙古');" coords="295,126,254,137,268,160,297,155,311,149,352,114,361,101,337,97" shape="poly">
+            <area href="javascript:select('重庆');" coords="261,260,264,274,282,267,301,235,285,234,260,257" shape="poly">
+            <area href="javascript:select('安徽');" coords="358,211,371,227,380,243,370,253,359,253,352,236,352,216,354,211" shape="poly">
+            <area href="javascript:select('陕西');" coords="295,226,298,184,290,171,286,174,285,194,275,220,271,228,295,227" shape="poly">
+            <area href="javascript:select('江苏');" coords="368,201,378,201,385,212,393,221,393,230,377,229,371,217,367,202" shape="poly">
+            <area href="javascript:select('福建');" coords="375,313,393,275,373,270,355,299,374,312" shape="poly">
             <area href="javascript:select('海南');" coords="286,361,313,379" shape="rect">
         </map>
         <br />
@@ -79,7 +73,6 @@
     </form>
 
     <script>
-
         function select(provinceName) {
             F.notify({
                 message: '点击的省份：' + provinceName,
@@ -98,7 +91,9 @@
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>更新附加提示</h3>
             <ul>
                 <li>
-                    分别悬停两种提示标签，再点击各自的<strong class="example-control-reference" data-example-control="<%= btnChangeTip1.ClientID %>" title="第 1 个按钮（改变文本的提示信息）">第 1 个按钮（改变文本的提示信息）</strong>、<strong class="example-control-reference" data-example-control="<%= btnChangeTip2.ClientID %>" title="第 2 个按钮（改变文本的提示信息）">第 2 个按钮（改变文本的提示信息）</strong>按钮。<br />
+                    分别悬停两种提示标签，再点击各自的<strong class="example-control-reference" data-example-control="<%= btnChangeTip1.ClientID %>" title="第 1 个按钮（改变文本的提示信息）">第
+                        1 个按钮（改变文本的提示信息）</strong>、<strong class="example-control-reference" data-example-control="<%= btnChangeTip2.ClientID %>"
+                        title="第 2 个按钮（改变文本的提示信息）">第 2 个按钮（改变文本的提示信息）</strong>按钮。<br />
                     结果：一组通过 <code>ToolTip</code>、另一组通过 <code>Attributes</code> 中的 <code>data</code>-<code>qtip</code> 提供提示，后台修改后重新悬停即可看到新内容。
                 </li>
             </ul>
@@ -114,10 +109,19 @@
             <p>图片来源：<a href="http://www.sbsm.gov.cn/article/zxbs/dtfw/" target="_blank">http://www.sbsm.gov.cn/article/zxbs/dtfw/</a></p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Attributes</code>（<strong class="example-control-reference" data-example-control="<%= Label2.ClientID %>" title="提示信息（Attributes属性）">提示信息（Attributes属性）</strong>、<strong class="example-control-reference" data-example-control="<%= imgChina.ClientID %>" title="图片">图片</strong>）：通过<code>data-qtip</code>设置提示，并用<code>usemap</code>关联图片热点。</li>
-                <li><code>ToolTip</code>（<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>" title="提示信息（ToolTip属性）">提示信息（ToolTip属性）</strong>）：用控件属性设置<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>" title="提示信息（ToolTip属性）">提示信息</strong>，与直接附加 <code>data</code>-<code>qtip</code> 的方式作对照。</li>
-                <li><code>usemap</code>（<strong class="example-control-reference" data-example-control="<%= imgChina.ClientID %>" title="图片">图片</strong>）：把地图图片关联到 <code>ChinaMap</code> 的热点定义。</li>
-                <li><code>href</code>（<strong>PageManager 页面配置</strong>、<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>" title="提示信息（ToolTip属性）">提示信息（ToolTip属性）</strong>、<strong class="example-control-reference" data-example-control="<%= Label2.ClientID %>" title="提示信息（Attributes属性）">提示信息（Attributes属性）</strong>、<strong class="example-control-reference" data-example-control="<%= imgChina.ClientID %>" title="图片">图片</strong>）：本页热点通过链接调用 <code>select()</code>，传入对应省份名称。</li>
+                <li><code>Attributes</code>（<strong class="example-control-reference" data-example-control="<%= Label2.ClientID %>"
+                        title="提示信息（Attributes属性）">提示信息（Attributes属性）</strong>、<strong class="example-control-reference"
+                        data-example-control="<%= imgChina.ClientID %>" title="图片">图片</strong>）：通过<code>data-qtip</code>设置提示，并用<code>usemap</code>关联图片热点。</li>
+                <li><code>ToolTip</code>（<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>"
+                        title="提示信息（ToolTip属性）">提示信息（ToolTip属性）</strong>）：用控件属性设置<strong class="example-control-reference"
+                        data-example-control="<%= Label1.ClientID %>" title="提示信息（ToolTip属性）">提示信息</strong>，与直接附加 <code>data</code>-<code>qtip</code> 的方式作对照。
+                </li>
+                <li><code>usemap</code>（<strong class="example-control-reference" data-example-control="<%= imgChina.ClientID %>"
+                        title="图片">图片</strong>）：把地图图片关联到 <code>ChinaMap</code> 的热点定义。</li>
+                <li><code>href</code>（<strong>PageManager 页面配置</strong>、<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>"
+                        title="提示信息（ToolTip属性）">提示信息（ToolTip属性）</strong>、<strong class="example-control-reference" data-example-control="<%= Label2.ClientID %>"
+                        title="提示信息（Attributes属性）">提示信息（Attributes属性）</strong>、<strong class="example-control-reference"
+                        data-example-control="<%= imgChina.ClientID %>" title="图片">图片</strong>）：本页热点通过链接调用 <code>select()</code>，传入对应省份名称。</li>
             </ul>
         </section>
     </template>

@@ -9,11 +9,10 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉列表（用户输入值，初始值，多选）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉列表（用户输入值，初始值，多选）"
+            ShowHeader="true">
             <Items>
-                <f:DropDownList runat="server" ID="DropDownList1" 
-                    EnableEdit="true" AutoSelectFirstItem="false" ForceSelection="false" EnableMultiSelect="true">
+                <f:DropDownList runat="server" ID="DropDownList1" EnableEdit="true" AutoSelectFirstItem="false" ForceSelection="false" EnableMultiSelect="true">
                     <f:ListItem Text="可选项1" Value="Value1" />
                     <f:ListItem Text="可选项2（不可选择）" Value="Value2" EnableSelect="false" />
                     <f:ListItem Text="可选项3（不可选择）" Value="Value3" EnableSelect="false" />
@@ -67,9 +66,14 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
-                <li><code>ForceSelection</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：为 <code>false</code> 时允许保存列表之外的用户输入；为 <code>true</code> 时需要匹配现有选项。 本页声明值为 <code>false</code>。</li>
-                <li><code>Text</code>（<strong class="example-control-reference" data-example-control="<%= btnSelectItem6.ClientID %>" title="选中[可选项6]和[可选项4]">选中[可选项6]和[可选项4]</strong>、<strong class="example-control-reference" data-example-control="<%= btnSetText.ClientID %>" title="更新为[用户输入值]">更新为[用户输入值]</strong>、<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>" title="获取此下拉列表的选中项">获取此下拉列表的选中项</strong>）：提供本页的初始显示文字。</li>
+                <li><code>SelectedValueArray</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
+                <li><code>ForceSelection</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：为 <code>false</code> 时允许保存列表之外的用户输入；为 <code>true</code> 时需要匹配现有选项。 本页声明值为 <code>false</code>。</li>
+                <li><code>Text</code>（<strong class="example-control-reference" data-example-control="<%= btnSelectItem6.ClientID %>"
+                        title="选中[可选项6]和[可选项4]">选中[可选项6]和[可选项4]</strong>、<strong class="example-control-reference"
+                        data-example-control="<%= btnSetText.ClientID %>" title="更新为[用户输入值]">更新为[用户输入值]</strong>、<strong class="example-control-reference"
+                        data-example-control="<%= btnGetSelection.ClientID %>" title="获取此下拉列表的选中项">获取此下拉列表的选中项</strong>）：提供本页的初始显示文字。</li>
             </ul>
         </section>
     </template>

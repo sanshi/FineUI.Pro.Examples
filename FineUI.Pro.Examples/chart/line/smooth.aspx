@@ -1,4 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="smooth.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineSmooth" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -7,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartLineSmooth" runat="server" Height="550px" DataCategoryField="Category"
-            ShowTooltip="false">
+        <f:Chart ID="ChartLineSmooth" runat="server" Height="550px" DataCategoryField="Category" ShowTooltip="false">
             <Series>
                 <f:ChartSeries Key="value" Type="Line" Name="数值" DataValueField="Value" Smooth="true" />
             </Series>
@@ -16,20 +16,24 @@
 
 
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>用平滑曲线连接原有数据点，保留各点的位置与数值。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照平滑折线图</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartLineSmooth").ClientID %>' title="图表">图表</strong>中的分类、数值和形状。<br />结果：开启平滑后，数据点之间以曲线连接。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/examples/zh/editor.html?c=line-smooth" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Smooth</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartLineSmooth").ClientID %>' title="图表">图表</strong>）：初始为 <code>true</code>，用平滑曲线连接相邻数据点，数据点本身的位置和值保持原样。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>用平滑曲线连接原有数据点，保留各点的位置与数值。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照平滑折线图</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartLineSmooth").ClientID %>'
+                        title="图表">图表</strong>中的分类、数值和形状。<br />结果：开启平滑后，数据点之间以曲线连接。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <a href="https://echarts.apache.org/examples/zh/editor.html?c=line-smooth" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Smooth</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartLineSmooth").ClientID %>' title="图表">图表</strong>）：初始为
+                    <code>true</code>，用平滑曲线连接相邻数据点，数据点本身的位置和值保持原样。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

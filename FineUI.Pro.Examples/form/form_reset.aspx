@@ -136,12 +136,17 @@
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>只重置一个表单</h3>
             <ol>
                 <li>
-                    在<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="表单 1">表单 1</strong> 填写文本、选择下拉项并勾选<strong class="example-control-reference" data-example-control="<%= CheckBox1.ClientID %>" title="复选框">复选框</strong>，同时在<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单 2">表单 2</strong> 填写一些内容。<br />
+                    在<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="表单 1">表单 1</strong> 填写文本、选择下拉项并勾选<strong
+                        class="example-control-reference" data-example-control="<%= CheckBox1.ClientID %>" title="复选框">复选框</strong>，同时在<strong
+                        class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单 2">表单 2</strong> 填写一些内容。<br />
                     结果：两组表单各自保留当前输入。
                 </li>
                 <li>
                     点击<strong class="example-control-reference" data-example-control="<%= btnResetForm1.ClientID %>" title="重置表单1">重置表单1</strong>。<br />
-                    结果：<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="表单 1">表单 1</strong> 恢复初始状态：文本为空、下拉项未选、<strong class="example-control-reference" data-example-control="<%= CheckBox1.ClientID %>" title="复选框">复选框</strong>未选中；<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单 2">表单 2</strong> 的输入保持不变。
+                    结果：<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="表单 1">表单 1</strong>
+                    恢复初始状态：文本为空、下拉项未选、<strong class="example-control-reference" data-example-control="<%= CheckBox1.ClientID %>"
+                        title="复选框">复选框</strong>未选中；<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单 2">表单
+                        2</strong> 的输入保持不变。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>清除错误并重置全部</h3>
@@ -151,15 +156,20 @@
                     结果：未填写的必填项和格式错误显示在对应字段上。
                 </li>
                 <li>
-                    关闭验证提示，点击<strong class="example-control-reference" data-example-control="<%= btnResetAll.ClientID %>" title="重置表单1和表单2">重置表单1和表单2</strong>。<br />
+                    关闭验证提示，点击<strong class="example-control-reference" data-example-control="<%= btnResetAll.ClientID %>"
+                        title="重置表单1和表单2">重置表单1和表单2</strong>。<br />
                     结果：两个表单都恢复初始值，验证错误清除；重置在浏览器完成，无需回发。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>设置属性 <code>Required</code>="<code>true</code>" 和 <code>AutoSelectFirstItem</code>="<code>false</code>"，这样初始没有选中值，提交表单时不能为空。</p>
+            <p>注：<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>设置属性
+                <code>Required</code>="<code>true</code>" 和 <code>AutoSelectFirstItem</code>="<code>false</code>"，这样初始没有选中值，提交表单时不能为空。
+            </p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>reset()</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="表单 1">表单 1</strong>、<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单 2">表单 2</strong>）：恢复表单的初始字段值，并清除当前验证错误；可以针对一个表单或逐个重置多个表单。</li>
+                <li><code>reset()</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="表单 1">表单
+                        1</strong>、<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单 2">表单
+                        2</strong>）：恢复表单的初始字段值，并清除当前验证错误；可以针对一个表单或逐个重置多个表单。</li>
             </ul>
         </section>
     </template>

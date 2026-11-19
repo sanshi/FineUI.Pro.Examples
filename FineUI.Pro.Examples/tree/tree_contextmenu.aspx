@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件（右键菜单）" EnableCollapse="false" EnableSingleClickExpand="false"
-            runat="server">
+        <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件（右键菜单）" EnableCollapse="false" EnableSingleClickExpand="false" runat="server">
             <Nodes>
                 <f:TreeNode Text="中国" Expanded="true">
                     <f:TreeNode Text="河南省">
@@ -58,7 +57,6 @@
     <br />
 
     <script>
-
         var treeID = '<%= Tree1.ClientID %>';
         var menuID = '<%= Menu1.ClientID %>';
         // 保存当前菜单对应的树节点ID
@@ -74,7 +72,7 @@
         // 设置所有菜单项的禁用状态
         function setMenuItemsDisabled(disabled) {
             var menu = F(menuID);
-            $.each(menu.items, function (index, item) {
+            $.each(menu.items, function(index, item) {
                 item.setDisabled(disabled);
             });
         }
@@ -105,22 +103,27 @@
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示按当前节点显示右键菜单，并展开或折叠该节点的整个子树。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>对当前目录操作子树</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（右键菜单）">树控件（右键菜单）</strong>右键点击<code>河南省</code>，选择<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnExpandNode").ClientID %>' title="展开全部">展开全部</strong>。<br />结果：当前目录的子孙节点展开；右键叶子节点时，没有可展开的子树，相关菜单项禁用。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>在叶子节点上点击右键，则弹出菜单的菜单项都是禁用状态。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>nodecontextmenu</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（右键菜单）">树控件（右键菜单）</strong>）：在当前节点位置显示菜单，并按是否有子节点启用菜单项。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示按当前节点显示右键菜单，并展开或折叠该节点的整个子树。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>对当前目录操作子树</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树控件（右键菜单）">树控件（右键菜单）</strong>右键点击<code>河南省</code>，选择<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnExpandNode").ClientID %>'
+                        title="展开全部">展开全部</strong>。<br />结果：当前目录的子孙节点展开；右键叶子节点时，没有可展开的子树，相关菜单项禁用。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <ul>
+                <li>在叶子节点上点击右键，则弹出菜单的菜单项都是禁用状态。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>nodecontextmenu</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树控件（右键菜单）">树控件（右键菜单）</strong>）：在当前节点位置显示菜单，并按是否有子节点启用菜单项。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

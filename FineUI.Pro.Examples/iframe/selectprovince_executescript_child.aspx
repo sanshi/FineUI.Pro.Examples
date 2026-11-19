@@ -9,6 +9,7 @@
         body {
             padding: 0;
         }
+
     </style>
 </head>
 <body>
@@ -50,20 +51,13 @@
             <area href="javascript:select('024');" coords="205,308,242,325" shape="rect">
             <area href="javascript:select('006');" coords="271,312,308,332" shape="rect">
             <area href="javascript:select('029');" coords="74,221,140,250" shape="rect">
-            <area href="javascript:select('026');" coords="211,158,244,177,266,214,250,219,231,188,204,167,171,162,165,133,191,133,208,156"
-                shape="poly">
-            <area href="javascript:select('028');" coords="295,126,254,137,268,160,297,155,311,149,352,114,361,101,337,97"
-                shape="poly">
-            <area href="javascript:select('010');" coords="261,260,264,274,282,267,301,235,285,234,260,257"
-                shape="poly">
-            <area href="javascript:select('007');" coords="358,211,371,227,380,243,370,253,359,253,352,236,352,216,354,211"
-                shape="poly">
-            <area href="javascript:select('025');" coords="295,226,298,184,290,171,286,174,285,194,275,220,271,228,295,227"
-                shape="poly">
-            <area href="javascript:select('015');" coords="368,201,378,201,385,212,393,221,393,230,377,229,371,217,367,202"
-                shape="poly">
-            <area href="javascript:select('017');" coords="375,313,393,275,373,270,355,299,374,312"
-                shape="poly">
+            <area href="javascript:select('026');" coords="211,158,244,177,266,214,250,219,231,188,204,167,171,162,165,133,191,133,208,156" shape="poly">
+            <area href="javascript:select('028');" coords="295,126,254,137,268,160,297,155,311,149,352,114,361,101,337,97" shape="poly">
+            <area href="javascript:select('010');" coords="261,260,264,274,282,267,301,235,285,234,260,257" shape="poly">
+            <area href="javascript:select('007');" coords="358,211,371,227,380,243,370,253,359,253,352,236,352,216,354,211" shape="poly">
+            <area href="javascript:select('025');" coords="295,226,298,184,290,171,286,174,285,194,275,220,271,228,295,227" shape="poly">
+            <area href="javascript:select('015');" coords="368,201,378,201,385,212,393,221,393,230,377,229,371,217,367,202" shape="poly">
+            <area href="javascript:select('017');" coords="375,313,393,275,373,270,355,299,374,312" shape="poly">
             <area href="javascript:select('021');" coords="286,361,313,379" shape="rect">
         </map>
     </form>

@@ -12,14 +12,12 @@
         <br />
         <br />
         <f:Button ID="btnNormal" Text="普通按钮" runat="server" CssClass="marginr" />
-        <f:Button ID="btnMedium" Text="中等大小按钮" runat="server" Size="Medium"
-            CssClass="marginr" />
+        <f:Button ID="btnMedium" Text="中等大小按钮" runat="server" Size="Medium" CssClass="marginr" />
         <f:Button ID="btnLarge" Text="大按钮" runat="server" Size="Large" />
 
     </form>
 
     <script>
-
         var btnChangeEnableClientID = '<%= btnChangeEnable.ClientID %>';
         var btnNormalClientID = '<%= btnNormal.ClientID %>';
         var btnMediumClientID = '<%= btnMedium.ClientID %>';

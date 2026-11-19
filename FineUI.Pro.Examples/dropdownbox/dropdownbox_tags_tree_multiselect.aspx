@@ -8,8 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉树（多选）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉树（多选）"
+            ShowHeader="true">
             <Items>
                 <f:DropDownBox runat="server" ID="DropDownBox1" EnableMultiSelect="true" MultiSelectMode="Tags" Values="henan,anhui">
                     <PopPanel>
@@ -68,7 +68,8 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>MultiSelectMode</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>）：<code>Tags</code>/<code>tags</code> 将选中的每项显示为可单独移除的标签。 本页声明值为 <code>Tags</code>。</li>
+                <li><code>MultiSelectMode</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>）：<code>Tags</code>/<code>tags</code> 将选中的每项显示为可单独移除的标签。 本页声明值为 <code>Tags</code>。</li>
             </ul>
         </section>
     </template>

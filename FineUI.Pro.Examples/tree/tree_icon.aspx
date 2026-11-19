@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件" EnableCollapse="false"
-            runat="server">
+        <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件" EnableCollapse="false" runat="server">
             <Nodes>
                 <f:TreeNode Text="中国" Expanded="true">
                     <f:TreeNode Text="河南省" Expanded="true">
@@ -23,8 +22,7 @@
                     </f:TreeNode>
                     <f:TreeNode Text="安徽省" Expanded="true" NodeID="anhui">
                         <f:TreeNode Expanded="true" Text="合肥市" NodeID="hefei">
-                            <f:TreeNode Text="中国科学技术大学（链接）" NavigateUrl="http://www.ustc.edu.cn/" Target="_blank"
-                                ToolTip="点击跳转到科大主页" NodeID="ustc">
+                            <f:TreeNode Text="中国科学技术大学（链接）" NavigateUrl="http://www.ustc.edu.cn/" Target="_blank" ToolTip="点击跳转到科大主页" NodeID="ustc">
                             </f:TreeNode>
                         </f:TreeNode>
                         <f:TreeNode Text="黄山市" NodeID="huangshan">
@@ -34,28 +32,35 @@
             </Nodes>
         </f:Tree>
         <br />
-        <f:Button ID="btnGetSelectedNode" OnClick="btnGetSelectedNode_Click" CssClass="marginr"
-            runat="server" Text="获取选中的节点">
+        <f:Button ID="btnGetSelectedNode" OnClick="btnGetSelectedNode_Click" CssClass="marginr" runat="server" Text="获取选中的节点">
         </f:Button>
         <br />
         <f:Label ID="labResult" runat="server">
         </f:Label>
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示树节点使用内置或自定义图片图标，并为指定节点配置超链接。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照图标与链接</h3>
-    <ul>
-        <li>展开<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>的目录，对照各节点前的图片，再点击带链接的大学节点。<br />结果：普通节点显示各自的图片；带链接节点按其地址及目标窗口打开页面，不改变其它节点的图标。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Icon</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：使用本页内置图片图标；自定义图片节点改用 <code>IconUrl</code>。</li>
-        <li><code>IconUrl</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：指定自定义图片地址。</li>
-        <li><code>NavigateUrl</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：指定节点点击后打开的页面。</li>
-        <li><code>Target</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：链接节点使用新页面打开，具体值以本端声明为准。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示树节点使用内置或自定义图片图标，并为指定节点配置超链接。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照图标与链接</h3>
+            <ul>
+                <li>展开<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树控件">树控件</strong>的目录，对照各节点前的图片，再点击带链接的大学节点。<br />结果：普通节点显示各自的图片；带链接节点按其地址及目标窗口打开页面，不改变其它节点的图标。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Icon</code>（<strong>树节点</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：使用本页内置图片图标；自定义图片节点改用
+                    <code>IconUrl</code>。
+                </li>
+                <li><code>IconUrl</code>（<strong>树节点</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：指定自定义图片地址。</li>
+                <li><code>NavigateUrl</code>（<strong>树节点</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：指定节点点击后打开的页面。</li>
+                <li><code>Target</code>（<strong>树节点</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：链接节点使用新页面打开，具体值以本端声明为准。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

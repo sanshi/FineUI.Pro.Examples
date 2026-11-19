@@ -9,15 +9,13 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
-        <f:Panel ID="Panel1" runat="server" ShowBorder="true" ShowHeader="false" Layout="Anchor"
-            BodyPadding="10px">
+        <f:Panel ID="Panel1" runat="server" ShowBorder="true" ShowHeader="false" Layout="Anchor" BodyPadding="10px">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server">
                     <Items>
                         <f:Button ID="btnClose" Text="取消" runat="server" Icon="SystemClose" ClickHandler="onCloseClick">
                         </f:Button>
-                        <f:Button ID="btnSaveContinue" Text="导出" runat="server" Icon="SystemSave"
-                            OnClick="btnSaveContinue_Click">
+                        <f:Button ID="btnSaveContinue" Text="导出" runat="server" Icon="SystemSave" OnClick="btnSaveContinue_Click">
                         </f:Button>
                     </Items>
                 </f:Toolbar>
@@ -36,7 +34,6 @@
         </f:Panel>
     </form>
     <script>
-
         function onCloseClick(event) {
             F.activeWindow.hide();
         }

@@ -72,13 +72,19 @@
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
             <p>注：</p>
             <ul>
-                <li>手工输入<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>" title="简单表单（AutoPostBack）">第一个表单</strong>的开始日期，会自动回发。</li>
-                <li>手工输入<strong class="example-control-reference" data-example-control="<%= SimpleForm2.ClientID %>" title="简单表单（EnableDateSelectEvent）">第二个表单</strong>的开始日期，不会自动回发。</li>
+                <li>手工输入<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>"
+                        title="简单表单（AutoPostBack）">第一个表单</strong>的开始日期，会自动回发。</li>
+                <li>手工输入<strong class="example-control-reference" data-example-control="<%= SimpleForm2.ClientID %>"
+                        title="简单表单（EnableDateSelectEvent）">第二个表单</strong>的开始日期，不会自动回发。</li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnTextChanged</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="简单表单（AutoPostBack）的开始日期">简单表单（AutoPostBack）的开始日期</strong>）：第一组在文字改变时回发，手工输入和面板选择都可使结束日期变为<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="简单表单（AutoPostBack）的开始日期">开始日期</strong>后<code>3</code>天。</li>
-                <li><code>OnDateSelect</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker3.ClientID %>" title="简单表单（EnableDateSelectEvent）的开始日期">简单表单（EnableDateSelectEvent）的开始日期</strong>）：第二组仅在面板选中日期时回发；手工输入不会执行此联动。</li>
+                <li><code>OnTextChanged</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="简单表单（AutoPostBack）的开始日期">简单表单（AutoPostBack）的开始日期</strong>）：第一组在文字改变时回发，手工输入和面板选择都可使结束日期变为<strong
+                        class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="简单表单（AutoPostBack）的开始日期">开始日期</strong>后<code>3</code>天。</li>
+                <li><code>OnDateSelect</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker3.ClientID %>"
+                        title="简单表单（EnableDateSelectEvent）的开始日期">简单表单（EnableDateSelectEvent）的开始日期</strong>）：第二组仅在面板选中日期时回发；手工输入不会执行此联动。</li>
             </ul>
         </section>
     </template>

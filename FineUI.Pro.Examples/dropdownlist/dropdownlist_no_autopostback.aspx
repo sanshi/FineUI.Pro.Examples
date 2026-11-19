@@ -46,24 +46,39 @@
                     结果：此时不主动回发。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>" title="获取此下拉列表的选中项">获取此下拉列表的选中项</strong>。<br />
-                    结果：请求处理当前选择，并由隐式变化事件触发<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>的后台回调。
+                    点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>"
+                        title="获取此下拉列表的选中项">获取此下拉列表的选中项</strong>。<br />
+                    结果：请求处理当前选择，并由隐式变化事件触发<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>的后台回调。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：本页通过 <strong>PageManager 页面配置</strong>.<code>EnableImplicitChangeEvents</code>=<code>true</code> 专门保留 <code>WebForms</code> 的历史兼容行为：<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>不自动回发（<code>AutoPostBack</code>=<code>false</code>），但定义了 <code>SelectedIndexChanged</code> 事件。可以尝试进行如下操作：</p>
+            <p>注：本页通过 <strong>PageManager 页面配置</strong>.<code>EnableImplicitChangeEvents</code>=<code>true</code> 专门保留 <code>WebForms</code> 的历史兼容行为：<strong
+                    class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                    title="下拉列表">下拉列表</strong>不自动回发（<code>AutoPostBack</code>=<code>false</code>），但定义了 <code>SelectedIndexChanged</code> 事件。可以尝试进行如下操作：</p>
             <ul>
-                <li> 改变<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>的选择项，比如选中[可选项<code>4</code>]； </li>
-                <li> 点击按钮[<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>" title="获取此下拉列表的选中项">获取此下拉列表的选中项</strong>]，此时会触发<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>的<code>SelectedIndexChanged</code>事件。 </li>
+                <li> 改变<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>的选择项，比如选中[可选项<code>4</code>]； </li>
+                <li> 点击按钮[<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>"
+                        title="获取此下拉列表的选中项">获取此下拉列表的选中项</strong>]，此时会触发<strong class="example-control-reference"
+                        data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>的<code>SelectedIndexChanged</code>事件。 </li>
             </ul>
             <ul>
-                <li> 点击按钮[<strong class="example-control-reference" data-example-control="<%= btnSelectItem6.ClientID %>" title="选中[可选项6]">选中[可选项6]</strong>]； </li>
-                <li> 点击按钮[<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>" title="获取此下拉列表的选中项">获取此下拉列表的选中项</strong>]，此时不会触发<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>的<code>SelectedIndexChanged</code>事件。 </li>
+                <li> 点击按钮[<strong class="example-control-reference" data-example-control="<%= btnSelectItem6.ClientID %>" title="选中[可选项6]">选中[可选项6]</strong>]；
+                </li>
+                <li> 点击按钮[<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>"
+                        title="获取此下拉列表的选中项">获取此下拉列表的选中项</strong>]，此时不会触发<strong class="example-control-reference"
+                        data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>的<code>SelectedIndexChanged</code>事件。 </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：选择变化时处理当前值；<code>Pro</code> 中是否主动回发还受 <code>AutoPostBack</code> 控制。 本页声明值为 <code>DropDownList1</code><code>_SelectedIndexChanged</code>。</li>
-                <li><code>AutoPostBack</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：决定<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>是否在用户改变选择时主动回发。 本页声明值为 <code>false</code>。</li>
+                <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：选择变化时处理当前值；<code>Pro</code> 中是否主动回发还受 <code>AutoPostBack</code> 控制。 本页声明值为
+                    <code>DropDownList1</code><code>_SelectedIndexChanged</code>。
+                </li>
+                <li><code>AutoPostBack</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：决定<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>是否在用户改变选择时主动回发。 本页声明值为 <code>false</code>。</li>
             </ul>
         </section>
     </template>

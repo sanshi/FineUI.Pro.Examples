@@ -68,31 +68,44 @@
                     结果：回发后由后台将原来的 <code>3</code> 项替换为 <code>4</code> 项“数据绑定值”，并选中第一项和第三项。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnCheckedItemsList1.ClientID %>" title="获取列表一的选中项">获取列表一的选中项</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnCheckedItemsList1.ClientID %>"
+                        title="获取列表一的选中项">获取列表一的选中项</strong>。<br />
                     结果：回发后由后台显示 <code>value1</code>、<code>value3</code>，读取的是更新后的选择。
                 </li>
                 <li>
-                    分别点击<strong class="example-control-reference" data-example-control="<%= btnUpdateList2.ClientID %>" title="更新列表二">更新列表二</strong>和<strong class="example-control-reference" data-example-control="<%= btnUpdateList3.ClientID %>" title="更新列表三">更新列表三</strong>。<br />
-                    结果：<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>" title="列表二（竖排）">列表二</strong>变为 <code>6</code> 项并选中第 <code>1</code>、<code>3</code>、<code>6</code> 项；<strong class="example-control-reference" data-example-control="<%= CheckBoxList3.ClientID %>" title="列表三">列表三</strong>变为 <code>9</code> 项并选中第 <code>1</code>、<code>2</code>、<code>6</code>、<code>7</code> 项。
+                    分别点击<strong class="example-control-reference" data-example-control="<%= btnUpdateList2.ClientID %>" title="更新列表二">更新列表二</strong>和<strong
+                        class="example-control-reference" data-example-control="<%= btnUpdateList3.ClientID %>" title="更新列表三">更新列表三</strong>。<br />
+                    结果：<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>" title="列表二（竖排）">列表二</strong>变为
+                    <code>6</code> 项并选中第 <code>1</code>、<code>3</code>、<code>6</code> 项；<strong class="example-control-reference"
+                        data-example-control="<%= CheckBoxList3.ClientID %>" title="列表三">列表三</strong>变为 <code>9</code> 项并选中第
+                    <code>1</code>、<code>2</code>、<code>6</code>、<code>7</code> 项。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>反复填充和清空</h3>
             <ol>
                 <li>
-                    在<strong class="example-control-reference" data-example-control="<%= CheckBoxList4.ClientID %>" title="列表四">列表四</strong>为空时，点击<strong class="example-control-reference" data-example-control="<%= btnUpdateList4.ClientID %>" title="更新列表四（可反复操作）">更新列表四（可反复操作）</strong>。<br />
+                    在<strong class="example-control-reference" data-example-control="<%= CheckBoxList4.ClientID %>" title="列表四">列表四</strong>为空时，点击<strong
+                        class="example-control-reference" data-example-control="<%= btnUpdateList4.ClientID %>"
+                        title="更新列表四（可反复操作）">更新列表四（可反复操作）</strong>。<br />
                     结果：回发后由后台填充 <code>6</code> 个选项，并选中前两项。
                 </li>
                 <li>
                     再次点击同一个按钮。<br />
-                    结果：<strong class="example-control-reference" data-example-control="<%= CheckBoxList4.ClientID %>" title="列表四">列表四</strong>的选项全部清空；继续点击又可填充，无需重新打开页面。
+                    结果：<strong class="example-control-reference" data-example-control="<%= CheckBoxList4.ClientID %>"
+                        title="列表四">列表四</strong>的选项全部清空；继续点击又可填充，无需重新打开页面。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DataTextField</code>（本页全部复选框列表，如<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>）：指定显示文字字段，本例为 <code>Name</code>。</li>
-                <li><code>DataValueField</code>（本页全部复选框列表，如<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>）：指定选项值字段，本例为 <code>Id</code>。</li>
-                <li><code>DataSource</code>（本页全部复选框列表，如<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>）：提供新数据，绑定后替换原来的选项。</li>
-                <li><code>Items.Clear()</code>（<strong class="example-control-reference" data-example-control="<%= CheckBoxList4.ClientID %>" title="列表四">列表四</strong>）：<strong class="example-control-reference" data-example-control="<%= CheckBoxList4.ClientID %>" title="列表四">列表四</strong>已有内容时清空全部选项。</li>
+                <li><code>DataTextField</code>（本页全部复选框列表，如<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>"
+                        title="列表一">列表一</strong>）：指定显示文字字段，本例为 <code>Name</code>。</li>
+                <li><code>DataValueField</code>（本页全部复选框列表，如<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>"
+                        title="列表一">列表一</strong>）：指定选项值字段，本例为 <code>Id</code>。</li>
+                <li><code>DataSource</code>（本页全部复选框列表，如<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>"
+                        title="列表一">列表一</strong>）：提供新数据，绑定后替换原来的选项。</li>
+                <li><code>Items.Clear()</code>（<strong class="example-control-reference" data-example-control="<%= CheckBoxList4.ClientID %>"
+                        title="列表四">列表四</strong>）：<strong class="example-control-reference" data-example-control="<%= CheckBoxList4.ClientID %>"
+                        title="列表四">列表四</strong>已有内容时清空全部选项。</li>
             </ul>
         </section>
     </template>

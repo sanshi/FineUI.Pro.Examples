@@ -10,30 +10,29 @@
             padding: 3px;
         }
 
-            .f-grid-cell.f-grid-cell-editable > .f-grid-cell-text {
-                border-style: solid;
-                border-width: 1px;
-                border-color: #ccc;
-            }
+        .f-grid-cell.f-grid-cell-editable>.f-grid-cell-text {
+            border-style: solid;
+            border-width: 1px;
+            border-color: #ccc;
+        }
 
-            .f-grid-cell.f-grid-cell-editable.f-grid-cell-uneditable > .f-grid-cell-text {
-                border-style: none;
-                opacity: 1;
-                filter: alpha(opacity=100);
-            }
+        .f-grid-cell.f-grid-cell-editable.f-grid-cell-uneditable>.f-grid-cell-text {
+            border-style: none;
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
 
         .f-grid-cell-editor {
             padding: 3px;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false"
-            runat="server"
-            AllowCellEditing="true" ClicksToEdit="1"
-            OnRowDataBound="Grid1_RowDataBound">
+        <f:Grid DataIDField="Id" ID="Grid1" IsFluid="true" ShowBorder="true" ShowHeader="true" Title="表格（单击编辑）" EnableCollapse="false" runat="server"
+            AllowCellEditing="true" ClicksToEdit="1" OnRowDataBound="Grid1_RowDataBound">
             <Columns>
                 <f:RowNumberField></f:RowNumberField>
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名">
@@ -42,8 +41,7 @@
                         </f:TextBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int"
-                    RendererFunction="renderGender" HeaderText="性别">
+                <f:RenderField ColumnID="Gender" DataField="Gender" FieldType="Int" RendererFunction="renderGender" HeaderText="性别">
                     <Editor>
                         <f:DropDownList ID="ddlGender" Required="true" runat="server">
                             <f:ListItem Text="男" Value="1" />
@@ -53,13 +51,12 @@
                 </f:RenderField>
                 <f:RenderField ColumnID="EntranceYear" DataField="EntranceYear" FieldType="Int" HeaderText="入学年份">
                     <Editor>
-                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000"
-                            MaxValue="2025" runat="server">
+                        <f:NumberBox ID="tbxEditorEntranceYear" NoDecimal="true" NoNegative="true" MinValue="2000" MaxValue="2025" runat="server">
                         </f:NumberBox>
                     </Editor>
                 </f:RenderField>
-                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date"
-                    Renderer="Date" RendererArgument="yyyy-MM-dd" HeaderText="入学日期">
+                <f:RenderField Width="150px" ColumnID="EntranceDate" DataField="EntranceDate" FieldType="Date" Renderer="Date" RendererArgument="yyyy-MM-dd"
+                    HeaderText="入学日期">
                     <Editor>
                         <f:DatePicker ID="DatePicker1" Required="true" runat="server">
                         </f:DatePicker>
@@ -87,7 +84,6 @@
         注：本例子禁止[入学年份小于等于2002]行中[入学年份]和[入学日期]的单元格编辑。
     </form>
     <script>
-
         function renderGender(value) {
             return value == 1 ? '男' : '女';
         }

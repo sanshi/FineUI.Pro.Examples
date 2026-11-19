@@ -8,8 +8,7 @@
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Form ID="Form1" IsFluid="true" runat="server"
-            ShowBorder="false" ShowHeader="false" EnableTableStyle="true" MessageTarget="Qtip">
+        <f:Form ID="Form1" IsFluid="true" runat="server" ShowBorder="false" ShowHeader="false" EnableTableStyle="true" MessageTarget="Qtip">
             <Rows>
                 <f:FormRow>
                     <Items>
@@ -48,13 +47,11 @@
                 </f:FormRow>
             </Rows>
         </f:Form>
-        <f:Button ID="btnSubmitForm1" Text="验证此表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitForm1_Click"
-            ValidateForms="Form1" MarginTop="5px">
+        <f:Button ID="btnSubmitForm1" Text="验证此表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitForm1_Click" ValidateForms="Form1" MarginTop="5px">
         </f:Button>
         <br />
         <br />
-        <f:Form ID="Form2" IsFluid="true" runat="server" ShowBorder="false" ShowHeader="false"
-            Layout="HBox" EnableTableStyle="true" MessageTarget="Qtip">
+        <f:Form ID="Form2" IsFluid="true" runat="server" ShowBorder="false" ShowHeader="false" Layout="HBox" EnableTableStyle="true" MessageTarget="Qtip">
             <Items>
                 <f:Panel ID="PanelExample1" runat="server" ShowBorder="false" ShowHeader="false" BoxFlex="1" Layout="VBox">
                     <Items>
@@ -76,8 +73,7 @@
                 </f:Panel>
             </Items>
         </f:Form>
-        <f:Button ID="Button2" Text="验证此表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitForm2_Click"
-            ValidateForms="Form2" MarginTop="5px">
+        <f:Button ID="Button2" Text="验证此表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitForm2_Click" ValidateForms="Form2" MarginTop="5px">
         </f:Button>
     </form>
     <template id="example-description">
@@ -86,16 +82,31 @@
             <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>观察空白占位与多列地址</h3>
             <ul>
                 <li>
-                    对照第一组<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="编号">编号</strong>右侧，以及地址组<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBoxExample5").ClientID %>' title="地址">地址</strong>下方。<br />
+                    对照第一组<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="编号">编号</strong>右侧，以及地址组<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBoxExample5").ClientID %>'
+                        title="地址">地址</strong>下方。<br />
                     结果：空 Label 保留该单元格的空间和边线，其他字段不会自动填入空位。
                 </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="第 1 个表单">第 1 个表单</strong>、<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第 2 个表单</strong>）：让表单字段按表格风格显示。</li>
-                <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第 2 个表单</strong>）：<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第二个表单</strong>采用 <code>HBox</code>，三个子面板各以 <code>VBox</code> 排列字段。</li>
-                <li><code>BoxFlex</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample2").ClientID %>' title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample3").ClientID %>' title="第 3 个面板">第 3 个面板</strong>）：三个地址子面板均分可用宽度。</li>
-                <li><code>Text</code>（<strong class="example-control-reference" data-example-control="<%= Label3.ClientID %>" title="电话">电话</strong>、<strong class="example-control-reference" data-example-control="<%= Label16.ClientID %>" title="申请人">申请人</strong>、<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="编号">编号</strong>）：空 Label 不设置文字，用于保留表格中的空白单元格。</li>
+                <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="第 1 个表单">第 1
+                        个表单</strong>、<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第 2
+                        个表单</strong>）：让表单字段按表格风格显示。</li>
+                <li><code>Layout</code>（<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第 2
+                        个表单</strong>）：<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第二个表单</strong>采用
+                    <code>HBox</code>，三个子面板各以 <code>VBox</code> 排列字段。
+                </li>
+                <li><code>BoxFlex</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample2").ClientID %>'
+                        title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample3").ClientID %>' title="第 3 个面板">第 3
+                        个面板</strong>）：三个地址子面板均分可用宽度。</li>
+                <li><code>Text</code>（<strong class="example-control-reference" data-example-control="<%= Label3.ClientID %>" title="电话">电话</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= Label16.ClientID %>" title="申请人">申请人</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="编号">编号</strong>）：空 Label 不设置文字，用于保留表格中的空白单元格。
+                </li>
             </ul>
         </section>
     </template>

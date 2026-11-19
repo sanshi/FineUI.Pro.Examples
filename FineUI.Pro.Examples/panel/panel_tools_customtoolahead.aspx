@@ -8,8 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="Panel1" IsFluid="true" runat="server" Title="面板" Height="350px"
-            BodyPadding="10px" EnableCollapse="true" IconUrl="~/res/images/16/8.png" CustomToolAhead="true">
+        <f:Panel ID="Panel1" IsFluid="true" runat="server" Title="面板" Height="350px" BodyPadding="10px" EnableCollapse="true" IconUrl="~/res/images/16/8.png"
+            CustomToolAhead="true">
             <Items>
                 <f:Label runat="server" Text="面板内容"></f:Label>
             </Items>
@@ -25,7 +25,6 @@
         </f:Button>
     </form>
     <script>
-
         function onToolIconClick(event) {
             // 当前点击的图标字体
             var iconFont = this.iconFont;
@@ -41,19 +40,23 @@
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示把自定义工具图标排在内置折叠工具之前。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>点击与对照工具排列</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>标题栏点击<strong>保存</strong>工具。<br />结果：执行本页客户端提示，提示内容包含当前工具标识；工具位置或文字按本页配置显示。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Tools</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：声明当前面板的自定义标题工具。</li>
-        <li><code>CustomToolAhead</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：初始为<code>true</code>，把自定义工具排在内置工具前面。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示把自定义工具图标排在内置折叠工具之前。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>点击与对照工具排列</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="面板">面板</strong>标题栏点击<strong>保存</strong>工具。<br />结果：执行本页客户端提示，提示内容包含当前工具标识；工具位置或文字按本页配置显示。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Tools</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：声明当前面板的自定义标题工具。</li>
+                <li><code>CustomToolAhead</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="面板">面板</strong>）：初始为<code>true</code>，把自定义工具排在内置工具前面。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

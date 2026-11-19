@@ -35,7 +35,8 @@
             <ol>
                 <li>
                     先选择省份“安徽”。<br />
-                    结果：<strong class="example-control-reference" data-example-control="<%= ddlShi.ClientID %>" title="地区市">地区市</strong>列表加载安徽的数据并变为可选；原来的下级选择被清除。
+                    结果：<strong class="example-control-reference" data-example-control="<%= ddlShi.ClientID %>"
+                        title="地区市">地区市</strong>列表加载安徽的数据并变为可选；原来的下级选择被清除。
                 </li>
                 <li>
                     选择<code>合肥市</code>，再选择<code>包河区</code>，点击提交按钮。<br />
@@ -48,8 +49,13 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= ddlSheng.ClientID %>" title="省份">省份</strong>、<strong class="example-control-reference" data-example-control="<%= ddlShi.ClientID %>" title="地区市">地区市</strong>）：上级选择改变后回发，后台重新加载下级选项，并切换下级可用状态。</li>
-                <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="<%= ddlSheng.ClientID %>" title="省份">省份</strong>、<strong class="example-control-reference" data-example-control="<%= ddlShi.ClientID %>" title="地区市">地区市</strong>、<strong class="example-control-reference" data-example-control="<%= ddlXian.ClientID %>" title="县区市">县区市</strong>）：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
+                <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= ddlSheng.ClientID %>"
+                        title="省份">省份</strong>、<strong class="example-control-reference" data-example-control="<%= ddlShi.ClientID %>"
+                        title="地区市">地区市</strong>）：上级选择改变后回发，后台重新加载下级选项，并切换下级可用状态。</li>
+                <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="<%= ddlSheng.ClientID %>"
+                        title="省份">省份</strong>、<strong class="example-control-reference" data-example-control="<%= ddlShi.ClientID %>"
+                        title="地区市">地区市</strong>、<strong class="example-control-reference" data-example-control="<%= ddlXian.ClientID %>"
+                        title="县区市">县区市</strong>）：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
             </ul>
         </section>
     </template>

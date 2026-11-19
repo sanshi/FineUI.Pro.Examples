@@ -40,11 +40,14 @@
             <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>执行自定义验证</h3>
             <ol>
                 <li>
-                    <strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>" title="用户名">用户名</strong>保持有值，密码输入<code>123</code>，点击<strong class="example-control-reference" data-example-control="<%= btnRegister.ClientID %>" title="注册">注册</strong>。<br />
+                    <strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>"
+                        title="用户名">用户名</strong>保持有值，密码输入<code>123</code>，点击<strong class="example-control-reference"
+                        data-example-control="<%= btnRegister.ClientID %>" title="注册">注册</strong>。<br />
                     结果：密码框显示“密码必须为 <code>6</code> 个字符！”，浏览器阻止回发。
                 </li>
                 <li>
-                    关闭验证提示，将密码改为<code>123456</code>，再次点击<strong class="example-control-reference" data-example-control="<%= btnRegister.ClientID %>" title="注册">注册</strong>。<br />
+                    关闭验证提示，将密码改为<code>123456</code>，再次点击<strong class="example-control-reference" data-example-control="<%= btnRegister.ClientID %>"
+                        title="注册">注册</strong>。<br />
                     结果：长度检查通过后才回发，后台提示“表单验证通过！”。
                 </li>
             </ol>
@@ -55,7 +58,8 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ValidatorFunction</code>（<strong class="example-control-reference" data-example-control="<%= tbxPassword.ClientID %>" title="密码">密码</strong>）：指定 <code>passwordValidator</code>；函数读取当前密码，符合条件返回 <code>true</code>，否则返回错误文字。</li>
+                <li><code>ValidatorFunction</code>（<strong class="example-control-reference" data-example-control="<%= tbxPassword.ClientID %>"
+                        title="密码">密码</strong>）：指定 <code>passwordValidator</code>；函数读取当前密码，符合条件返回 <code>true</code>，否则返回错误文字。</li>
             </ul>
         </section>
     </template>

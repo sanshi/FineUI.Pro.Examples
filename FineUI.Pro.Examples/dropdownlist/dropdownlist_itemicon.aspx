@@ -5,7 +5,6 @@
 <head runat="server">
     <title></title>
     <style>
-
         ul.f-field-dropdownlist-pop img {
             vertical-align: middle;
         }
@@ -15,8 +14,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="列表项图标" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="列表项图标"
+            ShowHeader="true">
             <Items>
                 <f:DropDownList runat="server" ID="DropDownList1">
                     <f:ListItem Text="中国" Value="cn" Selected="true" />
@@ -28,8 +27,7 @@
                     <f:ListItem Text="加拿大" Value="ca" />
                 </f:DropDownList>
 
-                <f:Button ID="btnSelectItem6" Text="选中“澳大利亚”" runat="server" OnClick="btnSelectItem6_Click"
-                    CssClass="marginr">
+                <f:Button ID="btnSelectItem6" Text="选中“澳大利亚”" runat="server" OnClick="btnSelectItem6_Click" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" runat="server" OnClick="btnGetSelection_Click">
                 </f:Button>
@@ -51,7 +49,8 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Display</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：自定义选项的图标和显示内容，保持原来的文字与业务值。</li>
+                <li><code>Display</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：自定义选项的图标和显示内容，保持原来的文字与业务值。</li>
             </ul>
         </section>
     </template>

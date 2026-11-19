@@ -12,13 +12,11 @@
         <f:Button ID="btnIcon2" EnableRoundCorner="true" Text="图标在右侧" IconAlign="Right" IconFont="_Car" runat="server" />
         <br />
         <br />
-        <f:Button ID="btnIcon3" EnableRoundCorner="true" Text="图标在上面" IconAlign="Top" IconFont="_Camera" runat="server"
-            CssClass="marginr" />
+        <f:Button ID="btnIcon3" EnableRoundCorner="true" Text="图标在上面" IconAlign="Top" IconFont="_Camera" runat="server" CssClass="marginr" />
         <f:Button ID="btnIcon4" EnableRoundCorner="true" Text="图标在下面" IconAlign="Bottom" IconFont="_Phone" runat="server" />
         <br />
         <br />
-        <f:Button ID="btnCustomIcon" EnableRoundCorner="true" Text="点击修改图标（在三个图标之前切换）" OnClick="btnCustomIcon_Click"
-            IconFont="_VolumeUp" runat="server" />
+        <f:Button ID="btnCustomIcon" EnableRoundCorner="true" Text="点击修改图标（在三个图标之前切换）" OnClick="btnCustomIcon_Click" IconFont="_VolumeUp" runat="server" />
         <br />
         <br />
         只有图片的按钮：
@@ -44,7 +42,8 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableRoundCorner</code>（本页全部按钮，如<strong class="example-control-reference" data-example-control="<%= btnIcon1.ClientID %>" title="图标在左侧">图标在左侧</strong>）：初始为 <code>true</code>，使按钮采用圆角外观。</li>
+                <li><code>EnableRoundCorner</code>（本页全部按钮，如<strong class="example-control-reference" data-example-control="<%= btnIcon1.ClientID %>"
+                        title="图标在左侧">图标在左侧</strong>）：初始为 <code>true</code>，使按钮采用圆角外观。</li>
             </ul>
         </section>
     </template>

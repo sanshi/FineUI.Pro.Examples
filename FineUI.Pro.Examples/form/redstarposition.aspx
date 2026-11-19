@@ -15,7 +15,8 @@
             .container::after {
                 content: '';
                 display: inline-block;
-                width: 100%;*/ /* 核心代码 */
+                width: 100%;*/
+        /* 核心代码 */
         /*}*/
 
         /*.container {
@@ -23,9 +24,11 @@
             border: 1px solid #ccc;
             padding: 10px;
             text-align: justify;
-            text-align-last: justify;*/ /* 核心代码 */
+            text-align-last: justify;*/
+        /* 核心代码 */
         /*}
         <div class="container">短文本均匀分布</div>*/
+
     </style>
 </head>
 <body>
@@ -42,8 +45,8 @@
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server" ToolbarAlign="Right" Position="Bottom">
                     <Items>
-                        <f:Button ID="btnLogin" Text="登录" Type="Button" ValidateForms="SimpleForm1" ValidateTarget="Top"
-                            runat="server" OnClick="btnLogin_Click">
+                        <f:Button ID="btnLogin" Text="登录" Type="Button" ValidateForms="SimpleForm1" ValidateTarget="Top" runat="server"
+                            OnClick="btnLogin_Click">
                         </f:Button>
                     </Items>
                 </f:Toolbar>
@@ -51,8 +54,8 @@
         </f:SimpleForm>
         <br />
         <br />
-        <f:SimpleForm ID="SimpleForm2" IsFluid="true" Title="表单(RedStarPosition=BeforeText LabelAlign=Right)" runat="server" ShowBorder="true" BodyPadding="10px"
-            ShowHeader="true" RedStarPosition="BeforeText" LabelAlign="Right">
+        <f:SimpleForm ID="SimpleForm2" IsFluid="true" Title="表单(RedStarPosition=BeforeText LabelAlign=Right)" runat="server" ShowBorder="true"
+            BodyPadding="10px" ShowHeader="true" RedStarPosition="BeforeText" LabelAlign="Right">
             <Items>
                 <f:TextBox ID="TextBox1" Label="用户名" Required="true" ShowRedStar="true" runat="server">
                 </f:TextBox>
@@ -62,8 +65,8 @@
             <Toolbars>
                 <f:Toolbar ID="Toolbar2" runat="server" ToolbarAlign="Right" Position="Bottom">
                     <Items>
-                        <f:Button ID="Button1" Text="登录" Type="Button" ValidateForms="SimpleForm2" ValidateTarget="Top"
-                            runat="server" OnClick="btnLoginForm2_Click">
+                        <f:Button ID="Button1" Text="登录" Type="Button" ValidateForms="SimpleForm2" ValidateTarget="Top" runat="server"
+                            OnClick="btnLoginForm2_Click">
                         </f:Button>
                     </Items>
                 </f:Toolbar>
@@ -71,8 +74,8 @@
         </f:SimpleForm>
         <br />
         <br />
-        <f:SimpleForm ID="SimpleForm3" IsFluid="true" Title="表单(RedStarPosition=AfterSeparator LabelAlign=Top)" runat="server" ShowBorder="true" BodyPadding="10px"
-            ShowHeader="true" RedStarPosition="AfterSeparator" LabelAlign="Top">
+        <f:SimpleForm ID="SimpleForm3" IsFluid="true" Title="表单(RedStarPosition=AfterSeparator LabelAlign=Top)" runat="server" ShowBorder="true"
+            BodyPadding="10px" ShowHeader="true" RedStarPosition="AfterSeparator" LabelAlign="Top">
             <Items>
                 <f:TextBox ID="TextBox3" Label="用户名" Required="true" ShowRedStar="true" runat="server">
                 </f:TextBox>
@@ -82,8 +85,8 @@
             <Toolbars>
                 <f:Toolbar ID="Toolbar3" runat="server" ToolbarAlign="Right" Position="Bottom">
                     <Items>
-                        <f:Button ID="Button3" Text="登录" Type="Button" ValidateForms="SimpleForm3" ValidateTarget="Top"
-                            runat="server" OnClick="btnLoginForm3_Click">
+                        <f:Button ID="Button3" Text="登录" Type="Button" ValidateForms="SimpleForm3" ValidateTarget="Top" runat="server"
+                            OnClick="btnLoginForm3_Click">
                         </f:Button>
                     </Items>
                 </f:Toolbar>
@@ -102,7 +105,13 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>RedStarPosition</code>（<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>" title="表单(RedStarPosition=AfterText LabelAlign=Left)">表单(RedStarPosition=AfterText LabelAlign=Left)</strong>、<strong class="example-control-reference" data-example-control="<%= SimpleForm2.ClientID %>" title="表单(RedStarPosition=BeforeText LabelAlign=Right)">表单(RedStarPosition=BeforeText LabelAlign=Right)</strong>、<strong class="example-control-reference" data-example-control="<%= SimpleForm3.ClientID %>" title="表单(RedStarPosition=AfterSeparator LabelAlign=Top)">表单(RedStarPosition=AfterSeparator LabelAlign=Top)</strong>）：对比默认位置、<code>BeforeText</code> 与 <code>AfterSeparator</code>。</li>
+                <li><code>RedStarPosition</code>（<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>"
+                        title="表单(RedStarPosition=AfterText LabelAlign=Left)">表单(RedStarPosition=AfterText LabelAlign=Left)</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= SimpleForm2.ClientID %>"
+                        title="表单(RedStarPosition=BeforeText LabelAlign=Right)">表单(RedStarPosition=BeforeText LabelAlign=Right)</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= SimpleForm3.ClientID %>"
+                        title="表单(RedStarPosition=AfterSeparator LabelAlign=Top)">表单(RedStarPosition=AfterSeparator
+                        LabelAlign=Top)</strong>）：对比默认位置、<code>BeforeText</code> 与 <code>AfterSeparator</code>。</li>
             </ul>
         </section>
     </template>

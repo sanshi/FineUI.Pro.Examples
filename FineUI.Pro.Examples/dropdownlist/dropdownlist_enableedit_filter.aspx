@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉列表（可编辑，强制选择）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉列表（可编辑，强制选择）"
+            ShowHeader="true">
             <Items>
                 <f:DropDownList runat="server" ID="DropDownList1" EnableEdit="true" FilterFunction="filterDropDownList1">
                     <f:ListItem Text="可选项1" Value="Value1" Selected="true" />
@@ -24,8 +24,7 @@
                     <f:ListItem Text="选择项9" Value="Value9" />
                     <f:ListItem Text="普通型1 &lt; L &gt; 1.5" Value="普通型1 &lt; L &gt; 1.5" />
                 </f:DropDownList>
-                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click"
-                    CssClass="marginr">
+                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" runat="server" OnClick="btnGetSelection_Click">
                 </f:Button>
@@ -38,7 +37,6 @@
 
     </form>
     <script>
-
         function filterDropDownList1(filterText, listItemText) {
             // 返回false则排除当前列表项
             if (!F.startsWith(filterText.toLowerCase(), listItemText.toLowerCase())) {
@@ -61,7 +59,8 @@
             <p>注：用户输入文本时，会从第一个字符开始匹配（尝试输入字符：选）。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>FilterFunction</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：按本页函数返回的结果过滤下拉项。 本页声明值为 <code>filter</code><code>DropDownList1</code>。</li>
+                <li><code>FilterFunction</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：按本页函数返回的结果过滤下拉项。 本页声明值为 <code>filter</code><code>DropDownList1</code>。</li>
             </ul>
         </section>
     </template>

@@ -12,6 +12,7 @@
         .f-field {
             margin-bottom: 0 !important;
         }
+
     </style>
 </head>
 <body class="f-body-darkerbg">
@@ -23,18 +24,15 @@
         中等屏幕水平排列，小屏幕层叠排列：
         <br />
         <br />
-        <f:Panel ID="Panel5" IsFluid="true" runat="server" ShowBorder="true" EnableCollapse="false"
-            Layout="Block" BodyPadding="10px" ShowHeader="false">
+        <f:Panel ID="Panel5" IsFluid="true" runat="server" ShowBorder="true" EnableCollapse="false" Layout="Block" BodyPadding="10px" ShowHeader="false">
             <Items>
-                <f:Panel ID="Panel6" BlockMD="6"
-                    runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
+                <f:Panel ID="Panel6" BlockMD="6" runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
                     <Items>
                         <f:Label ID="Label4" runat="server" EncodeText="false" Text="BlockMD=6">
                         </f:Label>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="Panel7" BlockMD="6"
-                    runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
+                <f:Panel ID="Panel7" BlockMD="6" runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
                     <Items>
                         <f:Label ID="Label5" runat="server" EncodeText="false" Text="BlockMD=6">
                         </f:Label>
@@ -48,25 +46,21 @@
         大屏幕水平排列，中等屏幕分两行显示，小屏幕层叠排列：
         <br />
         <br />
-        <f:Panel ID="Panel2" IsFluid="true" runat="server" ShowBorder="true" EnableCollapse="false"
-            Layout="Block" BodyPadding="10px" ShowHeader="false">
+        <f:Panel ID="Panel2" IsFluid="true" runat="server" ShowBorder="true" EnableCollapse="false" Layout="Block" BodyPadding="10px" ShowHeader="false">
             <Items>
-                <f:Panel ID="Panel1" BlockMD="6" BlockLG="4"
-                    runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
+                <f:Panel ID="Panel1" BlockMD="6" BlockLG="4" runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
                     <Items>
                         <f:Label ID="Label1" runat="server" EncodeText="false" Text="BlockMD=6<br/>BlockLG=4">
                         </f:Label>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="Panel3" BlockMD="6" BlockLG="4"
-                    runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
+                <f:Panel ID="Panel3" BlockMD="6" BlockLG="4" runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
                     <Items>
                         <f:Label ID="Label2" runat="server" EncodeText="false" Text="BlockMD=6<br/>BlockLG=4">
                         </f:Label>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="Panel4" BlockMD="12" BlockLG="4"
-                    runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
+                <f:Panel ID="Panel4" BlockMD="12" BlockLG="4" runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
                     <Items>
                         <f:Label ID="Label3" runat="server" EncodeText="false" Text="BlockMD=12<br/>BlockLG=4">
                         </f:Label>
@@ -79,25 +73,22 @@
         通过 BlockConfigSpace=10 设置子项之间的间距：
         <br />
         <br />
-        <f:Panel ID="Panel9" IsFluid="true" runat="server" ShowBorder="true" EnableCollapse="false"
-            Layout="Block" BlockConfigSpace="10px" BodyPadding="10px" ShowHeader="false">
+        <f:Panel ID="Panel9" IsFluid="true" runat="server" ShowBorder="true" EnableCollapse="false" Layout="Block" BlockConfigSpace="10px" BodyPadding="10px"
+            ShowHeader="false">
             <Items>
-                <f:Panel ID="Panel10" BlockSM="6" BlockMD="9" BlockLG="4"
-                    runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
+                <f:Panel ID="Panel10" BlockSM="6" BlockMD="9" BlockLG="4" runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
                     <Items>
                         <f:Label ID="Label7" runat="server" EncodeText="false" Text="BlockSM=6<br/>BlockMD=9<br/>BlockLG=4">
                         </f:Label>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="Panel11" BlockSM="6" BlockMD="3" BlockLG="4"
-                    runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
+                <f:Panel ID="Panel11" BlockSM="6" BlockMD="3" BlockLG="4" runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
                     <Items>
                         <f:Label ID="Label8" runat="server" EncodeText="false" Text="BlockSM=6<br/>BlockMD=3<br/>BlockLG=4">
                         </f:Label>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="Panel12" BlockSM="12" BlockMD="12" BlockLG="4"
-                    runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
+                <f:Panel ID="Panel12" BlockSM="12" BlockMD="12" BlockLG="4" runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
                     <Items>
                         <f:Label ID="Label9" runat="server" EncodeText="false" Text="BlockSM=12<br/>BlockMD=12<br/>BlockLG=4">
                         </f:Label>
@@ -106,28 +97,48 @@
             </Items>
         </f:Panel>
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示对比不同屏幕临界值下的列数和子项占比。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整宽度比较排列</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>' title="第 1 个面板">第 1 个面板</strong>，缩小浏览器，再逐步放大到桌面和大屏宽度。<br />结果：子项按各自 <code>BlockSM</code>、<code>BlockMD</code>、<code>BlockLG</code> 配置重新分行；未达到对应临界值时按较小屏幕的配置排列。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>响应式布局由 JavaScript 根据容器宽度计算，可与其它布局嵌套；默认一行分成 <code>12</code> 块，也可自定义总块数。子项块数之和超过一行时，后续项目另起一行。</li>
-        <li><code>Block</code> 对所有宽度生效；<code>BlockSM</code>、<code>BlockMD</code>、<code>BlockLG</code> 分别从 <code>768px</code>、<code>992px</code>、<code>1200px</code> 起生效。未达到临界值时，使用较小宽度区间的设置，没有较小区间设置则层叠排列。</li>
-        <li>例如 <code>BlockMD=6</code> 表示中等及以上宽度占半行；配合 <code>BlockLG=4</code> 后，大屏改为每行三项。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>' title="第 1 个面板">第 1 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>' title="第 4 个面板">第 4 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel9").ClientID %>' title="第 8 个面板">第 8 个面板</strong>）：初始为<code>Block</code>，父容器使用 <code>Block</code>，按可用宽度排列内容块。</li>
-        <li><code>BlockSM</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel10").ClientID %>' title="第 9 个面板">第 9 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel11").ClientID %>' title="第 10 个面板">第 10 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel12").ClientID %>' title="第 11 个面板">第 11 个面板</strong>）：各组分别设为<code>6</code>、<code>12</code>，指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。</li>
-        <li><code>BlockMD</code>（本页各面板，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel6").ClientID %>' title="第 2 个面板">第 2 个面板</strong>）：各组分别设为<code>6</code>、<code>12</code>、<code>9</code>、<code>3</code>，指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。</li>
-        <li><code>BlockLG</code>（本页各面板，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="第 5 个面板">第 5 个面板</strong>）：初始为<code>4</code>，指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。</li>
-        <li><code>BlockConfigSpace</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel9").ClientID %>' title="第 8 个面板">第 8 个面板</strong>）：初始为<code>10px</code>，父容器中相邻块之间的间隔。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示对比不同屏幕临界值下的列数和子项占比。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整宽度比较排列</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>'
+                        title="第 1 个面板">第 1 个面板</strong>，缩小浏览器，再逐步放大到桌面和大屏宽度。<br />结果：子项按各自 <code>BlockSM</code>、<code>BlockMD</code>、<code>BlockLG</code>
+                    配置重新分行；未达到对应临界值时按较小屏幕的配置排列。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <ul>
+                <li>响应式布局由 JavaScript 根据容器宽度计算，可与其它布局嵌套；默认一行分成 <code>12</code> 块，也可自定义总块数。子项块数之和超过一行时，后续项目另起一行。</li>
+                <li><code>Block</code> 对所有宽度生效；<code>BlockSM</code>、<code>BlockMD</code>、<code>BlockLG</code> 分别从
+                    <code>768px</code>、<code>992px</code>、<code>1200px</code> 起生效。未达到临界值时，使用较小宽度区间的设置，没有较小区间设置则层叠排列。
+                </li>
+                <li>例如 <code>BlockMD=6</code> 表示中等及以上宽度占半行；配合 <code>BlockLG=4</code> 后，大屏改为每行三项。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Layout</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>' title="第 1 个面板">第 1 个面板</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>' title="第 4 个面板">第
+                        4 个面板</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel9").ClientID %>' title="第 8 个面板">第 8
+                        个面板</strong>）：初始为<code>Block</code>，父容器使用 <code>Block</code>，按可用宽度排列内容块。</li>
+                <li><code>BlockSM</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel10").ClientID %>' title="第 9 个面板">第 9 个面板</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel11").ClientID %>'
+                        title="第 10 个面板">第 10 个面板</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel12").ClientID %>' title="第 11 个面板">第 11
+                        个面板</strong>）：各组分别设为<code>6</code>、<code>12</code>，指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。</li>
+                <li><code>BlockMD</code>（本页各面板，如<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel6").ClientID %>' title="第 2 个面板">第 2
+                        个面板</strong>）：各组分别设为<code>6</code>、<code>12</code>、<code>9</code>、<code>3</code>，指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。</li>
+                <li><code>BlockLG</code>（本页各面板，如<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="第 5 个面板">第 5
+                        个面板</strong>）：初始为<code>4</code>，指定当前子项在相应宽度区间占用的块数，未达到临界值时使用较小区间的设置。</li>
+                <li><code>BlockConfigSpace</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel9").ClientID %>' title="第 8 个面板">第 8
+                        个面板</strong>）：初始为<code>10px</code>，父容器中相邻块之间的间隔。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -8,8 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="简单下拉列表（自动回发）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="简单下拉列表（自动回发）"
+            ShowHeader="true">
             <Items>
                 <f:DropDownList runat="server" ID="DropDownList1">
                     <Items>
@@ -28,8 +28,7 @@
                     </Listeners>
                 </f:DropDownList>
 
-                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server"
-                    CssClass="marginr" ClickHandler="onSelectItem6Click"></f:Button>
+                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" CssClass="marginr" ClickHandler="onSelectItem6Click"></f:Button>
                 <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" runat="server" ClickHandler="onGetSelectionClick"></f:Button>
             </Items>
         </f:SimpleForm>
@@ -40,7 +39,6 @@
         <br />
     </form>
     <script>
-
         var labResultClientID = '<%= labResult.ClientID %>';
         var dropDownList1ClientID = '<%= DropDownList1.ClientID %>';
 
@@ -50,8 +48,7 @@
 
             if (ddlValue) {
                 F(labResultClientID).setValue('选中项：' + ddl.getTextByValue(ddlValue) + '（值：' + ddlValue + '）');
-            }
-            else {
+            } else {
                 F(labResultClientID).setValue('无选中项');
             }
         }
@@ -81,7 +78,8 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>listeners.select</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：监听用户从面板选中列表项的客户端动作。</li>
+                <li><code>listeners.select</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：监听用户从面板选中列表项的客户端动作。</li>
             </ul>
         </section>
     </template>

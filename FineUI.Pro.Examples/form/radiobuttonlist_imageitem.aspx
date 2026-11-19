@@ -9,12 +9,13 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" runat="server" LabelWidth="220px" EnableCollapse="false"
-            BodyPadding="10px" ShowBorder="true" ShowHeader="true" Title="单选框列表 - 图标选项（可信 HTML）">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" runat="server" LabelWidth="220px" EnableCollapse="false" BodyPadding="10px" ShowBorder="true"
+            ShowHeader="true" Title="单选框列表 - 图标选项（可信 HTML）">
             <Items>
                 <f:RadioButtonList ID="RadioButtonList1" runat="server" Label="① DataBind + DataTextRaw（自动绑定）" ColumnNumber="4">
                 </f:RadioButtonList>
-                <f:RadioButtonList ID="RadioButtonList2" runat="server" Label="② OnItemDataBound（逐项事件回调）" ColumnNumber="4" OnItemDataBound="RadioButtonList2_ItemDataBound">
+                <f:RadioButtonList ID="RadioButtonList2" runat="server" Label="② OnItemDataBound（逐项事件回调）" ColumnNumber="4"
+                    OnItemDataBound="RadioButtonList2_ItemDataBound">
                 </f:RadioButtonList>
                 <f:RadioButtonList ID="RadioButtonList3" runat="server" Label="③ 手工构建 Items（TextRawHtml）" ColumnNumber="4">
                 </f:RadioButtonList>
@@ -46,10 +47,13 @@
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：三种方式（数据绑定 + <code>DataTextRaw</code>、<code>OnItemDataBound</code>、手工构建 <code>Items</code>）实现的功能与安全性完全等价，区别只是数据供给方式。 三者都只信任图标模板骨架与 <code>URL</code>，数据字段（名称）均经 <code>HtmlEncode</code> 转义，杜绝 <code>XSS</code>。</p>
+            <p>注：三种方式（数据绑定 + <code>DataTextRaw</code>、<code>OnItemDataBound</code>、手工构建 <code>Items</code>）实现的功能与安全性完全等价，区别只是数据供给方式。 三者都只信任图标模板骨架与
+                <code>URL</code>，数据字段（名称）均经 <code>HtmlEncode</code> 转义，杜绝 <code>XSS</code>。
+            </p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DataTextRaw</code>（<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>" title="① DataBind + DataTextRaw（自动绑定）">① DataBind + DataTextRaw（自动绑定）</strong>）：固定国旗 HTML 按可信内容输出，动态国家名称仍应先编码；普通字符串不会因此自动获得可信身份。</li>
+                <li><code>DataTextRaw</code>（<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>"
+                        title="① DataBind + DataTextRaw（自动绑定）">① DataBind + DataTextRaw（自动绑定）</strong>）：固定国旗 HTML 按可信内容输出，动态国家名称仍应先编码；普通字符串不会因此自动获得可信身份。</li>
             </ul>
         </section>
     </template>

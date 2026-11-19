@@ -22,13 +22,14 @@
             display: flex;
             justify-content: flex-start;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="分组+自定义列表项+多选+复选框" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="分组+自定义列表项+多选+复选框"
+            ShowHeader="true">
             <Items>
                 <f:DropDownList runat="server" ID="DropDownList1" EnableGroup="true" EnableMultiSelect="true" EnableCheckBoxSelect="true">
                 </f:DropDownList>
@@ -60,10 +61,14 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableGroup</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：按数据分组显示列表项。 本页声明值为 <code>true</code>。</li>
-                <li><code>DataGroupField</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：从指定数据字段取得分组标题。 本页声明值为 <code>Major</code>。</li>
-                <li><code>DataDisplayFormatString</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：自定义下拉面板内选项的显示内容。 本页声明值为 &lt;<code>div</code> <code>class</code>=\。</li>
-                <li><code>DataTextField</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：从指定字段取得选中后显示的文字。 本页声明值为 <code>Name</code>。</li>
+                <li><code>EnableGroup</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：按数据分组显示列表项。 本页声明值为 <code>true</code>。</li>
+                <li><code>DataGroupField</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：从指定数据字段取得分组标题。 本页声明值为 <code>Major</code>。</li>
+                <li><code>DataDisplayFormatString</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：自定义下拉面板内选项的显示内容。 本页声明值为 &lt;<code>div</code> <code>class</code>=\。</li>
+                <li><code>DataTextField</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：从指定字段取得选中后显示的文字。 本页声明值为 <code>Name</code>。</li>
             </ul>
         </section>
     </template>

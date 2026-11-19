@@ -8,8 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy-MM-dd HH:mm:ss"
-            OnDateSelect="Calendar1_DateSelect" ID="Calendar1" ShowTime="true" ShowConfirmButton="true" ConfirmToSelect="true">
+        <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy-MM-dd HH:mm:ss" OnDateSelect="Calendar1_DateSelect" ID="Calendar1"
+            ShowTime="true" ShowConfirmButton="true" ConfirmToSelect="true">
         </f:Calendar>
         <br />
         <br />
@@ -42,8 +42,10 @@
             <p>注：启用了 <code>ConfirmToSelect</code> 属性，点击确定按钮才会触发选择事件。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ShowConfirmButton</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>" title="日历">日历</strong>）：显示面板中的<strong>确定</strong>按钮；是否延后提交选择由 <code>ConfirmToSelect</code> 控制。</li>
-                <li><code>ConfirmToSelect</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>" title="日历">日历</strong>）：将当前选择暂存在面板中，点击<strong>确定</strong>后才提交当前值并触发选中事件。</li>
+                <li><code>ShowConfirmButton</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>"
+                        title="日历">日历</strong>）：显示面板中的<strong>确定</strong>按钮；是否延后提交选择由 <code>ConfirmToSelect</code> 控制。</li>
+                <li><code>ConfirmToSelect</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>"
+                        title="日历">日历</strong>）：将当前选择暂存在面板中，点击<strong>确定</strong>后才提交当前值并触发选中事件。</li>
             </ul>
         </section>
     </template>

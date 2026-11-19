@@ -69,7 +69,8 @@
             <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>筛选后选择人员</h3>
             <ol>
                 <li>
-                    展开面板后的<strong class="example-control-reference" data-example-control="<%= ttbSearch.ClientID %>" title="在姓名中查找">在姓名中查找</strong>输入框中输入<code>陈</code>，点击搜索图标。<br />
+                    展开面板后的<strong class="example-control-reference" data-example-control="<%= ttbSearch.ClientID %>"
+                        title="在姓名中查找">在姓名中查找</strong>输入框中输入<code>陈</code>，点击搜索图标。<br />
                     结果：后台按姓名过滤表格，只显示匹配“陈”的记录，分页回到第一页。
                 </li>
                 <li>
@@ -97,12 +98,18 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DataControlID</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：指定弹出面板中提供选择数据的控件。 本页声明值为 <code>Grid1</code>。</li>
-                <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>" title="表格">表格</strong>）：为 <code>true</code> 时后台按当前页加载；为 <code>false</code> 时浏览器对已加载数据分页。 本页声明值为 <code>true</code>。</li>
-                <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>" title="表格">表格</strong>）：在继续选择或翻页时保留已有选择。 本页声明值为 <code>true</code>。</li>
-                <li><code>OnPageIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>" title="表格">表格</strong>）：翻页后重新取得当前页数据并绑定。 本页声明值为 <code>Grid1</code><code>_PageIndexChanged</code>。</li>
-                <li><code>AllowSorting</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>" title="表格">表格</strong>）：允许按表头切换排序。 本页声明值为 <code>true</code>。</li>
-                <li><code>OnSort</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>" title="表格">表格</strong>）：排序变化后按新排序条件重新加载数据。 本页声明值为 <code>Grid1</code><code>_Sort</code>。</li>
+                <li><code>DataControlID</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="请从下拉表格中选择">请从下拉表格中选择</strong>）：指定弹出面板中提供选择数据的控件。 本页声明值为 <code>Grid1</code>。</li>
+                <li><code>IsDatabasePaging</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>"
+                        title="表格">表格</strong>）：为 <code>true</code> 时后台按当前页加载；为 <code>false</code> 时浏览器对已加载数据分页。 本页声明值为 <code>true</code>。</li>
+                <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>"
+                        title="表格">表格</strong>）：在继续选择或翻页时保留已有选择。 本页声明值为 <code>true</code>。</li>
+                <li><code>OnPageIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>"
+                        title="表格">表格</strong>）：翻页后重新取得当前页数据并绑定。 本页声明值为 <code>Grid1</code><code>_PageIndexChanged</code>。</li>
+                <li><code>AllowSorting</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>"
+                        title="表格">表格</strong>）：允许按表头切换排序。 本页声明值为 <code>true</code>。</li>
+                <li><code>OnSort</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>"
+                        title="表格">表格</strong>）：排序变化后按新排序条件重新加载数据。 本页声明值为 <code>Grid1</code><code>_Sort</code>。</li>
             </ul>
         </section>
     </template>

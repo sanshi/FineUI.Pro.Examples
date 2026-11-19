@@ -8,10 +8,10 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉树" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉树" ShowHeader="true">
             <Items>
-                <f:DropDownBox runat="server" ID="DropDownBox1" EnableMultiSelect="true" Values="henan,anhui" Text="河南省,安徽省" CustomData="true" MultiSelectMode="Tags">
+                <f:DropDownBox runat="server" ID="DropDownBox1" EnableMultiSelect="true" Values="henan,anhui" Text="河南省,安徽省" CustomData="true"
+                    MultiSelectMode="Tags">
                     <PopPanel>
                         <f:Tree ID="Tree1" ShowHeader="false" Hidden="true" runat="server" EnableCheckBox="true">
                             <Nodes>
@@ -71,7 +71,7 @@
         function updateTreeCheckedNodes() {
             var nodes = F(ddbID).getValue();
 
-            F.noEvent(function () {
+            F.noEvent(function() {
                 F(Tree1ID).checkNodes(nodes, {
                     keep: false // 是否保持已选中复选框的状态（false表示在执行本次操作之前，取消已选中的复选框）
                 });
@@ -86,14 +86,15 @@
             updateTreeCheckedNodes();
         }
 
-        F.ready(function () {
+        F.ready(function() {
 
             var tree1 = F(Tree1ID);
-            tree1.on('nodecheck', function (event, nodeId, checked) {
+            tree1.on('nodecheck', function(event, nodeId, checked) {
 
-                var values = [], texts = [];
+                var values = [],
+                    texts = [];
                 var checkedNodes = tree1.getCheckedNodes(true);
-                $.each(checkedNodes, function (index, node) {
+                $.each(checkedNodes, function(index, node) {
                     values.push(node.id);
                     texts.push(node.text);
                 });
@@ -110,20 +111,25 @@
             <h3><i class="f-icon f-iconfont f-iconfont-close" aria-hidden="true"></i>移除标签并同步树的勾选</h3>
             <ol>
                 <li>
-                    初次打开时点击<strong>河南省</strong>标签右侧的关闭图标，再展开<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>" title="下拉树">下拉树</strong>。<br />
+                    初次打开时点击<strong>河南省</strong>标签右侧的关闭图标，再展开<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>"
+                        title="下拉树">下拉树</strong>。<br />
                     结果：“河南省”标签消失，“安徽省”继续保留；树中的“河南省”复选框也取消勾选。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
             <p>注：</p>
             <ul>
-                <li>自定义数据来源时（<code>CustomData</code>=<code>true</code>），需要同时设置 <code>Value</code> 和 <code>Text</code> 属性来初始化<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>。</li>
-                <li><strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>的值对应于树控件的复选框，而不是树控件的选中项。</li>
+                <li>自定义数据来源时（<code>CustomData</code>=<code>true</code>），需要同时设置 <code>Value</code> 和 <code>Text</code> 属性来初始化<strong
+                        class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>。</li>
+                <li><strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>的值对应于树控件的复选框，而不是树控件的选中项。</li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>MultiSelectMode</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>）：本页为 <code>Tags</code>（纯 JS 为 <code>tags</code>），把每个勾选结果显示为可关闭的标签。</li>
-                <li><code>tagclose</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>）：标签关闭后将剩余的下拉值回写树的勾选集合，保持两处状态一致。</li>
+                <li><code>MultiSelectMode</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>）：本页为 <code>Tags</code>（纯 JS 为 <code>tags</code>），把每个勾选结果显示为可关闭的标签。</li>
+                <li><code>tagclose</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>）：标签关闭后将剩余的下拉值回写树的勾选集合，保持两处状态一致。</li>
             </ul>
         </section>
     </template>

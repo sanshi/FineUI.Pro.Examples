@@ -13,8 +13,7 @@
             <Toolbars>
                 <f:Toolbar runat="server">
                     <Items>
-                        <f:Button ID="btnPostBackClose" runat="server" OnClick="btnPostBackClose_Click"
-                            Text="关闭-回发父页面">
+                        <f:Button ID="btnPostBackClose" runat="server" OnClick="btnPostBackClose_Click" Text="关闭-回发父页面">
                         </f:Button>
                         <f:Button ID="Button1" Text="本页面弹出窗体" runat="server" ClickHandler="onOpenWindow1Click">
                         </f:Button>
@@ -28,18 +27,15 @@
                 </f:Label>
             </Items>
         </f:Panel>
-        <f:Window ID="Window1" Hidden="true" EnableIFrame="true" runat="server"
-            EnableMaximize="true" EnableResize="true" Height="300px" Width="600px"
+        <f:Window ID="Window1" Hidden="true" EnableIFrame="true" runat="server" EnableMaximize="true" EnableResize="true" Height="300px" Width="600px"
             Title="窗体三">
         </f:Window>
-        <f:Window ID="Window2" Hidden="true" EnableIFrame="true" runat="server"
-            EnableMaximize="true" EnableResize="true" Target="Parent" Height="300px" Width="600px"
-            CloseAction="HidePostBack" Title="窗体四">
+        <f:Window ID="Window2" Hidden="true" EnableIFrame="true" runat="server" EnableMaximize="true" EnableResize="true" Target="Parent" Height="300px"
+            Width="600px" CloseAction="HidePostBack" Title="窗体四">
         </f:Window>
 
     </form>
     <script>
-
         var Window1ClientID = '<%= Window1.ClientID %>';
         var Window2ClientID = '<%= Window2.ClientID %>';
 

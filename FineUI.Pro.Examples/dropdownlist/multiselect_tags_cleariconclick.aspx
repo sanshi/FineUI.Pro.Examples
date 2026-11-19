@@ -8,11 +8,11 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉列表（多选）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉列表（多选）"
+            ShowHeader="true">
             <Items>
-                <f:DropDownList runat="server" ID="DropDownList1" EnableMultiSelect="true" MultiSelectMode="Tags"
-                    AutoShowClearIcon="true" EnableClearIconClickEvent="true" OnClearIconClick="DropDownList1_ClearIconClick">
+                <f:DropDownList runat="server" ID="DropDownList1" EnableMultiSelect="true" MultiSelectMode="Tags" AutoShowClearIcon="true"
+                    EnableClearIconClickEvent="true" OnClearIconClick="DropDownList1_ClearIconClick">
                     <f:ListItem Text="可选项1" Value="Value1" Selected="true" />
                     <f:ListItem Text="可选项2（不可选择）" Value="Value2" EnableSelect="false" />
                     <f:ListItem Text="可选项3（不可选择）" Value="Value3" EnableSelect="false" />
@@ -25,8 +25,7 @@
                     <f:ListItem Text="普通型1 &lt; L &gt; 1.5" Value="普通型1 &lt; L &gt; 1.5" />
                 </f:DropDownList>
 
-                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click"
-                    CssClass="marginr">
+                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" runat="server" OnClick="btnGetSelection_Click">
                 </f:Button>
@@ -43,14 +42,17 @@
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>清空全部选择</h3>
             <ol>
                 <li>
-                    先点击<strong class="example-control-reference" data-example-control="<%= btnSelectItem6.ClientID %>" title="选中[可选项6]">选中[可选项6]</strong>，再点击输入框的清空图标。<br />
+                    先点击<strong class="example-control-reference" data-example-control="<%= btnSelectItem6.ClientID %>"
+                        title="选中[可选项6]">选中[可选项6]</strong>，再点击输入框的清空图标。<br />
                     结果：全部选中值和标签被清除，清空图标隐藏；后台清空事件显示“你点击了清空图标”。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：有内容时显示清空图标。 本页声明值为 <code>true</code>。</li>
-                <li><code>OnClearIconClick</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：点击清空图标后请求后台处理。 本页声明值为 <code>DropDownList1</code><code>_ClearIconClick</code>。</li>
+                <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：有内容时显示清空图标。 本页声明值为 <code>true</code>。</li>
+                <li><code>OnClearIconClick</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：点击清空图标后请求后台处理。 本页声明值为 <code>DropDownList1</code><code>_ClearIconClick</code>。</li>
             </ul>
         </section>
     </template>

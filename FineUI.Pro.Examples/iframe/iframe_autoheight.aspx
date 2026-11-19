@@ -11,13 +11,14 @@
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
         <f:Button ID="Button1" runat="server" CssClass="marginr" AttributeDataTag="../button/button.aspx" Text="按钮页面" ClickHandler="onButtonClick"></f:Button>
-        <f:Button ID="Button2" runat="server" CssClass="marginr" AttributeDataTag="../button/button_buttongroup.aspx" Text="分组按钮页面" ClickHandler="onButtonClick"></f:Button>
-        <f:Button ID="Button6" runat="server" CssClass="marginr" AttributeDataTag="../button/button_buttongroup_vertical.aspx" Text="垂直分组按钮页面" ClickHandler="onButtonClick"></f:Button>
+        <f:Button ID="Button2" runat="server" CssClass="marginr" AttributeDataTag="../button/button_buttongroup.aspx" Text="分组按钮页面"
+            ClickHandler="onButtonClick"></f:Button>
+        <f:Button ID="Button6" runat="server" CssClass="marginr" AttributeDataTag="../button/button_buttongroup_vertical.aspx" Text="垂直分组按钮页面"
+            ClickHandler="onButtonClick"></f:Button>
         <br />
         <br />
-        <f:Panel ID="Panel1" IsFluid="true" runat="server" ShowBorder="true"
-            EnableIFrame="true" IFrameUrl="~/button/button.aspx"
-            ShowHeader="true" Title="面板一（面板高度随IFrame的高度自适应）">
+        <f:Panel ID="Panel1" IsFluid="true" runat="server" ShowBorder="true" EnableIFrame="true" IFrameUrl="~/button/button.aspx" ShowHeader="true"
+            Title="面板一（面板高度随IFrame的高度自适应）">
             <Listeners>
                 <f:Listener Event="iframeload" Handler="onIFrameLoad" />
             </Listeners>
@@ -27,7 +28,6 @@
 
     </form>
     <script>
-
         var panel1ClientID = '<%= Panel1.ClientID %>';
 
         function onButtonClick(event) {
@@ -66,27 +66,36 @@
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示外层面板读取 <code>iframe</code> 内容高度，并在切换子页面后重新调整高度。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>切换不同高度的子页面</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>' title="分组按钮页面">分组按钮页面</strong>。<br />结果：<code>iframe</code> 切换到对应子页面，外层面板重新按本次内容计算高度。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button6").ClientID %>' title="垂直分组按钮页面">垂直分组按钮页面</strong>。<br />结果：更高的子页面使外层面板相应增高，不沿用上一页的旧高度。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>本示例不适合加载外部页面！
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示外层面板读取 <code>iframe</code> 内容高度，并在切换子页面后重新调整高度。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>切换不同高度的子页面</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>'
+                        title="分组按钮页面">分组按钮页面</strong>。<br />结果：<code>iframe</code> 切换到对应子页面，外层面板重新按本次内容计算高度。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button6").ClientID %>'
+                        title="垂直分组按钮页面">垂直分组按钮页面</strong>。<br />结果：更高的子页面使外层面板相应增高，不沿用上一页的旧高度。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <ul>
+                <li>本示例不适合加载外部页面！
 
-        由于存在<a href="https://en.wikipedia.org/wiki/Same_origin_policy">跨域限制（Same-origin policy）</a>，在<code>IFrame</code>中加载外部页面时，无法访问到<code>IFrame</code>页面的<code>document</code>属性！</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板一（面板高度随IFrame的高度自适应）">面板一（面板高度随IFrame的高度自适应）</strong>）：初始为<code>true</code>，外层面板用 <code>iframe</code> 加载当前子页。</li>
-        <li><code>iframeload</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板一（面板高度随IFrame的高度自适应）">面板一（面板高度随IFrame的高度自适应）</strong>）：子页加载后执行本页高度同步逻辑。</li>
-        <li><code>setHeight()</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板一（面板高度随IFrame的高度自适应）">面板一（面板高度随IFrame的高度自适应）</strong>）：更新承载面板的高度，不重新创建子页内容。</li>
-    </ul>
-</section>
-</template>
+                    由于存在<a href="https://en.wikipedia.org/wiki/Same_origin_policy">跨域限制（Same-origin
+                        policy）</a>，在<code>IFrame</code>中加载外部页面时，无法访问到<code>IFrame</code>页面的<code>document</code>属性！</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableIFrame</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="面板一（面板高度随IFrame的高度自适应）">面板一（面板高度随IFrame的高度自适应）</strong>）：初始为<code>true</code>，外层面板用 <code>iframe</code> 加载当前子页。</li>
+                <li><code>iframeload</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="面板一（面板高度随IFrame的高度自适应）">面板一（面板高度随IFrame的高度自适应）</strong>）：子页加载后执行本页高度同步逻辑。</li>
+                <li><code>setHeight()</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="面板一（面板高度随IFrame的高度自适应）">面板一（面板高度随IFrame的高度自适应）</strong>）：更新承载面板的高度，不重新创建子页内容。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

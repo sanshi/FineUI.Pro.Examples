@@ -10,42 +10,37 @@
         <f:PageManager ID="PageManager1" AutoSizePanelID="Panel1" runat="server" />
         <f:Panel ID="Panel1" Margin="24px" runat="server" ShowBorder="false" ShowHeader="false" Layout="Region">
             <Items>
-                <f:Panel runat="server" ID="panelLeftRegion" RegionPosition="Left" RegionSplit="true" EnableCollapse="true"
-                    Width="200px" Title="左侧面板" ShowBorder="true" ShowHeader="true"
-                    BodyPadding="10px">
+                <f:Panel runat="server" ID="panelLeftRegion" RegionPosition="Left" RegionSplit="true" EnableCollapse="true" Width="200px" Title="左侧面板"
+                    ShowBorder="true" ShowHeader="true" BodyPadding="10px">
                     <Items>
                         <f:Label ID="Label2" runat="server" Text="左侧面板的内容">
                         </f:Label>
                     </Items>
                 </f:Panel>
-                <f:Panel runat="server" RegionPosition="Center"
-                    ShowBorder="false" ShowHeader="false" Layout="Fit">
+                <f:Panel runat="server" RegionPosition="Center" ShowBorder="false" ShowHeader="false" Layout="Fit">
                     <Items>
                         <f:Panel ID="Panel2" runat="server" ShowBorder="false" ShowHeader="false" Layout="Region">
                             <Items>
-                                <f:Panel runat="server" ID="panel3" RegionPosition="Left" RegionSplit="true" EnableCollapse="true"
-                                    Width="200px" Title="左侧面板" ShowBorder="true" ShowHeader="true"
-                                    BodyPadding="10px">
+                                <f:Panel runat="server" ID="panel3" RegionPosition="Left" RegionSplit="true" EnableCollapse="true" Width="200px" Title="左侧面板"
+                                    ShowBorder="true" ShowHeader="true" BodyPadding="10px">
                                     <Items>
                                         <f:Label ID="Label1" runat="server" Text="左侧面板的内容">
                                         </f:Label>
                                     </Items>
                                 </f:Panel>
-                                <f:Panel ID="Panel4" runat="server" RegionPosition="Center"
-                                    ShowBorder="false" ShowHeader="false" Layout="Fit">
+                                <f:Panel ID="Panel4" runat="server" RegionPosition="Center" ShowBorder="false" ShowHeader="false" Layout="Fit">
                                     <Items>
                                         <f:Panel ID="Panel5" runat="server" ShowBorder="false" ShowHeader="false" Layout="Region">
                                             <Items>
-                                                <f:Panel runat="server" ID="panel6" RegionPosition="Left" RegionSplit="true" EnableCollapse="true"
-                                                    Width="200px" Title="左侧面板" ShowBorder="true" ShowHeader="true"
-                                                    BodyPadding="10px">
+                                                <f:Panel runat="server" ID="panel6" RegionPosition="Left" RegionSplit="true" EnableCollapse="true" Width="200px"
+                                                    Title="左侧面板" ShowBorder="true" ShowHeader="true" BodyPadding="10px">
                                                     <Items>
                                                         <f:Label ID="Label3" runat="server" Text="左侧面板的内容">
                                                         </f:Label>
                                                     </Items>
                                                 </f:Panel>
-                                                <f:Panel runat="server" ID="panel7" RegionPosition="Center"
-                                                    Title="中间面板" ShowBorder="true" ShowHeader="true" BodyPadding="10px">
+                                                <f:Panel runat="server" ID="panel7" RegionPosition="Center" Title="中间面板" ShowBorder="true" ShowHeader="true"
+                                                    BodyPadding="10px">
                                                     <Items>
                                                         <f:Label ID="Label4" runat="server" Text="中间面板的内容">
                                                         </f:Label>
@@ -62,20 +57,30 @@
             </Items>
         </f:Panel>
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示在一个区域内嵌套另一组区域布局，各层分别分配空间。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整区域空间</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>拖动可用的分隔条，再点击侧边区域的折叠入口。<br />结果：被操作区域改变尺寸或折叠，中心区域随剩余空间重新布局；其它区域内容保留。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>）：初始为<code>Region</code>，外层使用 <code>Region</code> 布局组织各方向的子区域。</li>
-        <li><code>RegionPosition</code>（本页各面板，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("panelLeftRegion").ClientID %>' title="第 2 个面板（左侧面板）">第 2 个面板（左侧面板）</strong>）：各组分别设为<code>Left</code>、<code>Center</code>，指定每个子区域所在的方向，中心区域使用剩余空间。</li>
-        <li><code>RegionSplit</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("panelLeftRegion").ClientID %>' title="第 2 个面板（左侧面板）">第 2 个面板（左侧面板）</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("panel3").ClientID %>' title="第 5 个面板（左侧面板）">第 5 个面板（左侧面板）</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("panel6").ClientID %>' title="第 8 个面板（左侧面板）">第 8 个面板（左侧面板）</strong>）：初始为<code>true</code>，允许对应区域显示可拖动的分隔条。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示在一个区域内嵌套另一组区域布局，各层分别分配空间。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整区域空间</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="第 1 个面板">第 1 个面板</strong>拖动可用的分隔条，再点击侧边区域的折叠入口。<br />结果：被操作区域改变尺寸或折叠，中心区域随剩余空间重新布局；其它区域内容保留。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Layout</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="第 1 个面板">第 1
+                        个面板</strong>）：初始为<code>Region</code>，外层使用 <code>Region</code> 布局组织各方向的子区域。</li>
+                <li><code>RegionPosition</code>（本页各面板，如<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("panelLeftRegion").ClientID %>' title="第 2 个面板（左侧面板）">第 2
+                        个面板（左侧面板）</strong>）：各组分别设为<code>Left</code>、<code>Center</code>，指定每个子区域所在的方向，中心区域使用剩余空间。</li>
+                <li><code>RegionSplit</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("panelLeftRegion").ClientID %>' title="第 2 个面板（左侧面板）">第 2
+                        个面板（左侧面板）</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("panel3").ClientID %>' title="第 5 个面板（左侧面板）">第 5 个面板（左侧面板）</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("panel6").ClientID %>'
+                        title="第 8 个面板（左侧面板）">第 8 个面板（左侧面板）</strong>）：初始为<code>true</code>，允许对应区域显示可拖动的分隔条。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

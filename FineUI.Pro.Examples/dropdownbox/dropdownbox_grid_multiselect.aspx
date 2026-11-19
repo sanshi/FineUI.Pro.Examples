@@ -58,12 +58,17 @@
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：如果表格分页，则需要同时指定 <code>Values</code> 和 <code>Text</code> 属性来设置<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">下拉框</strong>的初始值。</p>
+            <p>注：如果表格分页，则需要同时指定 <code>Values</code> 和 <code>Text</code> 属性来设置<strong class="example-control-reference"
+                    data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">下拉框</strong>的初始值。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：决定<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>true</code>。</li>
-                <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>" title="表格">表格</strong>）：在继续选择或翻页时保留已有选择。 本页声明值为 <code>true</code>。</li>
-                <li><code>EnableCheckBoxSelect</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>" title="表格">表格</strong>）：用复选框列选择表格行。 本页声明值为 <code>true</code>。</li>
+                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="请从下拉表格中选择">请从下拉表格中选择</strong>）：决定<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="请从下拉表格中选择">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>true</code>。</li>
+                <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>"
+                        title="表格">表格</strong>）：在继续选择或翻页时保留已有选择。 本页声明值为 <code>true</code>。</li>
+                <li><code>EnableCheckBoxSelect</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>"
+                        title="表格">表格</strong>）：用复选框列选择表格行。 本页声明值为 <code>true</code>。</li>
             </ul>
         </section>
     </template>

@@ -8,8 +8,7 @@
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Form ID="Form1" IsFluid="true" LabelWidth="100px" runat="server"
-            ShowBorder="false" ShowHeader="false" EnableTableStyle="true" MessageTarget="Qtip">
+        <f:Form ID="Form1" IsFluid="true" LabelWidth="100px" runat="server" ShowBorder="false" ShowHeader="false" EnableTableStyle="true" MessageTarget="Qtip">
             <Rows>
                 <f:FormRow ColumnWidths="50% 50%">
                     <Items>
@@ -25,20 +24,17 @@
                             <f:ListItem Text="可选项 1" Value="0"></f:ListItem>
                             <f:ListItem Text="可选项 2" Value="1"></f:ListItem>
                         </f:DropDownList>
-                        <f:TextBox ID="TextBox1" ShowRedStar="true" runat="server" Label="文本框" Required="true"
-                            Text="">
+                        <f:TextBox ID="TextBox1" ShowRedStar="true" runat="server" Label="文本框" Required="true" Text="">
                         </f:TextBox>
                     </Items>
                 </f:FormRow>
             </Rows>
         </f:Form>
-        <f:Button runat="server" Text="验证此表单并提交" CssClass="marginr" ValidateForms="Form1"
-            ID="btnSubmitForm1" OnClick="btnSubmitForm1_Click" MarginTop="5px">
+        <f:Button runat="server" Text="验证此表单并提交" CssClass="marginr" ValidateForms="Form1" ID="btnSubmitForm1" OnClick="btnSubmitForm1_Click" MarginTop="5px">
         </f:Button>
         <br />
         <br />
-        <f:Form IsFluid="true" LabelWidth="100px" ID="Form2" runat="server"
-            ShowBorder="false" ShowHeader="false" EnableTableStyle="true" MessageTarget="Qtip">
+        <f:Form IsFluid="true" LabelWidth="100px" ID="Form2" runat="server" ShowBorder="false" ShowHeader="false" EnableTableStyle="true" MessageTarget="Qtip">
             <Rows>
                 <f:FormRow>
                     <Items>
@@ -50,8 +46,7 @@
                 <f:FormRow>
                     <Items>
                         <f:Label ID="Label4" Label="编号" Text="200804170006" runat="server" />
-                        <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL"
-                            RegexMessage="请输入有效的邮箱地址" runat="server">
+                        <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址" runat="server">
                         </f:TextBox>
                     </Items>
                 </f:FormRow>
@@ -79,12 +74,10 @@
                 </f:FormRow>
             </Rows>
         </f:Form>
-        <f:Button ID="btnSubmitForm2" Text="验证此表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitForm2_Click"
-            ValidateForms="Form2" MarginTop="5px">
+        <f:Button ID="btnSubmitForm2" Text="验证此表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitForm2_Click" ValidateForms="Form2" MarginTop="5px">
         </f:Button>
         <br />
-        <f:Button ID="btnSubmitAll" Text="验证两个表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitAll_Click"
-            ValidateForms="Form1,Form2" MarginTop="5px">
+        <f:Button ID="btnSubmitAll" Text="验证两个表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitAll_Click" ValidateForms="Form1,Form2" MarginTop="5px">
         </f:Button>
     </form>
     <template id="example-description">
@@ -99,7 +92,9 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="第 1 个表单">第 1 个表单</strong>、<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第 2 个表单</strong>）：两个表单分别启用表格风格。</li>
+                <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="第 1 个表单">第 1
+                        个表单</strong>、<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="第 2 个表单">第 2
+                        个表单</strong>）：两个表单分别启用表格风格。</li>
             </ul>
         </section>
     </template>

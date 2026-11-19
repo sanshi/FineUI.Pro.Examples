@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="Panel1" IsFluid="true" runat="server" Title="面板"
-            BodyPadding="10px" EnableCollapse="false">
+        <f:Panel ID="Panel1" IsFluid="true" runat="server" Title="面板" BodyPadding="10px" EnableCollapse="false">
             <Items>
                 <f:GroupPanel runat="server" Title="分组面板一">
                     <Items>

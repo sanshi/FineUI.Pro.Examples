@@ -9,14 +9,14 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" LabelAlign="Top"  EnableCollapse="false" Title="表单">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" LabelAlign="Top" EnableCollapse="false" Title="表单">
             <Items>
                 <f:HtmlEditor runat="server" Label="文本编辑器" ID="HtmlEditor1" Editor="UMEditor" BasePath="~/res/third-party/umeditor/" Height="250px">
                 </f:HtmlEditor>
-                <f:TextArea ID="TextArea1" Label="多行文本框" runat="server" Height="150px" Text="FineUI的使命是创建 No JavaScript，No CSS，No UpdatePanel，No ViewState 的网站应用程序。">
+                <f:TextArea ID="TextArea1" Label="多行文本框" runat="server" Height="150px"
+                    Text="FineUI的使命是创建 No JavaScript，No CSS，No UpdatePanel，No ViewState 的网站应用程序。">
                 </f:TextArea>
-                <f:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="获取 HTML 编辑器的内容"
-                    CssClass="marginr">
+                <f:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="获取 HTML 编辑器的内容" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="设置 HTML 编辑器的内容">
                 </f:Button>
@@ -36,11 +36,14 @@
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：<code>FineUI</code>中使用的<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>" title="文本编辑器">富文本编辑器</strong>可以在<code>UMEditor</code>、<code>UEditor</code>、<code>CKEditor</code>、<code>TinyMCE</code>中间选择，通过控件属性就能简单切换。</p>
+            <p>注：<code>FineUI</code>中使用的<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>"
+                    title="文本编辑器">富文本编辑器</strong>可以在<code>UMEditor</code>、<code>UEditor</code>、<code>CKEditor</code>、<code>TinyMCE</code>中间选择，通过控件属性就能简单切换。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Editor</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>" title="文本编辑器">文本编辑器</strong>）：初始为<code>UMEditor</code>，使用本页引入资源的 UMEditor 编辑器。</li>
-                <li><code>BasePath</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>" title="文本编辑器">文本编辑器</strong>）：指定第三方 <code>UMEditor</code> 的资源目录，页面必须提供与编辑器版本配套的脚本和样式。</li>
+                <li><code>Editor</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>"
+                        title="文本编辑器">文本编辑器</strong>）：初始为<code>UMEditor</code>，使用本页引入资源的 UMEditor 编辑器。</li>
+                <li><code>BasePath</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>"
+                        title="文本编辑器">文本编辑器</strong>）：指定第三方 <code>UMEditor</code> 的资源目录，页面必须提供与编辑器版本配套的脚本和样式。</li>
             </ul>
         </section>
     </template>

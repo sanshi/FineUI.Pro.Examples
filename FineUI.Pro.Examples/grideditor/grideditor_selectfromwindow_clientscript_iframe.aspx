@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="Grid1" runat="server" />
-        <f:Grid DataIDField="Id" ID="Grid1" ShowBorder="true" ShowHeader="false" Title="表格" runat="server" EnableCollapse="false"
-            EnableCheckBoxSelect="true" EnableMultiSelect="false">
+        <f:Grid DataIDField="Id" ID="Grid1" ShowBorder="true" ShowHeader="false" Title="表格" runat="server" EnableCollapse="false" EnableCheckBoxSelect="true"
+            EnableMultiSelect="false">
             <Columns>
                 <f:RowNumberField />
                 <f:RenderField ColumnID="Name" DataField="Name" HeaderText="姓名" />

@@ -48,7 +48,8 @@
             <h3><i class="f-icon f-iconfont f-iconfont-send" aria-hidden="true"></i>决定是否继续后台处理</h3>
             <ul>
                 <li>
-                    切换<strong class="example-control-reference" data-example-control="<%= CheckBox1.ClientID %>" title="复选框1（先执行客户端事件，再执行服务端事件）">第一个复选框</strong>。<br />
+                    切换<strong class="example-control-reference" data-example-control="<%= CheckBox1.ClientID %>"
+                        title="复选框1（先执行客户端事件，再执行服务端事件）">第一个复选框</strong>。<br />
                     结果：先写入客户端结果，再由后台更新；最终结果以“【服务端】复选框<code>1</code>的状态”开头。
                 </li>
                 <li>
@@ -58,7 +59,10 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnCheckedChanged</code>（<strong class="example-control-reference" data-example-control="<%= CheckBox1.ClientID %>" title="复选框1（先执行客户端事件，再执行服务端事件）">复选框1（先执行客户端事件，再执行服务端事件）</strong>）：后台变化事件；客户端对应回调返回 <code>false</code> 时不会请求。 本页声明值为 <code>CheckBox1</code><code>_CheckedChanged</code>。</li>
+                <li><code>OnCheckedChanged</code>（<strong class="example-control-reference" data-example-control="<%= CheckBox1.ClientID %>"
+                        title="复选框1（先执行客户端事件，再执行服务端事件）">复选框1（先执行客户端事件，再执行服务端事件）</strong>）：后台变化事件；客户端对应回调返回 <code>false</code> 时不会请求。 本页声明值为
+                    <code>CheckBox1</code><code>_CheckedChanged</code>。
+                </li>
             </ul>
         </section>
     </template>

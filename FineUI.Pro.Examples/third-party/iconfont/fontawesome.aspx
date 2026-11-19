@@ -12,8 +12,7 @@
         <f:Button ID="btnIcon2" Text="图标在右侧" IconAlign="Right" IconFont="Star" runat="server" />
         <br />
         <br />
-        <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" IconFont="ShoppingCart" runat="server"
-            CssClass="marginr" />
+        <f:Button ID="btnIcon3" Text="图标在上面" IconAlign="Top" IconFont="ShoppingCart" runat="server" CssClass="marginr" />
         <f:Button ID="btnIcon4" Text="图标在下面" IconAlign="Bottom" IconFont="Cloud" runat="server" />
         <br />
         <br />
@@ -26,8 +25,7 @@
         <f:Button ID="Button8" IconFont="Trash" CssClass="marginr" runat="server" />
         <br />
         <br />
-        <f:Panel ID="Panel1" Width="500px" runat="server" Title="面板" Height="250px"
-            BodyPadding="10px" EnableCollapse="true" IconFont="List">
+        <f:Panel ID="Panel1" Width="500px" runat="server" Title="面板" Height="250px" BodyPadding="10px" EnableCollapse="true" IconFont="List">
             <Items>
                 <f:Label runat="server" Text="面板内容"></f:Label>
             </Items>
@@ -51,8 +49,7 @@
             </Toolbars>
         </f:Panel>
         <br />
-        <f:Tree ID="Tree1" Width="500px" ShowHeader="true" Title="树控件" EnableCollapse="false"
-            runat="server">
+        <f:Tree ID="Tree1" Width="500px" ShowHeader="true" Title="树控件" EnableCollapse="false" runat="server">
             <Nodes>
                 <f:TreeNode Text="中国" Expanded="true">
                     <f:TreeNode Text="河南省" Expanded="true">
@@ -74,7 +71,6 @@
         <a href="https://fontawesome.com/" target="_blank">https://fontawesome.com/</a>
     </form>
     <script>
-
         function onToolIconClick(event) {
             // 当前点击的图标字体
             var iconFont = this.iconFont;
@@ -89,19 +85,24 @@
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>接入 Font Awesome 图标字体，在按钮、工具、菜单和树节点中使用同一图标库。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照图标位置与来源</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnIcon1").ClientID %>' title="图标在左侧">图标在左侧</strong>等按钮中的图标方向，再打开操作菜单。<br />结果：按钮按左右上下配置排列图标；面板标题、工具和菜单复用本页图标库。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>IconFont</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：使用 Font Awesome 的图标名称；本页资源需先加载。</li>
-        <li><code>IconAlign</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnIcon1").ClientID %>' title="图标在左侧">图标在左侧</strong>）：为不同按钮指定 Left、Right、Top、Bottom，对照图标与文字的相对位置。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>接入 Font Awesome 图标字体，在按钮、工具、菜单和树节点中使用同一图标库。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照图标位置与来源</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnIcon1").ClientID %>'
+                        title="图标在左侧">图标在左侧</strong>等按钮中的图标方向，再打开操作菜单。<br />结果：按钮按左右上下配置排列图标；面板标题、工具和菜单复用本页图标库。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>IconFont</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：使用 Font Awesome
+                    的图标名称；本页资源需先加载。</li>
+                <li><code>IconAlign</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnIcon1").ClientID %>' title="图标在左侧">图标在左侧</strong>）：为不同按钮指定
+                    Left、Right、Top、Bottom，对照图标与文字的相对位置。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

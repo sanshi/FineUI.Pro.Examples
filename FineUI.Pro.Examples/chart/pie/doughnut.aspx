@@ -1,4 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="doughnut.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieDoughnut" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -7,10 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartPieDoughnut" runat="server" Height="550px" DataCategoryField="Category"
-            ShowLegend="true" LegendTop="5%" PieRadius="40%,70%"
-            PieShowLabel="false" PieLabelPosition="center" PieEmphasisLabelSize="40"
-            PieEmphasisLabelFontWeight="bold">
+        <f:Chart ID="ChartPieDoughnut" runat="server" Height="550px" DataCategoryField="Category" ShowLegend="true" LegendTop="5%" PieRadius="40%,70%"
+            PieShowLabel="false" PieLabelPosition="center" PieEmphasisLabelSize="40" PieEmphasisLabelFontWeight="bold">
             <Series>
                 <f:ChartSeries Key="source" Type="Pie" Name="Access From" DataValueField="Value" />
             </Series>
@@ -18,23 +17,36 @@
 
 
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>用内外半径形成环形，并在悬停时把分类名称显示在中央。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照环形图</h3>
-    <ul>
-        <li>将鼠标移到<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieDoughnut").ClientID %>' title="图表">图表</strong>中的一个扇区。<br />结果：中央显示该分类名称，同时可对照本页内外半径、圆角或扇区间距。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-doughnut" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>PieRadius</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieDoughnut").ClientID %>' title="图表">图表</strong>）：初始为 <code>40%,70%</code>，同时指定内外半径，圆心处留空形成环形。</li>
-        <li><code>LegendTop</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieDoughnut").ClientID %>' title="图表">图表</strong>）：初始为 <code>5%</code>，图例从距离图表顶部 5% 的位置开始显示。</li>
-        <li><code>PieShowLabel / PieLabelPosition</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieDoughnut").ClientID %>' title="图表">图表</strong>）：初始分别为 <code>false</code>、<code>center</code>，平时隐藏扇区标签和引导线，标签位置设在环形中央。</li>
-        <li><code>PieEmphasisLabelSize / PieEmphasisLabelFontWeight</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieDoughnut").ClientID %>' title="图表">图表</strong>）：初始分别为 <code>40</code>、<code>bold</code>，指向扇区时，以 40 像素粗体在中央显示该扇区的名称。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>用内外半径形成环形，并在悬停时把分类名称显示在中央。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照环形图</h3>
+            <ul>
+                <li>将鼠标移到<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieDoughnut").ClientID %>'
+                        title="图表">图表</strong>中的一个扇区。<br />结果：中央显示该分类名称，同时可对照本页内外半径、圆角或扇区间距。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-doughnut" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>PieRadius</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieDoughnut").ClientID %>' title="图表">图表</strong>）：初始为
+                    <code>40%,70%</code>，同时指定内外半径，圆心处留空形成环形。
+                </li>
+                <li><code>LegendTop</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieDoughnut").ClientID %>' title="图表">图表</strong>）：初始为
+                    <code>5%</code>，图例从距离图表顶部 5% 的位置开始显示。
+                </li>
+                <li><code>PieShowLabel / PieLabelPosition</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieDoughnut").ClientID %>' title="图表">图表</strong>）：初始分别为
+                    <code>false</code>、<code>center</code>，平时隐藏扇区标签和引导线，标签位置设在环形中央。
+                </li>
+                <li><code>PieEmphasisLabelSize / PieEmphasisLabelFontWeight</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieDoughnut").ClientID %>' title="图表">图表</strong>）：初始分别为
+                    <code>40</code>、<code>bold</code>，指向扇区时，以 40 像素粗体在中央显示该扇区的名称。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

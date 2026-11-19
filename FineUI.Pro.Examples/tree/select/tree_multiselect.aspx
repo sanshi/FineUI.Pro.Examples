@@ -9,8 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Tree ID="Tree1" IsFluid="true" EnableCollapse="false" ShowHeader="true" EnableMultiSelect="true" Title="树控件"
-            runat="server">
+        <f:Tree ID="Tree1" IsFluid="true" EnableCollapse="false" ShowHeader="true" EnableMultiSelect="true" Title="树控件" runat="server">
             <Nodes>
                 <f:TreeNode Text="中国" Expanded="true">
                     <f:TreeNode Text="河南省" Expanded="true">
@@ -36,8 +35,7 @@
 
         <br />
         <br />
-        <f:Button ID="btnGetSelectedValues" OnClick="btnGetSelectedValues_Click" CssClass="marginr"
-            runat="server" Text="获取选中的节点列表">
+        <f:Button ID="btnGetSelectedValues" OnClick="btnGetSelectedValues_Click" CssClass="marginr" runat="server" Text="获取选中的节点列表">
         </f:Button>
         <f:Button ID="btnSelectOthers" OnClick="btnSelectOthers_Click" runat="server" Text="继续选中[合肥市]和[黄山市]">
         </f:Button>
@@ -47,24 +45,29 @@
         <br />
         <br />
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示树的多选集合、后台追加选中节点和读取全部当前选择。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>累加并读取选择</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>连续点击两个不同节点。<br />结果：当前树允许同时选择多个节点，选中集合按点击及按键规则更新。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSelectOthers").ClientID %>' title="继续选中[合肥市]和[黄山市]">继续选中[合肥市]和[黄山市]</strong>。<br />结果：后台保留当前集合，再加入按钮指定的合肥市、黄山市。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>这是一个可以多选的树，你可以按着 <code>Ctrl</code> 或 <code>Shift</code> 选择多项。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：初始为<code>true</code>，允许当前选择包含多个节点。</li>
-        <li><code>SelectedNodeIDArray</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：保存并更新当前节点标识集合。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示树的多选集合、后台追加选中节点和读取全部当前选择。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>累加并读取选择</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树控件">树控件</strong>连续点击两个不同节点。<br />结果：当前树允许同时选择多个节点，选中集合按点击及按键规则更新。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSelectOthers").ClientID %>'
+                        title="继续选中[合肥市]和[黄山市]">继续选中[合肥市]和[黄山市]</strong>。<br />结果：后台保留当前集合，再加入按钮指定的合肥市、黄山市。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <ul>
+                <li>这是一个可以多选的树，你可以按着 <code>Ctrl</code> 或 <code>Shift</code> 选择多项。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树控件">树控件</strong>）：初始为<code>true</code>，允许当前选择包含多个节点。</li>
+                <li><code>SelectedNodeIDArray</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件">树控件</strong>）：保存并更新当前节点标识集合。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="half_doughnut.aspx.cs" Inherits="FineUI.Pro.Examples.chart.PieHalfDoughnut" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -7,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartPieHalfDoughnut" runat="server" Height="550px" DataCategoryField="Category"
-            ShowLegend="true" LegendTop="5%" PieRadius="40%,70%"
+        <f:Chart ID="ChartPieHalfDoughnut" runat="server" Height="550px" DataCategoryField="Category" ShowLegend="true" LegendTop="5%" PieRadius="40%,70%"
             PieCenter="50%,70%" PieStartAngle="180" PieEndAngle="360">
             <Series>
                 <f:ChartSeries Key="source" Type="Pie" Name="Access From" DataValueField="Value" />
@@ -17,21 +17,29 @@
 
 
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>通过起止角度与圆心位置，把环形图限制在上半圆。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照半环形图</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieHalfDoughnut").ClientID %>' title="图表">图表</strong>中的分类、数值和形状。<br />结果：将起止角度设为 180° 和 360°，在上半圆绘制各分类。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-half-donut" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>PieStartAngle / PieEndAngle</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieHalfDoughnut").ClientID %>' title="图表">图表</strong>）：初始分别为 <code>180</code>、<code>360</code>，将全部扇区限制在 180° 至 360°，绘制成上半环。</li>
-        <li><code>PieCenter</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieHalfDoughnut").ClientID %>' title="图表">图表</strong>）：初始为 <code>50%,70%</code>，横向居中，并把圆心放到图表高度的 70% 处，给上半环留出空间。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>通过起止角度与圆心位置，把环形图限制在上半圆。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照半环形图</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieHalfDoughnut").ClientID %>'
+                        title="图表">图表</strong>中的分类、数值和形状。<br />结果：将起止角度设为 180° 和 360°，在上半圆绘制各分类。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <a href="https://echarts.apache.org/examples/zh/editor.html?c=pie-half-donut" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>PieStartAngle / PieEndAngle</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieHalfDoughnut").ClientID %>' title="图表">图表</strong>）：初始分别为
+                    <code>180</code>、<code>360</code>，将全部扇区限制在 180° 至 360°，绘制成上半环。
+                </li>
+                <li><code>PieCenter</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartPieHalfDoughnut").ClientID %>' title="图表">图表</strong>）：初始为
+                    <code>50%,70%</code>，横向居中，并把圆心放到图表高度的 70% 处，给上半环留出空间。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

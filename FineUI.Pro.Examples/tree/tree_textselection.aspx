@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件（可以选择文字）" EnableCollapse="false" EnableTextSelection="true"
-            runat="server">
+        <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件（可以选择文字）" EnableCollapse="false" EnableTextSelection="true" runat="server">
             <Nodes>
                 <f:TreeNode Text="中国" Expanded="true">
                     <f:TreeNode Text="河南省" Expanded="true">
@@ -35,18 +34,21 @@
             </Nodes>
         </f:Tree>
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示允许鼠标拖选树节点文字，便于复制节点内容。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>选择节点文字</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（可以选择文字）">树控件（可以选择文字）</strong>的较长节点文字上拖动鼠标。<br />结果：文字可以像普通页面文本一样被选中、复制；目录展开入口仍保留。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableTextSelection</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（可以选择文字）">树控件（可以选择文字）</strong>）：初始为<code>true</code>，允许节点文字的浏览器原生选择。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示允许鼠标拖选树节点文字，便于复制节点内容。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>选择节点文字</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树控件（可以选择文字）">树控件（可以选择文字）</strong>的较长节点文字上拖动鼠标。<br />结果：文字可以像普通页面文本一样被选中、复制；目录展开入口仍保留。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableTextSelection</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树控件（可以选择文字）">树控件（可以选择文字）</strong>）：初始为<code>true</code>，允许节点文字的浏览器原生选择。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

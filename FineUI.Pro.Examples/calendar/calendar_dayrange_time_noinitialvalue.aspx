@@ -8,8 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy-MM-dd HH:mm:ss"
-            OnDateSelect="Calendar1_DateSelect" ID="Calendar1" DisplayType="DayRange" ShowTime="true">
+        <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy-MM-dd HH:mm:ss" OnDateSelect="Calendar1_DateSelect" ID="Calendar1"
+            DisplayType="DayRange" ShowTime="true">
         </f:Calendar>
         <br />
         <br />
@@ -34,8 +34,10 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>RangeStartDate</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>" title="日历">日历</strong>）：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围起点，与终点共同组成当前范围。</li>
-                <li><code>RangeEndDate</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>" title="日历">日历</strong>）：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围终点，与起点共同组成当前范围。</li>
+                <li><code>RangeStartDate</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>"
+                        title="日历">日历</strong>）：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围起点，与终点共同组成当前范围。</li>
+                <li><code>RangeEndDate</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>"
+                        title="日历">日历</strong>）：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围终点，与起点共同组成当前范围。</li>
             </ul>
         </section>
     </template>

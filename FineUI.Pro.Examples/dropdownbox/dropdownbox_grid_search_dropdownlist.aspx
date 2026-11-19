@@ -69,7 +69,8 @@
             <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>组合下拉与表头过滤</h3>
             <ol>
                 <li>
-                    在弹出面板的<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("LabelExample1").ClientID %>' title="是否在校">是否在校</strong>下拉中选择<code>离校</code>。<br />
+                    在弹出面板的<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("LabelExample1").ClientID %>'
+                        title="是否在校">是否在校</strong>下拉中选择<code>离校</code>。<br />
                     结果：后台按离校状态重新加载表格。
                 </li>
                 <li>
@@ -79,9 +80,13 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>AllowFilters</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>" title="表格">表格</strong>）：允许通过表头菜单设置过滤。 本页声明值为 <code>true</code>。</li>
-                <li><code>OnFilterChanged</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>" title="表格">表格</strong>）：过滤条件变化后重新加载匹配行。 本页声明值为 <code>Grid1</code><code>_FilterChanged</code>。</li>
-                <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= ddlAtSchool.ClientID %>" title="第 2 个下拉列表">第 2 个下拉列表</strong>）：筛选<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">下拉框</strong>改变后重新加载表格，保留本页的其它过滤条件。</li>
+                <li><code>AllowFilters</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>"
+                        title="表格">表格</strong>）：允许通过表头菜单设置过滤。 本页声明值为 <code>true</code>。</li>
+                <li><code>OnFilterChanged</code>（<strong class="example-control-reference" data-example-control="<%= Grid1.ClientID %>"
+                        title="表格">表格</strong>）：过滤条件变化后重新加载匹配行。 本页声明值为 <code>Grid1</code><code>_FilterChanged</code>。</li>
+                <li><code>OnSelectedIndexChanged</code>（<strong class="example-control-reference" data-example-control="<%= ddlAtSchool.ClientID %>"
+                        title="第 2 个下拉列表">第 2 个下拉列表</strong>）：筛选<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="请从下拉表格中选择">下拉框</strong>改变后重新加载表格，保留本页的其它过滤条件。</li>
             </ul>
         </section>
     </template>

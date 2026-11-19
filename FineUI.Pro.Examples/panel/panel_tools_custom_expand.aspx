@@ -11,8 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="Panel1" IsFluid="true" runat="server" Title="面板" Height="350px"
-            BodyPadding="10px" EnableCollapse="false" IconUrl="~/res/images/16/8.png">
+        <f:Panel ID="Panel1" IsFluid="true" runat="server" Title="面板" Height="350px" BodyPadding="10px" EnableCollapse="false" IconUrl="~/res/images/16/8.png">
             <Items>
                 <f:Label runat="server" Text="面板内容"></f:Label>
             </Items>
@@ -29,7 +28,6 @@
         </f:Button>
     </form>
     <script>
-
         var panel1ClientID = '<%= Panel1.ClientID %>';
 
         function onToolIconClick(event) {
@@ -60,23 +58,25 @@
                 this.setText('折叠');
                 this.setTooltip('折叠');
                 panel1.expand();
-                
+
             }
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示用自定义工具控制面板折叠，并同步更换图标与文字。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>使用自定义展开折叠工具</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>标题栏点击<strong>折叠</strong>工具。<br />结果：当前面板收起，工具文字改为展开；再次点击恢复内容，并把文字改回折叠。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Tools</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：声明当前面板的自定义标题工具。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示用自定义工具控制面板折叠，并同步更换图标与文字。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>使用自定义展开折叠工具</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="面板">面板</strong>标题栏点击<strong>折叠</strong>工具。<br />结果：当前面板收起，工具文字改为展开；再次点击恢复内容，并把文字改回折叠。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Tools</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：声明当前面板的自定义标题工具。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

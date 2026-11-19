@@ -55,22 +55,36 @@
             <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>同组只选一项</h3>
             <ol>
                 <li>
-                    在<strong class="example-control-reference" data-example-control="<%= rbtnFirst.ClientID %>" title="第 2 个单选框（可选项 1）">单选框（分组）</strong>中选择<strong class="example-control-reference" data-example-control="<%= rbtnSecond.ClientID %>" title="第 3 个单选框（可选项 2）">第 3 个单选框（可选项 2）</strong>、<strong class="example-control-reference" data-example-control="<%= rbtnSecondAuto.ClientID %>" title="第 6 个单选框（可选项 2）">第 6 个单选框（可选项 2）</strong>。<br />
+                    在<strong class="example-control-reference" data-example-control="<%= rbtnFirst.ClientID %>"
+                        title="第 2 个单选框（可选项 1）">单选框（分组）</strong>中选择<strong class="example-control-reference" data-example-control="<%= rbtnSecond.ClientID %>"
+                        title="第 3 个单选框（可选项 2）">第 3 个单选框（可选项 2）</strong>、<strong class="example-control-reference"
+                        data-example-control="<%= rbtnSecondAuto.ClientID %>" title="第 6 个单选框（可选项 2）">第 6 个单选框（可选项 2）</strong>。<br />
                     结果：第二项选中，第一项取消。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过按钮切换</h3>
             <ol>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnSelectSecondRadio.ClientID %>" title="选中分组单选框中的下一个">选中分组单选框中的下一个</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnSelectSecondRadio.ClientID %>"
+                        title="选中分组单选框中的下一个">选中分组单选框中的下一个</strong>。<br />
                     结果：回发后由后台选中分组中的下一项，并取消原来选中项。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>GroupName</code>（<strong class="example-control-reference" data-example-control="<%= rbtnFirst.ClientID %>" title="第 2 个单选框（可选项 1）">第 2 个单选框（可选项 1）</strong>）：名称相同的<strong class="example-control-reference" data-example-control="<%= rbtnSingleRadio.ClientID %>" title="可选项">单选框</strong>互斥，不同分组相互独立。 本页<strong class="example-control-reference" data-example-control="<%= rbtnFirst.ClientID %>" title="第 2 个单选框（可选项 1）">单选框（分组）</strong>声明值为 <code>MyRadioGroup1</code>。</li>
-                <li><code>Checked</code>（<strong class="example-control-reference" data-example-control="<%= rbtnFirst.ClientID %>" title="第 2 个单选框（可选项 1）">第 2 个单选框（可选项 1）</strong>）：指定<strong class="example-control-reference" data-example-control="<%= rbtnSingleRadio.ClientID %>" title="可选项">单选框</strong>的初始选中状态。 本页<strong class="example-control-reference" data-example-control="<%= rbtnFirst.ClientID %>" title="第 2 个单选框（可选项 1）">单选框（分组）</strong>声明值为 <code>true</code>。</li>
-                <li><code>OnCheckedChanged</code>（<strong class="example-control-reference" data-example-control="<%= rbtnFirstAuto.ClientID %>" title="第 5 个单选框（可选项 1）">第 5 个单选框（可选项 1）</strong>）：用户改变当前分组选择后回发并显示结果。 本页<strong class="example-control-reference" data-example-control="<%= rbtnFirstAuto.ClientID %>" title="第 5 个单选框（可选项 1）">单选框（自动回发）</strong>声明值为 <code>rbtnAuto_CheckedChanged</code>。</li>
+                <li><code>GroupName</code>（<strong class="example-control-reference" data-example-control="<%= rbtnFirst.ClientID %>" title="第 2 个单选框（可选项 1）">第
+                        2 个单选框（可选项 1）</strong>）：名称相同的<strong class="example-control-reference" data-example-control="<%= rbtnSingleRadio.ClientID %>"
+                        title="可选项">单选框</strong>互斥，不同分组相互独立。 本页<strong class="example-control-reference" data-example-control="<%= rbtnFirst.ClientID %>"
+                        title="第 2 个单选框（可选项 1）">单选框（分组）</strong>声明值为 <code>MyRadioGroup1</code>。</li>
+                <li><code>Checked</code>（<strong class="example-control-reference" data-example-control="<%= rbtnFirst.ClientID %>" title="第 2 个单选框（可选项 1）">第 2
+                        个单选框（可选项 1）</strong>）：指定<strong class="example-control-reference" data-example-control="<%= rbtnSingleRadio.ClientID %>"
+                        title="可选项">单选框</strong>的初始选中状态。 本页<strong class="example-control-reference" data-example-control="<%= rbtnFirst.ClientID %>"
+                        title="第 2 个单选框（可选项 1）">单选框（分组）</strong>声明值为 <code>true</code>。</li>
+                <li><code>OnCheckedChanged</code>（<strong class="example-control-reference" data-example-control="<%= rbtnFirstAuto.ClientID %>"
+                        title="第 5 个单选框（可选项 1）">第 5 个单选框（可选项 1）</strong>）：用户改变当前分组选择后回发并显示结果。 本页<strong class="example-control-reference"
+                        data-example-control="<%= rbtnFirstAuto.ClientID %>" title="第 5 个单选框（可选项 1）">单选框（自动回发）</strong>声明值为
+                    <code>rbtnAuto_CheckedChanged</code>。
+                </li>
             </ul>
         </section>
     </template>

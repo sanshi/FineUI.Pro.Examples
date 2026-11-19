@@ -15,13 +15,14 @@
             font-size: 0.9em;
             word-break: break-all;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="自定义列表项（列表项绑定事件）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="自定义列表项（列表项绑定事件）"
+            ShowHeader="true">
             <Items>
                 <f:DropDownList runat="server" ID="DropDownList1" OnItemDataBound="DropDownList1_ItemDataBound">
                 </f:DropDownList>
@@ -49,7 +50,8 @@
             <p>注：通过列表项绑定事件，可以动态设置每一项的属性（本例为每个列表项增加提示信息）。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnItemDataBound</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：数据项绑定时补充该选项的显示内容或悬停提示。 本页声明值为 <code>DropDownList1</code><code>_ItemDataBound</code>。</li>
+                <li><code>OnItemDataBound</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：数据项绑定时补充该选项的显示内容或悬停提示。 本页声明值为 <code>DropDownList1</code><code>_ItemDataBound</code>。</li>
             </ul>
         </section>
     </template>

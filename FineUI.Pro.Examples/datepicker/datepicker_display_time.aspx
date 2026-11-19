@@ -8,18 +8,16 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
-            Title="简单表单" runat="server">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" Title="简单表单" runat="server">
             <Items>
-                <f:DatePicker runat="server" Required="true" DateFormatString="HH:mm:ss" Label="开始时间" EmptyText="请选择开始时间"
-                    ID="DatePicker1" ShowRedStar="true" DisplayType="Time" ShowTodayButton="false">
+                <f:DatePicker runat="server" Required="true" DateFormatString="HH:mm:ss" Label="开始时间" EmptyText="请选择开始时间" ID="DatePicker1" ShowRedStar="true"
+                    DisplayType="Time" ShowTodayButton="false">
                 </f:DatePicker>
                 <f:DatePicker ID="DatePicker2" Required="true" Readonly="false" CompareControl="DatePicker1" DateFormatString="HH:mm:ss"
-                    CompareOperator="GreaterThan" CompareMessage="结束时间应该大于开始时间" Label="结束时间"
-                    runat="server" ShowRedStar="true" DisplayType="Time" ShowTodayButton="false">
+                    CompareOperator="GreaterThan" CompareMessage="结束时间应该大于开始时间" Label="结束时间" runat="server" ShowRedStar="true" DisplayType="Time"
+                    ShowTodayButton="false">
                 </f:DatePicker>
-                <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单"
-                    OnClick="btnSubmit_Click">
+                <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click">
                 </f:Button>
             </Items>
         </f:SimpleForm>
@@ -43,8 +41,12 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="开始时间">开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>" title="结束时间">结束时间</strong>）：初始为<code>HH:mm:ss</code>，控制选中值的文字格式。</li>
-                <li><code>DisplayType</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="开始时间">开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>" title="结束时间">结束时间</strong>）：本页采用时间面板，一次选择一个值。</li>
+                <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="开始时间">开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>"
+                        title="结束时间">结束时间</strong>）：初始为<code>HH:mm:ss</code>，控制选中值的文字格式。</li>
+                <li><code>DisplayType</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="开始时间">开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>"
+                        title="结束时间">结束时间</strong>）：本页采用时间面板，一次选择一个值。</li>
             </ul>
         </section>
     </template>

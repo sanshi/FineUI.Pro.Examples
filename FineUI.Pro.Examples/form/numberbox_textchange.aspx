@@ -25,7 +25,8 @@
             <h3><i class="f-icon f-iconfont f-iconfont-sort" aria-hidden="true"></i>增减并读取数值</h3>
             <ol>
                 <li>
-                    在<strong class="example-control-reference" data-example-control="<%= NumberBox3.ClientID %>" title="非负整数">非负整数</strong>中输入 <code>28</code>，按键盘向下方向键。<br />
+                    在<strong class="example-control-reference" data-example-control="<%= NumberBox3.ClientID %>" title="非负整数">非负整数</strong>中输入
+                    <code>28</code>，按键盘向下方向键。<br />
                     结果：回发后，后台显示当前值 <code>27</code>，输入框也变为 <code>27</code>。
                 </li>
                 <li>
@@ -37,7 +38,8 @@
             <p>注：手工输入数字，或者点击右侧上下箭头都会自动回发页面。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnTextChanged</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox3.ClientID %>" title="非负整数">非负整数</strong>）：变化事件回发后，后台读取最新值。</li>
+                <li><code>OnTextChanged</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox3.ClientID %>"
+                        title="非负整数">非负整数</strong>）：变化事件回发后，后台读取最新值。</li>
             </ul>
         </section>
     </template>

@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
-            ShowBorder="true" Title="表单" ShowHeader="true" runat="server">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" ShowBorder="true" Title="表单" ShowHeader="true" runat="server">
             <Items>
                 <f:TriggerBox ID="tbxMyBox1" ShowLabel="false" runat="server" Text="默认值" TriggerIcon="Clear" AutoShowClearIcon="true">
                 </f:TriggerBox>
@@ -33,7 +32,8 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="<%= tbxMyBox1.ClientID %>" title="触发器输入框">触发器输入框</strong>）：开启随内容自动显示清空图标；清空动作在浏览器完成。</li>
+                <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="<%= tbxMyBox1.ClientID %>"
+                        title="触发器输入框">触发器输入框</strong>）：开启随内容自动显示清空图标；清空动作在浏览器完成。</li>
             </ul>
         </section>
     </template>

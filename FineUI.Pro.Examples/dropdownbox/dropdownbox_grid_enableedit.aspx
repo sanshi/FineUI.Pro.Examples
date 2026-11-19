@@ -55,7 +55,8 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：允许输入列表之外的文字，选中项与自由输入按不同方式读取。 本页声明值为 <code>true</code>。</li>
+                <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="请从下拉表格中选择">请从下拉表格中选择</strong>）：允许输入列表之外的文字，选中项与自由输入按不同方式读取。 本页声明值为 <code>true</code>。</li>
             </ul>
         </section>
     </template>

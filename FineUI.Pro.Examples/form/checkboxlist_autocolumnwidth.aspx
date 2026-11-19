@@ -99,8 +99,17 @@
             <p>注：注意复选框列表中每一项的宽度不相同。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>" title="第 2 个复选框列表（列表二（三列））">第 2 个复选框列表（列表二（三列））</strong>、<strong class="example-control-reference" data-example-control="<%= RadioButtonList3.ClientID %>" title="第 3 个复选框列表（列表二（三列））">第 3 个复选框列表（列表二（三列））</strong>、<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>" title="列表三（自动回发）">列表三（自动回发）</strong>、<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>）：决定列表分为几列。 本页<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>" title="第 2 个复选框列表（列表二（三列））">第 2 个复选框列表（列表二（三列））</strong>、<strong class="example-control-reference" data-example-control="<%= RadioButtonList3.ClientID %>" title="第 3 个复选框列表（列表二（三列））">第 3 个复选框列表（列表二（三列））</strong>声明值为 <code>3</code>。</li>
-                <li><code>AutoColumnWidth</code>（<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>）：选项宽度按各项文字内容调整。 本页<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>声明值为 <code>true</code>。</li>
+                <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>"
+                        title="第 2 个复选框列表（列表二（三列））">第 2 个复选框列表（列表二（三列））</strong>、<strong class="example-control-reference"
+                        data-example-control="<%= RadioButtonList3.ClientID %>" title="第 3 个复选框列表（列表二（三列））">第 3 个复选框列表（列表二（三列））</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>" title="列表三（自动回发）">列表三（自动回发）</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>）：决定列表分为几列。
+                    本页<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>" title="第 2 个复选框列表（列表二（三列））">第 2
+                        个复选框列表（列表二（三列））</strong>、<strong class="example-control-reference" data-example-control="<%= RadioButtonList3.ClientID %>"
+                        title="第 3 个复选框列表（列表二（三列））">第 3 个复选框列表（列表二（三列））</strong>声明值为 <code>3</code>。</li>
+                <li><code>AutoColumnWidth</code>（<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>"
+                        title="列表一">列表一</strong>）：选项宽度按各项文字内容调整。 本页<strong class="example-control-reference"
+                        data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>声明值为 <code>true</code>。</li>
             </ul>
         </section>
     </template>

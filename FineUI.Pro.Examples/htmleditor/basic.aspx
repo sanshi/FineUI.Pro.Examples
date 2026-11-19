@@ -1,20 +1,28 @@
 <%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="basic.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.basic" %>
+
 <!DOCTYPE html>
-<html><head runat="server"><title>基础编辑与后台交互</title></head><body>
-<form id="form1" runat="server">
-    <f:PageManager ID="PageManager1" CspScripts="true" CspScriptsAllowNonce="true" CspScriptsAllowUnsafeInline="false" runat="server" />
-    <f:SimpleForm ID="SimpleForm1" runat="server" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="基础编辑与后台交互">
-        <Items>
-            <f:HtmlEditor runat="server" ID="HtmlEditor1" Editor="Default" Label="正文" Height="320" Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" Readonly="false" ToolbarSet="Basic" />
-            
-            <f:TextArea runat="server" ID="TextArea1" Label="HTML 内容" Height="120" Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" />
-            <f:Button runat="server" ID="Button1" Text="获取编辑器内容" CssClass="marginr" OnClick="Button1_Click" />
-            <f:Button runat="server" ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
-        </Items>
-    </f:SimpleForm>
+<html>
+<head runat="server">
+    <title>基础编辑与后台交互</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <f:PageManager ID="PageManager1" CspScripts="true" CspScriptsAllowNonce="true" CspScriptsAllowUnsafeInline="false" runat="server" />
+        <f:SimpleForm ID="SimpleForm1" runat="server" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="基础编辑与后台交互">
+            <Items>
+                <f:HtmlEditor runat="server" ID="HtmlEditor1" Editor="Default" Label="正文" Height="320"
+                    Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;"
+                    Readonly="false" ToolbarSet="Basic" />
+
+                <f:TextArea runat="server" ID="TextArea1" Label="HTML 内容" Height="120"
+                    Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" />
+                <f:Button runat="server" ID="Button1" Text="获取编辑器内容" CssClass="marginr" OnClick="Button1_Click" />
+                <f:Button runat="server" ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
+            </Items>
+        </f:SimpleForm>
 
 
-</form>
+    </form>
     <template id="example-description">
         <section aria-label="页面描述">
             <p>演示内置富文本编辑、读取当前 HTML，以及从文本框重新设置正文。</p>
@@ -26,17 +34,21 @@
                 </li>
                 <li>
                     点击<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="获取编辑器内容">获取编辑器内容</strong>。<br />
-                    结果：按钮回发后由后台读取编辑器当前 HTML，填入下方<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="HTML 内容">HTML 内容</strong>；能看到对应的 HTML 标签。
+                    结果：按钮回发后由后台读取编辑器当前 HTML，填入下方<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="HTML 内容">HTML
+                        内容</strong>；能看到对应的 HTML 标签。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>从 HTML 设置正文</h3>
             <ol>
                 <li>
-                    将<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="HTML 内容">HTML 内容</strong>替换为“&lt;<code>p</code>&gt;示例&lt;<code>strong</code>&gt;加粗&lt;/<code>strong</code>&gt;&lt;/<code>p</code>&gt;”，点击<strong class="example-control-reference" data-example-control="<%= Button2.ClientID %>" title="设置编辑器内容">设置编辑器内容</strong>。<br />
+                    将<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="HTML 内容">HTML
+                        内容</strong>替换为“&lt;<code>p</code>&gt;示例&lt;<code>strong</code>&gt;加粗&lt;/<code>strong</code>&gt;&lt;/<code>p</code>&gt;”，点击<strong
+                        class="example-control-reference" data-example-control="<%= Button2.ClientID %>" title="设置编辑器内容">设置编辑器内容</strong>。<br />
                     结果：按钮回发后由后台将文本框的 HTML 设置到第一个编辑器，正文显示“示例加粗”，其中<strong>加粗</strong>为粗体。
                 </li>
                 <li>
-                    清空<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="HTML 内容">HTML 内容</strong>，再次点击<strong class="example-control-reference" data-example-control="<%= Button2.ClientID %>" title="设置编辑器内容">设置编辑器内容</strong>。<br />
+                    清空<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="HTML 内容">HTML 内容</strong>，再次点击<strong
+                        class="example-control-reference" data-example-control="<%= Button2.ClientID %>" title="设置编辑器内容">设置编辑器内容</strong>。<br />
                     结果：编辑器正文清空；空字符串表示清空文档。
                 </li>
             </ol>
@@ -44,10 +56,15 @@
             <p>本例使用 <code>FineUI</code> 内置编辑器，编辑内核采用 <code>ProseMirror</code>。基础工具栏提供正文/标题、文字样式、列表、链接及常用编辑操作。编辑正文后可获取 HTML，也可以修改下方 HTML 后重新设置。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Editor</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>" title="正文">正文</strong>）：初始为<code>Default</code>，使用内置富文本编辑器。</li>
-                <li><code>Text</code>（<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="HTML 内容">HTML 内容</strong>）：设置或读取 <strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="HTML 内容">HTML 内容</strong>；不是只读取去掉标签后的纯文字。</li>
-                <li><code>ToolbarSet</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>" title="正文">正文</strong>）：本页预设为 <code>Basic</code>；<code>Full</code> 额外提供字体、字号、颜色、对齐等命令。</li>
+                <li><code>Editor</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>"
+                        title="正文">正文</strong>）：初始为<code>Default</code>，使用内置富文本编辑器。</li>
+                <li><code>Text</code>（<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="HTML 内容">HTML
+                        内容</strong>）：设置或读取 <strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="HTML 内容">HTML
+                        内容</strong>；不是只读取去掉标签后的纯文字。</li>
+                <li><code>ToolbarSet</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>"
+                        title="正文">正文</strong>）：本页预设为 <code>Basic</code>；<code>Full</code> 额外提供字体、字号、颜色、对齐等命令。</li>
             </ul>
         </section>
     </template>
-</body></html>
+</body>
+</html>

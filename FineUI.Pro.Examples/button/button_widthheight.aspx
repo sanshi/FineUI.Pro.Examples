@@ -12,8 +12,7 @@
         <f:Button ID="btnIcon2" Text="图标在右侧" Width="150px" Height="60px" IconAlign="Right" Icon="Star" runat="server" />
         <br />
         <br />
-        <f:Button ID="btnIcon3" Text="图标在上面" Width="150px" Height="60px" IconAlign="Top" Icon="Email" runat="server"
-            CssClass="marginr" />
+        <f:Button ID="btnIcon3" Text="图标在上面" Width="150px" Height="60px" IconAlign="Top" Icon="Email" runat="server" CssClass="marginr" />
         <f:Button ID="btnIcon4" Text="图标在下面" Width="150px" Height="60px" IconAlign="Bottom" Icon="Star" runat="server" />
         <br />
         <br />
@@ -31,8 +30,7 @@
         <f:Button ID="Button4" Size="Large" Text="图标在右侧" Width="150px" Height="80px" IconAlign="Right" Icon="Star" runat="server" />
         <br />
         <br />
-        <f:Button ID="Button5" Size="Large" Text="图标在上面" Width="150px" Height="80px" IconAlign="Top" Icon="Email" runat="server"
-            CssClass="marginr" />
+        <f:Button ID="Button5" Size="Large" Text="图标在上面" Width="150px" Height="80px" IconAlign="Top" Icon="Email" runat="server" CssClass="marginr" />
         <f:Button ID="Button6" Size="Large" Text="图标在下面" Width="150px" Height="80px" IconAlign="Bottom" Icon="Star" runat="server" />
         <br />
         <br />
@@ -43,8 +41,7 @@
         <f:Button ID="Button8" Text="图标在右侧" Width="150px" Height="60px" IconAlign="Right" IconFont="_Car" runat="server" />
         <br />
         <br />
-        <f:Button ID="Button9" Text="图标在上面" Width="150px" Height="60px" IconAlign="Top" IconFont="_Camera" runat="server"
-            CssClass="marginr" />
+        <f:Button ID="Button9" Text="图标在上面" Width="150px" Height="60px" IconAlign="Top" IconFont="_Camera" runat="server" CssClass="marginr" />
         <f:Button ID="Button10" Text="图标在下面" Width="150px" Height="60px" IconAlign="Bottom" IconFont="_Phone" runat="server" />
         <br />
         <br />
@@ -62,8 +59,7 @@
         <f:Button ID="Button16" Size="Large" Text="图标在右侧" Width="150px" Height="80px" IconAlign="Right" IconFont="_Car" runat="server" />
         <br />
         <br />
-        <f:Button ID="Button17" Size="Large" Text="图标在上面" Width="150px" Height="80px" IconAlign="Top" IconFont="_Camera" runat="server"
-            CssClass="marginr" />
+        <f:Button ID="Button17" Size="Large" Text="图标在上面" Width="150px" Height="80px" IconAlign="Top" IconFont="_Camera" runat="server" CssClass="marginr" />
         <f:Button ID="Button18" Size="Large" Text="图标在下面" Width="150px" Height="80px" IconAlign="Bottom" IconFont="_Phone" runat="server" />
         <br />
         <br />
@@ -80,8 +76,10 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Width</code>（本页全部按钮，如<strong class="example-control-reference" data-example-control="<%= btnIcon1.ClientID %>" title="第 1 个按钮（图标在左侧）">第 1 个按钮（图标在左侧）</strong>）：固定按钮宽度，本页主要使用 <code>150</code> 像素。</li>
-                <li><code>Height</code>（本页全部按钮，如<strong class="example-control-reference" data-example-control="<%= btnIcon1.ClientID %>" title="第 1 个按钮（图标在左侧）">第 1 个按钮（图标在左侧）</strong>）：固定按钮高度，对比 <code>60</code> 与 <code>80</code> 像素。</li>
+                <li><code>Width</code>（本页全部按钮，如<strong class="example-control-reference" data-example-control="<%= btnIcon1.ClientID %>"
+                        title="第 1 个按钮（图标在左侧）">第 1 个按钮（图标在左侧）</strong>）：固定按钮宽度，本页主要使用 <code>150</code> 像素。</li>
+                <li><code>Height</code>（本页全部按钮，如<strong class="example-control-reference" data-example-control="<%= btnIcon1.ClientID %>"
+                        title="第 1 个按钮（图标在左侧）">第 1 个按钮（图标在左侧）</strong>）：固定按钮高度，对比 <code>60</code> 与 <code>80</code> 像素。</li>
             </ul>
         </section>
     </template>

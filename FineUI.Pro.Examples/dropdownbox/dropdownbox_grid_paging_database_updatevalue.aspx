@@ -57,24 +57,30 @@
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过按钮更新选择</h3>
             <ol>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnUpdateValue.ClientID %>" title="更新下拉框的值为[张娟娟,叶鹏]">更新下拉框的值为[张娟娟,叶鹏]</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnUpdateValue.ClientID %>"
+                        title="更新下拉框的值为[张娟娟,叶鹏]">更新下拉框的值为[张娟娟,叶鹏]</strong>。<br />
                     结果：回发后由后台把当前选择替换为按钮指定的人名或语言；输入区和重新展开的选择状态同步更新。
                 </li>
                 <li>
-                    再点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>" title="获取下拉框的选中值">获取下拉框的选中值</strong>。<br />
+                    再点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>"
+                        title="获取下拉框的选中值">获取下拉框的选中值</strong>。<br />
                     结果：读取结果反映刚更新的选择。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>清空当前选择</h3>
             <ol>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnClearValue.ClientID %>" title="清空下拉框的值">清空下拉框的值</strong>，再获取当前选中值。<br />
-                    结果：输入文字、选择值及标签被清除，读取结果显示<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">下拉框</strong>为空。
+                    点击<strong class="example-control-reference" data-example-control="<%= btnClearValue.ClientID %>"
+                        title="清空下拉框的值">清空下拉框的值</strong>，再获取当前选中值。<br />
+                    结果：输入文字、选择值及标签被清除，读取结果显示<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="请从下拉表格中选择">下拉框</strong>为空。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Value</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：按钮处理后更新<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">下拉框</strong>当前选中值，显示文字随本页的选中数据同步更新。</li>
+                <li><code>Value</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="请从下拉表格中选择">请从下拉表格中选择</strong>）：按钮处理后更新<strong class="example-control-reference"
+                        data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">下拉框</strong>当前选中值，显示文字随本页的选中数据同步更新。</li>
             </ul>
         </section>
     </template>

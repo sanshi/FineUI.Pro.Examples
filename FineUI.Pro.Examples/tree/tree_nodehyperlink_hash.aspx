@@ -11,17 +11,17 @@
             border-left-width: 0;
             border-bottom-width: 0;
         }
+
     </style>
 
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="RegionPanel1" IsFluid="true" Layout="Region" Height="500px" ShowHeader="true" Title="左右区域布局"
-            ShowBorder="true" runat="server">
+        <f:Panel ID="RegionPanel1" IsFluid="true" Layout="Region" Height="500px" ShowHeader="true" Title="左右区域布局" ShowBorder="true" runat="server">
             <Items>
-                <f:Tree ID="Tree1" RegionSplit="false" RegionPosition="Left" Width="200px" CssClass="lefttree"
-                    ShowHeader="false" ShowBorder="true" runat="server" EnableSingleClickExpand="true">
+                <f:Tree ID="Tree1" RegionSplit="false" RegionPosition="Left" Width="200px" CssClass="lefttree" ShowHeader="false" ShowBorder="true"
+                    runat="server" EnableSingleClickExpand="true">
                     <Nodes>
                         <f:TreeNode Text="基本用法">
                             <f:TreeNode Text="你好 FineUI" NavigateUrl="~/basic/hello.aspx">
@@ -37,8 +37,7 @@
                         </f:TreeNode>
                     </Nodes>
                 </f:Tree>
-                <f:Panel ID="Panel1" ShowHeader="false" EnableIFrame="true" ShowBorder="false"
-                    RegionPosition="Center" runat="server">
+                <f:Panel ID="Panel1" ShowHeader="false" EnableIFrame="true" ShowBorder="false" RegionPosition="Center" runat="server">
                 </f:Panel>
             </Items>
         </f:Panel>
@@ -58,13 +57,13 @@
         var tree1ClientID = '<%= Tree1.ClientID %>';
         var panel1ClientID = '<%= Panel1.ClientID %>';
 
-        F.ready(function () {
+        F.ready(function() {
 
             var tree1 = F(tree1ClientID);
             var panel1 = F(panel1ClientID);
 
             // 树节点的点击事件
-            tree1.on('nodeclick', function (event, nodeId) {
+            tree1.on('nodeclick', function(event, nodeId) {
 
                 // 点击树节点的数据
                 var nodeData = tree1.getNodeData(nodeId);
@@ -89,7 +88,7 @@
             var HASH = window.location.hash.substr(1);
             if (HASH) {
                 // 遍历树节点
-                tree1.resolveNode(function (node) {
+                tree1.resolveNode(function(node) {
 
                     // 找到节点
                     if (node.href === HASH) {
@@ -113,26 +112,29 @@
 
         });
 
-
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示树节点驱动右侧 <code>iframe</code> 导航，并用地址栏 <code>hash</code> 在刷新后恢复当前节点。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-link" aria-hidden="true"></i>导航并恢复当前节点</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树">树</strong>展开<code>基本用法</code>并点击<code>你好 FineUI</code>。<br />结果：右侧 <code>iframe</code> 打开节点指向的示例，地址栏 <code>hash</code> 同步记录当前节点。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnRefresh").ClientID %>' title="刷新本页面">刷新本页面</strong>。<br />结果：刷新后按 <code>hash</code> 恢复节点选择及对应 <code>iframe</code> 页面，无需重新手工展开定位。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <ul>
-        <li>刷新页面后，能够保持当前选中的树节点。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>NavigateUrl</code>（<strong>树节点</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树">树</strong>）：提供节点打开的示例地址。</li>
-        <li><code>location.hash</code>（<strong>页面地址</strong>）：在浏览器记录当前节点，刷新后仍可读取。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示树节点驱动右侧 <code>iframe</code> 导航，并用地址栏 <code>hash</code> 在刷新后恢复当前节点。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-link" aria-hidden="true"></i>导航并恢复当前节点</h3>
+            <ol>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树">树</strong>展开<code>基本用法</code>并点击<code>你好 FineUI</code>。<br />结果：右侧 <code>iframe</code> 打开节点指向的示例，地址栏 <code>hash</code>
+                    同步记录当前节点。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnRefresh").ClientID %>'
+                        title="刷新本页面">刷新本页面</strong>。<br />结果：刷新后按 <code>hash</code> 恢复节点选择及对应 <code>iframe</code> 页面，无需重新手工展开定位。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <ul>
+                <li>刷新页面后，能够保持当前选中的树节点。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>NavigateUrl</code>（<strong>树节点</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树">树</strong>）：提供节点打开的示例地址。</li>
+                <li><code>location.hash</code>（<strong>页面地址</strong>）：在浏览器记录当前节点，刷新后仍可读取。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

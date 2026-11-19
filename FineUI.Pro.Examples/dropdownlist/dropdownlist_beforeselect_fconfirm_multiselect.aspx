@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉列表（确认对话框，多选，F.confirm）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true"
+            Title="下拉列表（确认对话框，多选，F.confirm）" ShowHeader="true">
             <Items>
                 <f:DropDownList runat="server" ID="DropDownList1" EnableMultiSelect="true">
                     <Items>
@@ -30,8 +30,7 @@
                     </Listeners>
                 </f:DropDownList>
 
-                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click"
-                    CssClass="marginr">
+                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" runat="server" OnClick="btnGetSelection_Click">
                 </f:Button>
@@ -44,7 +43,6 @@
     </form>
 
     <script>
-
         function onDropDownListBeforeSelect(event, selectedValue) {
             // this代表当前下拉列表对象
             var ddl = this;
@@ -52,11 +50,11 @@
             // F.confirm是异步函数，直接返回
             F.confirm({
                 message: '确定改变选中项？',
-                ok: function () {
+                ok: function() {
                     // 重新设置选中项
                     ddl.setValue(selectedValue);
                 },
-                cancel: function () {
+                cancel: function() {
                     // 啥也不做
                 }
             });

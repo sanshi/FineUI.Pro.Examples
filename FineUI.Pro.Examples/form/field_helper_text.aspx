@@ -1,47 +1,52 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="field_helper_text.aspx.cs" Inherits="FineUI.Pro.Examples.form.field_helper_text" %>
+
 <!DOCTYPE html>
 <html>
-<head runat="server"><title>字段帮助与下方错误提示</title></head>
+<head runat="server">
+    <title>字段帮助与下方错误提示</title>
+</head>
 <body>
-<form runat="server">
-    <f:PageManager ID="PageManager1" runat="server" />
-<f:SimpleForm runat="server" ID="Form1" IsFluid="true" BodyPadding="10" Title="联系信息" MessageTarget="Under">
-    <Items>
-        <f:TextBox runat="server" ID="tbxEmail" Label="联系邮箱" Required="true" HelperText="用于接收审批结果，请填写常用邮箱。" />
-        <f:TextArea runat="server" ID="txaNotes" Label="申请说明" AutoGrowHeight="true" HelperText="请说明申请用途，内容较多时文本框自动增高。" />
-        <f:FileUpload runat="server" ID="fuAttachment" Label="附件" Multiple="true" HelperText="可选择多份附件。" />
-        <f:Button runat="server" ID="btnValidate" CssClass="marginr" Text="验证表单" ClickHandler="onValidateFields" />
-        <f:Button runat="server" ID="btnClear" CssClass="marginr" Text="清除错误" ClickHandler="onClearErrors" />
-        <f:Button runat="server" ID="btnUpdate" CssClass="marginr" Text="修改填写说明" OnClick="btnUpdate_Click" />
-        <f:Button runat="server" ID="btnClearHelper" CssClass="marginr" Text="清空填写说明" OnClick="btnClearHelper_Click" />
-        <f:Button runat="server" ID="btnRead" Text="读取填写说明" OnClick="btnRead_Click" />
-    </Items>
-</f:SimpleForm>
-<br />
-<f:Label runat="server" ID="labResult" ShowLabel="false" />
+    <form runat="server">
+        <f:PageManager ID="PageManager1" runat="server" />
+        <f:SimpleForm runat="server" ID="Form1" IsFluid="true" BodyPadding="10" Title="联系信息" MessageTarget="Under">
+            <Items>
+                <f:TextBox runat="server" ID="tbxEmail" Label="联系邮箱" Required="true" HelperText="用于接收审批结果，请填写常用邮箱。" />
+                <f:TextArea runat="server" ID="txaNotes" Label="申请说明" AutoGrowHeight="true" HelperText="请说明申请用途，内容较多时文本框自动增高。" />
+                <f:FileUpload runat="server" ID="fuAttachment" Label="附件" Multiple="true" HelperText="可选择多份附件。" />
+                <f:Button runat="server" ID="btnValidate" CssClass="marginr" Text="验证表单" ClickHandler="onValidateFields" />
+                <f:Button runat="server" ID="btnClear" CssClass="marginr" Text="清除错误" ClickHandler="onClearErrors" />
+                <f:Button runat="server" ID="btnUpdate" CssClass="marginr" Text="修改填写说明" OnClick="btnUpdate_Click" />
+                <f:Button runat="server" ID="btnClearHelper" CssClass="marginr" Text="清空填写说明" OnClick="btnClearHelper_Click" />
+                <f:Button runat="server" ID="btnRead" Text="读取填写说明" OnClick="btnRead_Click" />
+            </Items>
+        </f:SimpleForm>
+        <br />
+        <f:Label runat="server" ID="labResult" ShowLabel="false" />
 
 
-</form>
-<script>
-function onValidateFields(event) {
-    F('<%= Form1.ClientID %>').isValid();
-}
+    </form>
+    <script>
+        function onValidateFields(event) {
+            F('<%= Form1.ClientID %>').isValid();
+        }
 
-function onClearErrors(event) {
-    F('<%= tbxEmail.ClientID %>').clearInvalid();
-}
+        function onClearErrors(event) {
+            F('<%= tbxEmail.ClientID %>').clearInvalid();
+        }
 
-function getHelperText() {
-    return F('<%= tbxEmail.ClientID %>').getHelperText();
-}
-</script>
+        function getHelperText() {
+            return F('<%= tbxEmail.ClientID %>').getHelperText();
+        }
+
+    </script>
     <template id="example-description">
         <section aria-label="页面描述">
             <p>演示字段下方的填写说明与验证错误同时显示，以及更新说明时保留输入。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>验证和清除错误</h3>
             <ol>
                 <li>
-                    <strong class="example-control-reference" data-example-control="<%= tbxEmail.ClientID %>" title="联系邮箱">联系邮箱</strong>保持为空，点击<strong class="example-control-reference" data-example-control="<%= btnValidate.ClientID %>" title="验证表单">验证表单</strong>。<br />
+                    <strong class="example-control-reference" data-example-control="<%= tbxEmail.ClientID %>" title="联系邮箱">联系邮箱</strong>保持为空，点击<strong
+                        class="example-control-reference" data-example-control="<%= btnValidate.ClientID %>" title="验证表单">验证表单</strong>。<br />
                     结果：字段下方出现必填错误，原有填写说明仍然可见。
                 </li>
                 <li>
@@ -52,7 +57,9 @@ function getHelperText() {
             <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>修改填写说明</h3>
             <ul>
                 <li>
-                    在<strong class="example-control-reference" data-example-control="<%= txaNotes.ClientID %>" title="申请说明">申请说明</strong>中输入文字，按需选择附件，然后点击<strong class="example-control-reference" data-example-control="<%= btnUpdate.ClientID %>" title="修改填写说明">修改填写说明</strong>。<br />
+                    在<strong class="example-control-reference" data-example-control="<%= txaNotes.ClientID %>"
+                        title="申请说明">申请说明</strong>中输入文字，按需选择附件，然后点击<strong class="example-control-reference" data-example-control="<%= btnUpdate.ClientID %>"
+                        title="修改填写说明">修改填写说明</strong>。<br />
                     结果：回发后，后台把邮箱说明改为<code>请填写部门公共邮箱，便于同事接收后续通知。</code>；已输入内容和已选文件保留。
                 </li>
                 <li>
@@ -68,10 +75,17 @@ function getHelperText() {
             <p>填写说明始终显示，校验失败时错误显示在其下方。更新或清空说明会重新布局，并保留当前输入和文件选择。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>HelperText</code>（<strong class="example-control-reference" data-example-control="<%= tbxEmail.ClientID %>" title="联系邮箱">联系邮箱</strong>、<strong class="example-control-reference" data-example-control="<%= txaNotes.ClientID %>" title="申请说明">申请说明</strong>、<strong class="example-control-reference" data-example-control="<%= fuAttachment.ClientID %>" title="附件">附件</strong>）：字段下方的填写说明，可以修改或清空。</li>
-                <li><code>MessageTarget</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="联系信息">联系信息</strong>）：初始为 <code>Under</code>，把验证错误显示在字段下方。</li>
-                <li><code>isValid()</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>" title="联系信息">联系信息</strong>）：客户端检查表单并显示字段错误。</li>
-                <li><code>clearInvalid()</code>（<strong class="example-control-reference" data-example-control="<%= tbxEmail.ClientID %>" title="联系邮箱">联系邮箱</strong>）：只<strong class="example-control-reference" data-example-control="<%= btnClear.ClientID %>" title="清除错误">清除错误</strong>标记，不清空输入或说明。</li>
+                <li><code>HelperText</code>（<strong class="example-control-reference" data-example-control="<%= tbxEmail.ClientID %>"
+                        title="联系邮箱">联系邮箱</strong>、<strong class="example-control-reference" data-example-control="<%= txaNotes.ClientID %>"
+                        title="申请说明">申请说明</strong>、<strong class="example-control-reference" data-example-control="<%= fuAttachment.ClientID %>"
+                        title="附件">附件</strong>）：字段下方的填写说明，可以修改或清空。</li>
+                <li><code>MessageTarget</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>"
+                        title="联系信息">联系信息</strong>）：初始为 <code>Under</code>，把验证错误显示在字段下方。</li>
+                <li><code>isValid()</code>（<strong class="example-control-reference" data-example-control="<%= Form1.ClientID %>"
+                        title="联系信息">联系信息</strong>）：客户端检查表单并显示字段错误。</li>
+                <li><code>clearInvalid()</code>（<strong class="example-control-reference" data-example-control="<%= tbxEmail.ClientID %>"
+                        title="联系邮箱">联系邮箱</strong>）：只<strong class="example-control-reference" data-example-control="<%= btnClear.ClientID %>"
+                        title="清除错误">清除错误</strong>标记，不清空输入或说明。</li>
             </ul>
         </section>
     </template>

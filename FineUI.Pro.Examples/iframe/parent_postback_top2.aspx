@@ -20,9 +20,8 @@
         <f:Button runat="server" ID="Button2" OnClick="Button2_Click" Text="在顶层页面弹出窗体（直接注册脚本）（推荐做法）"></f:Button>
         <br />
         <br />
-        <f:Window ID="Window1" runat="server" Height="350px" EnableIFrame="true" IFrameUrl="" Hidden="true"
-            IsModal="true" Width="650px" EnableMaximize="true" EnableResize="true"
-            Target="Parent" OnClose="Window1_Close" Title="页面二中的弹出对话框">
+        <f:Window ID="Window1" runat="server" Height="350px" EnableIFrame="true" IFrameUrl="" Hidden="true" IsModal="true" Width="650px" EnableMaximize="true"
+            EnableResize="true" Target="Parent" OnClose="Window1_Close" Title="页面二中的弹出对话框">
         </f:Window>
     </form>
 </body>

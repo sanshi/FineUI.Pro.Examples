@@ -75,6 +75,7 @@
             }
             return rateText;
         }
+
     </script>
     <template id="example-description">
         <section aria-label="页面描述">
@@ -82,11 +83,13 @@
             <h3><i class="f-icon f-iconfont f-iconfont-star" aria-hidden="true"></i>选择评分与只读对照</h3>
             <ul>
                 <li>
-                    在<strong class="example-control-reference" data-example-control="<%= NumberBox1.ClientID %>" title="第 1 组评分">第一组评分</strong>点击第 <code>5</code> 颗星。<br />
+                    在<strong class="example-control-reference" data-example-control="<%= NumberBox1.ClientID %>" title="第 1 组评分">第一组评分</strong>点击第
+                    <code>5</code> 颗星。<br />
                     结果：评分改为 <code>5</code>，五颗星都点亮。
                 </li>
                 <li>
-                    对照<strong class="example-control-reference" data-example-control="<%= NumberBox2.ClientID %>" title="第 2 组评分">第二组半星评分</strong>，并尝试点击<strong class="example-control-reference" data-example-control="<%= NumberBox3.ClientID %>" title="第 3 组评分">第三组只读评分</strong>。<br />
+                    对照<strong class="example-control-reference" data-example-control="<%= NumberBox2.ClientID %>" title="第 2 组评分">第二组半星评分</strong>，并尝试点击<strong
+                        class="example-control-reference" data-example-control="<%= NumberBox3.ClientID %>" title="第 3 组评分">第三组只读评分</strong>。<br />
                     结果：第二组显示 <code>3.5</code> 的半星；第三组仍保持 <code>2</code>，不接受点击修改。
                 </li>
             </ul>
@@ -103,12 +106,21 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DisplayType</code>（本页全部评分控件，如<strong class="example-control-reference" data-example-control="<%= NumberBox1.ClientID %>" title="第 1 组评分">第 1 组评分</strong>）：初始为 <code>Rate</code>，显示评分。</li>
-                <li><code>RateAllowHalf</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox2.ClientID %>" title="第 2 组评分">第 2 组评分</strong>、<strong class="example-control-reference" data-example-control="<%= NumberBox11.ClientID %>" title="第 11 组评分">第 11 组评分</strong>）：设为 <code>true</code> 时支持半分。</li>
-                <li><code>Readonly</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox3.ClientID %>" title="第 3 组评分">第 3 组评分</strong>）：为 <code>true</code> 时保持显示但不能点击修改。</li>
-                <li><code>RateCount</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox7.ClientID %>" title="第 7 组评分">第 7 组评分</strong>、<strong class="example-control-reference" data-example-control="<%= NumberBox8.ClientID %>" title="第 8 组评分">第 8 组评分</strong>、<strong class="example-control-reference" data-example-control="<%= NumberBox9.ClientID %>" title="第 9 组评分">第 9 组评分</strong>）：控制评分项数，本页包含 <code>10</code> 项图标评分。</li>
-                <li><code>RateAllowClear</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox4.ClientID %>" title="第 4 组评分">第 4 组评分</strong>）：为 <code>false</code> 时再次点击当前值不能清空。</li>
-                <li><code>RateTextRendererFunction</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox10.ClientID %>" title="第 10 组评分">第 10 组评分</strong>）：把评分值转换为 <code>normal</code> 等说明文字。</li>
+                <li><code>DisplayType</code>（本页全部评分控件，如<strong class="example-control-reference" data-example-control="<%= NumberBox1.ClientID %>"
+                        title="第 1 组评分">第 1 组评分</strong>）：初始为 <code>Rate</code>，显示评分。</li>
+                <li><code>RateAllowHalf</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox2.ClientID %>" title="第 2 组评分">第 2
+                        组评分</strong>、<strong class="example-control-reference" data-example-control="<%= NumberBox11.ClientID %>" title="第 11 组评分">第 11
+                        组评分</strong>）：设为 <code>true</code> 时支持半分。</li>
+                <li><code>Readonly</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox3.ClientID %>" title="第 3 组评分">第 3
+                        组评分</strong>）：为 <code>true</code> 时保持显示但不能点击修改。</li>
+                <li><code>RateCount</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox7.ClientID %>" title="第 7 组评分">第 7
+                        组评分</strong>、<strong class="example-control-reference" data-example-control="<%= NumberBox8.ClientID %>" title="第 8 组评分">第 8
+                        组评分</strong>、<strong class="example-control-reference" data-example-control="<%= NumberBox9.ClientID %>" title="第 9 组评分">第 9
+                        组评分</strong>）：控制评分项数，本页包含 <code>10</code> 项图标评分。</li>
+                <li><code>RateAllowClear</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox4.ClientID %>" title="第 4 组评分">第 4
+                        组评分</strong>）：为 <code>false</code> 时再次点击当前值不能清空。</li>
+                <li><code>RateTextRendererFunction</code>（<strong class="example-control-reference" data-example-control="<%= NumberBox10.ClientID %>"
+                        title="第 10 组评分">第 10 组评分</strong>）：把评分值转换为 <code>normal</code> 等说明文字。</li>
             </ul>
         </section>
     </template>

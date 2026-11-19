@@ -53,7 +53,8 @@
     </form>
     <template id="example-description">
         <section aria-label="页面描述">
-            <p>演示将文件选择按钮放进<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarExample1").ClientID %>' title="工具栏">工具栏</strong>，选定后直接更新头像预览。</p>
+            <p>演示将文件选择按钮放进<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ToolbarExample1").ClientID %>'
+                    title="工具栏">工具栏</strong>，选定后直接更新头像预览。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-upload" aria-hidden="true"></i>先上传头像</h3>
             <ol>
                 <li>
@@ -71,7 +72,8 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ButtonOnly</code>（<strong class="example-control-reference" data-example-control="<%= filePhoto.ClientID %>" title="上传控件">上传控件</strong>）：只显示上传按钮，不显示文件路径输入框。 本页声明值为 <code>true</code>。</li>
+                <li><code>ButtonOnly</code>（<strong class="example-control-reference" data-example-control="<%= filePhoto.ClientID %>"
+                        title="上传控件">上传控件</strong>）：只显示上传按钮，不显示文件路径输入框。 本页声明值为 <code>true</code>。</li>
             </ul>
         </section>
     </template>

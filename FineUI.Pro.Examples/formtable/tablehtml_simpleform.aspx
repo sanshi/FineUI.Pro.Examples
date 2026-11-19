@@ -156,7 +156,12 @@
             <p>注：推荐使用表单的<code>EnableTableStyle</code>属性，更简单，参考示例：表格样式->表格样式（简单表单）。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control="<%= TextBox1.ClientID %>" title="第 2 个ContentPanel的用户名">第 2 个ContentPanel的用户名</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="第 2 个ContentPanel的密码">第 2 个ContentPanel的密码</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox3.ClientID %>" title="第 3 个ContentPanel的用户名">第 3 个ContentPanel的用户名</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox4.ClientID %>" title="第 3 个ContentPanel的密码">第 3 个ContentPanel的密码</strong>）：后两组设为 <code>false</code>，避免控件标签和表格单元格重复。</li>
+                <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control="<%= TextBox1.ClientID %>"
+                        title="第 2 个ContentPanel的用户名">第 2 个ContentPanel的用户名</strong>、<strong class="example-control-reference"
+                        data-example-control="<%= TextBox2.ClientID %>" title="第 2 个ContentPanel的密码">第 2 个ContentPanel的密码</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= TextBox3.ClientID %>" title="第 3 个ContentPanel的用户名">第 3
+                        个ContentPanel的用户名</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox4.ClientID %>"
+                        title="第 3 个ContentPanel的密码">第 3 个ContentPanel的密码</strong>）：后两组设为 <code>false</code>，避免控件标签和表格单元格重复。</li>
             </ul>
         </section>
     </template>

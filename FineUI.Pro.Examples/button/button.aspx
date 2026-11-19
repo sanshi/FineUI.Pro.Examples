@@ -51,21 +51,32 @@
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>切换按下状态和提示</h3>
             <ul>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnChangePressed.ClientID %>" title="改变后面按钮的按下状态">改变后面按钮的按下状态</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnChangePressed.ClientID %>"
+                        title="改变后面按钮的按下状态">改变后面按钮的按下状态</strong>。<br />
                     结果：回发后，后台反转后一个按钮的按下外观，再次点击可恢复。
                 </li>
                 <li>
-                    将鼠标停在<strong class="example-control-reference" data-example-control="<%= btnTooltip.ClientID %>" title="这个按钮有提示信息（点击改变提示信息）">这个按钮有提示信息（点击改变提示信息）</strong>上，点击后再悬停。<br />
+                    将鼠标停在<strong class="example-control-reference" data-example-control="<%= btnTooltip.ClientID %>"
+                        title="这个按钮有提示信息（点击改变提示信息）">这个按钮有提示信息（点击改变提示信息）</strong>上，点击后再悬停。<br />
                     结果：先显示初始提示，再显示修改后的提示内容；页面还可对照不同颜色和尺寸按钮。
                 </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ButtonColor</code>（<strong class="example-control-reference" data-example-control="<%= btnPrimary.ClientID %>" title="主按钮">主按钮</strong>、<strong class="example-control-reference" data-example-control="btnSuccess" title="成功按钮">成功按钮</strong>、<strong class="example-control-reference" data-example-control="btnDanger" title="危险按钮">危险按钮</strong>、<strong class="example-control-reference" data-example-control="btnWarning" title="警告按钮">警告按钮</strong>、<strong class="example-control-reference" data-example-control="btnInfo" title="信息按钮">信息按钮</strong>）：选择主、成功、危险、警告、信息等主题颜色。</li>
-                <li><code>Size</code>（<strong class="example-control-reference" data-example-control="<%= Button4.ClientID %>" title="小按钮">小按钮</strong>、<strong class="example-control-reference" data-example-control="<%= Button2.ClientID %>" title="中等按钮">中等按钮</strong>、<strong class="example-control-reference" data-example-control="<%= Button3.ClientID %>" title="大按钮">大按钮</strong>）：控制按钮尺寸，同页对照多种大小。</li>
-                <li><code>Enabled</code>（<strong class="example-control-reference" data-example-control="<%= btnEnable.ClientID %>" title="禁用的按钮">禁用的按钮</strong>）：初始为 <code>false</code> 的按钮不能点击，后台可改为 <code>true</code>。</li>
-                <li><code>Pressed</code>（<strong class="example-control-reference" data-example-control="<%= btnPressed.ClientID %>" title="按下的按钮">按下的按钮</strong>）：表示持续按下的外观，切换后按钮文字保持不变。</li>
-                <li><code>ToolTip</code>（<strong class="example-control-reference" data-example-control="<%= btnTooltip.ClientID %>" title="这个按钮有提示信息（点击改变提示信息）">这个按钮有提示信息（点击改变提示信息）</strong>）：鼠标悬停显示的提示文字，可在点击后更新。</li>
+                <li><code>ButtonColor</code>（<strong class="example-control-reference" data-example-control="<%= btnPrimary.ClientID %>"
+                        title="主按钮">主按钮</strong>、<strong class="example-control-reference" data-example-control="btnSuccess" title="成功按钮">成功按钮</strong>、<strong
+                        class="example-control-reference" data-example-control="btnDanger" title="危险按钮">危险按钮</strong>、<strong class="example-control-reference"
+                        data-example-control="btnWarning" title="警告按钮">警告按钮</strong>、<strong class="example-control-reference" data-example-control="btnInfo"
+                        title="信息按钮">信息按钮</strong>）：选择主、成功、危险、警告、信息等主题颜色。</li>
+                <li><code>Size</code>（<strong class="example-control-reference" data-example-control="<%= Button4.ClientID %>" title="小按钮">小按钮</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= Button2.ClientID %>" title="中等按钮">中等按钮</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= Button3.ClientID %>" title="大按钮">大按钮</strong>）：控制按钮尺寸，同页对照多种大小。</li>
+                <li><code>Enabled</code>（<strong class="example-control-reference" data-example-control="<%= btnEnable.ClientID %>"
+                        title="禁用的按钮">禁用的按钮</strong>）：初始为 <code>false</code> 的按钮不能点击，后台可改为 <code>true</code>。</li>
+                <li><code>Pressed</code>（<strong class="example-control-reference" data-example-control="<%= btnPressed.ClientID %>"
+                        title="按下的按钮">按下的按钮</strong>）：表示持续按下的外观，切换后按钮文字保持不变。</li>
+                <li><code>ToolTip</code>（<strong class="example-control-reference" data-example-control="<%= btnTooltip.ClientID %>"
+                        title="这个按钮有提示信息（点击改变提示信息）">这个按钮有提示信息（点击改变提示信息）</strong>）：鼠标悬停显示的提示文字，可在点击后更新。</li>
             </ul>
         </section>
     </template>

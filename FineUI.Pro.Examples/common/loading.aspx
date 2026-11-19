@@ -15,26 +15,27 @@
             margin: 0;
         }
 
-            ul.loading li {
-                display: inline-block;
-                margin: 5px;
-                text-align: center;
-                border-style: solid;
-                border-width: 0;
-                padding: 11px 6px;
-                width: 150px;
-                cursor: pointer;
-            }
+        ul.loading li {
+            display: inline-block;
+            margin: 5px;
+            text-align: center;
+            border-style: solid;
+            border-width: 0;
+            padding: 11px 6px;
+            width: 150px;
+            cursor: pointer;
+        }
 
-                ul.loading li.hover,
-                ul.loading li.active {
-                    border-width: 3px;
-                    padding: 8px 3px;
-                }
+        ul.loading li.hover,
+        ul.loading li.active {
+            border-width: 3px;
+            padding: 8px 3px;
+        }
 
-                ul.loading li .title {
-                    margin-top: 10px;
-                }
+        ul.loading li .title {
+            margin-top: 10px;
+        }
+
     </style>
 </head>
 <body>
@@ -45,19 +46,19 @@
     </form>
 
     <script>
-        F.ready(function () {
+        F.ready(function() {
             // 选择主题窗口
-            $('ul.loading li').hover(function () {
+            $('ul.loading li').hover(function() {
                 $(this).addClass('hover');
-            }, function () {
+            }, function() {
                 $(this).removeClass('hover');
-            }).click(function () {
+            }).click(function() {
                 var loadingNumber = $(this).find('.title').text();
 
                 // 禁用页面加载动画（CSS） + 启用GIF加载动画
                 F.removeCookie('Loading_CSS');
                 F.cookie('Loading', loadingNumber, {
-                    expires: 100  // 单位：天
+                    expires: 100 // 单位：天
                 });
 
                 top.window.location.reload();
@@ -69,7 +70,7 @@
             if (!loadingNumber) {
                 loadingNumber = '1';
             }
-            $('ul.loading li').each(function () {
+            $('ul.loading li').each(function() {
                 var cnode = $(this);
                 if (cnode.find('.title').text() === loadingNumber) {
                     cnode.addClass('active');
@@ -78,6 +79,7 @@
                 }
             });
         });
+
     </script>
 
 </body>

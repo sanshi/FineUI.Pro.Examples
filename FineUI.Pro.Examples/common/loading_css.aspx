@@ -15,45 +15,46 @@
             margin: 0;
         }
 
-            ul.main li {
-                display: inline-block;
-                margin: 5px;
-                border-width: 0;
-                padding: 10px;
-                border-radius: 10px;
-                text-align: center;
-                cursor: pointer;
-            }
+        ul.main li {
+            display: inline-block;
+            margin: 5px;
+            border-width: 0;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
 
-                ul.main li.f-state-hover,
-                ul.main li.f-state-active {
-                    border-style: solid;
-                    border-width: 3px;
-                    padding: 7px;
-                }
+        ul.main li.f-state-hover,
+        ul.main li.f-state-active {
+            border-style: solid;
+            border-width: 3px;
+            padding: 7px;
+        }
 
 
-                ul.main li .title {
-                    text-align: center;
-                    font-size: 13px;
-                    margin-top: 10px;
-                }
+        ul.main li .title {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 10px;
+        }
 
-                ul.main li.f-state-active .title {
-                    font-weight: bold;
-                }
+        ul.main li.f-state-active .title {
+            font-weight: bold;
+        }
 
-                ul.main li > .f-widget-content {
-                    padding: 30px;
-                    display: inline-block;
-                    border-radius: 5px;
-                    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
-                }
+        ul.main li>.f-widget-content {
+            padding: 30px;
+            display: inline-block;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.2);
+        }
 
-                ul.main li.f-state-hover > .f-widget-content,
-                ul.main li.f-state-active > .f-widget-content {
-                    box-shadow: none;
-                }
+        ul.main li.f-state-hover>.f-widget-content,
+        ul.main li.f-state-active>.f-widget-content {
+            box-shadow: none;
+        }
+
     </style>
 </head>
 <body>
@@ -65,18 +66,18 @@
     </form>
 
     <script>
-        F.ready(function () {
+        F.ready(function() {
             // 选择主题窗口
-            $('ul.main li').hover(function () {
+            $('ul.main li').hover(function() {
                 $(this).addClass('f-state-hover');
-            }, function () {
+            }, function() {
                 $(this).removeClass('f-state-hover');
-            }).click(function () {
+            }).click(function() {
                 var loadingNumber = $(this).find('.title').text();
 
                 F.removeCookie('Loading');
                 F.cookie('Loading_CSS', loadingNumber, {
-                    expires: 100  // 单位：天
+                    expires: 100 // 单位：天
                 });
 
                 top.window.location.reload();
@@ -88,7 +89,7 @@
             if (!loadingNumber) {
                 loadingNumber = '1';
             }
-            $('ul.main li').each(function () {
+            $('ul.main li').each(function() {
                 var cnode = $(this);
                 if (cnode.find('.title').text() === loadingNumber) {
                     cnode.addClass('f-state-active');
@@ -97,20 +98,23 @@
                 }
             });
         });
+
     </script>
 
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>预览六种纯 CSS 加载动画，并保存当前选择供后续页面加载使用。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>选择加载动画</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control="loadingAnimations" title="加载动画列表">加载动画列表</strong>点击编号 3。<br />结果：当前项切换为第 3 种动画，选择写入 Loading_CSS Cookie；刷新页面后仍保持该选中项。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Loading_CSS</code>（<strong class="example-control-reference" data-example-control="loadingAnimations" title="加载动画列表">加载动画列表</strong>）：通过 Cookie 保存选中的动画编号，页面重新加载时读取；不是 GIF 图片资源。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>预览六种纯 CSS 加载动画，并保存当前选择供后续页面加载使用。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>选择加载动画</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control="loadingAnimations" title="加载动画列表">加载动画列表</strong>点击编号 3。<br />结果：当前项切换为第 3
+                    种动画，选择写入 Loading_CSS Cookie；刷新页面后仍保持该选中项。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Loading_CSS</code>（<strong class="example-control-reference" data-example-control="loadingAnimations"
+                        title="加载动画列表">加载动画列表</strong>）：通过 Cookie 保存选中的动画编号，页面重新加载时读取；不是 GIF 图片资源。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

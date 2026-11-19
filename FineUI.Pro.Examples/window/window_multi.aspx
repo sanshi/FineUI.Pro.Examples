@@ -28,12 +28,10 @@
 
         <br />
         <br />
-        <f:Window ID="Window1" Width="650px" Height="300px" Icon="TagBlue" Title="窗体一" Hidden="true"
-            EnableMaximize="true" EnableCollapse="false" runat="server" EnableResize="true"
-            IsModal="false" AutoScroll="true" BodyPadding="10px">
+        <f:Window ID="Window1" Width="650px" Height="300px" Icon="TagBlue" Title="窗体一" Hidden="true" EnableMaximize="true" EnableCollapse="false" runat="server"
+            EnableResize="true" IsModal="false" AutoScroll="true" BodyPadding="10px">
             <Items>
-                <f:Form BodyPadding="10px" ID="Form2" LabelWidth="100px" ShowBorder="false" ShowHeader="false"
-                    runat="server" Title="表单 1">
+                <f:Form BodyPadding="10px" ID="Form2" LabelWidth="100px" ShowBorder="false" ShowHeader="false" runat="server" Title="表单 1">
                     <Rows>
                         <f:FormRow ColumnWidths="50% 50%">
                             <Items>
@@ -55,8 +53,7 @@
                                     <f:ListItem Text="可选择项7" Value="Value7" />
                                     <f:ListItem Text="可选择项8" Value="Value8" />
                                 </f:DropDownList>
-                                <f:TextBox ID="TextBox1" ShowRedStar="true" runat="server" Label="文本框" Required="true"
-                                    Text="">
+                                <f:TextBox ID="TextBox1" ShowRedStar="true" runat="server" Label="文本框" Required="true" Text="">
                                 </f:TextBox>
                             </Items>
                         </f:FormRow>
@@ -64,12 +61,10 @@
                 </f:Form>
             </Items>
         </f:Window>
-        <f:Window ID="Window2" Width="650px" Height="300px" Icon="TagBlue" Title="窗体二" Hidden="true"
-            EnableMaximize="true" EnableCollapse="false" runat="server" EnableResize="true"
-            IsModal="false" AutoScroll="true" BodyPadding="10px">
+        <f:Window ID="Window2" Width="650px" Height="300px" Icon="TagBlue" Title="窗体二" Hidden="true" EnableMaximize="true" EnableCollapse="false" runat="server"
+            EnableResize="true" IsModal="false" AutoScroll="true" BodyPadding="10px">
             <Items>
-                <f:Form BodyPadding="10px" ID="Form3" LabelWidth="100px" ShowBorder="false" ShowHeader="false"
-                    runat="server" Title="表单 2">
+                <f:Form BodyPadding="10px" ID="Form3" LabelWidth="100px" ShowBorder="false" ShowHeader="false" runat="server" Title="表单 2">
                     <Rows>
                         <f:FormRow ColumnWidths="50% 50%">
                             <Items>
@@ -91,8 +86,7 @@
                                     <f:ListItem Text="可选择项7" Value="Value7" />
                                     <f:ListItem Text="可选择项8" Value="Value8" />
                                 </f:DropDownList>
-                                <f:TextBox ID="TextBox2" ShowRedStar="true" runat="server" Label="文本框" Required="true"
-                                    Text="">
+                                <f:TextBox ID="TextBox2" ShowRedStar="true" runat="server" Label="文本框" Required="true" Text="">
                                 </f:TextBox>
                             </Items>
                         </f:FormRow>
@@ -100,12 +94,10 @@
                 </f:Form>
             </Items>
         </f:Window>
-        <f:Window ID="Window3" Width="650px" Height="300px" Icon="TagBlue" Title="窗体三" 
-            EnableMaximize="true" EnableCollapse="false" runat="server" EnableResize="true"
-            IsModal="false" AutoScroll="true" BodyPadding="10px">
+        <f:Window ID="Window3" Width="650px" Height="300px" Icon="TagBlue" Title="窗体三" EnableMaximize="true" EnableCollapse="false" runat="server"
+            EnableResize="true" IsModal="false" AutoScroll="true" BodyPadding="10px">
             <Items>
-                <f:Form BodyPadding="10px" ID="Form4" LabelWidth="100px" ShowBorder="false" ShowHeader="false"
-                    runat="server" Title="表单 3">
+                <f:Form BodyPadding="10px" ID="Form4" LabelWidth="100px" ShowBorder="false" ShowHeader="false" runat="server" Title="表单 3">
                     <Rows>
                         <f:FormRow ColumnWidths="50% 50%">
                             <Items>
@@ -127,8 +119,7 @@
                                     <f:ListItem Text="可选择项7" Value="Value7" />
                                     <f:ListItem Text="可选择项8" Value="Value8" />
                                 </f:DropDownList>
-                                <f:TextBox ID="TextBox3" ShowRedStar="true" runat="server" Label="文本框" Required="true"
-                                    Text="">
+                                <f:TextBox ID="TextBox3" ShowRedStar="true" runat="server" Label="文本框" Required="true" Text="">
                                 </f:TextBox>
                             </Items>
                         </f:FormRow>
@@ -137,19 +128,30 @@
             </Items>
         </f:Window>
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>从同一入口选择并打开多个各自独立的窗体。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>选择要显示的窗体</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList1").ClientID %>' title="窗体一">窗体一</strong>选择<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window2").ClientID %>' title="窗体二">窗体二</strong>，再点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnShowWindow").ClientID %>' title="显示窗体">显示窗体</strong>。<br />结果：<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window2").ClientID %>' title="窗体二">窗体二</strong>显示；关闭后选择窗体一再打开，显示的是窗体一，各窗体内容互相独立。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体一">窗体一</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window2").ClientID %>' title="窗体二">窗体二</strong>）：初始为 <code>true</code>，控制该控件是否显示。</li>
-        <li><code>show()</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList1").ClientID %>' title="窗体一">窗体一</strong>）：客户端根据下拉列表选择的窗体标识调用对应实例，不创建同一个窗体的重复内容。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>从同一入口选择并打开多个各自独立的窗体。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>选择要显示的窗体</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList1").ClientID %>'
+                        title="窗体一">窗体一</strong>选择<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window2").ClientID %>' title="窗体二">窗体二</strong>，再点击<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnShowWindow").ClientID %>'
+                        title="显示窗体">显示窗体</strong>。<br />结果：<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window2").ClientID %>'
+                        title="窗体二">窗体二</strong>显示；关闭后选择窗体一再打开，显示的是窗体一，各窗体内容互相独立。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Hidden</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体一">窗体一</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window2").ClientID %>'
+                        title="窗体二">窗体二</strong>）：初始为 <code>true</code>，控制该控件是否显示。</li>
+                <li><code>show()</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList1").ClientID %>'
+                        title="窗体一">窗体一</strong>）：客户端根据下拉列表选择的窗体标识调用对应实例，不创建同一个窗体的重复内容。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

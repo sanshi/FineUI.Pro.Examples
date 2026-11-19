@@ -8,8 +8,7 @@
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Form IsFluid="true" LabelWidth="100px" LabelSeparator="："
-            BodyPadding="10px" EnableCollapse="false" ID="Form1" runat="server" Title="表单">
+        <f:Form IsFluid="true" LabelWidth="100px" LabelSeparator="：" BodyPadding="10px" EnableCollapse="false" ID="Form1" runat="server" Title="表单">
             <Rows>
                 <f:FormRow>
                     <Items>
@@ -28,30 +27,28 @@
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:DropDownList ID="DropDownList3" Label="审批人" runat="server" EmptyText="请选择审批人"
-                            Required="true" ShowRedStar="true" AutoSelectFirstItem="false">
+                        <f:DropDownList ID="DropDownList3" Label="审批人" runat="server" EmptyText="请选择审批人" Required="true" ShowRedStar="true"
+                            AutoSelectFirstItem="false">
                             <f:ListItem Text="老大甲" Value="0"></f:ListItem>
                             <f:ListItem Text="老大乙" Value="1"></f:ListItem>
                             <f:ListItem Text="老大丙" Value="2"></f:ListItem>
                         </f:DropDownList>
-                        <f:NumberBox ID="NumberBox1" Label="申请数量" EmptyText="请输入申请数量" NoNegative="true" NoDecimal="true" MaxValue="1000" Required="true" runat="server"
-                            ShowRedStar="true" />
+                        <f:NumberBox ID="NumberBox1" Label="申请数量" EmptyText="请输入申请数量" NoNegative="true" NoDecimal="true" MaxValue="1000" Required="true"
+                            runat="server" ShowRedStar="true" />
                     </Items>
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:DatePicker runat="server" Required="true" Label="日期" EmptyText="请选择日期"
-                            ID="DatePicker1" SelectedDate="2014-07-10" ShowRedStar="true">
+                        <f:DatePicker runat="server" Required="true" Label="日期" EmptyText="请选择日期" ID="DatePicker1" SelectedDate="2014-07-10" ShowRedStar="true">
                         </f:DatePicker>
-                        <f:TimePicker ID="TimePicker1" ShowRedStar="true" Label="时间" Increment="30"
-                            Required="true" Text="08:30" EmptyText="请选择时间" runat="server">
+                        <f:TimePicker ID="TimePicker1" ShowRedStar="true" Label="时间" Increment="30" Required="true" Text="08:30" EmptyText="请选择时间"
+                            runat="server">
                         </f:TimePicker>
                     </Items>
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:FileUpload runat="server" ID="filePhoto" EmptyText="请选择一张照片" Label="个人头像" Required="true"
-                            ShowRedStar="true">
+                        <f:FileUpload runat="server" ID="filePhoto" EmptyText="请选择一张照片" Label="个人头像" Required="true" ShowRedStar="true">
                         </f:FileUpload>
                         <f:CheckBox runat="server" ID="cbxAtSchool" Label="是否在读"></f:CheckBox>
                     </Items>
@@ -122,7 +119,6 @@
         }
     </textarea>
     <script>
-
         function onAddReadonlyStyleClick(event) {
             F.addCSS('readonlycss', $('#readonlycss_holder').val());
         }
@@ -138,11 +134,14 @@
             <h3><i class="f-icon f-iconfont f-iconfont-power-off" aria-hidden="true"></i>禁用与只读</h3>
             <ol>
                 <li>
-                    在<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="电子邮箱">电子邮箱</strong>输入<code>demo&#64;example.com</code>，点击<strong class="example-control-reference" data-example-control="<%= btnDisableAll.ClientID %>" title="全部禁用">全部禁用</strong>。<br />
+                    在<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>"
+                        title="电子邮箱">电子邮箱</strong>输入<code>demo&#64;example.com</code>，点击<strong class="example-control-reference"
+                        data-example-control="<%= btnDisableAll.ClientID %>" title="全部禁用">全部禁用</strong>。<br />
                     结果：回发后后台禁用各字段，不能继续输入或选择；已有值保留。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnEnableAll.ClientID %>" title="全部启用">全部启用</strong>，再点击<strong class="example-control-reference" data-example-control="<%= btnReadOnlyAll.ClientID %>" title="全部只读">全部只读</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnEnableAll.ClientID %>" title="全部启用">全部启用</strong>，再点击<strong
+                        class="example-control-reference" data-example-control="<%= btnReadOnlyAll.ClientID %>" title="全部只读">全部只读</strong>。<br />
                     结果：字段恢复启用后进入只读状态，已有文字保留但不能由用户修改。
                 </li>
                 <li>
@@ -153,11 +152,15 @@
             <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>面板与只读外观</h3>
             <ul>
                 <li>
-                    先点击<strong class="example-control-reference" data-example-control="<%= btnDisablePanel.ClientID %>" title="禁用表单面板">禁用表单面板</strong>，再点击<strong class="example-control-reference" data-example-control="<%= btnEnablePanel.ClientID %>" title="启用表单面板">启用表单面板</strong>。<br />
+                    先点击<strong class="example-control-reference" data-example-control="<%= btnDisablePanel.ClientID %>"
+                        title="禁用表单面板">禁用表单面板</strong>，再点击<strong class="example-control-reference" data-example-control="<%= btnEnablePanel.ClientID %>"
+                        title="启用表单面板">启用表单面板</strong>。<br />
                     结果：切换表单整体可用状态，和逐个字段设置是两条独立操作路径。
                 </li>
                 <li>
-                    在只读状态点击<strong class="example-control-reference" data-example-control="<%= Button2.ClientID %>" title="添加只读样式（类似禁用样式）">添加只读样式（类似禁用样式）</strong>，再点击<strong class="example-control-reference" data-example-control="<%= Button3.ClientID %>" title="删除只读样式">删除只读样式</strong>。<br />
+                    在只读状态点击<strong class="example-control-reference" data-example-control="<%= Button2.ClientID %>"
+                        title="添加只读样式（类似禁用样式）">添加只读样式（类似禁用样式）</strong>，再点击<strong class="example-control-reference"
+                        data-example-control="<%= Button3.ClientID %>" title="删除只读样式">删除只读样式</strong>。<br />
                     结果：只读字段先显示半透明外观，再恢复原有外观；这里只改变样式，不把只读改成禁用。
                 </li>
             </ul>

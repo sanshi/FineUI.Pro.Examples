@@ -9,8 +9,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉列表（可编辑，强制选择）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉列表（可编辑，强制选择）"
+            ShowHeader="true">
             <Items>
                 <f:DropDownList runat="server" ID="DropDownList1" EnableEdit="true">
                     <f:ListItem Text="可选项1" Value="Value1" Selected="true" />
@@ -24,8 +24,7 @@
                     <f:ListItem Text="可选择项9" Value="Value9" />
                     <f:ListItem Text="普通型1 &lt; L &gt; 1.5" Value="普通型1 &lt; L &gt; 1.5" />
                 </f:DropDownList>
-                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click"
-                    CssClass="marginr">
+                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" runat="server" OnClick="btnGetSelection_Click">
                 </f:Button>
@@ -48,7 +47,10 @@
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>的属性设置为<code>EnableEdit</code>=<code>true</code>（<code>ForceSelection</code>默认为<code>true</code>），可以在输入文本以过滤下拉项。 <br /> <br /> 测试用例（初始文本："可选项<code>1</code>"）：</p>
+            <p>注：<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                    title="下拉列表">下拉列表</strong>的属性设置为<code>EnableEdit</code>=<code>true</code>（<code>ForceSelection</code>默认为<code>true</code>），可以在输入文本以过滤下拉项。
+                <br /> <br /> 测试用例（初始文本："可选项<code>1</code>"）：
+            </p>
             <ul>
                 <li> 依次删除："<code>1</code>项"；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："选中项：可选项<code>1</code>（值：<code>Value1</code>）" </li>
                 <li> 依次删除全部文本；然后在页面上点击一下，使得文本框失去焦点；点击获取选中项按钮："无选中项" </li>
@@ -57,7 +59,8 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：允许直接在输入区键入筛选文本。 本页声明值为 <code>true</code>。</li>
+                <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：允许直接在输入区键入筛选文本。 本页声明值为 <code>true</code>。</li>
             </ul>
         </section>
     </template>

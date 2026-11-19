@@ -9,15 +9,14 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
-            Title="登录表单" ShowHeader="true" LabelAlign="Right" runat="server">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" Title="登录表单" ShowHeader="true" LabelAlign="Right"
+            runat="server">
             <Items>
                 <f:TextBox runat="server" Label="用户名" EmptyText="请输入用户名" ID="tbxUserName" Required="true" ShowRedStar="true">
                 </f:TextBox>
                 <f:TextBox runat="server" ID="tbxPassword" Label="密码" EmptyText="请输入密码" TextMode="Password" Required="true" ShowRedStar="true">
                 </f:TextBox>
-                <f:Button ID="btnSubmit" CssClass="marginr" runat="server" OnClick="btnSubmit_Click" ValidateForms="SimpleForm1"
-                    Text="登录">
+                <f:Button ID="btnSubmit" CssClass="marginr" runat="server" OnClick="btnSubmit_Click" ValidateForms="SimpleForm1" Text="登录">
                 </f:Button>
                 <f:Button ID="btnReset" runat="server" Text="重置" ClickHandler="onResetClick">
                 </f:Button>
@@ -39,7 +38,7 @@
 
         var tbxPasswordClientID = '<%= tbxPassword.ClientID %>';
 
-        F.ready(function () {
+        F.ready(function() {
 
             F(tbxPasswordClientID).el.find('.f-field-fieldlabel').attr({
                 'data-qtitle': '密码',
@@ -56,7 +55,8 @@
             <ul>
                 <li>
                     分别悬停到<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>" title="用户名">用户名</strong>的标签和输入区域。<br />
-                    结果：两个位置都会显示通过 <code>Attributes</code> 配置的<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>" title="用户名">用户名</strong>提示。
+                    结果：两个位置都会显示通过 <code>Attributes</code> 配置的<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>"
+                        title="用户名">用户名</strong>提示。
                 </li>
                 <li>
                     分别悬停到<strong class="example-control-reference" data-example-control="<%= tbxPassword.ClientID %>" title="密码">密码</strong>的标签和输入区域。<br />
@@ -65,14 +65,22 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
             <ul>
-                <li>【<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>" title="用户名">用户名</strong>】的提示信息，在鼠标移动到标签和输入框时都会显示</li>
+                <li>【<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>"
+                        title="用户名">用户名</strong>】的提示信息，在鼠标移动到标签和输入框时都会显示</li>
                 <li>【密码】的提示信息，仅在鼠标移动到标签时才会显示</li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Attributes</code>（<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>" title="用户名">用户名</strong>）：在<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>" title="用户名">用户名</strong>字段容器设置 <code>data</code>-<code>qtitle</code> 和 <code>data</code>-<code>qtip</code>。</li>
-                <li><code>data-qtitle</code>（<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>" title="用户名">用户名</strong>、<strong class="example-control-reference" data-example-control="<%= tbxPassword.ClientID %>" title="密码">密码</strong>）：提示标题，本页分别为<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>" title="用户名">用户名</strong>、密码。</li>
-                <li><code>data-qtip</code>（<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>" title="用户名">用户名</strong>、<strong class="example-control-reference" data-example-control="<%= tbxPassword.ClientID %>" title="密码">密码</strong>）：提示正文；给密码仅设置到标签元素上。</li>
+                <li><code>Attributes</code>（<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>"
+                        title="用户名">用户名</strong>）：在<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>"
+                        title="用户名">用户名</strong>字段容器设置 <code>data</code>-<code>qtitle</code> 和 <code>data</code>-<code>qtip</code>。</li>
+                <li><code>data-qtitle</code>（<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>"
+                        title="用户名">用户名</strong>、<strong class="example-control-reference" data-example-control="<%= tbxPassword.ClientID %>"
+                        title="密码">密码</strong>）：提示标题，本页分别为<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>"
+                        title="用户名">用户名</strong>、密码。</li>
+                <li><code>data-qtip</code>（<strong class="example-control-reference" data-example-control="<%= tbxUserName.ClientID %>"
+                        title="用户名">用户名</strong>、<strong class="example-control-reference" data-example-control="<%= tbxPassword.ClientID %>"
+                        title="密码">密码</strong>）：提示正文；给密码仅设置到标签元素上。</li>
             </ul>
         </section>
     </template>

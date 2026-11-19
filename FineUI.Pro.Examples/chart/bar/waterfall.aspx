@@ -1,4 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="waterfall.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarWaterfall" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -7,35 +8,39 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartBarWaterfall" runat="server" Height="550px" DataCategoryField="Category"
-            Title="Waterfall Chart" Subtitle="Living Expenses in Shenzhen" TitleAlign="Left"
-            AxisPointerType="shadow">
+        <f:Chart ID="ChartBarWaterfall" runat="server" Height="550px" DataCategoryField="Category" Title="Waterfall Chart"
+            Subtitle="Living Expenses in Shenzhen" TitleAlign="Left" AxisPointerType="shadow">
             <Series>
-                <f:ChartSeries Key="placeholder" Type="Bar" Name="Placeholder" DataValueField="Offset"
-                    Stack="Total" ItemOpacity="0" ShowTooltip="false" />
-                <f:ChartSeries Key="cost" Type="Bar" Name="Life Cost" DataValueField="Cost" Stack="Total"
-                    ShowLabel="true" LabelPosition="inside" />
+                <f:ChartSeries Key="placeholder" Type="Bar" Name="Placeholder" DataValueField="Offset" Stack="Total" ItemOpacity="0" ShowTooltip="false" />
+                <f:ChartSeries Key="cost" Type="Bar" Name="Life Cost" DataValueField="Cost" Stack="Total" ShowLabel="true" LabelPosition="inside" />
             </Series>
         </f:Chart>
 
 
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>用透明占位系列抬高费用柱的起点，模拟瀑布图。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照瀑布图（柱状图模拟）</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarWaterfall").ClientID %>' title="Waterfall Chart">Waterfall Chart</strong>中的分类、数值和形状。<br />结果：透明占位柱和费用柱共用同一堆叠组。占位值抬高费用柱的起点，悬停时只显示费用。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-waterfall" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Stack</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarWaterfall").ClientID %>' title="Waterfall Chart">Waterfall Chart</strong>）：初始为 <code>Total</code>，占位和费用使用同一个堆叠组。例如 Rent 的 1200 元从占位值 1700 开始绘制。</li>
-        <li><code>ItemOpacity / ShowTooltip</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarWaterfall").ClientID %>' title="Waterfall Chart">Waterfall Chart</strong>）：初始分别为 <code>0</code>、<code>false</code>，这两项只设在占位系列。占位柱透明且仍参与堆叠，提示框只显示实际费用。</li>
-        <li><code>ShowLabel / LabelPosition</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarWaterfall").ClientID %>' title="Waterfall Chart">Waterfall Chart</strong>）：初始分别为 <code>true</code>、<code>inside</code>，在费用柱内部显示原始费用，例如 Rent 柱内显示 1200。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>用透明占位系列抬高费用柱的起点，模拟瀑布图。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照瀑布图（柱状图模拟）</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarWaterfall").ClientID %>'
+                        title="Waterfall Chart">Waterfall Chart</strong>中的分类、数值和形状。<br />结果：透明占位柱和费用柱共用同一堆叠组。占位值抬高费用柱的起点，悬停时只显示费用。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-waterfall" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Stack</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarWaterfall").ClientID %>' title="Waterfall Chart">Waterfall
+                        Chart</strong>）：初始为 <code>Total</code>，占位和费用使用同一个堆叠组。例如 Rent 的 1200 元从占位值 1700 开始绘制。</li>
+                <li><code>ItemOpacity / ShowTooltip</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarWaterfall").ClientID %>' title="Waterfall Chart">Waterfall
+                        Chart</strong>）：初始分别为 <code>0</code>、<code>false</code>，这两项只设在占位系列。占位柱透明且仍参与堆叠，提示框只显示实际费用。</li>
+                <li><code>ShowLabel / LabelPosition</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarWaterfall").ClientID %>' title="Waterfall Chart">Waterfall
+                        Chart</strong>）：初始分别为 <code>true</code>、<code>inside</code>，在费用柱内部显示原始费用，例如 Rent 柱内显示 1200。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

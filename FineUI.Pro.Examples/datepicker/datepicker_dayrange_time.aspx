@@ -8,14 +8,12 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
-            Title="简单表单" runat="server">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" Title="简单表单" runat="server">
             <Items>
-                <f:DatePicker runat="server" Required="true" DateFormatString="yyyy-MM-dd HH:mm:ss" Label="日期范围" EmptyText="请选择日期范围"
-                    ID="DatePicker1" ShowRedStar="true" DisplayType="DayRange" ShowTime="true">
+                <f:DatePicker runat="server" Required="true" DateFormatString="yyyy-MM-dd HH:mm:ss" Label="日期范围" EmptyText="请选择日期范围" ID="DatePicker1"
+                    ShowRedStar="true" DisplayType="DayRange" ShowTime="true">
                 </f:DatePicker>
-                <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单"
-                    OnClick="btnSubmit_Click">
+                <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click">
                 </f:Button>
             </Items>
         </f:SimpleForm>
@@ -39,8 +37,10 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="日期范围">日期范围</strong>）：初始为<code>yyyy-MM-dd HH:mm:ss</code>，控制选中值的文字格式。</li>
-                <li><code>ShowTime</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="日期范围">日期范围</strong>）：初始为 <code>true</code>，在日期选择中同时提供时间列。</li>
+                <li><code>DateFormatString</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="日期范围">日期范围</strong>）：初始为<code>yyyy-MM-dd HH:mm:ss</code>，控制选中值的文字格式。</li>
+                <li><code>ShowTime</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="日期范围">日期范围</strong>）：初始为 <code>true</code>，在日期选择中同时提供时间列。</li>
             </ul>
         </section>
     </template>

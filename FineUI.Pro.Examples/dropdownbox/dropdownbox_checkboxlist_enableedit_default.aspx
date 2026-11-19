@@ -8,13 +8,12 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉复选框列表" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉复选框列表"
+            ShowHeader="true">
             <Items>
                 <f:DropDownBox runat="server" ID="DropDownBox1" DataControlID="RadioButtonList1" EnableMultiSelect="true" EnableEdit="true">
                     <PopPanel>
-                        <f:SimpleForm ID="SimpleForm2" BodyPadding="10px" runat="server" AutoScroll="true"
-                            ShowBorder="true" ShowHeader="false" Hidden="true">
+                        <f:SimpleForm ID="SimpleForm2" BodyPadding="10px" runat="server" AutoScroll="true" ShowBorder="true" ShowHeader="false" Hidden="true">
                             <Items>
                                 <f:Label ID="Label1" runat="server" Text="请选择编程语言："></f:Label>
                                 <f:CheckBoxList ID="RadioButtonList1" ColumnNumber="3" runat="server">
@@ -35,8 +34,7 @@
                         </f:SimpleForm>
                     </PopPanel>
                 </f:DropDownBox>
-                <f:Button ID="btnSelectItem" Text="选中[php,basic]" runat="server" OnClick="btnSelectItem_Click"
-                    CssClass="marginr">
+                <f:Button ID="btnSelectItem" Text="选中[php,basic]" runat="server" OnClick="btnSelectItem_Click" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="btnSetText" Text="更新为[用户输入值]" runat="server" OnClick="btnSetText_Click" CssClass="marginr">
                 </f:Button>
@@ -60,7 +58,8 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>）：允许输入列表之外的文字，选中项与自由输入按不同方式读取。 本页声明值为 <code>true</code>。</li>
+                <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>）：允许输入列表之外的文字，选中项与自由输入按不同方式读取。 本页声明值为 <code>true</code>。</li>
             </ul>
         </section>
     </template>

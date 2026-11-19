@@ -9,12 +9,11 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="Panel5" IsFluid="true" runat="server" ShowBorder="true" EnableCollapse="false"
-            Layout="HBox" AutoScroll="true" BodyPadding="5"
+        <f:Panel ID="Panel5" IsFluid="true" runat="server" ShowBorder="true" EnableCollapse="false" Layout="HBox" AutoScroll="true" BodyPadding="5"
             ShowHeader="true" Title="面板（Layout=HBox AutoScroll=true）">
             <Items>
-                <f:Panel ID="Panel1" Title="面板1" BoxFlex="1" runat="server" MarginRight="5px"
-                    BodyPadding="10px" ShowBorder="true" ShowHeader="false" Layout="VBox">
+                <f:Panel ID="Panel1" Title="面板1" BoxFlex="1" runat="server" MarginRight="5px" BodyPadding="10px" ShowBorder="true" ShowHeader="false"
+                    Layout="VBox">
                     <Items>
                         <f:TextBox runat="server" Label="姓名" ShowRedStar="true" Required="true"></f:TextBox>
                         <f:DropDownList Label="性别" ShowRedStar="true" Required="true" runat="server">
@@ -24,10 +23,10 @@
                         <f:TextArea Label="个人简介" MarginBottom="0" runat="server" BoxFlex="1"></f:TextArea>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="Panel2" Title="面板2" BoxFlex="1"
-                    runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
+                <f:Panel ID="Panel2" Title="面板2" BoxFlex="1" runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="false">
                     <Items>
-                        <f:Label ID="Label3" runat="server" EncodeText="false" Text="BoxFlex=1<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>bottom line">
+                        <f:Label ID="Label3" runat="server" EncodeText="false"
+                            Text="BoxFlex=1<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>bottom line">
                         </f:Label>
                     </Items>
                 </f:Panel>
@@ -35,19 +34,26 @@
         </f:Panel>
 
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示在多层嵌套的水平盒布局中逐层计算内容高度。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>' title="面板（Layout=HBox AutoScroll=true）">面板（Layout=HBox AutoScroll=true）</strong>中对照外层、内层各组面板的底边。<br />结果：内层自然高度向外层传递，外层能包含本页完整内容。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>' title="面板（Layout=HBox AutoScroll=true）">面板（Layout=HBox AutoScroll=true）</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板1">面板1</strong>）：各组分别设为<code>HBox</code>、<code>VBox</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。</li>
-        <li><code>Height</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>' title="面板（Layout=HBox AutoScroll=true）">面板（Layout=HBox AutoScroll=true）</strong>）：显式高度限定可用区域；未设置固定高度的对照组按内容和父布局计算。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示在多层嵌套的水平盒布局中逐层计算内容高度。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>'
+                        title="面板（Layout=HBox AutoScroll=true）">面板（Layout=HBox AutoScroll=true）</strong>中对照外层、内层各组面板的底边。<br />结果：内层自然高度向外层传递，外层能包含本页完整内容。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Layout</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>'
+                        title="面板（Layout=HBox AutoScroll=true）">面板（Layout=HBox AutoScroll=true）</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="面板1">面板1</strong>）：各组分别设为<code>HBox</code>、<code>VBox</code>，父容器使用本页对应的布局方式，决定其直接子项的排列。</li>
+                <li><code>Height</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>'
+                        title="面板（Layout=HBox AutoScroll=true）">面板（Layout=HBox AutoScroll=true）</strong>）：显式高度限定可用区域；未设置固定高度的对照组按内容和父布局计算。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

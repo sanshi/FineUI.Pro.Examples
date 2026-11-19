@@ -8,8 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy-MM-dd HH:mm:ss"
-            OnDateSelect="Calendar1_DateSelect" ID="Calendar1" ShowTime="true" StackDateTime="true">
+        <f:Calendar runat="server" EnableDateSelectEvent="true" DateFormatString="yyyy-MM-dd HH:mm:ss" OnDateSelect="Calendar1_DateSelect" ID="Calendar1"
+            ShowTime="true" StackDateTime="true">
         </f:Calendar>
         <br />
         <br />
@@ -34,7 +34,8 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>StackDateTime</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>" title="日历">日历</strong>）：初始为 <code>true</code>，日期网格与时间列上下排列，适合较窄的面板。</li>
+                <li><code>StackDateTime</code>（<strong class="example-control-reference" data-example-control="<%= Calendar1.ClientID %>"
+                        title="日历">日历</strong>）：初始为 <code>true</code>，日期网格与时间列上下排列，适合较窄的面板。</li>
             </ul>
         </section>
     </template>

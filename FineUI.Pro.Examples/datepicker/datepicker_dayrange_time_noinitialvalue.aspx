@@ -8,14 +8,12 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
-            Title="简单表单" runat="server">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" Title="简单表单" runat="server">
             <Items>
-                <f:DatePicker runat="server" Required="true" DateFormatString="yyyy-MM-dd HH:mm:ss" Label="日期范围" EmptyText="请选择日期范围"
-                    ID="DatePicker1" ShowRedStar="true" DisplayType="DayRange" ShowTime="true">
+                <f:DatePicker runat="server" Required="true" DateFormatString="yyyy-MM-dd HH:mm:ss" Label="日期范围" EmptyText="请选择日期范围" ID="DatePicker1"
+                    ShowRedStar="true" DisplayType="DayRange" ShowTime="true">
                 </f:DatePicker>
-                <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单"
-                    OnClick="btnSubmit_Click">
+                <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click">
                 </f:Button>
             </Items>
         </f:SimpleForm>
@@ -29,7 +27,8 @@
             <h3><i class="f-icon f-iconfont f-iconfont-calendar" aria-hidden="true"></i>选择日期时间范围</h3>
             <ol>
                 <li>
-                    先观察初始输入框为空，再点击<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="日期范围">日期范围</strong>字段右侧的下拉图标。<br />
+                    先观察初始输入框为空，再点击<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="日期范围">日期范围</strong>字段右侧的下拉图标。<br />
                     结果：显示本页日期时间范围面板，可同时调整时、分；输入框当前值仍可对照查看。
                 </li>
                 <li>
@@ -39,8 +38,10 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>RangeStartDate</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="日期范围">日期范围</strong>）：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围起点，与终点共同组成当前范围。</li>
-                <li><code>RangeEndDate</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="日期范围">日期范围</strong>）：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围终点，与起点共同组成当前范围。</li>
+                <li><code>RangeStartDate</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="日期范围">日期范围</strong>）：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围起点，与终点共同组成当前范围。</li>
+                <li><code>RangeEndDate</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="日期范围">日期范围</strong>）：本页首次加载不预先赋值；完成选择后，才保存对应的当前值。本页初始不赋范围值；设置范围终点，与起点共同组成当前范围。</li>
             </ul>
         </section>
     </template>

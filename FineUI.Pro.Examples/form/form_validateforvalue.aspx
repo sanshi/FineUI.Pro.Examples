@@ -10,20 +10,17 @@
         <f:PageManager ID="PageManager1" runat="server" />
         <f:SimpleForm IsFluid="true" BodyPadding="10px" ID="SimpleForm1" runat="server" Title="表单">
             <Items>
-                <f:DropDownList ID="DropDownList1" Label="List1" runat="server" ShowRedStar="true"
-                    Required="true" MinLength="3">
+                <f:DropDownList ID="DropDownList1" Label="List1" runat="server" ShowRedStar="true" Required="true" MinLength="3">
                     <f:ListItem Text="甲" Value="301"></f:ListItem>
                     <f:ListItem Text="老大乙" Value="201"></f:ListItem>
                     <f:ListItem Text="老大丙" Value="101"></f:ListItem>
                 </f:DropDownList>
-                <f:DropDownList ID="DropDownList3" Label="List2" runat="server" ShowRedStar="true"
-                    Required="true" MinLength="3" ValidateForValue="true">
+                <f:DropDownList ID="DropDownList3" Label="List2" runat="server" ShowRedStar="true" Required="true" MinLength="3" ValidateForValue="true">
                     <f:ListItem Text="老大甲（Value=0）" Value="0"></f:ListItem>
                     <f:ListItem Text="老大乙（Value=201）" Value="201"></f:ListItem>
                     <f:ListItem Text="老大丙（Value=101）" Value="101"></f:ListItem>
                 </f:DropDownList>
-                <f:Button ID="btnSubmit" Text="验证此表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmit_Click"
-                    ValidateForms="SimpleForm1">
+                <f:Button ID="btnSubmit" Text="验证此表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmit_Click" ValidateForms="SimpleForm1">
                 </f:Button>
             </Items>
         </f:SimpleForm>
@@ -34,22 +31,34 @@
             <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>比较文本与值的长度</h3>
             <ol>
                 <li>
-                    <strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="List1">List1</strong> 选择<code>甲</code>，<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>" title="List2">List2</strong> 选择值为 <code>201</code> 的选项，然后点击<strong class="example-control-reference" data-example-control="<%= btnSubmit.ClientID %>" title="验证此表单并提交">验证此表单并提交</strong>。<br />
-                    结果：<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="List1">List1</strong> 按显示文字验证，“甲”不足 <code>3</code> 个字符，不能通过。
+                    <strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="List1">List1</strong>
+                    选择<code>甲</code>，<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>" title="List2">List2</strong>
+                    选择值为 <code>201</code> 的选项，然后点击<strong class="example-control-reference" data-example-control="<%= btnSubmit.ClientID %>"
+                        title="验证此表单并提交">验证此表单并提交</strong>。<br />
+                    结果：<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="List1">List1</strong> 按显示文字验证，“甲”不足
+                    <code>3</code> 个字符，不能通过。
                 </li>
                 <li>
-                    关闭提示，把 <strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="List1">List1</strong> 改为<code>老大乙</code>，<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>" title="List2">List2</strong> 改为<code>老大甲（Value=0）</code>，再次提交。<br />
-                    结果：<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="List1">List1</strong> 的三个文字通过；<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>" title="List2">List2</strong> 按选项值验证，值 <code>0</code> 只有一个字符，仍失败。
+                    关闭提示，把 <strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="List1">List1</strong>
+                    改为<code>老大乙</code>，<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>"
+                        title="List2">List2</strong> 改为<code>老大甲（Value=0）</code>，再次提交。<br />
+                    结果：<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="List1">List1</strong>
+                    的三个文字通过；<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>" title="List2">List2</strong> 按选项值验证，值
+                    <code>0</code> 只有一个字符，仍失败。
                 </li>
                 <li>
-                    关闭提示，把 <strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>" title="List2">List2</strong> 改为值 <code>201</code> 的“老大乙”，再次提交。<br />
+                    关闭提示，把 <strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>" title="List2">List2</strong> 改为值
+                    <code>201</code> 的“老大乙”，再次提交。<br />
                     结果：两个列表都达到最小长度，后台显示表单当前值。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ValidateForValue</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>" title="List2">List2</strong>）：<code>List2</code> 设为 <code>true</code>，验证选项值；<code>List1</code> 默认验证显示文字。</li>
-                <li><code>MinLength</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="List1">List1</strong>、<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>" title="List2">List2</strong>）：两个列表都设为 <code>3</code>。</li>
+                <li><code>ValidateForValue</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>"
+                        title="List2">List2</strong>）：<code>List2</code> 设为 <code>true</code>，验证选项值；<code>List1</code> 默认验证显示文字。</li>
+                <li><code>MinLength</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="List1">List1</strong>、<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>"
+                        title="List2">List2</strong>）：两个列表都设为 <code>3</code>。</li>
             </ul>
         </section>
     </template>

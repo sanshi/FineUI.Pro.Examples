@@ -33,9 +33,10 @@
             margin: 0;
         }
 
-            ul.list li {
-                margin-bottom: 5px;
-            }
+        ul.list li {
+            margin-bottom: 5px;
+        }
+
     </style>
 </head>
 <body>
@@ -43,11 +44,11 @@
         <f:PageManager ID="PageManager1" runat="server"></f:PageManager>
         <h2 style="margin-top: 0;">FineUI.Pro</h2>
         .NET 企业级全栈 UI 框架
-                                        
+
         <br />
         <h2>FineUI的使命</h2>
         创建 No JavaScript，No CSS，No UpdatePanel，No ViewState 的网站应用程序
-                                        
+
         <br />
         <h2>支持的浏览器</h2>
         Chrome、Firefox、Safari、Edge
@@ -55,7 +56,7 @@
         <br />
         <h2>授权协议</h2>
         商业授权
-                                            
+
         <br />
         <h2>相关链接</h2>
         <ul class="list">

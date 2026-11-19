@@ -10,9 +10,8 @@
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
 
-        <f:Panel ID="Panel1" Title="Panel1" runat="server" AutoScroll="true"
-            ShowBorder="true" EnableCollapse="false"
-            ShowHeader="true" Layout="HBox" IsFluid="true">
+        <f:Panel ID="Panel1" Title="Panel1" runat="server" AutoScroll="true" ShowBorder="true" EnableCollapse="false" ShowHeader="true" Layout="HBox"
+            IsFluid="true">
             <Items>
                 <f:Panel ID="Panel2" Title="Panel2" runat="server" ShowBorder="true" ShowHeader="true" BoxFlex="2" Layout="VBox" Margin="0 5px 0 0">
                     <Items>
@@ -25,13 +24,13 @@
 
 
         注：如果设置了 Panel1 的 AutoScroll="true" 属性，每次缩小页面宽度时，都会先出现横向滚动条，此时计算的高度就会多出17px。
-        所以在 HBox 的布局代码中： 
+        所以在 HBox 的布局代码中：
         <br />
         var bodyHeight = me._fjs_getBodyElHeight();
         <br />
         由下述代码取代：
         <br />
-		var bodyHeight = util._fjs_noScrollbarHeight(me._fjs_bodyEl);
+        var bodyHeight = util._fjs_noScrollbarHeight(me._fjs_bodyEl);
 
 
     </form>

@@ -4,7 +4,8 @@
 <html>
 <head runat="server">
     <title>顶部菜单框架（中间区域选项卡）</title>
-    <meta name="sourcefiles" content="~/iframe/topmenu4/leftmenu.aspx;~/iframe/topmenu4/data/menuMail.xml;~/iframe/topmenu4/data/menuSMS.xml;~/iframe/topmenu4/data/menuSYS.xml;" />
+    <meta name="sourcefiles"
+        content="~/iframe/topmenu4/leftmenu.aspx;~/iframe/topmenu4/data/menuMail.xml;~/iframe/topmenu4/data/menuSMS.xml;~/iframe/topmenu4/data/menuSYS.xml;" />
     <style>
         .centerregion {
             border-left-width: 0;
@@ -16,14 +17,12 @@
             border-collapse: collapse;
         }
 
-            #header table td {
-                padding: 0;
-            }
-
-
-        #header .logotd {
-            
+        #header table td {
+            padding: 0;
         }
+
+
+        #header .logotd {}
 
         #header .actionstd {
             text-align: right;
@@ -57,6 +56,7 @@
             font-size: 12px;
             line-height: 16px;
         }
+
     </style>
 </head>
 <body>
@@ -64,7 +64,8 @@
         <f:PageManager ID="PageManager1" AutoSizePanelID="RegionPanel1" runat="server"></f:PageManager>
         <f:Panel ID="RegionPanel1" CssClass="mainpanel" Layout="Region" ShowBorder="false" ShowHeader="false" runat="server">
             <Items>
-                <f:ContentPanel ID="topPanel" CssClass="topregion bgpanel" RegionPosition="Top" ShowBorder="false" ShowHeader="false" EnableCollapse="false" runat="server">
+                <f:ContentPanel ID="topPanel" CssClass="topregion bgpanel" RegionPosition="Top" ShowBorder="false" ShowHeader="false" EnableCollapse="false"
+                    runat="server">
                     <div id="header" class="f-widget-header f-mainheader">
                         <table>
                             <tr>
@@ -73,29 +74,29 @@
                                     </a>
                                 </td>
                                 <td class="actionstd">
-                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-mail f-state-active" ID="btnMail" Text="邮件收发" 
-                                        IconAlign="Top" IconFont="EnvelopeO" EnableDefaultState="false" EnableDefaultCorner="false">
+                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-mail f-state-active" ID="btnMail" Text="邮件收发" IconAlign="Top"
+                                        IconFont="EnvelopeO" EnableDefaultState="false" EnableDefaultCorner="false">
                                     </f:Button>
-                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-sms" ID="btnSMS" Text="短信收发" 
-                                        IconAlign="Top" IconFont="MobilePhone" EnableDefaultState="false" EnableDefaultCorner="false">
+                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-sms" ID="btnSMS" Text="短信收发" IconAlign="Top"
+                                        IconFont="MobilePhone" EnableDefaultState="false" EnableDefaultCorner="false">
                                     </f:Button>
-                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-sys" ID="btnSYS" Text="系统管理" 
-                                        IconAlign="Top" IconFont="Cog" EnableDefaultState="false" EnableDefaultCorner="false">
+                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-sys" ID="btnSYS" Text="系统管理" IconAlign="Top" IconFont="Cog"
+                                        EnableDefaultState="false" EnableDefaultCorner="false">
                                     </f:Button>
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </f:ContentPanel>
-                <f:Panel runat="server" ID="leftPanel" CssClass="leftregion" RegionPosition="Left" RegionSplit="false" EnableCollapse="false"
-                    Width="260px" Title="系统菜单" ShowBorder="true" ShowHeader="false" EnableIFrame="true" IFrameName="leftframe" IFrameUrl="./leftmenu.aspx">
+                <f:Panel runat="server" ID="leftPanel" CssClass="leftregion" RegionPosition="Left" RegionSplit="false" EnableCollapse="false" Width="260px"
+                    Title="系统菜单" ShowBorder="true" ShowHeader="false" EnableIFrame="true" IFrameName="leftframe" IFrameUrl="./leftmenu.aspx">
                 </f:Panel>
-                <f:TabStrip ID="mainTabStrip" CssClass="centerregion" ShowInkBar="true" RegionPosition="Center" EnableTabCloseMenu="true" ShowBorder="true" runat="server">
+                <f:TabStrip ID="mainTabStrip" CssClass="centerregion" ShowInkBar="true" RegionPosition="Center" EnableTabCloseMenu="true" ShowBorder="true"
+                    runat="server">
                     <Tabs>
                         <f:Tab ID="Tab1" Title="首页" Layout="Fit" Icon="House" CssClass="maincontent" runat="server">
                             <Items>
-                                <f:ContentPanel ID="ContentPanel1" ShowBorder="false" BodyPadding="10px" ShowHeader="false" AutoScroll="true"
-                                    runat="server">
+                                <f:ContentPanel ID="ContentPanel1" ShowBorder="false" BodyPadding="10px" ShowHeader="false" AutoScroll="true" runat="server">
                                     首页内容
                                 </f:ContentPanel>
                             </Items>
@@ -110,7 +111,7 @@
         var mainTabStripClientID = '<%= mainTabStrip.ClientID %>';
         var leftPanelID = '<%= leftPanel.ClientID %>';
 
-        F.ready(function () {
+        F.ready(function() {
 
             var menuLis = $('#header .topmenu');
 
@@ -124,7 +125,7 @@
             }
 
             // 点击顶部菜单，加载左侧IFrame菜单
-            menuLis.click(function (e) {
+            menuLis.click(function(e) {
                 var cnode = $(this);
                 var classNames = /menu\-(\w+)/.exec(cnode.attr('class'));
                 if (classNames.length == 2) {
@@ -144,7 +145,7 @@
             }
 
 
-            window.initTreeTabStrip = function (tree) {
+            window.initTreeTabStrip = function(tree) {
                 // 初始化主框架中的树(或者Accordion+Tree)和选项卡互动，以及地址栏的更新
                 // treeMenu： 主框架中的树控件实例，或者内嵌树控件的手风琴控件实例
                 // mainTabStrip： 选项卡实例
@@ -159,7 +160,6 @@
 
 
         });
-
 
     </script>
 </body>

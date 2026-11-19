@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Form BodyPadding="10px" ID="Form2" IsFluid="true" EnableCollapse="false"
-            Title="表单" LabelWidth="120px" LabelAlign="Top" runat="server">
+        <f:Form BodyPadding="10px" ID="Form2" IsFluid="true" EnableCollapse="false" Title="表单" LabelWidth="120px" LabelAlign="Top" runat="server">
             <Rows>
                 <f:FormRow>
                     <Items>
@@ -21,34 +20,45 @@
         </f:Form>
 
 
-        <f:Button ID="Button1" runat="server" ValidateForms="Form2" ValidateTarget="Top"
-            Text="验证表单并提交" OnClick="Button1_Click">
+        <f:Button ID="Button1" runat="server" ValidateForms="Form2" ValidateTarget="Top" Text="验证表单并提交" OnClick="Button1_Click">
         </f:Button>
 
     </form>
     <template id="example-description">
         <section aria-label="页面描述">
-            <p>演示后台创建<strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true" title="用户名">用户名</strong><strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true" title="用户名">文本框</strong>和性别<strong class="example-control-reference" data-example-control="ddlGender" data-example-control-deferred="true" title="性别（自动回发）">下拉列表</strong>，并处理动态字段的校验、变化事件与提交。</p>
+            <p>演示后台创建<strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true"
+                    title="用户名">用户名</strong><strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true"
+                    title="用户名">文本框</strong>和性别<strong class="example-control-reference" data-example-control="ddlGender" data-example-control-deferred="true"
+                    title="性别（自动回发）">下拉列表</strong>，并处理动态字段的校验、变化事件与提交。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>操作动态字段</h3>
             <ol>
                 <li>
-                    <strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true" title="用户名">用户名</strong>留空，点击<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="验证表单并提交">验证表单并提交</strong>。<br />
-                    结果：动态<strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true" title="用户名">用户名</strong>字段显示必填错误，提交业务不执行。
+                    <strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true"
+                        title="用户名">用户名</strong>留空，点击<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>"
+                        title="验证表单并提交">验证表单并提交</strong>。<br />
+                    结果：动态<strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true"
+                        title="用户名">用户名</strong>字段显示必填错误，提交业务不执行。
                 </li>
                 <li>
                     在性别列表选择<code>女</code>。<br />
                     结果：选择事件回发，提示“选择的性别：女”。
                 </li>
                 <li>
-                    <strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true" title="用户名">用户名</strong>输入<code>tom</code>，再次点击<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="验证表单并提交">验证表单并提交</strong>。<br />
-                    结果：后台读取动态字段的当前值，提示<strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true" title="用户名">用户名</strong><code>tom</code>及当前性别；字段仍留在原表单中。
+                    <strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true"
+                        title="用户名">用户名</strong>输入<code>tom</code>，再次点击<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>"
+                        title="验证表单并提交">验证表单并提交</strong>。<br />
+                    结果：后台读取动态字段的当前值，提示<strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true"
+                        title="用户名">用户名</strong><code>tom</code>及当前性别；字段仍留在原表单中。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：<strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true" title="用户名">用户名</strong>和性别两个控件是动态创建的。</p>
+            <p>注：<strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true"
+                    title="用户名">用户名</strong>和性别两个控件是动态创建的。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ID</code>（<strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true" title="用户名">用户名</strong>、<strong class="example-control-reference" data-example-control="ddlGender" data-example-control-deferred="true" title="性别（自动回发）">性别（自动回发）</strong>）：动态字段使用稳定标识 <code>tbxUserName</code>、<code>ddlGender</code>，后台据此读取当前值。</li>
+                <li><code>ID</code>（<strong class="example-control-reference" data-example-control="tbxUserName" data-example-control-deferred="true"
+                        title="用户名">用户名</strong>、<strong class="example-control-reference" data-example-control="ddlGender" data-example-control-deferred="true"
+                        title="性别（自动回发）">性别（自动回发）</strong>）：动态字段使用稳定标识 <code>tbxUserName</code>、<code>ddlGender</code>，后台据此读取当前值。</li>
             </ul>
         </section>
     </template>

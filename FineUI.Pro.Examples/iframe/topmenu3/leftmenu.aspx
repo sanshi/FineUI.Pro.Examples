@@ -8,16 +8,15 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="leftAccordion" runat="server"></f:PageManager>
-        <f:Accordion runat="server" EnableFill="false" ShowBorder="false" ShowHeader="false"
-            ID="leftAccordion" CssClass="bgpanel">
+        <f:Accordion runat="server" EnableFill="false" ShowBorder="false" ShowHeader="false" ID="leftAccordion" CssClass="bgpanel">
         </f:Accordion>
         <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/iframe/topmenu3/data/menuMail.xml"></asp:XmlDataSource>
     </form>
-    
+
     <script>
         var leftAccordionID = '<%= leftAccordion.ClientID %>';
 
-        F.ready(function () {
+        F.ready(function() {
 
             if (!F(leftAccordionID)) return;
 
@@ -31,6 +30,7 @@
             parent.window.frames['menu3mainframe'].location.href = treeFirstChild.href;
 
         });
+
     </script>
 </body>
 </html>

@@ -5,7 +5,6 @@
 <head runat="server">
     <title></title>
     <style>
-
         .myimage img {
             width: 36px;
             height: 36px;
@@ -25,12 +24,11 @@
 
     </form>
     <script>
-
         var image1ClientID = '<%= Image1.ClientID %>';
 
-        F.ready(function () {
+        F.ready(function() {
 
-            F(image1ClientID).el.on('click', function (event) {
+            F(image1ClientID).el.on('click', function(event) {
                 F.alert('当前图片的地址是：' + $(this).find('img').attr('src'));
             });
 
@@ -55,7 +53,9 @@
             <p>注：在 <code>F.ready</code> 中注册图片的点击事件。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="改变图片">改变图片</strong>）：<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="改变图片">改变图片</strong>按钮回发更新图片地址。</li>
+                <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>"
+                        title="改变图片">改变图片</strong>）：<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>"
+                        title="改变图片">改变图片</strong>按钮回发更新图片地址。</li>
             </ul>
         </section>
     </template>

@@ -1,21 +1,28 @@
 <%@ Page Language="C#" ValidateRequest="false" AutoEventWireup="true" CodeBehind="toolbar.aspx.cs" Inherits="FineUI.Pro.Examples.htmleditor.toolbar" %>
+
 <!DOCTYPE html>
-<html><head runat="server"><title>自定义工具栏</title>
-</head><body>
-<form id="form1" runat="server">
-    <f:PageManager ID="PageManager1" runat="server" />
-    <f:SimpleForm ID="SimpleForm1" runat="server" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="自定义工具栏">
-        <Items>
-            <f:HtmlEditor runat="server" ID="HtmlEditor1" Label="正文" Height="320" Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" Readonly="false" ToolbarSet="Basic" />
-            
-            <f:TextArea runat="server" ID="TextArea1" Label="HTML 内容" Height="120" Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" />
-            <f:Button runat="server" ID="Button1" Text="获取编辑器内容" CssClass="marginr" OnClick="Button1_Click" />
-            <f:Button runat="server" ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
-        </Items>
-    </f:SimpleForm>
+<html>
+<head runat="server">
+    <title>自定义工具栏</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <f:PageManager ID="PageManager1" runat="server" />
+        <f:SimpleForm ID="SimpleForm1" runat="server" IsFluid="true" BodyPadding="10" LabelAlign="Top" Title="自定义工具栏">
+            <Items>
+                <f:HtmlEditor runat="server" ID="HtmlEditor1" Label="正文" Height="320"
+                    Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;"
+                    Readonly="false" ToolbarSet="Basic" />
+
+                <f:TextArea runat="server" ID="TextArea1" Label="HTML 内容" Height="120"
+                    Text="&lt;p&gt;FineUI 富文本编辑器&lt;/p&gt;&lt;p&gt;选择文字，试试&lt;strong&gt;加粗&lt;/strong&gt;、&lt;em&gt;斜体&lt;/em&gt;和列表。&lt;/p&gt;" />
+                <f:Button runat="server" ID="Button1" Text="获取编辑器内容" CssClass="marginr" OnClick="Button1_Click" />
+                <f:Button runat="server" ID="Button2" Text="设置编辑器内容" OnClick="Button2_Click" />
+            </Items>
+        </f:SimpleForm>
 
 
-</form>
+    </form>
     <template id="example-description">
         <section aria-label="页面描述">
             <p>演示用显式工具栏数组选择按钮和排列顺序，并覆盖默认预设。</p>
@@ -29,13 +36,17 @@
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>工具栏配置参考</h3>
             <p>通过 <code>Options</code> 中键名为 <code>toolbar</code> 的数组 选择按钮，本例的配置如下：</p>
             <p><code>["bold", "italic", "underline", "|", "bulletList", "link", "source"]</code></p>
-            <p>显式配置会替换 <code>ToolbarSet</code> 预设，按钮按数组顺序显示；<code>"|"</code> 表示分隔线，需要源码按钮时将 <code>source</code> 放在最后。不设置此数组时使用 <code>Basic</code> 或 <code>Full</code> 预设。</p>
+            <p>显式配置会替换 <code>ToolbarSet</code> 预设，按钮按数组顺序显示；<code>"|"</code> 表示分隔线，需要源码按钮时将 <code>source</code> 放在最后。不设置此数组时使用 <code>Basic</code> 或
+                <code>Full</code> 预设。
+            </p>
             <p>以下分组适用于内置编辑器 <code>Editor.Default</code>（纯 JS 配置值为 <code>default</code>）；旧第三方编辑器仍使用各自的参数。</p>
             <p><strong>支持的工具栏项</strong>（分组、配置值与功能）</p>
             <ul>
                 <li><strong>编辑操作</strong>：<span><code>undo</code>（撤销）</span> <span><code>redo</code>（重做）</span> <span><code>clear</code>（清除格式）</span></li>
                 <li><strong>段落</strong>：<span><code>heading</code>（正文／标题）</span> <span><code>quote</code>（引用）</span> <span><code>rule</code>（水平分隔线）</span></li>
-                <li><strong>文字样式</strong>：<span><code>bold</code>（加粗）</span> <span><code>italic</code>（斜体）</span> <span><code>underline</code>（下划线）</span> <span><code>strike</code>（删除线）</span></li>
+                <li><strong>文字样式</strong>：<span><code>bold</code>（加粗）</span> <span><code>italic</code>（斜体）</span> <span><code>underline</code>（下划线）</span>
+                    <span><code>strike</code>（删除线）</span>
+                </li>
                 <li><strong>字体字号</strong>：<span><code>fontFamily</code>（字体）</span> <span><code>fontSize</code>（字号）</span></li>
                 <li><strong>颜色</strong>：<span><code>color</code>（文字颜色）</span> <span><code>background</code>（背景颜色）</span></li>
                 <li><strong>列表</strong>：<span><code>orderedList</code>（有序列表）</span> <span><code>bulletList</code>（无序列表）</span></li>
@@ -46,9 +57,15 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ToolbarSet</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>" title="正文">正文</strong>）：本页预设为 <code>Basic</code>；<code>Full</code> 额外提供字体、字号、颜色、对齐等命令。</li>
-                <li><code>Options</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>" title="正文">正文</strong>）：<code>toolbar</code> 数组为 <code>bold</code>、<code>italic</code>、<code>underline</code>、|、<code>bulletList</code>、<code>link</code>、<code>source</code>；| 为分隔线，<code>source</code> 放最后。</li>
+                <li><code>ToolbarSet</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>"
+                        title="正文">正文</strong>）：本页预设为 <code>Basic</code>；<code>Full</code> 额外提供字体、字号、颜色、对齐等命令。</li>
+                <li><code>Options</code>（<strong class="example-control-reference" data-example-control="<%= HtmlEditor1.ClientID %>"
+                        title="正文">正文</strong>）：<code>toolbar</code> 数组为
+                    <code>bold</code>、<code>italic</code>、<code>underline</code>、|、<code>bulletList</code>、<code>link</code>、<code>source</code>；|
+                    为分隔线，<code>source</code> 放最后。
+                </li>
             </ul>
         </section>
     </template>
-</body></html>
+</body>
+</html>

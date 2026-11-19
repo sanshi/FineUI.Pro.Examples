@@ -8,8 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" Width="500" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉列表（MatchFieldWidth）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" Width="500" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉列表（MatchFieldWidth）"
+            ShowHeader="true">
             <Items>
                 <f:DropDownList runat="server" ID="DropDownList1" MatchFieldWidth="false">
                     <f:ListItem Text="可选项1" Value="Value1" Selected="true" />
@@ -33,8 +33,7 @@
                     <f:ListItem Text="十个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的可选择项" Value="Value20" />
                 </f:DropDownList>
 
-                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click"
-                    CssClass="marginr">
+                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" runat="server" OnClick="btnGetSelection_Click">
                 </f:Button>
@@ -56,7 +55,8 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>MatchFieldWidth</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：为 <code>false</code> 时弹出面板可以宽于字段，空间不足时由控件调整位置。 本页声明值为 <code>false</code>。</li>
+                <li><code>MatchFieldWidth</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：为 <code>false</code> 时弹出面板可以宽于字段，空间不足时由控件调整位置。 本页声明值为 <code>false</code>。</li>
             </ul>
         </section>
     </template>

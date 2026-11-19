@@ -9,29 +9,31 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Window ID="Window1" runat="server" Title="窗体一（MinHeight=300，请尝试改变高度）" Top="50px" Left="100px" Width="550px" MinHeight="300"
-            BodyPadding="10px" EnableCollapse="false" ShowBorder="true" EnableResize="true" IsModal="false" AutoScroll="true">
+        <f:Window ID="Window1" runat="server" Title="窗体一（MinHeight=300，请尝试改变高度）" Top="50px" Left="100px" Width="550px" MinHeight="300" BodyPadding="10px"
+            EnableCollapse="false" ShowBorder="true" EnableResize="true" IsModal="false" AutoScroll="true">
             <Content>
                 <p>
                     <a href="http://tech.163.com/special/jobsdead/" target="_blank"><b>乔布斯</b></a>
                 </p>
                 <p>
-                    乔布斯于1955年2月24日出生，苹果创始人之一。今年8月苹果超越埃克森美孚成为全球最大市值企业，截止上季度持有现金达到762亿美金，甚至超过了美国政府国库存款。 
+                    乔布斯于1955年2月24日出生，苹果创始人之一。今年8月苹果超越埃克森美孚成为全球最大市值企业，截止上季度持有现金达到762亿美金，甚至超过了美国政府国库存款。
                 </p>
                 <p>
-                    遗憾的是，苹果的取得巨大成功还是无法给乔布斯一个健康的身体，乔布斯2003年被发现患有胰脏癌，随后又查出肝癌，危在旦夕的乔布斯在经历了8年的抗癌斗争、3次病休、若干次手术后，于2011年8月25日正式宣布从CEO位置辞职。2011年10月6日，乔布斯在苹果发布iPhone 4S后的第二天与世长辞。
+                    遗憾的是，苹果的取得巨大成功还是无法给乔布斯一个健康的身体，乔布斯2003年被发现患有胰脏癌，随后又查出肝癌，危在旦夕的乔布斯在经历了8年的抗癌斗争、3次病休、若干次手术后，于2011年8月25日正式宣布从CEO位置辞职。2011年10月6日，乔布斯在苹果发布iPhone
+                    4S后的第二天与世长辞。
                 </p>
             </Content>
         </f:Window>
 
-        <f:Window ID="Window2" runat="server" Title="窗体二（Height=300，请尝试改变高度）" Top="150px" Left="250px" Width="550px" Height="300"
-            BodyPadding="10px" EnableCollapse="false" ShowBorder="true" EnableResize="true" IsModal="false" AutoScroll="true">
+        <f:Window ID="Window2" runat="server" Title="窗体二（Height=300，请尝试改变高度）" Top="150px" Left="250px" Width="550px" Height="300" BodyPadding="10px"
+            EnableCollapse="false" ShowBorder="true" EnableResize="true" IsModal="false" AutoScroll="true">
             <Content>
                 <p>
                     <a href="http://baike.baidu.com/view/3645.htm" target="_blank"><b>比尔·盖茨</b></a>
                 </p>
                 <p>
-                    比尔·盖茨（Bill Gates），全名威廉·亨利·盖茨三世，简称比尔或盖茨。1955年10月28日出生于美国华盛顿州西雅图，13岁开始计算机编程设计，18岁考入哈佛大学，一年后从哈佛退学，1975年与好友保罗·艾伦一起创办了微软公司，比尔盖茨担任微软公司董事长、CEO和首席软件设计师。
+                    比尔·盖茨（Bill
+                    Gates），全名威廉·亨利·盖茨三世，简称比尔或盖茨。1955年10月28日出生于美国华盛顿州西雅图，13岁开始计算机编程设计，18岁考入哈佛大学，一年后从哈佛退学，1975年与好友保罗·艾伦一起创办了微软公司，比尔盖茨担任微软公司董事长、CEO和首席软件设计师。
                 </p>
                 <p>
                     比尔·盖茨1995-2007年连续13年成为《福布斯》全球富翁榜首富，连续20年成为《福布斯》美国富翁榜首富。
@@ -40,19 +42,24 @@
         </f:Window>
 
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示为自动内容高度设置最小高度。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体一（MinHeight=300，请尝试改变高度）">窗体一（MinHeight=300，请尝试改变高度）</strong>中对照内容较少的面板与设定的下边界。<br />结果：内容不足时仍保留最小高度；内容更多时可按本页布局继续扩展。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>MinHeight</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="窗体一（MinHeight=300，请尝试改变高度）">窗体一（MinHeight=300，请尝试改变高度）</strong>）：初始为<code>300</code>，内容较少时仍保留该最小高度。</li>
-        <li><code>Height</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window2").ClientID %>' title="窗体二（Height=300，请尝试改变高度）">窗体二（Height=300，请尝试改变高度）</strong>）：初始为<code>300</code>，显式高度限定可用区域；未设置固定高度的对照组按内容和父布局计算。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示为自动内容高度设置最小高度。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照布局与尺寸变化</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>'
+                        title="窗体一（MinHeight=300，请尝试改变高度）">窗体一（MinHeight=300，请尝试改变高度）</strong>中对照内容较少的面板与设定的下边界。<br />结果：内容不足时仍保留最小高度；内容更多时可按本页布局继续扩展。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>MinHeight</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>'
+                        title="窗体一（MinHeight=300，请尝试改变高度）">窗体一（MinHeight=300，请尝试改变高度）</strong>）：初始为<code>300</code>，内容较少时仍保留该最小高度。</li>
+                <li><code>Height</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window2").ClientID %>'
+                        title="窗体二（Height=300，请尝试改变高度）">窗体二（Height=300，请尝试改变高度）</strong>）：初始为<code>300</code>，显式高度限定可用区域；未设置固定高度的对照组按内容和父布局计算。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

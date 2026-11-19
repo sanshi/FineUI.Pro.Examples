@@ -15,14 +15,12 @@
             border-collapse: collapse;
         }
 
-            #header table td {
-                padding: 0;
-            }
-
-
-        #header .logotd {
-            
+        #header table td {
+            padding: 0;
         }
+
+
+        #header .logotd {}
 
         #header .actionstd {
             text-align: right;
@@ -55,6 +53,7 @@
             font-size: 12px;
             line-height: 16px;
         }
+
     </style>
 </head>
 <body>
@@ -62,7 +61,8 @@
         <f:PageManager ID="PageManager1" AutoSizePanelID="RegionPanel1" runat="server"></f:PageManager>
         <f:Panel ID="RegionPanel1" CssClass="mainpanel" Layout="Region" ShowBorder="false" ShowHeader="false" runat="server">
             <Items>
-                <f:ContentPanel ID="topPanel" CssClass="topregion bgpanel" RegionPosition="Top" ShowBorder="false" ShowHeader="false" EnableCollapse="false" runat="server">
+                <f:ContentPanel ID="topPanel" CssClass="topregion bgpanel" RegionPosition="Top" ShowBorder="false" ShowHeader="false" EnableCollapse="false"
+                    runat="server">
                     <div id="header" class="f-widget-header f-mainheader">
                         <table>
                             <tr>
@@ -71,14 +71,14 @@
                                     </a>
                                 </td>
                                 <td class="actionstd">
-                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-mail f-state-active" ID="btnMail" Text="邮件收发"
-                                        IconAlign="Top" IconFont="EnvelopeO" OnClick="btnMail_Click" EnableDefaultState="false" EnableDefaultCorner="false">
+                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-mail f-state-active" ID="btnMail" Text="邮件收发" IconAlign="Top"
+                                        IconFont="EnvelopeO" OnClick="btnMail_Click" EnableDefaultState="false" EnableDefaultCorner="false">
                                     </f:Button>
-                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-sms" ID="btnSMS" Text="短信收发"
-                                        IconAlign="Top" IconFont="MobilePhone" OnClick="btnSMS_Click" EnableDefaultState="false" EnableDefaultCorner="false">
+                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-sms" ID="btnSMS" Text="短信收发" IconAlign="Top"
+                                        IconFont="MobilePhone" OnClick="btnSMS_Click" EnableDefaultState="false" EnableDefaultCorner="false">
                                     </f:Button>
-                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-sys" ID="btnSYS" Text="系统管理"
-                                        IconAlign="Top" IconFont="Cog" OnClick="btnSYS_Click" EnableDefaultState="false" EnableDefaultCorner="false">
+                                    <f:Button runat="server" CssClass="icontopaction topmenu menu-sys" ID="btnSYS" Text="系统管理" IconAlign="Top" IconFont="Cog"
+                                        OnClick="btnSYS_Click" EnableDefaultState="false" EnableDefaultCorner="false">
                                     </f:Button>
                                 </td>
                             </tr>
@@ -86,12 +86,11 @@
                     </div>
                 </f:ContentPanel>
                 <f:Tree runat="server" ID="leftTree" CssClass="leftregion bgpanel" RegionPosition="Left" RegionSplit="false" EnableCollapse="false"
-                    Width="260px" Title="系统菜单" ShowBorder="true" ShowHeader="false" EnableNodeHyperLink="true"
-                    HeaderStyle="true" AllHeaderStyle="true" ExpanderToRight="true"
-                    EnableSingleClickExpand="true" HideHScrollbar="true" HideVScrollbar="true">
+                    Width="260px" Title="系统菜单" ShowBorder="true" ShowHeader="false" EnableNodeHyperLink="true" HeaderStyle="true" AllHeaderStyle="true"
+                    ExpanderToRight="true" EnableSingleClickExpand="true" HideHScrollbar="true" HideVScrollbar="true">
                 </f:Tree>
-                <f:Panel ID="mainPanel" CssClass="centerregion" ShowHeader="false" RegionPosition="Center" ShowBorder="true"
-                    EnableIFrame="true" IFrameName="mainframe" runat="server">
+                <f:Panel ID="mainPanel" CssClass="centerregion" ShowHeader="false" RegionPosition="Center" ShowBorder="true" EnableIFrame="true"
+                    IFrameName="mainframe" runat="server">
                 </f:Panel>
             </Items>
         </f:Panel>
@@ -124,7 +123,7 @@
 
         }
 
-        F.ready(function () {
+        F.ready(function() {
 
             if (!F(leftTreeID)) return;
 
@@ -132,6 +131,7 @@
 
 
         });
+
     </script>
 </body>
 </html>

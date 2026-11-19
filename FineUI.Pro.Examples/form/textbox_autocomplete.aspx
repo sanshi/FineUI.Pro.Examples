@@ -9,16 +9,13 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
-            Title="登录表单" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" Title="登录表单" ShowHeader="true">
             <Items>
                 <f:TextBox runat="server" Label="用户名" EmptyText="请输入用户名" ID="tbxUserName" Required="true" ShowRedStar="true">
                 </f:TextBox>
-                <f:TextBox ID="tbxEmail" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL"
-                    RegexMessage="请输入有效的邮箱地址" runat="server">
+                <f:TextBox ID="tbxEmail" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址" runat="server">
                 </f:TextBox>
-                <f:Button ID="btnSubmit" CssClass="marginr" runat="server" OnClick="btnSubmit_Click" ValidateForms="SimpleForm1" EnableAjax="true"
-                    Text="提交表格">
+                <f:Button ID="btnSubmit" CssClass="marginr" runat="server" OnClick="btnSubmit_Click" ValidateForms="SimpleForm1" EnableAjax="true" Text="提交表格">
                 </f:Button>
             </Items>
         </f:SimpleForm>
@@ -29,10 +26,9 @@
     </form>
 
     <script>
-
         var tbxUserNameClientID = '<%= tbxUserName.ClientID %>';
 
-        F.ready(function () {
+        F.ready(function() {
 
             // 开启 用户名 的自动完成功能
             F(tbxUserNameClientID).el.find('input').attr('autocomplete', 'on');

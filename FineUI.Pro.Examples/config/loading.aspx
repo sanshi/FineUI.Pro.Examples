@@ -11,20 +11,20 @@
             margin: 0;
         }
 
-            ul.loading li {
-                display: inline-block;
-                margin: 0 10px 10px 0;
-                text-align: center;
-                border-style: solid;
-                border-width: 1px;
-                width: 150px;
-                padding: 10px;
-            }
+        ul.loading li {
+            display: inline-block;
+            margin: 0 10px 10px 0;
+            text-align: center;
+            border-style: solid;
+            border-width: 1px;
+            width: 150px;
+            padding: 10px;
+        }
 
-                ul.loading li .title {
-                    margin-top: 15px;
-                    font-size: 1.2em;
-                }
+        ul.loading li .title {
+            margin-top: 15px;
+            font-size: 1.2em;
+        }
 
     </style>
 </head>

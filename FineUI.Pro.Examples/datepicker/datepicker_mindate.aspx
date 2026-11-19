@@ -9,14 +9,11 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
-            Title="简单表单" runat="server">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" Title="简单表单" runat="server">
             <Items>
-                <f:DatePicker runat="server" Required="true" Label="日期" EmptyText="限制范围的日期" ID="DatePicker1"
-                    ShowRedStar="true">
+                <f:DatePicker runat="server" Required="true" Label="日期" EmptyText="限制范围的日期" ID="DatePicker1" ShowRedStar="true">
                 </f:DatePicker>
-                <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单"
-                    OnClick="btnSubmit_Click">
+                <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click">
                 </f:Button>
             </Items>
         </f:SimpleForm>
@@ -36,8 +33,10 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>MinDate</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="日期">日期</strong>）：限定最早可选的日期、月份或年份；下限之前的项目不能选中。</li>
-                <li><code>MaxDate</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="日期">日期</strong>）：限定最晚可选的日期、月份或年份；上限之后的项目不能选中。</li>
+                <li><code>MinDate</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="日期">日期</strong>）：限定最早可选的日期、月份或年份；下限之前的项目不能选中。</li>
+                <li><code>MaxDate</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="日期">日期</strong>）：限定最晚可选的日期、月份或年份；上限之后的项目不能选中。</li>
             </ul>
         </section>
     </template>

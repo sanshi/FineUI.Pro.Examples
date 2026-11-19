@@ -31,18 +31,20 @@
             <img alt="FineUI toolbox" src="<%= PageContext.ResolveUrl("~/res/images/toolbox.png") %>" />
         </div>
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>展示 Visual Studio 中安装 FineUI.Pro 工具箱项的手工步骤。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>核对本机环境与步骤</h3>
-    <ul>
-        <li>依次查看<strong class="example-control-reference" data-example-control="form1" title="页面表单">配置步骤</strong>，在自己的对应环境执行。<br />结果：本页只展示说明和截图，不会自动修改开发工具或服务器配置；版本不同应按实际环境核对。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>适用环境</code>（<strong class="example-control-reference" data-example-control="form1" title="页面表单">页面表单</strong>）：选择与项目引用一致的 FineUI.Pro 程序集作为工具箱来源。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>展示 Visual Studio 中安装 FineUI.Pro 工具箱项的手工步骤。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>核对本机环境与步骤</h3>
+            <ul>
+                <li>依次查看<strong class="example-control-reference" data-example-control="form1"
+                        title="页面表单">配置步骤</strong>，在自己的对应环境执行。<br />结果：本页只展示说明和截图，不会自动修改开发工具或服务器配置；版本不同应按实际环境核对。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>适用环境</code>（<strong class="example-control-reference" data-example-control="form1" title="页面表单">页面表单</strong>）：选择与项目引用一致的 FineUI.Pro
+                    程序集作为工具箱来源。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -8,8 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉树（多选）" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉树（多选）"
+            ShowHeader="true">
             <Items>
                 <f:DropDownBox runat="server" ID="DropDownBox1" EnableMultiSelect="true" Values="henan,anhui">
                     <PopPanel>
@@ -68,8 +68,11 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>）：决定<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>true</code>。</li>
-                <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>" title="Tree">Tree</strong>）：在继续选择或翻页时保留已有选择。 本页声明值为 <code>true</code>。</li>
+                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>）：决定<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>true</code>。</li>
+                <li><code>KeepCurrentSelection</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>"
+                        title="Tree">Tree</strong>）：在继续选择或翻页时保留已有选择。 本页声明值为 <code>true</code>。</li>
             </ul>
         </section>
     </template>

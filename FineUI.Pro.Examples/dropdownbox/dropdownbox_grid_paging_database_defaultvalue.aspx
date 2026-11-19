@@ -53,11 +53,14 @@
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：通过 <code>Values</code> 和 <code>Text</code> 属性来设置<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">下拉框</strong>的初始值（由于初始值可能不在第一页，所以需要指定 <code>Text</code> 属性）。</p>
+            <p>注：通过 <code>Values</code> 和 <code>Text</code> 属性来设置<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                    title="请从下拉表格中选择">下拉框</strong>的初始值（由于初始值可能不在第一页，所以需要指定 <code>Text</code> 属性）。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Values</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：指定初始多选值。 本页声明值为 <code>115</code>,<code>105</code>。</li>
-                <li><code>Texts</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：为初始值提供对应文字，尤其适用于尚未加载到当前页的数据。 本页声明值为 董国,吴颖颖。</li>
+                <li><code>Values</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="请从下拉表格中选择">请从下拉表格中选择</strong>）：指定初始多选值。 本页声明值为 <code>115</code>,<code>105</code>。</li>
+                <li><code>Texts</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="请从下拉表格中选择">请从下拉表格中选择</strong>）：为初始值提供对应文字，尤其适用于尚未加载到当前页的数据。 本页声明值为 董国,吴颖颖。</li>
             </ul>
         </section>
     </template>

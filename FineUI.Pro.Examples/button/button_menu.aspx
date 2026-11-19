@@ -10,16 +10,13 @@
         <f:PageManager ID="PageManager1" runat="server" />
         <f:Button ID="btnMenu" Text="中国科学技术大学" IconFont="_Bicycle" runat="server">
             <Menu runat="server">
-                <f:MenuHyperLink runat="server" Icon="TagGreen" Target="_blank" NavigateUrl="http://scms.ustc.edu.cn/"
-                    Text="化学与材料科学学院">
+                <f:MenuHyperLink runat="server" Icon="TagGreen" Target="_blank" NavigateUrl="http://scms.ustc.edu.cn/" Text="化学与材料科学学院">
                 </f:MenuHyperLink>
                 <f:MenuButton runat="server" Icon="TagBlue" Text="管理学院">
                     <Menu runat="server">
-                        <f:MenuHyperLink runat="server" Icon="TagPink" Target="_blank" NavigateUrl="http://is.ustc.edu.cn/"
-                            Text="工商管理系">
+                        <f:MenuHyperLink runat="server" Icon="TagPink" Target="_blank" NavigateUrl="http://is.ustc.edu.cn/" Text="工商管理系">
                         </f:MenuHyperLink>
-                        <f:MenuHyperLink runat="server" Icon="TagPurple" Target="_blank" NavigateUrl="http://stat.ustc.edu.cn/"
-                            Text="统计与金融系">
+                        <f:MenuHyperLink runat="server" Icon="TagPurple" Target="_blank" NavigateUrl="http://stat.ustc.edu.cn/" Text="统计与金融系">
                         </f:MenuHyperLink>
                     </Menu>
                 </f:MenuButton>
@@ -48,9 +45,14 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Menu</code>（<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="中国科学技术大学（动态创建下拉菜单）">中国科学技术大学（动态创建下拉菜单）</strong>）：按钮中的 <code>Menu</code> 声明一级及多级子菜单。</li>
-                <li><code>NavigateUrl</code>（<strong class="example-control-reference" data-example-control="<%= btnMenu.ClientID %>" title="中国科学技术大学">中国科学技术大学</strong>、<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="中国科学技术大学（动态创建下拉菜单）">中国科学技术大学（动态创建下拉菜单）</strong>）：链接菜单项指向实际页面地址。</li>
-                <li><code>Target</code>（<strong class="example-control-reference" data-example-control="<%= btnMenu.ClientID %>" title="中国科学技术大学">中国科学技术大学</strong>、<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="中国科学技术大学（动态创建下拉菜单）">中国科学技术大学（动态创建下拉菜单）</strong>）：本页链接设置为 <code>_blank</code>，使用新的浏览器标签页。</li>
+                <li><code>Menu</code>（<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>"
+                        title="中国科学技术大学（动态创建下拉菜单）">中国科学技术大学（动态创建下拉菜单）</strong>）：按钮中的 <code>Menu</code> 声明一级及多级子菜单。</li>
+                <li><code>NavigateUrl</code>（<strong class="example-control-reference" data-example-control="<%= btnMenu.ClientID %>"
+                        title="中国科学技术大学">中国科学技术大学</strong>、<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>"
+                        title="中国科学技术大学（动态创建下拉菜单）">中国科学技术大学（动态创建下拉菜单）</strong>）：链接菜单项指向实际页面地址。</li>
+                <li><code>Target</code>（<strong class="example-control-reference" data-example-control="<%= btnMenu.ClientID %>"
+                        title="中国科学技术大学">中国科学技术大学</strong>、<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>"
+                        title="中国科学技术大学（动态创建下拉菜单）">中国科学技术大学（动态创建下拉菜单）</strong>）：本页链接设置为 <code>_blank</code>，使用新的浏览器标签页。</li>
             </ul>
         </section>
     </template>

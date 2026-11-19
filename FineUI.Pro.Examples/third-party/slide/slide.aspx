@@ -169,18 +169,21 @@
         });
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>在 FineUI 内容面板中嵌入第三方图片轮播，并让其与正文区域一起布局。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>切换轮播图片</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>中的轮播导航点击不同项目。<br />结果：轮播区域切换相应图片，正文面板仍保持原位置；自动轮播按本页脚本继续运行。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>slide / timer</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：本页脚本负责轮播索引、切换与自动计时，FineUI 面板只提供布局容器。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>在 FineUI 内容面板中嵌入第三方图片轮播，并让其与正文区域一起布局。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>切换轮播图片</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="面板">面板</strong>中的轮播导航点击不同项目。<br />结果：轮播区域切换相应图片，正文面板仍保持原位置；自动轮播按本页脚本继续运行。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>slide / timer</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板">面板</strong>）：本页脚本负责轮播索引、切换与自动计时，FineUI
+                    面板只提供布局容器。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

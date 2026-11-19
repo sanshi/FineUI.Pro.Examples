@@ -12,27 +12,25 @@
         .myblockform .f-panel-body .f-field {
             margin: 0;
         }
+
     </style>
 </head>
 <body class="f-body-darkerbg">
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Panel ID="PanelExample1" IsFluid="true" runat="server"
-            Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
+        <f:Panel ID="PanelExample1" IsFluid="true" runat="server" Layout="Block" BlockConfigSpace="20px" ShowBorder="false" ShowHeader="false">
             <Items>
-                <f:Panel ID="PanelExample2" BlockMD="6"
-                    Layout="Block" BlockConfigSpace="20px"
-                    runat="server" ShowBorder="false" ShowHeader="false">
+                <f:Panel ID="PanelExample2" BlockMD="6" Layout="Block" BlockConfigSpace="20px" runat="server" ShowBorder="false" ShowHeader="false">
                     <Items>
-                        <f:Panel ID="Panel1" CssClass="myblockform" BlockMD="12" EnableCollapse="true"
-                            Layout="Block" BlockConfigSpace="20px" BodyPadding="10px"
+                        <f:Panel ID="Panel1" CssClass="myblockform" BlockMD="12" EnableCollapse="true" Layout="Block" BlockConfigSpace="20px" BodyPadding="10px"
                             runat="server" ShowBorder="true" ShowHeader="true" Title="表单 1">
                             <Items>
                                 <f:Label ID="Label1" BlockMD="6" runat="server" Label="标签" Text="标签的值">
                                 </f:Label>
                                 <f:CheckBox ID="CheckBox1" BlockMD="6" runat="server" Text="复选框" Label="复选框">
                                 </f:CheckBox>
-                                <f:DropDownList ID="DropDownList1" BlockMD="6" runat="server" Required="true" ShowRedStar="true" AutoSelectFirstItem="false" Label="下拉列表">
+                                <f:DropDownList ID="DropDownList1" BlockMD="6" runat="server" Required="true" ShowRedStar="true" AutoSelectFirstItem="false"
+                                    Label="下拉列表">
                                     <f:ListItem Text="可选项 1" Value="0"></f:ListItem>
                                     <f:ListItem Text="可选项 2" Value="2"></f:ListItem>
                                     <f:ListItem Text="可选项 3" Value="3"></f:ListItem>
@@ -42,23 +40,20 @@
                                     <f:ListItem Text="可选项 7" Value="7"></f:ListItem>
                                     <f:ListItem Text="可选项 8" Value="8"></f:ListItem>
                                 </f:DropDownList>
-                                <f:TextBox ID="TextBox1" BlockMD="6" ShowRedStar="true" runat="server" Label="文本框" Required="true"
-                                    Text="">
+                                <f:TextBox ID="TextBox1" BlockMD="6" ShowRedStar="true" runat="server" Label="文本框" Required="true" Text="">
                                 </f:TextBox>
-                                <f:Button runat="server" BlockMD="12" Text="验证此表单并提交" ValidateForms="Panel1"
-                                    ID="btnSubmitForm1" OnClick="btnSubmitForm1_Click">
+                                <f:Button runat="server" BlockMD="12" Text="验证此表单并提交" ValidateForms="Panel1" ID="btnSubmitForm1" OnClick="btnSubmitForm1_Click">
                                 </f:Button>
                             </Items>
                         </f:Panel>
-                        <f:Panel ID="Panel2" CssClass="myblockform" BlockMD="12" EnableCollapse="true"
-                            Layout="Block" BlockConfigSpace="20px" BodyPadding="10px"
+                        <f:Panel ID="Panel2" CssClass="myblockform" BlockMD="12" EnableCollapse="true" Layout="Block" BlockConfigSpace="20px" BodyPadding="10px"
                             runat="server" ShowBorder="true" ShowHeader="true" Title="表单 2">
                             <Items>
-                                <f:DatePicker runat="server" BlockMD="6" EnableEdit="false" Required="true" Label="日期" EmptyText="请选择日期"
-                                    ID="DatePicker1" SelectedDate="2014-07-10" ShowRedStar="true">
+                                <f:DatePicker runat="server" BlockMD="6" EnableEdit="false" Required="true" Label="日期" EmptyText="请选择日期" ID="DatePicker1"
+                                    SelectedDate="2014-07-10" ShowRedStar="true">
                                 </f:DatePicker>
-                                <f:TimePicker ID="TimePicker1" BlockMD="6" EnableEdit="false" ShowRedStar="true" Label="时间" Increment="30"
-                                    Required="true" Text="08:30" EmptyText="请选择时间" runat="server">
+                                <f:TimePicker ID="TimePicker1" BlockMD="6" EnableEdit="false" ShowRedStar="true" Label="时间" Increment="30" Required="true"
+                                    Text="08:30" EmptyText="请选择时间" runat="server">
                                 </f:TimePicker>
                                 <f:CheckBox runat="server" BlockMD="12" ID="cbxAtSchool" Label="是否在读"></f:CheckBox>
                                 <f:CheckBoxList ID="CheckBoxList1" BlockMD="12" Label="复选框列表" ColumnNumber="3" runat="server">
@@ -79,8 +74,7 @@
                             <Toolbars>
                                 <f:Toolbar runat="server" Position="Bottom" ToolbarAlign="Center">
                                     <Items>
-                                        <f:Button ID="btnSubmitForm2" Text="验证此表单并提交" runat="server" OnClick="btnSubmitForm2_Click"
-                                            ValidateForms="Panel2">
+                                        <f:Button ID="btnSubmitForm2" Text="验证此表单并提交" runat="server" OnClick="btnSubmitForm2_Click" ValidateForms="Panel2">
                                         </f:Button>
                                     </Items>
                                 </f:Toolbar>
@@ -88,19 +82,18 @@
                         </f:Panel>
                     </Items>
                 </f:Panel>
-                <f:Panel ID="Panel3" CssClass="myblockform" BlockMD="6" EnableCollapse="true"
-                    Layout="Block" BlockConfigSpace="20px" BodyPadding="10px"
+                <f:Panel ID="Panel3" CssClass="myblockform" BlockMD="6" EnableCollapse="true" Layout="Block" BlockConfigSpace="20px" BodyPadding="10px"
                     runat="server" ShowBorder="true" ShowHeader="true" Title="表单 3">
                     <Items>
                         <f:Label ID="Label3" BlockMD="6" Label="电话" Text="0551-1234567" runat="server" />
                         <f:Label ID="Label16" BlockMD="6" runat="server" Label="申请人" Text="admin">
                         </f:Label>
                         <f:Label ID="Label4" BlockMD="6" Label="编号" Text="200804170006" runat="server" />
-                        <f:TextBox ID="TextBox2" BlockMD="6" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL"
-                            RegexMessage="请输入有效的邮箱地址" runat="server">
+                        <f:TextBox ID="TextBox2" BlockMD="6" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址"
+                            runat="server">
                         </f:TextBox>
-                        <f:DropDownList ID="DropDownList3" BlockMD="12" Label="审批人" runat="server" Required="true" ShowRedStar="true"
-                            EmptyText="请选择审批人" AutoSelectFirstItem="false">
+                        <f:DropDownList ID="DropDownList3" BlockMD="12" Label="审批人" runat="server" Required="true" ShowRedStar="true" EmptyText="请选择审批人"
+                            AutoSelectFirstItem="false">
                             <f:ListItem Text="老大甲" Value="0"></f:ListItem>
                             <f:ListItem Text="老大乙" Value="1"></f:ListItem>
                             <f:ListItem Text="老大丙" Value="2"></f:ListItem>
@@ -114,8 +107,7 @@
                         </f:TextArea>
                         <f:Panel ID="PanelExample6" BlockMD="12" runat="server" ShowBorder="false" ShowHeader="false">
                             <Items>
-                                <f:Button ID="btnSubmitForm3" Text="验证此表单并提交" runat="server" OnClick="btnSubmitForm3_Click"
-                                    ValidateForms="Panel3">
+                                <f:Button ID="btnSubmitForm3" Text="验证此表单并提交" runat="server" OnClick="btnSubmitForm3_Click" ValidateForms="Panel3">
                                 </f:Button>
                             </Items>
                         </f:Panel>
@@ -124,21 +116,60 @@
             </Items>
         </f:Panel>
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示在 <code>Block</code> 布局中组织响应式表单，让字段按可用宽度分列或层叠。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整宽度与分别验证</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>填写一个文本字段，再缩小和放大浏览器。<br />结果：字段随各自的块宽度重新排列，已经填写的值继续保留。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmitForm1").ClientID %>' title="第 1 个按钮（验证此表单并提交）">第 1 个按钮（验证此表单并提交）</strong>。<br />结果：只验证按钮对应的表单区域；必填字段不完整时显示错误，验证通过后才执行本页后台处理。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（本页各面板，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="第 1 个面板">第 1 个面板</strong>）：初始为<code>Block</code>，表单区域使用 <code>Block</code> 布局。</li>
-        <li><code>BlockMD</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample2").ClientID %>' title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="表单 1">表单 1</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Label1").ClientID %>' title="标签">标签</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("CheckBox1").ClientID %>' title="复选框">复选框</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList1").ClientID %>' title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBox1").ClientID %>' title="文本框">文本框</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmitForm1").ClientID %>' title="第 1 个按钮（验证此表单并提交）">第 1 个按钮（验证此表单并提交）</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>' title="表单 2">表单 2</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DatePicker1").ClientID %>' title="日期">日期</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TimePicker1").ClientID %>' title="时间">时间</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("cbxAtSchool").ClientID %>' title="是否在读">是否在读</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("CheckBoxList1").ClientID %>' title="复选框列表">复选框列表</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("RadioButtonList2").ClientID %>' title="单选框列表">单选框列表</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel3").ClientID %>' title="表单 3">表单 3</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Label3").ClientID %>' title="电话">电话</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Label16").ClientID %>' title="申请人">申请人</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Label4").ClientID %>' title="编号">编号</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBox2").ClientID %>' title="电子邮箱">电子邮箱</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList3").ClientID %>' title="审批人">审批人</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("NumberBox1").ClientID %>' title="申请数量">申请数量</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextArea1").ClientID %>' title="描述">描述</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample6").ClientID %>' title="第 6 个面板">第 6 个面板</strong>）：各组分别设为<code>6</code>、<code>12</code>，对应字段在桌面宽度下占指定块数，较窄时按小屏规则排列。</li>
-        <li><code>ValidateForms</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmitForm1").ClientID %>' title="第 1 个按钮（验证此表单并提交）">第 1 个按钮（验证此表单并提交）</strong>）：初始为<code>Panel1</code>，按钮只验证绑定的表单区域。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示在 <code>Block</code> 布局中组织响应式表单，让字段按可用宽度分列或层叠。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>调整宽度与分别验证</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>'
+                        title="第 1 个面板">第 1 个面板</strong>填写一个文本字段，再缩小和放大浏览器。<br />结果：字段随各自的块宽度重新排列，已经填写的值继续保留。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmitForm1").ClientID %>'
+                        title="第 1 个按钮（验证此表单并提交）">第 1 个按钮（验证此表单并提交）</strong>。<br />结果：只验证按钮对应的表单区域；必填字段不完整时显示错误，验证通过后才执行本页后台处理。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Layout</code>（本页各面板，如<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample1").ClientID %>' title="第 1 个面板">第 1
+                        个面板</strong>）：初始为<code>Block</code>，表单区域使用 <code>Block</code> 布局。</li>
+                <li><code>BlockMD</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample2").ClientID %>' title="第 2 个面板">第 2 个面板</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="表单 1">表单
+                        1</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Label1").ClientID %>'
+                        title="标签">标签</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("CheckBox1").ClientID %>' title="复选框">复选框</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList1").ClientID %>'
+                        title="下拉列表">下拉列表</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBox1").ClientID %>' title="文本框">文本框</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmitForm1").ClientID %>'
+                        title="第 1 个按钮（验证此表单并提交）">第 1 个按钮（验证此表单并提交）</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>' title="表单 2">表单 2</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DatePicker1").ClientID %>'
+                        title="日期">日期</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TimePicker1").ClientID %>' title="时间">时间</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("cbxAtSchool").ClientID %>'
+                        title="是否在读">是否在读</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("CheckBoxList1").ClientID %>' title="复选框列表">复选框列表</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("RadioButtonList2").ClientID %>'
+                        title="单选框列表">单选框列表</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel3").ClientID %>' title="表单 3">表单 3</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Label3").ClientID %>'
+                        title="电话">电话</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Label16").ClientID %>' title="申请人">申请人</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Label4").ClientID %>'
+                        title="编号">编号</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBox2").ClientID %>' title="电子邮箱">电子邮箱</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList3").ClientID %>'
+                        title="审批人">审批人</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("NumberBox1").ClientID %>' title="申请数量">申请数量</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextArea1").ClientID %>'
+                        title="描述">描述</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample6").ClientID %>' title="第 6 个面板">第 6
+                        个面板</strong>）：各组分别设为<code>6</code>、<code>12</code>，对应字段在桌面宽度下占指定块数，较窄时按小屏规则排列。</li>
+                <li><code>ValidateForms</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmitForm1").ClientID %>' title="第 1 个按钮（验证此表单并提交）">第 1
+                        个按钮（验证此表单并提交）</strong>）：初始为<code>Panel1</code>，按钮只验证绑定的表单区域。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

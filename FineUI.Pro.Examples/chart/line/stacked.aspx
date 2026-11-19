@@ -1,4 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="stacked.aspx.cs" Inherits="FineUI.Pro.Examples.chart.LineStacked" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -7,36 +8,39 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartLineStacked" runat="server" Height="550px" DataCategoryField="Category"
-            Title="Stacked Line" TitleAlign="Left" ShowLegend="true" CategoryBoundaryGap="false"
-            ShowSaveAsImage="true">
+        <f:Chart ID="ChartLineStacked" runat="server" Height="550px" DataCategoryField="Category" Title="Stacked Line" TitleAlign="Left" ShowLegend="true"
+            CategoryBoundaryGap="false" ShowSaveAsImage="true">
             <Series>
                 <f:ChartSeries Key="email" Type="Line" Name="Email" DataValueField="Email" Stack="Total" />
                 <f:ChartSeries Key="unionAds" Type="Line" Name="Union Ads" DataValueField="UnionAds" Stack="Total" />
                 <f:ChartSeries Key="videoAds" Type="Line" Name="Video Ads" DataValueField="VideoAds" Stack="Total" />
                 <f:ChartSeries Key="direct" Type="Line" Name="Direct" DataValueField="Direct" Stack="Total" />
-                <f:ChartSeries Key="searchEngine" Type="Line" Name="Search Engine" DataValueField="SearchEngine"
-                    Stack="Total" />
+                <f:ChartSeries Key="searchEngine" Type="Line" Name="Search Engine" DataValueField="SearchEngine" Stack="Total" />
             </Series>
         </f:Chart>
 
 
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>让同组折线按分类累计，同时保留各系列的原始提示值。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照堆叠折线图</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartLineStacked").ClientID %>' title="Stacked Line">Stacked Line</strong>中的分类、数值和形状。<br />结果：同组折线按分类累计。悬停可查看各来源的原始值，右上角可保存图片。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/examples/zh/editor.html?c=line-stack" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Stack</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartLineStacked").ClientID %>' title="Stacked Line">Stacked Line</strong>）：初始为 <code>Total</code>，同组折线按天累计，悬停提示仍显示各系列的原始值。</li>
-        <li><code>ShowSaveAsImage</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartLineStacked").ClientID %>' title="Stacked Line">Stacked Line</strong>）：初始为 <code>true</code>，在图表右上角显示保存图片按钮。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>让同组折线按分类累计，同时保留各系列的原始提示值。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照堆叠折线图</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartLineStacked").ClientID %>'
+                        title="Stacked Line">Stacked Line</strong>中的分类、数值和形状。<br />结果：同组折线按分类累计。悬停可查看各来源的原始值，右上角可保存图片。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <a href="https://echarts.apache.org/examples/zh/editor.html?c=line-stack" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Stack</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartLineStacked").ClientID %>' title="Stacked Line">Stacked
+                        Line</strong>）：初始为 <code>Total</code>，同组折线按天累计，悬停提示仍显示各系列的原始值。</li>
+                <li><code>ShowSaveAsImage</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartLineStacked").ClientID %>' title="Stacked Line">Stacked
+                        Line</strong>）：初始为 <code>true</code>，在图表右上角显示保存图片按钮。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

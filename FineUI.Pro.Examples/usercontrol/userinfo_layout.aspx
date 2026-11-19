@@ -63,19 +63,28 @@
             </Items>
         </f:Panel>--%>
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>把用户控件加入纵向和横向布局，分别分配各子区域的空间。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照容器中的用户资料</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="用户控件">用户控件</strong>和其它面板中的用户资料，再调整浏览器尺寸。<br />结果：用户控件按纵横布局和空间比例排列，资料和其它子面板一起布局。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="用户控件">用户控件</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>' title="面板三">面板三</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>' title="面板三">面板三</strong>）：初始为 <code>VBox</code>、<code>HBox</code>，规定容器内子控件的排列和空间分配方式。</li>
-        <li><code>UserControlConnector</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="用户控件">用户控件</strong>）：把用户控件连接到 FineUI 的子项布局中；普通内容面板也可以直接嵌入用户控件。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>把用户控件加入纵向和横向布局，分别分配各子区域的空间。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对照容器中的用户资料</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="用户控件">用户控件</strong>和其它面板中的用户资料，再调整浏览器尺寸。<br />结果：用户控件按纵横布局和空间比例排列，资料和其它子面板一起布局。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Layout</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="用户控件">用户控件</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel2").ClientID %>'
+                        title="面板三">面板三</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel5").ClientID %>' title="面板三">面板三</strong>）：初始为
+                    <code>VBox</code>、<code>HBox</code>，规定容器内子控件的排列和空间分配方式。
+                </li>
+                <li><code>UserControlConnector</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="用户控件">用户控件</strong>）：把用户控件连接到 FineUI
+                    的子项布局中；普通内容面板也可以直接嵌入用户控件。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -1,4 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="stacked.aspx.cs" Inherits="FineUI.Pro.Examples.chart.AreaStacked" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -7,38 +8,43 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartAreaStacked" runat="server" Height="550px" DataCategoryField="Category"
-            Title="Stacked Area Chart" TitleAlign="Left" ShowLegend="true"
-            CategoryBoundaryGap="false" AxisPointerType="cross" AxisPointerLabelColor="#6a7985"
-            ShowSaveAsImage="true">
+        <f:Chart ID="ChartAreaStacked" runat="server" Height="550px" DataCategoryField="Category" Title="Stacked Area Chart" TitleAlign="Left" ShowLegend="true"
+            CategoryBoundaryGap="false" AxisPointerType="cross" AxisPointerLabelColor="#6a7985" ShowSaveAsImage="true">
             <Series>
                 <f:ChartSeries Key="email" Type="Area" Name="Email" DataValueField="Email" Stack="Total" FocusSeries="true" />
                 <f:ChartSeries Key="unionAds" Type="Area" Name="Union Ads" DataValueField="UnionAds" Stack="Total" FocusSeries="true" />
                 <f:ChartSeries Key="videoAds" Type="Area" Name="Video Ads" DataValueField="VideoAds" Stack="Total" FocusSeries="true" />
                 <f:ChartSeries Key="direct" Type="Area" Name="Direct" DataValueField="Direct" Stack="Total" FocusSeries="true" />
-                <f:ChartSeries Key="searchEngine" Type="Area" Name="Search Engine" DataValueField="SearchEngine"
-                    Stack="Total" FocusSeries="true" ShowLabel="true" />
+                <f:ChartSeries Key="searchEngine" Type="Area" Name="Search Engine" DataValueField="SearchEngine" Stack="Total" FocusSeries="true"
+                    ShowLabel="true" />
             </Series>
         </f:Chart>
 
 
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>把同组系列按分类累计，形成可比较各来源的堆叠面积。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照堆叠面积图</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartAreaStacked").ClientID %>' title="Stacked Area Chart">Stacked Area Chart</strong>中的分类、数值和形状。<br />结果：同组系列沿纵轴累计。指向数据点可查看对应分类，右上角按钮可保存图表。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/examples/zh/editor.html?c=area-stack" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Stack</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartAreaStacked").ClientID %>' title="Stacked Area Chart">Stacked Area Chart</strong>）：初始为 <code>Total</code>，五个来源按同一天累计，每层面积表示一个来源。</li>
-        <li><code>AxisPointerType / AxisPointerLabelColor</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartAreaStacked").ClientID %>' title="Stacked Area Chart">Stacked Area Chart</strong>）：初始分别为 <code>cross</code>、<code>#6a7985</code>，悬停时显示十字线，并设置轴上提示标签的背景色。</li>
-        <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartAreaStacked").ClientID %>' title="Stacked Area Chart">Stacked Area Chart</strong>）：初始为 <code>true</code>，只为最上层的 Search Engine 系列显示数值标签。标签显示原始值，例如 Mon 的 820。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>把同组系列按分类累计，形成可比较各来源的堆叠面积。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照堆叠面积图</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartAreaStacked").ClientID %>'
+                        title="Stacked Area Chart">Stacked Area Chart</strong>中的分类、数值和形状。<br />结果：同组系列沿纵轴累计。指向数据点可查看对应分类，右上角按钮可保存图表。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <a href="https://echarts.apache.org/examples/zh/editor.html?c=area-stack" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Stack</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartAreaStacked").ClientID %>' title="Stacked Area Chart">Stacked Area
+                        Chart</strong>）：初始为 <code>Total</code>，五个来源按同一天累计，每层面积表示一个来源。</li>
+                <li><code>AxisPointerType / AxisPointerLabelColor</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartAreaStacked").ClientID %>' title="Stacked Area Chart">Stacked Area
+                        Chart</strong>）：初始分别为 <code>cross</code>、<code>#6a7985</code>，悬停时显示十字线，并设置轴上提示标签的背景色。</li>
+                <li><code>ShowLabel</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartAreaStacked").ClientID %>' title="Stacked Area Chart">Stacked Area
+                        Chart</strong>）：初始为 <code>true</code>，只为最上层的 Search Engine 系列显示数值标签。标签显示原始值，例如 Mon 的 820。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -9,16 +9,13 @@
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
         <f:Menu ID="Menu1" runat="server">
-            <f:MenuHyperLink ID="MenuHyperLink1" runat="server" Icon="TagGreen" Target="_blank" NavigateUrl="http://scms.ustc.edu.cn/"
-                Text="化学与材料科学学院">
+            <f:MenuHyperLink ID="MenuHyperLink1" runat="server" Icon="TagGreen" Target="_blank" NavigateUrl="http://scms.ustc.edu.cn/" Text="化学与材料科学学院">
             </f:MenuHyperLink>
             <f:MenuButton ID="MenuButton1" runat="server" Icon="TagBlue" Text="管理学院">
                 <Menu ID="Menu2" runat="server">
-                    <f:MenuHyperLink ID="MenuHyperLink3" runat="server" Icon="TagPink" Target="_blank" NavigateUrl="http://is.ustc.edu.cn/"
-                        Text="工商管理系">
+                    <f:MenuHyperLink ID="MenuHyperLink3" runat="server" Icon="TagPink" Target="_blank" NavigateUrl="http://is.ustc.edu.cn/" Text="工商管理系">
                     </f:MenuHyperLink>
-                    <f:MenuHyperLink ID="MenuHyperLink4" runat="server" Icon="TagPurple" Target="_blank" NavigateUrl="http://stat.ustc.edu.cn/"
-                        Text="统计与金融系">
+                    <f:MenuHyperLink ID="MenuHyperLink4" runat="server" Icon="TagPurple" Target="_blank" NavigateUrl="http://stat.ustc.edu.cn/" Text="统计与金融系">
                     </f:MenuHyperLink>
                 </Menu>
             </f:MenuButton>
@@ -46,7 +43,9 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>MenuID</code>（<strong class="example-control-reference" data-example-control="<%= btnMenu.ClientID %>" title="中国科学技术大学">中国科学技术大学</strong>、<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>" title="中国科学技术大学（和上一个按钮共享同一个菜单）">中国科学技术大学（和上一个按钮共享同一个菜单）</strong>）：两个按钮都引用 <code>Menu1</code>，共享菜单内容。</li>
+                <li><code>MenuID</code>（<strong class="example-control-reference" data-example-control="<%= btnMenu.ClientID %>"
+                        title="中国科学技术大学">中国科学技术大学</strong>、<strong class="example-control-reference" data-example-control="<%= Button1.ClientID %>"
+                        title="中国科学技术大学（和上一个按钮共享同一个菜单）">中国科学技术大学（和上一个按钮共享同一个菜单）</strong>）：两个按钮都引用 <code>Menu1</code>，共享菜单内容。</li>
             </ul>
         </section>
     </template>

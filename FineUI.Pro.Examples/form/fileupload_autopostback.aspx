@@ -53,7 +53,8 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnFileSelected</code>（<strong class="example-control-reference" data-example-control="<%= filePhoto.ClientID %>" title="上传控件">上传控件</strong>）：选定文件后立即请求后台处理。 本页声明值为 <code>filePhoto</code><code>_FileSelected</code>。</li>
+                <li><code>OnFileSelected</code>（<strong class="example-control-reference" data-example-control="<%= filePhoto.ClientID %>"
+                        title="上传控件">上传控件</strong>）：选定文件后立即请求后台处理。 本页声明值为 <code>filePhoto</code><code>_FileSelected</code>。</li>
             </ul>
         </section>
     </template>

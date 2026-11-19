@@ -9,8 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:TabStrip ID="TabStrip1" IsFluid="true" Height="350px" EnableTabCloseMenu="true" 
-            ShowBorder="true" ActiveTabIndex="2" runat="server">
+        <f:TabStrip ID="TabStrip1" IsFluid="true" Height="350px" EnableTabCloseMenu="true" ShowBorder="true" ActiveTabIndex="2" runat="server">
             <Tabs>
                 <f:Tab ID="Tab1" Title="标签一" EnableClose="false" BodyPadding="10px" runat="server">
                     <Items>
@@ -36,7 +35,6 @@
     </form>
 
     <script>
-
         function onTab3Beforehide(event) {
             // this代表当前选项卡
             var tab = this;
@@ -44,13 +42,13 @@
             // F.confirm是异步函数，直接返回
             F.confirm({
                 message: '关闭标签三？',
-                ok: function () {
+                ok: function() {
                     // 关闭选项卡（本过程中不触发事件）
-                    F.noEvent(function () {
+                    F.noEvent(function() {
                         tab.hide();
                     });
                 },
-                cancel: function () {
+                cancel: function() {
                     // 啥也不做
                 }
             });
@@ -61,20 +59,23 @@
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示使用 <code>FineUI</code> 异步确认框，在用户确认后才关闭标签。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>确认后再关闭</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="选项卡">选项卡</strong>点击<code>标签三</code>的关闭图标，先取消确认。<br />结果：标签三及它的内容仍然保留。</li>
-        <li>再次关闭并选择确定。<br />结果：只有确认后才关闭标签；确认本身不清空其它标签的数据。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>beforehide</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>' title="选项卡">选项卡</strong>）：先阻止默认隐藏流程，根据确认结果决定是否继续关闭。</li>
-        <li><code>F.confirm()</code>（<strong>关闭确认处理</strong>）：异步取得选择结果，确认后再执行关闭。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示使用 <code>FineUI</code> 异步确认框，在用户确认后才关闭标签。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>确认后再关闭</h3>
+            <ol>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>'
+                        title="选项卡">选项卡</strong>点击<code>标签三</code>的关闭图标，先取消确认。<br />结果：标签三及它的内容仍然保留。</li>
+                <li>再次关闭并选择确定。<br />结果：只有确认后才关闭标签；确认本身不清空其它标签的数据。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>beforehide</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip1").ClientID %>'
+                        title="选项卡">选项卡</strong>）：先阻止默认隐藏流程，根据确认结果决定是否继续关闭。</li>
+                <li><code>F.confirm()</code>（<strong>关闭确认处理</strong>）：异步取得选择结果，确认后再执行关闭。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

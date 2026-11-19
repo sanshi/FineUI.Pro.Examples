@@ -8,10 +8,9 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉树" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉树" ShowHeader="true">
             <Items>
-                <f:DropDownBox runat="server" ID="DropDownBox1" EnableMultiSelect="true" Values="luohe" Text="漯河市"  CustomData="true">
+                <f:DropDownBox runat="server" ID="DropDownBox1" EnableMultiSelect="true" Values="luohe" Text="漯河市" CustomData="true">
                     <PopPanel>
                         <f:Tree ID="Tree1" ShowHeader="false" Hidden="true" runat="server" EnableCheckBox="true" CascadeCheck="true">
                             <Nodes>
@@ -68,7 +67,7 @@
         function onPopPanelShow(event) {
             var nodes = this.getValue();
 
-            F.noEvent(function () {
+            F.noEvent(function() {
 
                 F(Tree1ID).checkNodes(nodes, {
                     deep: true, // 是否递归调用子节点
@@ -83,9 +82,10 @@
 
         // 将树控件的选中值同步到下拉框
         function syncToDropDownBox() {
-            var values = [], texts = [];
+            var values = [],
+                texts = [];
             var checkedNodes = F(Tree1ID).getCheckedNodes(true);
-            $.each(checkedNodes, function (index, node) {
+            $.each(checkedNodes, function(index, node) {
                 values.push(node.id);
                 texts.push(node.text);
             });
@@ -93,11 +93,11 @@
             F(ddbID).setValue(values, texts);
         }
 
-        F.ready(function () {
+        F.ready(function() {
 
-            F(Tree1ID).on('nodecheck', function (event, nodeId, checked) {
+            F(Tree1ID).on('nodecheck', function(event, nodeId, checked) {
                 // 加个延迟，等待复选框的级联选择完成
-                window.setTimeout(function () {
+                window.setTimeout(function() {
                     syncToDropDownBox();
                 });
             });
@@ -107,12 +107,14 @@
     </script>
     <template id="example-description">
         <section aria-label="页面描述">
-            <p>把树的复选框状态同步到自定义<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>，并启用父子级联勾选。</p>
+            <p>把树的复选框状态同步到自定义<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>，并启用父子级联勾选。
+            </p>
             <h3><i class="f-icon f-iconfont f-iconfont-check-box-checked" aria-hidden="true"></i>父子复选框联动</h3>
             <ol>
                 <li>
                     勾选<code>河南省</code>的复选框。<br />
-                    结果：其下可用子节点也随之勾选；页面等待级联完成后，把全部已勾选节点同步到<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>。
+                    结果：其下可用子节点也随之勾选；页面等待级联完成后，把全部已勾选节点同步到<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>。
                 </li>
                 <li>
                     取消“河南省”的复选框。<br />
@@ -122,13 +124,17 @@
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
             <p>注：</p>
             <ul>
-                <li>自定义数据来源时（<code>CustomData</code>=<code>true</code>），需要同时设置 <code>Value</code> 和 <code>Text</code> 属性来初始化<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>。</li>
-                <li><strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>的值对应于树控件的复选框，而不是树控件的选中项。</li>
+                <li>自定义数据来源时（<code>CustomData</code>=<code>true</code>），需要同时设置 <code>Value</code> 和 <code>Text</code> 属性来初始化<strong
+                        class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>。</li>
+                <li><strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>的值对应于树控件的复选框，而不是树控件的选中项。</li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableCheckBox</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>" title="Tree">Tree</strong>）：为树显示复选框，选择集合来自勾选状态。 本页声明值为 <code>true</code>。</li>
-                <li><code>CascadeCheck</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>" title="Tree">Tree</strong>）：勾选父节点后递归改变其子节点的复选框。 本页声明值为 <code>true</code>。</li>
+                <li><code>EnableCheckBox</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>"
+                        title="Tree">Tree</strong>）：为树显示复选框，选择集合来自勾选状态。 本页声明值为 <code>true</code>。</li>
+                <li><code>CascadeCheck</code>（<strong class="example-control-reference" data-example-control="<%= Tree1.ClientID %>"
+                        title="Tree">Tree</strong>）：勾选父节点后递归改变其子节点的复选框。 本页声明值为 <code>true</code>。</li>
             </ul>
         </section>
     </template>

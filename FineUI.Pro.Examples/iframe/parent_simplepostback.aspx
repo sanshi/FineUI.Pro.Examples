@@ -14,9 +14,8 @@
         </f:Label>
         <br />
         <br />
-        <f:Panel ID="Panel1" runat="server" ShowBorder="true"  EnableCollapse="false"
-            Width="600px" Height="250px" EnableIFrame="true" IFrameUrl="parent_simplepostback2.aspx"
-            ShowHeader="true" Title="面板一">
+        <f:Panel ID="Panel1" runat="server" ShowBorder="true" EnableCollapse="false" Width="600px" Height="250px" EnableIFrame="true"
+            IFrameUrl="parent_simplepostback2.aspx" ShowHeader="true" Title="面板一">
         </f:Panel>
     </form>
 </body>

@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件（内联）" EnableCollapse="false"
-            runat="server">
+        <f:Tree ID="Tree1" IsFluid="true" ShowHeader="true" Title="树控件（内联）" EnableCollapse="false" runat="server">
             <Nodes>
                 <f:TreeNode Text="中国" Expanded="true" NodeID="china">
                     <f:TreeNode Text="河南省" Expanded="true" NodeID="henan">
@@ -57,7 +56,6 @@
 
     </form>
     <script>
-
         var treeClientID = '<%= Tree1.ClientID %>';
         var labResultClientID = '<%= labResult.ClientID %>';
 

@@ -137,7 +137,9 @@
             <p>注：推荐使用表单的<code>EnableTableStyle</code>属性，更简单，参考示例：表格样式->表格样式（表单）。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>" title="标签">标签</strong>）：初始为 <code>false</code>，标签文字由 HTML 表格的独立单元格提供。</li>
+                <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>" title="标签">标签</strong>）：初始为
+                    <code>false</code>，标签文字由 HTML 表格的独立单元格提供。
+                </li>
             </ul>
         </section>
     </template>

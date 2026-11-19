@@ -43,11 +43,14 @@
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>修改文字与显示状态</h3>
             <ul>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnChangeButtonText.ClientID %>" title="修改[按钮四]的文本">修改[按钮四]的文本</strong>。<br />
-                    结果：后台给<strong class="example-control-reference" data-example-control="<%= Button4.ClientID %>" title="按钮四">按钮四</strong>追加当前时间，再次点击恢复原文字，分组随文字宽度调整。
+                    点击<strong class="example-control-reference" data-example-control="<%= btnChangeButtonText.ClientID %>"
+                        title="修改[按钮四]的文本">修改[按钮四]的文本</strong>。<br />
+                    结果：后台给<strong class="example-control-reference" data-example-control="<%= Button4.ClientID %>"
+                        title="按钮四">按钮四</strong>追加当前时间，再次点击恢复原文字，分组随文字宽度调整。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnShowHideButton.ClientID %>" title="显示隐藏[按钮四]">显示隐藏[按钮四]</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnShowHideButton.ClientID %>"
+                        title="显示隐藏[按钮四]">显示隐藏[按钮四]</strong>。<br />
                     结果：后台隐藏或恢复<strong class="example-control-reference" data-example-control="<%= Button4.ClientID %>" title="按钮四">按钮四</strong>，分组边框及其它按钮重新衔接。
                 </li>
                 <li>
@@ -57,8 +60,11 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Text</code>（<strong class="example-control-reference" data-example-control="<%= Button4.ClientID %>" title="按钮四">按钮四</strong>、<strong class="example-control-reference" data-example-control="<%= Button8.ClientID %>" title="按钮八">按钮八</strong>）：后台在原按钮上更新文字。</li>
-                <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="<%= Button4.ClientID %>" title="按钮四">按钮四</strong>、<strong class="example-control-reference" data-example-control="<%= Button8.ClientID %>" title="按钮八">按钮八</strong>）：隐藏组内按钮并释放其布局空间。</li>
+                <li><code>Text</code>（<strong class="example-control-reference" data-example-control="<%= Button4.ClientID %>" title="按钮四">按钮四</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= Button8.ClientID %>" title="按钮八">按钮八</strong>）：后台在原按钮上更新文字。</li>
+                <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="<%= Button4.ClientID %>"
+                        title="按钮四">按钮四</strong>、<strong class="example-control-reference" data-example-control="<%= Button8.ClientID %>"
+                        title="按钮八">按钮八</strong>）：隐藏组内按钮并释放其布局空间。</li>
             </ul>
         </section>
     </template>

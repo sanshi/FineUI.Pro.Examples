@@ -8,14 +8,13 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
-            Title="简单表单" runat="server">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" Title="简单表单" runat="server">
             <Items>
-                <f:DatePicker runat="server" Required="true" EnableEdit="false" Label="日期" EmptyText="请选择日期"
-                    ID="DatePicker1" ShowRedStar="true" AutoShowClearIcon="true">
+                <f:DatePicker runat="server" Required="true" EnableEdit="false" Label="日期" EmptyText="请选择日期" ID="DatePicker1" ShowRedStar="true"
+                    AutoShowClearIcon="true">
                 </f:DatePicker>
-                <f:TimePicker ID="TimePicker1" ShowRedStar="true" EnableEdit="false" Label="时间" Increment="30"
-                    Required="true" EmptyText="请选择时间" runat="server" AutoShowClearIcon="true">
+                <f:TimePicker ID="TimePicker1" ShowRedStar="true" EnableEdit="false" Label="时间" Increment="30" Required="true" EmptyText="请选择时间" runat="server"
+                    AutoShowClearIcon="true">
                 </f:TimePicker>
                 <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click">
                 </f:Button>
@@ -26,7 +25,7 @@
         </f:Label>
 
 
-        
+
     </form>
     <template id="example-description">
         <section aria-label="页面描述">
@@ -50,7 +49,8 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>" title="时间">时间</strong>）：有值时显示清空图标；点击后清空字段并隐藏图标，必填规则继续生效。</li>
+                <li><code>AutoShowClearIcon</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>"
+                        title="时间">时间</strong>）：有值时显示清空图标；点击后清空字段并隐藏图标，必填规则继续生效。</li>
             </ul>
         </section>
     </template>

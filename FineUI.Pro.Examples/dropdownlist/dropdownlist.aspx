@@ -8,8 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="简单下拉列表" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="简单下拉列表"
+            ShowHeader="true">
             <Items>
                 <f:DropDownList runat="server" ID="DropDownList1">
                     <f:ListItem Text="可选项1" Value="Value1" />
@@ -24,8 +24,7 @@
                     <f:ListItem Text="一个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的可选择项" Value="Value11" />
                 </f:DropDownList>
 
-                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click"
-                    CssClass="marginr">
+                <f:Button ID="btnSelectItem6" Text="选中[可选项6]" runat="server" OnClick="btnSelectItem6_Click" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="btnGetSelection" Text="获取此下拉列表的选中项" runat="server" OnClick="btnGetSelection_Click">
                 </f:Button>
@@ -43,11 +42,13 @@
             <h3><i class="f-icon f-iconfont f-iconfont-radio-button-checked" aria-hidden="true"></i>选择并读取当前项</h3>
             <ol>
                 <li>
-                    展开<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>，选择<code>可选择项8</code>。<br />
+                    展开<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>，选择<code>可选择项8</code>。<br />
                     结果：输入区显示该选项，原来的单选项被替换。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>" title="获取此下拉列表的选中项">获取此下拉列表的选中项</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>"
+                        title="获取此下拉列表的选中项">获取此下拉列表的选中项</strong>。<br />
                     结果：回发后由后台显示当前文字和选中值，其中包含 <code>Value8</code>；后台读取本次选择。
                 </li>
             </ol>
@@ -62,7 +63,8 @@
             <p>注：列表项的值不能为空字符串。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>" title="下拉列表">下拉列表</strong>）：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
+                <li><code>SelectedValue</code>（<strong class="example-control-reference" data-example-control="<%= DropDownList1.ClientID %>"
+                        title="下拉列表">下拉列表</strong>）：后台设置选中值；获取按钮读取本次提交的当前选择。</li>
             </ul>
         </section>
     </template>

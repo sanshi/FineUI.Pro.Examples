@@ -1,4 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sales.aspx.cs" Inherits="FineUI.Pro.Examples.chart.Sales" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -20,8 +21,7 @@
                         </f:Toolbar>
                     </Toolbars>
                     <Items>
-                        <f:Chart ID="ChartSales" runat="server" DataCategoryField="Category"
-                            DataIDField="Month" OnPointClick="ChartSales_PointClick">
+                        <f:Chart ID="ChartSales" runat="server" DataCategoryField="Category" DataIDField="Month" OnPointClick="ChartSales_PointClick">
                             <Series>
                                 <f:ChartSeries Key="sales" Type="Bar" Name="销售额" DataValueField="Amount" />
                             </Series>
@@ -48,21 +48,32 @@
 
 
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>点击月份柱可查看当月订单。「最近两个月」同时缩小图表和明细的范围，「显示全部」恢复六个月。页面使用演示订单数据。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>按月份查看订单</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartSales").ClientID %>' title="图表">图表</strong>中的一个月份柱。<br />结果：后台按月份读取订单并更新<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("GridOrders").ClientID %>' title="订单明细">订单明细</strong>及范围提示。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnRecent").ClientID %>' title="最近两个月">最近两个月</strong>。<br />结果：柱状图和明细同时缩小到<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnRecent").ClientID %>' title="最近两个月">最近两个月</strong>。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnReset").ClientID %>' title="显示全部">显示全部</strong>。<br />结果：恢复六个月的图表和订单范围。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>DataIDField</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartSales").ClientID %>' title="图表">图表</strong>）：初始为 <code>Month</code>，点击月份柱时传递业务键，例如 2026-09。横轴上的「9 月」只用于显示。</li>
-        <li><code>OnPointClick</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartSales").ClientID %>' title="图表">图表</strong>）：初始为 <code>ChartSales_PointClick</code>，将点击交给后台处理，用月份业务键筛选订单并更新 Grid。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>点击月份柱可查看当月订单。「最近两个月」同时缩小图表和明细的范围，「显示全部」恢复六个月。页面使用演示订单数据。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>按月份查看订单</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartSales").ClientID %>'
+                        title="图表">图表</strong>中的一个月份柱。<br />结果：后台按月份读取订单并更新<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("GridOrders").ClientID %>' title="订单明细">订单明细</strong>及范围提示。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnRecent").ClientID %>'
+                        title="最近两个月">最近两个月</strong>。<br />结果：柱状图和明细同时缩小到<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnRecent").ClientID %>' title="最近两个月">最近两个月</strong>。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnReset").ClientID %>'
+                        title="显示全部">显示全部</strong>。<br />结果：恢复六个月的图表和订单范围。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>DataIDField</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartSales").ClientID %>' title="图表">图表</strong>）：初始为
+                    <code>Month</code>，点击月份柱时传递业务键，例如 2026-09。横轴上的「9 月」只用于显示。
+                </li>
+                <li><code>OnPointClick</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartSales").ClientID %>' title="图表">图表</strong>）：初始为
+                    <code>ChartSales_PointClick</code>，将点击交给后台处理，用月份业务键筛选订单并更新 Grid。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -8,13 +8,11 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Button ID="Button1" runat="server" ClickHandler="onCallback1Click"
-            Text="客户端的JavaScript错误">
+        <f:Button ID="Button1" runat="server" ClickHandler="onCallback1Click" Text="客户端的JavaScript错误">
         </f:Button>
         <br />
         <br />
-        <f:Button ID="Button4" runat="server" OnClick="Button4_Click"
-            Text="服务器返回的JavaScript错误">
+        <f:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="服务器返回的JavaScript错误">
         </f:Button>
         <br />
         <br />
@@ -22,14 +20,13 @@
         <br />
     </form>
     <script type="text/javascript">
-        
         function onCallback1Click(event) {
             var i = a[0];
         }
 
 
         // 参考：http://stackoverflow.com/questions/951791/javascript-global-error-handling/10556743#10556743
-        window.onerror = function (msg, url, line, col, error) {
+        window.onerror = function(msg, url, line, col, error) {
             var errors = [];
             errors.push('消息：' + msg);
             errors.push('网址：' + url);
@@ -46,22 +43,24 @@
             return true;
         };
 
-
-
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>捕获页面全局 JavaScript 错误，并显示错误信息，区分本地脚本和后台返回脚本。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>分别触发脚本错误</h3>
-    <ul>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="客户端的JavaScript错误">客户端的JavaScript错误</strong>。<br />结果：本页错误处理器捕获该来源的脚本错误，在提示框显示消息、位置等信息；这里有意触发异常。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button4").ClientID %>' title="服务器返回的JavaScript错误">服务器返回的JavaScript错误</strong>。<br />结果：本页错误处理器捕获该来源的脚本错误，在提示框显示消息、位置等信息；这里有意触发异常。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>window.onerror</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="客户端的JavaScript错误">客户端的JavaScript错误</strong>）：捕获未处理的 JavaScript 错误并显示信息，不把异常当作正常业务结果。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>捕获页面全局 JavaScript 错误，并显示错误信息，区分本地脚本和后台返回脚本。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>分别触发脚本错误</h3>
+            <ul>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="客户端的JavaScript错误">客户端的JavaScript错误</strong>。<br />结果：本页错误处理器捕获该来源的脚本错误，在提示框显示消息、位置等信息；这里有意触发异常。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button4").ClientID %>'
+                        title="服务器返回的JavaScript错误">服务器返回的JavaScript错误</strong>。<br />结果：本页错误处理器捕获该来源的脚本错误，在提示框显示消息、位置等信息；这里有意触发异常。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>window.onerror</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="客户端的JavaScript错误">客户端的JavaScript错误</strong>）：捕获未处理的 JavaScript 错误并显示信息，不把异常当作正常业务结果。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

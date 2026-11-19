@@ -9,8 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" runat="server"
-            ShowHeader="false" ShowBorder="false" EnableTableStyle="true" MessageTarget="Qtip">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" runat="server" ShowHeader="false" ShowBorder="false" EnableTableStyle="true" MessageTarget="Qtip">
             <Items>
                 <f:TextBox ID="tbxUserName" runat="server" Label="用户名" Required="true" ShowRedStar="true">
                 </f:TextBox>
@@ -18,8 +17,7 @@
                 </f:TextBox>
             </Items>
         </f:SimpleForm>
-        <f:Button ID="btnRegister" runat="server" Text="注册" OnClick="btnRegister_Click"
-            ValidateForms="SimpleForm1" ValidateTarget="Top" MarginTop="5px">
+        <f:Button ID="btnRegister" runat="server" Text="注册" OnClick="btnRegister_Click" ValidateForms="SimpleForm1" ValidateTarget="Top" MarginTop="5px">
         </f:Button>
 
 
@@ -38,8 +36,10 @@
             <p>注：<strong>启用EnableTableStyle时，必须去除BodyPadding属性</strong>，并建议设置<code>MessageTarget</code>=<code>Qtip</code>。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>" title="表单">表单</strong>）：启用表格风格；表单去掉正文内边距，避免单元格与外框错开。</li>
-                <li><code>MessageTarget</code>（<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>" title="表单">表单</strong>）：使用 <code>Qtip</code> 提示错误，避免错误文字挤占表格布局。</li>
+                <li><code>EnableTableStyle</code>（<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>"
+                        title="表单">表单</strong>）：启用表格风格；表单去掉正文内边距，避免单元格与外框错开。</li>
+                <li><code>MessageTarget</code>（<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>"
+                        title="表单">表单</strong>）：使用 <code>Qtip</code> 提示错误，避免错误文字挤占表格布局。</li>
             </ul>
         </section>
     </template>

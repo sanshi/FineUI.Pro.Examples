@@ -8,8 +8,7 @@
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Form LabelWidth="100px" BodyPadding="10px" EnableCollapse="false"
-            ID="Form1" IsFluid="true" runat="server" Title="表单">
+        <f:Form LabelWidth="100px" BodyPadding="10px" EnableCollapse="false" ID="Form1" IsFluid="true" runat="server" Title="表单">
             <Rows>
                 <f:FormRow>
                     <Items>
@@ -21,15 +20,14 @@
                 <f:FormRow>
                     <Items>
                         <f:Label ID="Label4" Label="编号" Text="200804170006" runat="server" />
-                        <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL"
-                            RegexMessage="请输入有效的邮箱地址" runat="server">
+                        <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址" runat="server">
                         </f:TextBox>
                     </Items>
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:DropDownList ID="DropDownList3" Label="审批人" runat="server" Required="true" ShowRedStar="true"
-                            EmptyText="请选择审批人" AutoSelectFirstItem="false">
+                        <f:DropDownList ID="DropDownList3" Label="审批人" runat="server" Required="true" ShowRedStar="true" EmptyText="请选择审批人"
+                            AutoSelectFirstItem="false">
                             <f:ListItem Text="老大甲" Value="0"></f:ListItem>
                             <f:ListItem Text="老大乙" Value="1"></f:ListItem>
                             <f:ListItem Text="老大丙" Value="2"></f:ListItem>
@@ -68,7 +66,9 @@
             var form1 = F(Form1ClientID);
 
             // AJAX回发之前，先对表单进行验证
-            if (!F.validateForm(Form1ClientID, { target: '_top' })) {
+            if (!F.validateForm(Form1ClientID, {
+                    target: '_top'
+                })) {
                 return;
             }
 
@@ -80,26 +80,33 @@
                 eventName: 'SubmitForm1',
                 // 不显示页面加载动画
                 enableAjaxLoading: false,
-                complete: function (data, textStatus, xhr) {
+                complete: function(data, textStatus, xhr) {
                     // 传输结束后、响应脚本执行前隐藏表单加载动画；错误和超时也会执行。
                     form1.hideLoading();
                 }
             });
         }
+
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>表单验证通过后禁用提交按钮并显示自定义加载状态，请求完成时恢复。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>提交期间反馈处理状态</h3>
-    <ol>
-        <li>填写<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBox2").ClientID %>' title="电子邮箱">电子邮箱</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList3").ClientID %>' title="审批人">审批人</strong>、申请数量和描述，再点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmit").ClientID %>' title="验证此表单并提交">验证此表单并提交</strong>。<br />结果：验证不通过时显示字段错误；全部通过后才回发，并显示本页自定义提交状态。</li>
-        <li>等待本次请求完成。<br />结果：后台读取字段并显示通知，完成回调恢复提交按钮，不需要刷新页面。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>F.doPostBack.complete</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmit").ClientID %>' title="验证此表单并提交">验证此表单并提交</strong>）：在请求结束后恢复按钮状态；开始请求前先验证表单，避免验证失败后仍进入加载状态。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>表单验证通过后禁用提交按钮并显示自定义加载状态，请求完成时恢复。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>提交期间反馈处理状态</h3>
+            <ol>
+                <li>填写<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBox2").ClientID %>'
+                        title="电子邮箱">电子邮箱</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList3").ClientID %>' title="审批人">审批人</strong>、申请数量和描述，再点击<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmit").ClientID %>'
+                        title="验证此表单并提交">验证此表单并提交</strong>。<br />结果：验证不通过时显示字段错误；全部通过后才回发，并显示本页自定义提交状态。</li>
+                <li>等待本次请求完成。<br />结果：后台读取字段并显示通知，完成回调恢复提交按钮，不需要刷新页面。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>F.doPostBack.complete</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnSubmit").ClientID %>'
+                        title="验证此表单并提交">验证此表单并提交</strong>）：在请求结束后恢复按钮状态；开始请求前先验证表单，避免验证失败后仍进入加载状态。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

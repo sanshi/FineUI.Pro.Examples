@@ -9,8 +9,7 @@
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Form LabelWidth="100px" BodyPadding="10px" EnableCollapse="false"
-            ID="Form2" IsFluid="true" runat="server" Title="表单">
+        <f:Form LabelWidth="100px" BodyPadding="10px" EnableCollapse="false" ID="Form2" IsFluid="true" runat="server" Title="表单">
             <Rows>
                 <f:FormRow>
                     <Items>
@@ -35,13 +34,14 @@
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:DropDownList ID="DropDownList3" Label="审批人" Required="true" EmptyText="请选择审批人" runat="server" ShowRedStar="true" AutoSelectFirstItem="false">
+                        <f:DropDownList ID="DropDownList3" Label="审批人" Required="true" EmptyText="请选择审批人" runat="server" ShowRedStar="true"
+                            AutoSelectFirstItem="false">
                             <f:ListItem Text="老大甲" Value="0"></f:ListItem>
                             <f:ListItem Text="老大乙" Value="1"></f:ListItem>
                             <f:ListItem Text="老大丙" Value="2"></f:ListItem>
                         </f:DropDownList>
-                        <f:NumberBox ID="NumberBox1" Label="申请数量" NoDecimal="true" NoNegative="true" EmptyText="请输入申请数量" MaxValue="1000" Required="true" runat="server"
-                            ShowRedStar="true" />
+                        <f:NumberBox ID="NumberBox1" Label="申请数量" NoDecimal="true" NoNegative="true" EmptyText="请输入申请数量" MaxValue="1000" Required="true"
+                            runat="server" ShowRedStar="true" />
                     </Items>
                 </f:FormRow>
                 <f:FormRow>
@@ -52,8 +52,7 @@
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:Panel ID="Panel2" runat="server" ShowBorder="false"
-                            ShowHeader="false">
+                        <f:Panel ID="Panel2" runat="server" ShowBorder="false" ShowHeader="false">
                             <Items>
                                 <f:Button ID="btnSubmitForm2" Text="验证表单并提交" CssClass="marginr" runat="server" OnClick="btnSubmitForm2_Click"
                                     ValidateForms="Form2">
@@ -65,7 +64,7 @@
             </Rows>
         </f:Form>
         <br />
-        
+
     </form>
 </body>
 </html>

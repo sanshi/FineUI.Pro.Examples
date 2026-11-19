@@ -9,8 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Tree ID="Tree1" IsFluid="true" EnableCollapse="false" ShowHeader="true"
-            Title="树控件（多选）" EnableMultiSelect="true" runat="server">
+        <f:Tree ID="Tree1" IsFluid="true" EnableCollapse="false" ShowHeader="true" Title="树控件（多选）" EnableMultiSelect="true" runat="server">
             <Nodes>
                 <f:TreeNode Text="中国" Expanded="true">
                     <f:TreeNode Text="河南省" Expanded="true">
@@ -45,7 +44,6 @@
         <ul id="result"></ul>
     </form>
     <script>
-
         function onTree1NodeSelect(event, nodeId) {
             var date = new Date();
             $('#result').append(F.formatString('<li>[{0}:{1}] nodeselect：{2}</li>',
@@ -70,19 +68,22 @@
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示在浏览器监听树节点选择及选择集合变化，不依赖后台回发。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>选择变化日志</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（多选）">树控件（多选）</strong>点击两个不同节点。<br />结果：下方日志记录节点选择及当前选择集合的变化；事件处理在浏览器完成。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>nodeselect</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（多选）">树控件（多选）</strong>）：读取本次发生选择动作的节点。</li>
-        <li><code>selectionchange</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（多选）">树控件（多选）</strong>）：读取变化后的完整选择集合。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示在浏览器监听树节点选择及选择集合变化，不依赖后台回发。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>选择变化日志</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>'
+                        title="树控件（多选）">树控件（多选）</strong>点击两个不同节点。<br />结果：下方日志记录节点选择及当前选择集合的变化；事件处理在浏览器完成。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>nodeselect</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（多选）">树控件（多选）</strong>）：读取本次发生选择动作的节点。</li>
+                <li><code>selectionchange</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Tree1").ClientID %>' title="树控件（多选）">树控件（多选）</strong>）：读取变化后的完整选择集合。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

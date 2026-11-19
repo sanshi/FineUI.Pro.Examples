@@ -50,7 +50,8 @@
     </script>
     <template id="example-description">
         <section aria-label="页面描述">
-            <p>在<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>" title="下拉表格（多选）">下拉表格</strong>中多选人员，以标签显示和移除所选人员。</p>
+            <p>在<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>" title="下拉表格（多选）">下拉表格</strong>中多选人员，以标签显示和移除所选人员。
+            </p>
             <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>移除一个选择标签</h3>
             <ol>
                 <li>
@@ -59,10 +60,12 @@
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-            <p>注：如果表格分页，则需要同时指定 <code>Values</code> 和 <code>Text</code> 属性来设置<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">下拉框</strong>的初始值。</p>
+            <p>注：如果表格分页，则需要同时指定 <code>Values</code> 和 <code>Text</code> 属性来设置<strong class="example-control-reference"
+                    data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">下拉框</strong>的初始值。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>MultiSelectMode</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="请从下拉表格中选择">请从下拉表格中选择</strong>）：<code>Tags</code>/<code>tags</code> 将选中的每项显示为可单独移除的标签。 本页声明值为 <code>Tags</code>。</li>
+                <li><code>MultiSelectMode</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="请从下拉表格中选择">请从下拉表格中选择</strong>）：<code>Tags</code>/<code>tags</code> 将选中的每项显示为可单独移除的标签。 本页声明值为 <code>Tags</code>。</li>
             </ul>
         </section>
     </template>

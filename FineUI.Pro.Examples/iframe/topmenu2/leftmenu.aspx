@@ -8,10 +8,8 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="leftTree" runat="server"></f:PageManager>
-        <f:Tree runat="server" ShowBorder="false" ShowHeader="false" ID="leftTree"
-            EnableNodeHyperLink="true" CssClass="bgpanel" 
-            HeaderStyle="true" AllHeaderStyle="true" ExpanderToRight="true"
-            EnableSingleClickExpand="true" HideHScrollbar="true" HideVScrollbar="true">
+        <f:Tree runat="server" ShowBorder="false" ShowHeader="false" ID="leftTree" EnableNodeHyperLink="true" CssClass="bgpanel" HeaderStyle="true"
+            AllHeaderStyle="true" ExpanderToRight="true" EnableSingleClickExpand="true" HideHScrollbar="true" HideVScrollbar="true">
         </f:Tree>
         <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/iframe/topmenu2/data/menuMail.xml"></asp:XmlDataSource>
     </form>
@@ -19,7 +17,7 @@
     <script>
         var leftTreeID = '<%= leftTree.ClientID %>';
 
-        F.ready(function () {
+        F.ready(function() {
 
             // 展开树的第一个节点，并选中第一个节点下的第一个子节点（在右侧IFrame中打开）
             var tree = F(leftTreeID);
@@ -37,6 +35,7 @@
 
             parent.window.frames['menu2mainframe'].location.href = treeFirstLink.href;
         });
+
     </script>
 </body>
 </html>

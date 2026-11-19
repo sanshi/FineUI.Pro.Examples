@@ -95,10 +95,18 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DisplayType</code>（<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>）：使用开关外观，选择值仍是复选列表的多值集合。 本页<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>声明值为 <code>Switch</code>。</li>
-                <li><code>SwitchTextVisible</code>（<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>" title="列表三（自动回发）">列表三（自动回发）</strong>）：显示开关状态文字。 本页<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>" title="列表三（自动回发）">列表三（自动回发）</strong>声明值为 <code>true</code>。</li>
-                <li><code>SwitchOnText</code>（<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>）：开关开启状态的文字。 本页<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>声明值为 是。</li>
-                <li><code>SwitchOffText</code>（<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>）：开关关闭状态的文字。 本页<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>声明值为 否。</li>
+                <li><code>DisplayType</code>（<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>"
+                        title="列表一">列表一</strong>）：使用开关外观，选择值仍是复选列表的多值集合。 本页<strong class="example-control-reference"
+                        data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>声明值为 <code>Switch</code>。</li>
+                <li><code>SwitchTextVisible</code>（<strong class="example-control-reference" data-example-control="<%= rblAutoPostBack.ClientID %>"
+                        title="列表三（自动回发）">列表三（自动回发）</strong>）：显示开关状态文字。 本页<strong class="example-control-reference"
+                        data-example-control="<%= rblAutoPostBack.ClientID %>" title="列表三（自动回发）">列表三（自动回发）</strong>声明值为 <code>true</code>。</li>
+                <li><code>SwitchOnText</code>（<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>"
+                        title="列表四（竖排）">列表四（竖排）</strong>）：开关开启状态的文字。 本页<strong class="example-control-reference"
+                        data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>声明值为 是。</li>
+                <li><code>SwitchOffText</code>（<strong class="example-control-reference" data-example-control="<%= rblVertical.ClientID %>"
+                        title="列表四（竖排）">列表四（竖排）</strong>）：开关关闭状态的文字。 本页<strong class="example-control-reference"
+                        data-example-control="<%= rblVertical.ClientID %>" title="列表四（竖排）">列表四（竖排）</strong>声明值为 否。</li>
             </ul>
         </section>
     </template>

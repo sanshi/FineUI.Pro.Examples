@@ -83,23 +83,33 @@
             <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>隐藏单个字段</h3>
             <ul>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnShowHideTitle.ClientID %>" title="显示隐藏[标题]">显示隐藏[标题]</strong>。<br />
-                    结果：按钮回发后由后台隐藏<strong class="example-control-reference" data-example-control="<%= labTitle.ClientID %>" title="标题">标题</strong>，原来的位置仍为空白，同行的<strong class="example-control-reference" data-example-control="<%= labLiuShuiHao.ClientID %>" title="流水号">流水号</strong>不向左补位。
+                    点击<strong class="example-control-reference" data-example-control="<%= btnShowHideTitle.ClientID %>"
+                        title="显示隐藏[标题]">显示隐藏[标题]</strong>。<br />
+                    结果：按钮回发后由后台隐藏<strong class="example-control-reference" data-example-control="<%= labTitle.ClientID %>"
+                        title="标题">标题</strong>，原来的位置仍为空白，同行的<strong class="example-control-reference" data-example-control="<%= labLiuShuiHao.ClientID %>"
+                        title="流水号">流水号</strong>不向左补位。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnShowHidePhone.ClientID %>" title="显示隐藏[电话]">显示隐藏[电话]</strong>。<br />
-                    结果：按钮回发后由后台隐藏<strong class="example-control-reference" data-example-control="<%= labPhone.ClientID %>" title="电话">电话</strong>，释放其占用空间，同一行的<strong class="example-control-reference" data-example-control="<%= Label16.ClientID %>" title="申请人">申请人</strong>向左补位。
+                    点击<strong class="example-control-reference" data-example-control="<%= btnShowHidePhone.ClientID %>"
+                        title="显示隐藏[电话]">显示隐藏[电话]</strong>。<br />
+                    结果：按钮回发后由后台隐藏<strong class="example-control-reference" data-example-control="<%= labPhone.ClientID %>"
+                        title="电话">电话</strong>，释放其占用空间，同一行的<strong class="example-control-reference" data-example-control="<%= Label16.ClientID %>"
+                        title="申请人">申请人</strong>向左补位。
                 </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>隐藏整行</h3>
             <ul>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnShowHideFormRow2.ClientID %>" title="显示隐藏第二行">显示隐藏第二行</strong>。<br />
-                    结果：<strong class="example-control-reference" data-example-control="<%= labPhone.ClientID %>" title="电话">电话</strong>、<strong class="example-control-reference" data-example-control="<%= Label16.ClientID %>" title="申请人">申请人</strong>整行隐藏并释放高度，后面的行向上补位。
+                    点击<strong class="example-control-reference" data-example-control="<%= btnShowHideFormRow2.ClientID %>"
+                        title="显示隐藏第二行">显示隐藏第二行</strong>。<br />
+                    结果：<strong class="example-control-reference" data-example-control="<%= labPhone.ClientID %>" title="电话">电话</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= Label16.ClientID %>" title="申请人">申请人</strong>整行隐藏并释放高度，后面的行向上补位。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnShowHideFormRow3.ClientID %>" title="显示隐藏第三行（隐藏后显示空白行）">显示隐藏第三行（隐藏后显示空白行）</strong>。<br />
-                    结果：<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="编号">编号</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="电子邮箱">电子邮箱</strong>整行隐藏，仍保留一整行空白。
+                    点击<strong class="example-control-reference" data-example-control="<%= btnShowHideFormRow3.ClientID %>"
+                        title="显示隐藏第三行（隐藏后显示空白行）">显示隐藏第三行（隐藏后显示空白行）</strong>。<br />
+                    结果：<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="编号">编号</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="电子邮箱">电子邮箱</strong>整行隐藏，仍保留一整行空白。
                 </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>恢复显示</h3>
@@ -113,12 +123,22 @@
             <p>注：</p>
             <ul>
                 <li>对比隐藏[标题]和隐藏[电话]的不同之处（[标题]的<code>HideMode</code>=<code>Visibility</code>） </li>
-                <li>对比隐藏第二行和隐藏第三行的不同之处（<strong class="example-control-reference" data-example-control="<%= FormRow3.ClientID %>" title="第 3 个表单行">FormRow3</strong>的<code>HideMode</code>=<code>Visibility</code>） </li>
+                <li>对比隐藏第二行和隐藏第三行的不同之处（<strong class="example-control-reference" data-example-control="<%= FormRow3.ClientID %>"
+                        title="第 3 个表单行">FormRow3</strong>的<code>HideMode</code>=<code>Visibility</code>） </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>HideMode</code>（<strong class="example-control-reference" data-example-control="<%= labTitle.ClientID %>" title="标题">标题</strong>、<strong class="example-control-reference" data-example-control="<%= FormRow2.ClientID %>" title="第 2 个表单行">第 2 个表单行</strong>、<strong class="example-control-reference" data-example-control="<%= labPhone.ClientID %>" title="电话">电话</strong>、<strong class="example-control-reference" data-example-control="<%= FormRow3.ClientID %>" title="第 3 个表单行">第 3 个表单行</strong>）：标题和第三行设为 <code>Visibility</code>，隐藏后占位；电话和第二行使用默认 <code>Display</code>，隐藏后释放空间。</li>
-                <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="<%= labTitle.ClientID %>" title="标题">标题</strong>、<strong class="example-control-reference" data-example-control="<%= FormRow2.ClientID %>" title="第 2 个表单行">第 2 个表单行</strong>、<strong class="example-control-reference" data-example-control="<%= labPhone.ClientID %>" title="电话">电话</strong>、<strong class="example-control-reference" data-example-control="<%= FormRow3.ClientID %>" title="第 3 个表单行">第 3 个表单行</strong>）：后台按钮事件反转此值，切换字段或整行的显示。</li>
+                <li><code>HideMode</code>（<strong class="example-control-reference" data-example-control="<%= labTitle.ClientID %>"
+                        title="标题">标题</strong>、<strong class="example-control-reference" data-example-control="<%= FormRow2.ClientID %>" title="第 2 个表单行">第 2
+                        个表单行</strong>、<strong class="example-control-reference" data-example-control="<%= labPhone.ClientID %>" title="电话">电话</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= FormRow3.ClientID %>" title="第 3 个表单行">第 3 个表单行</strong>）：标题和第三行设为
+                    <code>Visibility</code>，隐藏后占位；电话和第二行使用默认 <code>Display</code>，隐藏后释放空间。
+                </li>
+                <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="<%= labTitle.ClientID %>" title="标题">标题</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= FormRow2.ClientID %>" title="第 2 个表单行">第 2 个表单行</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= labPhone.ClientID %>" title="电话">电话</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= FormRow3.ClientID %>" title="第 3 个表单行">第 3
+                        个表单行</strong>）：后台按钮事件反转此值，切换字段或整行的显示。</li>
             </ul>
         </section>
     </template>

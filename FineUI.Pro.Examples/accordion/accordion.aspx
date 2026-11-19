@@ -8,25 +8,22 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Accordion ID="Accordion1" IsFluid="true" Title="手风琴控件" ShowHeader="false" runat="server" Height="500px"
-            ShowBorder="true" ActivePaneIndex="1" EnableCollapse="false">
+        <f:Accordion ID="Accordion1" IsFluid="true" Title="手风琴控件" ShowHeader="false" runat="server" Height="500px" ShowBorder="true" ActivePaneIndex="1"
+            EnableCollapse="false">
             <Panes>
-                <f:AccordionPane ID="AccordionPane1" runat="server" Title="面板一" IconUrl="~/res/images/16/1.png"
-                    BodyPadding="2px 5px">
+                <f:AccordionPane ID="AccordionPane1" runat="server" Title="面板一" IconUrl="~/res/images/16/1.png" BodyPadding="2px 5px">
                     <Items>
                         <f:Label ID="Label1" Text="面板一中的文本" runat="server">
                         </f:Label>
                     </Items>
                 </f:AccordionPane>
-                <f:AccordionPane ID="AccordionPane2" runat="server" Title="面板二" IconUrl="~/res/images/16/4.png"
-                    BodyPadding="2px 5px">
+                <f:AccordionPane ID="AccordionPane2" runat="server" Title="面板二" IconUrl="~/res/images/16/4.png" BodyPadding="2px 5px">
                     <Items>
                         <f:Label ID="Label2" Text="面板二中的文本" runat="server">
                         </f:Label>
                     </Items>
                 </f:AccordionPane>
-                <f:AccordionPane ID="AccordionPane3" runat="server" Title="面板三" IconUrl="~/res/images/16/7.png"
-                    BodyPadding="2px 5px">
+                <f:AccordionPane ID="AccordionPane3" runat="server" Title="面板三" IconUrl="~/res/images/16/7.png" BodyPadding="2px 5px">
                     <Items>
                         <f:Label ID="Label3" Text="面板三中的文本" runat="server">
                         </f:Label>
@@ -42,21 +39,28 @@
         <f:Button ID="Button2" Text="展开下一个面板" runat="server" OnClick="Button2_Click">
         </f:Button>
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示手风琴面板的互斥展开、读取当前面板和顺序切换。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>展开与读取当前面板</h3>
-    <ol>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Accordion1").ClientID %>' title="手风琴控件">手风琴控件</strong>点击<code>面板一</code>标题。<br />结果：浏览器展开面板一，原来展开的面板收起。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="获取当前展开的面板">获取当前展开的面板</strong>。<br />结果：读取当前展开面板的位置并显示提示；显示编号按页面习惯从 <code>1</code> 开始。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>' title="展开下一个面板">展开下一个面板</strong>。<br />结果：切换到下一个可用面板，显示对应内容。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>ActivePaneIndex</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Accordion1").ClientID %>' title="手风琴控件">手风琴控件</strong>）：初始为<code>1</code>，指定当前展开面板，配置索引从 <code>0</code> 开始。</li>
-        <li><code>EnableFill</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Accordion1").ClientID %>' title="手风琴控件">手风琴控件</strong>）：默认填充可用高度，当前展开面板使用剩余空间。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示手风琴面板的互斥展开、读取当前面板和顺序切换。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>展开与读取当前面板</h3>
+            <ol>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Accordion1").ClientID %>'
+                        title="手风琴控件">手风琴控件</strong>点击<code>面板一</code>标题。<br />结果：浏览器展开面板一，原来展开的面板收起。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="获取当前展开的面板">获取当前展开的面板</strong>。<br />结果：读取当前展开面板的位置并显示提示；显示编号按页面习惯从 <code>1</code> 开始。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button2").ClientID %>'
+                        title="展开下一个面板">展开下一个面板</strong>。<br />结果：切换到下一个可用面板，显示对应内容。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>ActivePaneIndex</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Accordion1").ClientID %>'
+                        title="手风琴控件">手风琴控件</strong>）：初始为<code>1</code>，指定当前展开面板，配置索引从 <code>0</code> 开始。</li>
+                <li><code>EnableFill</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Accordion1").ClientID %>'
+                        title="手风琴控件">手风琴控件</strong>）：默认填充可用高度，当前展开面板使用剩余空间。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

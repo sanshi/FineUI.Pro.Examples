@@ -5,7 +5,6 @@
 <head runat="server">
     <title></title>
     <style>
-
         .speciallabel {
             color: red;
         }
@@ -15,8 +14,7 @@
 <body>
     <form id="_form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Form BodyPadding="10px" EnableCollapse="false" LabelAlign="Left"
-            ID="Form2" IsFluid="true" runat="server" Title="表单">
+        <f:Form BodyPadding="10px" EnableCollapse="false" LabelAlign="Left" ID="Form2" IsFluid="true" runat="server" Title="表单">
             <Rows>
                 <f:FormRow ID="FormRowExample1" ColumnWidths="20px 50% 50%">
                     <Items>
@@ -30,8 +28,7 @@
                     <Items>
                         <f:Label ID="Label1" runat="server" CssClass="speciallabel" Text="2."></f:Label>
                         <f:Label ID="Label4" Label="编号" Text="200804170006" runat="server" />
-                        <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL"
-                            RegexMessage="请输入有效的邮箱地址" runat="server">
+                        <f:TextBox ID="TextBox2" Required="true" ShowRedStar="true" Label="电子邮箱" RegexPattern="EMAIL" RegexMessage="请输入有效的邮箱地址" runat="server">
                         </f:TextBox>
                     </Items>
                 </f:FormRow>
@@ -61,8 +58,7 @@
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:Panel ID="Panel2" runat="server" ShowBorder="false"
-                            ShowHeader="false">
+                        <f:Panel ID="Panel2" runat="server" ShowBorder="false" ShowHeader="false">
                             <Items>
                                 <f:Button ID="btnSubmitForm2" Text="提交表单" CssClass="marginr" runat="server" OnClick="btnSubmitForm2_Click"
                                     ValidateForms="Form2">
@@ -86,7 +82,9 @@
                     结果：编号区域使用 <code>20</code> 像素宽度，其余一列占满或两列等分剩余空间。
                 </li>
                 <li>
-                    调整浏览器宽度，再填写邮箱、<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>" title="审批人">审批人</strong>、<strong class="example-control-reference" data-example-control="<%= NumberBox1.ClientID %>" title="申请数量">申请数量</strong>和描述。<br />
+                    调整浏览器宽度，再填写邮箱、<strong class="example-control-reference" data-example-control="<%= DropDownList3.ClientID %>"
+                        title="审批人">审批人</strong>、<strong class="example-control-reference" data-example-control="<%= NumberBox1.ClientID %>"
+                        title="申请数量">申请数量</strong>和描述。<br />
                     结果：编号仍保持固定宽度，输入区域随容器伸缩，原输入不丢失。
                 </li>
             </ul>
@@ -99,8 +97,17 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ColumnWidths</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample1").ClientID %>' title="第 1 个表单行">第 1 个表单行</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample2").ClientID %>' title="第 2 个表单行">第 2 个表单行</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample3").ClientID %>' title="第 3 个表单行">第 3 个表单行</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample4").ClientID %>' title="第 4 个表单行">第 4 个表单行</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample5").ClientID %>' title="第 5 个表单行">第 5 个表单行</strong>）：各组分别设为<code>20px 50% 50%</code>、<code>20px 100%</code>。</li>
-                <li><code>IsFluid</code>（<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>" title="表单">表单</strong>）：表单随父容器伸缩。</li>
+                <li><code>ColumnWidths</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample1").ClientID %>' title="第 1 个表单行">第 1 个表单行</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample2").ClientID %>'
+                        title="第 2 个表单行">第 2 个表单行</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample3").ClientID %>' title="第 3 个表单行">第 3 个表单行</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample4").ClientID %>'
+                        title="第 4 个表单行">第 4 个表单行</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormRowExample5").ClientID %>' title="第 5 个表单行">第 5
+                        个表单行</strong>）：各组分别设为<code>20px 50% 50%</code>、<code>20px 100%</code>。</li>
+                <li><code>IsFluid</code>（<strong class="example-control-reference" data-example-control="<%= Form2.ClientID %>"
+                        title="表单">表单</strong>）：表单随父容器伸缩。</li>
             </ul>
         </section>
     </template>

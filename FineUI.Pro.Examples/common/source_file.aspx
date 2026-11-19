@@ -52,10 +52,11 @@
     <script src="<%= PageContext.ResolveUrl("~/res/google-code-prettify/prettify.js") %>"></script>
     <script src="<%= PageContext.ResolveUrl("~/res/google-code-prettify/lang-basic.js") %>"></script>
     <script nonce="<%= PageManager.Instance.CspScriptsNonceValue %>">
-        F.ready(function () {
+        F.ready(function() {
             FineUISourceCodeFilter.filterDocument();
             prettyPrint();
         });
+
     </script>
 </body>
 </html>

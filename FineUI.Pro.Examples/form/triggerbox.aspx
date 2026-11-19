@@ -42,11 +42,13 @@
             <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>打开、关闭并回填</h3>
             <ol>
                 <li>
-                    点击提示为<strong class="example-control-reference" data-example-control="<%= tbxMyBox1.ClientID %>" title="打开弹出窗口">打开弹出窗口</strong>的输入框，或点击右侧搜索图标。<br />
+                    点击提示为<strong class="example-control-reference" data-example-control="<%= tbxMyBox1.ClientID %>"
+                        title="打开弹出窗口">打开弹出窗口</strong>的输入框，或点击右侧搜索图标。<br />
                     结果：浏览器直接显示标题为<strong class="example-control-reference" data-example-control="<%= Window1.ClientID %>" title="弹出窗口">弹出窗口</strong>的窗体，打开时无需回发。
                 </li>
                 <li>
-                    点击窗体内的<strong class="example-control-reference" data-example-control="<%= btnCloseWindow.ClientID %>" title="关闭当前窗口">关闭当前窗口</strong>按钮。<br />
+                    点击窗体内的<strong class="example-control-reference" data-example-control="<%= btnCloseWindow.ClientID %>"
+                        title="关闭当前窗口">关闭当前窗口</strong>按钮。<br />
                     结果：按钮回发后，后台隐藏窗体，输入框显示“弹出窗口被关闭了”。
                 </li>
             </ol>
@@ -54,10 +56,14 @@
             <p>注：点击输入框即可弹出窗体（<code>EnableClickAction</code>=<code>true</code>）。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>TriggerIcon</code>（<strong class="example-control-reference" data-example-control="<%= tbxMyBox1.ClientID %>" title="打开弹出窗口">打开弹出窗口</strong>）：初始为 <code>Search</code>，显示搜索图标。</li>
-                <li><code>EnableClickAction</code>（<strong class="example-control-reference" data-example-control="<%= tbxMyBox1.ClientID %>" title="打开弹出窗口">打开弹出窗口</strong>）：初始为 <code>true</code>，点击输入区域也触发 <code>triggerclick</code>。</li>
-                <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="<%= Window1.ClientID %>" title="弹出窗口">弹出窗口</strong>）：窗口初始为 <code>true</code>；关闭按钮处理后再次隐藏。</li>
-                <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="<%= btnCloseWindow.ClientID %>" title="关闭当前窗口">关闭当前窗口</strong>）：窗内按钮绑定后台事件，关闭窗口并回填输入框。</li>
+                <li><code>TriggerIcon</code>（<strong class="example-control-reference" data-example-control="<%= tbxMyBox1.ClientID %>"
+                        title="打开弹出窗口">打开弹出窗口</strong>）：初始为 <code>Search</code>，显示搜索图标。</li>
+                <li><code>EnableClickAction</code>（<strong class="example-control-reference" data-example-control="<%= tbxMyBox1.ClientID %>"
+                        title="打开弹出窗口">打开弹出窗口</strong>）：初始为 <code>true</code>，点击输入区域也触发 <code>triggerclick</code>。</li>
+                <li><code>Hidden</code>（<strong class="example-control-reference" data-example-control="<%= Window1.ClientID %>"
+                        title="弹出窗口">弹出窗口</strong>）：窗口初始为 <code>true</code>；关闭按钮处理后再次隐藏。</li>
+                <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="<%= btnCloseWindow.ClientID %>"
+                        title="关闭当前窗口">关闭当前窗口</strong>）：窗内按钮绑定后台事件，关闭窗口并回填输入框。</li>
             </ul>
         </section>
     </template>

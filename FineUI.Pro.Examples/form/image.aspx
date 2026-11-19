@@ -44,10 +44,14 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>ImageUrl</code>（<strong class="example-control-reference" data-example-control="<%= Image3.ClientID %>" title="第 3 个图片">第 3 个图片</strong>）：设置图片文件地址。</li>
-                <li><code>ImageWidth</code>（<strong class="example-control-reference" data-example-control="<%= Image3.ClientID %>" title="第 3 个图片">第 3 个图片</strong>）：控制图片宽度，按钮在 <code>32</code> 和 <code>64</code> 之间切换。</li>
-                <li><code>ImageHeight</code>（<strong class="example-control-reference" data-example-control="<%= Image3.ClientID %>" title="第 3 个图片">第 3 个图片</strong>）：与宽度同步改变，保持正方形。</li>
-                <li><code>ImageCssStyle</code>（<strong class="example-control-reference" data-example-control="<%= Image3.ClientID %>" title="第 3 个图片">第 3 个图片</strong>）：为图片添加边框和内边距。</li>
+                <li><code>ImageUrl</code>（<strong class="example-control-reference" data-example-control="<%= Image3.ClientID %>" title="第 3 个图片">第 3
+                        个图片</strong>）：设置图片文件地址。</li>
+                <li><code>ImageWidth</code>（<strong class="example-control-reference" data-example-control="<%= Image3.ClientID %>" title="第 3 个图片">第 3
+                        个图片</strong>）：控制图片宽度，按钮在 <code>32</code> 和 <code>64</code> 之间切换。</li>
+                <li><code>ImageHeight</code>（<strong class="example-control-reference" data-example-control="<%= Image3.ClientID %>" title="第 3 个图片">第 3
+                        个图片</strong>）：与宽度同步改变，保持正方形。</li>
+                <li><code>ImageCssStyle</code>（<strong class="example-control-reference" data-example-control="<%= Image3.ClientID %>" title="第 3 个图片">第 3
+                        个图片</strong>）：为图片添加边框和内边距。</li>
             </ul>
         </section>
     </template>

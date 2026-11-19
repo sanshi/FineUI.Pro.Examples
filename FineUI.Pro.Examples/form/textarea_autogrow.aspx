@@ -22,7 +22,8 @@
     </form>
     <template id="example-description">
         <section aria-label="页面描述">
-            <p>演示<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="自动扩展高度的文本输入框">多行文本框</strong>随内容增减自动调整高度，并将高度限制在 <code>100</code> 到 <code>600</code> 像素之间。</p>
+            <p>演示<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>"
+                    title="自动扩展高度的文本输入框">多行文本框</strong>随内容增减自动调整高度，并将高度限制在 <code>100</code> 到 <code>600</code> 像素之间。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>随内容调整高度</h3>
             <ol>
                 <li>
@@ -40,9 +41,12 @@
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>AutoGrowHeight</code>（<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="自动扩展高度的文本输入框">自动扩展高度的文本输入框</strong>）：初始为 <code>true</code>，按内容自动调整高度。</li>
-                <li><code>AutoGrowHeightMin</code>（<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="自动扩展高度的文本输入框">自动扩展高度的文本输入框</strong>）：初始为 <code>100</code>，内容很少时也保留此高度。</li>
-                <li><code>AutoGrowHeightMax</code>（<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>" title="自动扩展高度的文本输入框">自动扩展高度的文本输入框</strong>）：初始为 <code>600</code>，内容较多时不再继续增高。</li>
+                <li><code>AutoGrowHeight</code>（<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>"
+                        title="自动扩展高度的文本输入框">自动扩展高度的文本输入框</strong>）：初始为 <code>true</code>，按内容自动调整高度。</li>
+                <li><code>AutoGrowHeightMin</code>（<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>"
+                        title="自动扩展高度的文本输入框">自动扩展高度的文本输入框</strong>）：初始为 <code>100</code>，内容很少时也保留此高度。</li>
+                <li><code>AutoGrowHeightMax</code>（<strong class="example-control-reference" data-example-control="<%= TextArea1.ClientID %>"
+                        title="自动扩展高度的文本输入框">自动扩展高度的文本输入框</strong>）：初始为 <code>600</code>，内容较多时不再继续增高。</li>
             </ul>
         </section>
     </template>

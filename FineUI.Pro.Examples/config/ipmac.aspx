@@ -10,15 +10,14 @@
 
     <title>获取服务器 IP+MAC 地址</title>
     <script runat="server">
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            if (!IsPostBack)
-            {
+        protected void Page_Load(object sender, EventArgs e) {
+            if (!IsPostBack) {
                 string[] ipmac = PageManager1.GetRequestIPMAC();
                 tbxIP.Text = ipmac[0];
                 tbxMAC.Text = ipmac[1];
             }
         }
+
     </script>
 </head>
 <body>

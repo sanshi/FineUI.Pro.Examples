@@ -4,8 +4,7 @@
     <meta name="sourcefiles" content="~/master/Simple.Master" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="mainCPH" runat="server">
-    <f:ContentPanel ID="Panel1" Title="位于内容页中" BoxFlex="1" Margin="0" runat="server"
-        BodyPadding="10px" ShowBorder="true" ShowHeader="true">
+    <f:ContentPanel ID="Panel1" Title="位于内容页中" BoxFlex="1" Margin="0" runat="server" BodyPadding="10px" ShowBorder="true" ShowHeader="true">
 
         <f:Label ID="labResult" runat="server" Text="请点击左侧树节点">
         </f:Label>

@@ -34,21 +34,27 @@
         }
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示从多层 <code>iframe</code> 中通知外层页面，区分当前子页与最终需要更新的父页。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>从内层通知外层</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板一">面板一</strong>逐层进入子页，点击其中通知外层页面的入口。<br />结果：目标父页处理对应回发或更新脚本，外层结果标签显示本次通知；已有 <code>iframe</code> 结构保留。</li>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnServerRefresh").ClientID %>' title="服务端刷新面板 IFrame">服务端刷新面板 IFrame</strong>。<br />结果：只刷新指定面板中的 <code>iframe</code>，不重新加载整个外层页面。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板一">面板一</strong>）：初始为<code>true</code>，面板承载下一层独立页面。</li>
-        <li><code>IFrameUrl</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>' title="面板一">面板一</strong>）：初始为<code>parent_postback2.aspx</code>，指定下一层页面地址。</li>
-        <li><code>GetCustomEventReference()</code>（<strong>子页通知代码</strong>）：子页向实际目标父页发送本例约定的事件和参数。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示从多层 <code>iframe</code> 中通知外层页面，区分当前子页与最终需要更新的父页。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>从内层通知外层</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="面板一">面板一</strong>逐层进入子页，点击其中通知外层页面的入口。<br />结果：目标父页处理对应回发或更新脚本，外层结果标签显示本次通知；已有 <code>iframe</code> 结构保留。</li>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("btnServerRefresh").ClientID %>'
+                        title="服务端刷新面板 IFrame">服务端刷新面板 IFrame</strong>。<br />结果：只刷新指定面板中的 <code>iframe</code>，不重新加载整个外层页面。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableIFrame</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="面板一">面板一</strong>）：初始为<code>true</code>，面板承载下一层独立页面。</li>
+                <li><code>IFrameUrl</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Panel1").ClientID %>'
+                        title="面板一">面板一</strong>）：初始为<code>parent_postback2.aspx</code>，指定下一层页面地址。</li>
+                <li><code>GetCustomEventReference()</code>（<strong>子页通知代码</strong>）：子页向实际目标父页发送本例约定的事件和参数。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

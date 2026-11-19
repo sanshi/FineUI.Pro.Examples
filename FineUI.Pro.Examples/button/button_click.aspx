@@ -12,13 +12,11 @@
         </f:Button>
         <br />
         <br />
-        <f:Button ID="btnClientClick" Text="客户端事件" ClickHandler="onClientEventClick"
-            CssClass="marginr" runat="server">
+        <f:Button ID="btnClientClick" Text="客户端事件" ClickHandler="onClientEventClick" CssClass="marginr" runat="server">
         </f:Button>
         <br />
         <br />
-        <f:Button ID="btnClientClick2" Text="客户端事件（可被服务端改变）" ClickHandler="onOriginalClick"
- runat="server">
+        <f:Button ID="btnClientClick2" Text="客户端事件（可被服务端改变）" ClickHandler="onOriginalClick" runat="server">
         </f:Button>
         <br />
         <br />
@@ -29,19 +27,26 @@
 
     </form>
     <script type="text/javascript">
-
         function onClientEventClick(event) {
             alert('这是客户端事件');
         }
 
         // 页面标签里用 ClickHandler 声明的客户端点击回调（属性里填的是函数名，不是一段脚本）
         function onOriginalClick(event) {
-            F.alert({ message: '这是原来的客户端事件', messageIcon: 'information', target: '_top' });
+            F.alert({
+                message: '这是原来的客户端事件',
+                messageIcon: 'information',
+                target: '_top'
+            });
         }
 
         // 服务端在回发中把上面那个按钮的回调换成了这个
         function onChangedClick(event) {
-            F.alert({ message: '客户端事件已改变！', messageIcon: 'information', target: '_top' });
+            F.alert({
+                message: '客户端事件已改变！',
+                messageIcon: 'information',
+                target: '_top'
+            });
         }
 
     </script>
@@ -62,18 +67,24 @@
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>更换客户端处理函数</h3>
             <ol>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnClientClick2.ClientID %>" title="客户端事件（可被服务端改变）">客户端事件（可被服务端改变）</strong>，关闭提示。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnClientClick2.ClientID %>"
+                        title="客户端事件（可被服务端改变）">客户端事件（可被服务端改变）</strong>，关闭提示。<br />
                     结果：浏览器弹出“这是原来的客户端事件”。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnChangeClientClick2.ClientID %>" title="改变上个按钮的客户端事件">改变上个按钮的客户端事件</strong>，再点前一个按钮。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnChangeClientClick2.ClientID %>"
+                        title="改变上个按钮的客户端事件">改变上个按钮的客户端事件</strong>，再点前一个按钮。<br />
                     结果：后台回发更新回调名称，此后浏览器弹出“客户端事件已改变！”。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="<%= btnServerClick.ClientID %>" title="服务器端事件">服务器端事件</strong>、<strong class="example-control-reference" data-example-control="<%= btnChangeClientClick2.ClientID %>" title="改变上个按钮的客户端事件">改变上个按钮的客户端事件</strong>）：声明后台点击处理方法，点击时发起请求。</li>
-                <li><code>ClickHandler</code>（<strong class="example-control-reference" data-example-control="<%= btnClientClick.ClientID %>" title="客户端事件">客户端事件</strong>、<strong class="example-control-reference" data-example-control="<%= btnClientClick2.ClientID %>" title="客户端事件（可被服务端改变）">客户端事件（可被服务端改变）</strong>）：声明客户端函数名，后台也可将它改为另一个已定义函数。</li>
+                <li><code>OnClick</code>（<strong class="example-control-reference" data-example-control="<%= btnServerClick.ClientID %>"
+                        title="服务器端事件">服务器端事件</strong>、<strong class="example-control-reference" data-example-control="<%= btnChangeClientClick2.ClientID %>"
+                        title="改变上个按钮的客户端事件">改变上个按钮的客户端事件</strong>）：声明后台点击处理方法，点击时发起请求。</li>
+                <li><code>ClickHandler</code>（<strong class="example-control-reference" data-example-control="<%= btnClientClick.ClientID %>"
+                        title="客户端事件">客户端事件</strong>、<strong class="example-control-reference" data-example-control="<%= btnClientClick2.ClientID %>"
+                        title="客户端事件（可被服务端改变）">客户端事件（可被服务端改变）</strong>）：声明客户端函数名，后台也可将它改为另一个已定义函数。</li>
             </ul>
         </section>
     </template>

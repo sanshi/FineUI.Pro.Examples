@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉树" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉树" ShowHeader="true">
             <Items>
                 <f:DropDownBox runat="server" ID="DropDownBox1" Values="henan" EnableMultiSelect="false">
                     <PopPanel>
@@ -62,18 +61,23 @@
             <h3><i class="f-icon f-iconfont f-iconfont-list" aria-hidden="true"></i>选择树节点</h3>
             <ol>
                 <li>
-                    展开<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>" title="下拉树">下拉树</strong>，点击<strong>河南省</strong>下的“驻马店市”。<br />
+                    展开<strong class="example-control-reference" data-example-control="<%= SimpleForm1.ClientID %>"
+                        title="下拉树">下拉树</strong>，点击<strong>河南省</strong>下的“驻马店市”。<br />
                     结果：选择替换为驻马店市，对应值为 <code>zhumadian</code>。
                 </li>
                 <li>
-                    点击面板外空白处收起，再点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>" title="获取下拉框的选中值">获取下拉框的选中值</strong>。<br />
+                    点击面板外空白处收起，再点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>"
+                        title="获取下拉框的选中值">获取下拉框的选中值</strong>。<br />
                     结果：回发后由后台显示当前树节点文字和标识。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>）：决定<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>false</code>。</li>
-                <li><code>Values</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>）：指定初始多选值。 本页声明值为 <code>henan</code>。</li>
+                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>）：决定<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>false</code>。</li>
+                <li><code>Values</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>）：指定初始多选值。 本页声明值为 <code>henan</code>。</li>
             </ul>
         </section>
     </template>

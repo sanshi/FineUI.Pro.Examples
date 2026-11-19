@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:TabStrip ID="TabStrip4" IsFluid="true" Height="150px" ShowBorder="false" TabBorderColor="true" TabPlain="true" ActiveTabIndex="0"
-            runat="server">
+        <f:TabStrip ID="TabStrip4" IsFluid="true" Height="150px" ShowBorder="false" TabBorderColor="true" TabPlain="true" ActiveTabIndex="0" runat="server">
             <Tabs>
                 <f:Tab ID="Tab10" Title="标签一" BodyPadding="10px" runat="server">
                     <Items>
@@ -115,8 +114,8 @@
         </f:TabStrip>
         <br />
         <br />
-        <f:TabStrip ID="TabStrip2" IsFluid="true" Height="150px" TabFill="true" TabSpace="0" TabBorderColor="true" TabPlain="true" ShowBorder="true" ActiveTabIndex="1"
-            runat="server">
+        <f:TabStrip ID="TabStrip2" IsFluid="true" Height="150px" TabFill="true" TabSpace="0" TabBorderColor="true" TabPlain="true" ShowBorder="true"
+            ActiveTabIndex="1" runat="server">
             <Tabs>
                 <f:Tab ID="Tab1" Title="标签一" BodyPadding="10px" runat="server">
                     <Items>
@@ -142,8 +141,8 @@
         </f:TabStrip>
         <br />
         <br />
-        <f:TabStrip ID="TabStrip3" IsFluid="true" Height="150px" TabFill="true" TabSpace="-1" TabBorderColor="true" TabPlain="true" ShowBorder="true" ActiveTabIndex="2"
-            runat="server">
+        <f:TabStrip ID="TabStrip3" IsFluid="true" Height="150px" TabFill="true" TabSpace="-1" TabBorderColor="true" TabPlain="true" ShowBorder="true"
+            ActiveTabIndex="2" runat="server">
             <Tabs>
                 <f:Tab ID="Tab4" Title="标签一" BodyPadding="10px" runat="server">
                     <Items>
@@ -169,19 +168,24 @@
         </f:TabStrip>
         <br />
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示去掉标签标题的块状背景，保留当前项标识。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对比标题与当前项</h3>
-    <ul>
-        <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip4").ClientID %>' title="第 1 个选项卡">第 1 个选项卡</strong>依次点击不同标签，对照本页其它组的同类标题。<br />结果：内容区随当前标签切换；标题方向、对齐、背景、边框或墨水条按本页配置显示。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>TabPlain</code>（本页各选项卡，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip4").ClientID %>' title="第 1 个选项卡">第 1 个选项卡</strong>）：初始为<code>true</code>，去掉标题块背景，保留当前项标识。</li>
-        <li><code>TabBorderColor</code>（本页各选项卡，如<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip4").ClientID %>' title="第 1 个选项卡">第 1 个选项卡</strong>）：初始为<code>true</code>，对当前标题使用本页指定的主题色边框。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示去掉标签标题的块状背景，保留当前项标识。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>对比标题与当前项</h3>
+            <ul>
+                <li>在<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip4").ClientID %>'
+                        title="第 1 个选项卡">第 1 个选项卡</strong>依次点击不同标签，对照本页其它组的同类标题。<br />结果：内容区随当前标签切换；标题方向、对齐、背景、边框或墨水条按本页配置显示。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>TabPlain</code>（本页各选项卡，如<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip4").ClientID %>' title="第 1 个选项卡">第 1
+                        个选项卡</strong>）：初始为<code>true</code>，去掉标题块背景，保留当前项标识。</li>
+                <li><code>TabBorderColor</code>（本页各选项卡，如<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStrip4").ClientID %>' title="第 1 个选项卡">第 1
+                        个选项卡</strong>）：初始为<code>true</code>，对当前标题使用本页指定的主题色边框。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

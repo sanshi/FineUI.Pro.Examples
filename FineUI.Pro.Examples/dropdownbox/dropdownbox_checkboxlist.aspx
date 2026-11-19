@@ -8,13 +8,12 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="下拉复选框列表" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="下拉复选框列表"
+            ShowHeader="true">
             <Items>
                 <f:DropDownBox runat="server" ID="DropDownBox1" DataControlID="RadioButtonList1" EnableMultiSelect="true" Values="js,php">
                     <PopPanel>
-                        <f:SimpleForm ID="SimpleForm2" BodyPadding="10px" runat="server" AutoScroll="true"
-                            ShowBorder="true" ShowHeader="false" Hidden="true">
+                        <f:SimpleForm ID="SimpleForm2" BodyPadding="10px" runat="server" AutoScroll="true" ShowBorder="true" ShowHeader="false" Hidden="true">
                             <Items>
                                 <f:Label ID="Label1" runat="server" Text="请选择编程语言："></f:Label>
                                 <f:CheckBoxList ID="RadioButtonList1" ColumnNumber="3" runat="server">
@@ -35,8 +34,7 @@
                         </f:SimpleForm>
                     </PopPanel>
                 </f:DropDownBox>
-                <f:Button ID="btnSelectItem6" Text="选中[php,basic]" runat="server" OnClick="btnSelectItem6_Click"
-                    CssClass="marginr">
+                <f:Button ID="btnSelectItem6" Text="选中[php,basic]" runat="server" OnClick="btnSelectItem6_Click" CssClass="marginr">
                 </f:Button>
                 <f:Button ID="btnGetSelection" Text="获取下拉框的选中值" runat="server" OnClick="btnGetSelection_Click">
                 </f:Button>
@@ -56,27 +54,35 @@
                     结果：<code>Ruby</code> 加入已有选择，对应值为 <code>ruby</code>。
                 </li>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>" title="获取下拉框的选中值">获取下拉框的选中值</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>"
+                        title="获取下拉框的选中值">获取下拉框的选中值</strong>。<br />
                     结果：回发后由后台显示包含 <code>Ruby</code> 和 <code>ruby</code> 的当前选择。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-refresh" aria-hidden="true"></i>通过按钮更新选择</h3>
             <ol>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnSelectItem6.ClientID %>" title="选中[php,basic]">选中[php,basic]</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnSelectItem6.ClientID %>"
+                        title="选中[php,basic]">选中[php,basic]</strong>。<br />
                     结果：回发后由后台把当前选择替换为按钮指定的人名或语言；输入区和重新展开的选择状态同步更新。
                 </li>
                 <li>
-                    再点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>" title="获取下拉框的选中值">获取下拉框的选中值</strong>。<br />
+                    再点击<strong class="example-control-reference" data-example-control="<%= btnGetSelection.ClientID %>"
+                        title="获取下拉框的选中值">获取下拉框的选中值</strong>。<br />
                     结果：读取结果反映刚更新的选择。
                 </li>
             </ol>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>DataControlID</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>）：指定弹出面板中提供选择数据的控件。 本页声明值为 <code>RadioButtonList1</code>。</li>
-                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>）：决定<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>true</code>。</li>
-                <li><code>Values</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>" title="下拉框">下拉框</strong>）：指定初始多选值。 本页声明值为 <code>js</code>,<code>php</code>。</li>
-                <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>" title="复选框列表">复选框列表</strong>）：控制弹出单选或复选列表的列数。 本页声明值为 <code>3</code>。</li>
+                <li><code>DataControlID</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>）：指定弹出面板中提供选择数据的控件。 本页声明值为 <code>RadioButtonList1</code>。</li>
+                <li><code>EnableMultiSelect</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>）：决定<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>保留单个值还是多个值。 本页声明值为 <code>true</code>。</li>
+                <li><code>Values</code>（<strong class="example-control-reference" data-example-control="<%= DropDownBox1.ClientID %>"
+                        title="下拉框">下拉框</strong>）：指定初始多选值。 本页声明值为 <code>js</code>,<code>php</code>。</li>
+                <li><code>ColumnNumber</code>（<strong class="example-control-reference" data-example-control="<%= RadioButtonList1.ClientID %>"
+                        title="复选框列表">复选框列表</strong>）：控制弹出单选或复选列表的列数。 本页声明值为 <code>3</code>。</li>
             </ul>
         </section>
     </template>

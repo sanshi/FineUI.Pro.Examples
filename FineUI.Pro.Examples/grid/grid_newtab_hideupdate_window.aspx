@@ -9,8 +9,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" AutoSizePanelID="SimpleForm1" runat="server" />
-        <f:Form ID="SimpleForm1" ShowBorder="true" Margin="24px" ShowHeader="false" 
-            AutoScroll="true" BodyPadding="10px" runat="server">
+        <f:Form ID="SimpleForm1" ShowBorder="true" Margin="24px" ShowHeader="false" AutoScroll="true" BodyPadding="10px" runat="server">
             <Toolbars>
                 <f:Toolbar ID="Toolbar1" runat="server">
                     <Items>
@@ -38,21 +37,21 @@
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:NumberBox ID="NumberBox1" Text="10" NoDecimal="true" NoNegative="true" Label="数量" Required="true" ShowRedStar="true" runat="server" />
-                        <f:DatePicker ID="DatePicker1" Required="true" ShowRedStar="true" runat="server" EnableEdit="false"
-                            SelectedDate="2008-05-09" Label="申请日期" Text="2008-05-09">
+                        <f:NumberBox ID="NumberBox1" Text="10" NoDecimal="true" NoNegative="true" Label="数量" Required="true" ShowRedStar="true"
+                            runat="server" />
+                        <f:DatePicker ID="DatePicker1" Required="true" ShowRedStar="true" runat="server" EnableEdit="false" SelectedDate="2008-05-09"
+                            Label="申请日期" Text="2008-05-09">
                         </f:DatePicker>
                     </Items>
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:TextArea ID="TextArea2" Height="80px" Label="描述" runat="server"/>
+                        <f:TextArea ID="TextArea2" Height="80px" Label="描述" runat="server" />
                     </Items>
                 </f:FormRow>
                 <f:FormRow>
                     <Items>
-                        <f:HtmlEditor ID="HtmlEditor1" Editor="UMEditor" BasePath="~/res/third-party/umeditor/"
-                            Label="详细描述" Height="200px" runat="server">
+                        <f:HtmlEditor ID="HtmlEditor1" Editor="UMEditor" BasePath="~/res/third-party/umeditor/" Label="详细描述" Height="200px" runat="server">
                         </f:HtmlEditor>
                     </Items>
                 </f:FormRow>
@@ -60,7 +59,6 @@
         </f:Form>
     </form>
     <script>
-
         function onCloseClick(event) {
             parent.removeActiveTab();
         }

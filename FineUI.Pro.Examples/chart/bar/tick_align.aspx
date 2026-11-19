@@ -1,4 +1,5 @@
 <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="tick_align.aspx.cs" Inherits="FineUI.Pro.Examples.chart.BarTickAlign" %>
+
 <!DOCTYPE html>
 <html>
 <head runat="server">
@@ -7,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:Chart ID="ChartBarTickAlign" runat="server" Height="550px" DataCategoryField="Category"
-            AxisTickAlignWithLabel="true" AxisPointerType="shadow">
+        <f:Chart ID="ChartBarTickAlign" runat="server" Height="550px" DataCategoryField="Category" AxisTickAlignWithLabel="true" AxisPointerType="shadow">
             <Series>
                 <f:ChartSeries Key="value" Type="Bar" Name="Direct" DataValueField="Value" BarWidth="60%" />
             </Series>
@@ -16,21 +16,28 @@
 
 
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>对照分类轴短刻度与标签中心的对齐关系，以及短刻度是否显示的前提。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照坐标轴刻度与标签对齐</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarTickAlign").ClientID %>' title="图表">图表</strong>中的分类、数值和形状。<br />结果：Mon、Tue 等文字是分类标签。显示短刻度时，开启对齐会把短线放到对应柱子的正下方，关闭时则放在相邻分类的分界处。短刻度是否显示沿用 ECharts 的自动设置。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
-    <a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-tick-align" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>AxisTickAlignWithLabel</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarTickAlign").ClientID %>' title="图表">图表</strong>）：初始为 <code>true</code>，分类轴首尾留空且显示短刻度时，短刻度对准 Mon 等标签的中心。是否显示短刻度仍沿用 ECharts 的自动规则。</li>
-        <li><code>BarWidth</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarTickAlign").ClientID %>' title="图表">图表</strong>）：初始为 <code>60%</code>，每根柱子的宽度占所属分类带宽的六成。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>对照分类轴短刻度与标签中心的对齐关系，以及短刻度是否显示的前提。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-pic" aria-hidden="true"></i>对照坐标轴刻度与标签对齐</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarTickAlign").ClientID %>'
+                        title="图表">图表</strong>中的分类、数值和形状。<br />结果：Mon、Tue 等文字是分类标签。显示短刻度时，开启对齐会把短线放到对应柱子的正下方，关闭时则放在相邻分类的分界处。短刻度是否显示沿用 ECharts 的自动设置。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-info" aria-hidden="true"></i>补充说明</h3>
+            <a href="https://echarts.apache.org/examples/zh/editor.html?c=bar-tick-align" target="_blank" rel="noopener">查看 Apache ECharts 原始示例</a>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>AxisTickAlignWithLabel</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarTickAlign").ClientID %>' title="图表">图表</strong>）：初始为
+                    <code>true</code>，分类轴首尾留空且显示短刻度时，短刻度对准 Mon 等标签的中心。是否显示短刻度仍沿用 ECharts 的自动规则。
+                </li>
+                <li><code>BarWidth</code>（<strong>图表系列</strong>，位于<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ChartBarTickAlign").ClientID %>' title="图表">图表</strong>）：初始为
+                    <code>60%</code>，每根柱子的宽度占所属分类带宽的六成。
+                </li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

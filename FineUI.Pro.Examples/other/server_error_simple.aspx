@@ -8,8 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" SimpleError="true" runat="server" />
-        <f:Button ID="Button5" runat="server" OnClick="Button5_Click"
-            Text="服务器异常（500）">
+        <f:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="服务器异常（500）">
         </f:Button>
         <br />
         <br />

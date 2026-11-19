@@ -14,8 +14,7 @@
             <Items>
                 <f:Panel ID="Panel2" ShowHeader="false" CssClass="" ShowBorder="false" Layout="Column" runat="server">
                     <Items>
-                        <f:Label ID="Label2" Width="100px" runat="server" CssClass="marginr" ShowLabel="false"
-                            Text="用户名：">
+                        <f:Label ID="Label2" Width="100px" runat="server" CssClass="marginr" ShowLabel="false" Text="用户名：">
                         </f:Label>
                         <f:TextBox ID="TextBox2" ShowLabel="false" Label="用户名" Required="true" Width="150px" CssClass="marginr" runat="server">
                         </f:TextBox>
@@ -27,32 +26,29 @@
                 </f:Panel>
                 <f:Panel ID="Panel1" ShowHeader="false" ShowBorder="false" Layout="Column" runat="server">
                     <Items>
-                        <f:Label ID="Label1" runat="server" Width="100px" CssClass="marginr" ShowLabel="false"
-                            Text="作息起止时间：">
+                        <f:Label ID="Label1" runat="server" Width="100px" CssClass="marginr" ShowLabel="false" Text="作息起止时间：">
                         </f:Label>
                         <f:DatePicker ID="DatePicker1" ShowLabel="false" Label="作息开始时间" Required="true" CssClass="marginr" Width="150px" runat="server">
                         </f:DatePicker>
-                        <f:DatePicker ID="DatePicker2" ShowLabel="false" Label="作息结束时间" Required="true" CompareControl="DatePicker1" CompareOperator="GreaterThan"
-                            CompareMessage="结束日期应该大于开始日期！" Width="150px" runat="server">
+                        <f:DatePicker ID="DatePicker2" ShowLabel="false" Label="作息结束时间" Required="true" CompareControl="DatePicker1"
+                            CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期！" Width="150px" runat="server">
                         </f:DatePicker>
                     </Items>
                 </f:Panel>
                 <f:Panel ID="Panel3" ShowHeader="false" ShowBorder="false" Layout="Column" CssClass="" runat="server">
                     <Items>
-                        <f:Label ID="Label3" runat="server" Width="100px" CssClass="marginr" ShowLabel="false"
-                            Text="上班起止时间：">
+                        <f:Label ID="Label3" runat="server" Width="100px" CssClass="marginr" ShowLabel="false" Text="上班起止时间：">
                         </f:Label>
                         <f:DatePicker ID="DatePicker3" ShowLabel="false" Label="上班开始时间" Required="true" CssClass="marginr" ColumnWidth="50%" runat="server">
                         </f:DatePicker>
-                        <f:DatePicker ID="DatePicker4" ShowLabel="false" Label="上班结束时间" Required="true" CompareControl="DatePicker3" CompareOperator="GreaterThan"
-                            CompareMessage="结束日期应该大于开始日期！" ColumnWidth="50%" runat="server">
+                        <f:DatePicker ID="DatePicker4" ShowLabel="false" Label="上班结束时间" Required="true" CompareControl="DatePicker3"
+                            CompareOperator="GreaterThan" CompareMessage="结束日期应该大于开始日期！" ColumnWidth="50%" runat="server">
                         </f:DatePicker>
                     </Items>
                 </f:Panel>
                 <f:Panel ID="Panel4" ShowHeader="false" ShowBorder="false" Layout="Column" CssClass="" runat="server">
                     <Items>
-                        <f:Label ID="Label4" runat="server" Width="100px" CssClass="marginr" ShowLabel="false"
-                            Text="工作时间：">
+                        <f:Label ID="Label4" runat="server" Width="100px" CssClass="marginr" ShowLabel="false" Text="工作时间：">
                         </f:Label>
                         <f:TextBox ID="TextBoxExample2" Width="40px" ShowLabel="false" Label="工作时间（小时）" Required="true" runat="server">
                         </f:TextBox>
@@ -78,7 +74,8 @@
             <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>固定宽度与比例宽度</h3>
             <ul>
                 <li>
-                    对照用户名、<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>" title="作息起止时间">作息起止时间</strong>与<strong class="example-control-reference" data-example-control="<%= Label3.ClientID %>" title="上班起止时间">上班起止时间</strong>这几行。<br />
+                    对照用户名、<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>" title="作息起止时间">作息起止时间</strong>与<strong
+                        class="example-control-reference" data-example-control="<%= Label3.ClientID %>" title="上班起止时间">上班起止时间</strong>这几行。<br />
                     结果：独立标签与输入框并排；一组日期使用固定宽度，另一组按剩余宽度等分。
                 </li>
             </ul>
@@ -90,10 +87,35 @@
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Layout</code>（本页全部面板，如<strong class="example-control-reference" data-example-control="<%= Panel2.ClientID %>" title="第 1 个面板">第 1 个面板</strong>）：行面板使用 <code>Column</code>，把标签、字段和按钮并排排列。</li>
-                <li><code>Width</code>（<strong class="example-control-reference" data-example-control="<%= Label2.ClientID %>" title="第 1 个标签（用户名）">第 1 个标签（用户名）</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="第 1 个文本框（用户名）">第 1 个文本框（用户名）</strong>、<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>" title="作息起止时间">作息起止时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="作息开始时间">作息开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>" title="作息结束时间">作息结束时间</strong>、<strong class="example-control-reference" data-example-control="<%= Label3.ClientID %>" title="上班起止时间">上班起止时间</strong>、<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="工作时间">工作时间</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBoxExample2").ClientID %>' title="工作时间（小时）">工作时间（小时）</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox3.ClientID %>" title="工作时间（分钟）">工作时间（分钟）</strong>）：为独立标签、用户名及部分日期字段指定固定宽度。</li>
-                <li><code>ColumnWidth</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker3.ClientID %>" title="上班开始时间">上班开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker4.ClientID %>" title="上班结束时间">上班结束时间</strong>）：上班起止日期各占剩余宽度的一半。</li>
-                <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control="<%= Label2.ClientID %>" title="第 1 个标签（用户名）">第 1 个标签（用户名）</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="第 1 个文本框（用户名）">第 1 个文本框（用户名）</strong>、<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>" title="作息起止时间">作息起止时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>" title="作息开始时间">作息开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>" title="作息结束时间">作息结束时间</strong>、<strong class="example-control-reference" data-example-control="<%= Label3.ClientID %>" title="上班起止时间">上班起止时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker3.ClientID %>" title="上班开始时间">上班开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker4.ClientID %>" title="上班结束时间">上班结束时间</strong>、<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="工作时间">工作时间</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBoxExample2").ClientID %>' title="工作时间（小时）">工作时间（小时）</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox3.ClientID %>" title="工作时间（分钟）">工作时间（分钟）</strong>）：内置标签隐藏，改由行内独立 Label 显示。</li>
+                <li><code>Layout</code>（本页全部面板，如<strong class="example-control-reference" data-example-control="<%= Panel2.ClientID %>" title="第 1 个面板">第 1
+                        个面板</strong>）：行面板使用 <code>Column</code>，把标签、字段和按钮并排排列。</li>
+                <li><code>Width</code>（<strong class="example-control-reference" data-example-control="<%= Label2.ClientID %>" title="第 1 个标签（用户名）">第 1
+                        个标签（用户名）</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="第 1 个文本框（用户名）">第 1
+                        个文本框（用户名）</strong>、<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>"
+                        title="作息起止时间">作息起止时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="作息开始时间">作息开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>"
+                        title="作息结束时间">作息结束时间</strong>、<strong class="example-control-reference" data-example-control="<%= Label3.ClientID %>"
+                        title="上班起止时间">上班起止时间</strong>、<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>"
+                        title="工作时间">工作时间</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBoxExample2").ClientID %>' title="工作时间（小时）">工作时间（小时）</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= TextBox3.ClientID %>"
+                        title="工作时间（分钟）">工作时间（分钟）</strong>）：为独立标签、用户名及部分日期字段指定固定宽度。</li>
+                <li><code>ColumnWidth</code>（<strong class="example-control-reference" data-example-control="<%= DatePicker3.ClientID %>"
+                        title="上班开始时间">上班开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker4.ClientID %>"
+                        title="上班结束时间">上班结束时间</strong>）：上班起止日期各占剩余宽度的一半。</li>
+                <li><code>ShowLabel</code>（<strong class="example-control-reference" data-example-control="<%= Label2.ClientID %>" title="第 1 个标签（用户名）">第 1
+                        个标签（用户名）</strong>、<strong class="example-control-reference" data-example-control="<%= TextBox2.ClientID %>" title="第 1 个文本框（用户名）">第 1
+                        个文本框（用户名）</strong>、<strong class="example-control-reference" data-example-control="<%= Label1.ClientID %>"
+                        title="作息起止时间">作息起止时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker1.ClientID %>"
+                        title="作息开始时间">作息开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker2.ClientID %>"
+                        title="作息结束时间">作息结束时间</strong>、<strong class="example-control-reference" data-example-control="<%= Label3.ClientID %>"
+                        title="上班起止时间">上班起止时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker3.ClientID %>"
+                        title="上班开始时间">上班开始时间</strong>、<strong class="example-control-reference" data-example-control="<%= DatePicker4.ClientID %>"
+                        title="上班结束时间">上班结束时间</strong>、<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>"
+                        title="工作时间">工作时间</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBoxExample2").ClientID %>' title="工作时间（小时）">工作时间（小时）</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= TextBox3.ClientID %>" title="工作时间（分钟）">工作时间（分钟）</strong>）：内置标签隐藏，改由行内独立
+                    Label 显示。</li>
             </ul>
         </section>
     </template>

@@ -147,7 +147,8 @@
                         </div>
                     </div>
                 </f:ContentPanel>
-                <f:TabStrip ID="TabStripExample1" CssClass="mytabstrip" BlockMD="12" ShowInkBar="true" runat="server" ShowBorder="true" ShowBorderShadow="true" ActiveTabIndex="0">
+                <f:TabStrip ID="TabStripExample1" CssClass="mytabstrip" BlockMD="12" ShowInkBar="true" runat="server" ShowBorder="true" ShowBorderShadow="true"
+                    ActiveTabIndex="0">
                     <Tabs>
                         <f:Tab runat="server" Layout="Block" BlockConfigSpace="0" Title="浏览量">
                             <Items>
@@ -160,7 +161,8 @@
                                         </f:Chart>
                                     </Items>
                                 </f:Panel>
-                                <f:ContentPanel ID="ContentPanelExample5" BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false" ShowHeader="false">
+                                <f:ContentPanel ID="ContentPanelExample5" BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false"
+                                    ShowHeader="false">
                                     <table class="mytable">
                                         <thead>
                                             <tr>
@@ -223,7 +225,8 @@
                             <Items>
                                 <f:Panel ID="PanelExample3" BlockMD="6" BlockLG="8" runat="server" ShowBorder="false" ShowHeader="false">
                                     <Items>
-                                        <f:Chart ID="ChartTabUsers" runat="server" Height="350px" DataCategoryField="Category" Title="用户数与浏览量" ShowLegend="true">
+                                        <f:Chart ID="ChartTabUsers" runat="server" Height="350px" DataCategoryField="Category" Title="用户数与浏览量"
+                                            ShowLegend="true">
                                             <Series>
                                                 <f:ChartSeries Key="users" Type="Bar" Name="用户数" DataValueField="Users" />
                                                 <f:ChartSeries Key="views" Type="Line" Name="浏览量" DataValueField="Views" Smooth="true" />
@@ -231,7 +234,8 @@
                                         </f:Chart>
                                     </Items>
                                 </f:Panel>
-                                <f:ContentPanel ID="ContentPanelExample6" BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false" ShowHeader="false">
+                                <f:ContentPanel ID="ContentPanelExample6" BlockMD="6" BlockLG="4" BodyPadding="20px" runat="server" ShowBorder="false"
+                                    ShowHeader="false">
                                     <table class="mytable">
                                         <thead>
                                             <tr>
@@ -311,8 +315,8 @@
                                 <f:RenderField ColumnID="Status" DataField="Status" RendererFunction="renderStatus" HeaderText="状态" />
                             </Columns>
                         </f:Grid>
-                        <f:Form ID="FormExample1" CssClass="myform" BlockMD="12" Layout="Block" BlockConfigSpace="10px" BodyPadding="20px" runat="server" ShowBorder="true"
-                            ShowBorderShadow="true" ShowHeader="true" Title="表单示例" LabelAlign="Right">
+                        <f:Form ID="FormExample1" CssClass="myform" BlockMD="12" Layout="Block" BlockConfigSpace="10px" BodyPadding="20px" runat="server"
+                            ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="表单示例" LabelAlign="Right">
                             <Items>
                                 <f:Label ID="Label1" BlockMD="6" runat="server" Label="标签" Text="标签的值">
                                 </f:Label>
@@ -347,16 +351,16 @@
                 </f:Panel>
                 <f:Panel ID="PanelExample5" BlockMD="6" BlockLG="4" Layout="Block" BlockConfigSpace="20px" runat="server" ShowBorder="false" ShowHeader="false">
                     <Items>
-                        <f:ContentPanel ID="ContentPanelExample7" BlockMD="12" BodyPadding="20px 20px 0 20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true"
-                            Title="本站统计">
+                        <f:ContentPanel ID="ContentPanelExample7" BlockMD="12" BodyPadding="20px 20px 0 20px" runat="server" ShowBorder="true"
+                            ShowBorderShadow="true" ShowHeader="true" Title="本站统计">
                             <ul class="mysitestats">
                             </ul>
                         </f:ContentPanel>
-                        <f:Panel ID="PanelExample6" BlockMD="12" BodyPadding="20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true" Title="访问来源">
+                        <f:Panel ID="PanelExample6" BlockMD="12" BodyPadding="20px" runat="server" ShowBorder="true" ShowBorderShadow="true" ShowHeader="true"
+                            Title="访问来源">
                             <Items>
-                                <f:Chart ID="ChartTrafficSources" runat="server" Height="300px" DataCategoryField="Category"
-                                    Title="用户访问来源" Subtitle="这是说明文字" TitleAlign="Center"
-                                    ShowLegend="true" LegendPosition="Left" LegendTop="top" PieEmphasisShadow="true" PieCenter="50%,60%">
+                                <f:Chart ID="ChartTrafficSources" runat="server" Height="300px" DataCategoryField="Category" Title="用户访问来源" Subtitle="这是说明文字"
+                                    TitleAlign="Center" ShowLegend="true" LegendPosition="Left" LegendTop="top" PieEmphasisShadow="true" PieCenter="50%,60%">
                                     <Series>
                                         <f:ChartSeries Key="source" Type="Pie" Name="访问来源" DataValueField="Value" />
                                     </Series>
@@ -427,21 +431,64 @@
         });
 
     </script>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示用 <code>Block</code> 布局组合统计卡片、图表、表格和表单，并在窄屏重新排列。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>响应排列与卡片翻面</h3>
-    <ul>
-        <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStripExample1").ClientID %>' title="选项卡">选项卡</strong>中的统计卡片、图表和表格，再缩小浏览器。<br />结果：各部分按本页块宽度重新分列或层叠，内容仍来自同一组示例数据。</li>
-        <li>点击统计卡片上的信息图标，再点击背面的图标。<br />结果：卡片翻面显示说明，再次点击恢复正面，页面其它组件不被替换。</li>
-    </ul>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>Layout</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStripExample1").ClientID %>' title="选项卡">选项卡</strong>）：首页外层使用 <code>Block</code> 布局。</li>
-        <li><code>BlockMD</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample1").ClientID %>' title="第 1 个内容面板">第 1 个内容面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample2").ClientID %>' title="第 2 个内容面板">第 2 个内容面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample3").ClientID %>' title="第 3 个内容面板">第 3 个内容面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample4").ClientID %>' title="第 4 个内容面板">第 4 个内容面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStripExample1").ClientID %>' title="选项卡">选项卡</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample2").ClientID %>' title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample5").ClientID %>' title="第 5 个内容面板">第 5 个内容面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample3").ClientID %>' title="第 3 个面板">第 3 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample6").ClientID %>' title="第 6 个内容面板">第 6 个内容面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample4").ClientID %>' title="第 4 个面板">第 4 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格示例">表格示例</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormExample1").ClientID %>' title="表单示例">表单示例</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Label1").ClientID %>' title="标签">标签</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("CheckBox1").ClientID %>' title="复选框">复选框</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList1").ClientID %>' title="下拉列表">下拉列表</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBox1").ClientID %>' title="文本框">文本框</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DatePicker1").ClientID %>' title="日期">日期</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TimePicker1").ClientID %>' title="时间">时间</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("CheckBoxList1").ClientID %>' title="复选框列表">复选框列表</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextArea1").ClientID %>' title="描述">描述</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample5").ClientID %>' title="第 5 个面板">第 5 个面板</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample7").ClientID %>' title="本站统计">本站统计</strong>、<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample6").ClientID %>' title="访问来源">访问来源</strong>）：各组分别设为<code>6</code>、<code>12</code>，定义各区域在桌面宽度下的占比。</li>
-        <li><code>ResponsiveCardSize</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>' title="表格示例">表格示例</strong>）：初始为<code>MD</code>，表格在窄屏使用本页卡片视图。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示用 <code>Block</code> 布局组合统计卡片、图表、表格和表单，并在窄屏重新排列。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-layout" aria-hidden="true"></i>响应排列与卡片翻面</h3>
+            <ul>
+                <li>对照<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStripExample1").ClientID %>'
+                        title="选项卡">选项卡</strong>中的统计卡片、图表和表格，再缩小浏览器。<br />结果：各部分按本页块宽度重新分列或层叠，内容仍来自同一组示例数据。</li>
+                <li>点击统计卡片上的信息图标，再点击背面的图标。<br />结果：卡片翻面显示说明，再次点击恢复正面，页面其它组件不被替换。</li>
+            </ul>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>Layout</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStripExample1").ClientID %>' title="选项卡">选项卡</strong>）：首页外层使用
+                    <code>Block</code> 布局。
+                </li>
+                <li><code>BlockMD</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample1").ClientID %>' title="第 1 个内容面板">第 1
+                        个内容面板</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample2").ClientID %>' title="第 2 个内容面板">第 2
+                        个内容面板</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample3").ClientID %>' title="第 3 个内容面板">第 3
+                        个内容面板</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample4").ClientID %>' title="第 4 个内容面板">第 4
+                        个内容面板</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TabStripExample1").ClientID %>' title="选项卡">选项卡</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample2").ClientID %>'
+                        title="第 2 个面板">第 2 个面板</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample5").ClientID %>' title="第 5 个内容面板">第 5
+                        个内容面板</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample3").ClientID %>' title="第 3 个面板">第 3 个面板</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample6").ClientID %>'
+                        title="第 6 个内容面板">第 6 个内容面板</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample4").ClientID %>' title="第 4 个面板">第 4 个面板</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格示例">表格示例</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("FormExample1").ClientID %>' title="表单示例">表单示例</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Label1").ClientID %>'
+                        title="标签">标签</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("CheckBox1").ClientID %>' title="复选框">复选框</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DropDownList1").ClientID %>'
+                        title="下拉列表">下拉列表</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextBox1").ClientID %>' title="文本框">文本框</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("DatePicker1").ClientID %>'
+                        title="日期">日期</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TimePicker1").ClientID %>' title="时间">时间</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("CheckBoxList1").ClientID %>'
+                        title="复选框列表">复选框列表</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("TextArea1").ClientID %>' title="描述">描述</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample5").ClientID %>'
+                        title="第 5 个面板">第 5 个面板</strong>、<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("ContentPanelExample7").ClientID %>' title="本站统计">本站统计</strong>、<strong
+                        class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("PanelExample6").ClientID %>'
+                        title="访问来源">访问来源</strong>）：各组分别设为<code>6</code>、<code>12</code>，定义各区域在桌面宽度下的占比。</li>
+                <li><code>ResponsiveCardSize</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Grid1").ClientID %>'
+                        title="表格示例">表格示例</strong>）：初始为<code>MD</code>，表格在窄屏使用本页卡片视图。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

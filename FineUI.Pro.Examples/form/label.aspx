@@ -9,6 +9,7 @@
             color: red;
             font-weight: bold;
         }
+
     </style>
 </head>
 <body>
@@ -17,15 +18,13 @@
         <f:Label ID="Label1" Text="普通的 Label 标签，会自动编码字符串（比如：<strong></strong>）" runat="server">
         </f:Label>
         <br />
-        <f:Label ID="Label4" EncodeText="false" Text="<a href='http://www.ustc.edu.cn/' target='_blank'>中国科学技术大学（Label 标签生成的链接）</a>"
-            runat="server">
+        <f:Label ID="Label4" EncodeText="false" Text="<a href='http://www.ustc.edu.cn/' target='_blank'>中国科学技术大学（Label 标签生成的链接）</a>" runat="server">
         </f:Label>
         <br />
         <f:Label ID="Label2" EncodeText="false" CssClass="customlabel" Text="修改文本的样式（CssClass）" runat="server">
         </f:Label>
         <br />
-        <f:Label ID="Label3" Enabled="false" EncodeText="false" Text="<span style='color:red;font-weight:bold;'>修改文本的样式（内嵌HTML）</span>"
-            runat="server">
+        <f:Label ID="Label3" Enabled="false" EncodeText="false" Text="<span style='color:red;font-weight:bold;'>修改文本的样式（内嵌HTML）</span>" runat="server">
         </f:Label>
         <br />
         <f:Button ID="btnChangeEnable" Text="启用/禁用最后一个标签" runat="server" OnClick="btnChangeEnable_Click" />
@@ -36,22 +35,30 @@
             <h3><i class="f-icon f-iconfont f-iconfont-edit" aria-hidden="true"></i>对比文字与 HTML</h3>
             <ul>
                 <li>
-                    对照第一段标签文字和<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="中国科学技术大学（Label 标签生成的链接）">中国科学技术大学</strong>链接。<br />
+                    对照第一段标签文字和<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>"
+                        title="中国科学技术大学（Label 标签生成的链接）">中国科学技术大学</strong>链接。<br />
                     结果：第一段中的 &lt;<code>strong</code>&gt;&lt;/<code>strong</code>&gt; 按文字显示；允许 HTML 的标签显示真正的链接和内嵌样式。
                 </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-check" aria-hidden="true"></i>切换标签状态</h3>
             <ul>
                 <li>
-                    点击<strong class="example-control-reference" data-example-control="<%= btnChangeEnable.ClientID %>" title="启用/禁用最后一个标签">启用/禁用最后一个标签</strong>。<br />
+                    点击<strong class="example-control-reference" data-example-control="<%= btnChangeEnable.ClientID %>"
+                        title="启用/禁用最后一个标签">启用/禁用最后一个标签</strong>。<br />
                     结果：回发后，后台反转最后一个标签的可用状态，文字和自定义样式保留。
                 </li>
             </ul>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>EncodeText</code>（<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>" title="中国科学技术大学（Label 标签生成的链接）">中国科学技术大学（Label 标签生成的链接）</strong>、<strong class="example-control-reference" data-example-control="<%= Label2.ClientID %>" title="修改文本的样式（CssClass）">修改文本的样式（CssClass）</strong>、<strong class="example-control-reference" data-example-control="<%= Label3.ClientID %>" title="修改文本的样式（内嵌HTML）">修改文本的样式（内嵌HTML）</strong>）：默认编码文字；设为 <code>false</code> 时按可信 HTML 显示链接或内嵌样式。</li>
-                <li><code>CssClass</code>（<strong class="example-control-reference" data-example-control="<%= Label2.ClientID %>" title="修改文本的样式（CssClass）">修改文本的样式（CssClass）</strong>）：给标签设置自定义样式类。</li>
-                <li><code>Enabled</code>（<strong class="example-control-reference" data-example-control="<%= Label3.ClientID %>" title="修改文本的样式（内嵌HTML）">修改文本的样式（内嵌HTML）</strong>）：控制标签的可用状态。</li>
+                <li><code>EncodeText</code>（<strong class="example-control-reference" data-example-control="<%= Label4.ClientID %>"
+                        title="中国科学技术大学（Label 标签生成的链接）">中国科学技术大学（Label 标签生成的链接）</strong>、<strong class="example-control-reference"
+                        data-example-control="<%= Label2.ClientID %>" title="修改文本的样式（CssClass）">修改文本的样式（CssClass）</strong>、<strong
+                        class="example-control-reference" data-example-control="<%= Label3.ClientID %>"
+                        title="修改文本的样式（内嵌HTML）">修改文本的样式（内嵌HTML）</strong>）：默认编码文字；设为 <code>false</code> 时按可信 HTML 显示链接或内嵌样式。</li>
+                <li><code>CssClass</code>（<strong class="example-control-reference" data-example-control="<%= Label2.ClientID %>"
+                        title="修改文本的样式（CssClass）">修改文本的样式（CssClass）</strong>）：给标签设置自定义样式类。</li>
+                <li><code>Enabled</code>（<strong class="example-control-reference" data-example-control="<%= Label3.ClientID %>"
+                        title="修改文本的样式（内嵌HTML）">修改文本的样式（内嵌HTML）</strong>）：控制标签的可用状态。</li>
             </ul>
         </section>
     </template>

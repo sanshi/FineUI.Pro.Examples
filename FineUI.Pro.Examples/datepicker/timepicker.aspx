@@ -8,14 +8,11 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false"
-            Title="简单表单" runat="server">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" EnableCollapse="false" Title="简单表单" runat="server">
             <Items>
-                <f:DatePicker runat="server" Required="true" EnableEdit="false" Label="日期" EmptyText="请选择日期"
-                    ID="DatePicker1" ShowRedStar="true">
+                <f:DatePicker runat="server" Required="true" EnableEdit="false" Label="日期" EmptyText="请选择日期" ID="DatePicker1" ShowRedStar="true">
                 </f:DatePicker>
-                <f:TimePicker ID="TimePicker1" ShowRedStar="true" EnableEdit="false" Label="时间" Increment="30"
-                    Required="true" EmptyText="请选择时间" runat="server">
+                <f:TimePicker ID="TimePicker1" ShowRedStar="true" EnableEdit="false" Label="时间" Increment="30" Required="true" EmptyText="请选择时间" runat="server">
                 </f:TimePicker>
                 <f:Button ID="btnSubmit" runat="server" ValidateForms="SimpleForm1" Text="提交表单" OnClick="btnSubmit_Click">
                 </f:Button>
@@ -44,7 +41,8 @@
             <h3><i class="f-icon f-iconfont f-iconfont-time" aria-hidden="true"></i>在限定时间列表中选择</h3>
             <ul>
                 <li>
-                    打开<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>" title="时间">时间</strong>字段的下拉列表，选择<code>09:30</code>。<br />
+                    打开<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>"
+                        title="时间">时间</strong>字段的下拉列表，选择<code>09:30</code>。<br />
                     结果：列表只提供<code>08:30</code>到<code>20:30</code>的半小时时间点；选择后时间回填字段。日期与时间是两个独立字段。
                 </li>
             </ul>
@@ -63,12 +61,18 @@
             <p>注：本示例通过<code>EnableEdit</code>属性控制日期和时间选择器不可编辑。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Text</code>（<strong class="example-control-reference" data-example-control="<%= btnSubmit.ClientID %>" title="提交表单">提交表单</strong>）：时间字段以 <code>HH</code>:<code>mm</code> 字符串保存当前选择，例如<code>09:30</code>；旁边的日期字段独立保存日期。</li>
-                <li><code>Increment</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>" title="时间">时间</strong>）：初始为<code>30</code>分钟，列表每半小时提供一个时间点。</li>
-                <li><code>MinTimeText</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>" title="时间">时间</strong>）：时间列表的最早选项为<code>08:30</code>，包含该边界值。</li>
-                <li><code>MaxTimeText</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>" title="时间">时间</strong>）：时间列表的最晚选项为<code>20:30</code>，包含该边界值。</li>
-                <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>" title="时间">时间</strong>）：初始为 <code>false</code>，通过下拉列表选择时间，不能手工输入列表之外的值。</li>
-                <li><code>Required</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>" title="时间">时间</strong>）：必填字段为空时阻止提交；范围字段需要起止两个值均有效。</li>
+                <li><code>Text</code>（<strong class="example-control-reference" data-example-control="<%= btnSubmit.ClientID %>"
+                        title="提交表单">提交表单</strong>）：时间字段以 <code>HH</code>:<code>mm</code> 字符串保存当前选择，例如<code>09:30</code>；旁边的日期字段独立保存日期。</li>
+                <li><code>Increment</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>"
+                        title="时间">时间</strong>）：初始为<code>30</code>分钟，列表每半小时提供一个时间点。</li>
+                <li><code>MinTimeText</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>"
+                        title="时间">时间</strong>）：时间列表的最早选项为<code>08:30</code>，包含该边界值。</li>
+                <li><code>MaxTimeText</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>"
+                        title="时间">时间</strong>）：时间列表的最晚选项为<code>20:30</code>，包含该边界值。</li>
+                <li><code>EnableEdit</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>"
+                        title="时间">时间</strong>）：初始为 <code>false</code>，通过下拉列表选择时间，不能手工输入列表之外的值。</li>
+                <li><code>Required</code>（<strong class="example-control-reference" data-example-control="<%= TimePicker1.ClientID %>"
+                        title="时间">时间</strong>）：必填字段为空时阻止提交；范围字段需要起止两个值均有效。</li>
             </ul>
         </section>
     </template>

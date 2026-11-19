@@ -10,21 +10,20 @@
             max-width: 550px;
             padding: 3px;
         }
+
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false"
-            ShowBorder="true" Title="表单" ShowHeader="true">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" BodyPadding="10px" runat="server" EnableCollapse="false" ShowBorder="true" Title="表单" ShowHeader="true">
             <Items>
                 <f:TextBox runat="server" Label="用户名" ID="tbxUserName" EmptyText="请输入用户名" Required="true" ShowRedStar="true">
                 </f:TextBox>
-                <f:FileUpload runat="server" ID="filePhoto" EmptyText="请选择一张照片" Label="个人头像" Required="true" ButtonIcon="Add"
-                    ShowRedStar="true">
+                <f:FileUpload runat="server" ID="filePhoto" EmptyText="请选择一张照片" Label="个人头像" Required="true" ButtonIcon="Add" ShowRedStar="true">
                 </f:FileUpload>
-                <f:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" ValidateForms="SimpleForm1"
-                    Text="提交" AjaxLoadingType="Mask" ShowAjaxLoadingMaskText="true" AjaxLoadingMaskText="正在导入数据，请稍后...">
+                <f:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" ValidateForms="SimpleForm1" Text="提交" AjaxLoadingType="Mask"
+                    ShowAjaxLoadingMaskText="true" AjaxLoadingMaskText="正在导入数据，请稍后...">
                 </f:Button>
             </Items>
         </f:SimpleForm>
@@ -47,9 +46,12 @@
             <p>注：为了观察<code>Ajax</code>提示信息，提交按钮动作在后台都会睡眠 <code>1</code> 秒钟。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>AjaxLoadingType</code>（<strong class="example-control-reference" data-example-control="<%= btnSubmit.ClientID %>" title="提交">提交</strong>）：控制等待请求时使用遮罩。 本页声明值为 <code>Mask</code>。</li>
-                <li><code>ShowAjaxLoadingMaskText</code>（<strong class="example-control-reference" data-example-control="<%= btnSubmit.ClientID %>" title="提交">提交</strong>）：在遮罩中显示提示文字。 本页声明值为 <code>true</code>。</li>
-                <li><code>AjaxLoadingMaskText</code>（<strong class="example-control-reference" data-example-control="<%= btnSubmit.ClientID %>" title="提交">提交</strong>）：请求等待期间显示的文字。 本页声明值为 正在导入数据，请稍后...。</li>
+                <li><code>AjaxLoadingType</code>（<strong class="example-control-reference" data-example-control="<%= btnSubmit.ClientID %>"
+                        title="提交">提交</strong>）：控制等待请求时使用遮罩。 本页声明值为 <code>Mask</code>。</li>
+                <li><code>ShowAjaxLoadingMaskText</code>（<strong class="example-control-reference" data-example-control="<%= btnSubmit.ClientID %>"
+                        title="提交">提交</strong>）：在遮罩中显示提示文字。 本页声明值为 <code>true</code>。</li>
+                <li><code>AjaxLoadingMaskText</code>（<strong class="example-control-reference" data-example-control="<%= btnSubmit.ClientID %>"
+                        title="提交">提交</strong>）：请求等待期间显示的文字。 本页声明值为 正在导入数据，请稍后...。</li>
             </ul>
         </section>
     </template>

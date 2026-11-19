@@ -10,8 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-        <f:SimpleForm ID="SimpleForm1" IsFluid="true" Title="表单" BodyPadding="10px"
-            runat="server" EnableCollapse="false">
+        <f:SimpleForm ID="SimpleForm1" IsFluid="true" Title="表单" BodyPadding="10px" runat="server" EnableCollapse="false">
             <Items>
                 <f:TextBox Label="你所在的省份" ID="tbxProvince" Required="true" Text="" runat="server">
                 </f:TextBox>
@@ -19,29 +18,33 @@
                 </f:Button>
             </Items>
         </f:SimpleForm>
-        <f:Window ID="Window1" Title="编辑" Hidden="true" EnableIFrame="true" runat="server"
-            EnableMaximize="true" EnableResize="true" Target="Parent"
+        <f:Window ID="Window1" Title="编辑" Hidden="true" EnableIFrame="true" runat="server" EnableMaximize="true" EnableResize="true" Target="Parent"
             IsModal="true" Width="550px" Height="350px">
         </f:Window>
         <f:Label ID="labResult" CssStyle="font-weight:bold;" runat="server">
         </f:Label>
         <br />
     </form>
-<template id="example-description">
-<section aria-label="页面描述">
-    <p>演示在独立子页面选择省份，经后台处理后回填父页面字段。</p>
-    <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>选择后回填父页面</h3>
-    <ol>
-        <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>' title="从列表中选择">从列表中选择</strong>。<br />结果：打开本页配置的 <code>iframe</code> 选择窗体。</li>
-        <li>在子页面选择北京并按该页面的确定入口提交。<br />结果：子页面通过后台处理把北京回填到父页面省份字段，然后关闭选择窗体。</li>
-    </ol>
-    <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
-    <ul class="example-description-properties">
-        <li><code>EnableIFrame</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="编辑">编辑</strong>）：初始为<code>true</code>，在窗体内加载省份选择页。</li>
-        <li><code>Target</code>（<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>' title="编辑">编辑</strong>）：初始为<code>Parent</code>，指定选择窗体在哪一层页面显示。</li>
-        <li><code>GetHideReference()</code>（<strong>省份选择子页面</strong>）：子页面找到当前选择窗体及其调用页面，向本页目标字段回填选择。</li>
-    </ul>
-</section>
-</template>
+    <template id="example-description">
+        <section aria-label="页面描述">
+            <p>演示在独立子页面选择省份，经后台处理后回填父页面字段。</p>
+            <h3><i class="f-icon f-iconfont f-iconfont-window" aria-hidden="true"></i>选择后回填父页面</h3>
+            <ol>
+                <li>点击<strong class="example-control-reference" data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Button1").ClientID %>'
+                        title="从列表中选择">从列表中选择</strong>。<br />结果：打开本页配置的 <code>iframe</code> 选择窗体。</li>
+                <li>在子页面选择北京并按该页面的确定入口提交。<br />结果：子页面通过后台处理把北京回填到父页面省份字段，然后关闭选择窗体。</li>
+            </ol>
+            <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
+            <ul class="example-description-properties">
+                <li><code>EnableIFrame</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>'
+                        title="编辑">编辑</strong>）：初始为<code>true</code>，在窗体内加载省份选择页。</li>
+                <li><code>Target</code>（<strong class="example-control-reference"
+                        data-example-control='<%= FineUI.Pro.ControlUtil.FindControl("Window1").ClientID %>'
+                        title="编辑">编辑</strong>）：初始为<code>Parent</code>，指定选择窗体在哪一层页面显示。</li>
+                <li><code>GetHideReference()</code>（<strong>省份选择子页面</strong>）：子页面找到当前选择窗体及其调用页面，向本页目标字段回填选择。</li>
+            </ul>
+        </section>
+    </template>
 </body>
 </html>

@@ -8,7 +8,7 @@
 <body>
     <form id="form1" runat="server">
         <f:PageManager ID="PageManager1" runat="server" />
-		
+
         <f:SimpleForm ID="SimpleForm1" IsFluid="true" LabelWidth="160px" BodyPadding="10px" ShowBorder="true" ShowHeader="true" Title="简单表单" runat="server">
             <Items>
                 <f:CheckBoxList ID="CheckBoxList1" Label="列表一" runat="server">
@@ -36,11 +36,13 @@
             <h3><i class="f-icon f-iconfont f-iconfont-search" aria-hidden="true"></i>查看每个选项的提示</h3>
             <ol>
                 <li>
-                    将鼠标移到<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>的“可选项 <code>1</code>”。<br />
+                    将鼠标移到<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>的“可选项
+                    <code>1</code>”。<br />
                     结果：显示“这是第一个选项的提示信息”。
                 </li>
                 <li>
-                    将鼠标移到<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>" title="列表二（一列）">列表二</strong>的“数据绑定值 <code>1</code>”。<br />
+                    将鼠标移到<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>" title="列表二（一列）">列表二</strong>的“数据绑定值
+                    <code>1</code>”。<br />
                     结果：该数据项的提示显示“数据绑定值 <code>1</code>（值：<code>item1</code>）”；本页在数据绑定事件中为每项补充提示。
                 </li>
             </ol>
@@ -48,8 +50,14 @@
             <p>注：通过列表项绑定事件，可以动态设置每一项的属性（本例为每个列表项增加提示信息）。</p>
             <h3><i class="f-icon f-iconfont f-iconfont-gear" aria-hidden="true"></i>关键属性</h3>
             <ul class="example-description-properties">
-                <li><code>Attributes[&quot;data-qtip&quot;]</code>（<strong class="example-control-reference" data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>、<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>" title="列表二（一列）">列表二（一列）</strong>）：给选项写入悬停提示文字；按选项索引设置固定提示，数据项提示按当前项的文字和值生成。</li>
-                <li><code>OnItemDataBound</code>（<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>" title="列表二（一列）">列表二（一列）</strong>）：每个数据项绑定时补充对应选项的提示。 本页<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>" title="列表二（一列）">列表二（一列）</strong>声明值为 <code>CheckBoxList2</code><code>_ItemDataBound</code>。</li>
+                <li><code>Attributes[&quot;data-qtip&quot;]</code>（<strong class="example-control-reference"
+                        data-example-control="<%= CheckBoxList1.ClientID %>" title="列表一">列表一</strong>、<strong class="example-control-reference"
+                        data-example-control="<%= CheckBoxList2.ClientID %>" title="列表二（一列）">列表二（一列）</strong>）：给选项写入悬停提示文字；按选项索引设置固定提示，数据项提示按当前项的文字和值生成。</li>
+                <li><code>OnItemDataBound</code>（<strong class="example-control-reference" data-example-control="<%= CheckBoxList2.ClientID %>"
+                        title="列表二（一列）">列表二（一列）</strong>）：每个数据项绑定时补充对应选项的提示。 本页<strong class="example-control-reference"
+                        data-example-control="<%= CheckBoxList2.ClientID %>" title="列表二（一列）">列表二（一列）</strong>声明值为
+                    <code>CheckBoxList2</code><code>_ItemDataBound</code>。
+                </li>
             </ul>
         </section>
     </template>
